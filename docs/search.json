@@ -1,0 +1,583 @@
+[
+  {
+    "objectID": "slides/materi-lvm-4.html#section",
+    "href": "slides/materi-lvm-4.html#section",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "",
+    "text": "Rizqy Amelia Zein\n\nDosen, Fakultas Psikologi, Universitas Airlangga\nAnggota, #SainsTerbuka Airlangga \nRelawan, INA-Rxiv\nResearcher-in-training, Institute for Globally Distributed Open Research and Education (IGDORE)"
+  },
+  {
+    "objectID": "slides/materi-lvm-4.html#analisis-faktor",
+    "href": "slides/materi-lvm-4.html#analisis-faktor",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Analisis faktor",
+    "text": "Analisis faktor\n\n\n\nAwalnya dikembangkan oleh Charles Spearman (1904) untuk menyelidiki g factor theory of intelligence\nTerdiri dari:\n\nExploratory factor analysis (EFA)\nConfirmatory factor analysis (CFA)\n\nAnalisis faktor digunakan untuk menguji model common variance\nMengasumsikan bahwa dua atau lebih observed variable memiliki shared/common variance (commonality atau common factor)  ditunjukkan dengan factor loading"
+  },
+  {
+    "objectID": "slides/materi-lvm-4.html#efa-vs-cfa",
+    "href": "slides/materi-lvm-4.html#efa-vs-cfa",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "EFA vs CFA",
+    "text": "EFA vs CFA\n\n\n\n\n\n\n\nEFA\nCFA\n\n\n\n\nMencari model yang cocok menggambarkan data, sehingga peneliti mengeksplorasi berbagai pilihan model yang cocok kemudian mencari rasionalisasi teoritisnya\nMenguji hipotesis yang sudah ditentukan sebelumnya, sehingga peneliti ingin tahu apakah hipotesisnya didukung oleh data\n\n\nJumlah faktor belum diketahui sampai peneliti melakukan analisisnya\nJumlah faktor sudah ditentukan sebelum mengambil data\n\n\nPeneliti tidak memiliki model yang dihipotesiskan a priori\nPeneliti sudah memiliki model hipotesis yang ditentukan a priori"
+  },
+  {
+    "objectID": "slides/materi-lvm-4.html#confirmatory-factor-analysis",
+    "href": "slides/materi-lvm-4.html#confirmatory-factor-analysis",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Confirmatory factor analysis",
+    "text": "Confirmatory factor analysis\n\nMenyediakan solusi untuk mengkoreksi bias karena measurement error ketika mengestimasi korelasi antar-variabel\nCara kerjanya adalah dengan membandingkan variance-covariance matrix yang dihipotesiskan dengan variance-covariance matrix pada data (sampel)\nPerhatian 📢\n\nSangat tidak disarankan untuk melakukan EFA kemudian CFA pada sampel yang sama\nKarena generating hypothesis dengan testing hypothesis adalah dua proses yang berbeda yang tidak seharusnya dilakukan pada sampel yang sama\nKalau hal tsb dilakukan, maka tentu saja peneliti akan mendapatkan hasil yang ‘sesuai prediksinya’\nIngat Texas Sharpshooter Fallacy"
+  },
+  {
+    "objectID": "slides/materi-lvm-4.html#constraining-parameter-model",
+    "href": "slides/materi-lvm-4.html#constraining-parameter-model",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Constraining parameter model",
+    "text": "Constraining parameter model\n\nMembatasi/menentukan varians untuk setiap variabel/faktor laten\n\nDilakukan untuk mengeluarkan standardised estimates\n…yang interpretasinya sama seperti standardised estimates di regresi linear\nFactor loading di z-scorekan\nSehingga defaultnya, mean variabel laten = 0, variance = 1\n\nMembatasi/menentukan error covariance untuk setiap variabel/faktor laten\n\nDilakukan untuk menentukan error variance"
+  },
+  {
+    "objectID": "slides/materi-lvm-4.html#jenis-jenis-model-pengukuran",
+    "href": "slides/materi-lvm-4.html#jenis-jenis-model-pengukuran",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Jenis-jenis model pengukuran",
+    "text": "Jenis-jenis model pengukuran\n\nCongeneric\n\nModel yang paling moderat dan default di berbagai perangkat lunak SEM\nAsumsinya, skala, error variance, dan factor loading boleh berbeda (dibebaskan)\nTeknik reliabilitas skala yang mengasumsikan model pengukuran congeneric  ω, McDonald’s ω, ω total (ωt), Revelle’s ω, Raju’s coefficient, composite reliability.\n\nTau equivalence\n\nModel yang sedikit lebih rigid daripada congeneric\nAsumsinya, skala dan error variance boleh berbeda (dibebaskan), namun factor loading harus sama (dibatasi)\nKetika asumsi tau equivalence dipenuhi, maka Cronbach’s α dapat digunakan\nSelain Cronbach’s α, teknik reliabilitas skala yang mengasumsikan model pengukuran tau equivalence  Formula Rulon, KR-20, Flanagan-Rulon Formula, Guttman’s λ3, Guttman’s λ4 dan Hoyt method.\n\nParalel\n\nModel yang paling rigid\nAsumsinya, skala, error variance, dan factor loading harus sama (dibatasi)\nTeknik reliabilitas skala yang mengasumsikan model pengukuran paralel  Spearman-Brown’s Formula, Standardised α."
+  },
+  {
+    "objectID": "slides/materi-lvm-4.html#reflektif-vs-formatif",
+    "href": "slides/materi-lvm-4.html#reflektif-vs-formatif",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Reflektif vs Formatif",
+    "text": "Reflektif vs Formatif\n\nReflektif\n\nVariabel laten menjelaskan mengapa variabel indikator bervariasi\nMisalnya  individu dengan intelegensi yang tinggi akan mendapatkan nilai yang berbeda dalam tes matematika\nDalam hal ini, variasi intelegensilah yang menjelaskan mengapa nilai tes matematika bervariasi\nBiasanya mengasumsikan bahwa korelasi antar-variabel indikator = 0, karena seharusnya ketika (misalnya) nilai tes matematika dan fisika berkorelasi, korelasi tersebut dijelaskan oleh faktor laten yang sama (intelegensi)\n\nFormatif\n\nVariabel observed menjelaskan mengapa variabel laten bervariasi\nMisalnya  gengsi sebuah mobil ditentukan oleh usia mobil, kondisi, harga, dan intensitas pemakaian\nKorelasi antara variabel observed tidak diketahui. Bisa jadi = 0, positif, atau negatif\nBiasanya digunakan untuk menentukan indeks pada konstruk yang orthogonal (contoh  kepribadian pada Five Factor model)"
+  },
+  {
+    "objectID": "slides/materi-lvm-4.html#apa-yang-terjadi-ketika-error-variance-berkorelasi",
+    "href": "slides/materi-lvm-4.html#apa-yang-terjadi-ketika-error-variance-berkorelasi",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Apa yang terjadi ketika error variance berkorelasi?",
+    "text": "Apa yang terjadi ketika error variance berkorelasi?\n\n\n\n\nKedua variabel indikator tersebut mengukur variabel laten lain di luar model (unique factor)\nBisa jadi karena ada aitem unfavourable dalam skala\nKemungkinan konstruk laten bukan konstruk tunggal (multidimensi)\nPerhatikan justifikasi teori ketika menambah error covariance (korelasi antar-varians error)"
+  },
+  {
+    "objectID": "slides/materi-lvm-4.html#skor-faktor-factor-scores",
+    "href": "slides/materi-lvm-4.html#skor-faktor-factor-scores",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Skor faktor (factor scores)",
+    "text": "Skor faktor (factor scores)\n\nApabila kita memiliki informasi tentang factor loading, maka kita bisa menghitung factor scores  estimasi (fitted) skor variabel laten\nCaranya dengan mengali factor loading dengan skor kasar  metode regresi\nNamun ingat, mengalikan factor loading dengan skor kasar masih berisiko mendapatkan estimasi yang bias, karena kedua parameter berasal dari distribusi data yang berbeda, sehingga standard errornya akan berbeda di berbagai kelompok sampel. Itulah yang menyebabkan factor scores akan berubah, ketika model diujikan pada kelompok sampel yang berbeda.\nAda tiga cara yang bisa digunakan untuk meghitung factor scores:\n\nMetode Regresi  dengan mengoptimalisasi validitas konstruk (variance explained)\nMetode Bartlett  mengasumsikan variabel indikator tidak saling berkorelasi\nMetode Anderson-Rubin  mengasumsikan variabel indikator saling berkorelasi"
+  },
+  {
+    "objectID": "slides/materi-lvm-4.html#memilih-metode-estimasi",
+    "href": "slides/materi-lvm-4.html#memilih-metode-estimasi",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Memilih metode estimasi",
+    "text": "Memilih metode estimasi\n\nMaximum Likelihood  distribusi data (multivariate) normal, level pengukuran harus interval, tidak ada data missing\nGeneralized least squares  menggunakan asumsi yang sama dengan ML namun performanya kurang baik apabila dibandingkan dengan ML\nWeighted least squares  dapat digunakan pada data kategorikal (nominal dan ordinal), estimasi menggunakan polychoric correlation matrix\nDiagonally weighted least squares  dapat digunakan pada data kategorikal, estimasi menggunakan polychoric correlation matrix yang kemudian dikonversi menjadi asymptotic covariance matrix, berkerja dengan baik pada sampel yang relatif kecil dan data yang tidak berdistribusi normal"
+  },
+  {
+    "objectID": "slides/materi-lvm-4.html#mengestimasi-model",
+    "href": "slides/materi-lvm-4.html#mengestimasi-model",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Mengestimasi model",
+    "text": "Mengestimasi model\n\nPilih metode estimasi yang paling cocok dengan karakteristik data (ML, ULS, GLS, WLS, DWLS atau robust DWLS)\nMetode estimasi ini yang akan menghitung standard error, apabila metode estimasi yang dipilih tidak tepat dan tidak sesuai dengan kompatibilitas datanya, maka estimasi standard error menjadi bias  model memberikan informasi yang menyesatkan"
+  },
+  {
+    "objectID": "slides/materi-lvm-4.html#menguji-model",
+    "href": "slides/materi-lvm-4.html#menguji-model",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Menguji model",
+    "text": "Menguji model\n\nDalam tahap ini, peneliti perlu mengetahui apakah implied modelnya didukung oleh data atau tidak\nHal ini dapat dievaluasi melalui uji ketepatan model (omnibus model fit) dengan beberapa parameter kriteria"
+  },
+  {
+    "objectID": "slides/materi-lvm-4.html#menguji-ketepatan-model",
+    "href": "slides/materi-lvm-4.html#menguji-ketepatan-model",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Menguji ketepatan model",
+    "text": "Menguji ketepatan model\n\nUmumnya peneliti ingin mendapatkan 3 informasi\n\nChi-square sebagai global fit measure. Chi-square menguji perbedaan antara model-implied dengan sample covariance matrix. Apabila p-value dari Chi-square&gt;=α (dengan α=0.05), maka tidak ada perbedaan antara keduanya  data mendukung model\np-value dari factor loading untuk setiap variabel dalam model. Perhitungan p-value untuk factor loading menggunakan t-statistics (formula yang sama dengan t-test). Namun parameter yang lebih penting adalah…\nBesar dan arah factor loading. Besar factor loading memberikan informasi mengenai magnitude (besar efek/effect size) dan kontribusi variabel tersebut dalam menjelaskan variabel lainnya. Sedangkan arah factor loading (positif/negatif) memberikan informasi mengenai arah hubungan"
+  },
+  {
+    "objectID": "slides/materi-lvm-4.html#menguji-ketepatan-model-chi-square-x2",
+    "href": "slides/materi-lvm-4.html#menguji-ketepatan-model-chi-square-x2",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Menguji ketepatan model: Chi-square (X2)",
+    "text": "Menguji ketepatan model: Chi-square (X2)\n\n\n\nDihitung dengan cara membandingkan saturated model dengan model tanpa jalur sama sekali (baseline, null, atau independent model)\nKok saturated model? Bukannya saturated model tidak bisa dianalisis?\n\nIya betul, saturated model tidak dapat dijadikan implied model, tetapi berguna untuk menghitung nilai X2\n\nSelain X2, kita bisa menggunakan alternative fit indices (yang penggunaannya cenderung menggunakan rule of thumb) yang terdiri dari\n\nIncremental index\nParsimony index\nAbsolute (standalone) index"
+  },
+  {
+    "objectID": "slides/materi-lvm-4.html#incremental-comparativerelative-index",
+    "href": "slides/materi-lvm-4.html#incremental-comparativerelative-index",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Incremental (comparative/relative) index",
+    "text": "Incremental (comparative/relative) index\n\nDidapatkan dengan membandingkan implied model dengan baseline model, meliputi\n\nComparative Fit Index  mendekati 1 = closer fit\nNormed Fit Index  mendekati 1 = better fit\nParsimonious Normed Fit Index  NFI yang mempertimbangkan parsimony model, mendekati 1 = better fit\nIncremental Fit Index/Bollen’s Nonnormed Fit Index  NFI yang mempertimbangkan parsimony model, mendekati 1 = better fit\nTucker Lewis Index/Bentler-Bonnet Non-Normed Fit Index  mendekati 1 = better fit"
+  },
+  {
+    "objectID": "slides/materi-lvm-4.html#parsimony-index",
+    "href": "slides/materi-lvm-4.html#parsimony-index",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Parsimony index",
+    "text": "Parsimony index\n\nIndeks ini secara khusus memberikan pinalti pada kompleksitas model, sehingga umumnya model dengan jalur yang lebih banyak (sehingga dfnya lebih kecil) akan mendapat pinalti\nIndeks-indeksnya meliputi\n\nExpected Cross Validation Index  digunakan untuk membandingkan dua model atau lebih. Nilai yang lebih kecil menunjukkan model yang lebih baik\nInformation-Theoretic Criterion  meliputi Akaike’s Information Criterion, Schwarz’a Bayesian Information Criteria dan Sample-size Adjusted Bayesian Information Criteria. Nilai yang kecil menunjukkan model yang lebih baik\nNoncentrality Parameter-based Index  mendekati 1 = better fit\nMcDonald’s Noncentrality Index  mendekati 1 = better fit\n\nYang paling sering digunakan adalah…\nRoot Mean Square Error of Approximation (RMSEA)  menilai apakah model secara umum tepat menggambarkan data dan biasanya berkisar antara 0.0-1.0, meskipun dapat lebih dari 1. Model close fit ketika nilainya 0.05 - 0.08\n\nAda beberapa perangkat lunak (termasuk JASP) yang bisa mengkalkulasi confidence interval dan p-valuenya.\nP-value ini dapat digunakan untuk menolak H0: RMSEA = 0.05\nOleh karena itu, menolak H0 menunjukkan bahwa model “close-fitting”"
+  },
+  {
+    "objectID": "slides/materi-lvm-4.html#absolute-index",
+    "href": "slides/materi-lvm-4.html#absolute-index",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Absolute index",
+    "text": "Absolute index\n\nIndeks ini dihitung tanpa melakukan perbandingan dengan baseline\nMeliputi\n\nChi-square (X2)/df ratio\nGoodness of Fit Index  mendekati 1 = better fit\nAdjusted Goodness of Fit Index  merupakan parsimony adjustment dari GFI, mendekati 1 = better fit\nParsimony Goodness of Fit Index  mendekati 1 = better fit\nHoelter’s Critical n  nilainya sebaiknya &gt; 200\nStandardized Root Mean Square Residual (SRMR/RMR)  paling baik digunakan untuk membandingkan dua model yang diuji di satu kelompok sampel yang sama, nilai &lt; 0.05 menunjukkan good fit"
+  },
+  {
+    "objectID": "slides/materi-lvm-4.html#parameter-fit",
+    "href": "slides/materi-lvm-4.html#parameter-fit",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Parameter fit",
+    "text": "Parameter fit\n\nParameter jalur bisa ditolak meskipun hasil omnibus test memuaskan, sehingga menginterpretasi koefisien jalur adalah proses yang juga harus dilakukan.\nBerikut ini adalah beberapa prosedur yang direkomendasikan:\n\nLihat tanda factor loading, apakah arahnya sudah benar (negatif/positif)\nLihat standardised parameter estimates untuk tahu apakah ada factor loading yang nilainya diatas kewajaran\nLihat p-value untuk mempertimbangan menolak H0 (bahwa tidak ada korelasi atau direct effect antara dua variabel)\nLakukan pengujian measurement invariance dengan mengasumsikan beberapa factor loading sama di berbagai kelompok yang berbeda (misal gender, dll), kemudian buat perbandingan relatif antara factor loading di kelompok yang berbeda tersebut\nApabila error variance mendekati nol (yang menyiratkan bahwa variabel observed adalah indikator yang ‘nyaris sempurna’ bagi variabel laten – tapi ini tidak mungkin), hal tsb lebih mungkin disebabkan oleh adanya outlier, kurangnya jumlah sampel, atau kurangnya jumlah indikator"
+  },
+  {
+    "objectID": "slides/materi-lvm-4.html#demonstrasi-cfa",
+    "href": "slides/materi-lvm-4.html#demonstrasi-cfa",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Demonstrasi CFA",
+    "text": "Demonstrasi CFA\n\nUnduh Dataset Contoh CFA"
+  },
+  {
+    "objectID": "slides/materi-lvm-4.html#tugas-3-mencoba-confirmatory-factor-analysis",
+    "href": "slides/materi-lvm-4.html#tugas-3-mencoba-confirmatory-factor-analysis",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "TUGAS 3: Mencoba confirmatory factor analysis",
+    "text": "TUGAS 3: Mencoba confirmatory factor analysis\n\nUnduh Dataset Latihan SEM\nUnduh Kamus Data disini\nLakukan CFA pada skala right-wing authoritarianism\n\nDiukur dengan skala Likert, 15 aitem dengan 9 pilihan jawaban\n\nLaporkan model fit, factor loading, dan multivariate normality\nLakukan penyesuaian apabila perlu\nExport datasetnya menjadi .html kemudian\n\nKumpulkan tugasnya disini"
+  },
+  {
+    "objectID": "slides/materi-lvm-4.html#terima-kasih-banyak",
+    "href": "slides/materi-lvm-4.html#terima-kasih-banyak",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Terima kasih banyak! 😉",
+    "text": "Terima kasih banyak! 😉\n\nPaparan disusun dengan menggunakan  dan Quarto dengan tema quarto-unair-theme."
+  },
+  {
+    "objectID": "slides/materi-lvm-2.html#section",
+    "href": "slides/materi-lvm-2.html#section",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "",
+    "text": "Rizqy Amelia Zein\n\nDosen, Fakultas Psikologi, Universitas Airlangga\nAnggota, #SainsTerbuka Airlangga \nRelawan, INA-Rxiv\nResearcher-in-training, Institute for Globally Distributed Open Research and Education (IGDORE)"
+  },
+  {
+    "objectID": "slides/materi-lvm-2.html#mengapa-memulai-dari-korelasi",
+    "href": "slides/materi-lvm-2.html#mengapa-memulai-dari-korelasi",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Mengapa memulai dari korelasi?",
+    "text": "Mengapa memulai dari korelasi?\nLVM-SEM merupakan teknik yang digunakan untuk mengestimasi korelasi antar-variabel\n\nUntuk melakukan SEM, peneliti tidak harus menyediakan data kasar (raw data), tetapi ada pilihan untuk menginput correlation atau variance-covariance matrix."
+  },
+  {
+    "objectID": "slides/materi-lvm-2.html#jenis-jenis-korelasi",
+    "href": "slides/materi-lvm-2.html#jenis-jenis-korelasi",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Jenis-jenis korelasi",
+    "text": "Jenis-jenis korelasi\n\n\n\nKoefisien Korelasi\nLevel Pengukuran\n\n\n\n\nPearson’s product moment\nKedua variabel setidaknya interval\n\n\nSpearman’s rank dan Kendall’s tau\nKedua variabel ordinal\n\n\nPhi, contingency table\nKedua variabel nominal\n\n\nPoint biserial\nVariabel interval dengan nominal\n\n\nGamma, rank biserial\nVariabel ordinal dengan nominal\n\n\nBiserial\nVariabel interval dengan dummy\n\n\nPolyserial\nVariabel interval dengan variabel underlying continuity\n\n\nTetrachoric\nKedua variabel dummy (dikotomis)\n\n\nPolychoric\nKedua variabel ordinal (dengan kontinuitas implisit)"
+  },
+  {
+    "objectID": "slides/materi-lvm-2.html#faktor-faktor-yang-mempengaruhi-korelasi",
+    "href": "slides/materi-lvm-2.html#faktor-faktor-yang-mempengaruhi-korelasi",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Faktor-faktor yang mempengaruhi korelasi",
+    "text": "Faktor-faktor yang mempengaruhi korelasi\n\nLevel pengukuran (apakah variabel tersebut nominal, ordinal, interval, atau rasio)\n\nSehingga berdampak pada variabilitas (restriction range) dan normalitas data\n\nLinearitas\n\nSemua teknik korelasi mengasumsikan korelasi antar-variabel linear, sehingga korelasi yang tidak linear akan memberikan informasi tidak adanya korelasi (padahal tidak selalu).\n\nAdanya data outlier \nKoreksi atenuasi\nJumlah sampel\n\nJumlah sampel yang terlalu sedikit akan memberikan estimasi yang kurang akurat (karena standard errornya besar)\n\nSampling variance\n\nYang kemudian berefek pada confidence interval, effect size (koefisien korelasi itu sendiri), dan statistical power\n\nMissing data\n\nKalau data tidak lengkap, estimasi koefisien korelasi akan langsung terdampak.\nAda beberapa pilihan yang bisa dilakukan, yaitu  listwise deletion, pairwise deletion, dan melakukan data imputation.\nListwise deletion tidak disarankan karena membuat jumlah sampel turun drastis  mengurangi statistical power.\n\n\nSilahkan unduh dan buka Dataset Contoh Korelasi, untuk melihat contoh."
+  },
+  {
+    "objectID": "slides/materi-lvm-2.html#variance-covariance-dan-correlation-matrix-1",
+    "href": "slides/materi-lvm-2.html#variance-covariance-dan-correlation-matrix-1",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Variance-covariance dan correlation matrix (1)",
+    "text": "Variance-covariance dan correlation matrix (1)\n\nUntuk melakukan SEM, maka perangkat lunak membutuhkan variance-covariance matrix untuk mengestimasi parameter model\nPada bagian diagonal variance-covariance matrix menunjukkan varians, sedangkan sisanya adalah covariance\n\n\n\n\n\nJumlah nilai unik (non-redundant information) dalam variance-covariance matrix adalah p(p+1)/2\n\ndimana p adalah jumlah observed variable\nSehingga dengan contoh di atas maka jumlah nilai unik (non-redundant information) di variance-covariance matrix adalah 3(3+1)/2=6, yaitu 3 varians (diagonal) dan 3 covariance (sisanya)"
+  },
+  {
+    "objectID": "slides/materi-lvm-2.html#variance-covariance-dan-correlation-matrix-2",
+    "href": "slides/materi-lvm-2.html#variance-covariance-dan-correlation-matrix-2",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Variance-covariance dan correlation matrix (2)",
+    "text": "Variance-covariance dan correlation matrix (2)\n\n\n\nSebagian besar perangkat lunak SEM menggunakan variance-covariance matrix bukan correlation matrix\n\nIngat ❗ korelasi adalah standardised covariance.\n\nMenggunakan correlation matrix biasanya lebih sering menghasilkan parameter yang statistically significant tapi standard error yang tidak akurat.\nOleh karena itu, meskipun user menginput correlation matrix, maka perangkat lunak akan mengubahnya dulu menjadi variance-covariance matrix dulu, baru parameter model dapat diestimasi."
+  },
+  {
+    "objectID": "slides/materi-lvm-2.html#koreksi-atenuasi",
+    "href": "slides/materi-lvm-2.html#koreksi-atenuasi",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Koreksi Atenuasi",
+    "text": "Koreksi Atenuasi\n\nAsumsi dasar dalam Psikometri adalah skor kasar (observed score) mengandung skor murni (true score) dan measurement error, sehingga dalam mengestimasi korelasi, measurement error perlu dibuang agar estimasi lebih akurat.\nDengan teknik koreksi atenuasi, kita dapat ‘membuang’ measurement error, sehingga kita dapat mengestimasi korelasi antar-variabel menggunakan true score-nya.\nTetapi apabila reliabilitas skala kita kurang baik, maka setelah dikoreksi koefisien korelasi bisa lebih dari 1 ❗\nMisalnya diketahui bahwa korelasi observed scores antar dua variabel (rab) adalah 0.9 dan reliabilitas skala a (Cronbach’s α) adalah 0.6 dan skala b adalah 0.7, maka:"
+  },
+  {
+    "objectID": "slides/materi-lvm-2.html#warning-covariancecorrelation-matrix-is-not-positive-definite",
+    "href": "slides/materi-lvm-2.html#warning-covariancecorrelation-matrix-is-not-positive-definite",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "WARNING! Covariance/correlation matrix is not positive definite",
+    "text": "WARNING! Covariance/correlation matrix is not positive definite"
+  },
+  {
+    "objectID": "slides/materi-lvm-2.html#apa-yang-terjadi",
+    "href": "slides/materi-lvm-2.html#apa-yang-terjadi",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Apa yang terjadi?",
+    "text": "Apa yang terjadi?\nPerangkat lunak akan menghentikan proses estimasi\n…dan memberikan pesan non-positive definite"
+  },
+  {
+    "objectID": "slides/materi-lvm-2.html#matrik-korelasi-dengan-non-positive-definite",
+    "href": "slides/materi-lvm-2.html#matrik-korelasi-dengan-non-positive-definite",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Matrik korelasi dengan non-positive definite",
+    "text": "Matrik korelasi dengan non-positive definite\n\nKoefisien korelasi yang nilainya ≥1 menyebabkan matriks korelasi menjadi non-positive definite\n\nArtinya, parameter model tidak mungkin diestimasi\n\nMengapa terjadi?\n\nData didapatkan dari observasi yang tidak independen (linear dependency)\nTerjadi multikolinearitas\nJumlah sampel lebih sedikit dari jumlah variabel yang diuji dalam model\nSepasang variabel berbagi varians negatif atau tidak sama sekali (0)  Heywood case\nVarians, kovarians, dan korelasi nilainya diluar batas kewajaran\nKesalahan mengatur pembatasan (constraint) pada parameter tertentu yang dilakukan oleh peneliti (user-specified model)"
+  },
+  {
+    "objectID": "slides/materi-lvm-2.html#heywood-dan-ultra-heywood-case",
+    "href": "slides/materi-lvm-2.html#heywood-dan-ultra-heywood-case",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Heywood dan ultra-Heywood case",
+    "text": "Heywood dan ultra-Heywood case\n\nTerjadi ketika communalities = 1 (Heywood) atau ≥1 (ultra-Heywood), atau terjadi ketika varians measurement error bernilai negatif\n\nCommunalities adalah kuadrat dari koefisien korelasi (R2)\nApabila terjadi, maka ada yang salah dengan spesifikasi model (hipotesis)\n\nTerjadi karena\n\nCommon factor terlalu banyak/terlalu sedikit\nUkuran sampel tidak memadai\nModel SEM (common factor model) bukan model yang cocok untuk menguji hipotesis hubungan antar-variabel (alternatifnya Principal Component Analysis - PCA)\n\nYang bisa dilakukan\n\nTinjau kembali hipotesis modelnya\nKurangi jumlah faktor laten dengan ‘membuang’ jalur/korelasi yang bermasalah\nIdentifikasi variabel yang terlibat multikolinearitas. Masukkan salah satu saja dalam model, sisanya sisihkan"
+  },
+  {
+    "objectID": "slides/materi-lvm-2.html#korelasi-bivariat-part-dan-partial-correlation",
+    "href": "slides/materi-lvm-2.html#korelasi-bivariat-part-dan-partial-correlation",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Korelasi Bivariat: Part dan partial correlation",
+    "text": "Korelasi Bivariat: Part dan partial correlation"
+  },
+  {
+    "objectID": "slides/materi-lvm-2.html#metrik-variabel-standardised-vs-unstandardised",
+    "href": "slides/materi-lvm-2.html#metrik-variabel-standardised-vs-unstandardised",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Metrik variabel (standardised vs unstandardised)",
+    "text": "Metrik variabel (standardised vs unstandardised)\n\nUnstandarised solution/estimates\n\nDapat dibandingkan antar kelompok sampel\nMerupakan parameter yang digunakan oleh perangkat lunak untuk menghitung standard error dan taraf signifikansi (p-value))\nMembandingkan unstandardised factor loading harus melihat standard errornya juga karena mereka seharusnya sepaket\n\nStandarised solution/estimates\n\nHanya interpretable untuk kelompok sampel yang diuji - tidak bisa dibandingkan dengan kelompok sampel yang lain.\nBerguna untuk membandingkan factor loading antar-variabel di dalam model - peneliti dapat mengidentifikasi variabel mana yang paling berkontribusi menjelaskan dependent variable\nApabila variabel dalam model memiliki unit pengukuran yang berbeda, maka standardised estimates akan sangat membantu untuk menstandardisasi unit antar-variabel tersebut\n\nAda banyak perbedaan pendapat mengenai metrik mana yang harus dilaporkan, tetapi…\n\nSelalu laporkan unstandarised solution/estimates dan standard errornya (boleh juga dengan standarised solution/estimates, boleh juga tidak)"
+  },
+  {
+    "objectID": "slides/materi-lvm-2.html#terima-kasih-banyak",
+    "href": "slides/materi-lvm-2.html#terima-kasih-banyak",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Terima kasih banyak! 😉",
+    "text": "Terima kasih banyak! 😉\n\nPaparan disusun dengan menggunakan  dan Quarto dengan tema quarto-unair-theme."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Workshop Confirmatory Factor Analysis (LVM)",
+    "section": "",
+    "text": "Berikut adalah repositori yang digunakan untuk menyimpan semua materi untuk Workshop Confirmatory Factor Analysis yang diselenggarakan oleh Fakultas Psikologi, Universitas Negeri Semarang. Materi workshop ini merupakan bagian (yang dimodifikasi) dari workshop Multigroup Structural Equation modeling yang diadakan oleh Fakultas Psikologi Universitas Airlangga. Untuk mengakses materi dan rekaman dari workshop MG-SEM, silahkan klik tautan ini.\nMateri berlisensi Creative Commons BY 4.0. Materi bebas digunakan kembali namun wajib mengatribusi sumber aslinya."
+  },
+  {
+    "objectID": "index.html#deskripsi",
+    "href": "index.html#deskripsi",
+    "title": "Workshop Confirmatory Factor Analysis (LVM)",
+    "section": "",
+    "text": "Berikut adalah repositori yang digunakan untuk menyimpan semua materi untuk Workshop Confirmatory Factor Analysis yang diselenggarakan oleh Fakultas Psikologi, Universitas Negeri Semarang. Materi workshop ini merupakan bagian (yang dimodifikasi) dari workshop Multigroup Structural Equation modeling yang diadakan oleh Fakultas Psikologi Universitas Airlangga. Untuk mengakses materi dan rekaman dari workshop MG-SEM, silahkan klik tautan ini.\nMateri berlisensi Creative Commons BY 4.0. Materi bebas digunakan kembali namun wajib mengatribusi sumber aslinya."
+  },
+  {
+    "objectID": "index.html#waktu-dan-tempat",
+    "href": "index.html#waktu-dan-tempat",
+    "title": "Workshop Confirmatory Factor Analysis (LVM)",
+    "section": "Waktu dan tempat",
+    "text": "Waktu dan tempat\nWorkshop diselenggarakan pada hari Kamis, 30 Januari 2020, pukul 07.30-16.00 WIB di Gedung A1 Ruang 204 Fakultas Ilmu Pendidikan, Universitas Negeri Semarang."
+  },
+  {
+    "objectID": "index.html#outline-materi",
+    "href": "index.html#outline-materi",
+    "title": "Workshop Confirmatory Factor Analysis (LVM)",
+    "section": "Outline materi",
+    "text": "Outline materi\nBerikut adalah outline materi workshop:\n\nPengantar\n\nApa itu latent variable modeling (LVM)?\nMengapa dan pada kondisi seperti apa LVM diperlukan?\nBeberapa pilihan perangkat lunak untuk mengeksekusi LVM\nYang tidak dicakup dalam workshop serta keterbatasan JASP\n\n\n\nKorelasi\n\nJenis-jenis koefisien korelasi\nFaktor-faktor yang membuat koefisien korelasi bervariasi\nKoreksi atenuasi dan measurement error\nVariance-covariance dan correlation matrix\nWARNING! Covariance/correlation matrix is not positive definite\nHeywood dan ultra-Heywood case\nBivariat, part, dan partial correlation\nMetrik variabel (standardised vs unstandardised)\n\n\n\nModel Jalur (Path Model) dan Model Regresi\n\nDefinisi path model\nNama variabel dan koefisien jalur (path coefficients)\n\nδ (delta), ε (epsilon), ξ (ksi), η (eta), λ (lambda), γ (gamma), β (beta), φ (phi), ζ (zeta)\n\nRepresentasi visual model jalur menggunakan diagram jalur (path diagram)\nMenggambarkan hubungan antar-variabel dengan menggunakan diagram jalur\nSyntax lavaan untuk spesifikasi model jalur\nAsumsi kausalitas (?) dan limitasi\n\n\n\nConfirmatory Factor Analysis (CFA)\n\nDefinisi factor analysis\nExploratory vs confirmatory factor analysis\nKapan menggunakan CFA?\nConstraining parameter model\nModel pengukuran (paralel, tau equivalence, dan congeneric)\nVariabel indikator (reflektif vs formatif)\nCorrelated error variances\nMetode estimasi\nJenis-jenis kriteria untuk menilai ketepatan model (model fit)\n\nModel fit\nModel comparison/Incremental fit indices\nModel parsimony\nParameter fit\n\nMenuliskan hasil analisis CFA dalam laporan penelitian"
+  },
+  {
+    "objectID": "index.html#referensi",
+    "href": "index.html#referensi",
+    "title": "Workshop Confirmatory Factor Analysis (LVM)",
+    "section": "Referensi",
+    "text": "Referensi\n\nBaujean, A.A. (2014). Latent Variable Modeling Using R: A step-by-step guide. New York: Routledge.\nSchumacker, R.E. & Lomax, R.G. (2016). A Beginner’s Guide to Structural Equation Modeling (4th edition). New York: Routledge.\nVan De Schoot, R., Schmidt, P., De Beuckelaer, A., Lek, K., & Zondervan-Zwijnenburg, M. (2015). Measurement invariance. Frontiers in psychology, 6, 1064.\nPutnick, D. L., & Bornstein, M. H. (2016). Measurement invariance conventions and reporting: The state of the art and future directions for psychological research. Developmental review, 41, 71-90.\nCho, E. (2016). Making Reliability Reliable: A Systematic approach to reliability coefficients. Organizational Research Methods, 19(4), 651-682."
+  },
+  {
+    "objectID": "index.html#contoh-penelitian-dengan-cfa",
+    "href": "index.html#contoh-penelitian-dengan-cfa",
+    "title": "Workshop Confirmatory Factor Analysis (LVM)",
+    "section": "Contoh penelitian dengan CFA",
+    "text": "Contoh penelitian dengan CFA\n\nRodriguez, V. J., Radusky, P. D., Kumar, M., Nemeroff, C. B., & Jones, D. (2018). Measurement invariance of the Childhood Trauma Questionnaire by gender, poverty level, and HIV status. Personalized Medicine in Psychiatry, 11, 16-22.\nLiu, Y., Millsap, R. E., West, S. G., Tein, J. Y., Tanaka, R., & Grimm, K. J. (2017). Testing measurement invariance in longitudinal data with ordered-categorical measures. Psychological methods, 22(3), 486.\nBowden, S. C., Saklofske, D. H., Van de Vijver, F. J. R., Sudarshan, N. J., & Eysenck, S. B. G. (2016). Cross-cultural measurement invariance of the Eysenck Personality Questionnaire across 33 countries. Personality and Individual Differences, 103, 53-60.\nBieda, A., Hirschfeld, G., Schönfeld, P., Brailovskaia, J., Zhang, X. C., & Margraf, J. (2017). Universal happiness? Cross-cultural measurement invariance of scales assessing positive mental health. Psychological assessment, 29(4), 408."
+  },
+  {
+    "objectID": "index.html#sumber-belajar-lainnya",
+    "href": "index.html#sumber-belajar-lainnya",
+    "title": "Workshop Confirmatory Factor Analysis (LVM)",
+    "section": "Sumber belajar lainnya",
+    "text": "Sumber belajar lainnya\n\nLearning Statistics with JASP\nUndergraduate Statistics with JASP\nMateri workshop SEM: Sacha Epskamp"
+  },
+  {
+    "objectID": "index.html#sebelum-mulai-workshop",
+    "href": "index.html#sebelum-mulai-workshop",
+    "title": "Workshop Confirmatory Factor Analysis (LVM)",
+    "section": "Sebelum mulai workshop",
+    "text": "Sebelum mulai workshop\n\nSebaiknya semua peserta sudah memasang JASP versi 0.11.1 pada perangkatnya masing-masing, untuk menghindari terlalu banyaknya waktu untuk menyelesaikan troubleshooting instalasi ketika workshop.\nPeserta sangat disarankan untuk menonton video tutorial JASP di bawah ini sebelum workshop untuk belajar menavigasikan menu dan fitur yang ada dalam JASP (total durasi kurang lebih hanya 5 menit)."
+  },
+  {
+    "objectID": "index.html#video-rekaman",
+    "href": "index.html#video-rekaman",
+    "title": "Workshop Confirmatory Factor Analysis (LVM)",
+    "section": "Video rekaman",
+    "text": "Video rekaman\n\nSesi 1 (09.00-12.00)\n\n\n\n\nSesi 2 (13.00-16.00)"
+  },
+  {
+    "objectID": "index.html#pembaruan-dan-koreksi",
+    "href": "index.html#pembaruan-dan-koreksi",
+    "title": "Workshop Confirmatory Factor Analysis (LVM)",
+    "section": "Pembaruan dan koreksi",
+    "text": "Pembaruan dan koreksi"
+  },
+  {
+    "objectID": "index.html#poster-kegiatan",
+    "href": "index.html#poster-kegiatan",
+    "title": "Workshop Confirmatory Factor Analysis (LVM)",
+    "section": "Poster kegiatan",
+    "text": "Poster kegiatan"
+  },
+  {
+    "objectID": "index.html#jawaban-latihan",
+    "href": "index.html#jawaban-latihan",
+    "title": "Workshop Confirmatory Factor Analysis (LVM)",
+    "section": "Jawaban Latihan",
+    "text": "Jawaban Latihan\n\nLatihan Mandiri (1):\nKlik disini untuk melihat jawaban saya atas latihan mandiri (1).\n\n\nLatihan Mandiri (2):\nKlik disini untuk melihat jawaban saya atas latihan mandiri (2).\n\n\nLatihan Mandiri (3):\nKlik disini untuk melihat jawaban saya atas latihan mandiri (3)."
+  },
+  {
+    "objectID": "slides/materi-lvm-1.html#section",
+    "href": "slides/materi-lvm-1.html#section",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "",
+    "text": "Rizqy Amelia Zein\n\nDosen, Fakultas Psikologi, Universitas Airlangga\nAnggota, #SainsTerbuka Airlangga \nRelawan, INA-Rxiv\nResearcher-in-training, Institute for Globally Distributed Open Research and Education (IGDORE)"
+  },
+  {
+    "objectID": "slides/materi-lvm-1.html#menghubungi-saya",
+    "href": "slides/materi-lvm-1.html#menghubungi-saya",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Menghubungi saya?",
+    "text": "Menghubungi saya?\n   amelia.zein@psikologi.unair.ac.id  @ameliazein  @rameliaz  https://rameliaz.github.io\nMateri dalam paparan ini berlisensi  4.0 dan tersedia di laman web pribadi saya (https://rameliaz.github.io/mlm-lme-workshop/). Kode tersedia secara terbuka di repositori  saya."
+  },
+  {
+    "objectID": "slides/materi-lvm-1.html#outline",
+    "href": "slides/materi-lvm-1.html#outline",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Outline",
+    "text": "Outline\n\n\nSebelum istirahat (07.30-12.00)\nPengantar * Apa itu latent variable modeling (LVM) dan structural equation modeling (SEM)? * Mengapa dan pada kondisi seperti apa LVM-SEM diperlukan? * Beberapa pilihan perangkat lunak untuk mengeksekusi LVM-SEM * Yang tidak dicakup dalam workshop serta keterbatasan JASP"
+  },
+  {
+    "objectID": "slides/materi-lvm-1.html#sebelum-istirahat-07.30-12.00-1",
+    "href": "slides/materi-lvm-1.html#sebelum-istirahat-07.30-12.00-1",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Sebelum istirahat (07.30-12.00)",
+    "text": "Sebelum istirahat (07.30-12.00)\n\n\n\nJenis-jenis koefisien korelasi\nFaktor-faktor yang membuat koefisien korelasi bervariasi\nKoreksi atenuasi dan measurement error\nVariance-covariance dan correlation matrix\nWARNING! Covariance/correlation matrix is not positive definite\nHeywood dan ultra-Heywood case\nBivariat, part, dan partial correlation\nMetrik variabel (standardised vs unstandardised)"
+  },
+  {
+    "objectID": "slides/materi-lvm-1.html#sesudah-istirahat-13.00-16.00",
+    "href": "slides/materi-lvm-1.html#sesudah-istirahat-13.00-16.00",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Sesudah istirahat (13.00-16.00)",
+    "text": "Sesudah istirahat (13.00-16.00)\n\n\n\nDefinisi path model\nNama variabel dan koefisien jalur (path coefficients)\n\nδ (delta), ε (epsilon), ξ (ksi), η (eta), λ (lambda), γ (gamma), β (beta), φ (phi), ζ (zeta)\n\nRepresentasi visual model jalur menggunakan diagram jalur (path diagram)\nMenggambarkan hubungan antar-variabel dengan menggunakan diagram jalur\nSyntax lavaan untuk spesifikasi model jalur\nAsumsi kausalitas (?) dan limitasi"
+  },
+  {
+    "objectID": "slides/materi-lvm-1.html#sesudah-istirahat-13.00-16.00-1",
+    "href": "slides/materi-lvm-1.html#sesudah-istirahat-13.00-16.00-1",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Sesudah istirahat (13.00-16.00)",
+    "text": "Sesudah istirahat (13.00-16.00)\n\n\n\nDefinisi factor analysis\nExploratory vs confirmatory factor analysis\nKapan menggunakan CFA?\nConstraining parameter model\nModel pengukuran (paralel, tau equivalence, dan congeneric)\nVariabel indikator (reflektif vs formatif)\nCorrelated error variances\nMetode estimasi\nJenis-jenis kriteria untuk menilai ketepatan model (model fit)\n\nModel fit\nModel comparison/Incremental fit indices\nModel parsimony\nParameter fit\n\nMenuliskan hasil analisis CFA dalam laporan penelitian"
+  },
+  {
+    "objectID": "slides/materi-lvm-1.html#apa-itu-latent-variable-modeling",
+    "href": "slides/materi-lvm-1.html#apa-itu-latent-variable-modeling",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Apa itu latent variable modeling?",
+    "text": "Apa itu latent variable modeling?"
+  },
+  {
+    "objectID": "slides/materi-lvm-1.html#lvm-adalah",
+    "href": "slides/materi-lvm-1.html#lvm-adalah",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "LVM adalah…",
+    "text": "LVM adalah…\n\nModel yang memuat hubungan antara observed dan latent variables dalam berbagai bentuk model teoritis. LVM memungkinkan peneliti untuk melakukan pengujian hipotesis yang berkaitan dengan model tersebut.\nLVM mengasumsikan (hipotesis) bahwa seperangkat variabel (observed) mendefinisikan sebuah konstruk laten, dan menggambarkan bagaimana hubungan antara konstruk-konnstruk laten ini.\nTujuan LVM adalah untuk mengetahui apakah model teoritik yang diuji peneliti didukung oleh data\n\nApabila data memberikan bukti yang mendukung bahwa hubungan antar konstruk/variabel terjadi, maka mungkin hubungan tersebut memang benar-benar ada di populasi.\nApabila data tidak memberikan bukti yang mendukung korelasi yang dihipotesiskan, maka peneliti dapat melakukan re-spesifikasi model dan menguji kembali model yang sudah dire-spesifikasi tersebut, atau menyusun ulang model yang baru untuk kemudian diuji kembali."
+  },
+  {
+    "objectID": "slides/materi-lvm-1.html#jenis-jenis-variabel",
+    "href": "slides/materi-lvm-1.html#jenis-jenis-variabel",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Jenis-jenis variabel",
+    "text": "Jenis-jenis variabel\n\n\n\nVariabel observed\n\nVariabel yang dapat diukur langsung dengan berbagai cara/strategi.\nDalam pengukuran Psikologi, item pernyataan (dalam skala Psikologi - bisa dalam bentuk skala Likert atau yang lain) adalah variabel observed.\nVariabel observed dapat merefleksikan variabel latent atau bisa menjadi kombinasi linear atas variabel observed yang lain (index).\n\nVariabel latent\n\nKonstruk/variabel yang tidak dapat diukur secara langsung.\nOleh karena itu, membutuhkan variabel observed untuk mengukurnya.\nVariabel latent dapat berperan sebagai variabel independent atau dependent."
+  },
+  {
+    "objectID": "slides/materi-lvm-1.html#jenis-jenis-variabel-1",
+    "href": "slides/materi-lvm-1.html#jenis-jenis-variabel-1",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Jenis-jenis variabel",
+    "text": "Jenis-jenis variabel\n\n\n\nVariabel Eksogen dan Endogen\n\nVariabel eksogen  variabel yang hanya memberi direct effect pada variabel lain di dalam model yang sama\nVariabel endogen  variabel yang hanya menerima direct effect pada variabel lain di dalam model yang sama"
+  },
+  {
+    "objectID": "slides/materi-lvm-1.html#contohnya",
+    "href": "slides/materi-lvm-1.html#contohnya",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Contohnya…",
+    "text": "Contohnya…\n\n\n\nSeorang peneliti ingin mengukur kepribadian seorang responden dengan menggunakan pendekatan Five-Factor Model (Big 5), maka aitem dalam skala tersebut adalah observed variable, sedangkan dimensi dari Big 5 (neuroticism, agreeableness, conscientiousness, dan extraversion) adalah latent variable.\nSeorang peneliti Psikologi Pendidikan ingin tahu apakah kepercayaan orang tua bahwa anaknya dapat berkembang secara natural (trust in organismic development - independent latent variable) berkorelasi dengan tingkat kemandirian anak (dependent latent variable)."
+  },
+  {
+    "objectID": "slides/materi-lvm-1.html#contohnya-1",
+    "href": "slides/materi-lvm-1.html#contohnya-1",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Contohnya…",
+    "text": "Contohnya…\n\n\n\nDalam konteks Psikologi Klinis, seorang pakar public mental health ingin tahu apakah status sosio-ekonomi (observed independent variable) dapat berdampak pada kondisi kesehatan mental individu (latent dependent variable).\nDalam sebuah penelitian Psikologi Sosial, peneliti ingin tahu apakah kepribadian seseorang (independent latent variable) dapat menjelaskan mengapa orang merespon pelanggaran moral secara berbeda (dependent latent variable)."
+  },
+  {
+    "objectID": "slides/materi-lvm-1.html#model-sem",
+    "href": "slides/materi-lvm-1.html#model-sem",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Model SEM",
+    "text": "Model SEM\n\n\n\nModel regresi (linear/OLS)\n\nMenguji hubungan antar variabel observed\n\nModel jalur (path model)\n\nMenguji hubungan antara variabel observed dan latent\n\nModel pengukuran (measurement model/confirmatory factor analysis)\n\nMenguji apakah aitem-aitem dari skala Psikologi (yang mengukur konstruk laten tertentu) memang betul-betul mengukur konstruk tersebut  validitas konstruk.\n\nSEM (full model) biasanya mengandung setidaknya dua model, yaitu model pengukuran dan model struktural (regresi/jalur)."
+  },
+  {
+    "objectID": "slides/materi-lvm-1.html#mengapa-lvm-dilakukan",
+    "href": "slides/materi-lvm-1.html#mengapa-lvm-dilakukan",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Mengapa LVM dilakukan?",
+    "text": "Mengapa LVM dilakukan?\n\nPeneliti sudah memiliki kesadaran bahwa ia harus menyelidiki beberapa variabel penelitian secara bersamaan untuk menjawab pertanyaan penelitiannya.\nAda kesadaran bahwa peneliti selama ini mengabaikan faktor error pengkuran. LVM membantu peneliti untuk mengurangi efek measurement error terhadap hasil analisis data. Untuk itu, peneliti dapat sekaligus menguji properti/kualitas psikometrik instrumen yang digunakan.\nSelama beberapa dekade kebelakang, LVM termasuk teknik analisis data yang sudah cukup matang pengembangannya, dan dapat mudah dilakukan dengan bantuan perangkat lunak.\nPerangkat lunak LVM sudah cukup user-friendly\n\nJASP adalah perangkat lunak LVM yang hanya memerlukan coding yang sangat minimal.\nNamun JASP fungsinya agak terbatas, karena tidak menyediakan opsi power analysis (digunakan untuk merencanakan jumlah sampel) dan simulasi.\nSelain itu, peneliti dapat menggunakan Onyx, LISREL, AMOS, EQX, Mplus, STATA, dsb.\n\nLVM adalah teknik yang lebih sophisticated untuk menggambarkan hubungan antar-variabel karena membuang error pengukuran dari estimasi korelasi, dan mengurangi bias estimasi model karena konstruk laten diperlakukan sebagaimana mestinya, bukan dianggap seolah-olah observed variable."
+  },
+  {
+    "objectID": "slides/materi-lvm-1.html#yang-tidak-dicakup-oleh-workshop-ini",
+    "href": "slides/materi-lvm-1.html#yang-tidak-dicakup-oleh-workshop-ini",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Yang tidak dicakup oleh workshop ini…",
+    "text": "Yang tidak dicakup oleh workshop ini…\n\n\n\nExploratory factor analysis (EFA)\nFull model SEM\nA priori power analysis, Monte Carlo simulation, dan accuracy in parameter estimation (AIPE)  merupakan teknik-teknik yang digunakan untuk mengestimasi jumlah sampel\nMixture model (SEM untuk desain penelitian longitudinal)  latent growth curve\nModel SEM dengan missing data, ada variabel moderator/mediator, atau moderated mediation atau mediated moderation, atau ketika variabel indikatornya dichotomous\nHierarchical latent variable model\nSecond-order CFA\nSEM dengan model pengukuran formatif dan multiple indicators, multiple causes (MIMIC)"
+  },
+  {
+    "objectID": "slides/materi-lvm-1.html#ketika-menggunakan-lvm-sem-maka-asumsinya",
+    "href": "slides/materi-lvm-1.html#ketika-menggunakan-lvm-sem-maka-asumsinya",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Ketika menggunakan LVM-SEM, maka asumsinya…",
+    "text": "Ketika menggunakan LVM-SEM, maka asumsinya…\n\n\n🔊 Data berdistribusi normal (multivariate normality)\n🔊 Korelasi antar variabel sifatnya linear"
+  },
+  {
+    "objectID": "slides/materi-lvm-1.html#normalitas-data",
+    "href": "slides/materi-lvm-1.html#normalitas-data",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Normalitas data",
+    "text": "Normalitas data\n\nMengapa data tidak berdistribusi normal?\n\nBisa jadi bentuk datanya ordinal/nominal, sehingga kalau menggunakan skala Likert, maka kemungkinan besar distribusi data menjadi tidak normal.\nJumlah sampel terlalu sedikit.\nDistribusi data yang tidak normal akan berdampak pada variance-covariance matrix.\n\nApa yang harus dilakukan?\n\nUntuk mengkoreksi distribusi data yang juling (skewness), probit transformation merupakan strategi yang terbaik.\nUntuk mengkoreksi kurtosis yang tidak sesuai, membutuhkan prosedur yang agak lebih rumit. Beberapa diantaranya adalah dengan menambah jumlah responden, melakukan estimasi standard error dengan metode bootstrapping, atau bisa juga dengan menggunakan metode estimasi yang khusus untuk data yang tidak berdistribusi normal (weighted least squares)."
+  },
+  {
+    "objectID": "slides/materi-lvm-1.html#terima-kasih-banyak",
+    "href": "slides/materi-lvm-1.html#terima-kasih-banyak",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Terima kasih banyak! 😉",
+    "text": "Terima kasih banyak! 😉\n\nPaparan disusun dengan menggunakan  dan Quarto dengan tema quarto-unair-theme."
+  },
+  {
+    "objectID": "slides/materi-lvm-3.html#section",
+    "href": "slides/materi-lvm-3.html#section",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "",
+    "text": "Rizqy Amelia Zein\n\nDosen, Fakultas Psikologi, Universitas Airlangga\nAnggota, #SainsTerbuka Airlangga \nRelawan, INA-Rxiv\nResearcher-in-training, Institute for Globally Distributed Open Research and Education (IGDORE)"
+  },
+  {
+    "objectID": "slides/materi-lvm-3.html#analisis-jalur",
+    "href": "slides/materi-lvm-3.html#analisis-jalur",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Analisis jalur",
+    "text": "Analisis jalur\n\nPath model merupakan kelanjutan dari model regresi karena terdiri dari beberapa model regresi sekaligus sehingga dapat digunakan untuk menguji direct, indirect, dan correlated effects.\nPath model disusun secara visual dengan aturan tertentu (konsensus)\n\nGaris satu arah menggambarkan direct effects, yang merefleksikan keterkaitan langsung antara satu variabel dengan variabel lainnya. Asumsinya, tidak ada variabel lain diluar model yang berkorelasi dengan variabel tersebut.\nGaris dua arah menggambarkan covariance/korelasi, yang mengimplikasikan bahwa keterkaitan antar-variabel masih mungkin ditentukan oleh variabel lain yang tidak ada di dalam model.\nGaris error terms yang menunjukkan varians observed variable yang menjelaskan variabel lain yang tidak dapat dijelaskan/di luar model, yang juga mewakili measurement error."
+  },
+  {
+    "objectID": "slides/materi-lvm-3.html#korelasi-kausalitas",
+    "href": "slides/materi-lvm-3.html#korelasi-kausalitas",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Korelasi = kausalitas?",
+    "text": "Korelasi = kausalitas?\n\n\n\nAnalisis jalur sebenarnya adalah bentuk yang lebih kompleks dari korelasi, dan yang perlu diingat:\n\nCorrelation does not imply causation\nYang harus dipenuhi sebagai bukti kausalitas: * Ada urutan waktu (temporal order)  maka desain penelitian panel/longitudinal/time series harus digunakan * Adanya korelasi (covariance) antara kedua variabel * Peneliti harus melakukan kontrol atas variabel lain yang mungkin menjelaskan korelasi tsb (melakukan manipulasi, mengestimasi part atau partial correlation) * Peneliti melakukan manipulasi pada variabel X, yang menyebabkan perubahan pada variabel Y"
+  },
+  {
+    "objectID": "slides/materi-lvm-3.html#diagram-jalur",
+    "href": "slides/materi-lvm-3.html#diagram-jalur",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Diagram jalur",
+    "text": "Diagram jalur"
+  },
+  {
+    "objectID": "slides/materi-lvm-3.html#contoh",
+    "href": "slides/materi-lvm-3.html#contoh",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Contoh",
+    "text": "Contoh\n\n\nMarimar adalah seorang wali murid di sebuah PAUD di Kota Surabaya. Pada suatu hari, ia mengamati seorang anak (dan orangtua) yang perilakunya menarik perhatiannya.\nIbu anak tersebut ngotot untuk menunggui anaknya di sekolah, padahal guru kelas meminta agar Ibu pulang saja, mempercayakan anak pada guru, dengan tujuan melatih kemandirian anaknya.\nMelihat ibunya yang menggerutu karena diminta bu Guru pulang, si anak menangis meraung-raung tidak mau ditinggalkan. Akhirnya, terpaksa bu Guru membiarkan si Ibu menunggu di sekolah.\nMarimar heran sekaligus penasaran, mengapa tiap anak memberikan respon yang berbeda ketika ditinggal orangtuanya di sekolah. Ada yang menangis meraung-raung, ada yang lebih santai dengan langsung bermain. Apakah ada kaitan antara kemandirian anak dengan karakteristik orangtuanya?"
+  },
+  {
+    "objectID": "slides/materi-lvm-3.html#variabel-yang-diukur-marimar",
+    "href": "slides/materi-lvm-3.html#variabel-yang-diukur-marimar",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Variabel yang diukur Marimar",
+    "text": "Variabel yang diukur Marimar\n\ntrust (variabel independen) = Kepercayaan ibu bahwa perkembangan anak dapat berlangsung secara natural (trust in organismic development). Diukur dengan skala likert yang terdiri dari 5 aitem dengan 7 pilihan respon  dari sangat tidak setuju sampai sangat setuju.\nmandiri (variabel dependen) = Tingkat kemandirian anak. Anak dengan skor yang tinggi semakin menunjukkan independensi dan lebih santai ketika ditinggal orangtuanya di sekolah. Marimar mengukurnya dengan melakukan observasi berdasarkan ada/tidaknya berbagai perilaku yang menunjukkan kemandirian. Diantaranya adalah:\n\nMenangis ketika ditinggal orangtuanya\nMerengek atau merajuk ketika ditinggal\nMasuk ke dalam kelas tanpa ditemani\nMenaruh tas dalam loker yang disediakan tanpa bantuan pengantar\n\n\nBagaimana bentuk diagram jalurnya?"
+  },
+  {
+    "objectID": "slides/materi-lvm-3.html#nama-variabel-dan-koefisien-jalur",
+    "href": "slides/materi-lvm-3.html#nama-variabel-dan-koefisien-jalur",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Nama variabel dan koefisien jalur",
+    "text": "Nama variabel dan koefisien jalur\n\n\n\n\n\n\n\n\nNama Variabel/Koefisien\nHuruf Yunani\nHuruf Latin\n\n\n\n\nError pengukuran dari variabel X\nδ\nDelta\n\n\nError pengukuran dari variabel Y\nε\nEpsilon\n\n\nVariabel eksogen\nξ\nKsi\n\n\nVariabel endogen\nη\nEta\n\n\nDirect effect antara variabel laten dan indikatornya (loading factor)\nλ\nLambda\n\n\nDirect effect antara variabel endogen dan eksogen\nγ\nGamma\n\n\nDirect effect antara dua variabel laten\nβ\nBeta\n\n\nKorelasi (covariance) antara dua variabel laten\nφ\nPhi\n\n\nVarians error pengukuran dari sebuah variabel laten\nζ\nZeta"
+  },
+  {
+    "objectID": "slides/materi-lvm-3.html#contoh-model-dengan-koefisien-jalur",
+    "href": "slides/materi-lvm-3.html#contoh-model-dengan-koefisien-jalur",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Contoh model dengan koefisien jalur",
+    "text": "Contoh model dengan koefisien jalur"
+  },
+  {
+    "objectID": "slides/materi-lvm-3.html#tugas-1-membuat-diagram-jalur",
+    "href": "slides/materi-lvm-3.html#tugas-1-membuat-diagram-jalur",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "TUGAS 1: Membuat diagram jalur",
+    "text": "TUGAS 1: Membuat diagram jalur\n\n\nFernando Jose sebal sekali karena ia kembali kehilangan pengokotnya dan ini kali ketiga ia kehilangan pengokot yang baru dibelinya seminggu yang lalu.\nTeman-teman kerjanya memang punya kebiasaan buruk meminjam barang tanpa seijinnya. Ia akhirnya bertanya, apa ya yang menyebabkan teman-temannya berperilaku seperti itu?\nAkhirnya ia menduga, mungkin ada kaitannya dengan faktor kepribadian (conscientiousness) rekan kerjanya dan usia karyawan.\nIa menduga temannya yang lebih conscientious dan lebih tua akan lebih kecil kemungkinannya melakukan perilaku tidak beradab. Ia juga mengamati bahwa semakin tua usia rekan kerjanya, biasanya mereka lebih conscientious."
+  },
+  {
+    "objectID": "slides/materi-lvm-3.html#yang-diukur",
+    "href": "slides/materi-lvm-3.html#yang-diukur",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Yang diukur…",
+    "text": "Yang diukur…\n\ncon = Kecenderungan conscientiousness karyawan. Makin tinggi skornya, karyawan lebih mungkin menunjukkan kehati-hatian dan keteraturan dalam bekerja, efisien, dan bertanggung jawab. Diukur dengan skala Likert berisi 6 aitem dengan 10 pilihan jawaban.\nincivil = Intensitas perilaku tidak beradab. Makin besar skornya, karyawan akan lebih mungkin emotionally abusive, suka mengambil barang teman tanpa ijin, dan perilaku tidak pantas yang lain. Diukur dengan skala Likert berisi 4 aitem dengan 10 pilihan jawaban.\nusia = Usia partisipan\n\nBuatlah diagram jalur beserta koefisien jalurnya. Bisa dengan MS PowerPoint atau software yang lain.\n[Unggah file diagram jalur disini]"
+  },
+  {
+    "objectID": "slides/materi-lvm-3.html#lavaan-syntax",
+    "href": "slides/materi-lvm-3.html#lavaan-syntax",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "lavaan Syntax",
+    "text": "lavaan Syntax\n\nJASP mengadopsi syntax dari package lavaan, sehingga untuk menjalankan programnya, kita harus memasukkan serangkaian perintah.\nMeskipun begitu, syntax lavaan sangat sederhana dan familiar dengan syntax lavaan memberikan banyak keuntungan.\nMenjalankan perintah dengan syntax juga membantu peneliti untuk mereka-ulang hasil analisis datanya, serta mempermudah kolaborasi dengan peneliti yang terbiasa menggunakan perangkat lunak yang berbeda dengan kita."
+  },
+  {
+    "objectID": "slides/materi-lvm-3.html#dasar-syntax-lavaan",
+    "href": "slides/materi-lvm-3.html#dasar-syntax-lavaan",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Dasar syntax lavaan1",
+    "text": "Dasar syntax lavaan1\n\n\n\nBaujean, A.A. (2014). Latent Variable Modeling Using R: A step-by-step guide. New York: Routledge."
+  },
+  {
+    "objectID": "slides/materi-lvm-3.html#contoh-cfa-1",
+    "href": "slides/materi-lvm-3.html#contoh-cfa-1",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Contoh CFA (1)",
+    "text": "Contoh CFA (1)"
+  },
+  {
+    "objectID": "slides/materi-lvm-3.html#contoh-cfa-2",
+    "href": "slides/materi-lvm-3.html#contoh-cfa-2",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Contoh CFA (2)",
+    "text": "Contoh CFA (2)"
+  },
+  {
+    "objectID": "slides/materi-lvm-3.html#contoh-path-analysis-3",
+    "href": "slides/materi-lvm-3.html#contoh-path-analysis-3",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Contoh path analysis (3)",
+    "text": "Contoh path analysis (3)"
+  },
+  {
+    "objectID": "slides/materi-lvm-3.html#contoh-full-model-4",
+    "href": "slides/materi-lvm-3.html#contoh-full-model-4",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Contoh full model (4)",
+    "text": "Contoh full model (4)"
+  },
+  {
+    "objectID": "slides/materi-lvm-3.html#tugas-2-menulis-syntax-lavaan",
+    "href": "slides/materi-lvm-3.html#tugas-2-menulis-syntax-lavaan",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "TUGAS 2: Menulis syntax lavaan",
+    "text": "TUGAS 2: Menulis syntax lavaan\nTulislah syntax lavaan dari diagram jalur yang sudah dibuat di TUGAS 1\nKlik disini untuk mengisi lembar kerja"
+  },
+  {
+    "objectID": "slides/materi-lvm-3.html#terima-kasih-banyak",
+    "href": "slides/materi-lvm-3.html#terima-kasih-banyak",
+    "title": "Workshop Latent Variable Modeling (LVM)",
+    "section": "Terima kasih banyak! 😉",
+    "text": "Terima kasih banyak! 😉\n\nPaparan disusun dengan menggunakan  dan Quarto dengan tema quarto-unair-theme."
+  }
+]
