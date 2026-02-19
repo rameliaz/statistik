@@ -38,7 +38,7 @@ Kode tersedia secara terbuka di [repositori](https://github.com/rameliaz/mlm-lme
 :::: {.columns}
 ::: {.column width="50%"}
 
-## Sebelum istirahat (07.30-12.00)
+### Sebelum istirahat (07.30-12.00)
 
 **Pengantar**
 * Apa itu *latent variable modeling* (LVM) dan *structural equation modeling* (SEM)?
@@ -132,8 +132,8 @@ Kode tersedia secara terbuka di [repositori](https://github.com/rameliaz/mlm-lme
 
 # Apa itu *latent variable modeling*?
 
-## Pernahkah bapak/ibu menggunakan *structural equation modeling* (SEM) sebelumnya?
-## Untuk apa LVM-SEM digunakan?
+### Pernahkah bapak/ibu menggunakan *structural equation modeling* (SEM) sebelumnya?
+### Untuk apa LVM-SEM digunakan?
 
 :::
 ::: {.column width="50%"}
@@ -288,12 +288,10 @@ Kode tersedia secara terbuka di [repositori](https://github.com/rameliaz/mlm-lme
 :::
 ::::
 
-## {background-color="#14497F"}
+## Ketika menggunakan LVM-SEM, maka asumsinya... {background-color="#14497F"}
 
 :::: {.columns}
 ::: {.column width="50%"}
-
-### Ketika menggunakan LVM-SEM, maka asumsinya...
 
 ### 🔊 Data berdistribusi normal (*multivariate normality*)
 ### 🔊 Korelasi antar variabel sifatnya linear
