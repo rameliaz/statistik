@@ -8,7 +8,6 @@ format: unair-revealjs
 ---
 
 ```{r setup, include=FALSE}
-library(tidyverse)
 options(width = 120)
 ```
 
