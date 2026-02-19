@@ -50,7 +50,6 @@ format:
   html:
     theme: cosmo
     toc: true
-    toc-float: true
     toc-depth: 3
     df-print: paged
     highlight-style: tango
