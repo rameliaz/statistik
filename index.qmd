@@ -2,7 +2,7 @@
 title: "Statistik dalam Penelitian Psikologi"
 ---
 
-Laman web berikut ini merupakan laman web untuk materi **Statistik dalam Penelitian Psikologi**.
+Laman web ini berisi materi **Statistik dalam Penelitian Psikologi**.
 
 Materi berlisensi [<i class="fab fa-creative-commons"><i class="fa fa-universal-access"></i></i> BY 4.0](https://creativecommons.org/licenses/by/4.0/). **Materi bebas digunakan kembali namun wajib mengatribusi sumber aslinya**.
 
@@ -78,7 +78,7 @@ Klik _navigation bar_ yang mengarah pada PDF materi, kemudian tekan `ctrl` dan `
 
 ::: {.callout-tip}
 #### Menggambar diagram jalur
-Untuk menggambar diagram jalur, peserta dapat menggunakan MS Power Point, Canva, atau _software_ lainnya yang serupa. Rekomendasi saya: gunakan [draw.io](https://app.diagrams.net/?src=about) yang merupakan _software open source_ dan sangat unggul untuk menggambar berbagai macam diagram, termasuk _flowchart_.
+Untuk menggambar diagram jalur, mahasiswa dapat menggunakan MS Power Point, Canva, atau _software_ lainnya yang serupa. Rekomendasi saya: gunakan [draw.io](https://app.diagrams.net/?src=about) yang merupakan _software open source_ dan sangat unggul untuk menggambar berbagai macam diagram, termasuk _flowchart_.
 :::
 
 ### Bagian 6️⃣: _Principal Component Analysis_ (PCA) dan _Exploratory Factor Analysis_ (EFA)
@@ -88,10 +88,10 @@ Untuk menggambar diagram jalur, peserta dapat menggunakan MS Power Point, Canva,
 * *Principal Component Analysis* (PCA): reduksi dimensi & *unsupervised learning* dalam ML
 * *Eigenvalue*, *scree plot*, dan *component loadings*
 * PCA vs EFA: tujuan, model, dan kapan menggunakan yang mana
-* Komunalitas (h²) dan keunikan — indikator kualitas *item*
-* Menentukan jumlah faktor: *parallel analysis* (direkomendasikan), *scree plot*, Kaiser criterion
-* Rotasi orthogonal vs. oblique — mengapa konstruk psikologi hampir selalu membutuhkan oblique
-* Metode ekstraksi: MinRes, PAF, dan Maximum Likelihood
+* Komunalitas (h²) dan keunikan
+* Menentukan jumlah faktor: *parallel analysis*, *scree plot*, Kaiser criterion
+* Rotasi _orthogonal_ vs. _oblique_
+* Metode ekstraksi faktor: MinRes, PAF, dan Maximum Likelihood
 * Asumsi & kesiapan data: KMO, Bartlett's test, dan ukuran sampel
 * Evaluasi model: *fit indices* (RMSEA, CFI, TLI) dan reliabilitas (α vs. ω)
 * Checklist pelaporan EFA & kesalahan umum
