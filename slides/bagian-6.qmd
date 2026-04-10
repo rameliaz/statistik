@@ -237,7 +237,7 @@ Gunakan kombinasi ***parallel analysis*** + *scree plot* + teori sebagai dasar k
 :::
 
 ::: {.callout-tip}
-Konstruk psikologi hampir **selalu berkorelasi** — misalnya kelelahan emosional dan sinisme pada *burnout*. Gunakan rotasi **oblique** sebagai *default*. Jika korelasi antar faktor sangat rendah (< 0.15), rotasi orthogonal bisa dipertimbangkan.
+Konstruk psikologi hampir **selalu berkorelasi**, misalnya: kelelahan emosional dan sinisme pada *burnout*. Gunakan rotasi **oblique** sebagai *default*. Jika korelasi antar faktor sangat rendah (< 0.15), rotasi _orthogonal_ bisa dipertimbangkan.
 :::
 
 ## Metode ekstraksi di jamovi

@@ -277,7 +277,7 @@
     "href": "slides/bagian-3.html#outcome-biner-ada-di-berbagai-konteks",
     "title": "Regresi Logistik Binomial",
     "section": "Outcome biner ada di berbagai konteks",
-    "text": "Outcome biner ada di berbagai konteks\n\nPutus studi PJJ: Sepertiga mahasiswa PJJ tidak menyelesaikan studinya sebelum semester kelima (Tinto, 1987; Park & Choi, 2009)\nRelapse gangguan kecemasan: 40–60% pasien mengalami kekambuhan dalam jangka panjang setelah remisi (Bruce et al., 2005, American Journal of Psychiatry)\nTurnover karyawan: 15–20% per tahun dianggap normal; di atas angka itu menandakan masalah organisasi (SHRM, 2023)\nPercobaan bunuh diri: Sekitar 2.4% prajurit militer AS melakukan percobaan bunuh diri dalam satu tahun (Kessler et al., 2014, Molecular Psychiatry)\n\n\n\n\n\n\n\nNote\n\n\nOutcome ini bukan skor 1–100 (data continous). Mereka adalah keputusan biner: terjadi (1) atau tidak terjadi (0). Kita membutuhkan metode statistik yang dirancang untuk memodelkan probabilitas kejadian seperti ini."
+    "text": "Outcome biner ada di berbagai konteks\n\nPutus studi PJJ: Sepertiga mahasiswa PJJ tidak menyelesaikan studinya sebelum semester kelima (Tinto, 1987; [Park & Choi, 2009(https://www.jstor.org/stable/jeductechsoci.12.4.207)])\nRelapse gangguan kecemasan: 40–60% pasien mengalami kekambuhan dalam jangka panjang setelah remisi (Bruce et al., 2005)\nTurnover karyawan: 15–20% per tahun dianggap normal; di atas angka itu menandakan masalah organisasi (SHRM, 2023)\nPercobaan bunuh diri: Sekitar 2.4% prajurit militer AS melakukan percobaan bunuh diri dalam satu tahun (Kessler et al., 2014)\n\n\n\n\n\n\n\nNote\n\n\nOutcome ini bukan skor 1–100 (data continous). Mereka adalah keputusan biner: terjadi (1) atau tidak terjadi (0). Kita membutuhkan metode statistik yang dirancang untuk memodelkan probabilitas kejadian seperti ini."
   },
   {
     "objectID": "slides/bagian-3.html#regresi-linear-menghasilkan-prediksi-yang-mustahil",
@@ -1138,7 +1138,7 @@
     "href": "slides/bagian-6.html#rotasi-dalam-efa",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Rotasi dalam EFA",
-    "text": "Rotasi dalam EFA\n\nOrthogonal (faktor tidak berkorelasi) — Varimax\n\nMenghasilkan satu matriks: factor loadings\nAsumsi independensi sering tidak realistis dalam psikologi\n\nOblique (faktor boleh berkorelasi) — Promax, Direct Oblimin\n\nMenghasilkan pattern matrix (kontribusi unik faktor ke item) — ini yang dilaporkan\nJuga menghasilkan structure matrix dan factor correlation matrix\n\n\n\n\n\n\n\n\nTip\n\n\nKonstruk psikologi hampir selalu berkorelasi — misalnya kelelahan emosional dan sinisme pada burnout. Gunakan rotasi oblique sebagai default. Jika korelasi antar faktor sangat rendah (&lt; 0.15), rotasi orthogonal bisa dipertimbangkan."
+    "text": "Rotasi dalam EFA\n\nOrthogonal (faktor tidak berkorelasi) — Varimax\n\nMenghasilkan satu matriks: factor loadings\nAsumsi independensi sering tidak realistis dalam psikologi\n\nOblique (faktor boleh berkorelasi) — Promax, Direct Oblimin\n\nMenghasilkan pattern matrix (kontribusi unik faktor ke item) — ini yang dilaporkan\nJuga menghasilkan structure matrix dan factor correlation matrix\n\n\n\n\n\n\n\n\nTip\n\n\nKonstruk psikologi hampir selalu berkorelasi, misalnya: kelelahan emosional dan sinisme pada burnout. Gunakan rotasi oblique sebagai default. Jika korelasi antar faktor sangat rendah (&lt; 0.15), rotasi orthogonal bisa dipertimbangkan."
   },
   {
     "objectID": "slides/bagian-6.html#metode-ekstraksi-di-jamovi",
