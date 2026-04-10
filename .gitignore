@@ -4,5 +4,9 @@
 .Ruserdata
 
 /.quarto/
+/.claude/
+/additional_topic/
+/archive_old_files/
 
 **/*.quarto_ipynb
+CLAUDE.md
