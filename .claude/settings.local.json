@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "Bash(quarto add:*)",
+      "Bash(git add:*)",
+      "Bash(git -C \"H:/My Drive/02 ID Ngajar dan Admin/01 Mengajar/Teknik Analisis Data - Stats/lvm-cfa\" log --oneline -5)",
+      "Bash(git -C \"H:/My Drive/02 ID Ngajar dan Admin/01 Mengajar/Teknik Analisis Data - Stats/lvm-cfa\" diff 31ae428..3092ee5 --name-only)",
+      "Bash(git -C \"H:/My Drive/02 ID Ngajar dan Admin/01 Mengajar/Teknik Analisis Data - Stats/lvm-cfa\" diff 31ae428..3092ee5)",
+      "Bash(git commit:*)",
+      "Bash(python -c \":*)",
+      "Bash(python:*)",
+      "Bash(quarto render:*)",
+      "Bash(grep -E '\\\\.\\(csv|jasp|xlsx|pdf|R\\)$')",
+      "Bash(find 'H:/My Drive/02 ID Ngajar dan Admin/01 Mengajar/02 Teknik Analisis Data - Stats/lvm-cfa/docs' -name *.woff2 -o -name all.min.css)",
+      "Bash(mv bagian-1.qmd bagian-TEMP.qmd)",
+      "Bash(mv bagian-2.qmd bagian-1.qmd)",
+      "Bash(mv bagian-3.qmd bagian-2.qmd)",
+      "Bash(mv bagian-TEMP.qmd bagian-3.qmd)",
+      "Bash(ls bagian-*.qmd)"
+    ]
+  }
+}

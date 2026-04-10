@@ -1,47 +1,94 @@
 ---
-title: "Workshop Confirmatory Factor Analysis (LVM)"
+title: "Dasar _Latent Variable Modeling_"
 ---
 
-## Deskripsi
-Berikut adalah repositori yang digunakan untuk menyimpan semua materi untuk **Workshop *Confirmatory Factor Analysis*** yang diselenggarakan oleh Fakultas Psikologi, Universitas Negeri Semarang. Materi *workshop* ini merupakan bagian (yang dimodifikasi) dari *workshop* *Multigroup Structural Equation modeling* yang diadakan oleh Fakultas Psikologi Universitas Airlangga. Untuk mengakses materi dan rekaman dari *workshop* `MG-SEM`, silahkan [klik tautan ini](https://rameliaz.github.io/mg-sem-workshop/).
+Laman web berikut ini merupakan laman web untuk **Workshop Dasar-Dasar _Latent Variable Modeling_**.
 
-Materi berlisensi [*Creative Commons* BY 4.0](https://creativecommons.org/licenses/by/4.0/). **Materi bebas digunakan kembali namun wajib mengatribusi sumber aslinya**.
-
-
-## Waktu dan tempat
-*Workshop* diselenggarakan pada hari **Kamis, 30 Januari 2020**, pukul 07.30-16.00 WIB di Gedung A1 Ruang 204 Fakultas Ilmu Pendidikan, Universitas Negeri Semarang.
-
+Materi berlisensi [<i class="fab fa-creative-commons"><i class="fa fa-universal-access"></i></i> BY 4.0](https://creativecommons.org/licenses/by/4.0/). **Materi bebas digunakan kembali namun wajib mengatribusi sumber aslinya**.
 
 ## *Outline* materi
 
-Berikut adalah *outline* materi *workshop*:
-
-##### **Pengantar**
-* Apa itu *latent variable modeling* (LVM)?
-* Mengapa dan pada kondisi seperti apa LVM diperlukan?
-* Beberapa pilihan perangkat lunak untuk mengeksekusi LVM
-* Yang tidak dicakup dalam *workshop* serta keterbatasan JASP
-
-##### **Korelasi**
+### Bagian 1️⃣: Korelasi
 * Jenis-jenis koefisien korelasi
 * Faktor-faktor yang membuat koefisien korelasi bervariasi
 * [Koreksi atenuasi](https://methods.sagepub.com/reference/encyc-of-research-design/n81.xml) dan *measurement error*
 * *Variance-covariance* dan *correlation matrix*
 * *WARNING! Covariance/correlation matrix is not positive definite*
-* [*Heywood* dan *ultra-Heywood case*](https://journals.sagepub.com/doi/10.1177/0049124112442138)
+* [*Heywood* dan *Ultra-Heywood case*](https://journals.sagepub.com/doi/10.1177/0049124112442138)
 * Bivariat, *part*, dan *partial correlation*
-* Metrik variabel (*standardised* vs *unstandardised*)
+* Metrik variabel (*standardized* vs *unstandardized*)
 
-##### **Model Jalur** (*Path Model*) dan Model Regresi
+### Bagian 2️⃣: _Ordinary Least Square Regression_
+* Berlatih menginspeksi data secara visual dengan _scatterplot_
+* Model regresi linear (_ordinary least square_)
+* Menarik garis regresi (_fitted regression line_)
+* Varians yang dapat dan yang tidak dapat dijelaskan oleh model (_R_^2^)
+* Menguji hipotesis
+* Mengecek kecocokan model dengan data (_model fit_)
+* Mengecek asumsi
+  - Distribusi (normalitas) residual
+  - Homoskedastisitas
+  - Multikolinearitas
+* Mendeteksi _outliers_
+* Menguji _interaction effects_ dan _model change_
+* Menulis hasil analisis regresi linear dengan _interaction terms_ dalam manuskrip
+
+### Bagian 3️⃣: Regresi Logistik Binomial
+
+* Mengapa regresi linear tidak cocok untuk *outcome* biner?
+* Fungsi logistik dan kurva S (*sigmoid*)
+* Rantai konsep: probabilitas → *odds* → *log odds* (logit) → *odds ratio* (OR)
+* Persamaan model & interpretasi koefisien (β dan OR = e^β)
+* Estimasi dengan *Maximum Likelihood* (MLE): *deviance*, *Likelihood Ratio Test*
+* Membandingkan model: AIC, BIC, dan Pseudo R² (Nagelkerke)
+* Model dengan banyak prediktor: *adjusted* OR dan efek interaksi
+* Asumsi regresi logistik (lebih longgar dari OLS: tidak perlu normalitas residual atau homoskedastisitas)
+* Evaluasi akurasi prediksi: *confusion matrix*, *sensitivity*, *specificity*, AUC
+* Pelaporan hasil sesuai APA & terjemahan OR ke bahasa yang dipahami semua orang
+* Kesalahan umum: OR vs. *risk ratio*, *events per variable* (EPV), *stepwise selection*
+
+### Bagian 4️⃣: Pengantar _Latent Variable Modeling_
+* Apa yang dimaksud dengan variabel laten? Mengapa psikologi membutuhkannya?
+* _Classical Test Theory_ sebagai model variabel laten paling sederhana
+* Reliabilitas dan *measurement error*: mengapa skor observasi selalu mengandung *noise*
+* *Attenuation bias*: bagaimana *measurement error* mendistorsi estimasi hubungan antar-variabel
+* Keluarga model variabel laten: CTT → EFA → CFA → SEM
+* Variabel laten dalam model *reflektif* vs *formatif*
+* Pilihan perangkat lunak
+* Cakupan materi dan keterbatasannya
+
+### Bagian 5️⃣: Model Jalur (*Path Model*) dan Model Regresi
 * Definisi *path model*
 * Nama variabel dan koefisien jalur (*path coefficients*)
   * δ (delta), ε (epsilon), ξ (ksi), η (eta), λ (lambda), γ (gamma), β (beta), φ (phi), ζ (zeta)
 * Representasi visual model jalur menggunakan diagram jalur (*path diagram*)
 * Menggambarkan hubungan antar-variabel dengan menggunakan diagram jalur
-* *Syntax* `lavaan` untuk spesifikasi model jalur
+* Spesifikasi model dengan _syntax_ `lavaan` untuk spesifikasi model jalur di _module_ SEMLj
 * Asumsi kausalitas (?) dan limitasi
 
-##### **Confirmatory Factor Analysis (CFA)**
+::: {.callout-tip}
+#### Menggambar diagram jalur
+Untuk menggambar diagram jalur, peserta dapat menggunakan MS Power Point, Canva, atau _software_ lainnya yang serupa. Rekomendasi saya: gunakan [draw.io](https://app.diagrams.net/?src=about) yang merupakan _software open source_ dan sangat unggul untuk menggambar berbagai macam diagram, termasuk _flowchart_.
+:::
+
+### Bagian 6️⃣: _Principal Component Analysis_ (PCA) dan _Exploratory Factor Analysis_ (EFA)
+
+* Mengapa kita perlu analisis faktor? *Measurement error* dan *attenuation bias*
+* Keluarga model variabel laten: CTT → EFA → CFA → SEM
+* *Principal Component Analysis* (PCA): reduksi dimensi & *unsupervised learning* dalam ML
+* *Eigenvalue*, *scree plot*, dan *component loadings*
+* PCA vs EFA: tujuan, model, dan kapan menggunakan yang mana
+* Komunalitas (h²) dan keunikan — indikator kualitas *item*
+* Menentukan jumlah faktor: *parallel analysis* (direkomendasikan), *scree plot*, Kaiser criterion
+* Rotasi orthogonal vs. oblique — mengapa konstruk psikologi hampir selalu membutuhkan oblique
+* Metode ekstraksi: MinRes, PAF, dan Maximum Likelihood
+* Asumsi & kesiapan data: KMO, Bartlett's test, dan ukuran sampel
+* Evaluasi model: *fit indices* (RMSEA, CFI, TLI) dan reliabilitas (α vs. ω)
+* Checklist pelaporan EFA & kesalahan umum
+
+
+
+### Bagian 7️⃣: _Confirmatory Factor Analysis_ (CFA)
 * Definisi *factor analysis*
 * *Exploratory* vs *confirmatory factor analysis*
 * Kapan menggunakan CFA?
@@ -50,78 +97,47 @@ Berikut adalah *outline* materi *workshop*:
 * Variabel indikator (reflektif vs formatif)
 * *Correlated error variances*
 * Metode estimasi
-* Jenis-jenis kriteria untuk menilai ketepatan model (*model fit*)
-  * [*Model fit*](http://www.ejbrm.com/issue/download.html?idArticle=183)
-  * *Model comparison*/*Incremental fit indices*
-  * *Model parsimony*
-  * *Parameter fit*
 * Menuliskan hasil analisis CFA dalam laporan penelitian
 
+::: {.callout-note}
+#### Unduh materi dalam bentuk PDF 
+Klik _navigation bar_ yang mengarah pada PDF materi, kemudian tekan `ctrl` dan `p` bersamaan. Setelah _window_ untuk _print_ muncul, pilih `Save to PDF` dan klik `Save`.
+:::
 
 ## Referensi
 
 * Baujean, A.A. (2014). *Latent Variable Modeling Using R: A step-by-step guide*. New York: Routledge.
+* Galluci, M. (2025). SEMLj: A Suite for Structural Equation Models for jamovi (v1.2.5). <https://semlj.github.io/index.html>
 * Schumacker, R.E. & Lomax, R.G. (2016). *A Beginner's Guide to Structural Equation Modeling (4th edition)*. New York: Routledge.
-* Van De Schoot, R., Schmidt, P., De Beuckelaer, A., Lek, K., & Zondervan-Zwijnenburg, M. (2015). [Measurement invariance](https://www.frontiersin.org/articles/10.3389/fpsyg.2015.01064/full). Frontiers in psychology, 6, 1064.
-* Putnick, D. L., & Bornstein, M. H. (2016). [Measurement invariance conventions and reporting: The state of the art and future directions for psychological research](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5145197/). Developmental review, 41, 71-90.
-* Cho, E. (2016). [Making Reliability Reliable: A Systematic approach to reliability coefficients](https://rameliaz.github.io/mg-sem-workshop/cho2016.pdf). Organizational Research Methods, 19(4), 651-682.
-
-
-## Contoh penelitian dengan `CFA`
-
-* Rodriguez, V. J., Radusky, P. D., Kumar, M., Nemeroff, C. B., & Jones, D. (2018). [Measurement invariance of the Childhood Trauma Questionnaire by gender, poverty level, and HIV status](https://www.sciencedirect.com/science/article/abs/pii/S2468171718300085). Personalized Medicine in Psychiatry, 11, 16-22.
-* Liu, Y., Millsap, R. E., West, S. G., Tein, J. Y., Tanaka, R., & Grimm, K. J. (2017). [Testing measurement invariance in longitudinal data with ordered-categorical measures](https://psycnet.apa.org/record/2016-25480-001). Psychological methods, 22(3), 486.
-* Bowden, S. C., Saklofske, D. H., Van de Vijver, F. J. R., Sudarshan, N. J., & Eysenck, S. B. G. (2016). [Cross-cultural measurement invariance of the Eysenck Personality Questionnaire across 33 countries](https://www.sciencedirect.com/science/article/abs/pii/S0191886916302835). Personality and Individual Differences, 103, 53-60.
-* Bieda, A., Hirschfeld, G., Schönfeld, P., Brailovskaia, J., Zhang, X. C., & Margraf, J. (2017). [Universal happiness? Cross-cultural measurement invariance of scales assessing positive mental health](http://www.kli.psy.ruhr-uni-bochum.de/klipsy/public/margraf%20Journals%20with%20Peer-Review/Bieda%20et%20al%202016%20Universal%20happiness.pdf). Psychological assessment, 29(4), 408.
-
 
 ## Sumber belajar lainnya
 
-* [Learning Statistics with JASP](https://learnstatswithjasp.com/)
-* [Undergraduate Statistics with JASP](https://osf.io/t56kg/)
-* [Materi workshop SEM: Sacha Epskamp](http://sachaepskamp.com/SEM2019)
+* [Learning Statistics with jamovi](https://www.learnstatswithjamovi.com/)
+* [Video tutorial jamovi dari Datalab](https://datalab.cc/tools/jamovi)
+* [Materi workshop SEM: Sacha Epskamp](http://sachaepskamp.com/workshop-materials/Psych_rstats_Club.zip)
+* Cho, E. (2016). [Making Reliability Reliable: A Systematic approach to reliability coefficients](articles/cho2016.pdf). _Organizational Research Methods, 19_(4), 651-682.
 
+## Sebelum mulai _workshop_
 
-## Sebelum mulai workshop
+* Sebaiknya semua peserta sudah memasang jamovi pada perangkatnya masing-masing, untuk menghindari terlalu banyaknya waktu untuk menyelesaikan *troubleshooting* instalasi ketika *workshop*.
+* Peserta sangat disarankan untuk menonton [video tutorial jamovi](https://datalab.cc/tools/jamovi) sebelum *workshop* untuk belajar menavigasikan menu dan fitur yang ada dalam jamovi. Cukup hanya dengan menonton bagian *Welcome*, *Installing jamovi*, dan *Navigating jamovi* (total durasi kurang lebih hanya 7 menit).
 
-* Sebaiknya semua peserta sudah memasang [JASP versi 0.11.1](https://jasp-stats.org/download/) pada perangkatnya masing-masing, untuk menghindari terlalu banyaknya waktu untuk menyelesaikan *troubleshooting* instalasi ketika *workshop*.
-* Peserta sangat disarankan untuk menonton video tutorial JASP di bawah ini sebelum *workshop* untuk belajar menavigasikan menu dan fitur yang ada dalam JASP (total durasi kurang lebih hanya 5 menit).
+## Cara instalasi *module* SEMLj v1.2.5
 
-<center><iframe width="560" height="315" src="https://www.youtube.com/embed/HxqB7CUA-XI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+Gunakan **jamovi versi stabil yang terbaru** (2.6.44) [untuk Windows](https://www.jamovi.org/downloads/jamovi-2.6.44.0-win-x64.exe) atau [MacOS](https://www.jamovi.org/download.html).
 
+Mohon untuk menyimak video cara mengelola *modules* di jamovi berikut ini. Di video ini saya mencontohkan cara instalasi _module_ GAMLj. Instalasi _modules_ SEMj v1.2.5 mengikuti prosedur yang persis sama.
 
-## Video rekaman
+{{< video https://www.youtube.com/watch?v=XWavBKgTEuU >}}
 
-#### Sesi 1 (09.00-12.00)
+## Tutorial jamovi + _modules_
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/L38yXlxbO-Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Saat ini, sudah cukup banyak tutorial jamovi yang tersedia. Salah satu yang paling populer dan komperhensif adalah tutorial di bawah ini ⬇️
 
+{{< video https://youtu.be/t0tQcs-E5Z4?si=wur9Er_M92zR-J2v >}}
 
-#### Sesi 2 (13.00-16.00)
+[Simak seluruh video tutorial di <i class="fa-brands fa-youtube"></i> _playlist_.](https://www.youtube.com/playlist?list=PLvYqRUmlLZUMJ0EUxuTAA1f407wmBQ1QX)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6AtXbwYrs0s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+## Evaluasi _workshop_
 
-## Pembaruan dan koreksi
-
-
-## Poster kegiatan
-
-<center><img src="slides/libs/poster.jpg" style="width:70%;" class="fancyimage"/></center><br>
-
-
-## Jawaban Latihan
-
-
-### Latihan Mandiri (1):
-
-[Klik disini untuk melihat jawaban]() saya atas latihan mandiri (1).
-
-
-### Latihan Mandiri (2):
-
-[Klik disini untuk melihat jawaban]() saya atas latihan mandiri (2).
-
-
-### Latihan Mandiri (3):
-
-[Klik disini untuk melihat jawaban]() saya atas latihan mandiri (3).
+Setelah _workshop_, peserta dimohon untuk mengisi kuesioner evaluasi yang dapat diakses di _menu bar_ `Survei` bagian pojok kanan atas sebagai bahan evaluasi untuk meningkatkan kualitas materi _workshop_ di masa depan.

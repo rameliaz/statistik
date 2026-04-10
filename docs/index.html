@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.14">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Workshop Confirmatory Factor Analysis (LVM) – Latent Variable Modeling Workshop</title>
+<title>Dasar Latent Variable Modeling – Statistik dalam Penelitian Psikologi</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -37,10 +37,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-9296fe73bbad8f343f0ce627c6821639.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-8b4baf804e461d9b72633f0de59a0cac.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f1aadacce99040138bbb613f9330654f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-8b4baf804e461d9b72633f0de59a0cac.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3670914a1f1c8e106c449ff9f6bfcc9f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-60d4398d82fec002ccec76571ed06d15.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-6c9d4b6e8397689ef559897df4fbe577.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-60d4398d82fec002ccec76571ed06d15.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -53,7 +57,6 @@ ul.task-list li input[type="checkbox"] {
     "/",
     "s"
   ],
-  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -68,11 +71,174 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -80,7 +246,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Latent Variable Modeling Workshop</span>
+    <span class="navbar-title">Statistik dalam Penelitian Psikologi</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -90,59 +256,84 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://rameliaz.github.io/"> 
+    <a class="nav-link" href="https://rameliaz.github.io/"> <i class="bi bi-house" role="img">
+</i> 
 <span class="menu-text">oleh Rizqy Amelia Zein</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/rameliaz/mg-sem-workshop"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/rameliaz/lvm-cfa"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-salindia-(html" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Salindia (HTML)</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-materi-(html" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Materi (html)</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-salindia-(html">    
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-materi-(html">    
         <li>
-    <a class="dropdown-item" href="./slides/materi-lvm-1.html">
- <span class="dropdown-text">Bagian 1</span></a>
+    <a class="dropdown-item" href="./slides/bagian-1.html">
+ <span class="dropdown-text">Bagian 1: Korelasi</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./slides/materi-lvm-2.html">
- <span class="dropdown-text">Bagian 2</span></a>
+    <a class="dropdown-item" href="./slides/bagian-2.html">
+ <span class="dropdown-text">Bagian 2: Regresi OLS</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./slides/materi-lvm-3.html">
- <span class="dropdown-text">Bagian 3</span></a>
+    <a class="dropdown-item" href="./slides/bagian-3.html">
+ <span class="dropdown-text">Bagian 3: Pengantar LVM</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./slides/materi-lvm-4.html">
- <span class="dropdown-text">Bagian 4</span></a>
+    <a class="dropdown-item" href="./slides/bagian-4.html">
+ <span class="dropdown-text">Bagian 4: Regresi Logistik</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./slides/bagian-5.html">
+ <span class="dropdown-text">Bagian 5: Model Jalur</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./slides/bagian-6.html">
+ <span class="dropdown-text">Bagian 6: EFA-PCA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./slides/bagian-7.html">
+ <span class="dropdown-text">Bagian 7: CFA</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-salindia-(pdf" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Salindia (PDF)</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-materi-(pdf" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Materi (pdf)</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-salindia-(pdf">    
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-materi-(pdf">    
         <li>
-    <a class="dropdown-item" href="./slides/materi-lvm-1.pdf">
- <span class="dropdown-text">Bagian 1</span></a>
+    <a class="dropdown-item" href="./slides/bagian-1.html?print-pdf">
+ <span class="dropdown-text">Bagian 1: Korelasi</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./slides/materi-lvm-2.pdf">
- <span class="dropdown-text">Bagian 2</span></a>
+    <a class="dropdown-item" href="./slides/bagian-2.html?print-pdf">
+ <span class="dropdown-text">Bagian 2: Regresi OLS</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./slides/materi-lvm-3.pdf">
- <span class="dropdown-text">Bagian 3</span></a>
+    <a class="dropdown-item" href="./slides/bagian-3.html?print-pdf">
+ <span class="dropdown-text">Bagian 3: Pengantar LVM</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./slides/materi-lvm-4.pdf">
- <span class="dropdown-text">Bagian 4</span></a>
+    <a class="dropdown-item" href="./slides/bagian-4.html?print-pdf">
+ <span class="dropdown-text">Bagian 4: Regresi Logistik</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./slides/bagian-5.html?print-pdf">
+ <span class="dropdown-text">Bagian 5: Model Jalur</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./slides/bagian-6.html?print-pdf">
+ <span class="dropdown-text">Bagian 6: EFA-PCA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./slides/bagian-7.html?print-pdf">
+ <span class="dropdown-text">Bagian 7: CFA</span></a>
   </li>  
     </ul>
   </li>
@@ -152,20 +343,28 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-dataset">    
         <li>
-    <a class="dropdown-item" href="./corr.jasp">
+    <a class="dropdown-item" href="./materials/corr.omv">
  <span class="dropdown-text">Dataset Contoh Korelasi</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./contoh-cfa.jasp">
- <span class="dropdown-text">Dataset Contoh CFA (*.jasp)</span></a>
+    <a class="dropdown-item" href="./materials/latihancorr.csv">
+ <span class="dropdown-text">Dataset Latihan Korelasi</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./contoh-cfa.csv">
- <span class="dropdown-text">Dataset Contoh CFA (*.csv)</span></a>
+    <a class="dropdown-item" href="./materials/dataset-sekolah.omv">
+ <span class="dropdown-text">Dataset Latihan Regresi OLS</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./dataset-wave1.csv">
- <span class="dropdown-text">Dataset Latihan CFA (*.csv)</span></a>
+    <a class="dropdown-item" href="./materials/dataset-social-support.omv">
+ <span class="dropdown-text">Dataset Contoh Regresi Logistik</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./materials/dataset-burnout.omv">
+ <span class="dropdown-text">Dataset Contoh EFA-PCA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./materials/contoh-cfa.omv">
+ <span class="dropdown-text">Dataset Contoh CFA</span></a>
   </li>  
     </ul>
   </li>
@@ -175,14 +374,30 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-survei">    
         <li>
-    <a class="dropdown-item" href="https://www.soscisurvey.de/invited-talk-feedback/">
+    <a class="dropdown-item" href="https://www.soscisurvey.de/fb-workshop-amel/">
  <span class="dropdown-text">Evaluasi Workshop</span></a>
   </li>  
     </ul>
   </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:amelia.zein@psikologi.unair.ac.id"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/rameliaz"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://discord.com/users/807046335613632555"> <i class="bi bi-discord" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -196,31 +411,32 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#deskripsi" id="toc-deskripsi" class="nav-link active" data-scroll-target="#deskripsi">Deskripsi</a></li>
-  <li><a href="#waktu-dan-tempat" id="toc-waktu-dan-tempat" class="nav-link" data-scroll-target="#waktu-dan-tempat">Waktu dan tempat</a></li>
-  <li><a href="#outline-materi" id="toc-outline-materi" class="nav-link" data-scroll-target="#outline-materi"><em>Outline</em> materi</a></li>
-  <li><a href="#referensi" id="toc-referensi" class="nav-link" data-scroll-target="#referensi">Referensi</a></li>
-  <li><a href="#contoh-penelitian-dengan-cfa" id="toc-contoh-penelitian-dengan-cfa" class="nav-link" data-scroll-target="#contoh-penelitian-dengan-cfa">Contoh penelitian dengan <code>CFA</code></a></li>
-  <li><a href="#sumber-belajar-lainnya" id="toc-sumber-belajar-lainnya" class="nav-link" data-scroll-target="#sumber-belajar-lainnya">Sumber belajar lainnya</a></li>
-  <li><a href="#sebelum-mulai-workshop" id="toc-sebelum-mulai-workshop" class="nav-link" data-scroll-target="#sebelum-mulai-workshop">Sebelum mulai workshop</a></li>
-  <li><a href="#video-rekaman" id="toc-video-rekaman" class="nav-link" data-scroll-target="#video-rekaman">Video rekaman</a></li>
-  <li><a href="#pembaruan-dan-koreksi" id="toc-pembaruan-dan-koreksi" class="nav-link" data-scroll-target="#pembaruan-dan-koreksi">Pembaruan dan koreksi</a></li>
-  <li><a href="#poster-kegiatan" id="toc-poster-kegiatan" class="nav-link" data-scroll-target="#poster-kegiatan">Poster kegiatan</a></li>
-  <li><a href="#jawaban-latihan" id="toc-jawaban-latihan" class="nav-link" data-scroll-target="#jawaban-latihan">Jawaban Latihan</a>
+  <li><a href="#outline-materi" id="toc-outline-materi" class="nav-link active" data-scroll-target="#outline-materi"><em>Outline</em> materi</a>
   <ul class="collapse">
-  <li><a href="#latihan-mandiri-1" id="toc-latihan-mandiri-1" class="nav-link" data-scroll-target="#latihan-mandiri-1">Latihan Mandiri (1):</a></li>
-  <li><a href="#latihan-mandiri-2" id="toc-latihan-mandiri-2" class="nav-link" data-scroll-target="#latihan-mandiri-2">Latihan Mandiri (2):</a></li>
-  <li><a href="#latihan-mandiri-3" id="toc-latihan-mandiri-3" class="nav-link" data-scroll-target="#latihan-mandiri-3">Latihan Mandiri (3):</a></li>
+  <li><a href="#bagian-1-korelasi" id="toc-bagian-1-korelasi" class="nav-link" data-scroll-target="#bagian-1-korelasi">Bagian 1️⃣: Korelasi</a></li>
+  <li><a href="#bagian-2-ordinary-least-square-regression" id="toc-bagian-2-ordinary-least-square-regression" class="nav-link" data-scroll-target="#bagian-2-ordinary-least-square-regression">Bagian 2️⃣: <em>Ordinary Least Square Regression</em></a></li>
+  <li><a href="#bagian-3-regresi-logistik-binomial" id="toc-bagian-3-regresi-logistik-binomial" class="nav-link" data-scroll-target="#bagian-3-regresi-logistik-binomial">Bagian 3️⃣: Regresi Logistik Binomial</a></li>
+  <li><a href="#bagian-4-pengantar-latent-variable-modeling" id="toc-bagian-4-pengantar-latent-variable-modeling" class="nav-link" data-scroll-target="#bagian-4-pengantar-latent-variable-modeling">Bagian 4️⃣: Pengantar <em>Latent Variable Modeling</em></a></li>
+  <li><a href="#bagian-5-model-jalur-path-model-dan-model-regresi" id="toc-bagian-5-model-jalur-path-model-dan-model-regresi" class="nav-link" data-scroll-target="#bagian-5-model-jalur-path-model-dan-model-regresi">Bagian 5️⃣: Model Jalur (<em>Path Model</em>) dan Model Regresi</a></li>
+  <li><a href="#bagian-6-principal-component-analysis-pca-dan-exploratory-factor-analysis-efa" id="toc-bagian-6-principal-component-analysis-pca-dan-exploratory-factor-analysis-efa" class="nav-link" data-scroll-target="#bagian-6-principal-component-analysis-pca-dan-exploratory-factor-analysis-efa">Bagian 6️⃣: <em>Principal Component Analysis</em> (PCA) dan <em>Exploratory Factor Analysis</em> (EFA)</a></li>
+  <li><a href="#bagian-7-confirmatory-factor-analysis-cfa" id="toc-bagian-7-confirmatory-factor-analysis-cfa" class="nav-link" data-scroll-target="#bagian-7-confirmatory-factor-analysis-cfa">Bagian 7️⃣: <em>Confirmatory Factor Analysis</em> (CFA)</a></li>
   </ul></li>
+  <li><a href="#referensi" id="toc-referensi" class="nav-link" data-scroll-target="#referensi">Referensi</a></li>
+  <li><a href="#sumber-belajar-lainnya" id="toc-sumber-belajar-lainnya" class="nav-link" data-scroll-target="#sumber-belajar-lainnya">Sumber belajar lainnya</a></li>
+  <li><a href="#sebelum-mulai-workshop" id="toc-sebelum-mulai-workshop" class="nav-link" data-scroll-target="#sebelum-mulai-workshop">Sebelum mulai <em>workshop</em></a></li>
+  <li><a href="#cara-instalasi-module-semlj-v1.2.5" id="toc-cara-instalasi-module-semlj-v1.2.5" class="nav-link" data-scroll-target="#cara-instalasi-module-semlj-v1.2.5">Cara instalasi <em>module</em> SEMLj v1.2.5</a></li>
+  <li><a href="#tutorial-jamovi-modules" id="toc-tutorial-jamovi-modules" class="nav-link" data-scroll-target="#tutorial-jamovi-modules">Tutorial jamovi + <em>modules</em></a></li>
+  <li><a href="#evaluasi-workshop" id="toc-evaluasi-workshop" class="nav-link" data-scroll-target="#evaluasi-workshop">Evaluasi <em>workshop</em></a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Workshop Confirmatory Factor Analysis (LVM)</h1>
+<h1 class="title">Dasar <em>Latent Variable Modeling</em></h1>
 </div>
 
 
@@ -237,42 +453,74 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="deskripsi" class="level2">
-<h2 class="anchored" data-anchor-id="deskripsi">Deskripsi</h2>
-<p>Berikut adalah repositori yang digunakan untuk menyimpan semua materi untuk <strong>Workshop <em>Confirmatory Factor Analysis</em></strong> yang diselenggarakan oleh Fakultas Psikologi, Universitas Negeri Semarang. Materi <em>workshop</em> ini merupakan bagian (yang dimodifikasi) dari <em>workshop</em> <em>Multigroup Structural Equation modeling</em> yang diadakan oleh Fakultas Psikologi Universitas Airlangga. Untuk mengakses materi dan rekaman dari <em>workshop</em> <code>MG-SEM</code>, silahkan <a href="https://rameliaz.github.io/mg-sem-workshop/">klik tautan ini</a>.</p>
-<p>Materi berlisensi <a href="https://creativecommons.org/licenses/by/4.0/"><em>Creative Commons</em> BY 4.0</a>. <strong>Materi bebas digunakan kembali namun wajib mengatribusi sumber aslinya</strong>.</p>
-</section>
-<section id="waktu-dan-tempat" class="level2">
-<h2 class="anchored" data-anchor-id="waktu-dan-tempat">Waktu dan tempat</h2>
-<p><em>Workshop</em> diselenggarakan pada hari <strong>Kamis, 30 Januari 2020</strong>, pukul 07.30-16.00 WIB di Gedung A1 Ruang 204 Fakultas Ilmu Pendidikan, Universitas Negeri Semarang.</p>
-</section>
+<p>Laman web berikut ini merupakan laman web untuk <strong>Workshop Dasar-Dasar <em>Latent Variable Modeling</em></strong>.</p>
+<p>Materi berlisensi <a href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons"><i class="fa fa-universal-access"></i></i> BY 4.0</a>. <strong>Materi bebas digunakan kembali namun wajib mengatribusi sumber aslinya</strong>.</p>
 <section id="outline-materi" class="level2">
 <h2 class="anchored" data-anchor-id="outline-materi"><em>Outline</em> materi</h2>
-<p>Berikut adalah <em>outline</em> materi <em>workshop</em>:</p>
-<section id="pengantar" class="level5">
-<h5 class="anchored" data-anchor-id="pengantar"><strong>Pengantar</strong></h5>
-<ul>
-<li>Apa itu <em>latent variable modeling</em> (LVM)?</li>
-<li>Mengapa dan pada kondisi seperti apa LVM diperlukan?</li>
-<li>Beberapa pilihan perangkat lunak untuk mengeksekusi LVM</li>
-<li>Yang tidak dicakup dalam <em>workshop</em> serta keterbatasan JASP</li>
-</ul>
-</section>
-<section id="korelasi" class="level5">
-<h5 class="anchored" data-anchor-id="korelasi"><strong>Korelasi</strong></h5>
+<section id="bagian-1-korelasi" class="level3">
+<h3 class="anchored" data-anchor-id="bagian-1-korelasi">Bagian 1️⃣: Korelasi</h3>
 <ul>
 <li>Jenis-jenis koefisien korelasi</li>
 <li>Faktor-faktor yang membuat koefisien korelasi bervariasi</li>
 <li><a href="https://methods.sagepub.com/reference/encyc-of-research-design/n81.xml">Koreksi atenuasi</a> dan <em>measurement error</em></li>
 <li><em>Variance-covariance</em> dan <em>correlation matrix</em></li>
 <li><em>WARNING! Covariance/correlation matrix is not positive definite</em></li>
-<li><a href="https://journals.sagepub.com/doi/10.1177/0049124112442138"><em>Heywood</em> dan <em>ultra-Heywood case</em></a></li>
+<li><a href="https://journals.sagepub.com/doi/10.1177/0049124112442138"><em>Heywood</em> dan <em>Ultra-Heywood case</em></a></li>
 <li>Bivariat, <em>part</em>, dan <em>partial correlation</em></li>
-<li>Metrik variabel (<em>standardised</em> vs <em>unstandardised</em>)</li>
+<li>Metrik variabel (<em>standardized</em> vs <em>unstandardized</em>)</li>
 </ul>
 </section>
-<section id="model-jalur-path-model-dan-model-regresi" class="level5">
-<h5 class="anchored" data-anchor-id="model-jalur-path-model-dan-model-regresi"><strong>Model Jalur</strong> (<em>Path Model</em>) dan Model Regresi</h5>
+<section id="bagian-2-ordinary-least-square-regression" class="level3">
+<h3 class="anchored" data-anchor-id="bagian-2-ordinary-least-square-regression">Bagian 2️⃣: <em>Ordinary Least Square Regression</em></h3>
+<ul>
+<li>Berlatih menginspeksi data secara visual dengan <em>scatterplot</em></li>
+<li>Model regresi linear (<em>ordinary least square</em>)</li>
+<li>Menarik garis regresi (<em>fitted regression line</em>)</li>
+<li>Varians yang dapat dan yang tidak dapat dijelaskan oleh model (<em>R</em><sup>2</sup>)</li>
+<li>Menguji hipotesis</li>
+<li>Mengecek kecocokan model dengan data (<em>model fit</em>)</li>
+<li>Mengecek asumsi
+<ul>
+<li>Distribusi (normalitas) residual</li>
+<li>Homoskedastisitas</li>
+<li>Multikolinearitas</li>
+</ul></li>
+<li>Mendeteksi <em>outliers</em></li>
+<li>Menguji <em>interaction effects</em> dan <em>model change</em></li>
+<li>Menulis hasil analisis regresi linear dengan <em>interaction terms</em> dalam manuskrip</li>
+</ul>
+</section>
+<section id="bagian-3-regresi-logistik-binomial" class="level3">
+<h3 class="anchored" data-anchor-id="bagian-3-regresi-logistik-binomial">Bagian 3️⃣: Regresi Logistik Binomial</h3>
+<ul>
+<li>Mengapa regresi linear tidak cocok untuk <em>outcome</em> biner?</li>
+<li>Fungsi logistik dan kurva S (<em>sigmoid</em>)</li>
+<li>Rantai konsep: probabilitas → <em>odds</em> → <em>log odds</em> (logit) → <em>odds ratio</em> (OR)</li>
+<li>Persamaan model &amp; interpretasi koefisien (β dan OR = e^β)</li>
+<li>Estimasi dengan <em>Maximum Likelihood</em> (MLE): <em>deviance</em>, <em>Likelihood Ratio Test</em></li>
+<li>Membandingkan model: AIC, BIC, dan Pseudo R² (Nagelkerke)</li>
+<li>Model dengan banyak prediktor: <em>adjusted</em> OR dan efek interaksi</li>
+<li>Asumsi regresi logistik (lebih longgar dari OLS: tidak perlu normalitas residual atau homoskedastisitas)</li>
+<li>Evaluasi akurasi prediksi: <em>confusion matrix</em>, <em>sensitivity</em>, <em>specificity</em>, AUC</li>
+<li>Pelaporan hasil sesuai APA &amp; terjemahan OR ke bahasa yang dipahami semua orang</li>
+<li>Kesalahan umum: OR vs.&nbsp;<em>risk ratio</em>, <em>events per variable</em> (EPV), <em>stepwise selection</em></li>
+</ul>
+</section>
+<section id="bagian-4-pengantar-latent-variable-modeling" class="level3">
+<h3 class="anchored" data-anchor-id="bagian-4-pengantar-latent-variable-modeling">Bagian 4️⃣: Pengantar <em>Latent Variable Modeling</em></h3>
+<ul>
+<li>Apa yang dimaksud dengan variabel laten? Mengapa psikologi membutuhkannya?</li>
+<li><em>Classical Test Theory</em> sebagai model variabel laten paling sederhana</li>
+<li>Reliabilitas dan <em>measurement error</em>: mengapa skor observasi selalu mengandung <em>noise</em></li>
+<li><em>Attenuation bias</em>: bagaimana <em>measurement error</em> mendistorsi estimasi hubungan antar-variabel</li>
+<li>Keluarga model variabel laten: CTT → EFA → CFA → SEM</li>
+<li>Variabel laten dalam model <em>reflektif</em> vs <em>formatif</em></li>
+<li>Pilihan perangkat lunak</li>
+<li>Cakupan materi dan keterbatasannya</li>
+</ul>
+</section>
+<section id="bagian-5-model-jalur-path-model-dan-model-regresi" class="level3">
+<h3 class="anchored" data-anchor-id="bagian-5-model-jalur-path-model-dan-model-regresi">Bagian 5️⃣: Model Jalur (<em>Path Model</em>) dan Model Regresi</h3>
 <ul>
 <li>Definisi <em>path model</em></li>
 <li>Nama variabel dan koefisien jalur (<em>path coefficients</em>)
@@ -281,12 +529,42 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li>Representasi visual model jalur menggunakan diagram jalur (<em>path diagram</em>)</li>
 <li>Menggambarkan hubungan antar-variabel dengan menggunakan diagram jalur</li>
-<li><em>Syntax</em> <code>lavaan</code> untuk spesifikasi model jalur</li>
+<li>Spesifikasi model dengan <em>syntax</em> <code>lavaan</code> untuk spesifikasi model jalur di <em>module</em> SEMLj</li>
 <li>Asumsi kausalitas (?) dan limitasi</li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Menggambar diagram jalur
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Untuk menggambar diagram jalur, peserta dapat menggunakan MS Power Point, Canva, atau <em>software</em> lainnya yang serupa. Rekomendasi saya: gunakan <a href="https://app.diagrams.net/?src=about">draw.io</a> yang merupakan <em>software open source</em> dan sangat unggul untuk menggambar berbagai macam diagram, termasuk <em>flowchart</em>.</p>
+</div>
+</div>
 </section>
-<section id="confirmatory-factor-analysis-cfa" class="level5">
-<h5 class="anchored" data-anchor-id="confirmatory-factor-analysis-cfa"><strong>Confirmatory Factor Analysis (CFA)</strong></h5>
+<section id="bagian-6-principal-component-analysis-pca-dan-exploratory-factor-analysis-efa" class="level3">
+<h3 class="anchored" data-anchor-id="bagian-6-principal-component-analysis-pca-dan-exploratory-factor-analysis-efa">Bagian 6️⃣: <em>Principal Component Analysis</em> (PCA) dan <em>Exploratory Factor Analysis</em> (EFA)</h3>
+<ul>
+<li>Mengapa kita perlu analisis faktor? <em>Measurement error</em> dan <em>attenuation bias</em></li>
+<li>Keluarga model variabel laten: CTT → EFA → CFA → SEM</li>
+<li><em>Principal Component Analysis</em> (PCA): reduksi dimensi &amp; <em>unsupervised learning</em> dalam ML</li>
+<li><em>Eigenvalue</em>, <em>scree plot</em>, dan <em>component loadings</em></li>
+<li>PCA vs EFA: tujuan, model, dan kapan menggunakan yang mana</li>
+<li>Komunalitas (h²) dan keunikan — indikator kualitas <em>item</em></li>
+<li>Menentukan jumlah faktor: <em>parallel analysis</em> (direkomendasikan), <em>scree plot</em>, Kaiser criterion</li>
+<li>Rotasi orthogonal vs.&nbsp;oblique — mengapa konstruk psikologi hampir selalu membutuhkan oblique</li>
+<li>Metode ekstraksi: MinRes, PAF, dan Maximum Likelihood</li>
+<li>Asumsi &amp; kesiapan data: KMO, Bartlett’s test, dan ukuran sampel</li>
+<li>Evaluasi model: <em>fit indices</em> (RMSEA, CFI, TLI) dan reliabilitas (α vs.&nbsp;ω)</li>
+<li>Checklist pelaporan EFA &amp; kesalahan umum</li>
+</ul>
+</section>
+<section id="bagian-7-confirmatory-factor-analysis-cfa" class="level3">
+<h3 class="anchored" data-anchor-id="bagian-7-confirmatory-factor-analysis-cfa">Bagian 7️⃣: <em>Confirmatory Factor Analysis</em> (CFA)</h3>
 <ul>
 <li>Definisi <em>factor analysis</em></li>
 <li><em>Exploratory</em> vs <em>confirmatory factor analysis</em></li>
@@ -296,99 +574,82 @@ ul.task-list li input[type="checkbox"] {
 <li>Variabel indikator (reflektif vs formatif)</li>
 <li><em>Correlated error variances</em></li>
 <li>Metode estimasi</li>
-<li>Jenis-jenis kriteria untuk menilai ketepatan model (<em>model fit</em>)
-<ul>
-<li><a href="http://www.ejbrm.com/issue/download.html?idArticle=183"><em>Model fit</em></a></li>
-<li><em>Model comparison</em>/<em>Incremental fit indices</em></li>
-<li><em>Model parsimony</em></li>
-<li><em>Parameter fit</em></li>
-</ul></li>
 <li>Menuliskan hasil analisis CFA dalam laporan penelitian</li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Unduh materi dalam bentuk PDF
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Klik <em>navigation bar</em> yang mengarah pada PDF materi, kemudian tekan <code>ctrl</code> dan <code>p</code> bersamaan. Setelah <em>window</em> untuk <em>print</em> muncul, pilih <code>Save to PDF</code> dan klik <code>Save</code>.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="referensi" class="level2">
 <h2 class="anchored" data-anchor-id="referensi">Referensi</h2>
 <ul>
 <li>Baujean, A.A. (2014). <em>Latent Variable Modeling Using R: A step-by-step guide</em>. New York: Routledge.</li>
+<li>Galluci, M. (2025). SEMLj: A Suite for Structural Equation Models for jamovi (v1.2.5). <a href="https://semlj.github.io/index.html" class="uri">https://semlj.github.io/index.html</a></li>
 <li>Schumacker, R.E. &amp; Lomax, R.G. (2016). <em>A Beginner’s Guide to Structural Equation Modeling (4th edition)</em>. New York: Routledge.</li>
-<li>Van De Schoot, R., Schmidt, P., De Beuckelaer, A., Lek, K., &amp; Zondervan-Zwijnenburg, M. (2015). <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2015.01064/full">Measurement invariance</a>. Frontiers in psychology, 6, 1064.</li>
-<li>Putnick, D. L., &amp; Bornstein, M. H. (2016). <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5145197/">Measurement invariance conventions and reporting: The state of the art and future directions for psychological research</a>. Developmental review, 41, 71-90.</li>
-<li>Cho, E. (2016). <a href="https://rameliaz.github.io/mg-sem-workshop/cho2016.pdf">Making Reliability Reliable: A Systematic approach to reliability coefficients</a>. Organizational Research Methods, 19(4), 651-682.</li>
-</ul>
-</section>
-<section id="contoh-penelitian-dengan-cfa" class="level2">
-<h2 class="anchored" data-anchor-id="contoh-penelitian-dengan-cfa">Contoh penelitian dengan <code>CFA</code></h2>
-<ul>
-<li>Rodriguez, V. J., Radusky, P. D., Kumar, M., Nemeroff, C. B., &amp; Jones, D. (2018). <a href="https://www.sciencedirect.com/science/article/abs/pii/S2468171718300085">Measurement invariance of the Childhood Trauma Questionnaire by gender, poverty level, and HIV status</a>. Personalized Medicine in Psychiatry, 11, 16-22.</li>
-<li>Liu, Y., Millsap, R. E., West, S. G., Tein, J. Y., Tanaka, R., &amp; Grimm, K. J. (2017). <a href="https://psycnet.apa.org/record/2016-25480-001">Testing measurement invariance in longitudinal data with ordered-categorical measures</a>. Psychological methods, 22(3), 486.</li>
-<li>Bowden, S. C., Saklofske, D. H., Van de Vijver, F. J. R., Sudarshan, N. J., &amp; Eysenck, S. B. G. (2016). <a href="https://www.sciencedirect.com/science/article/abs/pii/S0191886916302835">Cross-cultural measurement invariance of the Eysenck Personality Questionnaire across 33 countries</a>. Personality and Individual Differences, 103, 53-60.</li>
-<li>Bieda, A., Hirschfeld, G., Schönfeld, P., Brailovskaia, J., Zhang, X. C., &amp; Margraf, J. (2017). <a href="http://www.kli.psy.ruhr-uni-bochum.de/klipsy/public/margraf%20Journals%20with%20Peer-Review/Bieda%20et%20al%202016%20Universal%20happiness.pdf">Universal happiness? Cross-cultural measurement invariance of scales assessing positive mental health</a>. Psychological assessment, 29(4), 408.</li>
 </ul>
 </section>
 <section id="sumber-belajar-lainnya" class="level2">
 <h2 class="anchored" data-anchor-id="sumber-belajar-lainnya">Sumber belajar lainnya</h2>
 <ul>
-<li><a href="https://learnstatswithjasp.com/">Learning Statistics with JASP</a></li>
-<li><a href="https://osf.io/t56kg/">Undergraduate Statistics with JASP</a></li>
-<li><a href="http://sachaepskamp.com/SEM2019">Materi workshop SEM: Sacha Epskamp</a></li>
+<li><a href="https://www.learnstatswithjamovi.com/">Learning Statistics with jamovi</a></li>
+<li><a href="https://datalab.cc/tools/jamovi">Video tutorial jamovi dari Datalab</a></li>
+<li><a href="http://sachaepskamp.com/workshop-materials/Psych_rstats_Club.zip">Materi workshop SEM: Sacha Epskamp</a></li>
+<li>Cho, E. (2016). <a href="articles/cho2016.pdf">Making Reliability Reliable: A Systematic approach to reliability coefficients</a>. <em>Organizational Research Methods, 19</em>(4), 651-682.</li>
 </ul>
 </section>
 <section id="sebelum-mulai-workshop" class="level2">
-<h2 class="anchored" data-anchor-id="sebelum-mulai-workshop">Sebelum mulai workshop</h2>
+<h2 class="anchored" data-anchor-id="sebelum-mulai-workshop">Sebelum mulai <em>workshop</em></h2>
 <ul>
-<li>Sebaiknya semua peserta sudah memasang <a href="https://jasp-stats.org/download/">JASP versi 0.11.1</a> pada perangkatnya masing-masing, untuk menghindari terlalu banyaknya waktu untuk menyelesaikan <em>troubleshooting</em> instalasi ketika <em>workshop</em>.</li>
-<li>Peserta sangat disarankan untuk menonton video tutorial JASP di bawah ini sebelum <em>workshop</em> untuk belajar menavigasikan menu dan fitur yang ada dalam JASP (total durasi kurang lebih hanya 5 menit).</li>
+<li>Sebaiknya semua peserta sudah memasang jamovi pada perangkatnya masing-masing, untuk menghindari terlalu banyaknya waktu untuk menyelesaikan <em>troubleshooting</em> instalasi ketika <em>workshop</em>.</li>
+<li>Peserta sangat disarankan untuk menonton <a href="https://datalab.cc/tools/jamovi">video tutorial jamovi</a> sebelum <em>workshop</em> untuk belajar menavigasikan menu dan fitur yang ada dalam jamovi. Cukup hanya dengan menonton bagian <em>Welcome</em>, <em>Installing jamovi</em>, dan <em>Navigating jamovi</em> (total durasi kurang lebih hanya 7 menit).</li>
 </ul>
-<center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HxqB7CUA-XI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
-</center>
 </section>
-<section id="video-rekaman" class="level2">
-<h2 class="anchored" data-anchor-id="video-rekaman">Video rekaman</h2>
-<section id="sesi-1-09.00-12.00" class="level4">
-<h4 class="anchored" data-anchor-id="sesi-1-09.00-12.00">Sesi 1 (09.00-12.00)</h4>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/L38yXlxbO-Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
+<section id="cara-instalasi-module-semlj-v1.2.5" class="level2">
+<h2 class="anchored" data-anchor-id="cara-instalasi-module-semlj-v1.2.5">Cara instalasi <em>module</em> SEMLj v1.2.5</h2>
+<p>Gunakan <strong>jamovi versi stabil yang terbaru</strong> (2.6.44) <a href="https://www.jamovi.org/downloads/jamovi-2.6.44.0-win-x64.exe">untuk Windows</a> atau <a href="https://www.jamovi.org/download.html">MacOS</a>.</p>
+<p>Mohon untuk menyimak video cara mengelola <em>modules</em> di jamovi berikut ini. Di video ini saya mencontohkan cara instalasi <em>module</em> GAMLj. Instalasi <em>modules</em> SEMj v1.2.5 mengikuti prosedur yang persis sama.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/XWavBKgTEuU" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
-<section id="sesi-2-13.00-16.00" class="level4">
-<h4 class="anchored" data-anchor-id="sesi-2-13.00-16.00">Sesi 2 (13.00-16.00)</h4>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6AtXbwYrs0s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
+<section id="tutorial-jamovi-modules" class="level2">
+<h2 class="anchored" data-anchor-id="tutorial-jamovi-modules">Tutorial jamovi + <em>modules</em></h2>
+<p>Saat ini, sudah cukup banyak tutorial jamovi yang tersedia. Salah satu yang paling populer dan komperhensif adalah tutorial di bawah ini ⬇️</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/t0tQcs-E5Z4?si=wur9Er_M92zR-J2v" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p><a href="https://www.youtube.com/playlist?list=PLvYqRUmlLZUMJ0EUxuTAA1f407wmBQ1QX">Simak seluruh video tutorial di <i class="fa-brands fa-youtube"></i> <em>playlist</em>.</a></p>
 </section>
-</section>
-<section id="pembaruan-dan-koreksi" class="level2">
-<h2 class="anchored" data-anchor-id="pembaruan-dan-koreksi">Pembaruan dan koreksi</h2>
-</section>
-<section id="poster-kegiatan" class="level2">
-<h2 class="anchored" data-anchor-id="poster-kegiatan">Poster kegiatan</h2>
-<center>
-<img src="slides/libs/poster.jpg" style="width:70%;" class="fancyimage">
-</center>
-<p><br></p>
-</section>
-<section id="jawaban-latihan" class="level2">
-<h2 class="anchored" data-anchor-id="jawaban-latihan">Jawaban Latihan</h2>
-<section id="latihan-mandiri-1" class="level3">
-<h3 class="anchored" data-anchor-id="latihan-mandiri-1">Latihan Mandiri (1):</h3>
-<p><a href="">Klik disini untuk melihat jawaban</a> saya atas latihan mandiri (1).</p>
-</section>
-<section id="latihan-mandiri-2" class="level3">
-<h3 class="anchored" data-anchor-id="latihan-mandiri-2">Latihan Mandiri (2):</h3>
-<p><a href="">Klik disini untuk melihat jawaban</a> saya atas latihan mandiri (2).</p>
-</section>
-<section id="latihan-mandiri-3" class="level3">
-<h3 class="anchored" data-anchor-id="latihan-mandiri-3">Latihan Mandiri (3):</h3>
-<p><a href="">Klik disini untuk melihat jawaban</a> saya atas latihan mandiri (3).</p>
+<section id="evaluasi-workshop" class="level2">
+<h2 class="anchored" data-anchor-id="evaluasi-workshop">Evaluasi <em>workshop</em></h2>
+<p>Setelah <em>workshop</em>, peserta dimohon untuk mengisi kuesioner evaluasi yang dapat diakses di <em>menu bar</em> <code>Survei</code> bagian pojok kanan atas sebagai bahan evaluasi untuk meningkatkan kualitas materi <em>workshop</em> di masa depan.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -438,13 +699,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -787,6 +1049,19 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Rizqy Amelia Zein</p>
+</div>   
+    <div class="nav-footer-center">
+<p><a class="link-dark me-1" href="https://github.com/rameliaz" title="github" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a> <a class="link-dark me-1" href="mailto:amelia.zein@psikologi.unair.ac.id" title="Email" target="_blank" rel="noopener"><i class="fa-solid fa-envelope"></i></a> <a class="link-dark me-1" href="https://bsky.app/profile/ameliazein.bsky.social" title="Bluesky" target="_blank" rel="noopener"><i class="fa-brands fa-bluesky"></i></a> <a class="link-dark me-1" href="https://discord.com/users/807046335613632555" title="Discord" target="_blank" rel="noopener"><i class="fa-brands fa-discord"></i></a></p>
+</div>
+    <div class="nav-footer-right">
+<p><a class="link-dark me-1" href="https://github.com/rameliaz/mg-sem-workshop"><i class="fa-brands fa-github"></i> Source</a></p>
+</div>
+  </div>
+</footer>
 
 
 

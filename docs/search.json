@@ -1,583 +1,1220 @@
 [
   {
-    "objectID": "slides/materi-lvm-4.html#section",
-    "href": "slides/materi-lvm-4.html#section",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "",
-    "text": "Rizqy Amelia Zein\n\nDosen, Fakultas Psikologi, Universitas Airlangga\nAnggota, #SainsTerbuka Airlangga \nRelawan, INA-Rxiv\nResearcher-in-training, Institute for Globally Distributed Open Research and Education (IGDORE)"
+    "objectID": "slides/bagian-7.html#outline",
+    "href": "slides/bagian-7.html#outline",
+    "title": "Confirmatory Factor Analysis (CFA)",
+    "section": "Outline",
+    "text": "Outline\n\nDefinisi factor analysis\nExploratory vs confirmatory factor analysis\nKapan menggunakan CFA?\nConstraining parameter model\nModel pengukuran (paralel, tau equivalence, dan congeneric)\nVariabel indikator (reflektif vs formatif)\nCorrelated error variances\nMetode estimasi\nMenuliskan hasil analisis CFA dalam laporan penelitian"
   },
   {
-    "objectID": "slides/materi-lvm-4.html#analisis-faktor",
-    "href": "slides/materi-lvm-4.html#analisis-faktor",
-    "title": "Workshop Latent Variable Modeling (LVM)",
+    "objectID": "slides/bagian-7.html#analisis-faktor",
+    "href": "slides/bagian-7.html#analisis-faktor",
+    "title": "Confirmatory Factor Analysis (CFA)",
     "section": "Analisis faktor",
     "text": "Analisis faktor\n\n\n\nAwalnya dikembangkan oleh Charles Spearman (1904) untuk menyelidiki g factor theory of intelligence\nTerdiri dari:\n\nExploratory factor analysis (EFA)\nConfirmatory factor analysis (CFA)\n\nAnalisis faktor digunakan untuk menguji model common variance\nMengasumsikan bahwa dua atau lebih observed variable memiliki shared/common variance (commonality atau common factor)  ditunjukkan dengan factor loading"
   },
   {
-    "objectID": "slides/materi-lvm-4.html#efa-vs-cfa",
-    "href": "slides/materi-lvm-4.html#efa-vs-cfa",
-    "title": "Workshop Latent Variable Modeling (LVM)",
+    "objectID": "slides/bagian-7.html#efa-vs-cfa",
+    "href": "slides/bagian-7.html#efa-vs-cfa",
+    "title": "Confirmatory Factor Analysis (CFA)",
     "section": "EFA vs CFA",
     "text": "EFA vs CFA\n\n\n\n\n\n\n\nEFA\nCFA\n\n\n\n\nMencari model yang cocok menggambarkan data, sehingga peneliti mengeksplorasi berbagai pilihan model yang cocok kemudian mencari rasionalisasi teoritisnya\nMenguji hipotesis yang sudah ditentukan sebelumnya, sehingga peneliti ingin tahu apakah hipotesisnya didukung oleh data\n\n\nJumlah faktor belum diketahui sampai peneliti melakukan analisisnya\nJumlah faktor sudah ditentukan sebelum mengambil data\n\n\nPeneliti tidak memiliki model yang dihipotesiskan a priori\nPeneliti sudah memiliki model hipotesis yang ditentukan a priori"
   },
   {
-    "objectID": "slides/materi-lvm-4.html#confirmatory-factor-analysis",
-    "href": "slides/materi-lvm-4.html#confirmatory-factor-analysis",
-    "title": "Workshop Latent Variable Modeling (LVM)",
+    "objectID": "slides/bagian-7.html#confirmatory-factor-analysis",
+    "href": "slides/bagian-7.html#confirmatory-factor-analysis",
+    "title": "Confirmatory Factor Analysis (CFA)",
     "section": "Confirmatory factor analysis",
     "text": "Confirmatory factor analysis\n\nMenyediakan solusi untuk mengkoreksi bias karena measurement error ketika mengestimasi korelasi antar-variabel\nCara kerjanya adalah dengan membandingkan variance-covariance matrix yang dihipotesiskan dengan variance-covariance matrix pada data (sampel)\nPerhatian 📢\n\nSangat tidak disarankan untuk melakukan EFA kemudian CFA pada sampel yang sama\nKarena generating hypothesis dengan testing hypothesis adalah dua proses yang berbeda yang tidak seharusnya dilakukan pada sampel yang sama\nKalau hal tsb dilakukan, maka tentu saja peneliti akan mendapatkan hasil yang ‘sesuai prediksinya’\nIngat Texas Sharpshooter Fallacy"
   },
   {
-    "objectID": "slides/materi-lvm-4.html#constraining-parameter-model",
-    "href": "slides/materi-lvm-4.html#constraining-parameter-model",
-    "title": "Workshop Latent Variable Modeling (LVM)",
+    "objectID": "slides/bagian-7.html#texas-sharpshooter-fallacy",
+    "href": "slides/bagian-7.html#texas-sharpshooter-fallacy",
+    "title": "Confirmatory Factor Analysis (CFA)",
+    "section": "Texas sharpshooter fallacy",
+    "text": "Texas sharpshooter fallacy"
+  },
+  {
+    "objectID": "slides/bagian-7.html#constraining-parameter-model",
+    "href": "slides/bagian-7.html#constraining-parameter-model",
+    "title": "Confirmatory Factor Analysis (CFA)",
     "section": "Constraining parameter model",
-    "text": "Constraining parameter model\n\nMembatasi/menentukan varians untuk setiap variabel/faktor laten\n\nDilakukan untuk mengeluarkan standardised estimates\n…yang interpretasinya sama seperti standardised estimates di regresi linear\nFactor loading di z-scorekan\nSehingga defaultnya, mean variabel laten = 0, variance = 1\n\nMembatasi/menentukan error covariance untuk setiap variabel/faktor laten\n\nDilakukan untuk menentukan error variance"
+    "text": "Constraining parameter model\n\nMembatasi/menentukan varians untuk setiap variabel/faktor laten\n\nDilakukan untuk mengeluarkan standardized estimates\nFactor loading di z-scorekan\nSehingga defaultnya, mean variabel laten = 0, variance = 1\n\nMembatasi/menentukan error covariance untuk setiap variabel/faktor laten\n\nDilakukan untuk menentukan error variance"
   },
   {
-    "objectID": "slides/materi-lvm-4.html#jenis-jenis-model-pengukuran",
-    "href": "slides/materi-lvm-4.html#jenis-jenis-model-pengukuran",
-    "title": "Workshop Latent Variable Modeling (LVM)",
+    "objectID": "slides/bagian-7.html#jenis-jenis-model-pengukuran",
+    "href": "slides/bagian-7.html#jenis-jenis-model-pengukuran",
+    "title": "Confirmatory Factor Analysis (CFA)",
     "section": "Jenis-jenis model pengukuran",
-    "text": "Jenis-jenis model pengukuran\n\nCongeneric\n\nModel yang paling moderat dan default di berbagai perangkat lunak SEM\nAsumsinya, skala, error variance, dan factor loading boleh berbeda (dibebaskan)\nTeknik reliabilitas skala yang mengasumsikan model pengukuran congeneric  ω, McDonald’s ω, ω total (ωt), Revelle’s ω, Raju’s coefficient, composite reliability.\n\nTau equivalence\n\nModel yang sedikit lebih rigid daripada congeneric\nAsumsinya, skala dan error variance boleh berbeda (dibebaskan), namun factor loading harus sama (dibatasi)\nKetika asumsi tau equivalence dipenuhi, maka Cronbach’s α dapat digunakan\nSelain Cronbach’s α, teknik reliabilitas skala yang mengasumsikan model pengukuran tau equivalence  Formula Rulon, KR-20, Flanagan-Rulon Formula, Guttman’s λ3, Guttman’s λ4 dan Hoyt method.\n\nParalel\n\nModel yang paling rigid\nAsumsinya, skala, error variance, dan factor loading harus sama (dibatasi)\nTeknik reliabilitas skala yang mengasumsikan model pengukuran paralel  Spearman-Brown’s Formula, Standardised α."
+    "text": "Jenis-jenis model pengukuran\nAda tiga macam model pengukuran:\n\nModel congeneric\nModel tau equivalence\nModel parallel"
   },
   {
-    "objectID": "slides/materi-lvm-4.html#reflektif-vs-formatif",
-    "href": "slides/materi-lvm-4.html#reflektif-vs-formatif",
-    "title": "Workshop Latent Variable Modeling (LVM)",
+    "objectID": "slides/bagian-7.html#model-congeneric",
+    "href": "slides/bagian-7.html#model-congeneric",
+    "title": "Confirmatory Factor Analysis (CFA)",
+    "section": "Model congeneric",
+    "text": "Model congeneric\n\n\n\nModel yang paling moderat dan default di berbagai perangkat lunak SEM\nAsumsinya, skala, error variance, dan factor loading boleh berbeda (dibebaskan)\nKoefisien reliabilitas skala yang mengasumsikan model pengukuran congeneric  ω, McDonald’s ω, ω total (ωt), Revelle’s ω, composite reliability."
+  },
+  {
+    "objectID": "slides/bagian-7.html#model-tau-equivalence",
+    "href": "slides/bagian-7.html#model-tau-equivalence",
+    "title": "Confirmatory Factor Analysis (CFA)",
+    "section": "Model tau equivalence",
+    "text": "Model tau equivalence\n\n\n\nModel yang sedikit lebih rigid daripada congeneric\nAsumsinya, skala dan error variance boleh berbeda (dibebaskan), namun factor loading harus sama (dibatasi)\nKetika asumsi tau equivalence dipenuhi, maka Cronbach’s α dapat digunakan\nKoefisien reliabilitas: Formula Rulon, KR-20, Flanagan-Rulon, Guttman’s λ3, λ4, Hoyt method\n\nPada kebanyakan kasus, jarang sekali ada kosntruk psikologi yang memenuhi asumsi tau equivalence, sehingga sangat disarankan untuk tidak menggunakan koefisien reliabilitas yang mengasumsikan tau equivalence"
+  },
+  {
+    "objectID": "slides/bagian-7.html#model-parallel",
+    "href": "slides/bagian-7.html#model-parallel",
+    "title": "Confirmatory Factor Analysis (CFA)",
+    "section": "Model parallel",
+    "text": "Model parallel\n\n\n\nModel yang paling rigid\nAsumsinya, skala, error variance, dan factor loading harus sama (dibatasi)\n\nKoefisien reliabilitas: Spearman-Brown’s Formula, Standardized α."
+  },
+  {
+    "objectID": "slides/bagian-7.html#reflektif-vs-formatif",
+    "href": "slides/bagian-7.html#reflektif-vs-formatif",
+    "title": "Confirmatory Factor Analysis (CFA)",
     "section": "Reflektif vs Formatif",
-    "text": "Reflektif vs Formatif\n\nReflektif\n\nVariabel laten menjelaskan mengapa variabel indikator bervariasi\nMisalnya  individu dengan intelegensi yang tinggi akan mendapatkan nilai yang berbeda dalam tes matematika\nDalam hal ini, variasi intelegensilah yang menjelaskan mengapa nilai tes matematika bervariasi\nBiasanya mengasumsikan bahwa korelasi antar-variabel indikator = 0, karena seharusnya ketika (misalnya) nilai tes matematika dan fisika berkorelasi, korelasi tersebut dijelaskan oleh faktor laten yang sama (intelegensi)\n\nFormatif\n\nVariabel observed menjelaskan mengapa variabel laten bervariasi\nMisalnya  gengsi sebuah mobil ditentukan oleh usia mobil, kondisi, harga, dan intensitas pemakaian\nKorelasi antara variabel observed tidak diketahui. Bisa jadi = 0, positif, atau negatif\nBiasanya digunakan untuk menentukan indeks pada konstruk yang orthogonal (contoh  kepribadian pada Five Factor model)"
+    "text": "Reflektif vs Formatif\n\nReflektif\n\nVariabel laten menjelaskan mengapa variabel indikator bervariasi\nMisalnya  individu dengan intelegensi yang tinggi akan mendapatkan nilai yang berbeda dalam tes matematika\nBiasanya mengasumsikan bahwa korelasi antar-variabel indikator = 0\n\nFormatif\n\nVariabel observed menjelaskan mengapa variabel laten bervariasi\nMisalnya  gengsi sebuah mobil ditentukan oleh usia mobil, kondisi, harga, dan intensitas pemakaian\nKorelasi antara variabel observed tidak diketahui\nBiasanya digunakan untuk menentukan indeks pada konstruk yang orthogonal (contoh  kepribadian pada Five Factor model)"
   },
   {
-    "objectID": "slides/materi-lvm-4.html#apa-yang-terjadi-ketika-error-variance-berkorelasi",
-    "href": "slides/materi-lvm-4.html#apa-yang-terjadi-ketika-error-variance-berkorelasi",
-    "title": "Workshop Latent Variable Modeling (LVM)",
+    "objectID": "slides/bagian-7.html#model-reflektif",
+    "href": "slides/bagian-7.html#model-reflektif",
+    "title": "Confirmatory Factor Analysis (CFA)",
+    "section": "Model Reflektif",
+    "text": "Model Reflektif"
+  },
+  {
+    "objectID": "slides/bagian-7.html#model-formatif",
+    "href": "slides/bagian-7.html#model-formatif",
+    "title": "Confirmatory Factor Analysis (CFA)",
+    "section": "Model Formatif",
+    "text": "Model Formatif"
+  },
+  {
+    "objectID": "slides/bagian-7.html#apa-yang-terjadi-ketika-error-variance-berkorelasi",
+    "href": "slides/bagian-7.html#apa-yang-terjadi-ketika-error-variance-berkorelasi",
+    "title": "Confirmatory Factor Analysis (CFA)",
     "section": "Apa yang terjadi ketika error variance berkorelasi?",
-    "text": "Apa yang terjadi ketika error variance berkorelasi?\n\n\n\n\nKedua variabel indikator tersebut mengukur variabel laten lain di luar model (unique factor)\nBisa jadi karena ada aitem unfavourable dalam skala\nKemungkinan konstruk laten bukan konstruk tunggal (multidimensi)\nPerhatikan justifikasi teori ketika menambah error covariance (korelasi antar-varians error)"
+    "text": "Apa yang terjadi ketika error variance berkorelasi?\n\n\nKedua variabel indikator tersebut mengukur variabel laten lain di luar model (unique factor)\nBisa jadi karena ada item unfavourable dalam skala\nKemungkinan konstruk laten bukan konstruk tunggal (multidimensi)\nPerhatikan justifikasi teori ketika menambah error covariance"
   },
   {
-    "objectID": "slides/materi-lvm-4.html#skor-faktor-factor-scores",
-    "href": "slides/materi-lvm-4.html#skor-faktor-factor-scores",
-    "title": "Workshop Latent Variable Modeling (LVM)",
+    "objectID": "slides/bagian-7.html#skor-faktor-factor-scores",
+    "href": "slides/bagian-7.html#skor-faktor-factor-scores",
+    "title": "Confirmatory Factor Analysis (CFA)",
     "section": "Skor faktor (factor scores)",
-    "text": "Skor faktor (factor scores)\n\nApabila kita memiliki informasi tentang factor loading, maka kita bisa menghitung factor scores  estimasi (fitted) skor variabel laten\nCaranya dengan mengali factor loading dengan skor kasar  metode regresi\nNamun ingat, mengalikan factor loading dengan skor kasar masih berisiko mendapatkan estimasi yang bias, karena kedua parameter berasal dari distribusi data yang berbeda, sehingga standard errornya akan berbeda di berbagai kelompok sampel. Itulah yang menyebabkan factor scores akan berubah, ketika model diujikan pada kelompok sampel yang berbeda.\nAda tiga cara yang bisa digunakan untuk meghitung factor scores:\n\nMetode Regresi  dengan mengoptimalisasi validitas konstruk (variance explained)\nMetode Bartlett  mengasumsikan variabel indikator tidak saling berkorelasi\nMetode Anderson-Rubin  mengasumsikan variabel indikator saling berkorelasi"
+    "text": "Skor faktor (factor scores)\n\nApabila kita memiliki informasi tentang factor loading, maka kita bisa menghitung factor scores  estimasi (fitted) skor variabel laten\nCaranya dengan mengali factor loading dengan skor kasar  metode regresi\nNamun ingat, mengalikan factor loading dengan skor kasar masih berisiko mendapatkan estimasi yang bias. Itulah yang menyebabkan factor scores akan berubah ketika model diujikan pada kelompok sampel yang berbeda.\nAda tiga cara yang bisa digunakan untuk menghitung factor scores:\n\nMetode Regresi  dengan mengoptimalisasi validitas konstruk (variance explained)\nMetode Bartlett  mengasumsikan variabel indikator tidak saling berkorelasi\nMetode Anderson-Rubin  mengasumsikan variabel indikator saling berkorelasi"
   },
   {
-    "objectID": "slides/materi-lvm-4.html#memilih-metode-estimasi",
-    "href": "slides/materi-lvm-4.html#memilih-metode-estimasi",
-    "title": "Workshop Latent Variable Modeling (LVM)",
+    "objectID": "slides/bagian-7.html#memilih-metode-estimasi",
+    "href": "slides/bagian-7.html#memilih-metode-estimasi",
+    "title": "Confirmatory Factor Analysis (CFA)",
     "section": "Memilih metode estimasi",
-    "text": "Memilih metode estimasi\n\nMaximum Likelihood  distribusi data (multivariate) normal, level pengukuran harus interval, tidak ada data missing\nGeneralized least squares  menggunakan asumsi yang sama dengan ML namun performanya kurang baik apabila dibandingkan dengan ML\nWeighted least squares  dapat digunakan pada data kategorikal (nominal dan ordinal), estimasi menggunakan polychoric correlation matrix\nDiagonally weighted least squares  dapat digunakan pada data kategorikal, estimasi menggunakan polychoric correlation matrix yang kemudian dikonversi menjadi asymptotic covariance matrix, berkerja dengan baik pada sampel yang relatif kecil dan data yang tidak berdistribusi normal"
+    "text": "Memilih metode estimasi\n\nMaximum Likelihood  distribusi data (multivariate) normal, level pengukuran harus interval/continuous, tidak ada data missing\n\nGunakan Robust Maximum Likelihood (MLR) ketika asumsi multivariate normality tidak terpenuhi\n\nGeneralized-least squares  menggunakan asumsi yang sama dengan ML namun performanya kurang baik apabila dibandingkan dengan ML\nWeighted-least squares  dapat digunakan pada data kategorikal (nominal dan ordinal), estimasi menggunakan polychoric correlation matrix. Varian WLS, misalnya: WLSM, WLSMV, WLSMVS.\nDiagonally weighted-least squares  dapat digunakan pada data kategorikal, bekerja dengan baik pada sampel yang relatif kecil dan data yang tidak berdistribusi normal\n\n\n\n\n\n\n\nTips memilih estimator\n\n\nUntuk skala Likert dengan 6–7 pilihan, dengan respons yang relatif simetris, MLR sudah baik performanya. Untuk skala Likert 4 pilihan dengan distribusi yang sangat juling (skew), WLSMV merupakan pilihan yang lebih aman (Rhemtulla, Brosseau-Liard & Savalei, 2012)."
   },
   {
-    "objectID": "slides/materi-lvm-4.html#mengestimasi-model",
-    "href": "slides/materi-lvm-4.html#mengestimasi-model",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Mengestimasi model",
-    "text": "Mengestimasi model\n\nPilih metode estimasi yang paling cocok dengan karakteristik data (ML, ULS, GLS, WLS, DWLS atau robust DWLS)\nMetode estimasi ini yang akan menghitung standard error, apabila metode estimasi yang dipilih tidak tepat dan tidak sesuai dengan kompatibilitas datanya, maka estimasi standard error menjadi bias  model memberikan informasi yang menyesatkan"
+    "objectID": "slides/bagian-7.html#latihan-mandiri-4-mencoba-confirmatory-factor-analysis",
+    "href": "slides/bagian-7.html#latihan-mandiri-4-mencoba-confirmatory-factor-analysis",
+    "title": "Confirmatory Factor Analysis (CFA)",
+    "section": "Latihan mandiri 4️⃣: Mencoba confirmatory factor analysis",
+    "text": "Latihan mandiri 4️⃣: Mencoba confirmatory factor analysis\n\nUnduh Dataset Latihan SEM\nUnduh Kamus Data disini\nLakukan CFA pada skala social dominance orientation\n\nDiukur dengan skala Likert, 6 item dengan 7 pilihan jawaban\n\nLaporkan model fit, factor loading, dan multivariate normality\nLakukan penyesuaian apabila perlu"
   },
   {
-    "objectID": "slides/materi-lvm-4.html#menguji-model",
-    "href": "slides/materi-lvm-4.html#menguji-model",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Menguji model",
-    "text": "Menguji model\n\nDalam tahap ini, peneliti perlu mengetahui apakah implied modelnya didukung oleh data atau tidak\nHal ini dapat dievaluasi melalui uji ketepatan model (omnibus model fit) dengan beberapa parameter kriteria"
+    "objectID": "slides/bagian-7.html#ada-pertanyaan",
+    "href": "slides/bagian-7.html#ada-pertanyaan",
+    "title": "Confirmatory Factor Analysis (CFA)",
+    "section": "Ada pertanyaan❓",
+    "text": "Ada pertanyaan❓\n\n\n\n\n\n\n\nNote\n\n\n\nPaparan disusun dengan menggunakan  dan Quarto dengan template dari UNAIR Theme.\nKontak saya via  amelia.zein@psikologi.unair.ac.id"
   },
   {
-    "objectID": "slides/materi-lvm-4.html#menguji-ketepatan-model",
-    "href": "slides/materi-lvm-4.html#menguji-ketepatan-model",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Menguji ketepatan model",
-    "text": "Menguji ketepatan model\n\nUmumnya peneliti ingin mendapatkan 3 informasi\n\nChi-square sebagai global fit measure. Chi-square menguji perbedaan antara model-implied dengan sample covariance matrix. Apabila p-value dari Chi-square&gt;=α (dengan α=0.05), maka tidak ada perbedaan antara keduanya  data mendukung model\np-value dari factor loading untuk setiap variabel dalam model. Perhitungan p-value untuk factor loading menggunakan t-statistics (formula yang sama dengan t-test). Namun parameter yang lebih penting adalah…\nBesar dan arah factor loading. Besar factor loading memberikan informasi mengenai magnitude (besar efek/effect size) dan kontribusi variabel tersebut dalam menjelaskan variabel lainnya. Sedangkan arah factor loading (positif/negatif) memberikan informasi mengenai arah hubungan"
-  },
-  {
-    "objectID": "slides/materi-lvm-4.html#menguji-ketepatan-model-chi-square-x2",
-    "href": "slides/materi-lvm-4.html#menguji-ketepatan-model-chi-square-x2",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Menguji ketepatan model: Chi-square (X2)",
-    "text": "Menguji ketepatan model: Chi-square (X2)\n\n\n\nDihitung dengan cara membandingkan saturated model dengan model tanpa jalur sama sekali (baseline, null, atau independent model)\nKok saturated model? Bukannya saturated model tidak bisa dianalisis?\n\nIya betul, saturated model tidak dapat dijadikan implied model, tetapi berguna untuk menghitung nilai X2\n\nSelain X2, kita bisa menggunakan alternative fit indices (yang penggunaannya cenderung menggunakan rule of thumb) yang terdiri dari\n\nIncremental index\nParsimony index\nAbsolute (standalone) index"
-  },
-  {
-    "objectID": "slides/materi-lvm-4.html#incremental-comparativerelative-index",
-    "href": "slides/materi-lvm-4.html#incremental-comparativerelative-index",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Incremental (comparative/relative) index",
-    "text": "Incremental (comparative/relative) index\n\nDidapatkan dengan membandingkan implied model dengan baseline model, meliputi\n\nComparative Fit Index  mendekati 1 = closer fit\nNormed Fit Index  mendekati 1 = better fit\nParsimonious Normed Fit Index  NFI yang mempertimbangkan parsimony model, mendekati 1 = better fit\nIncremental Fit Index/Bollen’s Nonnormed Fit Index  NFI yang mempertimbangkan parsimony model, mendekati 1 = better fit\nTucker Lewis Index/Bentler-Bonnet Non-Normed Fit Index  mendekati 1 = better fit"
-  },
-  {
-    "objectID": "slides/materi-lvm-4.html#parsimony-index",
-    "href": "slides/materi-lvm-4.html#parsimony-index",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Parsimony index",
-    "text": "Parsimony index\n\nIndeks ini secara khusus memberikan pinalti pada kompleksitas model, sehingga umumnya model dengan jalur yang lebih banyak (sehingga dfnya lebih kecil) akan mendapat pinalti\nIndeks-indeksnya meliputi\n\nExpected Cross Validation Index  digunakan untuk membandingkan dua model atau lebih. Nilai yang lebih kecil menunjukkan model yang lebih baik\nInformation-Theoretic Criterion  meliputi Akaike’s Information Criterion, Schwarz’a Bayesian Information Criteria dan Sample-size Adjusted Bayesian Information Criteria. Nilai yang kecil menunjukkan model yang lebih baik\nNoncentrality Parameter-based Index  mendekati 1 = better fit\nMcDonald’s Noncentrality Index  mendekati 1 = better fit\n\nYang paling sering digunakan adalah…\nRoot Mean Square Error of Approximation (RMSEA)  menilai apakah model secara umum tepat menggambarkan data dan biasanya berkisar antara 0.0-1.0, meskipun dapat lebih dari 1. Model close fit ketika nilainya 0.05 - 0.08\n\nAda beberapa perangkat lunak (termasuk JASP) yang bisa mengkalkulasi confidence interval dan p-valuenya.\nP-value ini dapat digunakan untuk menolak H0: RMSEA = 0.05\nOleh karena itu, menolak H0 menunjukkan bahwa model “close-fitting”"
-  },
-  {
-    "objectID": "slides/materi-lvm-4.html#absolute-index",
-    "href": "slides/materi-lvm-4.html#absolute-index",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Absolute index",
-    "text": "Absolute index\n\nIndeks ini dihitung tanpa melakukan perbandingan dengan baseline\nMeliputi\n\nChi-square (X2)/df ratio\nGoodness of Fit Index  mendekati 1 = better fit\nAdjusted Goodness of Fit Index  merupakan parsimony adjustment dari GFI, mendekati 1 = better fit\nParsimony Goodness of Fit Index  mendekati 1 = better fit\nHoelter’s Critical n  nilainya sebaiknya &gt; 200\nStandardized Root Mean Square Residual (SRMR/RMR)  paling baik digunakan untuk membandingkan dua model yang diuji di satu kelompok sampel yang sama, nilai &lt; 0.05 menunjukkan good fit"
-  },
-  {
-    "objectID": "slides/materi-lvm-4.html#parameter-fit",
-    "href": "slides/materi-lvm-4.html#parameter-fit",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Parameter fit",
-    "text": "Parameter fit\n\nParameter jalur bisa ditolak meskipun hasil omnibus test memuaskan, sehingga menginterpretasi koefisien jalur adalah proses yang juga harus dilakukan.\nBerikut ini adalah beberapa prosedur yang direkomendasikan:\n\nLihat tanda factor loading, apakah arahnya sudah benar (negatif/positif)\nLihat standardised parameter estimates untuk tahu apakah ada factor loading yang nilainya diatas kewajaran\nLihat p-value untuk mempertimbangan menolak H0 (bahwa tidak ada korelasi atau direct effect antara dua variabel)\nLakukan pengujian measurement invariance dengan mengasumsikan beberapa factor loading sama di berbagai kelompok yang berbeda (misal gender, dll), kemudian buat perbandingan relatif antara factor loading di kelompok yang berbeda tersebut\nApabila error variance mendekati nol (yang menyiratkan bahwa variabel observed adalah indikator yang ‘nyaris sempurna’ bagi variabel laten – tapi ini tidak mungkin), hal tsb lebih mungkin disebabkan oleh adanya outlier, kurangnya jumlah sampel, atau kurangnya jumlah indikator"
-  },
-  {
-    "objectID": "slides/materi-lvm-4.html#demonstrasi-cfa",
-    "href": "slides/materi-lvm-4.html#demonstrasi-cfa",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Demonstrasi CFA",
-    "text": "Demonstrasi CFA\n\nUnduh Dataset Contoh CFA"
-  },
-  {
-    "objectID": "slides/materi-lvm-4.html#tugas-3-mencoba-confirmatory-factor-analysis",
-    "href": "slides/materi-lvm-4.html#tugas-3-mencoba-confirmatory-factor-analysis",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "TUGAS 3: Mencoba confirmatory factor analysis",
-    "text": "TUGAS 3: Mencoba confirmatory factor analysis\n\nUnduh Dataset Latihan SEM\nUnduh Kamus Data disini\nLakukan CFA pada skala right-wing authoritarianism\n\nDiukur dengan skala Likert, 15 aitem dengan 9 pilihan jawaban\n\nLaporkan model fit, factor loading, dan multivariate normality\nLakukan penyesuaian apabila perlu\nExport datasetnya menjadi .html kemudian\n\nKumpulkan tugasnya disini"
-  },
-  {
-    "objectID": "slides/materi-lvm-4.html#terima-kasih-banyak",
-    "href": "slides/materi-lvm-4.html#terima-kasih-banyak",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Terima kasih banyak! 😉",
-    "text": "Terima kasih banyak! 😉\n\nPaparan disusun dengan menggunakan  dan Quarto dengan tema quarto-unair-theme."
-  },
-  {
-    "objectID": "slides/materi-lvm-2.html#section",
-    "href": "slides/materi-lvm-2.html#section",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "",
-    "text": "Rizqy Amelia Zein\n\nDosen, Fakultas Psikologi, Universitas Airlangga\nAnggota, #SainsTerbuka Airlangga \nRelawan, INA-Rxiv\nResearcher-in-training, Institute for Globally Distributed Open Research and Education (IGDORE)"
-  },
-  {
-    "objectID": "slides/materi-lvm-2.html#mengapa-memulai-dari-korelasi",
-    "href": "slides/materi-lvm-2.html#mengapa-memulai-dari-korelasi",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Mengapa memulai dari korelasi?",
-    "text": "Mengapa memulai dari korelasi?\nLVM-SEM merupakan teknik yang digunakan untuk mengestimasi korelasi antar-variabel\n\nUntuk melakukan SEM, peneliti tidak harus menyediakan data kasar (raw data), tetapi ada pilihan untuk menginput correlation atau variance-covariance matrix."
-  },
-  {
-    "objectID": "slides/materi-lvm-2.html#jenis-jenis-korelasi",
-    "href": "slides/materi-lvm-2.html#jenis-jenis-korelasi",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Jenis-jenis korelasi",
-    "text": "Jenis-jenis korelasi\n\n\n\nKoefisien Korelasi\nLevel Pengukuran\n\n\n\n\nPearson’s product moment\nKedua variabel setidaknya interval\n\n\nSpearman’s rank dan Kendall’s tau\nKedua variabel ordinal\n\n\nPhi, contingency table\nKedua variabel nominal\n\n\nPoint biserial\nVariabel interval dengan nominal\n\n\nGamma, rank biserial\nVariabel ordinal dengan nominal\n\n\nBiserial\nVariabel interval dengan dummy\n\n\nPolyserial\nVariabel interval dengan variabel underlying continuity\n\n\nTetrachoric\nKedua variabel dummy (dikotomis)\n\n\nPolychoric\nKedua variabel ordinal (dengan kontinuitas implisit)"
-  },
-  {
-    "objectID": "slides/materi-lvm-2.html#faktor-faktor-yang-mempengaruhi-korelasi",
-    "href": "slides/materi-lvm-2.html#faktor-faktor-yang-mempengaruhi-korelasi",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Faktor-faktor yang mempengaruhi korelasi",
-    "text": "Faktor-faktor yang mempengaruhi korelasi\n\nLevel pengukuran (apakah variabel tersebut nominal, ordinal, interval, atau rasio)\n\nSehingga berdampak pada variabilitas (restriction range) dan normalitas data\n\nLinearitas\n\nSemua teknik korelasi mengasumsikan korelasi antar-variabel linear, sehingga korelasi yang tidak linear akan memberikan informasi tidak adanya korelasi (padahal tidak selalu).\n\nAdanya data outlier \nKoreksi atenuasi\nJumlah sampel\n\nJumlah sampel yang terlalu sedikit akan memberikan estimasi yang kurang akurat (karena standard errornya besar)\n\nSampling variance\n\nYang kemudian berefek pada confidence interval, effect size (koefisien korelasi itu sendiri), dan statistical power\n\nMissing data\n\nKalau data tidak lengkap, estimasi koefisien korelasi akan langsung terdampak.\nAda beberapa pilihan yang bisa dilakukan, yaitu  listwise deletion, pairwise deletion, dan melakukan data imputation.\nListwise deletion tidak disarankan karena membuat jumlah sampel turun drastis  mengurangi statistical power.\n\n\nSilahkan unduh dan buka Dataset Contoh Korelasi, untuk melihat contoh."
-  },
-  {
-    "objectID": "slides/materi-lvm-2.html#variance-covariance-dan-correlation-matrix-1",
-    "href": "slides/materi-lvm-2.html#variance-covariance-dan-correlation-matrix-1",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Variance-covariance dan correlation matrix (1)",
-    "text": "Variance-covariance dan correlation matrix (1)\n\nUntuk melakukan SEM, maka perangkat lunak membutuhkan variance-covariance matrix untuk mengestimasi parameter model\nPada bagian diagonal variance-covariance matrix menunjukkan varians, sedangkan sisanya adalah covariance\n\n\n\n\n\nJumlah nilai unik (non-redundant information) dalam variance-covariance matrix adalah p(p+1)/2\n\ndimana p adalah jumlah observed variable\nSehingga dengan contoh di atas maka jumlah nilai unik (non-redundant information) di variance-covariance matrix adalah 3(3+1)/2=6, yaitu 3 varians (diagonal) dan 3 covariance (sisanya)"
-  },
-  {
-    "objectID": "slides/materi-lvm-2.html#variance-covariance-dan-correlation-matrix-2",
-    "href": "slides/materi-lvm-2.html#variance-covariance-dan-correlation-matrix-2",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Variance-covariance dan correlation matrix (2)",
-    "text": "Variance-covariance dan correlation matrix (2)\n\n\n\nSebagian besar perangkat lunak SEM menggunakan variance-covariance matrix bukan correlation matrix\n\nIngat ❗ korelasi adalah standardised covariance.\n\nMenggunakan correlation matrix biasanya lebih sering menghasilkan parameter yang statistically significant tapi standard error yang tidak akurat.\nOleh karena itu, meskipun user menginput correlation matrix, maka perangkat lunak akan mengubahnya dulu menjadi variance-covariance matrix dulu, baru parameter model dapat diestimasi."
-  },
-  {
-    "objectID": "slides/materi-lvm-2.html#koreksi-atenuasi",
-    "href": "slides/materi-lvm-2.html#koreksi-atenuasi",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Koreksi Atenuasi",
-    "text": "Koreksi Atenuasi\n\nAsumsi dasar dalam Psikometri adalah skor kasar (observed score) mengandung skor murni (true score) dan measurement error, sehingga dalam mengestimasi korelasi, measurement error perlu dibuang agar estimasi lebih akurat.\nDengan teknik koreksi atenuasi, kita dapat ‘membuang’ measurement error, sehingga kita dapat mengestimasi korelasi antar-variabel menggunakan true score-nya.\nTetapi apabila reliabilitas skala kita kurang baik, maka setelah dikoreksi koefisien korelasi bisa lebih dari 1 ❗\nMisalnya diketahui bahwa korelasi observed scores antar dua variabel (rab) adalah 0.9 dan reliabilitas skala a (Cronbach’s α) adalah 0.6 dan skala b adalah 0.7, maka:"
-  },
-  {
-    "objectID": "slides/materi-lvm-2.html#warning-covariancecorrelation-matrix-is-not-positive-definite",
-    "href": "slides/materi-lvm-2.html#warning-covariancecorrelation-matrix-is-not-positive-definite",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "WARNING! Covariance/correlation matrix is not positive definite",
-    "text": "WARNING! Covariance/correlation matrix is not positive definite"
-  },
-  {
-    "objectID": "slides/materi-lvm-2.html#apa-yang-terjadi",
-    "href": "slides/materi-lvm-2.html#apa-yang-terjadi",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Apa yang terjadi?",
-    "text": "Apa yang terjadi?\nPerangkat lunak akan menghentikan proses estimasi\n…dan memberikan pesan non-positive definite"
-  },
-  {
-    "objectID": "slides/materi-lvm-2.html#matrik-korelasi-dengan-non-positive-definite",
-    "href": "slides/materi-lvm-2.html#matrik-korelasi-dengan-non-positive-definite",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Matrik korelasi dengan non-positive definite",
-    "text": "Matrik korelasi dengan non-positive definite\n\nKoefisien korelasi yang nilainya ≥1 menyebabkan matriks korelasi menjadi non-positive definite\n\nArtinya, parameter model tidak mungkin diestimasi\n\nMengapa terjadi?\n\nData didapatkan dari observasi yang tidak independen (linear dependency)\nTerjadi multikolinearitas\nJumlah sampel lebih sedikit dari jumlah variabel yang diuji dalam model\nSepasang variabel berbagi varians negatif atau tidak sama sekali (0)  Heywood case\nVarians, kovarians, dan korelasi nilainya diluar batas kewajaran\nKesalahan mengatur pembatasan (constraint) pada parameter tertentu yang dilakukan oleh peneliti (user-specified model)"
-  },
-  {
-    "objectID": "slides/materi-lvm-2.html#heywood-dan-ultra-heywood-case",
-    "href": "slides/materi-lvm-2.html#heywood-dan-ultra-heywood-case",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Heywood dan ultra-Heywood case",
-    "text": "Heywood dan ultra-Heywood case\n\nTerjadi ketika communalities = 1 (Heywood) atau ≥1 (ultra-Heywood), atau terjadi ketika varians measurement error bernilai negatif\n\nCommunalities adalah kuadrat dari koefisien korelasi (R2)\nApabila terjadi, maka ada yang salah dengan spesifikasi model (hipotesis)\n\nTerjadi karena\n\nCommon factor terlalu banyak/terlalu sedikit\nUkuran sampel tidak memadai\nModel SEM (common factor model) bukan model yang cocok untuk menguji hipotesis hubungan antar-variabel (alternatifnya Principal Component Analysis - PCA)\n\nYang bisa dilakukan\n\nTinjau kembali hipotesis modelnya\nKurangi jumlah faktor laten dengan ‘membuang’ jalur/korelasi yang bermasalah\nIdentifikasi variabel yang terlibat multikolinearitas. Masukkan salah satu saja dalam model, sisanya sisihkan"
-  },
-  {
-    "objectID": "slides/materi-lvm-2.html#korelasi-bivariat-part-dan-partial-correlation",
-    "href": "slides/materi-lvm-2.html#korelasi-bivariat-part-dan-partial-correlation",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Korelasi Bivariat: Part dan partial correlation",
-    "text": "Korelasi Bivariat: Part dan partial correlation"
-  },
-  {
-    "objectID": "slides/materi-lvm-2.html#metrik-variabel-standardised-vs-unstandardised",
-    "href": "slides/materi-lvm-2.html#metrik-variabel-standardised-vs-unstandardised",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Metrik variabel (standardised vs unstandardised)",
-    "text": "Metrik variabel (standardised vs unstandardised)\n\nUnstandarised solution/estimates\n\nDapat dibandingkan antar kelompok sampel\nMerupakan parameter yang digunakan oleh perangkat lunak untuk menghitung standard error dan taraf signifikansi (p-value))\nMembandingkan unstandardised factor loading harus melihat standard errornya juga karena mereka seharusnya sepaket\n\nStandarised solution/estimates\n\nHanya interpretable untuk kelompok sampel yang diuji - tidak bisa dibandingkan dengan kelompok sampel yang lain.\nBerguna untuk membandingkan factor loading antar-variabel di dalam model - peneliti dapat mengidentifikasi variabel mana yang paling berkontribusi menjelaskan dependent variable\nApabila variabel dalam model memiliki unit pengukuran yang berbeda, maka standardised estimates akan sangat membantu untuk menstandardisasi unit antar-variabel tersebut\n\nAda banyak perbedaan pendapat mengenai metrik mana yang harus dilaporkan, tetapi…\n\nSelalu laporkan unstandarised solution/estimates dan standard errornya (boleh juga dengan standarised solution/estimates, boleh juga tidak)"
-  },
-  {
-    "objectID": "slides/materi-lvm-2.html#terima-kasih-banyak",
-    "href": "slides/materi-lvm-2.html#terima-kasih-banyak",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Terima kasih banyak! 😉",
-    "text": "Terima kasih banyak! 😉\n\nPaparan disusun dengan menggunakan  dan Quarto dengan tema quarto-unair-theme."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Workshop Confirmatory Factor Analysis (LVM)",
-    "section": "",
-    "text": "Berikut adalah repositori yang digunakan untuk menyimpan semua materi untuk Workshop Confirmatory Factor Analysis yang diselenggarakan oleh Fakultas Psikologi, Universitas Negeri Semarang. Materi workshop ini merupakan bagian (yang dimodifikasi) dari workshop Multigroup Structural Equation modeling yang diadakan oleh Fakultas Psikologi Universitas Airlangga. Untuk mengakses materi dan rekaman dari workshop MG-SEM, silahkan klik tautan ini.\nMateri berlisensi Creative Commons BY 4.0. Materi bebas digunakan kembali namun wajib mengatribusi sumber aslinya."
-  },
-  {
-    "objectID": "index.html#deskripsi",
-    "href": "index.html#deskripsi",
-    "title": "Workshop Confirmatory Factor Analysis (LVM)",
-    "section": "",
-    "text": "Berikut adalah repositori yang digunakan untuk menyimpan semua materi untuk Workshop Confirmatory Factor Analysis yang diselenggarakan oleh Fakultas Psikologi, Universitas Negeri Semarang. Materi workshop ini merupakan bagian (yang dimodifikasi) dari workshop Multigroup Structural Equation modeling yang diadakan oleh Fakultas Psikologi Universitas Airlangga. Untuk mengakses materi dan rekaman dari workshop MG-SEM, silahkan klik tautan ini.\nMateri berlisensi Creative Commons BY 4.0. Materi bebas digunakan kembali namun wajib mengatribusi sumber aslinya."
-  },
-  {
-    "objectID": "index.html#waktu-dan-tempat",
-    "href": "index.html#waktu-dan-tempat",
-    "title": "Workshop Confirmatory Factor Analysis (LVM)",
-    "section": "Waktu dan tempat",
-    "text": "Waktu dan tempat\nWorkshop diselenggarakan pada hari Kamis, 30 Januari 2020, pukul 07.30-16.00 WIB di Gedung A1 Ruang 204 Fakultas Ilmu Pendidikan, Universitas Negeri Semarang."
-  },
-  {
-    "objectID": "index.html#outline-materi",
-    "href": "index.html#outline-materi",
-    "title": "Workshop Confirmatory Factor Analysis (LVM)",
-    "section": "Outline materi",
-    "text": "Outline materi\nBerikut adalah outline materi workshop:\n\nPengantar\n\nApa itu latent variable modeling (LVM)?\nMengapa dan pada kondisi seperti apa LVM diperlukan?\nBeberapa pilihan perangkat lunak untuk mengeksekusi LVM\nYang tidak dicakup dalam workshop serta keterbatasan JASP\n\n\n\nKorelasi\n\nJenis-jenis koefisien korelasi\nFaktor-faktor yang membuat koefisien korelasi bervariasi\nKoreksi atenuasi dan measurement error\nVariance-covariance dan correlation matrix\nWARNING! Covariance/correlation matrix is not positive definite\nHeywood dan ultra-Heywood case\nBivariat, part, dan partial correlation\nMetrik variabel (standardised vs unstandardised)\n\n\n\nModel Jalur (Path Model) dan Model Regresi\n\nDefinisi path model\nNama variabel dan koefisien jalur (path coefficients)\n\nδ (delta), ε (epsilon), ξ (ksi), η (eta), λ (lambda), γ (gamma), β (beta), φ (phi), ζ (zeta)\n\nRepresentasi visual model jalur menggunakan diagram jalur (path diagram)\nMenggambarkan hubungan antar-variabel dengan menggunakan diagram jalur\nSyntax lavaan untuk spesifikasi model jalur\nAsumsi kausalitas (?) dan limitasi\n\n\n\nConfirmatory Factor Analysis (CFA)\n\nDefinisi factor analysis\nExploratory vs confirmatory factor analysis\nKapan menggunakan CFA?\nConstraining parameter model\nModel pengukuran (paralel, tau equivalence, dan congeneric)\nVariabel indikator (reflektif vs formatif)\nCorrelated error variances\nMetode estimasi\nJenis-jenis kriteria untuk menilai ketepatan model (model fit)\n\nModel fit\nModel comparison/Incremental fit indices\nModel parsimony\nParameter fit\n\nMenuliskan hasil analisis CFA dalam laporan penelitian"
-  },
-  {
-    "objectID": "index.html#referensi",
-    "href": "index.html#referensi",
-    "title": "Workshop Confirmatory Factor Analysis (LVM)",
-    "section": "Referensi",
-    "text": "Referensi\n\nBaujean, A.A. (2014). Latent Variable Modeling Using R: A step-by-step guide. New York: Routledge.\nSchumacker, R.E. & Lomax, R.G. (2016). A Beginner’s Guide to Structural Equation Modeling (4th edition). New York: Routledge.\nVan De Schoot, R., Schmidt, P., De Beuckelaer, A., Lek, K., & Zondervan-Zwijnenburg, M. (2015). Measurement invariance. Frontiers in psychology, 6, 1064.\nPutnick, D. L., & Bornstein, M. H. (2016). Measurement invariance conventions and reporting: The state of the art and future directions for psychological research. Developmental review, 41, 71-90.\nCho, E. (2016). Making Reliability Reliable: A Systematic approach to reliability coefficients. Organizational Research Methods, 19(4), 651-682."
-  },
-  {
-    "objectID": "index.html#contoh-penelitian-dengan-cfa",
-    "href": "index.html#contoh-penelitian-dengan-cfa",
-    "title": "Workshop Confirmatory Factor Analysis (LVM)",
-    "section": "Contoh penelitian dengan CFA",
-    "text": "Contoh penelitian dengan CFA\n\nRodriguez, V. J., Radusky, P. D., Kumar, M., Nemeroff, C. B., & Jones, D. (2018). Measurement invariance of the Childhood Trauma Questionnaire by gender, poverty level, and HIV status. Personalized Medicine in Psychiatry, 11, 16-22.\nLiu, Y., Millsap, R. E., West, S. G., Tein, J. Y., Tanaka, R., & Grimm, K. J. (2017). Testing measurement invariance in longitudinal data with ordered-categorical measures. Psychological methods, 22(3), 486.\nBowden, S. C., Saklofske, D. H., Van de Vijver, F. J. R., Sudarshan, N. J., & Eysenck, S. B. G. (2016). Cross-cultural measurement invariance of the Eysenck Personality Questionnaire across 33 countries. Personality and Individual Differences, 103, 53-60.\nBieda, A., Hirschfeld, G., Schönfeld, P., Brailovskaia, J., Zhang, X. C., & Margraf, J. (2017). Universal happiness? Cross-cultural measurement invariance of scales assessing positive mental health. Psychological assessment, 29(4), 408."
-  },
-  {
-    "objectID": "index.html#sumber-belajar-lainnya",
-    "href": "index.html#sumber-belajar-lainnya",
-    "title": "Workshop Confirmatory Factor Analysis (LVM)",
-    "section": "Sumber belajar lainnya",
-    "text": "Sumber belajar lainnya\n\nLearning Statistics with JASP\nUndergraduate Statistics with JASP\nMateri workshop SEM: Sacha Epskamp"
-  },
-  {
-    "objectID": "index.html#sebelum-mulai-workshop",
-    "href": "index.html#sebelum-mulai-workshop",
-    "title": "Workshop Confirmatory Factor Analysis (LVM)",
-    "section": "Sebelum mulai workshop",
-    "text": "Sebelum mulai workshop\n\nSebaiknya semua peserta sudah memasang JASP versi 0.11.1 pada perangkatnya masing-masing, untuk menghindari terlalu banyaknya waktu untuk menyelesaikan troubleshooting instalasi ketika workshop.\nPeserta sangat disarankan untuk menonton video tutorial JASP di bawah ini sebelum workshop untuk belajar menavigasikan menu dan fitur yang ada dalam JASP (total durasi kurang lebih hanya 5 menit)."
-  },
-  {
-    "objectID": "index.html#video-rekaman",
-    "href": "index.html#video-rekaman",
-    "title": "Workshop Confirmatory Factor Analysis (LVM)",
-    "section": "Video rekaman",
-    "text": "Video rekaman\n\nSesi 1 (09.00-12.00)\n\n\n\n\nSesi 2 (13.00-16.00)"
-  },
-  {
-    "objectID": "index.html#pembaruan-dan-koreksi",
-    "href": "index.html#pembaruan-dan-koreksi",
-    "title": "Workshop Confirmatory Factor Analysis (LVM)",
-    "section": "Pembaruan dan koreksi",
-    "text": "Pembaruan dan koreksi"
-  },
-  {
-    "objectID": "index.html#poster-kegiatan",
-    "href": "index.html#poster-kegiatan",
-    "title": "Workshop Confirmatory Factor Analysis (LVM)",
-    "section": "Poster kegiatan",
-    "text": "Poster kegiatan"
-  },
-  {
-    "objectID": "index.html#jawaban-latihan",
-    "href": "index.html#jawaban-latihan",
-    "title": "Workshop Confirmatory Factor Analysis (LVM)",
-    "section": "Jawaban Latihan",
-    "text": "Jawaban Latihan\n\nLatihan Mandiri (1):\nKlik disini untuk melihat jawaban saya atas latihan mandiri (1).\n\n\nLatihan Mandiri (2):\nKlik disini untuk melihat jawaban saya atas latihan mandiri (2).\n\n\nLatihan Mandiri (3):\nKlik disini untuk melihat jawaban saya atas latihan mandiri (3)."
-  },
-  {
-    "objectID": "slides/materi-lvm-1.html#section",
-    "href": "slides/materi-lvm-1.html#section",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "",
-    "text": "Rizqy Amelia Zein\n\nDosen, Fakultas Psikologi, Universitas Airlangga\nAnggota, #SainsTerbuka Airlangga \nRelawan, INA-Rxiv\nResearcher-in-training, Institute for Globally Distributed Open Research and Education (IGDORE)"
-  },
-  {
-    "objectID": "slides/materi-lvm-1.html#menghubungi-saya",
-    "href": "slides/materi-lvm-1.html#menghubungi-saya",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Menghubungi saya?",
-    "text": "Menghubungi saya?\n   amelia.zein@psikologi.unair.ac.id  @ameliazein  @rameliaz  https://rameliaz.github.io\nMateri dalam paparan ini berlisensi  4.0 dan tersedia di laman web pribadi saya (https://rameliaz.github.io/mlm-lme-workshop/). Kode tersedia secara terbuka di repositori  saya."
-  },
-  {
-    "objectID": "slides/materi-lvm-1.html#outline",
-    "href": "slides/materi-lvm-1.html#outline",
-    "title": "Workshop Latent Variable Modeling (LVM)",
+    "objectID": "slides/bagian-5.html#outline",
+    "href": "slides/bagian-5.html#outline",
+    "title": "Model Jalur",
     "section": "Outline",
-    "text": "Outline\n\n\nSebelum istirahat (07.30-12.00)\nPengantar * Apa itu latent variable modeling (LVM) dan structural equation modeling (SEM)? * Mengapa dan pada kondisi seperti apa LVM-SEM diperlukan? * Beberapa pilihan perangkat lunak untuk mengeksekusi LVM-SEM * Yang tidak dicakup dalam workshop serta keterbatasan JASP"
+    "text": "Outline\n\nDefinisi path model\nNama variabel dan koefisien jalur (path coefficients)\n\nδ (delta), ε (epsilon), ξ (ksi), η (eta), λ (lambda), γ (gamma), β (beta), φ (phi), ζ (zeta)\n\nRepresentasi visual model jalur menggunakan diagram jalur (path diagram)\nMenggambarkan hubungan antar-variabel dengan menggunakan diagram jalur\nSyntax lavaan untuk spesifikasi model jalur\nAsumsi kausalitas dan limitasi"
   },
   {
-    "objectID": "slides/materi-lvm-1.html#sebelum-istirahat-07.30-12.00-1",
-    "href": "slides/materi-lvm-1.html#sebelum-istirahat-07.30-12.00-1",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Sebelum istirahat (07.30-12.00)",
-    "text": "Sebelum istirahat (07.30-12.00)\n\n\n\nJenis-jenis koefisien korelasi\nFaktor-faktor yang membuat koefisien korelasi bervariasi\nKoreksi atenuasi dan measurement error\nVariance-covariance dan correlation matrix\nWARNING! Covariance/correlation matrix is not positive definite\nHeywood dan ultra-Heywood case\nBivariat, part, dan partial correlation\nMetrik variabel (standardised vs unstandardised)"
-  },
-  {
-    "objectID": "slides/materi-lvm-1.html#sesudah-istirahat-13.00-16.00",
-    "href": "slides/materi-lvm-1.html#sesudah-istirahat-13.00-16.00",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Sesudah istirahat (13.00-16.00)",
-    "text": "Sesudah istirahat (13.00-16.00)\n\n\n\nDefinisi path model\nNama variabel dan koefisien jalur (path coefficients)\n\nδ (delta), ε (epsilon), ξ (ksi), η (eta), λ (lambda), γ (gamma), β (beta), φ (phi), ζ (zeta)\n\nRepresentasi visual model jalur menggunakan diagram jalur (path diagram)\nMenggambarkan hubungan antar-variabel dengan menggunakan diagram jalur\nSyntax lavaan untuk spesifikasi model jalur\nAsumsi kausalitas (?) dan limitasi"
-  },
-  {
-    "objectID": "slides/materi-lvm-1.html#sesudah-istirahat-13.00-16.00-1",
-    "href": "slides/materi-lvm-1.html#sesudah-istirahat-13.00-16.00-1",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Sesudah istirahat (13.00-16.00)",
-    "text": "Sesudah istirahat (13.00-16.00)\n\n\n\nDefinisi factor analysis\nExploratory vs confirmatory factor analysis\nKapan menggunakan CFA?\nConstraining parameter model\nModel pengukuran (paralel, tau equivalence, dan congeneric)\nVariabel indikator (reflektif vs formatif)\nCorrelated error variances\nMetode estimasi\nJenis-jenis kriteria untuk menilai ketepatan model (model fit)\n\nModel fit\nModel comparison/Incremental fit indices\nModel parsimony\nParameter fit\n\nMenuliskan hasil analisis CFA dalam laporan penelitian"
-  },
-  {
-    "objectID": "slides/materi-lvm-1.html#apa-itu-latent-variable-modeling",
-    "href": "slides/materi-lvm-1.html#apa-itu-latent-variable-modeling",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Apa itu latent variable modeling?",
-    "text": "Apa itu latent variable modeling?"
-  },
-  {
-    "objectID": "slides/materi-lvm-1.html#lvm-adalah",
-    "href": "slides/materi-lvm-1.html#lvm-adalah",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "LVM adalah…",
-    "text": "LVM adalah…\n\nModel yang memuat hubungan antara observed dan latent variables dalam berbagai bentuk model teoritis. LVM memungkinkan peneliti untuk melakukan pengujian hipotesis yang berkaitan dengan model tersebut.\nLVM mengasumsikan (hipotesis) bahwa seperangkat variabel (observed) mendefinisikan sebuah konstruk laten, dan menggambarkan bagaimana hubungan antara konstruk-konnstruk laten ini.\nTujuan LVM adalah untuk mengetahui apakah model teoritik yang diuji peneliti didukung oleh data\n\nApabila data memberikan bukti yang mendukung bahwa hubungan antar konstruk/variabel terjadi, maka mungkin hubungan tersebut memang benar-benar ada di populasi.\nApabila data tidak memberikan bukti yang mendukung korelasi yang dihipotesiskan, maka peneliti dapat melakukan re-spesifikasi model dan menguji kembali model yang sudah dire-spesifikasi tersebut, atau menyusun ulang model yang baru untuk kemudian diuji kembali."
-  },
-  {
-    "objectID": "slides/materi-lvm-1.html#jenis-jenis-variabel",
-    "href": "slides/materi-lvm-1.html#jenis-jenis-variabel",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Jenis-jenis variabel",
-    "text": "Jenis-jenis variabel\n\n\n\nVariabel observed\n\nVariabel yang dapat diukur langsung dengan berbagai cara/strategi.\nDalam pengukuran Psikologi, item pernyataan (dalam skala Psikologi - bisa dalam bentuk skala Likert atau yang lain) adalah variabel observed.\nVariabel observed dapat merefleksikan variabel latent atau bisa menjadi kombinasi linear atas variabel observed yang lain (index).\n\nVariabel latent\n\nKonstruk/variabel yang tidak dapat diukur secara langsung.\nOleh karena itu, membutuhkan variabel observed untuk mengukurnya.\nVariabel latent dapat berperan sebagai variabel independent atau dependent."
-  },
-  {
-    "objectID": "slides/materi-lvm-1.html#jenis-jenis-variabel-1",
-    "href": "slides/materi-lvm-1.html#jenis-jenis-variabel-1",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Jenis-jenis variabel",
-    "text": "Jenis-jenis variabel\n\n\n\nVariabel Eksogen dan Endogen\n\nVariabel eksogen  variabel yang hanya memberi direct effect pada variabel lain di dalam model yang sama\nVariabel endogen  variabel yang hanya menerima direct effect pada variabel lain di dalam model yang sama"
-  },
-  {
-    "objectID": "slides/materi-lvm-1.html#contohnya",
-    "href": "slides/materi-lvm-1.html#contohnya",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Contohnya…",
-    "text": "Contohnya…\n\n\n\nSeorang peneliti ingin mengukur kepribadian seorang responden dengan menggunakan pendekatan Five-Factor Model (Big 5), maka aitem dalam skala tersebut adalah observed variable, sedangkan dimensi dari Big 5 (neuroticism, agreeableness, conscientiousness, dan extraversion) adalah latent variable.\nSeorang peneliti Psikologi Pendidikan ingin tahu apakah kepercayaan orang tua bahwa anaknya dapat berkembang secara natural (trust in organismic development - independent latent variable) berkorelasi dengan tingkat kemandirian anak (dependent latent variable)."
-  },
-  {
-    "objectID": "slides/materi-lvm-1.html#contohnya-1",
-    "href": "slides/materi-lvm-1.html#contohnya-1",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Contohnya…",
-    "text": "Contohnya…\n\n\n\nDalam konteks Psikologi Klinis, seorang pakar public mental health ingin tahu apakah status sosio-ekonomi (observed independent variable) dapat berdampak pada kondisi kesehatan mental individu (latent dependent variable).\nDalam sebuah penelitian Psikologi Sosial, peneliti ingin tahu apakah kepribadian seseorang (independent latent variable) dapat menjelaskan mengapa orang merespon pelanggaran moral secara berbeda (dependent latent variable)."
-  },
-  {
-    "objectID": "slides/materi-lvm-1.html#model-sem",
-    "href": "slides/materi-lvm-1.html#model-sem",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Model SEM",
-    "text": "Model SEM\n\n\n\nModel regresi (linear/OLS)\n\nMenguji hubungan antar variabel observed\n\nModel jalur (path model)\n\nMenguji hubungan antara variabel observed dan latent\n\nModel pengukuran (measurement model/confirmatory factor analysis)\n\nMenguji apakah aitem-aitem dari skala Psikologi (yang mengukur konstruk laten tertentu) memang betul-betul mengukur konstruk tersebut  validitas konstruk.\n\nSEM (full model) biasanya mengandung setidaknya dua model, yaitu model pengukuran dan model struktural (regresi/jalur)."
-  },
-  {
-    "objectID": "slides/materi-lvm-1.html#mengapa-lvm-dilakukan",
-    "href": "slides/materi-lvm-1.html#mengapa-lvm-dilakukan",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Mengapa LVM dilakukan?",
-    "text": "Mengapa LVM dilakukan?\n\nPeneliti sudah memiliki kesadaran bahwa ia harus menyelidiki beberapa variabel penelitian secara bersamaan untuk menjawab pertanyaan penelitiannya.\nAda kesadaran bahwa peneliti selama ini mengabaikan faktor error pengkuran. LVM membantu peneliti untuk mengurangi efek measurement error terhadap hasil analisis data. Untuk itu, peneliti dapat sekaligus menguji properti/kualitas psikometrik instrumen yang digunakan.\nSelama beberapa dekade kebelakang, LVM termasuk teknik analisis data yang sudah cukup matang pengembangannya, dan dapat mudah dilakukan dengan bantuan perangkat lunak.\nPerangkat lunak LVM sudah cukup user-friendly\n\nJASP adalah perangkat lunak LVM yang hanya memerlukan coding yang sangat minimal.\nNamun JASP fungsinya agak terbatas, karena tidak menyediakan opsi power analysis (digunakan untuk merencanakan jumlah sampel) dan simulasi.\nSelain itu, peneliti dapat menggunakan Onyx, LISREL, AMOS, EQX, Mplus, STATA, dsb.\n\nLVM adalah teknik yang lebih sophisticated untuk menggambarkan hubungan antar-variabel karena membuang error pengukuran dari estimasi korelasi, dan mengurangi bias estimasi model karena konstruk laten diperlakukan sebagaimana mestinya, bukan dianggap seolah-olah observed variable."
-  },
-  {
-    "objectID": "slides/materi-lvm-1.html#yang-tidak-dicakup-oleh-workshop-ini",
-    "href": "slides/materi-lvm-1.html#yang-tidak-dicakup-oleh-workshop-ini",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Yang tidak dicakup oleh workshop ini…",
-    "text": "Yang tidak dicakup oleh workshop ini…\n\n\n\nExploratory factor analysis (EFA)\nFull model SEM\nA priori power analysis, Monte Carlo simulation, dan accuracy in parameter estimation (AIPE)  merupakan teknik-teknik yang digunakan untuk mengestimasi jumlah sampel\nMixture model (SEM untuk desain penelitian longitudinal)  latent growth curve\nModel SEM dengan missing data, ada variabel moderator/mediator, atau moderated mediation atau mediated moderation, atau ketika variabel indikatornya dichotomous\nHierarchical latent variable model\nSecond-order CFA\nSEM dengan model pengukuran formatif dan multiple indicators, multiple causes (MIMIC)"
-  },
-  {
-    "objectID": "slides/materi-lvm-1.html#ketika-menggunakan-lvm-sem-maka-asumsinya",
-    "href": "slides/materi-lvm-1.html#ketika-menggunakan-lvm-sem-maka-asumsinya",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Ketika menggunakan LVM-SEM, maka asumsinya…",
-    "text": "Ketika menggunakan LVM-SEM, maka asumsinya…\n\n\n🔊 Data berdistribusi normal (multivariate normality)\n🔊 Korelasi antar variabel sifatnya linear"
-  },
-  {
-    "objectID": "slides/materi-lvm-1.html#normalitas-data",
-    "href": "slides/materi-lvm-1.html#normalitas-data",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Normalitas data",
-    "text": "Normalitas data\n\nMengapa data tidak berdistribusi normal?\n\nBisa jadi bentuk datanya ordinal/nominal, sehingga kalau menggunakan skala Likert, maka kemungkinan besar distribusi data menjadi tidak normal.\nJumlah sampel terlalu sedikit.\nDistribusi data yang tidak normal akan berdampak pada variance-covariance matrix.\n\nApa yang harus dilakukan?\n\nUntuk mengkoreksi distribusi data yang juling (skewness), probit transformation merupakan strategi yang terbaik.\nUntuk mengkoreksi kurtosis yang tidak sesuai, membutuhkan prosedur yang agak lebih rumit. Beberapa diantaranya adalah dengan menambah jumlah responden, melakukan estimasi standard error dengan metode bootstrapping, atau bisa juga dengan menggunakan metode estimasi yang khusus untuk data yang tidak berdistribusi normal (weighted least squares)."
-  },
-  {
-    "objectID": "slides/materi-lvm-1.html#terima-kasih-banyak",
-    "href": "slides/materi-lvm-1.html#terima-kasih-banyak",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Terima kasih banyak! 😉",
-    "text": "Terima kasih banyak! 😉\n\nPaparan disusun dengan menggunakan  dan Quarto dengan tema quarto-unair-theme."
-  },
-  {
-    "objectID": "slides/materi-lvm-3.html#section",
-    "href": "slides/materi-lvm-3.html#section",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "",
-    "text": "Rizqy Amelia Zein\n\nDosen, Fakultas Psikologi, Universitas Airlangga\nAnggota, #SainsTerbuka Airlangga \nRelawan, INA-Rxiv\nResearcher-in-training, Institute for Globally Distributed Open Research and Education (IGDORE)"
-  },
-  {
-    "objectID": "slides/materi-lvm-3.html#analisis-jalur",
-    "href": "slides/materi-lvm-3.html#analisis-jalur",
-    "title": "Workshop Latent Variable Modeling (LVM)",
+    "objectID": "slides/bagian-5.html#analisis-jalur",
+    "href": "slides/bagian-5.html#analisis-jalur",
+    "title": "Model Jalur",
     "section": "Analisis jalur",
-    "text": "Analisis jalur\n\nPath model merupakan kelanjutan dari model regresi karena terdiri dari beberapa model regresi sekaligus sehingga dapat digunakan untuk menguji direct, indirect, dan correlated effects.\nPath model disusun secara visual dengan aturan tertentu (konsensus)\n\nGaris satu arah menggambarkan direct effects, yang merefleksikan keterkaitan langsung antara satu variabel dengan variabel lainnya. Asumsinya, tidak ada variabel lain diluar model yang berkorelasi dengan variabel tersebut.\nGaris dua arah menggambarkan covariance/korelasi, yang mengimplikasikan bahwa keterkaitan antar-variabel masih mungkin ditentukan oleh variabel lain yang tidak ada di dalam model.\nGaris error terms yang menunjukkan varians observed variable yang menjelaskan variabel lain yang tidak dapat dijelaskan/di luar model, yang juga mewakili measurement error."
+    "text": "Analisis jalur\n\nPath model merupakan kelanjutan dari model regresi karena terdiri dari beberapa model regresi sekaligus dapat digunakan untuk menguji direct, indirect, dan correlated effects.\nPath model disusun secara visual dengan aturan tertentu (konsensus)\n\nGaris satu arah menggambarkan direct effects, yang merefleksikan keterkaitan langsung antara satu variabel dengan variabel lainnya. Asumsinya, tidak ada variabel lain diluar model yang berkorelasi dengan variabel tersebut.\nGaris dua arah menggambarkan covariance/korelasi, yang mengimplikasikan bahwa keterkaitan antar-variabel masih mungkin ditentukan oleh variabel lain yang tidak ada di dalam model.\nGaris error terms yang menunjukkan varians observed variable yang menjelaskan variabel lain yang tidak dapat dijelaskan/di luar model, yang juga mewakili measurement error."
   },
   {
-    "objectID": "slides/materi-lvm-3.html#korelasi-kausalitas",
-    "href": "slides/materi-lvm-3.html#korelasi-kausalitas",
-    "title": "Workshop Latent Variable Modeling (LVM)",
+    "objectID": "slides/bagian-5.html#korelasi-kausalitas",
+    "href": "slides/bagian-5.html#korelasi-kausalitas",
+    "title": "Model Jalur",
     "section": "Korelasi = kausalitas?",
-    "text": "Korelasi = kausalitas?\n\n\n\nAnalisis jalur sebenarnya adalah bentuk yang lebih kompleks dari korelasi, dan yang perlu diingat:\n\nCorrelation does not imply causation\nYang harus dipenuhi sebagai bukti kausalitas: * Ada urutan waktu (temporal order)  maka desain penelitian panel/longitudinal/time series harus digunakan * Adanya korelasi (covariance) antara kedua variabel * Peneliti harus melakukan kontrol atas variabel lain yang mungkin menjelaskan korelasi tsb (melakukan manipulasi, mengestimasi part atau partial correlation) * Peneliti melakukan manipulasi pada variabel X, yang menyebabkan perubahan pada variabel Y"
+    "text": "Korelasi = kausalitas?\n\nAnalisis jalur sebenarnya adalah bentuk yang lebih sophisticated dari korelasi, dan\n\n\n\n\n\n\n\nPenting\n\n\nCorrelation does not imply causation\n\n\n\nYang harus dipenuhi sebagai bukti kausalitas:\n\nAda urutan waktu (temporal order)  desain penelitian panel/longitudinal/time series\nAdanya korelasi antara kedua variabel\nPeneliti harus melakukan kontrol atas variabel lain (confounding)\nPeneliti melakukan manipulasi (random assignment) pada variabel X"
   },
   {
-    "objectID": "slides/materi-lvm-3.html#diagram-jalur",
-    "href": "slides/materi-lvm-3.html#diagram-jalur",
-    "title": "Workshop Latent Variable Modeling (LVM)",
+    "objectID": "slides/bagian-5.html#diagram-jalur",
+    "href": "slides/bagian-5.html#diagram-jalur",
+    "title": "Model Jalur",
     "section": "Diagram jalur",
     "text": "Diagram jalur"
   },
   {
-    "objectID": "slides/materi-lvm-3.html#contoh",
-    "href": "slides/materi-lvm-3.html#contoh",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Contoh",
-    "text": "Contoh\n\n\nMarimar adalah seorang wali murid di sebuah PAUD di Kota Surabaya. Pada suatu hari, ia mengamati seorang anak (dan orangtua) yang perilakunya menarik perhatiannya.\nIbu anak tersebut ngotot untuk menunggui anaknya di sekolah, padahal guru kelas meminta agar Ibu pulang saja, mempercayakan anak pada guru, dengan tujuan melatih kemandirian anaknya.\nMelihat ibunya yang menggerutu karena diminta bu Guru pulang, si anak menangis meraung-raung tidak mau ditinggalkan. Akhirnya, terpaksa bu Guru membiarkan si Ibu menunggu di sekolah.\nMarimar heran sekaligus penasaran, mengapa tiap anak memberikan respon yang berbeda ketika ditinggal orangtuanya di sekolah. Ada yang menangis meraung-raung, ada yang lebih santai dengan langsung bermain. Apakah ada kaitan antara kemandirian anak dengan karakteristik orangtuanya?"
+    "objectID": "slides/bagian-5.html#ilustrasi-use-case",
+    "href": "slides/bagian-5.html#ilustrasi-use-case",
+    "title": "Model Jalur",
+    "section": "Ilustrasi use case",
+    "text": "Ilustrasi use case\n\n\nMarimar adalah seorang wali murid di sebuah PAUD di Kota Surabaya. Pada suatu hari, ia mengamati seorang anak (dan orangtua) yang perilakunya menarik perhatiannya.\nIbu anak tersebut bersikeras untuk menunggui anaknya di sekolah, padahal guru kelas meminta agar Ibu pulang saja, mempercayakan anak pada guru, dengan tujuan melatih kemandirian anaknya.\nMelihat ibunya yang menggerutu karena diminta bu Guru pulang, si anak menangis meraung-raung tidak mau ditinggalkan. Akhirnya, terpaksa bu Guru membiarkan si Ibu menunggu di sekolah.\nMarimar heran sekaligus penasaran, mengapa tiap anak memberikan respon yang berbeda ketika ditinggal orangtuanya di sekolah. Ada yang menangis meraung-raung, ada yang lebih santai dengan langsung bermain. Apakah ada kaitan antara kemandirian anak dengan karakteristik orangtuanya?"
   },
   {
-    "objectID": "slides/materi-lvm-3.html#variabel-yang-diukur-marimar",
-    "href": "slides/materi-lvm-3.html#variabel-yang-diukur-marimar",
-    "title": "Workshop Latent Variable Modeling (LVM)",
+    "objectID": "slides/bagian-5.html#variabel-yang-diukur-marimar",
+    "href": "slides/bagian-5.html#variabel-yang-diukur-marimar",
+    "title": "Model Jalur",
     "section": "Variabel yang diukur Marimar",
-    "text": "Variabel yang diukur Marimar\n\ntrust (variabel independen) = Kepercayaan ibu bahwa perkembangan anak dapat berlangsung secara natural (trust in organismic development). Diukur dengan skala likert yang terdiri dari 5 aitem dengan 7 pilihan respon  dari sangat tidak setuju sampai sangat setuju.\nmandiri (variabel dependen) = Tingkat kemandirian anak. Anak dengan skor yang tinggi semakin menunjukkan independensi dan lebih santai ketika ditinggal orangtuanya di sekolah. Marimar mengukurnya dengan melakukan observasi berdasarkan ada/tidaknya berbagai perilaku yang menunjukkan kemandirian. Diantaranya adalah:\n\nMenangis ketika ditinggal orangtuanya\nMerengek atau merajuk ketika ditinggal\nMasuk ke dalam kelas tanpa ditemani\nMenaruh tas dalam loker yang disediakan tanpa bantuan pengantar\n\n\nBagaimana bentuk diagram jalurnya?"
+    "text": "Variabel yang diukur Marimar\n\ntrust (variabel independen) = Kepercayaan ibu bahwa perkembangan anak dapat berlangsung secara natural (trust in organismic development).\n\nMakin tinggi skor, ibu makin percaya anaknya bisa berkembang secara natural.\nDiukur dengan skala likert yang terdiri dari 5 item dengan 7 pilihan respon  dari sangat tidak setuju sampai sangat setuju.\n\nmandiri (variabel dependen) = Tingkat kemandirian anak. Anak dengan skor yang tinggi semakin menunjukkan independensi dan lebih santai ketika ditinggal orangtuanya di sekolah. Beberapa indikator perilakunya adalah:\n\nTidak menangis ketika ditinggal orangtuanya\nTidak merengek atau merajuk ketika ditinggal\nMasuk ke dalam kelas tanpa ditemani\nMenaruh tas dalam loker yang disediakan tanpa bantuan orangtua"
   },
   {
-    "objectID": "slides/materi-lvm-3.html#nama-variabel-dan-koefisien-jalur",
-    "href": "slides/materi-lvm-3.html#nama-variabel-dan-koefisien-jalur",
-    "title": "Workshop Latent Variable Modeling (LVM)",
+    "objectID": "slides/bagian-5.html#bagaimana-bentuk-diagram-jalurnya",
+    "href": "slides/bagian-5.html#bagaimana-bentuk-diagram-jalurnya",
+    "title": "Model Jalur",
+    "section": "Bagaimana bentuk diagram jalurnya?",
+    "text": "Bagaimana bentuk diagram jalurnya?"
+  },
+  {
+    "objectID": "slides/bagian-5.html#nama-variabel-dan-koefisien-jalur",
+    "href": "slides/bagian-5.html#nama-variabel-dan-koefisien-jalur",
+    "title": "Model Jalur",
     "section": "Nama variabel dan koefisien jalur",
-    "text": "Nama variabel dan koefisien jalur\n\n\n\n\n\n\n\n\nNama Variabel/Koefisien\nHuruf Yunani\nHuruf Latin\n\n\n\n\nError pengukuran dari variabel X\nδ\nDelta\n\n\nError pengukuran dari variabel Y\nε\nEpsilon\n\n\nVariabel eksogen\nξ\nKsi\n\n\nVariabel endogen\nη\nEta\n\n\nDirect effect antara variabel laten dan indikatornya (loading factor)\nλ\nLambda\n\n\nDirect effect antara variabel endogen dan eksogen\nγ\nGamma\n\n\nDirect effect antara dua variabel laten\nβ\nBeta\n\n\nKorelasi (covariance) antara dua variabel laten\nφ\nPhi\n\n\nVarians error pengukuran dari sebuah variabel laten\nζ\nZeta"
+    "text": "Nama variabel dan koefisien jalur\n\n\n\n\n\n\n\n\nNama Variabel/Koefisien\nHuruf Yunani\nHuruf Latin\n\n\n\n\nError pengukuran dari variabel X\nδ\nDelta\n\n\nError pengukuran dari variabel Y\nε\nEpsilon\n\n\nVariabel eksogen\nξ\nKsi\n\n\nVariabel endogen\nη\nEta"
   },
   {
-    "objectID": "slides/materi-lvm-3.html#contoh-model-dengan-koefisien-jalur",
-    "href": "slides/materi-lvm-3.html#contoh-model-dengan-koefisien-jalur",
-    "title": "Workshop Latent Variable Modeling (LVM)",
+    "objectID": "slides/bagian-5.html#nama-variabel-dan-koefisien-jalur-1",
+    "href": "slides/bagian-5.html#nama-variabel-dan-koefisien-jalur-1",
+    "title": "Model Jalur",
+    "section": "Nama variabel dan koefisien jalur",
+    "text": "Nama variabel dan koefisien jalur\n\n\n\n\n\n\n\n\nNama Variabel/Koefisien\nHuruf Yunani\nHuruf Latin\n\n\n\n\nDirect effect antara variabel laten dan indikatornya (loading factor)\nλ\nLambda\n\n\nDirect effect antara variabel endogen dan eksogen\nγ\nGamma\n\n\nDirect effect antara dua variabel laten\nβ\nBeta\n\n\nKorelasi (covariance) antara dua variabel laten\nφ\nPhi\n\n\nVarians error pengukuran dari sebuah variabel laten\nζ\nZeta"
+  },
+  {
+    "objectID": "slides/bagian-5.html#contoh-model-dengan-koefisien-jalur",
+    "href": "slides/bagian-5.html#contoh-model-dengan-koefisien-jalur",
+    "title": "Model Jalur",
     "section": "Contoh model dengan koefisien jalur",
     "text": "Contoh model dengan koefisien jalur"
   },
   {
-    "objectID": "slides/materi-lvm-3.html#tugas-1-membuat-diagram-jalur",
-    "href": "slides/materi-lvm-3.html#tugas-1-membuat-diagram-jalur",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "TUGAS 1: Membuat diagram jalur",
-    "text": "TUGAS 1: Membuat diagram jalur\n\n\nFernando Jose sebal sekali karena ia kembali kehilangan pengokotnya dan ini kali ketiga ia kehilangan pengokot yang baru dibelinya seminggu yang lalu.\nTeman-teman kerjanya memang punya kebiasaan buruk meminjam barang tanpa seijinnya. Ia akhirnya bertanya, apa ya yang menyebabkan teman-temannya berperilaku seperti itu?\nAkhirnya ia menduga, mungkin ada kaitannya dengan faktor kepribadian (conscientiousness) rekan kerjanya dan usia karyawan.\nIa menduga temannya yang lebih conscientious dan lebih tua akan lebih kecil kemungkinannya melakukan perilaku tidak beradab. Ia juga mengamati bahwa semakin tua usia rekan kerjanya, biasanya mereka lebih conscientious."
+    "objectID": "slides/bagian-5.html#latihan-mandiri-2-membuat-diagram-jalur",
+    "href": "slides/bagian-5.html#latihan-mandiri-2-membuat-diagram-jalur",
+    "title": "Model Jalur",
+    "section": "Latihan mandiri 2️⃣: Membuat diagram jalur",
+    "text": "Latihan mandiri 2️⃣: Membuat diagram jalur\n\n\nFernando Jose sebal sekali karena ia kembali kehilangan pengokotnya dan ini kali ketiga ia kehilangan pengokot yang baru dibelinya seminggu yang lalu.\nTeman-teman kerjanya memang punya kebiasaan buruk meminjam barang tanpa seijinnya. Ia akhirnya bertanya, apa ya yang menyebabkan teman-temannya berperilaku seperti itu?\nAkhirnya ia menduga, mungkin ada kaitannya dengan faktor kepribadian (conscientiousness) dan faktor situasional di tempat kerjanya.\nUntuk faktor situasi, ia mengamati sepertinya persepsi atas kondisi kerja yang informal dan relasi formal antara senior-junior mungkin juga berkaitan dengan timbulnya perilaku tersebut."
   },
   {
-    "objectID": "slides/materi-lvm-3.html#yang-diukur",
-    "href": "slides/materi-lvm-3.html#yang-diukur",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Yang diukur…",
-    "text": "Yang diukur…\n\ncon = Kecenderungan conscientiousness karyawan. Makin tinggi skornya, karyawan lebih mungkin menunjukkan kehati-hatian dan keteraturan dalam bekerja, efisien, dan bertanggung jawab. Diukur dengan skala Likert berisi 6 aitem dengan 10 pilihan jawaban.\nincivil = Intensitas perilaku tidak beradab. Makin besar skornya, karyawan akan lebih mungkin emotionally abusive, suka mengambil barang teman tanpa ijin, dan perilaku tidak pantas yang lain. Diukur dengan skala Likert berisi 4 aitem dengan 10 pilihan jawaban.\nusia = Usia partisipan\n\nBuatlah diagram jalur beserta koefisien jalurnya. Bisa dengan MS PowerPoint atau software yang lain.\n[Unggah file diagram jalur disini]"
+    "objectID": "slides/bagian-5.html#yang-diukur",
+    "href": "slides/bagian-5.html#yang-diukur",
+    "title": "Model Jalur",
+    "section": "Yang diukur 📏",
+    "text": "Yang diukur 📏\n\ncon = Kecenderungan conscientiousness karyawan. Makin tinggi skornya, karyawan lebih mungkin menunjukkan kehati-hatian dan keteraturan dalam bekerja. Diukur dengan skala Likert berisi 6 item dengan 10 pilihan jawaban.\nincivil = Intensitas perilaku tidak beradab. Makin besar skornya, karyawan akan lebih mungkin emotionally abusive, suka mengambil barang teman tanpa ijin, dan perilaku tidak pantas yang lain. Diukur dengan skala Likert berisi 4 item dengan 10 pilihan jawaban.\nusia = Usia partisipan\n\n\n\n\n\n\n\nTugas\n\n\nRumuskan hipotesis penelitiannya kemudian buatlah diagram jalur beserta koefisien jalurnya. Bisa dengan MS Power Point atau software yang lain (misalnya, draw.io).\n\n\n\nKlik disini untuk mengumpulkan tugas"
   },
   {
-    "objectID": "slides/materi-lvm-3.html#lavaan-syntax",
-    "href": "slides/materi-lvm-3.html#lavaan-syntax",
-    "title": "Workshop Latent Variable Modeling (LVM)",
+    "objectID": "slides/bagian-5.html#lavaan-syntax",
+    "href": "slides/bagian-5.html#lavaan-syntax",
+    "title": "Model Jalur",
     "section": "lavaan Syntax",
-    "text": "lavaan Syntax\n\nJASP mengadopsi syntax dari package lavaan, sehingga untuk menjalankan programnya, kita harus memasukkan serangkaian perintah.\nMeskipun begitu, syntax lavaan sangat sederhana dan familiar dengan syntax lavaan memberikan banyak keuntungan.\nMenjalankan perintah dengan syntax juga membantu peneliti untuk mereka-ulang hasil analisis datanya, serta mempermudah kolaborasi dengan peneliti yang terbiasa menggunakan perangkat lunak yang berbeda dengan kita."
+    "text": "lavaan Syntax\n\nGAMLj menyediakan dua opsi: fitur syntax atau interactive\n\nKalau memilih fitur interactive, maka tampilan antarmukanya berupa drag & drop (seperti SPSS).\nUntuk fitur syntax, maka tampilan antarmukanya meminta pengguna untuk menspesifikasi model dengan syntax.\n\njamovi dan JASP mengadopsi syntax dari package lavaan, sehingga untuk menspesifikasi model, kita harus memasukkan serangkaian perintah.\nMeskipun begitu, syntax lavaan sangat sederhana dan familiar dengan syntax lavaan memberikan banyak keuntungan.\nMenjalankan perintah dengan syntax juga membantu peneliti untuk mereka-ulang hasil analisis datanya, serta mempermudah kolaborasi dengan peneliti yang terbiasa menggunakan perangkat lunak yang berbeda dengan kita.\nOleh karena itu, dalam workshop ini peserta juga harus berlatih menulis syntax."
   },
   {
-    "objectID": "slides/materi-lvm-3.html#dasar-syntax-lavaan",
-    "href": "slides/materi-lvm-3.html#dasar-syntax-lavaan",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Dasar syntax lavaan1",
-    "text": "Dasar syntax lavaan1\n\n\n\nBaujean, A.A. (2014). Latent Variable Modeling Using R: A step-by-step guide. New York: Routledge."
+    "objectID": "slides/bagian-5.html#dasar-syntax-lavaan",
+    "href": "slides/bagian-5.html#dasar-syntax-lavaan",
+    "title": "Model Jalur",
+    "section": "Dasar syntax lavaan",
+    "text": "Dasar syntax lavaan\n\n\n\n\n\n\n\nBaujean, A.A. (2014). Latent Variable Modeling Using R: A step-by-step guide. New York: Routledge."
   },
   {
-    "objectID": "slides/materi-lvm-3.html#contoh-cfa-1",
-    "href": "slides/materi-lvm-3.html#contoh-cfa-1",
-    "title": "Workshop Latent Variable Modeling (LVM)",
+    "objectID": "slides/bagian-5.html#contoh-cfa-1",
+    "href": "slides/bagian-5.html#contoh-cfa-1",
+    "title": "Model Jalur",
     "section": "Contoh CFA (1)",
-    "text": "Contoh CFA (1)"
+    "text": "Contoh CFA (1)\n\n\n# CFA\ntrust =~ trust1 + trust2 + trust3 + trust4 + trust5\n\n# Measurement error (residual)\ntrust1 ~~ trust1\ntrust2 ~~ trust2\ntrust3 ~~ trust3\ntrust4 ~~ trust4\ntrust5 ~~ trust5\ntrust ~~ trust"
   },
   {
-    "objectID": "slides/materi-lvm-3.html#contoh-cfa-2",
-    "href": "slides/materi-lvm-3.html#contoh-cfa-2",
-    "title": "Workshop Latent Variable Modeling (LVM)",
+    "objectID": "slides/bagian-5.html#contoh-cfa-2",
+    "href": "slides/bagian-5.html#contoh-cfa-2",
+    "title": "Model Jalur",
     "section": "Contoh CFA (2)",
-    "text": "Contoh CFA (2)"
+    "text": "Contoh CFA (2)\n\n\n# CFA\nmandiri =~ mandiri1 + mandiri2 + mandiri3 + mandiri4\n\n# Measurement error (residual)\nmandiri1 ~~ mandiri1\nmandiri2 ~~ mandiri2\nmandiri3 ~~ mandiri3\nmandiri4 ~~ mandiri4\nmandiri ~~ mandiri"
   },
   {
-    "objectID": "slides/materi-lvm-3.html#contoh-path-analysis-3",
-    "href": "slides/materi-lvm-3.html#contoh-path-analysis-3",
-    "title": "Workshop Latent Variable Modeling (LVM)",
+    "objectID": "slides/bagian-5.html#contoh-path-analysis-3",
+    "href": "slides/bagian-5.html#contoh-path-analysis-3",
+    "title": "Model Jalur",
     "section": "Contoh path analysis (3)",
-    "text": "Contoh path analysis (3)"
+    "text": "Contoh path analysis (3)\n\n\n# Model Struktural\nmandiri ~ trust\n\n# Measurement error (residual)\nmandiri ~~ mandiri\ntrust ~~ trust"
   },
   {
-    "objectID": "slides/materi-lvm-3.html#contoh-full-model-4",
-    "href": "slides/materi-lvm-3.html#contoh-full-model-4",
-    "title": "Workshop Latent Variable Modeling (LVM)",
+    "objectID": "slides/bagian-5.html#contoh-full-model-4",
+    "href": "slides/bagian-5.html#contoh-full-model-4",
+    "title": "Model Jalur",
     "section": "Contoh full model (4)",
-    "text": "Contoh full model (4)"
+    "text": "Contoh full model (4)\n\n\n# CFA\nmandiri =~ mandiri1 + mandiri2 + mandiri3 + mandiri4\ntrust =~ trust1 + trust2 + trust3 + trust4 + trust5\n\n# Measurement error (residual)\nmandiri1 ~~ mandiri1\nmandiri2 ~~ mandiri2\nmandiri3 ~~ mandiri3\nmandiri4 ~~ mandiri4\n\ntrust1 ~~ trust1\ntrust2 ~~ trust2\ntrust3 ~~ trust3\ntrust4 ~~ trust4\ntrust5 ~~ trust5\n\ntrust ~~ trust\nmandiri ~~ mandiri\n\n# Model Struktural\nmandiri ~ trust"
   },
   {
-    "objectID": "slides/materi-lvm-3.html#tugas-2-menulis-syntax-lavaan",
-    "href": "slides/materi-lvm-3.html#tugas-2-menulis-syntax-lavaan",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "TUGAS 2: Menulis syntax lavaan",
-    "text": "TUGAS 2: Menulis syntax lavaan\nTulislah syntax lavaan dari diagram jalur yang sudah dibuat di TUGAS 1\nKlik disini untuk mengisi lembar kerja"
+    "objectID": "slides/bagian-5.html#latihan-mandiri-3-menulis-syntax-lavaan",
+    "href": "slides/bagian-5.html#latihan-mandiri-3-menulis-syntax-lavaan",
+    "title": "Model Jalur",
+    "section": "Latihan mandiri 3️⃣: Menulis syntax lavaan",
+    "text": "Latihan mandiri 3️⃣: Menulis syntax lavaan\nTulislah syntax lavaan dari diagram jalur yang sudah dibuat di Latihan mandiri 2️⃣\nKlik disini untuk mengumpulkan tugas"
   },
   {
-    "objectID": "slides/materi-lvm-3.html#terima-kasih-banyak",
-    "href": "slides/materi-lvm-3.html#terima-kasih-banyak",
-    "title": "Workshop Latent Variable Modeling (LVM)",
-    "section": "Terima kasih banyak! 😉",
-    "text": "Terima kasih banyak! 😉\n\nPaparan disusun dengan menggunakan  dan Quarto dengan tema quarto-unair-theme."
+    "objectID": "slides/bagian-5.html#ada-pertanyaan",
+    "href": "slides/bagian-5.html#ada-pertanyaan",
+    "title": "Model Jalur",
+    "section": "Ada pertanyaan❓",
+    "text": "Ada pertanyaan❓\n\n\n\n\n\n\n\nNote\n\n\n\nPaparan disusun dengan menggunakan  dan Quarto dengan template dari UNAIR Theme.\nKontak saya via  amelia.zein@psikologi.unair.ac.id"
+  },
+  {
+    "objectID": "slides/bagian-3.html#outline",
+    "href": "slides/bagian-3.html#outline",
+    "title": "Regresi Logistik Binomial",
+    "section": "Outline",
+    "text": "Outline\n\nMengapa regresi linear tidak bisa digunakan untuk outcome biner?\nRantai konsep: probabilitas, odds, log odds, dan odds ratio\nPersamaan model & interpretasi koefisien\nEstimasi model: Maximum Likelihood dan uji fit\nModel dengan banyak prediktor\nAsumsi regresi logistik\nEvaluasi akurasi prediksi\nPelaporan hasil"
+  },
+  {
+    "objectID": "slides/bagian-3.html#outcome-biner-ada-di-berbagai-konteks",
+    "href": "slides/bagian-3.html#outcome-biner-ada-di-berbagai-konteks",
+    "title": "Regresi Logistik Binomial",
+    "section": "Outcome biner ada di berbagai konteks",
+    "text": "Outcome biner ada di berbagai konteks\n\nPutus studi PJJ: Sepertiga mahasiswa PJJ tidak menyelesaikan studinya sebelum semester kelima (Tinto, 1987; Park & Choi, 2009)\nRelapse gangguan kecemasan: 40–60% pasien mengalami kekambuhan dalam jangka panjang setelah remisi (Bruce et al., 2005, American Journal of Psychiatry)\nTurnover karyawan: 15–20% per tahun dianggap normal; di atas angka itu menandakan masalah organisasi (SHRM, 2023)\nPercobaan bunuh diri: Sekitar 2.4% prajurit militer AS melakukan percobaan bunuh diri dalam satu tahun (Kessler et al., 2014, Molecular Psychiatry)\n\n\n\n\n\n\n\nNote\n\n\nOutcome ini bukan skor 1–100 (data continous). Mereka adalah keputusan biner: terjadi (1) atau tidak terjadi (0). Kita membutuhkan metode statistik yang dirancang untuk memodelkan probabilitas kejadian seperti ini."
+  },
+  {
+    "objectID": "slides/bagian-3.html#regresi-linear-menghasilkan-prediksi-yang-mustahil",
+    "href": "slides/bagian-3.html#regresi-linear-menghasilkan-prediksi-yang-mustahil",
+    "title": "Regresi Logistik Binomial",
+    "section": "Regresi linear menghasilkan prediksi yang mustahil",
+    "text": "Regresi linear menghasilkan prediksi yang mustahil\nMisalnya kita ingin memprediksi putus studi mahasiswa PJJ berdasarkan jarak ke kelompok belajar (pokjar):\n\n\n\n\n\n\n\n\n\nMahasiswa\nJarak ke pokjar\nPrediksi P(putus studi) dengan OLS\nValid?\n\n\n\n\nA\n5 km\n0.25\n✓\n\n\nB\n50 km\n1.45\n✗\n\n\nC\n0 km\n−0.10\n✗\n\n\n\n\nMasalah fundamental: Probabilitas harus berada di rentang 0 sampai 1. Regresi linear tidak menjamin ini — ia memodelkan hubungan linear tanpa batas (∞).\nYang dibutuhkan: Sebuah fungsi yang secara otomatis membatasi prediksi dalam rentang [0, 1]."
+  },
+  {
+    "objectID": "slides/bagian-3.html#solusi-fungsi-logistik-kurva-s",
+    "href": "slides/bagian-3.html#solusi-fungsi-logistik-kurva-s",
+    "title": "Regresi Logistik Binomial",
+    "section": "Solusi: fungsi logistik (kurva S)",
+    "text": "Solusi: fungsi logistik (kurva S)\n\\[P = \\frac{1}{1 + e^{-(\\beta_0 + \\beta_1 X)}}\\]\nTiga sifat penting kurva S (sigmoid):\n\nAsimptot bawah = 0 — probabilitas tidak pernah negatif\nAsimptot atas = 1 — probabilitas tidak pernah melampaui 1\nTransisi halus di bagian tengah — perubahan probabilitas melambat di ujung-ujungnya\n\n\n\n\n\n\n\nRentang outcome selalu 0-1 meskipun prediktor nilainya ekstrim\n\n\nTidak peduli seberapa ekstrim nilai prediktor (X), probabilitas yang diprediksi tetap berada dalam rentang yang valid. Inilah keunggulan utama regresi logistik dibanding OLS untuk outcome biner."
+  },
+  {
+    "objectID": "slides/bagian-3.html#probabilitas-titik-awal-yang-sudah-kita-kenal",
+    "href": "slides/bagian-3.html#probabilitas-titik-awal-yang-sudah-kita-kenal",
+    "title": "Regresi Logistik Binomial",
+    "section": "Probabilitas — titik awal yang sudah kita kenal",
+    "text": "Probabilitas — titik awal yang sudah kita kenal\n\\[P(A) = \\frac{\\text{jumlah kejadian A}}{\\text{total kemungkinan}}\\]\nContoh dari dataset PJJ (N = 450):\n\n\n\n\n\n\n\nKonteks\nProbabilitas\n\n\n\n\n135 dari 450 mahasiswa putus studi sebelum semester ke-5\nP(putus studi) = 0.30\n\n\n8 dari 200 mahasiswa pernah mencoba bunuh diri\nP(percobaan) = 0.04\n\n\n60 dari 200 karyawan resign dalam 1 tahun\nP(turnover) = 0.30\n\n\n\n\n\n\n\n\n\nRegresi logistik memodelkan log odss\n\n\nRegresi logistik tidak memodelkan P secara langsung — ia memodelkan transformasinya, yaitu log odds. Mengapa? Karena probabilitas tidak linear, sementara log odds bisa diperlakukan sebagai linear terhadap prediktor."
+  },
+  {
+    "objectID": "slides/bagian-3.html#odds-berapa-kali-lebih-mungkin-terjadi-dibanding-tidak-terjadi",
+    "href": "slides/bagian-3.html#odds-berapa-kali-lebih-mungkin-terjadi-dibanding-tidak-terjadi",
+    "title": "Regresi Logistik Binomial",
+    "section": "Odds — “berapa kali lebih mungkin terjadi dibanding tidak terjadi”",
+    "text": "Odds — “berapa kali lebih mungkin terjadi dibanding tidak terjadi”\n\\[\\text{Odds} = \\frac{P}{1 - P}\\]\nContoh: Jika P(putus studi) = 0.30, maka Odds = 0.30 / 0.70 = 0.43\nCara baca: “Untuk setiap 7 mahasiswa yang bertahan, ada 3 yang putus studi” (3:7)\n\n\n\nP(kejadian)\nOdds\nCara baca\n\n\n\n\n0.10\n0.11\n1 banding 9\n\n\n0.25\n0.33\n1 banding 3\n\n\n0.50\n1.00\nSama rata\n\n\n0.75\n3.00\n3 banding 1\n\n\n0.90\n9.00\n9 banding 1\n\n\n\n\n\n\n\n\n\nInterpretasi odds\n\n\nOdds = 1 artinya peluang terjadi sama dengan tidak terjadi. Odds &gt; 1 artinya lebih mungkin terjadi; Odds &lt; 1 artinya lebih tidak mungkin."
+  },
+  {
+    "objectID": "slides/bagian-3.html#log-odds-logit-membuat-odds-simetris-dan-linear",
+    "href": "slides/bagian-3.html#log-odds-logit-membuat-odds-simetris-dan-linear",
+    "title": "Regresi Logistik Binomial",
+    "section": "Log odds (logit) — membuat odds simetris dan linear",
+    "text": "Log odds (logit) — membuat odds simetris dan linear\nMasalah odds: Rentangnya 0 sampai ∞, dan tidak simetris — nilai di bawah 1 terkompresi, nilai di atas 1 tidak terbatas.\nSolusi: Log odds (logit)\n\\[\\text{Logit}(P) = \\ln\\!\\left(\\frac{P}{1-P}\\right)\\]\n\n\n\nP\nOdds\nLogit\n\n\n\n\n0.10\n0.11\n−2.20\n\n\n0.25\n0.33\n−1.10\n\n\n0.50\n1.00\n0.00\n\n\n0.75\n3.00\n+1.10\n\n\n0.90\n9.00\n+2.20\n\n\n\nPerhatikan: logit simetris di sekitar 0 dan rentangnya −∞ sampai +∞. Inilah yang dimodelkan secara linear oleh regresi logistik."
+  },
+  {
+    "objectID": "slides/bagian-3.html#persamaan-model-regresi-logistik",
+    "href": "slides/bagian-3.html#persamaan-model-regresi-logistik",
+    "title": "Regresi Logistik Binomial",
+    "section": "Persamaan model regresi logistik",
+    "text": "Persamaan model regresi logistik\nPersamaan dalam logit (yang berjalan di belakang layar):\n\\[\\ln\\!\\left(\\frac{P}{1-P}\\right) = \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + \\cdots + \\beta_k X_k\\]\nUntuk memprediksi probabilitas, balik transformasinya:\n\\[P = \\frac{1}{1 + e^{-(\\beta_0 + \\beta_1 X_1 + \\cdots + \\beta_k X_k)}}\\]\nKomponen:\n\nβ₀ = intercept (log odds ketika semua prediktor = 0)\nβ₁, …, βₖ = koefisien regresi (perubahan logit per satu unit prediktor)\ne^β = Odds Ratio  inilah yang diinterpretasikan dalam sebagai effect size dari regresi logistik"
+  },
+  {
+    "objectID": "slides/bagian-3.html#odds-ratio-or-ukuran-efek-utama",
+    "href": "slides/bagian-3.html#odds-ratio-or-ukuran-efek-utama",
+    "title": "Regresi Logistik Binomial",
+    "section": "Odds Ratio (OR) — ukuran efek utama",
+    "text": "Odds Ratio (OR) — ukuran efek utama\n\\[OR = e^{\\beta}\\]\nOR mengukur seberapa banyak odds berubah ketika prediktor naik 1 unit, dengan prediktor lain dikontrol.\n\n\n\nOR\nInterpretasi\n\n\n\n\n= 1.00\nTidak ada efek\n\n\n&gt; 1.00\nOdds outcome naik\n\n\n&lt; 1.00\nOdds outcome turun\n\n\n= 1.50\nOdds naik 50%\n\n\n= 2.00\nOdds naik 100% (dua kali lipat)\n\n\n= 0.50\nOdds turun 50% (setengahnya)\n\n\n\n\n\n\n\n\n\nSelalu laporkan 95% Confidence Interval untuk OR!\n\n\nJika CI melewati 1.0, prediktor tidak signifikan secara statistik — misalnya OR = 1.20, 95% CI [0.85, 1.69] → tidak signifikan."
+  },
+  {
+    "objectID": "slides/bagian-3.html#studi-kasus-apa-yang-memprediksi-putus-studi-pjj",
+    "href": "slides/bagian-3.html#studi-kasus-apa-yang-memprediksi-putus-studi-pjj",
+    "title": "Regresi Logistik Binomial",
+    "section": "Studi kasus: apa yang memprediksi putus studi PJJ?",
+    "text": "Studi kasus: apa yang memprediksi putus studi PJJ?\nKonteks: 450 mahasiswa PJJ; 30% putus studi sebelum semester ke-5\nPrediktor: Jarak ke pokjar, keterlibatan akademik, kecemasan akademik awal\n\n\n\n\n\n\n\n\n\n\n\nPrediktor\nβ\nOR\n95% CI\np\nInterpretasi\n\n\n\n\nJarak (per 10 km)\n0.49\n1.63\n[1.21, 2.19]\n&lt;.001\nJarak +10 km → odds +63%\n\n\nKeterlibatan akademik\n−0.65\n0.52\n[0.38, 0.71]\n&lt;.001\nKeterlibatan ↑ → odds −48%\n\n\nKecemasan akademik\n0.02\n1.02\n[0.99, 1.05]\n.182\nTidak signifikan\n\n\n\n\n\n\n\n\n\nInterpretasi\n\n\nKeterlibatan akademik yang tinggi dapat “mencegah” efek jarak yang jauh antara tempat tinggal mahasiswa dengan pokjar. Bisa dijadikan dasar untuk mendesain intervensi program PJJ."
+  },
+  {
+    "objectID": "slides/bagian-3.html#maximum-likelihood-estimation-mle",
+    "href": "slides/bagian-3.html#maximum-likelihood-estimation-mle",
+    "title": "Regresi Logistik Binomial",
+    "section": "Maximum Likelihood Estimation (MLE)",
+    "text": "Maximum Likelihood Estimation (MLE)\nRegresi linear (OLS):\nCari β yang meminimalkan jumlah kuadrat error (SSE)\nRegresi logistik (MLE):\nCari β yang membuat variabel outcome yang kita observasi “paling mungkin terjadi”\n\n\n\n\n\n\nMengapa MLE\n\n\nKarena MLE, kita tidak mendapatkan F-statistic seperti dalam OLS/ANOVA. Sebagai gantinya, kita mendapatkan χ² sebagai uji signifikansi keseluruhan model.\nJika software menampilkan peringatan Algorithm did not converge — biasanya tanda sampel terlalu kecil atau ada perfect separation (lihat bagian berikutnya)."
+  },
+  {
+    "objectID": "slides/bagian-3.html#deviance-likelihood-ratio-test-uji-omnibus-model",
+    "href": "slides/bagian-3.html#deviance-likelihood-ratio-test-uji-omnibus-model",
+    "title": "Regresi Logistik Binomial",
+    "section": "Deviance & Likelihood Ratio Test — uji omnibus model",
+    "text": "Deviance & Likelihood Ratio Test — uji omnibus model\nDeviance = −2 × log-likelihood (makin kecil, makin baik)\n\n\n\n\n\n\n\n\n\nDeviance\nArti\n\n\n\n\nNull deviance\n612.4\nModel tanpa prediktor — “tebakan terbaik tanpa informasi”\n\n\nResidual deviance\n487.2\nModel dengan prediktor kita\n\n\nPenurunan\n125.2\nBukti bahwa prediktor berguna\n\n\n\nLikelihood Ratio Test:\n\\[\\chi^2 = \\text{Null deviance} - \\text{Residual deviance}\\]\n\\[\\chi^2(3) = 125.2,\\ p &lt; .001 \\rightarrow \\text{Model secara keseluruhan signifikan!}\\]\n\n\n\n\n\n\nUji Omnibus\n\n\nIni adalah uji omnibus — setara dengan uji F keseluruhan dalam regresi linear. Di jamovi, angka ini muncul di bagian Model Fit sebagai Model χ²."
+  },
+  {
+    "objectID": "slides/bagian-3.html#aic-bic-memilih-model-terbaik",
+    "href": "slides/bagian-3.html#aic-bic-memilih-model-terbaik",
+    "title": "Regresi Logistik Binomial",
+    "section": "AIC & BIC — memilih model terbaik",
+    "text": "AIC & BIC — memilih model terbaik\nPrinsipnya sama dengan regresi OLS yang sudah kita pelajari di Bagian 3: menambah prediktor selalu menurunkan deviance, bahkan jika prediktor itu tidak bermakna (overfitting).\n\\[\\text{AIC} = -2\\log L + 2k \\qquad \\text{BIC} = -2\\log L + k\\ln(n)\\]\nDi mana k = jumlah parameter, n = ukuran sampel. Makin kecil, makin baik — hanya bermakna untuk membandingkan model.\n\n\n\nModel\nPrediktor\nAIC\nBIC\n\n\n\n\n\nModel 1\nJarak saja\n502.1\n510.3\n\n\n\nModel 2\nJarak + Keterlibatan\n489.7\n502.1\n← Terbaik\n\n\nModel 3\nJarak + Keterlibatan + Usia + Gender\n493.2\n518.9\n\n\n\n\nModel 2 menang: fit bagus tanpa terlalu kompleks. BIC lebih ketat dari AIC karena penaltinya lebih besar — pilih BIC jika prioritasnya parsimoni."
+  },
+  {
+    "objectID": "slides/bagian-3.html#pseudo-r²-seberapa-banyak-variasi-yang-dijelaskan",
+    "href": "slides/bagian-3.html#pseudo-r²-seberapa-banyak-variasi-yang-dijelaskan",
+    "title": "Regresi Logistik Binomial",
+    "section": "Pseudo R² — seberapa banyak variasi yang dijelaskan?",
+    "text": "Pseudo R² — seberapa banyak variasi yang dijelaskan?\nMasalah: Regresi logistik tidak punya R² seperti OLS karena tidak ada “total variance” yang bisa dibagi seperti dalam OLS.\nSolusi: Pseudo R² — ada beberapa versi, yang paling sering dilaporkan adalah Nagelkerke R²:\n\n\n\nNagelkerke R²\nInterpretasi\n\n\n\n\n&lt; 0.20\nLemah\n\n\n0.20–0.40\nCukup\n\n\n0.40–0.60\nBaik\n\n\n&gt; 0.60\nSangat baik\n\n\n\n\n\n\n\n\n\nInterpretasi Pseudo R²\n\n\nPseudo R² bukan “proporsi varians yang dijelaskan” seperti R² OLS, jadi jangan diinterpretasikan dengan cara yang sama! Lebih tepat diartikan sebagai “peningkatan fit dibanding null model.” Nilainya cenderung lebih rendah dari R² OLS."
+  },
+  {
+    "objectID": "slides/bagian-3.html#adjusted-or-efek-prediktor-setelah-mengontrol-variabel-lain",
+    "href": "slides/bagian-3.html#adjusted-or-efek-prediktor-setelah-mengontrol-variabel-lain",
+    "title": "Regresi Logistik Binomial",
+    "section": "Adjusted OR — efek prediktor setelah mengontrol variabel lain",
+    "text": "Adjusted OR — efek prediktor setelah mengontrol variabel lain\nMasalah confounding: Dalam analisis bivariat, efek yang terlihat bisa dipengaruhi oleh variabel ketiga.\nContoh: Mahasiswa yang tinggal jauh dari pokjar cenderung punya keterlibatan akademik yang lebih rendah (karena kesempatan terlibat lebih terbatas). Efek jarak dan efek keterlibatan saling tumpang tindih.\n\n\n\nPrediktor\nUnadjusted OR\nAdjusted OR\n95% CI\n\n\n\n\nJarak (per 10 km)\n1.70\n1.63\n[1.21, 2.19]\n\n\nKeterlibatan akademik\n0.48\n0.52\n[0.38, 0.71]\n\n\nUsia (per 10 tahun)\n1.15\n1.08\n[0.88, 1.32]\n\n\n\nSetelah dikontrol, efek jarak sedikit mengecil — sebagian efeknya bekerja melalui keterlibatan akademik.\n\n\n\n\n\n\nLaporkan Adjusted OR\n\n\nDalam artikel ilmiah, selalu laporkan adjusted OR dari model dengan prediktor berganda, bukan unadjusted OR dari analisis bivariat."
+  },
+  {
+    "objectID": "slides/bagian-3.html#interaksi-efek-prediktor-yang-berbeda-antar-subgrup",
+    "href": "slides/bagian-3.html#interaksi-efek-prediktor-yang-berbeda-antar-subgrup",
+    "title": "Regresi Logistik Binomial",
+    "section": "Interaksi — efek prediktor yang berbeda antar subgrup",
+    "text": "Interaksi — efek prediktor yang berbeda antar subgrup\nPertanyaan: Apakah efek jarak pada putus studi berbeda tergantung tingkat keterlibatan akademik?\n\\[\\text{logit}(P) = \\beta_0 + \\beta_1(\\text{Jarak}) + \\beta_2(\\text{Keterlibatan}) + \\beta_3(\\text{Jarak} \\times \\text{Keterlibatan})\\]\nHasil: β₃ = −0.08, p = .03 → Interaksi signifikan!\n\n\n\n\n\n\n\n\nSubgrup\nEfek jarak pada odds putus studi\nInterpretasi\n\n\n\n\nKeterlibatan rendah\nOR = 1.12 per km\nJarak sangat berpengaruh\n\n\nKeterlibatan tinggi\nOR = 1.02 per km\nJarak hampir tidak berpengaruh\n\n\n\n\n\n\n\n\n\nTip\n\n\nKeterlibatan akademik yang tinggi bisa men-buffer dampak jarak yang jauh, sehingga bisa dijadikan dasar untuk merancang intervensi yang tepat sasaran."
+  },
+  {
+    "objectID": "slides/bagian-3.html#strategi-membangun-model-mulai-dari-teori",
+    "href": "slides/bagian-3.html#strategi-membangun-model-mulai-dari-teori",
+    "title": "Regresi Logistik Binomial",
+    "section": "Strategi membangun model — mulai dari teori",
+    "text": "Strategi membangun model — mulai dari teori\n\n\n✅ Theory-driven (direkomendasikan)\n\nPilih prediktor berdasarkan teori dan literatur sebelum melihat data\nUji hipotesis yang sudah pre-specified\nLaporkan semua model yang diuji — bukan hanya yang paling bagus hasilnya secara statistik\n\n\n⚠️ Stepwise selection (kontroversial)\n\nForward: tambahkan prediktor satu per satu berdasarkan p-value\nBackward: mulai dari semua prediktor, hapus yang tidak signifikan\nMasalah: Overfitting, inflasi Type I error, hasil tidak replicable\n\n\n\n\n\n\n\n\nKapan analisis eksplorasi dibenarkan?\n\n\nAnalisis eksplorasi boleh dilakukan untuk generate hipotesis, tapi harus dipisahkan dari analisis konfirmatori. Mencampur keduanya dalam satu sampel adalah salah satu bentuk questionable research practice."
+  },
+  {
+    "objectID": "slides/bagian-3.html#kabar-baik-lebih-longgar-dari-ols",
+    "href": "slides/bagian-3.html#kabar-baik-lebih-longgar-dari-ols",
+    "title": "Regresi Logistik Binomial",
+    "section": "Kabar baik: lebih longgar dari OLS!",
+    "text": "Kabar baik: lebih longgar dari OLS!\n\n\nYang HARUS dipenuhi:\n\nOutcome biner (variabel dependen dikotomus: 0/1)\nObservasi independen — satu partisipan tidak mempengaruhi yang lain\nLinearitas dalam log odds — prediktor kontinu harus punya hubungan linear dengan logit(P)\nTidak ada multikolinearitas ekstrem\n\n\nYang TIDAK perlu:\n\n✗ Normalitas residual\n✗ Homoskedastisitas\n✗ Outcome kontinu\n✗ Hubungan linear antara prediktor dan P (hanya harus linear dalam logit)\n\n\n\n\n\n\n\n\nTetap harus dicek\n\n\nMeskipun lebih longgar, asumsi yang ada tetap harus dicek dan dilaporkan. Terutama multikolinearitas (dengan VIF) dan kemungkinan perfect separation."
+  },
+  {
+    "objectID": "slides/bagian-3.html#multikolinearitas-sudah-familiar-dari-bagian-3",
+    "href": "slides/bagian-3.html#multikolinearitas-sudah-familiar-dari-bagian-3",
+    "title": "Regresi Logistik Binomial",
+    "section": "Multikolinearitas — sudah familiar dari Bagian 3",
+    "text": "Multikolinearitas — sudah familiar dari Bagian 3\nCara memeriksa dan interpretasinya sama persis seperti dalam regresi OLS — gunakan VIF:\n\n\n\nVIF\nInterpretasi\n\n\n\n\n&lt; 5\nTidak ada masalah\n\n\n5–10\nModerate — perlu hati-hati\n\n\n&gt; 10\nMasalah serius\n\n\n\nContoh masalah: “Durasi studi (semester)” dan “biaya pendidikan kumulatif” — keduanya naik bersama, korelasi r = 0.95 → VIF ≈ 18 → tidak bisa diestimasi secara stabil.\n\n\n\n\n\n\nTip\n\n\nJamovi menampilkan VIF secara otomatis di output regresi logistik — centang Collinearity Statistics di opsi Model Coefficients."
+  },
+  {
+    "objectID": "slides/bagian-3.html#perfect-separation-ketika-prediktor-too-goood-to-be-true",
+    "href": "slides/bagian-3.html#perfect-separation-ketika-prediktor-too-goood-to-be-true",
+    "title": "Regresi Logistik Binomial",
+    "section": "Perfect separation — ketika prediktor too goood to be true",
+    "text": "Perfect separation — ketika prediktor too goood to be true\nMasalah: Satu prediktor memisahkan outcome secara sempurna — semua Y = 1 ada di satu sisi, semua Y = 0 di sisi lain.\nContoh: Semua mahasiswa dengan jarak &gt; 45 km putus studi (100%). Semua mahasiswa dengan jarak ≤ 45 km lanjut studi (100%).\nAkibat: Koefisien meluncur ke ±∞, standard error sangat besar, model tidak converge.\n\n\n\n\n\n\nTanda-tanda di output\n\n\n\nKoefisien sangat besar (β &gt; 10 atau &lt; −10)\nStandard error sangat besar\nPesan “Algorithm did not converge”\n\nJika ini terjadi, cek distribusi prediktor dan outcome — sering kali tanda bahwa ada kategori yang terlalu kecil."
+  },
+  {
+    "objectID": "slides/bagian-3.html#confusion-matrix-dasar-evaluasi-akurasi",
+    "href": "slides/bagian-3.html#confusion-matrix-dasar-evaluasi-akurasi",
+    "title": "Regresi Logistik Binomial",
+    "section": "Confusion matrix — dasar evaluasi akurasi",
+    "text": "Confusion matrix — dasar evaluasi akurasi\nSetelah model difit, gunakan threshold default P ≥ 0.50 → prediksi outcome terjadi; P &lt; 0.50 → prediksi tidak terjadi.\n\n\n\n\nPrediksi: Tidak Terjadi\nPrediksi: Terjadi\n\n\n\n\nAktual: Tidak Terjadi\n240 (TN)\n30 (FP)\n\n\nAktual: Terjadi\n50 (FN)\n130 (TP)\n\n\n\n\nTP (True Positive): Prediksi terjadi → aktual terjadi ✓\nTN (True Negative): Prediksi tidak terjadi → aktual tidak terjadi ✓\nFP (False Positive): Prediksi terjadi → aktual tidak terjadi ✗ (false alarm)\nFN (False Negative): Prediksi tidak terjadi → aktual terjadi ✗ (miss — sering yang paling berbahaya)"
+  },
+  {
+    "objectID": "slides/bagian-3.html#sensitivity-specificity-dan-akurasi",
+    "href": "slides/bagian-3.html#sensitivity-specificity-dan-akurasi",
+    "title": "Regresi Logistik Binomial",
+    "section": "Sensitivity, specificity, dan akurasi",
+    "text": "Sensitivity, specificity, dan akurasi\nDari confusion matrix tadi (TP=130, TN=240, FP=30, FN=50, N=450):\n\n\n\n\n\n\n\n\n\nMetrik\nFormula\nNilai\nPertanyaan yang dijawab\n\n\n\n\nAkurasi\n(TP+TN)/N\n82.2%\nBerapa % prediksi yang benar?\n\n\nSensitivity\nTP/(TP+FN)\n72.2%\nDari yang benar-benar terjadi, berapa % terdeteksi?\n\n\nSpecificity\nTN/(TN+FP)\n88.9%\nDari yang tidak terjadi, berapa % diprediksi benar?\n\n\n\n\n\n\n\n\n\nTrade-off sensitivity vs specificity\n\n\n\nScreening risiko bunuh diri → prioritaskan sensitivity tinggi — lebih baik over-identify daripada ada yang terlewat\nDiagnosis klinis formal → prioritaskan specificity tinggi — false positive berdampak stigma dan biaya\n\nDefault threshold = 0.50 — bisa disesuaikan sesuai konteks dan pertimbangan etis."
+  },
+  {
+    "objectID": "slides/bagian-3.html#auc-ringkasan-performa-model-dalam-satu-angka",
+    "href": "slides/bagian-3.html#auc-ringkasan-performa-model-dalam-satu-angka",
+    "title": "Regresi Logistik Binomial",
+    "section": "AUC — ringkasan performa model dalam satu angka",
+    "text": "AUC — ringkasan performa model dalam satu angka\nAUC (Area Under the ROC Curve) = probabilitas bahwa model memberikan predicted probability yang lebih tinggi kepada kasus positif dibanding kasus negatif yang diambil secara acak.\n\n\n\nAUC\nInterpretasi\n\n\n\n\n0.50\nTidak lebih baik dari tebakan\n\n\n0.60–0.70\nLemah\n\n\n0.70–0.80\nCukup\n\n\n0.80–0.90\nBaik\n\n\n&gt; 0.90\nSangat baik — atau overfitting? Cek dulu!\n\n\n\n\n\n\n\n\n\nNote\n\n\nROC curve dan AUC tersedia di jamovi. Untuk pembahasan lebih dalam tentang ROC, Anda bisa membaca materi terpisah di hackmd.io/@ameliazein/roc."
+  },
+  {
+    "objectID": "slides/bagian-3.html#checklist-pelaporan-regresi-logistik",
+    "href": "slides/bagian-3.html#checklist-pelaporan-regresi-logistik",
+    "title": "Regresi Logistik Binomial",
+    "section": "Checklist pelaporan regresi logistik",
+    "text": "Checklist pelaporan regresi logistik\n☐ Deskripsi variabel — outcome biner (0/1), distribusi prediktor\n☐ Uji signifikansi model — Model χ², df, p (dari Likelihood Ratio Test)\n☐ Pseudo R² — Nagelkerke R²\n☐ Koefisien per prediktor — β, SE, Wald χ², p, OR, 95% CI\n☐ Multikolinearitas — VIF\n☐ Akurasi klasifikasi — akurasi keseluruhan, sensitivity, specificity\n☐ AUC (opsional tapi dianjurkan)\n☐ AIC/BIC jika membandingkan model"
+  },
+  {
+    "objectID": "slides/bagian-3.html#contoh-paragraf-hasil",
+    "href": "slides/bagian-3.html#contoh-paragraf-hasil",
+    "title": "Regresi Logistik Binomial",
+    "section": "Contoh paragraf hasil",
+    "text": "Contoh paragraf hasil\n\n“Regresi logistik binomial dilakukan untuk memprediksi putus studi mahasiswa PJJ menggunakan tiga prediktor: jarak ke pokjar, kecemasan akademik awal, dan keterlibatan akademik. Model secara keseluruhan signifikan, χ²(3, N = 450) = 125.2, p &lt; .001, Nagelkerke R² = .32. Model berhasil mengklasifikasikan 82.2% kasus dengan benar (sensitivity = 72.2%, specificity = 88.9%, AUC = .84).\nJarak ke pokjar secara signifikan memprediksi putus studi (OR = 1.05, 95% CI [1.02, 1.08], p &lt; .001): setiap tambahan 10 km jarak dari pokjar, odds putus studi mahasiswa meningkat sebesar 63%. Keterlibatan akademik juga berperan signifikan (OR = 0.52, 95% CI [0.38, 0.71], p &lt; .001) — mahasiswa dengan keterlibatan lebih tinggi memiliki odds putus studi yang lebih rendah. Kecemasan akademik awal tidak memprediksi putus studi secara signifikan (OR = 1.02, 95% CI [0.99, 1.05], p = .182).”"
+  },
+  {
+    "objectID": "slides/bagian-3.html#menerjemahkan-or-ke-bahasa-yang-dipahami-semua-orang",
+    "href": "slides/bagian-3.html#menerjemahkan-or-ke-bahasa-yang-dipahami-semua-orang",
+    "title": "Regresi Logistik Binomial",
+    "section": "Menerjemahkan OR ke bahasa yang dipahami semua orang",
+    "text": "Menerjemahkan OR ke bahasa yang dipahami semua orang\nJangan serahkan interpretasi ke pembaca — terjemahkan OR ke kalimat yang konkrit.\nContoh: OR = 1.05 untuk jarak ke pokjar (per 1 km)\n\nOpsi 1 — Persentase perubahan odds: “Setiap tambahan 1 km jarak dari pokjar, odds putus studi naik 5%.”\nOpsi 2 — Interval konkrit: “Mahasiswa yang tinggal 10 km lebih jauh punya odds putus studi 1.63 kali lebih tinggi.” (karena 1.05^10 = 1.63)\nOpsi 3 — Perbandingan probabilitas: “Mahasiswa yang tinggal 5 km dari pokjar memiliki peluang ~20% putus studi; mahasiswa yang tinggal 15 km memiliki peluang ~30%.”\n\n\n\n\n\n\n\nWarning\n\n\nOR ≠ Risk Ratio (RR). Jangan tulis “X kali lebih mungkin” untuk OR — itu bahasa RR. OR harus dikatakan: “X kali lebih tinggi odds-nya” (Zhang & Yu, 1998, JAMA). Perbedaan ini penting terutama jika prevalensi outcome &gt; 10%."
+  },
+  {
+    "objectID": "slides/bagian-3.html#enam-kesalahan-umum",
+    "href": "slides/bagian-3.html#enam-kesalahan-umum",
+    "title": "Regresi Logistik Binomial",
+    "section": "Enam kesalahan umum",
+    "text": "Enam kesalahan umum\n\nMengaburkan OR dengan Risk Ratio — “X kali lebih mungkin” bukan cara yang benar untuk menginterpretasikan OR. Kata yang tepat: “X kali lebih tinggi odds-nya”.\nMengklaim kausalitas — Regresi logistik adalah korelasional. Kausalitas membutuhkan desain eksperimental atau quasi-eksperimental.\nMengabaikan multikolinearitas — “Usia” dan “tahun lahir” keduanya dimasukkan sebagai prediktor? Sudah pasti multikolinear.\nTidak memeriksa asumsi — Terutama linearitas dalam logit dan kemungkinan perfect separation.\nHanya melaporkan prediktor yang signifikan — Laporkan semua prediktor yang dimasukkan ke model — bukan cherry-pick yang p &lt; .05.\nEPV terlalu rendah — Events per variable (EPV): minimal 10 kejadian per prediktor. Dengan hanya 50 kejadian (events), jangan masukkan lebih dari 5 prediktor — estimasi akan tidak stabil."
+  },
+  {
+    "objectID": "slides/bagian-3.html#konteks-apa-yang-memprediksi-pemberian-dukungan-sosial",
+    "href": "slides/bagian-3.html#konteks-apa-yang-memprediksi-pemberian-dukungan-sosial",
+    "title": "Regresi Logistik Binomial",
+    "section": "Konteks: apa yang memprediksi pemberian dukungan sosial?",
+    "text": "Konteks: apa yang memprediksi pemberian dukungan sosial?\n\nDataset: Dataset Contoh Regresi Logistik (dataset-social-support.omv)\n\nDapat diunduh dari navbar di laman mata kuliah\n\nPertanyaan penelitian berkaitan dengan faktor-faktor yang memprediksi outcome biner dalam konteks psikologi klinis/sosial"
+  },
+  {
+    "objectID": "slides/bagian-3.html#langkah-langkah-di-jamovi",
+    "href": "slides/bagian-3.html#langkah-langkah-di-jamovi",
+    "title": "Regresi Logistik Binomial",
+    "section": "Langkah-langkah di jamovi",
+    "text": "Langkah-langkah di jamovi\n\n\nMenjalankan regresi logistik:\n\nAnalyses → Regression → Logistic Regression → 2 Outcomes (Binomial)\nMasukkan variabel outcome ke Dependent Variable\nMasukkan prediktor ke Covariates (kontinu) atau Factors (kategorikal)\nJamovi akan melakukan dummy coding secara otomatis untuk variabel kategorikal\n\n\nOutput yang harus dicek:\n☑ Model Fit — Model χ², Nagelkerke R²\n☑ Model Coefficients — β, OR, 95% CI, p\n☑ Collinearity Statistics — VIF\n☑ Prediction Table — akurasi, sensitivity, specificity\n☑ ROC Curve — AUC\n\n\n\n\n\n\n\nUrutan membaca output\n\n\nOmnibus (Model χ²) → Pseudo R² → Koefisien per prediktor (OR + CI) → VIF → Akurasi klasifikasi → AUC"
+  },
+  {
+    "objectID": "slides/bagian-3.html#ada-pertanyaan",
+    "href": "slides/bagian-3.html#ada-pertanyaan",
+    "title": "Regresi Logistik Binomial",
+    "section": "Ada pertanyaan❓",
+    "text": "Ada pertanyaan❓\n\n\n\n\n\n\n\nNote\n\n\n\nPaparan disusun dengan menggunakan  dan Quarto dengan template dari UNAIR Theme.\nKontak saya via  amelia.zein@psikologi.unair.ac.id"
+  },
+  {
+    "objectID": "slides/bagian-1.html#outline",
+    "href": "slides/bagian-1.html#outline",
+    "title": "Korelasi",
+    "section": "Outline",
+    "text": "Outline\n\nJenis-jenis koefisien korelasi\nFaktor-faktor yang membuat koefisien korelasi bervariasi\nKoreksi atenuasi dan measurement error\nVariance-covariance dan correlation matrix\nWARNING! Covariance/correlation matrix is not positive definite\nHeywood dan ultra-Heywood case\nBivariat, part, dan partial correlation\nMetrik variabel (standardized vs unstandardized)"
+  },
+  {
+    "objectID": "slides/bagian-1.html#mengapa-memulai-dari-korelasi",
+    "href": "slides/bagian-1.html#mengapa-memulai-dari-korelasi",
+    "title": "Korelasi",
+    "section": "Mengapa memulai dari korelasi?",
+    "text": "Mengapa memulai dari korelasi?"
+  },
+  {
+    "objectID": "slides/bagian-1.html#mengapa-memulai-dari-korelasi-1",
+    "href": "slides/bagian-1.html#mengapa-memulai-dari-korelasi-1",
+    "title": "Korelasi",
+    "section": "Mengapa memulai dari korelasi?",
+    "text": "Mengapa memulai dari korelasi?\n\nSEM merupakan teknik yang digunakan untuk mengestimasi korelasi antar-variabel\nUntuk melakukan SEM, peneliti tidak harus menginput data kasar (raw data), tetapi ada pilihan untuk menginput correlation atau matriks variance-covariance.\nKalaupun yang tersedia adalah raw data, maka software akan membuat matriks variance-covariance sebelum mengestimasi parameter model."
+  },
+  {
+    "objectID": "slides/bagian-1.html#jenis-jenis-korelasi",
+    "href": "slides/bagian-1.html#jenis-jenis-korelasi",
+    "title": "Korelasi",
+    "section": "Jenis-jenis korelasi",
+    "text": "Jenis-jenis korelasi\n\n\n\nKoefisien Korelasi\nLevel Pengukuran\n\n\n\n\nPearson’s product moment\nKedua variabel setidaknya interval\n\n\nSpearman’s rank dan Kendall’s tau\nKedua variabel ordinal\n\n\nPhi, contingency table\nKedua variabel nominal\n\n\nPoint biserial\nVariabel interval dengan nominal\n\n\nGamma, rank biserial\nVariabel ordinal dengan nominal\n\n\nBiserial\nVariabel interval dengan dummy\n\n\nPolyserial\nVariabel interval dengan variabel underlying continuity\n\n\nTetrachoric\nKedua variabel dummy (dikotomis)\n\n\nPolychoric\nKedua variabel ordinal (dengan kontinuitas implisit)"
+  },
+  {
+    "objectID": "slides/bagian-1.html#faktor-faktor-yang-mempengaruhi-arah-dan-magnitude-korelasi-1",
+    "href": "slides/bagian-1.html#faktor-faktor-yang-mempengaruhi-arah-dan-magnitude-korelasi-1",
+    "title": "Korelasi",
+    "section": "Faktor-faktor yang mempengaruhi arah dan magnitude korelasi 1️⃣",
+    "text": "Faktor-faktor yang mempengaruhi arah dan magnitude korelasi 1️⃣\n\nLevel pengukuran (apakah variabel tersebut nominal, ordinal, interval, atau rasio)\n\nSehingga berdampak pada variabilitas (restriction range) dan normalitas data\n\nLinearitas\n\nSemua teknik korelasi mengasumsikan korelasi antar-variabel linier, sehingga korelasi yang tidak linier akan memberikan informasi tidak adanya korelasi (padahal tidak selalu).\n\nAdanya data outlier\nKoreksi atenuasi"
+  },
+  {
+    "objectID": "slides/bagian-1.html#faktor-faktor-yang-mempengaruhi-arah-dan-magnitude-korelasi-2",
+    "href": "slides/bagian-1.html#faktor-faktor-yang-mempengaruhi-arah-dan-magnitude-korelasi-2",
+    "title": "Korelasi",
+    "section": "Faktor-faktor yang mempengaruhi arah dan magnitude korelasi 2️⃣",
+    "text": "Faktor-faktor yang mempengaruhi arah dan magnitude korelasi 2️⃣\n\nJumlah sampel\n\nJumlah sampel yang terlalu sedikit akan memberikan estimasi yang kurang akurat (karena standard errornya besar)\n\nSampling variance\n\nYang kemudian berefek pada confidence interval, effect size, dan statistical power\n\nMissing data\n\nKalau data tidak lengkap, estimasi koefisien korelasi akan langsung terdampak.\nAda beberapa pilihan:  listwise deletion, pairwise deletion, dan data imputation.\nListwise deletion tidak disarankan karena membuat jumlah sampel turun drastis  mengurangi statistical power."
+  },
+  {
+    "objectID": "slides/bagian-1.html#section",
+    "href": "slides/bagian-1.html#section",
+    "title": "Korelasi",
+    "section": "",
+    "text": "Silahkan unduh dan buka Dataset Korelasi, untuk melihat contoh."
+  },
+  {
+    "objectID": "slides/bagian-1.html#variance-covariance-dan-correlation-matrix-1",
+    "href": "slides/bagian-1.html#variance-covariance-dan-correlation-matrix-1",
+    "title": "Korelasi",
+    "section": "Variance-covariance dan correlation matrix 1️⃣",
+    "text": "Variance-covariance dan correlation matrix 1️⃣\n\nUntuk melakukan SEM, maka perangkat lunak membutuhkan variance-covariance matrix untuk mengestimasi parameter model\nPada bagian diagonal variance-covariance matrix menunjukkan varians, sedangkan sisanya adalah covariance\n\n\n\nJumlah nilai unik (non-redundant information) dalam variance-covariance matrix adalah p(p+1)/2\n\ndimana p adalah jumlah observed variable\nSehingga dengan contoh di atas maka jumlah nilai unik adalah 3(3+1)/2=6, yaitu 3 varians (diagonal) dan 3 covariance (sisanya)"
+  },
+  {
+    "objectID": "slides/bagian-1.html#variance-covariance-dan-correlation-matrix-2",
+    "href": "slides/bagian-1.html#variance-covariance-dan-correlation-matrix-2",
+    "title": "Korelasi",
+    "section": "Variance-covariance dan correlation matrix 2️⃣",
+    "text": "Variance-covariance dan correlation matrix 2️⃣\n\nSebagian besar perangkat lunak SEM menggunakan variance-covariance matrix bukan correlation matrix\n\nIngat❗ korelasi pada dasarnya adalah standardized covariance.\n\nMenggunakan correlation matrix biasanya lebih sering menghasilkan parameter yang statistically significant tapi standard error yang tidak akurat.\nOleh karena itu, meskipun user menginput correlation matrix, maka perangkat lunak akan mengubahnya dulu menjadi variance-covariance matrix, baru parameter model dapat diestimasi."
+  },
+  {
+    "objectID": "slides/bagian-1.html#koreksi-atenuasi",
+    "href": "slides/bagian-1.html#koreksi-atenuasi",
+    "title": "Korelasi",
+    "section": "Koreksi Atenuasi",
+    "text": "Koreksi Atenuasi\n\nAsumsi dasar dalam Psikometri adalah skor kasar (observed score) mengandung skor murni (true score) dan measurement error, sehingga dalam mengestimasi korelasi, measurement error perlu dibuang agar estimasi lebih akurat.\nDengan teknik koreksi atenuasi, kita dapat ‘membuang’ measurement error, sehingga kita dapat mengestimasi korelasi antar-variabel menggunakan true score-nya.\nTetapi apabila reliabilitas skala kita kurang baik, maka setelah dikoreksi koefisien korelasi bisa lebih dari 1 ❗\nMisalnya diketahui bahwa korelasi observed scores antar dua variabel (rab) adalah 0.9 dan reliabilitas skala a (Cronbach’s α) adalah 0.6 dan skala b adalah 0.7, maka:"
+  },
+  {
+    "objectID": "slides/bagian-1.html#warning-covariancecorrelation-matrix-is-not-positive-definite",
+    "href": "slides/bagian-1.html#warning-covariancecorrelation-matrix-is-not-positive-definite",
+    "title": "Korelasi",
+    "section": "WARNING! Covariance/correlation matrix is not positive definite",
+    "text": "WARNING! Covariance/correlation matrix is not positive definite\n\nApa yang terjadi?\nPerangkat lunak akan menghentikan proses estimasi dan memberikan pesan non-positive definite"
+  },
+  {
+    "objectID": "slides/bagian-1.html#matrik-korelasi-dengan-non-positive-definite",
+    "href": "slides/bagian-1.html#matrik-korelasi-dengan-non-positive-definite",
+    "title": "Korelasi",
+    "section": "Matrik korelasi dengan non-positive definite",
+    "text": "Matrik korelasi dengan non-positive definite\n\nKoefisien korelasi yang nilainya ≥1 menyebabkan matriks korelasi menjadi non-positive definite\n\nArtinya, parameter model tidak mungkin diestimasi\n\nMengapa terjadi?\n\nData didapatkan dari observasi yang tidak independen (linear dependency)\nTerjadi multikolinearitas\nJumlah sampel lebih sedikit dari jumlah variabel yang diuji dalam model\nSepasang variabel berbagi varians negatif atau tidak sama sekali (0)  Heywood case\nVarians, kovarians, dan korelasi nilainya diluar batas kewajaran\nKesalahan mengatur pembatasan (constraint) pada parameter tertentu"
+  },
+  {
+    "objectID": "slides/bagian-1.html#heywood-dan-ultra-heywood-case",
+    "href": "slides/bagian-1.html#heywood-dan-ultra-heywood-case",
+    "title": "Korelasi",
+    "section": "Heywood dan ultra-Heywood case",
+    "text": "Heywood dan ultra-Heywood case\n\nTerjadi ketika communalities = 1 (Heywood) atau ≥1 (ultra-Heywood), atau terjadi ketika varians measurement error bernilai negatif\n\nCommunalities adalah kuadrat dari koefisien korelasi (R2)\nApabila terjadi, maka ada yang salah dengan spesifikasi model (hipotesis)\n\nTerjadi karena\n\nCommon factor terlalu banyak/terlalu sedikit\nUkuran sampel tidak memadai\nModel SEM bukan model yang cocok untuk menguji hipotesis (alternatifnya Principal Component Analysis)\n\nYang bisa dilakukan\n\nTinjau kembali hipotesis modelnya\nKurangi jumlah faktor laten dengan ‘membuang’ jalur/korelasi yang bermasalah\nIdentifikasi variabel yang terlibat multikolinearitas"
+  },
+  {
+    "objectID": "slides/bagian-1.html#korelasi-bivariat-part-dan-partial-correlation",
+    "href": "slides/bagian-1.html#korelasi-bivariat-part-dan-partial-correlation",
+    "title": "Korelasi",
+    "section": "Korelasi Bivariat: Part dan partial correlation",
+    "text": "Korelasi Bivariat: Part dan partial correlation"
+  },
+  {
+    "objectID": "slides/bagian-1.html#metrik-variabel-standardized-vs-unstandardized",
+    "href": "slides/bagian-1.html#metrik-variabel-standardized-vs-unstandardized",
+    "title": "Korelasi",
+    "section": "Metrik variabel (standardized vs unstandardized)",
+    "text": "Metrik variabel (standardized vs unstandardized)\n\nUnstandardized solution/estimates\n\nDapat dibandingkan antar kelompok sampel\nMerupakan parameter yang digunakan oleh perangkat lunak untuk menghitung standard error dan taraf signifikansi (p-value)\nMembandingkan unstandardised factor loading harus melihat standard errornya juga\n\nStandardized solution/estimates\n\nHanya interpretable untuk kelompok sampel yang diuji — tidak bisa dibandingkan dengan kelompok sampel yang lain.\nBerguna untuk membandingkan factor loading antar-variabel di dalam model\nApabila variabel dalam model memiliki unit pengukuran yang berbeda, maka standardized estimates akan sangat membantu\n\nAda banyak perbedaan pendapat mengenai metrik mana yang harus dilaporkan, tetapi…\n\nSelalu laporkan unstandardized solution/estimates dan standard errornya"
+  },
+  {
+    "objectID": "slides/bagian-1.html#tugas-1-membuat-correlation-matrix-dan-melakukan-koreksi-atenuasi",
+    "href": "slides/bagian-1.html#tugas-1-membuat-correlation-matrix-dan-melakukan-koreksi-atenuasi",
+    "title": "Korelasi",
+    "section": "TUGAS 1: Membuat correlation matrix dan melakukan koreksi atenuasi",
+    "text": "TUGAS 1: Membuat correlation matrix dan melakukan koreksi atenuasi\nDemonstrasi\nMenggunakan Dataset Contoh Korelasi\n[Dataset] [Matriks di Excel]\nLatihan mandiri 1️⃣: Koreksi Atenuasi\n\nApabila diketahui reliabilitas skala masing-masing dimensi Big 5 (neu=0.78, con=0.76, agr=0.34, ext=0.45, op=0.67), buatkan matriks korelasi antar-dimensi\nLakukan koreksi atenuasi\nApakah matriksnya non-positive definite? Variabel apa saja yang terlibat?\nApa kira-kira yang menyebabkan kedua variabel tsb korelasinya non-positive definite?\n\n[Unduh Dataset]"
+  },
+  {
+    "objectID": "slides/bagian-1.html#ada-pertanyaan",
+    "href": "slides/bagian-1.html#ada-pertanyaan",
+    "title": "Korelasi",
+    "section": "Ada pertanyaan❓",
+    "text": "Ada pertanyaan❓\n\n\n\n\n\n\n\nNote\n\n\n\nPaparan disusun dengan menggunakan  dan Quarto dengan template dari UNAIR Theme.\nKontak saya via  amelia.zein@psikologi.unair.ac.id"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Dasar Latent Variable Modeling",
+    "section": "",
+    "text": "Laman web berikut ini merupakan laman web untuk Workshop Dasar-Dasar Latent Variable Modeling.\nMateri berlisensi  BY 4.0. Materi bebas digunakan kembali namun wajib mengatribusi sumber aslinya."
+  },
+  {
+    "objectID": "index.html#outline-materi",
+    "href": "index.html#outline-materi",
+    "title": "Dasar Latent Variable Modeling",
+    "section": "Outline materi",
+    "text": "Outline materi\n\nBagian 1️⃣: Korelasi\n\nJenis-jenis koefisien korelasi\nFaktor-faktor yang membuat koefisien korelasi bervariasi\nKoreksi atenuasi dan measurement error\nVariance-covariance dan correlation matrix\nWARNING! Covariance/correlation matrix is not positive definite\nHeywood dan Ultra-Heywood case\nBivariat, part, dan partial correlation\nMetrik variabel (standardized vs unstandardized)\n\n\n\nBagian 2️⃣: Ordinary Least Square Regression\n\nBerlatih menginspeksi data secara visual dengan scatterplot\nModel regresi linear (ordinary least square)\nMenarik garis regresi (fitted regression line)\nVarians yang dapat dan yang tidak dapat dijelaskan oleh model (R2)\nMenguji hipotesis\nMengecek kecocokan model dengan data (model fit)\nMengecek asumsi\n\nDistribusi (normalitas) residual\nHomoskedastisitas\nMultikolinearitas\n\nMendeteksi outliers\nMenguji interaction effects dan model change\nMenulis hasil analisis regresi linear dengan interaction terms dalam manuskrip\n\n\n\nBagian 3️⃣: Regresi Logistik Binomial\n\nMengapa regresi linear tidak cocok untuk outcome biner?\nFungsi logistik dan kurva S (sigmoid)\nRantai konsep: probabilitas → odds → log odds (logit) → odds ratio (OR)\nPersamaan model & interpretasi koefisien (β dan OR = e^β)\nEstimasi dengan Maximum Likelihood (MLE): deviance, Likelihood Ratio Test\nMembandingkan model: AIC, BIC, dan Pseudo R² (Nagelkerke)\nModel dengan banyak prediktor: adjusted OR dan efek interaksi\nAsumsi regresi logistik (lebih longgar dari OLS: tidak perlu normalitas residual atau homoskedastisitas)\nEvaluasi akurasi prediksi: confusion matrix, sensitivity, specificity, AUC\nPelaporan hasil sesuai APA & terjemahan OR ke bahasa yang dipahami semua orang\nKesalahan umum: OR vs. risk ratio, events per variable (EPV), stepwise selection\n\n\n\nBagian 4️⃣: Pengantar Latent Variable Modeling\n\nApa yang dimaksud dengan variabel laten? Mengapa psikologi membutuhkannya?\nClassical Test Theory sebagai model variabel laten paling sederhana\nReliabilitas dan measurement error: mengapa skor observasi selalu mengandung noise\nAttenuation bias: bagaimana measurement error mendistorsi estimasi hubungan antar-variabel\nKeluarga model variabel laten: CTT → EFA → CFA → SEM\nVariabel laten dalam model reflektif vs formatif\nPilihan perangkat lunak\nCakupan materi dan keterbatasannya\n\n\n\nBagian 5️⃣: Model Jalur (Path Model) dan Model Regresi\n\nDefinisi path model\nNama variabel dan koefisien jalur (path coefficients)\n\nδ (delta), ε (epsilon), ξ (ksi), η (eta), λ (lambda), γ (gamma), β (beta), φ (phi), ζ (zeta)\n\nRepresentasi visual model jalur menggunakan diagram jalur (path diagram)\nMenggambarkan hubungan antar-variabel dengan menggunakan diagram jalur\nSpesifikasi model dengan syntax lavaan untuk spesifikasi model jalur di module SEMLj\nAsumsi kausalitas (?) dan limitasi\n\n\n\n\n\n\n\nTipMenggambar diagram jalur\n\n\n\nUntuk menggambar diagram jalur, peserta dapat menggunakan MS Power Point, Canva, atau software lainnya yang serupa. Rekomendasi saya: gunakan draw.io yang merupakan software open source dan sangat unggul untuk menggambar berbagai macam diagram, termasuk flowchart.\n\n\n\n\nBagian 6️⃣: Principal Component Analysis (PCA) dan Exploratory Factor Analysis (EFA)\n\nMengapa kita perlu analisis faktor? Measurement error dan attenuation bias\nKeluarga model variabel laten: CTT → EFA → CFA → SEM\nPrincipal Component Analysis (PCA): reduksi dimensi & unsupervised learning dalam ML\nEigenvalue, scree plot, dan component loadings\nPCA vs EFA: tujuan, model, dan kapan menggunakan yang mana\nKomunalitas (h²) dan keunikan — indikator kualitas item\nMenentukan jumlah faktor: parallel analysis (direkomendasikan), scree plot, Kaiser criterion\nRotasi orthogonal vs. oblique — mengapa konstruk psikologi hampir selalu membutuhkan oblique\nMetode ekstraksi: MinRes, PAF, dan Maximum Likelihood\nAsumsi & kesiapan data: KMO, Bartlett’s test, dan ukuran sampel\nEvaluasi model: fit indices (RMSEA, CFI, TLI) dan reliabilitas (α vs. ω)\nChecklist pelaporan EFA & kesalahan umum\n\n\n\nBagian 7️⃣: Confirmatory Factor Analysis (CFA)\n\nDefinisi factor analysis\nExploratory vs confirmatory factor analysis\nKapan menggunakan CFA?\nConstraining parameter model\nModel pengukuran (paralel, tau equivalence, dan congeneric)\nVariabel indikator (reflektif vs formatif)\nCorrelated error variances\nMetode estimasi\nMenuliskan hasil analisis CFA dalam laporan penelitian\n\n\n\n\n\n\n\nNoteUnduh materi dalam bentuk PDF\n\n\n\nKlik navigation bar yang mengarah pada PDF materi, kemudian tekan ctrl dan p bersamaan. Setelah window untuk print muncul, pilih Save to PDF dan klik Save."
+  },
+  {
+    "objectID": "index.html#referensi",
+    "href": "index.html#referensi",
+    "title": "Dasar Latent Variable Modeling",
+    "section": "Referensi",
+    "text": "Referensi\n\nBaujean, A.A. (2014). Latent Variable Modeling Using R: A step-by-step guide. New York: Routledge.\nGalluci, M. (2025). SEMLj: A Suite for Structural Equation Models for jamovi (v1.2.5). https://semlj.github.io/index.html\nSchumacker, R.E. & Lomax, R.G. (2016). A Beginner’s Guide to Structural Equation Modeling (4th edition). New York: Routledge."
+  },
+  {
+    "objectID": "index.html#sumber-belajar-lainnya",
+    "href": "index.html#sumber-belajar-lainnya",
+    "title": "Dasar Latent Variable Modeling",
+    "section": "Sumber belajar lainnya",
+    "text": "Sumber belajar lainnya\n\nLearning Statistics with jamovi\nVideo tutorial jamovi dari Datalab\nMateri workshop SEM: Sacha Epskamp\nCho, E. (2016). Making Reliability Reliable: A Systematic approach to reliability coefficients. Organizational Research Methods, 19(4), 651-682."
+  },
+  {
+    "objectID": "index.html#sebelum-mulai-workshop",
+    "href": "index.html#sebelum-mulai-workshop",
+    "title": "Dasar Latent Variable Modeling",
+    "section": "Sebelum mulai workshop",
+    "text": "Sebelum mulai workshop\n\nSebaiknya semua peserta sudah memasang jamovi pada perangkatnya masing-masing, untuk menghindari terlalu banyaknya waktu untuk menyelesaikan troubleshooting instalasi ketika workshop.\nPeserta sangat disarankan untuk menonton video tutorial jamovi sebelum workshop untuk belajar menavigasikan menu dan fitur yang ada dalam jamovi. Cukup hanya dengan menonton bagian Welcome, Installing jamovi, dan Navigating jamovi (total durasi kurang lebih hanya 7 menit)."
+  },
+  {
+    "objectID": "index.html#cara-instalasi-module-semlj-v1.2.5",
+    "href": "index.html#cara-instalasi-module-semlj-v1.2.5",
+    "title": "Dasar Latent Variable Modeling",
+    "section": "Cara instalasi module SEMLj v1.2.5",
+    "text": "Cara instalasi module SEMLj v1.2.5\nGunakan jamovi versi stabil yang terbaru (2.6.44) untuk Windows atau MacOS.\nMohon untuk menyimak video cara mengelola modules di jamovi berikut ini. Di video ini saya mencontohkan cara instalasi module GAMLj. Instalasi modules SEMj v1.2.5 mengikuti prosedur yang persis sama."
+  },
+  {
+    "objectID": "index.html#tutorial-jamovi-modules",
+    "href": "index.html#tutorial-jamovi-modules",
+    "title": "Dasar Latent Variable Modeling",
+    "section": "Tutorial jamovi + modules",
+    "text": "Tutorial jamovi + modules\nSaat ini, sudah cukup banyak tutorial jamovi yang tersedia. Salah satu yang paling populer dan komperhensif adalah tutorial di bawah ini ⬇️\n\nSimak seluruh video tutorial di  playlist."
+  },
+  {
+    "objectID": "index.html#evaluasi-workshop",
+    "href": "index.html#evaluasi-workshop",
+    "title": "Dasar Latent Variable Modeling",
+    "section": "Evaluasi workshop",
+    "text": "Evaluasi workshop\nSetelah workshop, peserta dimohon untuk mengisi kuesioner evaluasi yang dapat diakses di menu bar Survei bagian pojok kanan atas sebagai bahan evaluasi untuk meningkatkan kualitas materi workshop di masa depan."
+  },
+  {
+    "objectID": "slides/bagian-2.html#outline",
+    "href": "slides/bagian-2.html#outline",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Outline",
+    "text": "Outline\n\nBerlatih menginspeksi data secara visual dengan scatterplot\nModel regresi linear (ordinary least square)\nMenarik garis regresi (fitted regression lines)\nVarians yang dapat dan yang tidak dapat dijelaskan oleh model (R2)\nMenguji hipotesis\nMengecek kecocokan model dengan data (model fit)\nMengecek asumsi\n\nDistribusi (normalitas) residual\nHomoskedastisitas\nMultikolinearitas\n\nMendeteksi outliers\nMenguji interaction effects dan model change\nMenulis hasil analisis regresi linear dengan interaction terms dalam manuskrip"
+  },
+  {
+    "objectID": "slides/bagian-2.html#ilustrasi-kasus",
+    "href": "slides/bagian-2.html#ilustrasi-kasus",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Ilustrasi Kasus",
+    "text": "Ilustrasi Kasus\n\n\nMarimar adalah seorang wali murid di sebuah PAUD di Kota Surabaya. Pada suatu hari, ia mengamati seorang anak (dan orangtua) yang perilakunya menarik perhatiannya.\nIbu anak tersebut bersikeras untuk menunggui anaknya di sekolah, padahal guru kelas meminta agar Ibu pulang saja, mempercayakan anak pada guru, dengan tujuan melatih kemandirian anaknya.\nMelihat ibunya yang menggerutu karena diminta bu Guru pulang, si anak menangis meraung-raung tidak mau ditinggalkan. Akhirnya, terpaksa bu Guru membiarkan si Ibu menunggu di sekolah.\nMarimar heran sekaligus penasaran, mengapa tiap anak memberikan respon yang berbeda ketika ditinggal orangtuanya di sekolah. Ada yang menangis meraung-raung, ada yang lebih santai dengan langsung bermain. Apakah ada kaitan antara kemandirian anak dengan karakteristik orangtuanya?"
+  },
+  {
+    "objectID": "slides/bagian-2.html#eksplorasi-dataset",
+    "href": "slides/bagian-2.html#eksplorasi-dataset",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Eksplorasi dataset",
+    "text": "Eksplorasi dataset\nDataset 1: dataset-sekolah.omv\n\nMarimar yang penasaran akhirnya melakukan survei di 5 PAUD di Kota Surabaya, dengan ukuran sampel sebesar total 400 orang\nBuka laman web workshop\nKlik menu Dataset di pojok kanan dan unduh dataset-sekolah.omv\nDalam dataset tersebut ada beberapa variabel\n\nneu = Kecenderungan neuroticism ibu (five factor model). Makin tinggi skor, Ibu makin mudah cemas, frustasi, cemburu, rasa bersalah, dan ketakutan berlebihan.\ntrust = Kepercayaan ibu bahwa perkembangan anak dapat berlangsung secara natural (trust in organismic development). Makin tinggi skor, ibu makin percaya anaknya bisa berkembang secara natural.\nhi = Pendapatan seluruh anggota keluarga inti (household income). Skor makin tinggi, pendapatan total seluruh anggota keluarga yang bekerja semakin besar.\nmandiri = Tingkat kemandirian anak. Makin tinggi skor, anak makin independen dan lebih santai ketika ditinggal orangtuanya di sekolah."
+  },
+  {
+    "objectID": "slides/bagian-2.html#hipotesis-1",
+    "href": "slides/bagian-2.html#hipotesis-1",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Hipotesis 1️⃣",
+    "text": "Hipotesis 1️⃣\nH1 — Neuroticism ibu (neu) → Kemandirian anak (mandiri): negatif\n\nIbu dengan skor neuroticism yang tinggi cenderung lebih mudah cemas dan takut berlebihan, sehingga lebih rentan menunjukkan pola pengasuhan “helikopter” yang overprotective atau tidak konsisten.\nPola ini menghambat anak untuk berlatih menghadapi situasi baru secara mandiri.\nOleh karena itu, semakin tinggi neuroticism ibu, semakin rendah kemandirian anak."
+  },
+  {
+    "objectID": "slides/bagian-2.html#hipotesis-2",
+    "href": "slides/bagian-2.html#hipotesis-2",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Hipotesis 2️⃣",
+    "text": "Hipotesis 2️⃣\nH2 — Trust in organismic development (trust) → Kemandirian anak (mandiri): positif\n\nIbu yang mempercayai bahwa perkembangan anak berlangsung secara natural cenderung memberikan lebih banyak ruang dan otonomi bagi anak untuk mengeksplorasi lingkungannya sendiri, tanpa intervensi berlebihan.\nPendekatan ini sejalan dengan prinsip autonomy support dalam self-determination theory.\nOleh karena itu, semakin tinggi kepercayaan ibu pada perkembangan natural anak, semakin tinggi kemandirian anak."
+  },
+  {
+    "objectID": "slides/bagian-2.html#hipotesis-3",
+    "href": "slides/bagian-2.html#hipotesis-3",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Hipotesis 3️⃣",
+    "text": "Hipotesis 3️⃣\nH3 — Household income (hi) → Kemandirian anak (mandiri): negatif\n\nKeluarga dengan pendapatan lebih tinggi umumnya memiliki lebih banyak sumber daya untuk memenuhi kebutuhan anak — mulai dari pengasuh, fasilitas, hingga keterlibatan langsung yang intensif.\nKetika segala kebutuhan terpenuhi tanpa anak perlu berusaha sendiri, kesempatan untuk melatih kemandirian justru berkurang.\nFenomena ini konsisten dengan literatur tentang overparenting di keluarga berpenghasilan tinggi.\nOleh karena itu, semakin tinggi pendapatan keluarga, semakin rendah kemandirian anak."
+  },
+  {
+    "objectID": "slides/bagian-2.html#deskriptif",
+    "href": "slides/bagian-2.html#deskriptif",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Deskriptif",
+    "text": "Deskriptif\n\nCoba eksplorasi keempat variabel diatas dengan pendekatan statistik deskriptif.\n\nPada menu bar, klik exploration lalu descriptives. Setelah itu masukkan keempat variabel tersebut dalam kolom variables.\nKlik opsi Statistics dan pada bagian Dispersion centang Std. deviation.\nKlik opsi plots, di bagian histograms, centang histograms dan density."
+  },
+  {
+    "objectID": "slides/bagian-2.html#output",
+    "href": "slides/bagian-2.html#output",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Output",
+    "text": "Output"
+  },
+  {
+    "objectID": "slides/bagian-2.html#membuat-scatterplot",
+    "href": "slides/bagian-2.html#membuat-scatterplot",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Membuat scatterplot",
+    "text": "Membuat scatterplot\n\n\n\nMerupakan teknik inspeksi visual kemungkinan terjadinya korelasi antara variabel.\nSetelah melakukan analisis deskriptif, sepertinya akan menarik membandingkan kaitan antara:\n\nNeuroticism (neu) dengan tingkat kemandirian (mandiri)\nKepercayaan ibu bahwa anak dapat berkembang secara natural (trust) dengan tingkat kemandirian (mandiri)\n\nAyo kita buat scatterplot!\n\nKlik exploration, pilih scatterplot\nMasukkan mandiri pada kolom Y-axis\nMasukkan neu (scatterplot 1) dan trust (scatterplot 2) pada kolom X-axis\nPada opsi regression line, pilih linear dan centang kotak confidence interval"
+  },
+  {
+    "objectID": "slides/bagian-2.html#scatterplot",
+    "href": "slides/bagian-2.html#scatterplot",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Scatterplot",
+    "text": "Scatterplot\n\n\n\n\n\n\n\nScatterplot 1. Neuroticism dan Kemandirian\n\n\n\n\n\n\nScatterplot 2. Trust dan Kemandirian\n\n\nBagaimana kekuatan dan arah hubungan pada scatterplot 1 dan 2?"
+  },
+  {
+    "objectID": "slides/bagian-2.html#menebak-korelasi",
+    "href": "slides/bagian-2.html#menebak-korelasi",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Menebak Korelasi 📢",
+    "text": "Menebak Korelasi 📢\n\n\n🔗 Guess the correlation 🔗"
+  },
+  {
+    "objectID": "slides/bagian-2.html#kekuatan-dan-arah-korelasi-1",
+    "href": "slides/bagian-2.html#kekuatan-dan-arah-korelasi-1",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Kekuatan dan arah korelasi 1️⃣",
+    "text": "Kekuatan dan arah korelasi 1️⃣\nKorelasi yang tampak pada scatterplot tadi dapat dikonseptualisasikan dengan lebih jelas dengan menghitung koefisien korelasi, yang mengimplikasikan kekuatan hubungan.\n\nPearson’s r misalnya, biasanya ditulis dengan rxy, sedangkan Spearman’s ρ ditulis rs.\nBerkisar antara -1 s/d 1\n-1 artinya korelasi negatif sempurna, 1 artinya korelasi positif sempurna\nKoefisien korelasi Pearson’s r atau Spearman’s ρ dihitung dari kovarians (covariance/average cross product dari dua variabel).\n\nDua variabel yang sama sekali tak berkorelasi, maka kovarians nol."
+  },
+  {
+    "objectID": "slides/bagian-2.html#kekuatan-dan-arah-korelasi-2",
+    "href": "slides/bagian-2.html#kekuatan-dan-arah-korelasi-2",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Kekuatan dan arah korelasi 2️⃣",
+    "text": "Kekuatan dan arah korelasi 2️⃣\n\n\n\nKovarians sulit diinterpretasi, sehingga formula Pearson’s r dan Spearman’s ρ menstandardisasi kovarians agar lebih mudah diinterpretasi\nFungsi Pearson’s r dan Spearman’s ρ mirip z-score\nKuat &gt;&lt; lemahnya koefisien korelasi sebenarnya sangat tergantung konteks penelitiannya.\n\nPada fenomena yang multifaktor, misalnya mencari variabel yang berkaitan dengan kecenderungan Skizofrenia, korelasi 0.3 aja sudah bermakna sangat besar."
+  },
+  {
+    "objectID": "slides/bagian-2.html#regresi-linear",
+    "href": "slides/bagian-2.html#regresi-linear",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Regresi linear",
+    "text": "Regresi linear\n\n\n\nMerupakan kelanjutan yang lebih kompleks dari Pearson’s r\nIde dasarnya adalah menyusun persamaan garis yang dapat digunakan untuk memperkirakan nilai Y ketika nilai X diketahui\n\nContohnya, kita tahu bahwa kemandirian berkorelasi positif dan sedang dengan neuroticism dan trust\nNamun dengan regresi, kita bisa mengestimasi tingkat kemandirian anak, ketika hanya informasi mengenai neuroticism dan trust yang tersedia.\n\nOLS bekerja dengan pendekatan least square, artinya mencari jumlah kuadrat terkecil antara garis regresi (nilai Y yang diperkirakan oleh model) dengan nilai Y yang diobservasi."
+  },
+  {
+    "objectID": "slides/bagian-2.html#persamaan-garis-regresi",
+    "href": "slides/bagian-2.html#persamaan-garis-regresi",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Persamaan garis regresi",
+    "text": "Persamaan garis regresi"
+  },
+  {
+    "objectID": "slides/bagian-2.html#contoh-garis-regresi",
+    "href": "slides/bagian-2.html#contoh-garis-regresi",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Contoh garis regresi",
+    "text": "Contoh garis regresi"
+  },
+  {
+    "objectID": "slides/bagian-2.html#asumsi-yang-harus-dipenuhi",
+    "href": "slides/bagian-2.html#asumsi-yang-harus-dipenuhi",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Asumsi yang harus dipenuhi",
+    "text": "Asumsi yang harus dipenuhi\n\nPrediktor dan variabel dependen berkorelasi secara linear\n\nLakukan analisis korelasi sebelum melakukan regresi untuk memastikan asumsi ini terpenuhi\n\nResidual (varians error) variabel dependen yang tidak dapat dijelaskan oleh model\n\nBerdistribusi normal\nVariansnya homogen (homoskedastisitas)\nTidak dipengaruhi oleh prediktor lain diluar model\n\nPrediktor dalam model independen satu sama lain (tidak berkorelasi)\n\nBerlaku ketika ada dua atau lebih prediktor dalam satu model regresi\nKalau prediktor berkorelasi satu sama lain maka telah terjadi multi-kolinearitas\n\nData/observasi dan residual harus independen"
+  },
+  {
+    "objectID": "slides/bagian-2.html#latihan-1",
+    "href": "slides/bagian-2.html#latihan-1",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Latihan 1️⃣",
+    "text": "Latihan 1️⃣\nMarimar ingin tahu apakah ada kaitan antara kecenderungan neuroticism ibu terhadap kemandirian anak.\n\nKlik menu regression, pilih linear regression.\nMasukkan mandiri dalam kolom dependent variable dan neu pada covariates.\nPada opsi assumption checks, centang Q-Q plot of residuals, residual plots dan Cook’s distance.\nPada opsi model fit, centang R, R2, Adjusted R2 dan F test.\nPada opsi model coefficients, centang ANOVA test, confidence interval, dan standardized estimates."
+  },
+  {
+    "objectID": "slides/bagian-2.html#model-fit",
+    "href": "slides/bagian-2.html#model-fit",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Model fit",
+    "text": "Model fit\n\n\n\nModel regresi kita cukup baik menggambarkan tren pada data (F(1,398) = 221, p = .001).\nNamun model hanya mampu menjelaskan 35.7% varians kemandirian anak (R2 = .357).\n\nGunakan adjusted R2 apabila ada lebih dari 1 prediktor dalam model.\nAdjusted R2 dapat mengurangi bias R2 karena memberikan pinalti pada jumlah prediktor ➡️ semakin banyak prediktor, makin besar pinalti."
+  },
+  {
+    "objectID": "slides/bagian-2.html#model-fit-1",
+    "href": "slides/bagian-2.html#model-fit-1",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Model fit",
+    "text": "Model fit\n\n\n\nCoba bandingkan sum of squares antara neu dengan Residuals (tabel ANOVA).\nManakah yang lebih banyak; varians yang dapat, atau yang tidak dapat dijelaskan oleh model?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical grand prize 🎁🎁🎁\n\n\nHampir semua teknik statistik intinya adalah membandingkan varians variabel outcome yang dapat dengan yang tidak dapat dijelaskan (residual) oleh model"
+  },
+  {
+    "objectID": "slides/bagian-2.html#koefisien-model",
+    "href": "slides/bagian-2.html#koefisien-model",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Koefisien model",
+    "text": "Koefisien model\n\nKecenderungan neuroticism ibu dapat menjelaskan variasi kemandirian anak (B = 0.544 95% CI [0.472, 0.616], SE = 0.036, t = 14.88, p = .001).\nInterpretasi standardized (β) dan unstandardized (B) estimates\n\nUnstandardized (B) estimates: Setiap perubahan neuroticism sebesar 1 poin, maka tingkat kemandirian juga berubah sebesar 0.544 poin.\nStandardized (β) estimates: Setiap berubah neuroticism sebesar 1SD, maka tingkat kemandirian juga berubah sebesar 0.161SD.\n\n\n\n\n\n\n\nTips\n\n\nSelalu laporkan unstandardized estimates dan confidence interval (Appelbaum et al., 2018)."
+  },
+  {
+    "objectID": "slides/bagian-2.html#diagnostik-model-distribusi-residual",
+    "href": "slides/bagian-2.html#diagnostik-model-distribusi-residual",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Diagnostik model: distribusi residual",
+    "text": "Diagnostik model: distribusi residual\n\n\n\nSalah satu asumsi penting yang harus dipenuhi ketika melakukan regresi OLS adalah residual (bukan data) harus berdistribusi normal.\nSebaran residual mengikuti garis diagonal dalam Q-Q Plot, tandanya residual berdistribusi normal.\nApabila residual tersebar secara acak atau makin menjauhi garis diagonal, berarti tidak berdistribusi normal dan ini melanggar asumsi ordinary least square.\nAkibatnya, model tak dapat diinterpretasi dan koefisien model (intercept dan slope) bias."
+  },
+  {
+    "objectID": "slides/bagian-2.html#diagnostik-model-varians-residual-1",
+    "href": "slides/bagian-2.html#diagnostik-model-varians-residual-1",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Diagnostik model: varians residual 1️⃣",
+    "text": "Diagnostik model: varians residual 1️⃣\n\n\n\nAsumsi lain yang harus dipenuhi adalah homoskedastisitas.\nResidual memenuhi asumsi homoskedastisitas, apabila variansnya uniform (sama) meskipun fitted Y (nilai Y yang diestimasi oleh model, plot kanan atas) dan nilai X (plot kanan bawah) berubah-ubah.\n\nHal ini ditunjukkan dari dua plot disamping yang menunjukkan distribusi varians residual uniform.\n\nApabila asumsi ini dilanggar, maka residual mengalami heteroskedastisitas, dengan begitu, estimasi model akan bias.\nKalau residual menunjukkan karakteristik heteroskedastik, maka distribusi residual akan terlihat seperti kerucut."
+  },
+  {
+    "objectID": "slides/bagian-2.html#diagnostik-model-varians-residual-2",
+    "href": "slides/bagian-2.html#diagnostik-model-varians-residual-2",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Diagnostik model: varians residual 2️⃣",
+    "text": "Diagnostik model: varians residual 2️⃣\n\n\n\nPlot disamping kanan menunjukkan kondisi heteroskedastik\nContoh heteroskedastisitas: pendapatan personal dan usia\n\nPada usia anak-anak, remaja dan dewasa awal, variasi tingkat pendapatan sangat kecil, sedangkan yang usianya lebih tua, variasi tingkat pendapatan lebih besar.\nApa kira-kira alasannya?"
+  },
+  {
+    "objectID": "slides/bagian-2.html#diagnostik-model-deteksi-outliers-1",
+    "href": "slides/bagian-2.html#diagnostik-model-deteksi-outliers-1",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Diagnostik model: deteksi outliers 1️⃣",
+    "text": "Diagnostik model: deteksi outliers 1️⃣\n\n\n\nGerak-gerik data outlier penting untuk diperhatikan.\n\nSeperti grafik di sebelah kanan, penambahan data outlier dapat merubah garis regresi secara drastis.\n\nUntuk melihat seberapa ‘mengkhawatirkan’ data outlier ini dalam mengganggu garis regresi, kita dapat menggunakan Cook’s distance.\nUmumnya, apabila outlier dibuang dan perubahan rata-rata, median, dan standar deviasi kurang dari 1, dapat diabaikan.\nArtinya outlier tersebut tidak terlalu mengganggu garis regresi."
+  },
+  {
+    "objectID": "slides/bagian-2.html#diagnostik-model-deteksi-outliers-2",
+    "href": "slides/bagian-2.html#diagnostik-model-deteksi-outliers-2",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Diagnostik model: deteksi outliers 2️⃣",
+    "text": "Diagnostik model: deteksi outliers 2️⃣\n\nKalau Cook’s distance diatas 1 bagaimana?\n\nCoba buat lagi garis regresi tanpa outlier tersebut, cari tahu kenapa nilainya bisa se-ekstrim itu\nOutlier umumnya tidak boleh dihapus dari dataset tanpa justifikasi yang jelas, karena ini termasuk questionable research practices.\nKalau sangat mendesak, outlier dapat dikeluarkan dari model. Tetapi ini tidak disarankan dan kalaupun dilakukan, analisis harus dilaporkan dua versi; dengan dan tanpa outlier.\nDaripada dihapus, sebaiknya pakai regresi dengan robust estimator yang dapat mengurangi efek outlier."
+  },
+  {
+    "objectID": "slides/bagian-2.html#diagnostik-model-deteksi-outliers-3",
+    "href": "slides/bagian-2.html#diagnostik-model-deteksi-outliers-3",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Diagnostik model: deteksi outliers 3️⃣",
+    "text": "Diagnostik model: deteksi outliers 3️⃣\n\n\n\nDari output di samping, dapat disimpulkan bahwa apabila outlier tidak disertakan dalam analisis, maka perubahan rerata, median, dan standar deviasi keseluruhan sampel kurang dari 1 dari nilai asalnya."
+  },
+  {
+    "objectID": "slides/bagian-2.html#cara-melaporkannya-dalam-manuskrip",
+    "href": "slides/bagian-2.html#cara-melaporkannya-dalam-manuskrip",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Cara melaporkannya dalam manuskrip",
+    "text": "Cara melaporkannya dalam manuskrip\n“… untuk menguji hipotesis penelitian, peneliti melakukan analisis regresi ordinary least square (OLS). Hasil analisis menunjukkan bahwa model cocok menggambarkan data dan mampu menjelaskan kurang dari 40% varians tingkat kemandirian siswa (F(1,398) = 221, p = .001, R2 = .357).\nKecenderungan neuroticism ibu berkontribusi berarti dalam menjelaskan varians tingkat kemandirian siswa, dimana perubahan kecenderungan neuroticism sebesar 1 poin diasosiasikan dengan perubahan tingkat kemandirian anak sebesar 0.544 (B = 0.544 95% CI [0.472, 0.616], SE = 0.036, t = 14.88, p = .001). Berbeda dengan yang dihipotesiskan sebelumnya, ibu dengan tingkat neuroticism yang tinggi justru mengasuh anak dengan tingkat kemandirian yang juga tinggi.\nSetelah dilakukan diagnostik, varians yang tidak dapat dijelaskan oleh model berdistribusi normal dan ketika dikorelasikan dengan nilai prediktif tingkat kemandirian siswa dan kecenderungan neuroticism ibu, maka menghasilkan varians yang homogen (homoskedastik).\nDiagnostik outlier dilakukan dengan menggunakan Cook’s distance, dan menghasilkan kesimpulan bahwa apabila outlier tidak disertakan dalam model, maka perubahan rerata, nilai tengah, dan simpangan baku kurang dari satu dari nilai awalnya, sehingga tidak berpotensi mendistorsi garis regresi…”"
+  },
+  {
+    "objectID": "slides/bagian-2.html#latihan-2",
+    "href": "slides/bagian-2.html#latihan-2",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Latihan 2️⃣",
+    "text": "Latihan 2️⃣\n\nTernyata, neuroticism berkorelasi positif dengan tingkat kemandirian.\nMarimar tidak menyerah - ia lalu menambahkan interaksi antara neuroticism dengan trust\n\nMungkin saja ibu yang percaya/kurang percaya bahwa anak dapat berkembang secara natural, korelasi antara neuroticism dengan kemandirian akan negatif, sesuai.\nSelain itu, ia ingin tahu kaitan antara pendapatan keluarga dengan tingkat kemandirian anak.\n\nTambahkan variabel trust, neu, dan hi dalam kolom covariates."
+  },
+  {
+    "objectID": "slides/bagian-2.html#latihan-2-1",
+    "href": "slides/bagian-2.html#latihan-2-1",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Latihan 2️⃣",
+    "text": "Latihan 2️⃣\n\nLakukan semua langkah yang sudah dilakukan di Latihan 1️⃣\nPada opsi model builder, klik add new block\n\nKlik Block 1, sampai keluar shading di pinggir kotak, lalu masukkan hi\nKlik Block 2, sampai keluar shading di pinggir kotak\nKemudian sambil menekan tombol ctrl, klik neu kemudian trust, lalu klik tanda panah yang kedua dan pilih interaction\n\nDengan begitu kita punya 2 model regresi\n\nModel 1 prediktornya hi\nModel 2 prediktornya hi dan interaksi antara neu dengan trust\n\nPada opsi assumption checks, tambahkan centang pada collinearity statistics\nPada opsi model fit, klik AIC dan BIC.\nPada opsi estimated marginal means, masukkan neu dan trust dalam terms 1"
+  },
+  {
+    "objectID": "slides/bagian-2.html#model-fit-2",
+    "href": "slides/bagian-2.html#model-fit-2",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Model fit",
+    "text": "Model fit\n\n\nModel 2 (F(2,397) = 146, p = .001, Adj. R2 = .42) dapat menjelaskan varians tingkat kemandirian anak lebih baik daripada Model 1 (F(1,398) = 172, p = .001, Adj. R2 = .30), dengan overlapping variances sebesar 42% dibanding 30%.\nInformation criteria (AIC & BIC)\n\nDigunakan untuk mengakomodasi kelemahan dari R2 (apabila prediktor dalam model ditambah terus, maka nilai R2 akan terus naik)\nKelemahan R2 ini serupa dengan prinsip reliabilitas dan jumlah aitem\nRumus dari information criteria memberi “penalti” kepada model yang mengandung lebih banyak variabel prediktor\nPilih model dengan AIC dan BIC yang terkecil (Model 2)"
+  },
+  {
+    "objectID": "slides/bagian-2.html#model-comparison",
+    "href": "slides/bagian-2.html#model-comparison",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Model comparison",
+    "text": "Model comparison\n\n\nKetika dibandingkan, Model 1 dan Model 2 berbeda signifikan (F(1,397) = 83.7, p = .001). ΔR2 = .122, artinya selisih R2 Model 1 dan Model 2 = .122 atau R2 naik sebesar 12.2%\nCoba perhatikan Residuals Model 1 dengan Model 2"
+  },
+  {
+    "objectID": "slides/bagian-2.html#koefisien-model-2",
+    "href": "slides/bagian-2.html#koefisien-model-2",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Koefisien model 2",
+    "text": "Koefisien model 2\n\nPendapatan keluarga dapat menjelaskan variasi kemandirian anak (B = 0.200 95% CI [0.103, 0.297], SE = 0.04, t = 4.06, p = .001).\nArtinya, anak yang dibesarkan di keluarga dengan tingkat pendapatan yang tinggi, maka cenderung lebih mandiri.\nInteraksi antara neuroticism dengan trust in organismic development juga signifikan dalam menjelaskan varians kemandirian anak (B = 0.019 95% CI [0.015, 0.023], SE = 0.002, t = 9.15, p = .001)."
+  },
+  {
+    "objectID": "slides/bagian-2.html#estimated-marginal-means",
+    "href": "slides/bagian-2.html#estimated-marginal-means",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Estimated Marginal Means",
+    "text": "Estimated Marginal Means\n\n\n\nInterpretasi slopes pada interaction terms:\n\nUnstandardized B yang positif artinya, pada ibu dengan trust in organismic development yang tinggi (+1SD), korelasi antara kecenderungan neuroticism dengan kemandirian anak juga semakin positif/menguat."
+  },
+  {
+    "objectID": "slides/bagian-2.html#diagnostik-kolinearitas",
+    "href": "slides/bagian-2.html#diagnostik-kolinearitas",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Diagnostik kolinearitas",
+    "text": "Diagnostik kolinearitas\n\n\n\nDapat dideteksi dengan melakukan analisis melihat variance inflated factors (VIF).\n\nBila VIF &lt; 2.5, maka multi-kolinearitas kemungkinan besar tidak terjadi.\n\nPenelitian longitudinal punya potensi terjadinya autokorelasi (residual time 1 dan time 2 berkorelasi)\n\nDapat dicek dengan tes Durbin-Watson\nBila nilai p analisis autokorelasi &gt; .05, maka autokorelasi residual tidak terjadi."
+  },
+  {
+    "objectID": "slides/bagian-2.html#bagaimana-melaporkannya",
+    "href": "slides/bagian-2.html#bagaimana-melaporkannya",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Bagaimana melaporkannya?",
+    "text": "Bagaimana melaporkannya?\n“…untuk menginvestigasi keterkaitan antara pendapatan keluarga, kecenderungan neuroticism ibu, dan kepercayaan ibu bahwa perkembangan anak dapat terjadi secara natural dengan tingkat kemandirian anak, peneliti melakukan analisis regresi linear hirarkial dengan interaction terms. Peneliti menyusun dua model, dimana; model 1 mengestimasi varians tingkat kemandirian anak dengan pendapatan keluarga inti sebagai prediktor, sedangkan pada model 2 peneliti menambahkan prediktor berupa interaction terms antara neuroticism dengan trust.\nKetika dibandingkan, Model 1 dan Model 2 berbeda signifikan (F(1,397) = 83.7, p = .001). R2 bertambah sebesar 12.2% (ΔR2 = .122). Model 2 (F(2,397) = 146, p = .001, Adj. R2 = .420, AIC = 2472, BIC = 2488) dapat menjelaskan varians tingkat kemandirian anak lebih baik daripada Model 1 (F(1,398) = 172, p = .001, Adj. R2 = .300, AIC = 2547, BIC = 2559).\nPendapatan keluarga dapat menjelaskan variasi kemandirian anak (B = 0.200 95% CI [0.103, 0.297], SE = 0.04, t = 4.06, p = .001). Interaksi antara neuroticism dengan trust juga signifikan (B = 0.019 95% CI [0.015, 0.023], SE = 0.002, t = 9.15, p = .001). Artinya, korelasi antara kecenderungan neuroticism ibu dengan kemandirian anak akan menguat pada ibu yang trust nya tinggi.\nPotensi multikolinearitas dideteksi dengan VIF dan hasil analisis menunjukkan multikolinearitas kemungkinan besar tidak terjadi (VIF = 1.93)…”"
+  },
+  {
+    "objectID": "slides/bagian-2.html#latihan-mandiri-1",
+    "href": "slides/bagian-2.html#latihan-mandiri-1",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Latihan mandiri 1️⃣",
+    "text": "Latihan mandiri 1️⃣\n\n\nFernando Jose sebal sekali karena ia kembali kehilangan pengokotnya dan ini kali ketiga ia kehilangan pengokot yang baru dibelinya seminggu yang lalu.\nTeman-teman kerjanya memang punya kebiasaan buruk meminjam barang tanpa seijinnya. Ia akhirnya bertanya, apa ya yang menyebabkan teman-temannya berperilaku seperti itu?\nAkhirnya ia menduga, mungkin ada kaitannya dengan faktor kepribadian (conscientiousness) dan faktor situasional di tempat kerjanya.\nUntuk faktor situasi, ia mengamati sepertinya persepsi atas kondisi kerja yang informal dan relasi formal antara senior-junior mungkin juga berkaitan dengan timbulnya perilaku tersebut."
+  },
+  {
+    "objectID": "slides/bagian-2.html#eksplorasi-dataset-2",
+    "href": "slides/bagian-2.html#eksplorasi-dataset-2",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Eksplorasi dataset 2️⃣",
+    "text": "Eksplorasi dataset 2️⃣\nDataset 2: dataset-organisasi.omv\n\nFernando Jose akhirnya melakukan penelitian survei pada 450 karyawan di 3 perusahaan yang berbeda\nBuka laman web workshop dan unduh dataset-organisasi.omv\nDalam dataset tersebut ada beberapa variabel\n\ncon = Kecenderungan conscientiousness karyawan. Makin tinggi skornya, karyawan lebih mungkin menunjukkan kehati-hatian dan keteraturan dalam bekerja, efisien, dan bertanggung jawab.\ninf = Persepsi atas nuansa informal dalam kantor. Makin tinggi, karyawan makin merasa situasi kantor lebih informal.\npow = Jarak kuasa (power distance) dalam relasi antar-karyawan. Makin tinggi, budaya senioritas makin parah.\nincivil = Intensitas perilaku tidak beradab. Makin besar skornya, karyawan akan lebih mungkin emotionally abusive, suka mengambil barang teman tanpa ijin, dan perilaku tidak pantas yang lain."
+  },
+  {
+    "objectID": "slides/bagian-2.html#latihan-mandiri-1-1",
+    "href": "slides/bagian-2.html#latihan-mandiri-1-1",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Latihan mandiri 1️⃣",
+    "text": "Latihan mandiri 1️⃣\n\nBuatlah 2 model untuk mengestimasi varians perilaku tidak beradab dimana:\n\nPrediktor model 1: jarak kuasa\nPrediktor model 2: interaksi antara conscientiousness dengan persepsi situasi kerja yang informal\n\nBagaimana hipotesisnya?\nLaporkan hasil analisis datanya dan berikan penjelasan singkat apakah hasil analisis data menolak/gagal menolak hipotesis penelitian."
+  },
+  {
+    "objectID": "slides/bagian-2.html#ada-pertanyaan",
+    "href": "slides/bagian-2.html#ada-pertanyaan",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Ada pertanyaan❓",
+    "text": "Ada pertanyaan❓\n\n\n\n\n\n\n\nNote\n\n\n\nPaparan disusun dengan menggunakan  dan Quarto dengan template dari UNAIR Theme.\nKontak saya via  amelia.zein@psikologi.unair.ac.id"
+  },
+  {
+    "objectID": "slides/bagian-4.html#outline",
+    "href": "slides/bagian-4.html#outline",
+    "title": "Pengantar Latent Variable Modeling",
+    "section": "Outline",
+    "text": "Outline\n\nApa yang dimaksud dengan variabel laten? Mengapa psikologi membutuhkannya?\nClassical Test Theory sebagai model variabel laten paling sederhana\nReliabilitas dan measurement error: mengapa skor observasi selalu mengandung noise\nAttenuation bias: bagaimana measurement error mendistorsi estimasi hubungan antar-variabel\nKeluarga model variabel laten: CTT → EFA → CFA → SEM\nVariabel laten dalam model reflektif vs formatif\nPilihan perangkat lunak\nCakupan materi dan keterbatasannya"
+  },
+  {
+    "objectID": "slides/bagian-4.html#apakah-fisika-lebih-mudah-dari-psikologi",
+    "href": "slides/bagian-4.html#apakah-fisika-lebih-mudah-dari-psikologi",
+    "title": "Pengantar Latent Variable Modeling",
+    "section": "Apakah fisika lebih mudah dari psikologi?",
+    "text": "Apakah fisika lebih mudah dari psikologi?\n\n\nFisika mengukur massa, kecepatan, suhu — semuanya bisa dikuantifikasi langsung dengan alat fisik.\nPsikologi mengukur kecemasan, kepribadian, motivasi — konstruk yang tidak bisa ditimbang atau diukur dengan penggaris.\nPertanyaannya: bagaimana kita tahu bahwa alat ukur kita benar-benar mengukur konstruk yang dimaksud?"
+  },
+  {
+    "objectID": "slides/bagian-4.html#contoh-variabel-laten-dalam-psikologi",
+    "href": "slides/bagian-4.html#contoh-variabel-laten-dalam-psikologi",
+    "title": "Pengantar Latent Variable Modeling",
+    "section": "Contoh variabel laten dalam psikologi",
+    "text": "Contoh variabel laten dalam psikologi\n\nKecemasan — tidak bisa diobservasi langsung, tetapi bisa diinferensi dari detak jantung cepat, telapak tangan berkeringat, sulit konsentrasi, dan laporan subjektif individu.\nKepribadian (Big 5) — Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism merupakan konstruk laten yang diukur melalui respon terhadap item-item pernyataan.\nPrestasi belajar — tidak sepenuhnya tercermin dari nilai ujian saja; ada faktor measurement error dalam setiap tes.\nSemua konstruk ini disebut variabel laten (latent variable): variabel yang tidak dapat diamati secara langsung, tetapi dapat diinferensi dari variabel lain yang bisa diukur (observed variables)."
+  },
+  {
+    "objectID": "slides/bagian-4.html#variabel-observed-vs-variabel-laten",
+    "href": "slides/bagian-4.html#variabel-observed-vs-variabel-laten",
+    "title": "Pengantar Latent Variable Modeling",
+    "section": "Variabel observed vs variabel laten",
+    "text": "Variabel observed vs variabel laten\n\n\n\nVariabel observed (variabel manifes)\n\nVariabel yang dapat diukur atau diamati secara langsung.\nDalam skala psikologi: setiap item pernyataan adalah variabel observed.\nDalam studi eksperimen: skor tes, waktu reaksi, frekuensi perilaku.\n\nVariabel laten\n\nKonstruk yang tidak dapat diukur secara langsung — hanya bisa diinferensi.\nMembutuhkan seperangkat variabel observed untuk mengoperasionalisasikannya.\nVariabel observed berperan sebagai indikator dari variabel laten."
+  },
+  {
+    "objectID": "slides/bagian-4.html#classical-test-theory-x-t-e",
+    "href": "slides/bagian-4.html#classical-test-theory-x-t-e",
+    "title": "Pengantar Latent Variable Modeling",
+    "section": "Classical Test Theory: X = T + E",
+    "text": "Classical Test Theory: X = T + E\n\nPsikometri klasik mengasumsikan bahwa setiap skor observasi (observed score, X) terdiri atas dua komponen:\n\n\\[X = T + E\\]\n\nT (true score): skor yang seharusnya diperoleh seseorang apabila pengukuran dilakukan dengan sempurna — bebas dari gangguan apapun.\nE (error): measurement error — semua “gangguan” yang membuat skor observasi menyimpang dari skor murni.\n\nKondisi fisik saat mengisi kuesioner\nAmbiguitas item pernyataan\nPerubahan suasana hati sesaat (state)\nFaktor situasional lainnya\n\n\n\n\n\n\n\n\nImplikasi penting\n\n\nCTT mengasumsikan bahwa rata-rata error adalah nol (E(e) = 0) dan error tidak berkorelasi dengan skor murni (Cov(T, E) = 0). Artinya, error bersifat acak — bukan sistematis."
+  },
+  {
+    "objectID": "slides/bagian-4.html#reliabilitas-seberapa-besar-t-dalam-x",
+    "href": "slides/bagian-4.html#reliabilitas-seberapa-besar-t-dalam-x",
+    "title": "Pengantar Latent Variable Modeling",
+    "section": "Reliabilitas: seberapa besar T dalam X?",
+    "text": "Reliabilitas: seberapa besar T dalam X?\n\nApabila X = T + E, maka varians skor observasi (σ²ₓ) juga terdiri atas varians true score (σ²ᴛ) dan varians error (σ²ₑ):\n\n\\[\\sigma^2_X = \\sigma^2_T + \\sigma^2_E\\]\n\nReliabilitas (ρ) didefinisikan sebagai proporsi varians true score terhadap varians total:\n\n\\[\\rho_{XX'} = \\frac{\\sigma^2_T}{\\sigma^2_X} = \\frac{\\sigma^2_T}{\\sigma^2_T + \\sigma^2_E}\\]\n\n\n\nReliabilitas (α atau ω)\nInterpretasi\n\n\n\n\n≥ 0.90\nSangat tinggi — excellent\n\n\n0.80 – 0.89\nTinggi — good\n\n\n0.70 – 0.79\nCukup — acceptable\n\n\n0.60 – 0.69\nSedang — perlu perbaikan\n\n\n&lt; 0.60\nRendah — poor"
+  },
+  {
+    "objectID": "slides/bagian-4.html#measurement-error-dan-attenuation-bias",
+    "href": "slides/bagian-4.html#measurement-error-dan-attenuation-bias",
+    "title": "Pengantar Latent Variable Modeling",
+    "section": "Measurement error dan attenuation bias",
+    "text": "Measurement error dan attenuation bias\n\nMasalahnya: kita tidak pernah mengukur T secara langsung — yang kita ukur selalu X (yang sudah “tercemari” oleh error).\nKonsekuensinya: ketika kita mengestimasi korelasi antar-variabel, korelasi yang kita hitung sebenarnya adalah korelasi antar observed scores (rₓᵧ), bukan korelasi antar true scores (rᴛₓᴛᵧ).\nIni menyebabkan atenuasi — korelasi yang kita estimasi selalu lebih kecil dari korelasi yang sebenarnya:\n\n\\[r_{XY} = r_{T_X T_Y} \\times \\sqrt{\\rho_{XX'} \\times \\rho_{YY'}}\\]\n\n\n\n\n\n\nAttenuation bias\n\n\nSemakin rendah reliabilitas alat ukur, semakin besar distorsi pada estimasi korelasi. Ini berarti measurement error yang tinggi akan membuat kita meremehkan kekuatan hubungan antar-variabel yang sesungguhnya."
+  },
+  {
+    "objectID": "slides/bagian-4.html#implikasi-attenuation-bias",
+    "href": "slides/bagian-4.html#implikasi-attenuation-bias",
+    "title": "Pengantar Latent Variable Modeling",
+    "section": "Implikasi attenuation bias",
+    "text": "Implikasi attenuation bias\nContoh nyata: Misalkan korelasi true scores antara kecemasan dan prokrastinasi adalah 0.60. Tetapi skala kecemasan yang digunakan memiliki reliabilitas 0.70 dan skala prokrastinasi 0.65.\nKorelasi yang akan kita temukan di data:\n\\[r_{XY} = 0.60 \\times \\sqrt{0.70 \\times 0.65} = 0.60 \\times 0.674 = \\mathbf{0.40}\\]\n\nDengan kata lain, kita akan melaporkan korelasi 0.40 padahal hubungan yang sesungguhnya adalah 0.60 — perbedaan yang sangat substansial!\nIni juga berdampak pada efek size dalam regresi: koefisien regresi (β) pun ikut teratenuasi.\nSolusinya? Perlu model statistik yang secara eksplisit memodelkan dan mengontrol measurement error — inilah alasan utama mengapa kita perlu latent variable modeling.\n\n\n\n\n\n\n\nKoreksi atenuasi\n\n\nKorelasi true scores dapat diestimasi dari korelasi observed scores dengan koreksi atenuasi: \\(r_{T_X T_Y} = \\frac{r_{XY}}{\\sqrt{\\rho_{XX'} \\times \\rho_{YY'}}}\\)"
+  },
+  {
+    "objectID": "slides/bagian-4.html#dari-ctt-ke-sem-satu-keluarga-besar",
+    "href": "slides/bagian-4.html#dari-ctt-ke-sem-satu-keluarga-besar",
+    "title": "Pengantar Latent Variable Modeling",
+    "section": "Dari CTT ke SEM: satu keluarga besar",
+    "text": "Dari CTT ke SEM: satu keluarga besar\n\n\n\n\n\n\n\n\nModel\nApa yang dimodelkan\nKelebihan dibanding CTT\n\n\n\n\nCTT\nX = T + E (level item)\nFondasi — sederhana, tapi tidak menguji struktur laten\n\n\nEFA\nStruktur faktor laten yang tidak diketahui\nMenemukan faktor laten secara data-driven\n\n\nCFA\nStruktur faktor laten yang sudah dihipotesiskan\nMenguji validitas konstruk secara teori\n\n\nSEM\nHubungan antar faktor laten + model pengukuran\nMenguji model teoritis secara komprehensif\n\n\n\n\n\n\n\n\n\nNote\n\n\nKeempat model ini membentuk satu kontinum dari yang paling sederhana (CTT) ke yang paling kompleks (SEM). Setiap model yang lebih canggih mengandung logika model sebelumnya."
+  },
+  {
+    "objectID": "slides/bagian-4.html#apa-yang-efa-dan-cfa-tambahkan-dibandingkan-ctt",
+    "href": "slides/bagian-4.html#apa-yang-efa-dan-cfa-tambahkan-dibandingkan-ctt",
+    "title": "Pengantar Latent Variable Modeling",
+    "section": "Apa yang EFA dan CFA tambahkan dibandingkan CTT?",
+    "text": "Apa yang EFA dan CFA tambahkan dibandingkan CTT?\n\nCTT bekerja di level item — hanya bisa menghitung reliabilitas dan korelasi item-total. CTT tidak menguji apakah item-item tersebut memang mengukur konstruk laten yang sama.\nEFA (Exploratory Factor Analysis) memungkinkan kita untuk menemukan struktur faktor laten dari data — berguna saat teori belum jelas atau sedang dalam tahap eksplorasi.\nCFA (Confirmatory Factor Analysis) memungkinkan kita untuk menguji apakah struktur faktor yang dihipotesiskan berdasarkan teori didukung oleh data. Ini adalah uji validitas konstruk yang paling ketat.\nSEM menggabungkan model pengukuran (CFA) dengan model struktural (regresi/jalur) untuk menguji hipotesis teoritis yang kompleks sekaligus mengontrol measurement error."
+  },
+  {
+    "objectID": "slides/bagian-4.html#komponen-model-sem",
+    "href": "slides/bagian-4.html#komponen-model-sem",
+    "title": "Pengantar Latent Variable Modeling",
+    "section": "Komponen model SEM",
+    "text": "Komponen model SEM"
+  },
+  {
+    "objectID": "slides/bagian-4.html#model-pengukuran-measurement-model",
+    "href": "slides/bagian-4.html#model-pengukuran-measurement-model",
+    "title": "Pengantar Latent Variable Modeling",
+    "section": "Model pengukuran (measurement model)",
+    "text": "Model pengukuran (measurement model)"
+  },
+  {
+    "objectID": "slides/bagian-4.html#dua-cara-variabel-laten-bekerja",
+    "href": "slides/bagian-4.html#dua-cara-variabel-laten-bekerja",
+    "title": "Pengantar Latent Variable Modeling",
+    "section": "Dua cara variabel laten “bekerja”",
+    "text": "Dua cara variabel laten “bekerja”\n\nDalam latent variable modeling, ada dua cara konseptual yang berbeda untuk memahami hubungan antara variabel laten dan indikatornya.\nModel reflektif: variabel laten menyebabkan indikator bervariasi.\n\nJika depresi seseorang meningkat → skor pada item “saya merasa sedih”, “saya kehilangan minat”, “saya sulit tidur” semuanya akan meningkat.\nIndikator harus saling berkorelasi tinggi — mereka semua “mencerminkan” konstruk yang sama.\n\nModel formatif: indikator membentuk/mendefinisikan variabel laten.\n\n“Status sosioekonomi” dibentuk oleh pendidikan, pendapatan, dan pekerjaan — menaikkan pendidikan tidak otomatis menaikkan pendapatan.\nIndikator tidak harus saling berkorelasi."
+  },
+  {
+    "objectID": "slides/bagian-4.html#reflektif-vs.-formatif-visualisasi",
+    "href": "slides/bagian-4.html#reflektif-vs.-formatif-visualisasi",
+    "title": "Pengantar Latent Variable Modeling",
+    "section": "Reflektif vs. Formatif: visualisasi",
+    "text": "Reflektif vs. Formatif: visualisasi\n\n\n\n\n\n\n\nReflektif: panah dari laten ke indikator\n\n\n\n\n\n\nFormatif: panah dari indikator ke laten\n\n\n\n\n\n\n\nMengapa ini penting?\n\n\nMayoritas konstruk psikologi menggunakan model reflektif, misalnya: skala kepribadian, kecemasan, depresi, dll. Menggunakan model formatif untuk konstruk reflektif (atau sebaliknya) adalah kesalahan konseptual yang serius."
+  },
+  {
+    "objectID": "slides/bagian-4.html#pilihan-perangkat-lunak",
+    "href": "slides/bagian-4.html#pilihan-perangkat-lunak",
+    "title": "Pengantar Latent Variable Modeling",
+    "section": "Pilihan perangkat lunak",
+    "text": "Pilihan perangkat lunak\n\njamovi — antarmuka grafis (point-and-click), gratis dan open source. Digunakan dalam workshop ini. Module SEMLj menyediakan EFA dan CFA dengan antarmuka yang user-friendly.\nJASP — mirip jamovi, antarmuka grafis, gratis. Juga mendukung EFA dan CFA.\nlavaan di  — paket R yang paling lengkap dan fleksibel untuk SEM, CFA, EFA. Membutuhkan coding, tetapi memberikan kendali penuh atas spesifikasi model.\nsemopy di  — alternatif di Python, sintaks mirip lavaan.\nMplus, LISREL, SPSS AMOS, EQS — perangkat lunak komersial dengan fitur lebih lengkap (termasuk power analysis dan simulasi), tetapi berbayar.\n\n\n\n\n\n\n\nUntuk workshop ini\n\n\nKita akan menggunakan jamovi dengan module SEMLj. Untuk analisis yang lebih lanjut, lavaan sangat direkomendasikan."
+  },
+  {
+    "objectID": "slides/bagian-4.html#yang-tidak-dicakup-dalam-materi-ini",
+    "href": "slides/bagian-4.html#yang-tidak-dicakup-dalam-materi-ini",
+    "title": "Pengantar Latent Variable Modeling",
+    "section": "Yang tidak dicakup dalam materi ini",
+    "text": "Yang tidak dicakup dalam materi ini\n\nA priori power analysis, Monte Carlo simulation, dan accuracy in parameter estimation (AIPE) untuk merencanakan jumlah sampel\nSensitivity analysis untuk CFA/SEM\nModel SEM dengan missing data (selain listwise deletion)\nModel SEM dengan variabel moderator/mediator (mediated moderation, moderated mediation)\nHierarchical latent variable model (second-order CFA / bifactor model)\nExploratory SEM (ESEM)\nPartial least square (PLS) — berbeda secara fundamental dari CB-SEM\nMixture model dan latent growth curve (SEM untuk data longitudinal)\nMultiple indicators, multiple causes (MIMIC) model"
+  },
+  {
+    "objectID": "slides/bagian-4.html#ada-pertanyaan",
+    "href": "slides/bagian-4.html#ada-pertanyaan",
+    "title": "Pengantar Latent Variable Modeling",
+    "section": "Ada pertanyaan❓",
+    "text": "Ada pertanyaan❓\n\n\n\n\n\n\n\nNote\n\n\n\nPaparan disusun dengan menggunakan  dan Quarto dengan template dari UNAIR Theme.\nKontak saya via  amelia.zein@psikologi.unair.ac.id"
+  },
+  {
+    "objectID": "slides/bagian-6.html#outline",
+    "href": "slides/bagian-6.html#outline",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "Outline",
+    "text": "Outline\n\nMengapa kita perlu analisis faktor?\nPrincipal Component Analysis (PCA)\nExploratory Factor Analysis (EFA)\nAsumsi & kesiapan data\nEvaluasi model & pelaporan hasil\nDemonstrasi di jamovi"
+  },
+  {
+    "objectID": "slides/bagian-6.html#bayangkan-skala-psikologi-dengan-20-item",
+    "href": "slides/bagian-6.html#bayangkan-skala-psikologi-dengan-20-item",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "Bayangkan skala psikologi dengan 20 item…",
+    "text": "Bayangkan skala psikologi dengan 20 item…\n\nSeorang peneliti mengembangkan skala kelelahan kerja (burnout) dengan 20 item\nApakah 20 item itu mengukur 20 hal yang benar-benar berbeda?\nAtau ada beberapa dimensi yang lebih mendasar di baliknya?\nMasalah yang muncul kalau tidak ada reduksi:\n\nTidak bisa divisualisasikan (kita tidak bisa memplot 20 dimensi sekaligus)\nRegresi dengan 20 prediktor: risiko overfitting sangat tinggi\nItem-item yang saling berkorelasi tinggi menunjukkan adanya redundansi"
+  },
+  {
+    "objectID": "slides/bagian-6.html#measurement-error-mendistorsi-estimasi",
+    "href": "slides/bagian-6.html#measurement-error-mendistorsi-estimasi",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "Measurement error mendistorsi estimasi",
+    "text": "Measurement error mendistorsi estimasi\n\nDari Bagian 2 kita sudah tahu bahwa korelasi antar dua variabel selalu terlalu kecil karena measurement error (attenuation bias)\n\n\\[r_{XY_{observed}} = r_{T_X T_Y} \\times \\sqrt{\\rho_{XX'} \\times \\rho_{YY'}}\\]\n\nAnalisis faktor secara eksplisit memodelkan error per item  memisahkan sinyal (common variance) dari noise (residual/unique variance)\n\n\n\n\n\n\n\nIngat dari Materi Korelasi!\n\n\nKoefisien korelasi yang terobservasi selalu lebih kecil dari korelasi sesungguhnya antar true score, persis karena measurement error ini. Analisis faktor membantu kita mendapatkan estimasi korelasi yang lebih akurat."
+  },
+  {
+    "objectID": "slides/bagian-6.html#keluarga-model-variabel-laten",
+    "href": "slides/bagian-6.html#keluarga-model-variabel-laten",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "Keluarga model variabel laten",
+    "text": "Keluarga model variabel laten\n\n\n\n\n\n\n\n\nModel\nPertanyaan yang dijawab\nDalam workshop ini\n\n\n\n\nCTT\n“Seberapa reliabel skor total ini?”\nBagian 2\n\n\nEFA\n“Berapa faktor laten yang mendasari item-item ini?”\nBagian 4\n\n\nCFA\n“Apakah struktur faktor yang saya hipotesiskan cocok dengan data?”\nBagian 5\n\n\nSEM\n“Bagaimana faktor-faktor laten saling mempengaruhi?”\nPengantar di Bagian 1–3"
+  },
+  {
+    "objectID": "slides/bagian-6.html#efa-vs-cfa-sekilas",
+    "href": "slides/bagian-6.html#efa-vs-cfa-sekilas",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "EFA vs CFA — sekilas",
+    "text": "EFA vs CFA — sekilas\n\n\n\n\n\n\n\nEFA\nCFA\n\n\n\n\nJumlah faktor belum diketahui — biarkan data menunjukkan strukturnya\nJumlah faktor sudah ditentukan sebelum mengambil data\n\n\nPeneliti tidak memiliki model hipotesis a priori\nPeneliti sudah memiliki model hipotesis a priori\n\n\nCocok untuk eksplorasi dan pengembangan skala\nCocok untuk konfirmasi dan pengujian validitas konstruk\n\n\n\n\n\n\n\n\n\nWarning\n\n\nSangat tidak disarankan melakukan EFA kemudian CFA pada sampel yang sama — kita akan bahas lebih dalam di Bagian 5."
+  },
+  {
+    "objectID": "slides/bagian-6.html#apa-itu-pca",
+    "href": "slides/bagian-6.html#apa-itu-pca",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "Apa itu PCA?",
+    "text": "Apa itu PCA?\n\nPCA mencari “arah” (component) dalam ruang data yang menangkap varians sebesar mungkin\nHasilnya adalah principal components yang merupakan kombinasi linear dari item-item asli\nTujuan utama: reduksi dimensi — meringkas banyak item menjadi sedikit variabel ringkasan (“payung”) yang lebih besar\nPenting: PCA bukan model pengukuran — ia tidak mengasumsikan adanya konstruk laten yang menyebabkan item bervariasi\n\n\n\nHierarki komponen:\n\nPC1 — arah dengan varians terbesar\nPC2 — orthogonal terhadap PC1, varians terbesar berikutnya\nPC3, PC4, … — dst., selalu orthogonal (tidak berkorelasi) terhadap semua komponen sebelumnya\n\n\nAnalogi sederhana:\n\nData asli = 20 kolom (item)\nComponent scores = 3–4 kolom ringkasan\nMempertahankan sebanyak mungkin informasi dengan sesedikit mungkin variabel"
+  },
+  {
+    "objectID": "slides/bagian-6.html#aplikasi-pca-reduksi-dimensi-machine-learning",
+    "href": "slides/bagian-6.html#aplikasi-pca-reduksi-dimensi-machine-learning",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "Aplikasi PCA: reduksi dimensi & machine learning",
+    "text": "Aplikasi PCA: reduksi dimensi & machine learning\n\nPCA adalah salah satu teknik unsupervised learning yang paling banyak digunakan dalam machine learning\nReduksi dimensi sebelum pemodelan prediktif\n\nDataset dengan ratusan/ribuan variabel (misalnya data genomik, neuroimaging, NLP) susah dimodelkan langsung\nPCA meringkas variabel-variabel yang saling berkorelasi menjadi komponen yang independen (orthogonal)\nKomponen ini kemudian digunakan sebagai prediktor dalam regresi atau klasifikasi — mengurangi overfitting\n\nVisualisasi data berdimensi tinggi\n\nPlot PC1 vs PC2 memungkinkan kita melihat “peta” distribusi observasi dalam 2D\n\nFeature extraction dalam deep learning dan computer vision\n\nMisalnya: ribuan piksel wajah → beberapa principal components sebagai input model\n\n\n\n\n\n\n\n\nAplikasi EFA\n\n\nEFA memiliki aplikasi yang berbeda, bukan untuk reduksi dimensi secara umum, melainkan khusus untuk mengidentifikasi konstruk laten dalam pengembangan dan validasi skala psikologi."
+  },
+  {
+    "objectID": "slides/bagian-6.html#eigenvalue-scree-plot",
+    "href": "slides/bagian-6.html#eigenvalue-scree-plot",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "Eigenvalue & scree plot",
+    "text": "Eigenvalue & scree plot\n\nEigenvalue (λ): mengukur seberapa banyak variansi yang dijelaskan oleh setiap komponen. Total eigenvalue = jumlah item.\nKaiser criterion: pertahankan komponen dengan λ &gt; 1\n\nLogika: komponen dengan λ &lt; 1 menjelaskan variansi kurang dari satu item tunggal\n\n\n\n\n\n\n\n\nKaiser criterion sering over-extract\n\n\nKaiser criterion bisa menghasilkan terlalu banyak komponen — bahkan dari data yang sepenuhnya acak! Selalu kombinasikan dengan scree plot dan parallel analysis.\n\n\n\n\nScree plot: grafik eigenvalue dari tertinggi ke terendah — cari “elbow” (titik siku) di mana kurva mulai mendatar. Pertahankan komponen sebelum elbow."
+  },
+  {
+    "objectID": "slides/bagian-6.html#component-loadings-rotasi",
+    "href": "slides/bagian-6.html#component-loadings-rotasi",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "Component loadings & rotasi",
+    "text": "Component loadings & rotasi\n\nComponent loading: korelasi antara item asli dengan komponen. Rentang −1 sampai +1.\n\n|loading| &gt; 0.40  item bermakna untuk komponen ini (salient loading)\n|loading| &lt; 0.30  item tidak relevan untuk komponen ini\n\nRotasi mengejar simple structure (Thurstone, 1947): setiap item load tinggi di satu komponen, mendekati nol di yang lain\n\n\n\n\n\n\n\n\n\n\nOrthogonal\nOblique\n\n\n\n\nKomponen\nTidak berkorelasi\nBoleh berkorelasi\n\n\nMetode umum\nVarimax\nPromax, Direct Oblimin\n\n\n\n\n\n\n\n\n\nNote\n\n\nRotasi tidak mengubah total variansi yang dijelaskan — hanya mendistribusikannya agar lebih mudah diinterpretasikan."
+  },
+  {
+    "objectID": "slides/bagian-6.html#pca-vs-efa-kontras-lengkap",
+    "href": "slides/bagian-6.html#pca-vs-efa-kontras-lengkap",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "PCA vs EFA — kontras lengkap",
+    "text": "PCA vs EFA — kontras lengkap\n\n\n\n\n\n\n\n\nAspek\nPCA\nEFA\n\n\n\n\nTujuan\nReduksi dimensi; feature extraction\nIdentifikasi & validasi konstruk laten\n\n\nPosisi dalam ML\nUnsupervised learning — preprocessing sebelum model prediktif\nPsikometri — pengembangan & validasi skala\n\n\nModel\nKomponen = fungsi linear item\nItem = fungsi linear faktor + error\n\n\nVariansi\nTotal variansi (termasuk unique & error)\nHanya common variance\n\n\nError pengukuran\nTidak dimodelkan\nEksplisit dimodelkan per item\n\n\nFaktor/komponen\nSelalu orthogonal (tidak berkorelasi)\nBoleh berkorelasi (rotasi oblique)\n\n\nKapan digunakan\nTidak ada teori konstruk laten; tujuannya kompresi data\nAda teori tentang faktor laten; tujuannya pengukuran\n\n\n\n\n\n\n\n\n\nTip\n\n\nJika communalities tinggi (&gt; 0.60) dan struktur jelas, hasil PCA dan EFA sering hampir identik secara praktis. Perbedaan muncul ketika communalities rendah atau struktur kompleks."
+  },
+  {
+    "objectID": "slides/bagian-6.html#komunalitas-h²-keunikan",
+    "href": "slides/bagian-6.html#komunalitas-h²-keunikan",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "Komunalitas (h²) & keunikan",
+    "text": "Komunalitas (h²) & keunikan\n\n\n\nKomunalitas (h²): proporsi variansi item yang dijelaskan oleh semua faktor bersama\nKeunikan (u²): 1 − h² = variansi yang tidak dijelaskan oleh faktor mana pun (variansi spesifik + error)\n\n\n\n\n\n\n\n\nh²\nInterpretasi\n\n\n\n\n&gt; 0.50\nBaik \n\n\n0.30–0.50\nCukup — perlu evaluasi\n\n\n&lt; 0.30\nBermasalah — pertimbangkan menghapus item\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\nItem dengan h² rendah mengukur sesuatu yang unik apabila dibandingkan dengan item lain.\nEvaluasi ulang redaksinya sebelum memutuskan untuk menghapus item."
+  },
+  {
+    "objectID": "slides/bagian-6.html#menentukan-jumlah-faktor-jangan-hanya-kaiser",
+    "href": "slides/bagian-6.html#menentukan-jumlah-faktor-jangan-hanya-kaiser",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "Menentukan jumlah faktor — jangan hanya Kaiser!",
+    "text": "Menentukan jumlah faktor — jangan hanya Kaiser!\n\nKaiser criterion (λ &gt; 1) — mudah, tapi konsisten over-extract. Gunakan sebagai acuan awal saja.\nScree plot — visual dan intuitif, tapi subjektif. Dua peneliti bisa membaca scree plot yang sama secara berbeda.\nParallel analysis  direkomendasikan\n\nBandingkan eigenvalue data nyata dengan eigenvalue dari data acak (dimensi yang sama)\nPertahankan faktor di mana eigenvalue nyata &gt; eigenvalue acak (persentil ke-95)\nPaling akurat secara empiris; tidak subjektif (Hayton, Allen & Scarpello, 2004)\n\nTeori — berapa faktor yang dihipotesiskan berdasarkan literatur?\n\n\n\n\n\n\n\nPraktik terbaik\n\n\nGunakan kombinasi parallel analysis + scree plot + teori sebagai dasar keputusan. Di jamovi, parallel analysis tersedia langsung di menu EFA."
+  },
+  {
+    "objectID": "slides/bagian-6.html#rotasi-dalam-efa",
+    "href": "slides/bagian-6.html#rotasi-dalam-efa",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "Rotasi dalam EFA",
+    "text": "Rotasi dalam EFA\n\nOrthogonal (faktor tidak berkorelasi) — Varimax\n\nMenghasilkan satu matriks: factor loadings\nAsumsi independensi sering tidak realistis dalam psikologi\n\nOblique (faktor boleh berkorelasi) — Promax, Direct Oblimin\n\nMenghasilkan pattern matrix (kontribusi unik faktor ke item) — ini yang dilaporkan\nJuga menghasilkan structure matrix dan factor correlation matrix\n\n\n\n\n\n\n\n\nTip\n\n\nKonstruk psikologi hampir selalu berkorelasi — misalnya kelelahan emosional dan sinisme pada burnout. Gunakan rotasi oblique sebagai default. Jika korelasi antar faktor sangat rendah (&lt; 0.15), rotasi orthogonal bisa dipertimbangkan."
+  },
+  {
+    "objectID": "slides/bagian-6.html#metode-ekstraksi-di-jamovi",
+    "href": "slides/bagian-6.html#metode-ekstraksi-di-jamovi",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "Metode ekstraksi di jamovi",
+    "text": "Metode ekstraksi di jamovi\n\n\n\n\n\n\n\n\nMetode\nAsumsi\nKapan digunakan\n\n\n\n\nMinimum Residual (MinRes)\nTidak diperlukan normalitas\nDefault yang aman untuk data psikologi; meminimalkan residual korelasi\n\n\nPrincipal Axis Factoring (PAF)\nTidak diperlukan normalitas\nData tidak normal; sampel moderat\n\n\nMaximum Likelihood (ML)\nNormalitas multivariat\nData mendekati normal; ingin fit indices formal (RMSEA, CFI)\n\n\n\n\n\n\n\n\n\nNote\n\n\nUntuk skala Likert yang tidak terlalu juling, MinRes sudah cukup baik. Gunakan ML jika ingin melaporkan fit indices secara formal dalam artikel."
+  },
+  {
+    "objectID": "slides/bagian-6.html#kaiser-meyer-olkin-kmo",
+    "href": "slides/bagian-6.html#kaiser-meyer-olkin-kmo",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "Kaiser-Meyer-Olkin (KMO)",
+    "text": "Kaiser-Meyer-Olkin (KMO)\n\nApakah pola korelasi antar item cukup kompak untuk analisis faktor?\n\n\n\n\nKMO\nInterpretasi\n\n\n\n\n&gt; 0.90\nMarvelous\n\n\n0.80–0.90\nMeritorious\n\n\n0.70–0.80\nMiddling\n\n\n0.60–0.70\nMediocre\n\n\n&lt; 0.50\nTidak layak — jangan lanjutkan EFA"
+  },
+  {
+    "objectID": "slides/bagian-6.html#bartletts-test-of-sphericity",
+    "href": "slides/bagian-6.html#bartletts-test-of-sphericity",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "Bartlett’s test of sphericity",
+    "text": "Bartlett’s test of sphericity\n\nH₀: matriks korelasi = matriks identitas (tidak ada korelasi antar item)\np &lt; .05  tolak H₀  ada korelasi yang cukup  EFA layak dilakukan"
+  },
+  {
+    "objectID": "slides/bagian-6.html#ukuran-sampel-yang-dibutuhkan",
+    "href": "slides/bagian-6.html#ukuran-sampel-yang-dibutuhkan",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "Ukuran sampel yang dibutuhkan",
+    "text": "Ukuran sampel yang dibutuhkan\n\n\n\nN\nKeterangan\n\n\n\n\n&lt; 100\nTidak memadai — hindari\n\n\n100–200\nMinimal, hanya jika loadings tinggi (&gt; 0.70)\n\n\n200–300\nCukup\n\n\n300–500\nBaik\n\n\n&gt; 500\nSangat baik\n\n\n\n\nAturan rasio item:partisipan yang direkomendasikan: 10:1\n\nContoh: 20 item  targetkan N ≥ 200, idealnya N ≥ 300\n\n\n\n\n\n\n\n\nRule of Thumb\n\n\nLoadings rendah dan communalities rendah membutuhkan N yang lebih besar. Jangan memaksakan analisis faktor pada sampel yang terlalu kecil."
+  },
+  {
+    "objectID": "slides/bagian-6.html#fit-indices-khusus-ekstraksi-ml",
+    "href": "slides/bagian-6.html#fit-indices-khusus-ekstraksi-ml",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "Fit indices (khusus ekstraksi ML)",
+    "text": "Fit indices (khusus ekstraksi ML)\n\nChi-square (χ²): H₀ = model fit sempurna; p &gt; .05 = fit baik\n\nMasalah: sangat sensitif terhadap N besar — hampir selalu signifikan jika N &gt; 300, meskipun model sebenarnya baik. Jangan jadikan satu-satunya kriteria.\n\nRMSEA &lt; .05 = sangat baik; .05–.08 = cukup baik; &gt; .10 = tidak dapat diterima\n\nSelalu sertakan 90% CI\n\nCFI/TLI &gt; .95 = baik; &gt; .90 = dapat diterima\n\n\n\n\n\n\n\nCatatan\n\n\nAmbang batas RMSEA &lt; .06 (Hu & Bentler, 1999) sering dikutip, tapi berasal dari kondisi simulasi yang spesifik. Untuk model dengan banyak indikator atau sampel besar, RMSEA &lt; .08 sudah dapat diterima, jangan terlalu kaku pada angka .06."
+  },
+  {
+    "objectID": "slides/bagian-6.html#reliabilitas-alpha-vs-omega",
+    "href": "slides/bagian-6.html#reliabilitas-alpha-vs-omega",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "Reliabilitas: alpha vs omega",
+    "text": "Reliabilitas: alpha vs omega\n\n\nCronbach’s α\n\nMengukur konsistensi internal\nMengasumsikan semua item berkontribusi sama (tau-equivalence)\nJika loadings berbeda-beda (yang hampir selalu terjadi), α bisa underestimate reliabilitas sesungguhnya\nSensitif terhadap jumlah item — lebih banyak item = α lebih tinggi, meskipun loadings biasa saja\n\n\nMcDonald’s ω (Omega)\n\nDihitung langsung dari factor loadings\nTidak mengasumsikan tau-equivalence\nLebih akurat ketika loadings item tidak setara — yang hampir selalu terjadi pada skala psikologi nyata\n\n\n\n\n\n\n\n\nTip\n\n\nLaporkan keduanya — α dan ω. Jika ω &gt; α secara substansial, berarti asumsi tau-equivalence tidak terpenuhi. Keduanya tersedia langsung di jamovi."
+  },
+  {
+    "objectID": "slides/bagian-6.html#checklist-pelaporan-efa",
+    "href": "slides/bagian-6.html#checklist-pelaporan-efa",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "Checklist pelaporan EFA",
+    "text": "Checklist pelaporan EFA\n☐ Deskripsi sampel — N, karakteristik, cara pengumpulan data\n☐ Prosedur analisis — software, metode ekstraksi, kriteria jumlah faktor, jenis rotasi\n☐ Kelayakan analisis — nilai KMO, hasil Bartlett’s test (χ², df, p)\n☐ Hasil ekstraksi — jumlah faktor yang dipertahankan, eigenvalue, % variansi tiap faktor dan total\n☐ Pattern matrix setelah rotasi, lengkap dengan komunalitas (h²)\n☐ Korelasi antar faktor — jika menggunakan rotasi oblique\n☐ Reliabilitas — Cronbach’s α dan/atau McDonald’s ω per faktor\n☐ Fit indices — RMSEA + 90% CI, CFI, TLI (jika menggunakan ML)"
+  },
+  {
+    "objectID": "slides/bagian-6.html#kesalahan-umum-dalam-efa",
+    "href": "slides/bagian-6.html#kesalahan-umum-dalam-efa",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "Kesalahan umum dalam EFA",
+    "text": "Kesalahan umum dalam EFA\n\nHanya mengandalkan Kaiser criterion  menghasilkan terlalu banyak faktor. Selalu gunakan parallel analysis.\nMenggunakan PCA untuk pengembangan skala  PCA bukan model pengukuran. Gunakan EFA.\nRotasi orthogonal tanpa alasan  konstruk psikologi hampir selalu berkorelasi. Gunakan oblique sebagai default.\nMengabaikan cross-loadings  item dengan cross-loading &gt; 0.30 menandakan batas konstruk yang tidak jelas — jangan diabaikan.\nMelaporkan hanya item yang “berhasil”  laporkan semua item, termasuk yang dihapus beserta alasannya.\nTidak melakukan CFA di sampel independen  EFA hanya eksplorasi. Validasi strukturnya dengan CFA di sampel yang berbeda."
+  },
+  {
+    "objectID": "slides/bagian-6.html#konteks-burnout-pada-tenaga-kerja",
+    "href": "slides/bagian-6.html#konteks-burnout-pada-tenaga-kerja",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "Konteks: Burnout pada tenaga kerja",
+    "text": "Konteks: Burnout pada tenaga kerja\n\nDataset yang kita gunakan: Dataset Contoh EFA (dataset-burnout.omv)\n\nDapat diunduh dari navbar di laman workshop\n\nMenggunakan skala burnout yang mengukur beberapa dimensi kelelahan kerja\n\nItem-item berbentuk skala Likert\n\nPertanyaan penelitian: berapa dimensi laten yang mendasari item-item dalam skala burnout ini?"
+  },
+  {
+    "objectID": "slides/bagian-6.html#langkah-langkah-di-jamovi",
+    "href": "slides/bagian-6.html#langkah-langkah-di-jamovi",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "Langkah-langkah di jamovi",
+    "text": "Langkah-langkah di jamovi\n\n\nMenjalankan EFA:\n\nAnalyses → Factor → Exploratory Factor Analysis\nMasukkan semua item ke “Variables”\nExtraction method: Minimum Residual\nRotation: Oblimin\nNumber of factors: Parallel Analysis\n\n\nOutput yang harus dicek:\n☑ Factor loadings (sembunyikan |λ| &lt; 0.30)\n☑ Scree plot + parallel analysis plot\n☑ Komunalitas (h²)\n☑ KMO & Bartlett’s test\n☑ Reliabilitas (α & ω)\n\n\n\n\n\n\n\nUrutan membaca output\n\n\nAsumsi (KMO & Bartlett’s)  jumlah faktor (parallel analysis + scree)  pattern matrix (loading & cross-loading)  komunalitas  reliabilitas"
+  },
+  {
+    "objectID": "slides/bagian-6.html#ada-pertanyaan",
+    "href": "slides/bagian-6.html#ada-pertanyaan",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "Ada pertanyaan❓",
+    "text": "Ada pertanyaan❓\n\n\n\n\n\n\n\nNote\n\n\n\nPaparan disusun dengan menggunakan  dan Quarto dengan template dari UNAIR Theme.\nKontak saya via  amelia.zein@psikologi.unair.ac.id"
   }
 ]
