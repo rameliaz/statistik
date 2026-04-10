@@ -24,7 +24,7 @@ website:
         icon: house
         text: "oleh Rizqy Amelia Zein"
       - icon: github
-        href: https://github.com/rameliaz/lvm-cfa
+        href: https://github.com/rameliaz/statistik
     right:
       - text: "Materi (html)"
         menu:
@@ -32,10 +32,10 @@ website:
             href: slides/bagian-1.html
           - text: "Bagian 2: Regresi OLS"
             href: slides/bagian-2.html
-          - text: "Bagian 3: Pengantar LVM"
+          - text: "Bagian 3: Regresi Logistik"
+            href: slides/bagian-4.html            
+          - text: "Bagian 4: Pengantar LVM"
             href: slides/bagian-3.html
-          - text: "Bagian 4: Regresi Logistik"
-            href: slides/bagian-4.html
           - text: "Bagian 5: Model Jalur"
             href: slides/bagian-5.html
           - text: "Bagian 6: EFA-PCA"
@@ -48,10 +48,10 @@ website:
             href: "slides/bagian-1.html?print-pdf"
           - text: "Bagian 2: Regresi OLS"
             href: "slides/bagian-2.html?print-pdf"
-          - text: "Bagian 3: Pengantar LVM"
-            href: "slides/bagian-3.html?print-pdf"
-          - text: "Bagian 4: Regresi Logistik"
+          - text: "Bagian 3: Regresi Logistik"
             href: "slides/bagian-4.html?print-pdf"
+          - text: "Bagian 4: Pengantar LVM"
+            href: "slides/bagian-3.html?print-pdf"
           - text: "Bagian 5: Model Jalur"
             href: "slides/bagian-5.html?print-pdf"
           - text: "Bagian 6: EFA-PCA"
@@ -74,7 +74,7 @@ website:
             href: materials/contoh-cfa.omv            
       - text: "Survei"
         menu:
-          - text: "Evaluasi Workshop"
+          - text: "Evaluasi"
             href: https://www.soscisurvey.de/fb-workshop-amel/
       - icon: envelope
         href: "mailto:amelia.zein@psikologi.unair.ac.id"

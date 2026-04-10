@@ -1,14 +1,21 @@
 ---
-title: "Dasar _Latent Variable Modeling_"
+title: "Statistik dalam Penelitian Psikologi"
 ---
 
-Laman web berikut ini merupakan laman web untuk **Workshop Dasar-Dasar _Latent Variable Modeling_**.
+Laman web berikut ini merupakan laman web untuk materi **Statistik dalam Penelitian Psikologi**.
 
 Materi berlisensi [<i class="fab fa-creative-commons"><i class="fa fa-universal-access"></i></i> BY 4.0](https://creativecommons.org/licenses/by/4.0/). **Materi bebas digunakan kembali namun wajib mengatribusi sumber aslinya**.
+
+
+::: {.callout-note}
+#### Unduh materi dalam bentuk PDF 
+Klik _navigation bar_ yang mengarah pada PDF materi, kemudian tekan `ctrl` dan `p` bersamaan. Setelah _window_ untuk _print_ muncul, pilih `Save to PDF` dan klik `Save`.
+:::
 
 ## *Outline* materi
 
 ### Bagian 1️⃣: Korelasi
+
 * Jenis-jenis koefisien korelasi
 * Faktor-faktor yang membuat koefisien korelasi bervariasi
 * [Koreksi atenuasi](https://methods.sagepub.com/reference/encyc-of-research-design/n81.xml) dan *measurement error*
@@ -19,6 +26,7 @@ Materi berlisensi [<i class="fab fa-creative-commons"><i class="fa fa-universal-
 * Metrik variabel (*standardized* vs *unstandardized*)
 
 ### Bagian 2️⃣: _Ordinary Least Square Regression_
+
 * Berlatih menginspeksi data secara visual dengan _scatterplot_
 * Model regresi linear (_ordinary least square_)
 * Menarik garis regresi (_fitted regression line_)
@@ -48,6 +56,7 @@ Materi berlisensi [<i class="fab fa-creative-commons"><i class="fa fa-universal-
 * Kesalahan umum: OR vs. *risk ratio*, *events per variable* (EPV), *stepwise selection*
 
 ### Bagian 4️⃣: Pengantar _Latent Variable Modeling_
+
 * Apa yang dimaksud dengan variabel laten? Mengapa psikologi membutuhkannya?
 * _Classical Test Theory_ sebagai model variabel laten paling sederhana
 * Reliabilitas dan *measurement error*: mengapa skor observasi selalu mengandung *noise*
@@ -58,6 +67,7 @@ Materi berlisensi [<i class="fab fa-creative-commons"><i class="fa fa-universal-
 * Cakupan materi dan keterbatasannya
 
 ### Bagian 5️⃣: Model Jalur (*Path Model*) dan Model Regresi
+
 * Definisi *path model*
 * Nama variabel dan koefisien jalur (*path coefficients*)
   * δ (delta), ε (epsilon), ξ (ksi), η (eta), λ (lambda), γ (gamma), β (beta), φ (phi), ζ (zeta)
@@ -86,9 +96,8 @@ Untuk menggambar diagram jalur, peserta dapat menggunakan MS Power Point, Canva,
 * Evaluasi model: *fit indices* (RMSEA, CFI, TLI) dan reliabilitas (α vs. ω)
 * Checklist pelaporan EFA & kesalahan umum
 
-
-
 ### Bagian 7️⃣: _Confirmatory Factor Analysis_ (CFA)
+
 * Definisi *factor analysis*
 * *Exploratory* vs *confirmatory factor analysis*
 * Kapan menggunakan CFA?
@@ -99,17 +108,6 @@ Untuk menggambar diagram jalur, peserta dapat menggunakan MS Power Point, Canva,
 * Metode estimasi
 * Menuliskan hasil analisis CFA dalam laporan penelitian
 
-::: {.callout-note}
-#### Unduh materi dalam bentuk PDF 
-Klik _navigation bar_ yang mengarah pada PDF materi, kemudian tekan `ctrl` dan `p` bersamaan. Setelah _window_ untuk _print_ muncul, pilih `Save to PDF` dan klik `Save`.
-:::
-
-## Referensi
-
-* Baujean, A.A. (2014). *Latent Variable Modeling Using R: A step-by-step guide*. New York: Routledge.
-* Galluci, M. (2025). SEMLj: A Suite for Structural Equation Models for jamovi (v1.2.5). <https://semlj.github.io/index.html>
-* Schumacker, R.E. & Lomax, R.G. (2016). *A Beginner's Guide to Structural Equation Modeling (4th edition)*. New York: Routledge.
-
 ## Sumber belajar lainnya
 
 * [Learning Statistics with jamovi](https://www.learnstatswithjamovi.com/)
@@ -117,10 +115,10 @@ Klik _navigation bar_ yang mengarah pada PDF materi, kemudian tekan `ctrl` dan `
 * [Materi workshop SEM: Sacha Epskamp](http://sachaepskamp.com/workshop-materials/Psych_rstats_Club.zip)
 * Cho, E. (2016). [Making Reliability Reliable: A Systematic approach to reliability coefficients](articles/cho2016.pdf). _Organizational Research Methods, 19_(4), 651-682.
 
-## Sebelum mulai _workshop_
+## Sebelum mulai materi
 
-* Sebaiknya semua peserta sudah memasang jamovi pada perangkatnya masing-masing, untuk menghindari terlalu banyaknya waktu untuk menyelesaikan *troubleshooting* instalasi ketika *workshop*.
-* Peserta sangat disarankan untuk menonton [video tutorial jamovi](https://datalab.cc/tools/jamovi) sebelum *workshop* untuk belajar menavigasikan menu dan fitur yang ada dalam jamovi. Cukup hanya dengan menonton bagian *Welcome*, *Installing jamovi*, dan *Navigating jamovi* (total durasi kurang lebih hanya 7 menit).
+* Sebaiknya semua mahasiswa sudah memasang `jamovi` pada perangkatnya masing-masing, untuk menghindari terlalu banyaknya waktu untuk menyelesaikan *troubleshooting* instalasi ketika kuliah.
+* Mahasiswa sangat disarankan untuk menonton [video tutorial jamovi](https://datalab.cc/tools/jamovi) sebelum *workshop* untuk belajar menavigasikan menu dan fitur yang ada dalam `jamovi`. Cukup hanya dengan menonton bagian *Welcome*, *Installing jamovi*, dan *Navigating jamovi* (total durasi kurang lebih hanya 7 menit).
 
 ## Cara instalasi *module* SEMLj v1.2.5
 
@@ -137,7 +135,3 @@ Saat ini, sudah cukup banyak tutorial jamovi yang tersedia. Salah satu yang pali
 {{< video https://youtu.be/t0tQcs-E5Z4?si=wur9Er_M92zR-J2v >}}
 
 [Simak seluruh video tutorial di <i class="fa-brands fa-youtube"></i> _playlist_.](https://www.youtube.com/playlist?list=PLvYqRUmlLZUMJ0EUxuTAA1f407wmBQ1QX)
-
-## Evaluasi _workshop_
-
-Setelah _workshop_, peserta dimohon untuk mengisi kuesioner evaluasi yang dapat diakses di _menu bar_ `Survei` bagian pojok kanan atas sebagai bahan evaluasi untuk meningkatkan kualitas materi _workshop_ di masa depan.
