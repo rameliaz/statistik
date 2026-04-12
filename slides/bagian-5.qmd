@@ -1,5 +1,5 @@
 ---
-title: "Model Jalur"
+title: "Pengantar _Latent Variable Modeling_"
 subtitle: "Statistik dalam Penelitian Psikologi"
 author: "Rizqy Amelia Zein"
 institute:
@@ -17,260 +17,247 @@ execute:
   echo: true
 ---
 
-## _Outline_
+## *Outline*
 
-* Definisi *path model*
-* Nama variabel dan koefisien jalur (*path coefficients*)
-  * δ (delta), ε (epsilon), ξ (ksi), η (eta), λ (lambda), γ (gamma), β (beta), φ (phi), ζ (zeta)
-* Representasi visual model jalur menggunakan diagram jalur (*path diagram*)
-* Menggambarkan hubungan antar-variabel dengan menggunakan diagram jalur
-* *Syntax* `lavaan` untuk spesifikasi model jalur
-* Asumsi kausalitas dan limitasi
+* Apa yang dimaksud dengan variabel laten? Mengapa psikologi membutuhkannya?
+* _Classical Test Theory_ sebagai model variabel laten paling sederhana
+* Reliabilitas dan *measurement error*: mengapa skor observasi selalu mengandung *noise*
+* *Attenuation bias*: bagaimana *measurement error* mendistorsi estimasi hubungan antar-variabel
+* Keluarga model variabel laten: CTT → EFA → CFA → SEM
+* Variabel laten dalam model *reflektif* vs *formatif*
+* Pilihan perangkat lunak
+* Cakupan materi dan keterbatasannya
 
-## Analisis jalur
+# Psikologi mengukur hal-hal yang tidak bisa dilihat {background-color="#14497F" .center}
+
+## Apakah fisika lebih mudah dari psikologi?
+
+![](https://media.giphy.com/media/3o7TKSjRrfIPjeiVyM/giphy.gif){fig-align="center" width="55%"}
 
 ::: {.incremental}
-
-* *Path model* merupakan kelanjutan dari model regresi karena terdiri dari **beberapa model regresi** sekaligus dapat digunakan untuk menguji *direct*, *indirect*, dan *correlated effects*.
-
-* *Path model* disusun secara visual dengan aturan tertentu (konsensus)
-  - Garis satu arah menggambarkan *direct effects*, yang merefleksikan *keterkaitan langsung* antara satu variabel dengan variabel lainnya. Asumsinya, **tidak ada variabel lain diluar model** yang berkorelasi dengan variabel tersebut.
-  - Garis dua arah menggambarkan *covariance*/korelasi, yang mengimplikasikan bahwa keterkaitan antar-variabel masih mungkin ditentukan oleh **variabel lain yang tidak ada di dalam model**.
-  - Garis *error terms* yang menunjukkan varians *observed variable* yang menjelaskan **variabel lain yang tidak dapat dijelaskan/di luar model**, yang juga mewakili **measurement error**.
-
+* Fisika mengukur massa, kecepatan, suhu — semuanya bisa dikuantifikasi langsung dengan alat fisik.
+* Psikologi mengukur **kecemasan**, **kepribadian**, **motivasi** — konstruk yang tidak bisa ditimbang atau diukur dengan penggaris.
+* Pertanyaannya: bagaimana kita tahu bahwa alat ukur kita benar-benar mengukur konstruk yang dimaksud?
 :::
 
-## Korelasi = kausalitas?
+## Contoh variabel laten dalam psikologi
 
-* Analisis jalur sebenarnya adalah **bentuk yang lebih *sophisticated*** dari korelasi, dan
+::: {.incremental}
+* **Kecemasan** — tidak bisa diobservasi langsung, tetapi bisa diinferensi dari detak jantung cepat, telapak tangan berkeringat, sulit konsentrasi, dan laporan subjektif individu.
 
-::: {.callout-important}
-#### Penting
+* **Kepribadian (Big 5)** — *Openness*, *Conscientiousness*, *Extraversion*, *Agreeableness*, *Neuroticism* merupakan konstruk laten yang diukur melalui respon terhadap item-item pernyataan.
 
-**Correlation does not imply causation**
+* **Prestasi belajar** — tidak sepenuhnya tercermin dari nilai ujian saja; ada faktor *measurement error* dalam setiap tes.
+
+* Semua konstruk ini disebut **variabel laten** (*latent variable*): variabel yang **tidak dapat diamati secara langsung**, tetapi dapat diinferensi dari variabel lain yang bisa diukur (*observed variables*).
 :::
 
-Yang harus dipenuhi sebagai bukti kausalitas:
-
-* Ada **urutan waktu** (*temporal order*) {{< fa circle-arrow-right >}} desain penelitian *panel*/*longitudinal*/*time series*
-* Adanya **korelasi** antara kedua variabel
-* Peneliti harus melakukan **kontrol** atas variabel lain (_confounding_)
-* Peneliti melakukan **manipulasi** (_random assignment_) pada variabel X
-
-## Diagram jalur
-
-![](libs/path-diagram.png){fig-align="center" width="40%"}
-
-## Ilustrasi _use case_
+## Variabel *observed* vs variabel *laten*
 
 :::: {.columns}
-::: {.column width="70%"}
+::: {.column width="55%"}
 
-Marimar adalah seorang wali murid di sebuah PAUD di Kota Surabaya. Pada suatu hari, ia mengamati seorang anak (dan orangtua) yang perilakunya menarik perhatiannya.
+::: {.incremental}
+* **Variabel *observed*** (variabel manifes)
+  - Variabel yang **dapat diukur atau diamati secara langsung**.
+  - Dalam skala psikologi: setiap *item* pernyataan adalah variabel *observed*.
+  - Dalam studi eksperimen: skor tes, waktu reaksi, frekuensi perilaku.
 
-Ibu anak tersebut bersikeras untuk menunggui anaknya di sekolah, padahal guru kelas meminta agar Ibu pulang saja, mempercayakan anak pada guru, dengan tujuan melatih kemandirian anaknya.
-
-Melihat ibunya yang menggerutu karena diminta bu Guru pulang, si anak menangis meraung-raung tidak mau ditinggalkan. Akhirnya, terpaksa bu Guru membiarkan si Ibu menunggu di sekolah.
-
-Marimar heran sekaligus penasaran, mengapa tiap anak **memberikan respon yang berbeda** ketika ditinggal orangtuanya di sekolah. Ada yang menangis meraung-raung, ada yang lebih santai dengan langsung bermain. Apakah ada kaitan antara kemandirian anak dengan karakteristik orangtuanya?
+* **Variabel *laten***
+  - Konstruk yang **tidak dapat diukur secara langsung** — hanya bisa diinferensi.
+  - Membutuhkan seperangkat variabel *observed* untuk mengoperasionalisasikannya.
+  - Variabel *observed* berperan sebagai **indikator** dari variabel laten.
+:::
 
 :::
-::: {.column width="30%"}
+::: {.column width="45%"}
 
-![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZW5kdDlocmllN3dscTl6N2Yyd2pvdjNqZGZ4OW5xZzIzdXowc2o2ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lv86aOL3XkZC0EadmR/giphy.gif)
+![](libs/observed-latent.png){fig-align="center" width="90%"}
 
 :::
 ::::
 
-## Variabel yang diukur Marimar
+# *Classical Test Theory* (CTT): model variabel laten paling sederhana {background-color="#14497F" .center}
 
-* **trust** (variabel independen) = Kepercayaan ibu bahwa perkembangan anak dapat berlangsung secara natural ([**trust in organismic development**](https://link.springer.com/article/10.1007/s11031-008-9092-2)). 
-  - Makin tinggi skor, ibu makin percaya anaknya bisa berkembang secara natural. 
-  - Diukur dengan skala *likert* yang terdiri dari 5 _item_ dengan 7 pilihan respon {{< fa circle-arrow-right >}} dari **sangat tidak setuju** sampai **sangat setuju**.
+## *Classical Test Theory*: X = T + E
 
-* **mandiri** (variabel dependen) = Tingkat kemandirian anak. Anak dengan skor yang tinggi semakin menunjukkan independensi dan lebih santai ketika ditinggal orangtuanya di sekolah. Beberapa indikator perilakunya adalah:
-  - Tidak menangis ketika ditinggal orangtuanya
-  - Tidak merengek atau merajuk ketika ditinggal
-  - Masuk ke dalam kelas tanpa ditemani
-  - Menaruh tas dalam loker yang disediakan tanpa bantuan orangtua
+* Psikometri klasik mengasumsikan bahwa setiap **skor observasi** (*observed score*, **X**) terdiri atas dua komponen:
 
-## Bagaimana bentuk diagram jalurnya?
+$$X = T + E$$
 
-![](libs/contoh-path.png){fig-align="center" width="100%"}
-
-## Nama variabel dan koefisien jalur
-
-| Nama Variabel/Koefisien | Huruf Yunani | Huruf Latin |
-| :-------------------------------------- | :------------: | :----------: |
-| *Error* pengukuran dari variabel X | δ | Delta |
-| *Error* pengukuran dari variabel Y | ε | Epsilon |
-| Variabel eksogen | ξ | Ksi |
-| Variabel endogen | η | Eta |
-
-: {tbl-colwidths="[70,15,15]"}
-
-## Nama variabel dan koefisien jalur
-
-| Nama Variabel/Koefisien | Huruf Yunani | Huruf Latin |
-| :-------------------------------------- | :------------: | :----------: |
-| *Direct effect* antara variabel laten dan indikatornya (*loading factor*) | λ | Lambda |
-| *Direct effect* antara variabel endogen dan eksogen | γ | Gamma |
-| *Direct effect* antara dua variabel laten | β | Beta |
-| Korelasi (*covariance*) antara dua variabel laten | φ | Phi |
-| Varians *error* pengukuran dari sebuah variabel laten | ζ | Zeta |
-
-: {tbl-colwidths="[70,15,15]"}
-
-## Contoh model dengan koefisien jalur
-
-![](libs/contoh-model.png){fig-align="center" width="100%"}
-
-## Latihan mandiri 2️⃣: Membuat diagram jalur
-
-:::: {.columns}
-::: {.column width="70%"}
-Fernando Jose sebal sekali karena ia kembali kehilangan pengokotnya dan ini kali ketiga ia kehilangan pengokot yang baru dibelinya seminggu yang lalu.
-
-Teman-teman kerjanya memang punya kebiasaan buruk meminjam barang tanpa seijinnya. Ia akhirnya bertanya, apa ya yang menyebabkan teman-temannya berperilaku seperti itu?
-
-Akhirnya ia menduga, mungkin ada kaitannya dengan faktor kepribadian (_conscientiousness_) dan faktor situasional di tempat kerjanya.
-
-Untuk faktor situasi, ia mengamati sepertinya persepsi atas kondisi kerja yang informal dan relasi formal antara senior-junior mungkin juga berkaitan dengan timbulnya perilaku tersebut.
+::: {.incremental}
+* **T** (*true score*): skor yang *seharusnya* diperoleh seseorang apabila pengukuran dilakukan dengan sempurna — bebas dari gangguan apapun.
+* **E** (*error*): *measurement error* — semua "gangguan" yang membuat skor observasi menyimpang dari skor murni.
+  - Kondisi fisik saat mengisi kuesioner
+  - Ambiguitas item pernyataan
+  - Perubahan suasana hati sesaat (*state*)
+  - Faktor situasional lainnya
 :::
 
-::: {.column width="30%"}
-![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmE4MG9zbW0wcGhzOHZ6YmV2NzdleWtwaW1mcHo3amZ2ODV2NnQ5OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ggsPCNJznX7nX2RC6i/giphy.gif)
+::: {.callout-tip}
+#### Implikasi penting
+CTT mengasumsikan bahwa **rata-rata *error* adalah nol** (E(e) = 0) dan ***error* tidak berkorelasi dengan skor murni** (Cov(T, E) = 0). Artinya, *error* bersifat acak — bukan sistematis.
 :::
-::::
 
-## Yang diukur 📏
+## Reliabilitas: seberapa besar T dalam X?
 
-* **con** = Kecenderungan *conscientiousness* karyawan. Makin tinggi skornya, karyawan lebih mungkin menunjukkan kehati-hatian dan keteraturan dalam bekerja. Diukur dengan skala *Likert* berisi 6 _item_ dengan 10 pilihan jawaban.
+* Apabila X = T + E, maka varians skor observasi (σ²ₓ) juga terdiri atas varians *true score* (σ²ᴛ) dan varians *error* (σ²ₑ):
 
-* **incivil** = Intensitas perilaku tidak beradab. Makin besar skornya, karyawan akan lebih mungkin *emotionally abusive*, suka mengambil barang teman tanpa ijin, dan perilaku tidak pantas yang lain. Diukur dengan skala *Likert* berisi 4 _item_ dengan 10 pilihan jawaban.
+$$\sigma^2_X = \sigma^2_T + \sigma^2_E$$
 
-* **usia** = Usia partisipan
+* **Reliabilitas** (ρ) didefinisikan sebagai proporsi varians *true score* terhadap varians total:
+
+$$\rho_{XX'} = \frac{\sigma^2_T}{\sigma^2_X} = \frac{\sigma^2_T}{\sigma^2_T + \sigma^2_E}$$
+
+| Reliabilitas (α atau ω) | Interpretasi |
+|-------------------------|--------------|
+| ≥ 0.90 | Sangat tinggi — *excellent* |
+| 0.80 – 0.89 | Tinggi — *good* |
+| 0.70 – 0.79 | Cukup — *acceptable* |
+| 0.60 – 0.69 | Sedang — perlu perbaikan |
+| < 0.60 | Rendah — *poor* |
+
+## *Measurement error* dan *attenuation bias*
+
+* Masalahnya: kita tidak pernah mengukur **T** secara langsung — yang kita ukur selalu **X** (yang sudah "tercemari" oleh *error*).
+
+* Konsekuensinya: ketika kita mengestimasi **korelasi antar-variabel**, korelasi yang kita hitung sebenarnya adalah korelasi antar *observed scores* (rₓᵧ), bukan korelasi antar *true scores* (rᴛₓᴛᵧ).
+
+* Ini menyebabkan **atenuasi** — korelasi yang kita estimasi **selalu lebih kecil** dari korelasi yang sebenarnya:
+
+$$r_{XY} = r_{T_X T_Y} \times \sqrt{\rho_{XX'} \times \rho_{YY'}}$$
+
+::: {.callout-warning}
+#### *Attenuation bias*
+Semakin rendah reliabilitas alat ukur, semakin besar distorsi pada estimasi korelasi. Ini berarti *measurement error* yang tinggi akan membuat kita **meremehkan** kekuatan hubungan antar-variabel yang sesungguhnya.
+:::
+
+## Implikasi *attenuation bias*
+
+**Contoh nyata**: Misalkan korelasi *true scores* antara kecemasan dan prokrastinasi adalah **0.60**. Tetapi skala kecemasan yang digunakan memiliki reliabilitas **0.70** dan skala prokrastinasi **0.65**.
+
+Korelasi yang akan kita temukan di data:
+
+$$r_{XY} = 0.60 \times \sqrt{0.70 \times 0.65} = 0.60 \times 0.674 = \mathbf{0.40}$$
+
+::: {.incremental}
+* Dengan kata lain, kita akan **melaporkan korelasi 0.40** padahal hubungan yang sesungguhnya adalah **0.60** — perbedaan yang sangat substansial!
+* Ini juga berdampak pada **efek size** dalam regresi: koefisien regresi (β) pun ikut teratenuasi.
+* Solusinya? Perlu model statistik yang secara eksplisit **memodelkan dan mengontrol *measurement error*** — inilah alasan utama mengapa kita perlu *latent variable modeling*.
+:::
+
+::: {.callout-tip}
+#### Koreksi atenuasi
+Korelasi *true scores* dapat diestimasi dari korelasi *observed scores* dengan **koreksi atenuasi**: $r_{T_X T_Y} = \frac{r_{XY}}{\sqrt{\rho_{XX'} \times \rho_{YY'}}}$
+:::
+
+# Keluarga model variabel laten {background-color="#14497F" .center}
+
+## Dari CTT ke SEM: satu keluarga besar
+
+| Model | Apa yang dimodelkan | Kelebihan dibanding CTT |
+|-------|---------------------|-------------------------|
+| **CTT** | X = T + E (level item) | Fondasi — sederhana, tapi tidak menguji struktur laten |
+| **EFA** | Struktur faktor laten yang tidak diketahui | Menemukan faktor laten secara *data-driven* |
+| **CFA** | Struktur faktor laten yang sudah dihipotesiskan | Menguji validitas konstruk secara teori |
+| **SEM** | Hubungan antar faktor laten + model pengukuran | Menguji model teoritis secara komprehensif |
 
 ::: {.callout-note}
-#### Tugas
-Rumuskan **hipotesis** penelitiannya kemudian buatlah **diagram jalur** beserta **koefisien jalurnya**. Bisa dengan MS Power Point atau *software* yang lain (misalnya, [draw.io](https://app.diagrams.net/)).
+Keempat model ini membentuk **satu kontinum** dari yang paling sederhana (CTT) ke yang paling kompleks (SEM). Setiap model yang lebih canggih *mengandung* logika model sebelumnya.
 :::
 
-#### [Klik disini untuk mengumpulkan tugas](https://padlet.com/ameliazein/tugas-mandiri-workshop-multigroup-sem-8p34daek2641aic8)
-
-## `lavaan` *Syntax*
+## Apa yang EFA dan CFA tambahkan dibandingkan CTT?
 
 ::: {.incremental}
+* **CTT** bekerja di level *item* — hanya bisa menghitung reliabilitas dan korelasi item-total. CTT tidak menguji apakah item-item tersebut memang mengukur konstruk laten yang sama.
 
-* `GAMLj` menyediakan dua opsi: fitur _syntax_ atau _interactive_
-  - Kalau memilih fitur _interactive_, maka tampilan antarmukanya berupa _drag & drop_ (seperti SPSS).
-  - Untuk fitur _syntax_, maka tampilan antarmukanya meminta pengguna untuk menspesifikasi model dengan _syntax_.
+* **EFA** (*Exploratory Factor Analysis*) memungkinkan kita untuk *menemukan* struktur faktor laten dari data — berguna saat teori belum jelas atau sedang dalam tahap eksplorasi.
 
-* `jamovi` dan `JASP` mengadopsi *syntax* dari *package* [`lavaan`](http://lavaan.ugent.be/tutorial/index.html), sehingga untuk menspesifikasi model, kita harus memasukkan **serangkaian perintah**.
+* **CFA** (*Confirmatory Factor Analysis*) memungkinkan kita untuk *menguji* apakah struktur faktor yang dihipotesiskan berdasarkan teori **didukung oleh data**. Ini adalah uji **validitas konstruk** yang paling ketat.
 
-* Meskipun begitu, *syntax* `lavaan` **sangat sederhana** dan familiar dengan *syntax* `lavaan` memberikan **banyak keuntungan**.
-
-* Menjalankan perintah dengan *syntax* juga membantu peneliti untuk mereka-ulang hasil analisis datanya, serta mempermudah kolaborasi dengan peneliti yang terbiasa menggunakan perangkat lunak yang berbeda dengan kita.
-
-* Oleh karena itu, dalam _workshop_ ini peserta juga harus berlatih menulis _syntax_.
-
+* **SEM** menggabungkan model pengukuran (CFA) dengan model struktural (regresi/jalur) untuk menguji hipotesis teoritis yang kompleks sekaligus mengontrol *measurement error*.
 :::
 
-## Dasar *syntax* `lavaan`
+## Komponen model SEM
 
-![](libs/lavaan.png){fig-align="center" width="55%"}
+![](libs/contoh-model.png){fig-align="center"}
 
-::: {.aside}
-Baujean, A.A. (2014). Latent Variable Modeling Using R: A step-by-step guide. New York: Routledge.
+## Model pengukuran (*measurement model*)
+
+![](libs/model-pengukuran2.png){fig-align="center"}
+
+# Reflektif vs. Formatif {background-color="#14497F" .center}
+
+## Dua cara variabel laten "bekerja"
+
+::: {.incremental}
+* Dalam *latent variable modeling*, ada dua cara konseptual yang berbeda untuk memahami hubungan antara variabel laten dan indikatornya.
+
+* **Model reflektif**: variabel **laten menyebabkan** indikator bervariasi.
+  - Jika depresi seseorang meningkat → skor pada item "saya merasa sedih", "saya kehilangan minat", "saya sulit tidur" *semuanya* akan meningkat.
+  - Indikator harus saling berkorelasi tinggi — mereka semua "mencerminkan" konstruk yang sama.
+
+* **Model formatif**: indikator **membentuk/mendefinisikan** variabel laten.
+  - "Status sosioekonomi" dibentuk oleh pendidikan, pendapatan, dan pekerjaan — menaikkan pendidikan tidak otomatis menaikkan pendapatan.
+  - Indikator tidak harus saling berkorelasi.
 :::
 
-## Contoh CFA (1)
+## Reflektif vs. Formatif: visualisasi
 
-![](libs/path-1.png){fig-align="center" width="80%"}
+::: {.columns}
+::: {.column}
 
-```{r}
-#| eval: false
+![](libs/reflektif.png){fig-align="center"}
 
-# CFA
-trust =~ trust1 + trust2 + trust3 + trust4 + trust5
+**Reflektif**: panah dari laten ke indikator
 
-# Measurement error (residual)
-trust1 ~~ trust1
-trust2 ~~ trust2
-trust3 ~~ trust3
-trust4 ~~ trust4
-trust5 ~~ trust5
-trust ~~ trust
-```
+:::
+::: {.column}
 
-## Contoh CFA (2)
+![](libs/formatif.png){fig-align="center"}
 
-![](libs/path-2.png){fig-align="center" width="80%"}
+**Formatif**: panah dari indikator ke laten
 
-```{r}
-#| eval: false
+:::
+:::
 
-# CFA
-mandiri =~ mandiri1 + mandiri2 + mandiri3 + mandiri4
+::: {.callout-warning}
+#### Mengapa ini penting?
+Mayoritas konstruk psikologi menggunakan model **reflektif**, misalnya: skala kepribadian, kecemasan, depresi, dll. Menggunakan model formatif untuk konstruk reflektif (atau sebaliknya) adalah kesalahan konseptual yang serius.
+:::
 
-# Measurement error (residual)
-mandiri1 ~~ mandiri1
-mandiri2 ~~ mandiri2
-mandiri3 ~~ mandiri3
-mandiri4 ~~ mandiri4
-mandiri ~~ mandiri
-```
+# Perangkat lunak dan cakupan materi {background-color="#14497F" .center}
 
-## Contoh *path analysis* (3)
+## Pilihan perangkat lunak
 
-![](libs/path-3.png){fig-align="center" width="80%"}
+::: {.incremental}
+* **`jamovi`** — antarmuka grafis (*point-and-click*), gratis dan *open source*. Digunakan dalam workshop ini. *Module* SEMLj menyediakan EFA dan CFA dengan antarmuka yang *user-friendly*.
 
-```{r}
-#| eval: false
+* **`JASP`** — mirip jamovi, antarmuka grafis, gratis. Juga mendukung EFA dan CFA.
 
-# Model Struktural
-mandiri ~ trust
+* **`lavaan`** di {{< fa brands r-project >}} — paket R yang paling lengkap dan fleksibel untuk SEM, CFA, EFA. Membutuhkan *coding*, tetapi memberikan kendali penuh atas spesifikasi model.
 
-# Measurement error (residual)
-mandiri ~~ mandiri
-trust ~~ trust
-```
+* **`semopy`** di {{< fa brands python >}} — alternatif di Python, sintaks mirip `lavaan`.
 
-## Contoh *full model* (4)
+* **`Mplus`**, **`LISREL`**, **`SPSS AMOS`**, **`EQS`** — perangkat lunak komersial dengan fitur lebih lengkap (termasuk *power analysis* dan simulasi), tetapi berbayar.
+:::
 
-![](libs/contoh-path.png){fig-align="center" width="80%"}
+::: {.callout-tip}
+#### Untuk workshop ini
+Kita akan menggunakan **jamovi** dengan *module* **SEMLj**. Untuk analisis yang lebih lanjut, `lavaan` sangat direkomendasikan.
+:::
 
-```{r}
-#| eval: false
+## Yang tidak dicakup dalam materi ini
 
-# CFA
-mandiri =~ mandiri1 + mandiri2 + mandiri3 + mandiri4
-trust =~ trust1 + trust2 + trust3 + trust4 + trust5
-
-# Measurement error (residual)
-mandiri1 ~~ mandiri1
-mandiri2 ~~ mandiri2
-mandiri3 ~~ mandiri3
-mandiri4 ~~ mandiri4
-
-trust1 ~~ trust1
-trust2 ~~ trust2
-trust3 ~~ trust3
-trust4 ~~ trust4
-trust5 ~~ trust5
-
-trust ~~ trust
-mandiri ~~ mandiri
-
-# Model Struktural
-mandiri ~ trust
-```
-
-## Latihan mandiri 3️⃣: Menulis *syntax* `lavaan`
-
-Tulislah *syntax* `lavaan` dari diagram jalur yang sudah dibuat di Latihan mandiri 2️⃣
-
-#### [Klik disini untuk mengumpulkan tugas](https://padlet.com/ameliazein/tugas-mandiri-workshop-multigroup-sem-8p34daek2641aic8)
+* _A priori power analysis_, Monte Carlo _simulation_, dan *accuracy in parameter estimation* (AIPE) untuk merencanakan jumlah sampel
+* _Sensitivity analysis_ untuk CFA/SEM
+* Model SEM dengan *missing data* (selain *listwise deletion*)
+* Model SEM dengan variabel moderator/mediator (*mediated moderation*, *moderated mediation*)
+* _Hierarchical latent variable model_ (*second-order* CFA / *bifactor model*)
+* [_Exploratory_ SEM (ESEM)](http://www.annualreviews.org/doi/10.1146/annurev-clinpsy-032813-153700)
+* _Partial least square_ (PLS) — berbeda secara fundamental dari CB-SEM
+* _Mixture model_ dan _latent growth curve_ (SEM untuk data longitudinal)
+* [_Multiple indicators, multiple causes_ (MIMIC) model](https://journals.sagepub.com/doi/10.1177/23328584251388032)
 
 ## Ada pertanyaan❓
 

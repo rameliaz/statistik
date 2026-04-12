@@ -11,8 +11,8 @@
   <meta name="generator" content="quarto-1.10.3">
 
   <meta name="author" content="Rizqy Amelia Zein">
-  <meta name="dcterms.date" content="2026-04-10">
-  <title>Statistik dalam Penelitian Psikologi – Pengantar Latent Variable Modeling</title>
+  <meta name="dcterms.date" content="2026-04-12">
+  <title>Statistik dalam Penelitian Psikologi – Analisis ROC (Receiver Operating Characteristic)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -133,7 +133,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Pengantar <em>Latent Variable Modeling</em></h1>
+  <h1 class="title">Analisis ROC (<em>Receiver Operating Characteristic</em>)</h1>
   <p class="subtitle">Statistik dalam Penelitian Psikologi</p>
 
 <div class="quarto-title-authors">
@@ -150,90 +150,58 @@ Rizqy Amelia Zein
     </div>
 </div>
 
-  <p class="date">2026-04-10</p>
+  <p class="date">2026-04-12</p>
 </section>
 <section id="outline" class="slide level2">
 <h2><em>Outline</em></h2>
 <ul>
-<li>Apa yang dimaksud dengan variabel laten? Mengapa psikologi membutuhkannya?</li>
-<li><em>Classical Test Theory</em> sebagai model variabel laten paling sederhana</li>
-<li>Reliabilitas dan <em>measurement error</em>: mengapa skor observasi selalu mengandung <em>noise</em></li>
-<li><em>Attenuation bias</em>: bagaimana <em>measurement error</em> mendistorsi estimasi hubungan antar-variabel</li>
-<li>Keluarga model variabel laten: CTT → EFA → CFA → SEM</li>
-<li>Variabel laten dalam model <em>reflektif</em> vs <em>formatif</em></li>
-<li>Pilihan perangkat lunak</li>
-<li>Cakupan materi dan keterbatasannya</li>
+<li>Uji diagnostik dalam psikologi: konteks dan permasalahan</li>
+<li>Review: <em>confusion matrix</em>, <em>sensitivity</em>, dan <em>specificity</em></li>
+<li><em>Positive Predictive Value</em> (PPV) dan <em>Negative Predictive Value</em> (NPV)</li>
+<li><em>Trade-off</em> antara <em>sensitivity</em> dan <em>specificity</em></li>
+<li>Kurva ROC: cara membangun dan membacanya</li>
+<li><em>Area Under the Curve</em> (AUC): ringkasan performa dalam satu angka</li>
+<li>Youden’s Index: menentukan <em>cut-off</em> optimal</li>
+<li>Membandingkan beberapa alat ukur sekaligus</li>
+<li>Pengaruh prevalensi pada PPV dan NPV</li>
+<li>Demonstrasi di jamovi</li>
+<li>Pelaporan hasil</li>
 </ul>
 </section>
 <section>
-<section id="psikologi-mengukur-hal-hal-yang-tidak-bisa-dilihat" class="title-slide slide level1 center" data-background-color="#14497F">
-<h1>Psikologi mengukur hal-hal yang tidak bisa dilihat</h1>
+<section id="uji-diagnostik-dalam-psikologi" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1>Uji diagnostik dalam psikologi</h1>
 
 </section>
-<section id="apakah-fisika-lebih-mudah-dari-psikologi" class="slide level2">
-<h2>Apakah fisika lebih mudah dari psikologi?</h2>
-
-<img data-src="https://media.giphy.com/media/3o7TKSjRrfIPjeiVyM/giphy.gif" class="quarto-figure quarto-figure-center r-stretch" style="width:55.0%"><ul>
-<li class="fragment">Fisika mengukur massa, kecepatan, suhu — semuanya bisa dikuantifikasi langsung dengan alat fisik.</li>
-<li class="fragment">Psikologi mengukur <strong>kecemasan</strong>, <strong>kepribadian</strong>, <strong>motivasi</strong> — konstruk yang tidak bisa ditimbang atau diukur dengan penggaris.</li>
-<li class="fragment">Pertanyaannya: bagaimana kita tahu bahwa alat ukur kita benar-benar mengukur konstruk yang dimaksud?</li>
+<section id="apa-yang-ingin-kita-ketahui" class="slide level2">
+<h2>Apa yang ingin kita ketahui?</h2>
+<ul>
+<li class="fragment">Seorang psikolog klinis ingin membuat <em>screening tool</em> sederhana untuk mendeteksi dini gejala depresi pada mahasiswa baru.</li>
+<li class="fragment">Setelah mengembangkan alat tersebut, ia perlu menjawab pertanyaan: <strong>seberapa akurat alat ini dalam memisahkan antara mahasiswa yang mengalami depresi dengan yang tidak?</strong></li>
+<li class="fragment">Untuk menjawabnya, ia membandingkan hasil ukur alat barunya dengan hasil asesmen mendalam oleh psikolog klinis berlisensi sebagai <strong><em>gold standard</em></strong>.</li>
+<li class="fragment">Perbandingan inilah yang menjadi inti analisis ROC.</li>
 </ul>
-</section>
-<section id="contoh-variabel-laten-dalam-psikologi" class="slide level2">
-<h2>Contoh variabel laten dalam psikologi</h2>
-<ul>
-<li class="fragment"><p><strong>Kecemasan</strong> — tidak bisa diobservasi langsung, tetapi bisa diinferensi dari detak jantung cepat, telapak tangan berkeringat, sulit konsentrasi, dan laporan subjektif individu.</p></li>
-<li class="fragment"><p><strong>Kepribadian (Big 5)</strong> — <em>Openness</em>, <em>Conscientiousness</em>, <em>Extraversion</em>, <em>Agreeableness</em>, <em>Neuroticism</em> merupakan konstruk laten yang diukur melalui respon terhadap item-item pernyataan.</p></li>
-<li class="fragment"><p><strong>Prestasi belajar</strong> — tidak sepenuhnya tercermin dari nilai ujian saja; ada faktor <em>measurement error</em> dalam setiap tes.</p></li>
-<li class="fragment"><p>Semua konstruk ini disebut <strong>variabel laten</strong> (<em>latent variable</em>): variabel yang <strong>tidak dapat diamati secara langsung</strong>, tetapi dapat diinferensi dari variabel lain yang bisa diukur (<em>observed variables</em>).</p></li>
-</ul>
-</section>
-<section id="variabel-observed-vs-variabel-laten" class="slide level2">
-<h2>Variabel <em>observed</em> vs variabel <em>laten</em></h2>
-<div class="columns">
-<div class="column" style="width:55%;">
-<ul>
-<li class="fragment"><strong>Variabel <em>observed</em></strong> (variabel manifes)
-<ul>
-<li class="fragment">Variabel yang <strong>dapat diukur atau diamati secara langsung</strong>.</li>
-<li class="fragment">Dalam skala psikologi: setiap <em>item</em> pernyataan adalah variabel <em>observed</em>.</li>
-<li class="fragment">Dalam studi eksperimen: skor tes, waktu reaksi, frekuensi perilaku.</li>
-</ul></li>
-<li class="fragment"><strong>Variabel <em>laten</em></strong>
-<ul>
-<li class="fragment">Konstruk yang <strong>tidak dapat diukur secara langsung</strong> — hanya bisa diinferensi.</li>
-<li class="fragment">Membutuhkan seperangkat variabel <em>observed</em> untuk mengoperasionalisasikannya.</li>
-<li class="fragment">Variabel <em>observed</em> berperan sebagai <strong>indikator</strong> dari variabel laten.</li>
-</ul></li>
-</ul>
-</div><div class="column" style="width:45%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="libs/observed-latent.png" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
-</figure>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-</div></div>
-</section></section>
-<section>
-<section id="classical-test-theory-ctt-model-variabel-laten-paling-sederhana" class="title-slide slide level1 center" data-background-color="#14497F">
-<h1><em>Classical Test Theory</em> (CTT): model variabel laten paling sederhana</h1>
-
+<p><strong><em>Gold standard</em></strong></p>
+</div>
+<div class="callout-content">
+<p><em>Gold standard</em> adalah metode referensi terbaik yang tersedia — bisa berupa wawancara diagnostik terstruktur (misal: SCID, MINI), penilaian panel ahli, atau diagnosis resmi. Akurasi alat yang kita uji selalu relatif terhadap <em>gold standard</em> yang digunakan.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="classical-test-theory-x-t-e" class="slide level2">
-<h2><em>Classical Test Theory</em>: X = T + E</h2>
+<section id="contoh-contoh-uji-diagnostik-dalam-psikologi" class="slide level2">
+<h2>Contoh-contoh uji diagnostik dalam psikologi</h2>
 <ul>
-<li>Psikometri klasik mengasumsikan bahwa setiap <strong>skor observasi</strong> (<em>observed score</em>, <strong>X</strong>) terdiri atas dua komponen:</li>
-</ul>
-<p><span class="math display">\[X = T + E\]</span></p>
-<ul>
-<li class="fragment"><strong>T</strong> (<em>true score</em>): skor yang <em>seharusnya</em> diperoleh seseorang apabila pengukuran dilakukan dengan sempurna — bebas dari gangguan apapun.</li>
-<li class="fragment"><strong>E</strong> (<em>error</em>): <em>measurement error</em> — semua “gangguan” yang membuat skor observasi menyimpang dari skor murni.
-<ul>
-<li class="fragment">Kondisi fisik saat mengisi kuesioner</li>
-<li class="fragment">Ambiguitas item pernyataan</li>
-<li class="fragment">Perubahan suasana hati sesaat (<em>state</em>)</li>
-<li class="fragment">Faktor situasional lainnya</li>
-</ul></li>
+<li class="fragment"><strong>Skrining depresi</strong>: PHQ-9 dibandingkan dengan wawancara SCID sebagai <em>gold standard</em></li>
+<li class="fragment"><strong>Deteksi gangguan kecemasan</strong>: GAD-7 dibandingkan dengan diagnosis klinis DSM-5</li>
+<li class="fragment"><strong>Skrining burnout</strong>: alat <em>screening</em> singkat dibandingkan dengan MBI (<em>Maslach Burnout Inventory</em>) penuh</li>
+<li class="fragment"><strong>Deteksi <em>mental health</em> umum</strong>: <em>Self-Reporting Questionnaire</em> (SRQ-20 WHO) digunakan untuk memisahkan populasi dengan dan tanpa gangguan mental-emosional di layanan kesehatan primer</li>
 </ul>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -241,144 +209,64 @@ Rizqy Amelia Zein
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Implikasi penting</strong></p>
+<p><strong>Mengapa tidak cukup hanya dengan korelasi?</strong></p>
 </div>
 <div class="callout-content">
-<p>CTT mengasumsikan bahwa <strong>rata-rata <em>error</em> adalah nol</strong> (E(e) = 0) dan <strong><em>error</em> tidak berkorelasi dengan skor murni</strong> (Cov(T, E) = 0). Artinya, <em>error</em> bersifat acak — bukan sistematis.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="reliabilitas-seberapa-besar-t-dalam-x" class="slide level2">
-<h2>Reliabilitas: seberapa besar T dalam X?</h2>
-<ul>
-<li>Apabila X = T + E, maka varians skor observasi (σ²ₓ) juga terdiri atas varians <em>true score</em> (σ²ᴛ) dan varians <em>error</em> (σ²ₑ):</li>
-</ul>
-<p><span class="math display">\[\sigma^2_X = \sigma^2_T + \sigma^2_E\]</span></p>
-<ul>
-<li><strong>Reliabilitas</strong> (ρ) didefinisikan sebagai proporsi varians <em>true score</em> terhadap varians total:</li>
-</ul>
-<p><span class="math display">\[\rho_{XX'} = \frac{\sigma^2_T}{\sigma^2_X} = \frac{\sigma^2_T}{\sigma^2_T + \sigma^2_E}\]</span></p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Reliabilitas (α atau ω)</th>
-<th>Interpretasi</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>≥ 0.90</td>
-<td>Sangat tinggi — <em>excellent</em></td>
-</tr>
-<tr class="even">
-<td>0.80 – 0.89</td>
-<td>Tinggi — <em>good</em></td>
-</tr>
-<tr class="odd">
-<td>0.70 – 0.79</td>
-<td>Cukup — <em>acceptable</em></td>
-</tr>
-<tr class="even">
-<td>0.60 – 0.69</td>
-<td>Sedang — perlu perbaikan</td>
-</tr>
-<tr class="odd">
-<td>&lt; 0.60</td>
-<td>Rendah — <em>poor</em></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="measurement-error-dan-attenuation-bias" class="slide level2">
-<h2><em>Measurement error</em> dan <em>attenuation bias</em></h2>
-<ul>
-<li><p>Masalahnya: kita tidak pernah mengukur <strong>T</strong> secara langsung — yang kita ukur selalu <strong>X</strong> (yang sudah “tercemari” oleh <em>error</em>).</p></li>
-<li><p>Konsekuensinya: ketika kita mengestimasi <strong>korelasi antar-variabel</strong>, korelasi yang kita hitung sebenarnya adalah korelasi antar <em>observed scores</em> (rₓᵧ), bukan korelasi antar <em>true scores</em> (rᴛₓᴛᵧ).</p></li>
-<li><p>Ini menyebabkan <strong>atenuasi</strong> — korelasi yang kita estimasi <strong>selalu lebih kecil</strong> dari korelasi yang sebenarnya:</p></li>
-</ul>
-<p><span class="math display">\[r_{XY} = r_{T_X T_Y} \times \sqrt{\rho_{XX'} \times \rho_{YY'}}\]</span></p>
-<div class="callout callout-warning callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong><em>Attenuation bias</em></strong></p>
-</div>
-<div class="callout-content">
-<p>Semakin rendah reliabilitas alat ukur, semakin besar distorsi pada estimasi korelasi. Ini berarti <em>measurement error</em> yang tinggi akan membuat kita <strong>meremehkan</strong> kekuatan hubungan antar-variabel yang sesungguhnya.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="implikasi-attenuation-bias" class="slide level2">
-<h2>Implikasi <em>attenuation bias</em></h2>
-<p><strong>Contoh nyata</strong>: Misalkan korelasi <em>true scores</em> antara kecemasan dan prokrastinasi adalah <strong>0.60</strong>. Tetapi skala kecemasan yang digunakan memiliki reliabilitas <strong>0.70</strong> dan skala prokrastinasi <strong>0.65</strong>.</p>
-<p>Korelasi yang akan kita temukan di data:</p>
-<p><span class="math display">\[r_{XY} = 0.60 \times \sqrt{0.70 \times 0.65} = 0.60 \times 0.674 = \mathbf{0.40}\]</span></p>
-<ul>
-<li class="fragment">Dengan kata lain, kita akan <strong>melaporkan korelasi 0.40</strong> padahal hubungan yang sesungguhnya adalah <strong>0.60</strong> — perbedaan yang sangat substansial!</li>
-<li class="fragment">Ini juga berdampak pada <strong>efek size</strong> dalam regresi: koefisien regresi (β) pun ikut teratenuasi.</li>
-<li class="fragment">Solusinya? Perlu model statistik yang secara eksplisit <strong>memodelkan dan mengontrol <em>measurement error</em></strong> — inilah alasan utama mengapa kita perlu <em>latent variable modeling</em>.</li>
-</ul>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Koreksi atenuasi</strong></p>
-</div>
-<div class="callout-content">
-<p>Korelasi <em>true scores</em> dapat diestimasi dari korelasi <em>observed scores</em> dengan <strong>koreksi atenuasi</strong>: <span class="math inline">\(r_{T_X T_Y} = \frac{r_{XY}}{\sqrt{\rho_{XX'} \times \rho_{YY'}}}\)</span></p>
+<p>Korelasi tinggi antara alat baru dan <em>gold standard</em> belum menjamin akurasi diagnostik yang baik — korelasi tidak memberikan informasi tentang <em>cut-off</em> optimal, <em>sensitivity</em>, atau <em>specificity</em> pada berbagai titik potong.</p>
 </div>
 </div>
 </div>
 </section></section>
 <section>
-<section id="keluarga-model-variabel-laten" class="title-slide slide level1 center" data-background-color="#14497F">
-<h1>Keluarga model variabel laten</h1>
+<section id="confusion-matrix-fondasi-evaluasi-diagnostik" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1><em>Confusion matrix</em>: fondasi evaluasi diagnostik</h1>
 
 </section>
-<section id="dari-ctt-ke-sem-satu-keluarga-besar" class="slide level2">
-<h2>Dari CTT ke SEM: satu keluarga besar</h2>
+<section id="review-dari-bagian-3" class="slide level2">
+<h2>Review dari Bagian 3</h2>
+<p>Dari <strong>Bagian 3</strong> (Regresi Logistik), kita sudah mengenal <em>confusion matrix</em>. Di sini kita menggunakannya dalam konteks uji diagnostik: membandingkan hasil alat <em>screening</em> dengan <em>gold standard</em>.</p>
 <table class="caption-top">
 <colgroup>
-<col style="width: 13%">
-<col style="width: 39%">
-<col style="width: 47%">
+<col style="width: 16%">
+<col style="width: 41%">
+<col style="width: 41%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Model</th>
-<th>Apa yang dimodelkan</th>
-<th>Kelebihan dibanding CTT</th>
+<th></th>
+<th style="text-align: center;"><em>Gold standard</em>: <strong>Negatif</strong></th>
+<th style="text-align: center;"><em>Gold standard</em>: <strong>Positif</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>CTT</strong></td>
-<td>X = T + E (level item)</td>
-<td>Fondasi — sederhana, tapi tidak menguji struktur laten</td>
+<td><strong>Alat: Negatif</strong></td>
+<td style="text-align: center;"><strong>TN</strong> (<em>True Negative</em>)</td>
+<td style="text-align: center;"><strong>FN</strong> (<em>False Negative</em>)</td>
 </tr>
 <tr class="even">
-<td><strong>EFA</strong></td>
-<td>Struktur faktor laten yang tidak diketahui</td>
-<td>Menemukan faktor laten secara <em>data-driven</em></td>
-</tr>
-<tr class="odd">
-<td><strong>CFA</strong></td>
-<td>Struktur faktor laten yang sudah dihipotesiskan</td>
-<td>Menguji validitas konstruk secara teori</td>
-</tr>
-<tr class="even">
-<td><strong>SEM</strong></td>
-<td>Hubungan antar faktor laten + model pengukuran</td>
-<td>Menguji model teoritis secara komprehensif</td>
+<td><strong>Alat: Positif</strong></td>
+<td style="text-align: center;"><strong>FP</strong> (<em>False Positive</em>)</td>
+<td style="text-align: center;"><strong>TP</strong> (<em>True Positive</em>)</td>
 </tr>
 </tbody>
 </table>
+<ul>
+<li><strong>TP</strong>: Alat mengatakan positif — dan memang positif ✓</li>
+<li><strong>TN</strong>: Alat mengatakan negatif — dan memang negatif ✓</li>
+<li><strong>FP</strong>: Alat mengatakan positif — padahal negatif ✗ (<em>false alarm</em>)</li>
+<li><strong>FN</strong>: Alat mengatakan negatif — padahal positif ✗ (<em>miss</em>)</li>
+</ul>
+</section>
+<section id="sensitivity-kemampuan-mendeteksi-yang-sakit" class="slide level2">
+<h2><em>Sensitivity</em> — kemampuan mendeteksi yang sakit</h2>
+<p><span class="math display">\[\text{Sensitivity} = \frac{TP}{TP + FN}\]</span></p>
+<p><strong>Pertanyaan yang dijawab:</strong> “Dari semua orang yang benar-benar mengalami gangguan, berapa persen yang berhasil dideteksi oleh alat ini?”</p>
+<ul>
+<li class="fragment"><em>Sensitivity</em> tinggi berarti <strong>sedikit <em>false negative</em></strong> — kasus yang sakit jarang terlewat</li>
+<li class="fragment">Sangat penting ketika <strong>konsekuensi miss sangat besar</strong>: skrining risiko bunuh diri, skrining gangguan psikosis dini, skrining kekerasan dalam rumah tangga</li>
+<li class="fragment"><em>Sensitivity</em> = 1.0 berarti alat tidak pernah melewatkan satu pun kasus positif — tapi biasanya dicapai dengan mengorbankan <em>specificity</em></li>
+</ul>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -388,94 +276,307 @@ Rizqy Amelia Zein
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>Keempat model ini membentuk <strong>satu kontinum</strong> dari yang paling sederhana (CTT) ke yang paling kompleks (SEM). Setiap model yang lebih canggih <em>mengandung</em> logika model sebelumnya.</p>
+<p><em>Sensitivity</em> juga dikenal sebagai <strong><em>True Positive Rate</em></strong> (TPR) atau <strong><em>Recall</em></strong>.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="apa-yang-efa-dan-cfa-tambahkan-dibandingkan-ctt" class="slide level2">
-<h2>Apa yang EFA dan CFA tambahkan dibandingkan CTT?</h2>
+<section id="specificity-kemampuan-membebaskan-yang-sehat" class="slide level2">
+<h2><em>Specificity</em> — kemampuan membebaskan yang sehat</h2>
+<p><span class="math display">\[\text{Specificity} = \frac{TN}{TN + FP}\]</span></p>
+<p><strong>Pertanyaan yang dijawab:</strong> “Dari semua orang yang tidak mengalami gangguan, berapa persen yang benar-benar dinyatakan negatif oleh alat ini?”</p>
 <ul>
-<li class="fragment"><p><strong>CTT</strong> bekerja di level <em>item</em> — hanya bisa menghitung reliabilitas dan korelasi item-total. CTT tidak menguji apakah item-item tersebut memang mengukur konstruk laten yang sama.</p></li>
-<li class="fragment"><p><strong>EFA</strong> (<em>Exploratory Factor Analysis</em>) memungkinkan kita untuk <em>menemukan</em> struktur faktor laten dari data — berguna saat teori belum jelas atau sedang dalam tahap eksplorasi.</p></li>
-<li class="fragment"><p><strong>CFA</strong> (<em>Confirmatory Factor Analysis</em>) memungkinkan kita untuk <em>menguji</em> apakah struktur faktor yang dihipotesiskan berdasarkan teori <strong>didukung oleh data</strong>. Ini adalah uji <strong>validitas konstruk</strong> yang paling ketat.</p></li>
-<li class="fragment"><p><strong>SEM</strong> menggabungkan model pengukuran (CFA) dengan model struktural (regresi/jalur) untuk menguji hipotesis teoritis yang kompleks sekaligus mengontrol <em>measurement error</em>.</p></li>
+<li class="fragment"><em>Specificity</em> tinggi berarti <strong>sedikit <em>false positive</em></strong> — orang sehat jarang salah diklasifikasikan</li>
+<li class="fragment">Sangat penting ketika <strong>konsekuensi <em>false alarm</em> sangat besar</strong>: stigma, intervensi yang tidak perlu, biaya yang tinggi, keputusan seleksi/rekrutmen</li>
+<li class="fragment"><em>Specificity</em> = 1.0 berarti alat tidak pernah salah mengklasifikasikan orang sehat sebagai positif</li>
 </ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p><em>Specificity</em> juga dikenal sebagai <strong><em>True Negative Rate</em></strong> (TNR). Kebalikannya (FP/(TN+FP)) disebut <strong><em>False Positive Rate</em></strong> (FPR) — sumbu X kurva ROC.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="komponen-model-sem" class="slide level2">
-<h2>Komponen model SEM</h2>
-
-<img data-src="libs/contoh-model.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="model-pengukuran-measurement-model" class="slide level2">
-<h2>Model pengukuran (<em>measurement model</em>)</h2>
-
-<img data-src="libs/model-pengukuran2.png" class="quarto-figure quarto-figure-center r-stretch"></section></section>
+<section id="contoh-srq-20-sebagai-gold-standard-mhi-sebagai-alat-yang-diuji" class="slide level2">
+<h2>Contoh: SRQ-20 sebagai <em>gold standard</em>, MHI sebagai alat yang diuji</h2>
+<p><strong>Konteks</strong>: N = 300; 90 orang dengan gangguan mental-emosional (SRQ-20 positif), 210 orang sehat</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 38%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><em>Cut-off</em> MHI = 50</th>
+<th style="text-align: center;"><em>Gold standard</em>: Sehat</th>
+<th style="text-align: center;"><em>Gold standard</em>: Gangguan</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>MHI: Negatif</strong> (&lt; 50)</td>
+<td style="text-align: center;"><strong>TN = 168</strong></td>
+<td style="text-align: center;"><strong>FN = 18</strong></td>
+</tr>
+<tr class="even">
+<td><strong>MHI: Positif</strong> (≥ 50)</td>
+<td style="text-align: center;"><strong>FP = 42</strong></td>
+<td style="text-align: center;"><strong>TP = 72</strong></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[\text{Sensitivity} = \frac{72}{72 + 18} = 0.80 \quad (80\%)\]</span></p>
+<p><span class="math display">\[\text{Specificity} = \frac{168}{168 + 42} = 0.80 \quad (80\%)\]</span></p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>Dengan <em>cut-off</em> 50, alat MHI berhasil mendeteksi 80% kasus gangguan dan 80% kasus sehat. Tetapi apakah ini <em>cut-off</em> yang optimal? Inilah yang akan dijawab oleh analisis ROC.</p>
+</div>
+</div>
+</div>
+</section></section>
 <section>
-<section id="reflektif-vs.-formatif" class="title-slide slide level1 center" data-background-color="#14497F">
-<h1>Reflektif vs.&nbsp;Formatif</h1>
+<section id="ppv-dan-npv-nilai-prediktif-dalam-konteks-klinis" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1>PPV dan NPV: nilai prediktif dalam konteks klinis</h1>
 
 </section>
-<section id="dua-cara-variabel-laten-bekerja" class="slide level2">
-<h2>Dua cara variabel laten “bekerja”</h2>
-<ul>
-<li class="fragment"><p>Dalam <em>latent variable modeling</em>, ada dua cara konseptual yang berbeda untuk memahami hubungan antara variabel laten dan indikatornya.</p></li>
-<li class="fragment"><p><strong>Model reflektif</strong>: variabel <strong>laten menyebabkan</strong> indikator bervariasi.</p>
-<ul>
-<li class="fragment">Jika depresi seseorang meningkat → skor pada item “saya merasa sedih”, “saya kehilangan minat”, “saya sulit tidur” <em>semuanya</em> akan meningkat.</li>
-<li class="fragment">Indikator harus saling berkorelasi tinggi — mereka semua “mencerminkan” konstruk yang sama.</li>
-</ul></li>
-<li class="fragment"><p><strong>Model formatif</strong>: indikator <strong>membentuk/mendefinisikan</strong> variabel laten.</p>
-<ul>
-<li class="fragment">“Status sosioekonomi” dibentuk oleh pendidikan, pendapatan, dan pekerjaan — menaikkan pendidikan tidak otomatis menaikkan pendapatan.</li>
-<li class="fragment">Indikator tidak harus saling berkorelasi.</li>
-</ul></li>
-</ul>
-</section>
-<section id="reflektif-vs.-formatif-visualisasi" class="slide level2">
-<h2>Reflektif vs.&nbsp;Formatif: visualisasi</h2>
-<div class="columns">
-<div class="column">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="libs/reflektif.png" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-<p><strong>Reflektif</strong>: panah dari laten ke indikator</p>
-</div><div class="column">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="libs/formatif.png" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-<p><strong>Formatif</strong>: panah dari indikator ke laten</p>
-</div></div>
+<section id="positive-predictive-value-ppv" class="slide level2">
+<h2><em>Positive Predictive Value</em> (PPV)</h2>
+<p><span class="math display">\[\text{PPV} = \frac{TP}{TP + FP}\]</span></p>
+<p><strong>Pertanyaan yang dijawab:</strong> “Jika alat menunjukkan hasil <em>positif</em>, seberapa besar kemungkinan orang ini benar-benar mengalami gangguan?”</p>
+<p>Dari contoh tadi:</p>
+<p><span class="math display">\[\text{PPV} = \frac{72}{72 + 42} = 0.63 \quad (63\%)\]</span></p>
 <div class="callout callout-warning callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Mengapa ini penting?</strong></p>
+<p><strong>PPV bergantung pada prevalensi</strong></p>
 </div>
 <div class="callout-content">
-<p>Mayoritas konstruk psikologi menggunakan model <strong>reflektif</strong>, misalnya: skala kepribadian, kecemasan, depresi, dll. Menggunakan model formatif untuk konstruk reflektif (atau sebaliknya) adalah kesalahan konseptual yang serius.</p>
+<p>PPV <strong>bukan</strong> sifat tetap dari alat ukur — ia sangat bergantung pada <strong>prevalensi</strong> gangguan dalam populasi yang dites. Alat yang sama akan menghasilkan PPV berbeda jika digunakan pada populasi dengan prevalensi berbeda.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="negative-predictive-value-npv" class="slide level2">
+<h2><em>Negative Predictive Value</em> (NPV)</h2>
+<p><span class="math display">\[\text{NPV} = \frac{TN}{TN + FN}\]</span></p>
+<p><strong>Pertanyaan yang dijawab:</strong> “Jika alat menunjukkan hasil <em>negatif</em>, seberapa besar kemungkinan orang ini benar-benar sehat?”</p>
+<p>Dari contoh tadi:</p>
+<p><span class="math display">\[\text{NPV} = \frac{168}{168 + 18} = 0.90 \quad (90\%)\]</span></p>
+<p><strong>Empat metrik dalam satu tabel:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Metrik</th>
+<th style="text-align: center;">Nilai</th>
+<th>Pertanyaan</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Sensitivity</em></td>
+<td style="text-align: center;">80%</td>
+<td>Dari yang sakit, berapa % terdeteksi?</td>
+</tr>
+<tr class="even">
+<td><em>Specificity</em></td>
+<td style="text-align: center;">80%</td>
+<td>Dari yang sehat, berapa % “lolos”?</td>
+</tr>
+<tr class="odd">
+<td>PPV</td>
+<td style="text-align: center;">63%</td>
+<td>Jika positif, seberapa yakin?</td>
+</tr>
+<tr class="even">
+<td>NPV</td>
+<td style="text-align: center;">90%</td>
+<td>Jika negatif, seberapa yakin?</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="sensitivity-vs-specificity-dua-tujuan-yang-saling-tarik-menarik" class="slide level2">
+<h2><em>Sensitivity</em> vs <em>specificity</em>: dua tujuan yang saling tarik-menarik</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li class="fragment">Setiap alat diagnostik memiliki satu distribusi skor untuk kelompok “positif” (<em>cases</em>) dan satu untuk kelompok “negatif” (<em>controls</em>).</li>
+<li class="fragment">Ketika dua distribusi ini <strong>saling tumpang tindih</strong>, tidak ada <em>cut-off</em> yang bisa memisahkan keduanya dengan sempurna.</li>
+<li class="fragment">Menurunkan <em>cut-off</em> → <strong>sensitivity naik</strong> (lebih banyak kasus tertangkap) tapi <strong>specificity turun</strong> (lebih banyak <em>false alarm</em>).</li>
+<li class="fragment">Menaikkan <em>cut-off</em> → <strong>specificity naik</strong> (lebih sedikit <em>false alarm</em>) tapi <strong>sensitivity turun</strong> (lebih banyak kasus terlewat).</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Pemilihan <em>cut-off</em> adalah keputusan etis dan klinis</strong></p>
+</div>
+<div class="callout-content">
+<p>Tidak ada <em>cut-off</em> “terbaik” secara universal — pilihan tergantung pada:</p>
+<ul>
+<li>Konsekuensi <em>false negative</em> vs <em>false positive</em></li>
+<li>Biaya intervensi</li>
+<li>Prevalensi gangguan</li>
+<li>Konteks penggunaan (skrining vs diagnosis formal)</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div>
+</section></section>
+<section>
+<section id="kurva-roc" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1>Kurva ROC</h1>
+
+</section>
+<section id="apa-itu-kurva-roc" class="slide level2">
+<h2>Apa itu kurva ROC?</h2>
+<ul>
+<li class="fragment">Kurva ROC (<em>Receiver Operating Characteristic</em>) adalah visualisasi performa diagnostik sebuah alat <strong>di semua nilai <em>cut-off</em> yang mungkin secara bersamaan</strong>.</li>
+<li class="fragment">Untuk setiap <em>cut-off</em>, kita menghitung <em>sensitivity</em> (TPR) dan <em>false positive rate</em> (1 − <em>specificity</em>), lalu memplotnya:
+<ul>
+<li class="fragment">Sumbu Y: <em>Sensitivity</em> (TPR) — 0 sampai 1</li>
+<li class="fragment">Sumbu X: <em>False Positive Rate</em> (1 − <em>Specificity</em>) — 0 sampai 1</li>
+</ul></li>
+<li class="fragment"><strong>Garis diagonal</strong> (dari [0,0] ke [1,1]) = kinerja alat yang setara dengan tebakan acak (<em>no discrimination</em>).</li>
+<li class="fragment">Kurva yang <strong>melengkung jauh ke sudut kiri atas</strong> menunjukkan alat yang baik: <em>sensitivity</em> tinggi tanpa banyak <em>false positive</em>.</li>
+</ul>
+</section>
+<section id="membaca-kurva-roc" class="slide level2">
+<h2>Membaca kurva ROC</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li class="fragment"><strong>Sudut kiri atas [0, 1]</strong> = titik ideal: <em>sensitivity</em> = 1 dan <em>false positive rate</em> = 0 — alat sempurna.</li>
+<li class="fragment"><strong>Garis diagonal</strong> = kinerja acak — tidak lebih baik dari koin yang dilempar.</li>
+<li class="fragment">Titik-titik di sepanjang kurva merepresentasikan performa pada <strong>berbagai nilai <em>cut-off</em></strong>.</li>
+<li class="fragment">Semakin tinggi <em>cut-off</em>, titik bergerak ke <strong>kiri bawah</strong> (sensitivity turun, specificity naik).</li>
+<li class="fragment">Semakin rendah <em>cut-off</em>, titik bergerak ke <strong>kanan atas</strong> (sensitivity naik, specificity turun).</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Mengapa “Receiver Operating Characteristic”?</strong></p>
+</div>
+<div class="callout-content">
+<p>Nama ini berasal dari <em>radar engineering</em> di era Perang Dunia II — digunakan untuk mengevaluasi kemampuan sistem radar dalam memisahkan sinyal pesawat musuh dari <em>noise</em>. Konsep yang sama diterapkan dalam diagnostik medis dan psikologis sejak tahun 1970-an.</p>
+</div>
+</div>
+</div>
+</div></div>
+</section></section>
+<section>
+<section id="area-under-the-curve-auc" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1><em>Area Under the Curve</em> (AUC)</h1>
+
+</section>
+<section id="auc-satu-angka-untuk-merangkum-keseluruhan-performa" class="slide level2">
+<h2>AUC — satu angka untuk merangkum keseluruhan performa</h2>
+<p><strong>Definisi probabilistik:</strong> AUC adalah probabilitas bahwa apabila kita mengambil satu orang dengan gangguan dan satu orang sehat secara acak, alat akan memberikan <strong>skor yang lebih tinggi</strong> kepada orang dengan gangguan.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">AUC</th>
+<th style="text-align: left;">Interpretasi</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0.50</td>
+<td style="text-align: left;">Tidak lebih baik dari tebakan acak — alat tidak bermanfaat</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.60–0.70</td>
+<td style="text-align: left;">Lemah — performa terbatas, perlu perbaikan alat</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.70–0.80</td>
+<td style="text-align: left;">Cukup — bisa digunakan dengan hati-hati</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.80–0.90</td>
+<td style="text-align: left;">Baik — alat performa tinggi</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.90–1.00</td>
+<td style="text-align: left;">Sangat baik — atau <em>overfitting</em>? Cek dulu!</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>AUC bukan satu-satunya pertimbangan</strong></p>
+</div>
+<div class="callout-content">
+<p>AUC yang tinggi tidak secara otomatis berarti alat siap digunakan secara klinis. Pertimbangkan juga: <em>sensitivity</em> dan <em>specificity</em> pada <em>cut-off</em> yang dipilih, PPV/NPV dalam populasi target, dan kemudahan penggunaan alat.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="auc-perbandingan-dengan-konteks-yang-sudah-familiar" class="slide level2">
+<h2>AUC: perbandingan dengan konteks yang sudah familiar</h2>
+<p>Dari <strong>Bagian 3</strong>, kita sudah mengenal AUC sebagai ukuran performa model regresi logistik.</p>
+<ul>
+<li class="fragment">Di Bagian 3, AUC mengukur seberapa baik <strong>model regresi logistik</strong> (dengan semua prediktornya) memisahkan kasus positif dari negatif.</li>
+<li class="fragment">Di analisis ROC ini, AUC mengukur seberapa baik <strong>satu alat ukur tunggal</strong> (dengan berbagai <em>cut-off</em>) memisahkan kasus positif dari negatif.</li>
+<li class="fragment">Prinsip interpretasinya sama persis — yang berbeda adalah objek yang dievaluasi: model multivariat vs.&nbsp;satu alat ukur dengan ambang batas.</li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><em>Confidence interval</em> untuk AUC</strong></p>
+</div>
+<div class="callout-content">
+<p>Selalu laporkan 95% CI untuk AUC. Jika CI melewati 0.50, performa alat tidak berbeda secara signifikan dari tebakan acak.</p>
 </div>
 </div>
 </div>
 </section></section>
 <section>
-<section id="perangkat-lunak-dan-cakupan-materi" class="title-slide slide level1 center" data-background-color="#14497F">
-<h1>Perangkat lunak dan cakupan materi</h1>
+<section id="youdens-index-cut-off-optimal" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1>Youden’s Index: <em>cut-off</em> optimal</h1>
 
 </section>
-<section id="pilihan-perangkat-lunak" class="slide level2">
-<h2>Pilihan perangkat lunak</h2>
+<section id="apa-itu-youdens-index" class="slide level2">
+<h2>Apa itu Youden’s Index?</h2>
+<p><span class="math display">\[J = \text{Sensitivity} + \text{Specificity} - 1\]</span></p>
 <ul>
-<li class="fragment"><p><strong><code>jamovi</code></strong> — antarmuka grafis (<em>point-and-click</em>), gratis dan <em>open source</em>. Digunakan dalam workshop ini. <em>Module</em> SEMLj menyediakan EFA dan CFA dengan antarmuka yang <em>user-friendly</em>.</p></li>
-<li class="fragment"><p><strong><code>JASP</code></strong> — mirip jamovi, antarmuka grafis, gratis. Juga mendukung EFA dan CFA.</p></li>
-<li class="fragment"><p><strong><code>lavaan</code></strong> di <i class="fa-brands fa-r-project" aria-label="r-project"></i> — paket R yang paling lengkap dan fleksibel untuk SEM, CFA, EFA. Membutuhkan <em>coding</em>, tetapi memberikan kendali penuh atas spesifikasi model.</p></li>
-<li class="fragment"><p><strong><code>semopy</code></strong> di <i class="fa-brands fa-python" aria-label="python"></i> — alternatif di Python, sintaks mirip <code>lavaan</code>.</p></li>
-<li class="fragment"><p><strong><code>Mplus</code></strong>, <strong><code>LISREL</code></strong>, <strong><code>SPSS AMOS</code></strong>, <strong><code>EQS</code></strong> — perangkat lunak komersial dengan fitur lebih lengkap (termasuk <em>power analysis</em> dan simulasi), tetapi berbayar.</p></li>
+<li class="fragment">Youden’s Index (J) adalah ukuran yang menyeimbangkan <em>sensitivity</em> dan <em>specificity</em> dalam satu angka.</li>
+<li class="fragment">Nilainya berkisar dari 0 (kinerja setara tebakan) hingga 1 (kinerja sempurna).</li>
+<li class="fragment"><strong><em>Cut-off</em> optimal</strong> berdasarkan Youden’s Index adalah nilai <em>cut-off</em> yang <strong>memaksimalkan J</strong> — yang memberikan kombinasi <em>sensitivity</em> + <em>specificity</em> tertinggi.</li>
+<li class="fragment">Ini merupakan titik pada kurva ROC yang <strong>paling jauh dari garis diagonal</strong> ke arah sudut kiri atas.</li>
 </ul>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -483,27 +584,242 @@ Rizqy Amelia Zein
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Untuk workshop ini</strong></p>
+<p><strong>Kapan Youden’s Index tidak cukup?</strong></p>
 </div>
 <div class="callout-content">
-<p>Kita akan menggunakan <strong>jamovi</strong> dengan <em>module</em> <strong>SEMLj</strong>. Untuk analisis yang lebih lanjut, <code>lavaan</code> sangat direkomendasikan.</p>
+<p>Youden’s Index memperlakukan <em>sensitivity</em> dan <em>specificity</em> sebagai <strong>sama pentingnya</strong>. Jika konteks klinis menuntut prioritas berbeda (misalnya <em>sensitivity</em> lebih penting daripada <em>specificity</em>), gunakan fungsi <em>utility</em> atau pertimbangan klinis eksplisit dalam memilih <em>cut-off</em>.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="yang-tidak-dicakup-dalam-materi-ini" class="slide level2">
-<h2>Yang tidak dicakup dalam materi ini</h2>
+<section id="tabel-sensitivity-specificity-memilih-cut-off-dengan-tepat" class="slide level2">
+<h2>Tabel <em>sensitivity-specificity</em>: memilih <em>cut-off</em> dengan tepat</h2>
+<p><strong>Contoh tabel <em>cut-off</em> untuk alat MHI (sebagian):</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><em>Cut-off</em></th>
+<th style="text-align: center;"><em>Sensitivity</em></th>
+<th style="text-align: center;"><em>Specificity</em></th>
+<th style="text-align: center;">Youden’s J</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">0.94</td>
+<td style="text-align: center;">0.60</td>
+<td style="text-align: center;">0.54</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">45</td>
+<td style="text-align: center;">0.89</td>
+<td style="text-align: center;">0.70</td>
+<td style="text-align: center;">0.59</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>50</strong></td>
+<td style="text-align: center;"><strong>0.80</strong></td>
+<td style="text-align: center;"><strong>0.80</strong></td>
+<td style="text-align: center;"><strong>0.60</strong> ← optimal</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">55</td>
+<td style="text-align: center;">0.69</td>
+<td style="text-align: center;">0.88</td>
+<td style="text-align: center;">0.57</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">60</td>
+<td style="text-align: center;">0.53</td>
+<td style="text-align: center;">0.93</td>
+<td style="text-align: center;">0.46</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p><em>Cut-off</em> 50 memberikan Youden’s J tertinggi (0.60). Dalam jamovi, tabel ini tersedia secara otomatis melalui opsi <strong>Sensitivity-Specificity Tables</strong> di modul PPDA → TestROC.</p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="membandingkan-beberapa-alat-ukur" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1>Membandingkan beberapa alat ukur</h1>
+
+</section>
+<section id="roc-untuk-membandingkan-dua-tes-sekaligus" class="slide level2">
+<h2>ROC untuk membandingkan dua tes sekaligus</h2>
+<p>Analisis ROC juga bisa digunakan untuk menjawab: “<strong>Dari dua alat <em>screening</em> ini, mana yang lebih akurat?</strong>”</p>
 <ul>
-<li><em>A priori power analysis</em>, Monte Carlo <em>simulation</em>, dan <em>accuracy in parameter estimation</em> (AIPE) untuk merencanakan jumlah sampel</li>
-<li><em>Sensitivity analysis</em> untuk CFA/SEM</li>
-<li>Model SEM dengan <em>missing data</em> (selain <em>listwise deletion</em>)</li>
-<li>Model SEM dengan variabel moderator/mediator (<em>mediated moderation</em>, <em>moderated mediation</em>)</li>
-<li><em>Hierarchical latent variable model</em> (<em>second-order</em> CFA / <em>bifactor model</em>)</li>
-<li><a href="http://www.annualreviews.org/doi/10.1146/annurev-clinpsy-032813-153700"><em>Exploratory</em> SEM (ESEM)</a></li>
-<li><em>Partial least square</em> (PLS) — berbeda secara fundamental dari CB-SEM</li>
-<li><em>Mixture model</em> dan <em>latent growth curve</em> (SEM untuk data longitudinal)</li>
-<li><a href="https://journals.sagepub.com/doi/10.1177/23328584251388032"><em>Multiple indicators, multiple causes</em> (MIMIC) model</a></li>
+<li class="fragment">Buat kurva ROC untuk masing-masing alat pada <strong>sampel yang sama</strong> dengan <strong><em>gold standard</em> yang sama</strong>.</li>
+<li class="fragment">Bandingkan AUC kedua alat — alat dengan AUC lebih tinggi secara umum lebih akurat.</li>
+<li class="fragment">Gunakan <strong>uji signifikansi</strong> untuk membandingkan AUC (metode DeLong et al., 1988) — tersedia di jamovi PPDA.</li>
+<li class="fragment">Jika interval kepercayaan AUC kedua alat saling tumpang tindih, perbedaan mungkin tidak signifikan secara statistik.</li>
 </ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Pertimbangan lain selain AUC</strong></p>
+</div>
+<div class="callout-content">
+<p>Bahkan jika dua alat memiliki AUC serupa, salah satunya mungkin lebih dipilih karena: lebih singkat (<em>item</em> lebih sedikit), lebih mudah dipahami peserta, biaya lebih rendah, atau memiliki profil <em>sensitivity-specificity</em> yang lebih sesuai dengan konteks penggunaan.</p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="pengaruh-prevalensi-pada-ppv-dan-npv" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1>Pengaruh prevalensi pada PPV dan NPV</h1>
+
+</section>
+<section id="mengapa-prevalensi-sangat-penting" class="slide level2">
+<h2>Mengapa prevalensi sangat penting?</h2>
+<p><em>Sensitivity</em> dan <em>specificity</em> adalah sifat <strong>intrinsik</strong> alat ukur — tidak berubah ketika prevalensi berubah. Tetapi PPV dan NPV sangat bergantung pada prevalensi.</p>
+<p><strong>Simulasi: alat dengan sensitivity = 80%, specificity = 80%</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Prevalensi</th>
+<th style="text-align: center;">PPV</th>
+<th style="text-align: center;">NPV</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">50% (klinik psikiatri)</td>
+<td style="text-align: center;">80%</td>
+<td style="text-align: center;">80%</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">30% (layanan primer)</td>
+<td style="text-align: center;">63%</td>
+<td style="text-align: center;">90%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">10% (skrining populasi umum)</td>
+<td style="text-align: center;">31%</td>
+<td style="text-align: center;">97%</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2% (skrining wajib semua orang)</td>
+<td style="text-align: center;"><strong>8%</strong></td>
+<td style="text-align: center;"><strong>&gt;99%</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Implikasi untuk penggunaan alat</strong></p>
+</div>
+<div class="callout-content">
+<p>Jika alat skrining yang sama digunakan pada populasi dengan prevalensi sangat rendah (misalnya 2%), sebagian besar hasil “positif” adalah <em>false positive</em> — hanya 8% dari mereka yang dinyatakan positif benar-benar mengalami gangguan! Ini mempunyai konsekuensi etis yang serius.</p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="demonstrasi-di-jamovi" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1>Demonstrasi di jamovi</h1>
+
+</section>
+<section id="konteks-mhi-vs-srq-20" class="slide level2">
+<h2>Konteks: MHI vs SRQ-20</h2>
+<ul>
+<li class="fragment"><p>Dataset: <strong>Dataset Contoh Analisis ROC</strong> (<code>roc.omv</code>)</p>
+<ul>
+<li class="fragment">Dapat diunduh dari <em>navbar</em> di laman mata kuliah</li>
+</ul></li>
+<li class="fragment"><p>Variabel:</p>
+<ul>
+<li class="fragment"><strong>MentalHealthIndex</strong>: skor total <em>Mental Health Inventory</em> (MHI) yang ingin diuji akurasinya</li>
+<li class="fragment"><strong>SRQ_Diagnostik</strong>: keputusan diagnosis berdasarkan <em>Self-Reporting Questionnaire</em> (SRQ-20 WHO) — digunakan sebagai <em>gold standard</em></li>
+</ul></li>
+<li class="fragment"><p>Pertanyaan penelitian: <strong>Pada <em>cut-off</em> berapa MHI dapat memisahkan peserta dengan dan tanpa gangguan mental-emosional dengan optimal?</strong></p></li>
+<li class="fragment"><p>SRQ-20 adalah alat skrining standar WHO yang digunakan dalam RISKESDAS (2007, 2013, 2018) — sehingga menjadi <em>gold standard</em> yang tepat untuk konteks Indonesia.</p></li>
+</ul>
+</section>
+<section id="langkah-langkah-di-jamovi" class="slide level2">
+<h2>Langkah-langkah di jamovi</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Persiapan:</strong></p>
+<ol type="1">
+<li>Pasang <em>module</em> <strong>PPDA</strong> terlebih dahulu
+<ul>
+<li>Menu <strong>☰ → Manage modules → Available → PPDA</strong></li>
+</ul></li>
+<li>Buka dataset <code>roc.omv</code></li>
+<li>Pastikan variabel diagnostik (<em>gold standard</em>) sudah dalam format <strong>kategorikal</strong> (0 = negatif, 1 = positif)</li>
+</ol>
+<p><strong>Menjalankan TestROC:</strong></p>
+<ol start="4" type="1">
+<li><strong>PPDA → TestROC</strong></li>
+<li>Masukkan <strong>MentalHealthIndex</strong> ke kolom <em>Dependent Variable</em></li>
+<li>Masukkan <strong>SRQ_Diagnostik</strong> ke kolom <em>Class Variable</em></li>
+</ol>
+</div><div class="column" style="width:50%;">
+<p><strong>Output yang harus diaktifkan:</strong></p>
+<p>☑ <em>ROC Curves</em> — visualisasi kurva ROC</p>
+<p>☑ <em>Standard error bars</em> — <em>confidence interval</em> pada kurva</p>
+<p>☑ <em>Sensitivity-Specificity Tables</em> — tabel untuk memilih <em>cut-off</em></p>
+<p>☑ <em>AUC</em> — <em>area under the curve</em> dan CI-nya</p>
+<p><strong>Urutan membaca output:</strong></p>
+<p>AUC (+ 95% CI) → Kurva ROC → Tabel <em>cut-off</em> → Pilih <em>cut-off</em> berdasarkan Youden’s J → Hitung PPV dan NPV</p>
+</div></div>
+</section>
+<section id="checklist-pelaporan-analisis-roc" class="slide level2">
+<h2>Checklist pelaporan analisis ROC</h2>
+<p>☐ <strong>Deskripsi alat dan <em>gold standard</em></strong> — apa yang diukur, bagaimana <em>gold standard</em> ditetapkan</p>
+<p>☐ <strong>Prevalensi dalam sampel</strong> — proporsi kasus positif</p>
+<p>☐ <strong>AUC</strong> — nilai, 95% CI, dan interpretasi</p>
+<p>☐ <strong><em>Cut-off</em> yang dipilih</strong> — nilai dan justifikasinya (misalnya: Youden’s Index)</p>
+<p>☐ <strong><em>Sensitivity</em> dan <em>specificity</em></strong> pada <em>cut-off</em> yang dipilih</p>
+<p>☐ <strong>PPV dan NPV</strong> — sertakan catatan tentang prevalensi yang digunakan</p>
+<p>☐ <strong>Kurva ROC</strong> — sertakan sebagai figur jika memungkinkan</p>
+</section>
+<section id="contoh-paragraf-hasil" class="slide level2">
+<h2>Contoh paragraf hasil</h2>
+<blockquote>
+<p>“Analisis ROC dilakukan untuk menentukan <em>cut-off</em> optimal <em>Mental Health Inventory</em> (MHI) menggunakan keputusan diagnostik SRQ-20 WHO sebagai <em>gold standard</em> (N = 300; prevalensi gangguan mental-emosional = 30%). AUC = 0.87 (95% CI [0.82, 0.92]), mengindikasikan performa diagnostik yang baik.</p>
+<p>Berdasarkan Youden’s Index, <em>cut-off</em> optimal MHI adalah ≥ 50 (J = 0.60), dengan <em>sensitivity</em> = 80%, <em>specificity</em> = 80%, PPV = 63%, dan NPV = 90%. Temuan ini menunjukkan bahwa MHI memiliki performa diagnostik yang memadai untuk digunakan sebagai alat <em>screening</em> pada populasi layanan kesehatan primer dengan prevalensi setara.”</p>
+</blockquote>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Ingat batasan pelaporan PPV/NPV</strong></p>
+</div>
+<div class="callout-content">
+<p>Selalu sebutkan prevalensi yang digunakan saat menghitung PPV dan NPV — karena nilai tersebut tidak berlaku untuk populasi dengan prevalensi yang berbeda.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="tiga-kesalahan-umum-dalam-analisis-roc" class="slide level2">
+<h2>Tiga kesalahan umum dalam analisis ROC</h2>
+<ol type="1">
+<li class="fragment"><p><strong>Menggunakan <em>cut-off</em> dari literatur tanpa validasi lokal</strong> — <em>cut-off</em> yang optimal di satu populasi (misal: Barat, klinik spesialis) mungkin tidak optimal di populasi yang berbeda (misal: Indonesia, layanan primer). Selalu validasi secara lokal.</p></li>
+<li class="fragment"><p><strong>Mengabaikan konteks ketika memilih <em>cut-off</em></strong> — Youden’s Index hanyalah titik awal. Keputusan klinis akhir harus mempertimbangkan konsekuensi <em>false negative</em> vs <em>false positive</em> yang spesifik untuk konteks penggunaan.</p></li>
+<li class="fragment"><p><strong>Melaporkan PPV/NPV tanpa menyebutkan prevalensi</strong> — PPV = 63% tidak bermakna tanpa informasi bahwa angka itu dihitung pada prevalensi 30%. Pembaca yang menggunakan alat di populasi dengan prevalensi 10% akan mendapat gambaran yang sangat menyesatkan.</p></li>
+</ol>
 </section>
 <section id="ada-pertanyaan" class="slide level2">
 <h2>Ada pertanyaan❓</h2>

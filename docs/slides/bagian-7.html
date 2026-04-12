@@ -11,8 +11,8 @@
   <meta name="generator" content="quarto-1.10.3">
 
   <meta name="author" content="Rizqy Amelia Zein">
-  <meta name="dcterms.date" content="2026-04-10">
-  <title>Statistik dalam Penelitian Psikologi – Confirmatory Factor Analysis (CFA)</title>
+  <meta name="dcterms.date" content="2026-04-12">
+  <title>Statistik dalam Penelitian Psikologi – Principal Component Analysis &amp; Exploratory Factor Analysis</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -133,7 +133,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title"><em>Confirmatory Factor Analysis</em> (CFA)</h1>
+  <h1 class="title"><em>Principal Component Analysis</em> &amp; <em>Exploratory Factor Analysis</em></h1>
   <p class="subtitle">Statistik dalam Penelitian Psikologi</p>
 
 <div class="quarto-title-authors">
@@ -150,42 +150,102 @@ Rizqy Amelia Zein
     </div>
 </div>
 
-  <p class="date">2026-04-10</p>
+  <p class="date">2026-04-12</p>
 </section>
 <section id="outline" class="slide level2">
 <h2><em>Outline</em></h2>
 <ul>
-<li>Definisi <em>factor analysis</em></li>
-<li><em>Exploratory</em> vs <em>confirmatory factor analysis</em></li>
-<li>Kapan menggunakan CFA?</li>
-<li><a href="https://psycnet.apa.org/record/2008-06808-005"><em>Constraining parameter</em> model</a></li>
-<li>Model pengukuran (paralel, <em>tau equivalence</em>, dan <em>congeneric</em>)</li>
-<li>Variabel indikator (reflektif vs formatif)</li>
-<li><em>Correlated error variances</em></li>
-<li>Metode estimasi</li>
-<li>Menuliskan hasil analisis CFA dalam laporan penelitian</li>
+<li>Mengapa kita perlu analisis faktor?</li>
+<li><em>Principal Component Analysis</em> (PCA)</li>
+<li><em>Exploratory Factor Analysis</em> (EFA)</li>
+<li>Asumsi &amp; kesiapan data</li>
+<li>Evaluasi model &amp; pelaporan hasil</li>
+<li>Demonstrasi di jamovi</li>
 </ul>
 </section>
-<section id="analisis-faktor" class="slide level2">
-<h2>Analisis faktor</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
+<section>
+<section id="mengapa-analisis-faktor" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1>Mengapa analisis faktor?</h1>
+
+</section>
+<section id="bayangkan-skala-psikologi-dengan-20-item" class="slide level2">
+<h2>Bayangkan skala psikologi dengan 20 <em>item</em>…</h2>
 <ul>
-<li><p>Awalnya dikembangkan oleh Charles Spearman (1904) untuk menyelidiki <a href="https://en.wikipedia.org/wiki/G_factor_(psychometrics)"><em>g factor theory of intelligence</em></a></p></li>
-<li><p>Terdiri dari:</p>
+<li class="fragment">Seorang peneliti mengembangkan skala <strong>kelelahan kerja</strong> (<em>burnout</em>) dengan 20 <em>item</em></li>
+<li class="fragment">Apakah 20 <em>item</em> itu mengukur <strong>20 hal yang benar-benar berbeda</strong>?</li>
+<li class="fragment">Atau ada <strong>beberapa dimensi</strong> yang lebih mendasar di baliknya?</li>
+<li class="fragment">Masalah yang muncul kalau tidak ada reduksi:
 <ul>
-<li><em>Exploratory factor analysis</em> (EFA)</li>
-<li><em>Confirmatory factor analysis</em> (CFA)</li>
+<li class="fragment">Tidak bisa divisualisasikan (kita tidak bisa memplot 20 dimensi sekaligus)</li>
+<li class="fragment">Regresi dengan 20 prediktor: risiko <em>overfitting</em> sangat tinggi</li>
+<li class="fragment"><em>Item</em>-<em>item</em> yang saling berkorelasi tinggi menunjukkan adanya <strong>redundansi</strong></li>
 </ul></li>
-<li><p>Analisis faktor digunakan untuk menguji model <em>common variance</em></p></li>
-<li><p>Mengasumsikan bahwa dua atau lebih <em>observed variable</em> memiliki <em>shared/common variance</em> (<em>commonality</em> atau <em>common factor</em>) <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> ditunjukkan dengan <strong><em>factor loading</em></strong></p></li>
 </ul>
-</div><div class="column" style="width:50%;">
-<p><img data-src="https://media.giphy.com/media/l0IyjeA5mmMZjhyPm/giphy.gif"></p>
-</div></div>
 </section>
-<section id="efa-vs-cfa" class="slide level2">
-<h2>EFA vs CFA</h2>
+<section id="measurement-error-mendistorsi-estimasi" class="slide level2">
+<h2><em>Measurement error</em> mendistorsi estimasi</h2>
+<ul>
+<li>Dari <strong>Bagian 2</strong> kita sudah tahu bahwa korelasi antar dua variabel selalu <em>terlalu kecil</em> karena <em>measurement error</em> (<em>attenuation bias</em>)</li>
+</ul>
+<p><span class="math display">\[r_{XY_{observed}} = r_{T_X T_Y} \times \sqrt{\rho_{XX'} \times \rho_{YY'}}\]</span></p>
+<ul>
+<li>Analisis faktor secara eksplisit <strong>memodelkan</strong> <em>error</em> per <em>item</em> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> memisahkan <strong>sinyal</strong> (<em>common variance</em>) dari <strong>noise</strong> (<em>residual</em>/<em>unique variance</em>)</li>
+</ul>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Ingat dari Materi Korelasi!</strong></p>
+</div>
+<div class="callout-content">
+<p>Koefisien korelasi yang terobservasi selalu lebih kecil dari korelasi sesungguhnya antar <em>true score</em>, persis karena <em>measurement error</em> ini. Analisis faktor membantu kita mendapatkan estimasi korelasi yang lebih akurat.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="keluarga-model-variabel-laten" class="slide level2">
+<h2>Keluarga model variabel laten</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 50%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>Pertanyaan yang dijawab</th>
+<th>Dalam workshop ini</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>CTT</strong></td>
+<td>“Seberapa reliabel skor total ini?”</td>
+<td>Bagian 5</td>
+</tr>
+<tr class="even">
+<td><strong>EFA</strong></td>
+<td>“Berapa faktor laten yang mendasari <em>item</em>-<em>item</em> ini?”</td>
+<td><strong>Bagian 7</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>CFA</strong></td>
+<td>“Apakah struktur faktor yang saya hipotesiskan cocok dengan data?”</td>
+<td>Bagian 8</td>
+</tr>
+<tr class="even">
+<td><strong>SEM</strong></td>
+<td>“Bagaimana faktor-faktor laten saling mempengaruhi?”</td>
+<td>Pengantar di Bagian 5–6</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="efa-vs-cfa-sekilas" class="slide level2">
+<h2>EFA vs CFA — sekilas</h2>
 <table class="caption-top">
 <colgroup>
 <col style="width: 50%">
@@ -199,179 +259,307 @@ Rizqy Amelia Zein
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Mencari model yang cocok menggambarkan data, sehingga peneliti <strong>mengeksplorasi berbagai pilihan model</strong> yang cocok kemudian mencari rasionalisasi teoritisnya</td>
-<td style="text-align: left;">Menguji hipotesis yang <strong>sudah ditentukan sebelumnya</strong>, sehingga peneliti ingin tahu apakah hipotesisnya didukung oleh data</td>
+<td style="text-align: left;">Jumlah faktor <strong>belum diketahui</strong> — biarkan data menunjukkan strukturnya</td>
+<td style="text-align: left;">Jumlah faktor <strong>sudah ditentukan</strong> sebelum mengambil data</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Jumlah faktor belum diketahui sampai peneliti melakukan analisisnya</td>
-<td style="text-align: left;">Jumlah faktor sudah ditentukan sebelum mengambil data</td>
+<td style="text-align: left;">Peneliti <strong>tidak memiliki</strong> model hipotesis <em>a priori</em></td>
+<td style="text-align: left;">Peneliti <strong>sudah memiliki</strong> model hipotesis <em>a priori</em></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Peneliti <strong>tidak memiliki</strong> model yang dihipotesiskan <em>a priori</em></td>
-<td style="text-align: left;">Peneliti <strong>sudah memiliki</strong> model hipotesis yang ditentukan <em>a priori</em></td>
+<td style="text-align: left;">Cocok untuk <strong>eksplorasi</strong> dan pengembangan skala</td>
+<td style="text-align: left;">Cocok untuk <strong>konfirmasi</strong> dan pengujian validitas konstruk</td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="confirmatory-factor-analysis" class="slide level2">
-<h2><em>Confirmatory factor analysis</em></h2>
-<ul>
-<li><p>Menyediakan solusi untuk mengkoreksi bias karena <em>measurement error</em> ketika mengestimasi korelasi antar-variabel</p></li>
-<li><p>Cara kerjanya adalah dengan membandingkan <em>variance-covariance matrix</em> yang dihipotesiskan dengan <em>variance-covariance matrix</em> pada data (sampel)</p></li>
-<li><p><strong>Perhatian</strong> 📢</p>
-<ul>
-<li><strong>Sangat tidak disarankan</strong> untuk melakukan EFA kemudian CFA pada <strong>sampel yang sama</strong></li>
-<li>Karena <em>generating hypothesis</em> dengan <em>testing hypothesis</em> adalah dua proses yang berbeda yang <strong>tidak seharusnya</strong> dilakukan pada sampel yang sama</li>
-<li>Kalau hal tsb dilakukan, maka tentu saja peneliti akan mendapatkan hasil yang ‘sesuai prediksinya’</li>
-<li>Ingat <a href="https://en.wikipedia.org/wiki/Texas_sharpshooter_fallacy">Texas Sharpshooter Fallacy</a></li>
-</ul></li>
-</ul>
-</section>
-<section id="texas-sharpshooter-fallacy" class="slide level2">
-<h2><em>Texas sharpshooter fallacy</em></h2>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Sangat tidak disarankan</strong> melakukan EFA kemudian CFA pada <strong>sampel yang sama</strong> — kita akan bahas lebih dalam di Bagian 8.</p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="principal-component-analysis-pca" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1><em>Principal Component Analysis</em> (PCA)</h1>
 
-<img data-src="https://i0.wp.com/www.bayesianspectacles.org/wp-content/uploads/2018/01/TexasSharpShooter.png?fit=357%2C300&amp;ssl=1" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="constraining-parameter-model" class="slide level2">
-<h2><a href="https://psycnet.apa.org/record/2008-06808-005"><em>Constraining parameter</em> model</a></h2>
-<ul>
-<li><strong>Membatasi/menentukan varians</strong> untuk setiap <strong>variabel/faktor laten</strong>
-<ul>
-<li>Dilakukan untuk mengeluarkan <strong><em>standardized estimates</em></strong></li>
-<li><em>Factor loading</em> di <em>z-score</em>kan</li>
-<li>Sehingga <em>default</em>nya, <em>mean</em> variabel laten = 0, <em>variance</em> = 1</li>
-</ul></li>
-<li>Membatasi/menentukan <strong><em>error covariance</em></strong> untuk setiap variabel/faktor laten
-<ul>
-<li>Dilakukan untuk <strong>menentukan <em>error variance</em></strong></li>
-</ul></li>
-</ul>
 </section>
-<section id="jenis-jenis-model-pengukuran" class="slide level2">
-<h2>Jenis-jenis model pengukuran</h2>
-<p>Ada tiga macam model pengukuran:</p>
+<section id="apa-itu-pca" class="slide level2">
+<h2>Apa itu PCA?</h2>
 <ul>
-<li>Model <em>congeneric</em></li>
-<li>Model <em>tau equivalence</em></li>
-<li>Model <em>parallel</em></li>
+<li class="fragment">PCA mencari “arah” (<em>component</em>) dalam ruang data yang menangkap <strong>varians sebesar mungkin</strong></li>
+<li class="fragment">Hasilnya adalah <em>principal components</em> yang merupakan <strong>kombinasi linear</strong> dari <em>item</em>-<em>item</em> asli</li>
+<li class="fragment">Tujuan utama: <strong>reduksi dimensi</strong> — meringkas banyak <em>item</em> menjadi sedikit variabel ringkasan (“<em>payung</em>”) yang lebih besar</li>
+<li class="fragment"><strong>Penting</strong>: PCA bukan model pengukuran — ia <strong>tidak mengasumsikan</strong> adanya konstruk laten yang menyebabkan <em>item</em> bervariasi</li>
 </ul>
-</section>
-<section id="model-congeneric" class="slide level2">
-<h2>Model <em>congeneric</em></h2>
 <div class="columns">
-<div class="column">
+<div class="column" style="width:50%;">
+<p><strong>Hierarki komponen:</strong></p>
 <ul>
-<li>Model yang paling moderat dan <em>default</em> di berbagai perangkat lunak SEM</li>
-<li>Asumsinya, <strong>skala, <em>error variance</em>, dan <em>factor loading</em> boleh berbeda (dibebaskan)</strong></li>
-<li><strong>Koefisien reliabilitas skala</strong> yang mengasumsikan model pengukuran <em>congeneric</em> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> ω, McDonald’s ω, ω total (ω<sub><em>t</em></sub>), Revelle’s ω, <em>composite reliability</em>.</li>
+<li><strong>PC1</strong> — arah dengan varians terbesar</li>
+<li><strong>PC2</strong> — <em>orthogonal</em> terhadap PC1, varians terbesar berikutnya</li>
+<li><strong>PC3, PC4, …</strong> — dst., selalu <em>orthogonal</em> (tidak berkorelasi) terhadap semua komponen sebelumnya</li>
 </ul>
-</div><div class="column">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="libs/congeneric.png" class="quarto-figure quarto-figure-center"></p>
-</figure>
+</div><div class="column" style="width:50%;">
+<p><strong>Analogi sederhana:</strong></p>
+<ul>
+<li>Data asli = 20 kolom (<em>item</em>)</li>
+<li><em>Component scores</em> = 3–4 kolom ringkasan</li>
+<li>Mempertahankan sebanyak mungkin informasi dengan sesedikit mungkin variabel</li>
+</ul>
+</div></div>
+</section>
+<section id="aplikasi-pca-reduksi-dimensi-machine-learning" class="slide level2">
+<h2>Aplikasi PCA: reduksi dimensi &amp; <em>machine learning</em></h2>
+<ul>
+<li class="fragment">PCA adalah salah satu teknik <strong><em>unsupervised learning</em></strong> yang paling banyak digunakan dalam <em>machine learning</em></li>
+<li class="fragment"><strong>Reduksi dimensi sebelum pemodelan prediktif</strong>
+<ul>
+<li class="fragment">Dataset dengan ratusan/ribuan variabel (misalnya data genomik, neuroimaging, NLP) susah dimodelkan langsung</li>
+<li class="fragment">PCA meringkas variabel-variabel yang saling berkorelasi menjadi komponen yang independen (<em>orthogonal</em>)</li>
+<li class="fragment">Komponen ini kemudian digunakan sebagai prediktor dalam regresi atau klasifikasi — mengurangi <em>overfitting</em></li>
+</ul></li>
+<li class="fragment"><strong>Visualisasi data berdimensi tinggi</strong>
+<ul>
+<li class="fragment">Plot PC1 vs PC2 memungkinkan kita melihat “peta” distribusi observasi dalam 2D</li>
+</ul></li>
+<li class="fragment"><strong><em>Feature extraction</em></strong> dalam <em>deep learning</em> dan <em>computer vision</em>
+<ul>
+<li class="fragment">Misalnya: ribuan piksel wajah → beberapa <em>principal components</em> sebagai <em>input</em> model</li>
+</ul></li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Aplikasi EFA</strong></p>
+</div>
+<div class="callout-content">
+<p>EFA memiliki aplikasi yang berbeda, bukan untuk reduksi dimensi secara umum, melainkan khusus untuk <strong>mengidentifikasi konstruk laten</strong> dalam pengembangan dan validasi skala psikologi.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="eigenvalue-scree-plot" class="slide level2">
+<h2><em>Eigenvalue</em> &amp; <em>scree plot</em></h2>
+<ul>
+<li><strong>Eigenvalue (λ)</strong>: mengukur seberapa banyak variansi yang dijelaskan oleh setiap komponen. Total eigenvalue = jumlah <em>item</em>.</li>
+<li><strong>Kaiser criterion</strong>: pertahankan komponen dengan λ &gt; 1
+<ul>
+<li>Logika: komponen dengan λ &lt; 1 menjelaskan variansi <em>kurang</em> dari satu <em>item</em> tunggal</li>
+</ul></li>
+</ul>
+<div class="callout callout-caution callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Kaiser criterion sering <em>over-extract</em></strong></p>
+</div>
+<div class="callout-content">
+<p>Kaiser criterion bisa menghasilkan terlalu banyak komponen — bahkan dari data yang sepenuhnya acak! Selalu kombinasikan dengan <em>scree plot</em> dan <em>parallel analysis</em>.</p>
+</div>
+</div>
+</div>
+<ul>
+<li><strong><em>Scree plot</em></strong>: grafik eigenvalue dari tertinggi ke terendah — cari “elbow” (titik siku) di mana kurva mulai mendatar. Pertahankan komponen <strong>sebelum</strong> elbow.</li>
+</ul>
+</section>
+<section id="component-loadings-rotasi" class="slide level2">
+<h2><em>Component loadings</em> &amp; rotasi</h2>
+<ul>
+<li><strong><em>Component loading</em></strong>: korelasi antara <em>item</em> asli dengan komponen. Rentang −1 sampai +1.
+<ul>
+<li>|loading| &gt; 0.40 <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> <em>item</em> bermakna untuk komponen ini (<em>salient loading</em>)</li>
+<li>|loading| &lt; 0.30 <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> <em>item</em> tidak relevan untuk komponen ini</li>
+</ul></li>
+<li><strong>Rotasi</strong> mengejar <em>simple structure</em> (Thurstone, 1947): setiap <em>item</em> <em>load</em> tinggi di <strong>satu</strong> komponen, mendekati nol di yang lain</li>
+</ul>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 37%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Orthogonal</th>
+<th>Oblique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Komponen</strong></td>
+<td>Tidak berkorelasi</td>
+<td>Boleh berkorelasi</td>
+</tr>
+<tr class="even">
+<td><strong>Metode umum</strong></td>
+<td>Varimax</td>
+<td>Promax, Direct Oblimin</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Rotasi <strong>tidak</strong> mengubah total variansi yang dijelaskan — hanya mendistribusikannya agar lebih mudah diinterpretasikan.</p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="exploratory-factor-analysis-efa" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1><em>Exploratory Factor Analysis</em> (EFA)</h1>
+
+</section>
+<section id="pca-vs-efa-kontras-lengkap" class="slide level2">
+<h2>PCA vs EFA — kontras lengkap</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 36%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Aspek</th>
+<th>PCA</th>
+<th>EFA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tujuan</strong></td>
+<td>Reduksi dimensi; <em>feature extraction</em></td>
+<td>Identifikasi &amp; validasi konstruk laten</td>
+</tr>
+<tr class="even">
+<td><strong>Posisi dalam ML</strong></td>
+<td><em>Unsupervised learning</em> — preprocessing sebelum model prediktif</td>
+<td>Psikometri — pengembangan &amp; validasi skala</td>
+</tr>
+<tr class="odd">
+<td><strong>Model</strong></td>
+<td>Komponen = fungsi linear <em>item</em></td>
+<td><em>Item</em> = fungsi linear faktor + <em>error</em></td>
+</tr>
+<tr class="even">
+<td><strong>Variansi</strong></td>
+<td>Total variansi (termasuk <em>unique</em> &amp; <em>error</em>)</td>
+<td>Hanya <em>common variance</em></td>
+</tr>
+<tr class="odd">
+<td><strong>Error pengukuran</strong></td>
+<td>Tidak dimodelkan</td>
+<td>Eksplisit dimodelkan per <em>item</em></td>
+</tr>
+<tr class="even">
+<td><strong>Faktor/komponen</strong></td>
+<td>Selalu <em>orthogonal</em> (tidak berkorelasi)</td>
+<td>Boleh berkorelasi (rotasi oblique)</td>
+</tr>
+<tr class="odd">
+<td><strong>Kapan digunakan</strong></td>
+<td>Tidak ada teori konstruk laten; tujuannya kompresi data</td>
+<td>Ada teori tentang faktor laten; tujuannya pengukuran</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>Jika <em>communalities</em> tinggi (&gt; 0.60) dan struktur jelas, hasil PCA dan EFA sering hampir identik secara praktis. Perbedaan muncul ketika <em>communalities</em> rendah atau struktur kompleks.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="komunalitas-h²-keunikan" class="slide level2">
+<h2>Komunalitas (h²) &amp; keunikan</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li><p><strong>Komunalitas (h²)</strong>: proporsi variansi <em>item</em> yang dijelaskan oleh <em>semua</em> faktor bersama</p></li>
+<li><p><strong>Keunikan (u²)</strong>: 1 − h² = variansi yang <em>tidak</em> dijelaskan oleh faktor mana pun (variansi spesifik + <em>error</em>)</p></li>
+</ul>
+<table class="caption-top">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 73%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">h²</th>
+<th>Interpretasi</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">&gt; 0.50</td>
+<td>Baik <i class="fa-solid fa-circle-check" aria-label="circle-check"></i></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.30–0.50</td>
+<td>Cukup — perlu evaluasi</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">&lt; 0.30</td>
+<td>Bermasalah — pertimbangkan menghapus <em>item</em></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:45%;">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>Item dengan h² rendah mengukur sesuatu yang unik apabila dibandingkan dengan <em>item</em> lain.</p>
+<p>Evaluasi ulang redaksinya sebelum memutuskan untuk menghapus <em>item</em>.</p>
+</div>
+</div>
 </div>
 </div></div>
 </section>
-<section id="model-tau-equivalence" class="slide level2">
-<h2>Model <em>tau equivalence</em></h2>
-<div class="columns">
-<div class="column">
+<section id="menentukan-jumlah-faktor-jangan-hanya-kaiser" class="slide level2">
+<h2>Menentukan jumlah faktor — jangan hanya Kaiser!</h2>
 <ul>
-<li>Model yang sedikit lebih rigid daripada <em>congeneric</em></li>
-<li>Asumsinya, <strong>skala dan <em>error variance</em> boleh berbeda (dibebaskan)</strong>, namun <strong><em>factor loading</em> harus sama (dibatasi)</strong></li>
-<li>Ketika asumsi <em>tau equivalence</em> dipenuhi, maka <a href="https://www.ncbi.nlm.nih.gov/pubmed/28557467">Cronbach’s α dapat digunakan</a></li>
-<li><strong>Koefisien reliabilitas</strong>: Formula Rulon, KR-20, Flanagan-Rulon, Guttman’s λ<sub>3</sub>, λ<sub>4</sub>, Hoyt <em>method</em>
+<li class="fragment"><p><strong>Kaiser criterion</strong> (λ &gt; 1) — mudah, tapi konsisten <em>over-extract</em>. Gunakan sebagai acuan awal saja.</p></li>
+<li class="fragment"><p><strong><em>Scree plot</em></strong> — visual dan intuitif, tapi subjektif. Dua peneliti bisa membaca <em>scree plot</em> yang sama secara berbeda.</p></li>
+<li class="fragment"><p><strong><em>Parallel analysis</em></strong> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> <strong>direkomendasikan</strong></p>
 <ul>
-<li>Pada kebanyakan kasus, jarang sekali ada kosntruk psikologi yang memenuhi asumsi <em>tau equivalence</em>, sehingga <strong>sangat disarankan</strong> untuk tidak menggunakan koefisien reliabilitas yang mengasumsikan <em>tau equivalence</em></li>
+<li class="fragment">Bandingkan eigenvalue data nyata dengan eigenvalue dari <strong>data acak</strong> (dimensi yang sama)</li>
+<li class="fragment">Pertahankan faktor di mana eigenvalue nyata <strong>&gt;</strong> eigenvalue acak (persentil ke-95)</li>
+<li class="fragment">Paling akurat secara empiris; tidak subjektif (Hayton, Allen &amp; Scarpello, 2004)</li>
 </ul></li>
-</ul>
-</div><div class="column">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="libs/tau.png" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-</div></div>
-</section>
-<section id="model-parallel" class="slide level2">
-<h2>Model <em>parallel</em></h2>
-<div class="columns">
-<div class="column">
-<ul>
-<li>Model yang paling rigid</li>
-<li>Asumsinya, <strong>skala, <em>error variance</em>, dan <em>factor loading</em> harus sama (dibatasi)</strong>
-<ul>
-<li><strong>Koefisien reliabilitas</strong>: Spearman-Brown’s Formula, Standardized α.</li>
-</ul></li>
-</ul>
-</div><div class="column">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="libs/paralel.png" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-</div></div>
-</section>
-<section id="reflektif-vs-formatif" class="slide level2">
-<h2>Reflektif vs Formatif</h2>
-<ul>
-<li>Reflektif
-<ul>
-<li><strong>Variabel laten menjelaskan</strong> mengapa <strong>variabel indikator bervariasi</strong></li>
-<li>Misalnya <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> individu dengan intelegensi yang tinggi akan mendapatkan nilai yang berbeda dalam tes matematika</li>
-<li>Biasanya mengasumsikan bahwa <strong>korelasi antar-variabel indikator = 0</strong></li>
-</ul></li>
-<li>Formatif
-<ul>
-<li><strong>Variabel <em>observed</em> menjelaskan</strong> mengapa <strong>variabel laten bervariasi</strong></li>
-<li>Misalnya <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> gengsi sebuah mobil ditentukan oleh usia mobil, kondisi, harga, dan intensitas pemakaian</li>
-<li>Korelasi antara variabel <em>observed</em> tidak diketahui</li>
-<li>Biasanya digunakan untuk menentukan indeks pada konstruk yang <em>orthogonal</em> (contoh <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> kepribadian pada <em>Five Factor model</em>)</li>
-</ul></li>
-</ul>
-</section>
-<section id="model-reflektif" class="slide level2">
-<h2>Model Reflektif</h2>
-
-<img data-src="libs/reflektif.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="model-formatif" class="slide level2">
-<h2>Model Formatif</h2>
-
-<img data-src="libs/formatif.png" class="quarto-figure quarto-figure-center r-stretch" style="width:60.0%"></section>
-<section id="apa-yang-terjadi-ketika-error-variance-berkorelasi" class="slide level2">
-<h2>Apa yang terjadi ketika <em>error variance</em> berkorelasi?</h2>
-
-<img data-src="libs/correlated-error.png" class="quarto-figure quarto-figure-center r-stretch"><ul>
-<li>Kedua variabel indikator tersebut mengukur variabel laten lain di luar model (<em>unique factor</em>)</li>
-<li>Bisa jadi karena ada <em>item</em> <em>unfavourable</em> dalam skala</li>
-<li>Kemungkinan konstruk laten <strong>bukan konstruk tunggal</strong> (multidimensi)</li>
-<li>Perhatikan justifikasi teori ketika menambah <em>error covariance</em></li>
-</ul>
-</section>
-<section id="skor-faktor-factor-scores" class="slide level2">
-<h2>Skor faktor (<em>factor scores</em>)</h2>
-<ul>
-<li><p>Apabila kita memiliki informasi tentang <em>factor loading</em>, maka kita bisa menghitung <em>factor scores</em> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> <strong>estimasi</strong> (<em>fitted</em>) skor variabel laten</p></li>
-<li><p>Caranya dengan mengali <em>factor loading</em> dengan skor kasar <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> metode regresi</p></li>
-<li><p>Namun ingat, mengalikan <em>factor loading</em> dengan skor kasar <strong>masih berisiko mendapatkan estimasi yang bias</strong>. Itulah yang menyebabkan <em>factor scores</em> akan berubah ketika model diujikan pada kelompok sampel yang berbeda.</p></li>
-<li><p>Ada tiga cara yang bisa digunakan untuk menghitung <em>factor scores</em>:</p>
-<ul>
-<li><strong>Metode Regresi</strong> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> dengan mengoptimalisasi validitas konstruk (<em>variance explained</em>)</li>
-<li><strong>Metode Bartlett</strong> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> mengasumsikan variabel indikator <strong>tidak saling berkorelasi</strong></li>
-<li><strong>Metode Anderson-Rubin</strong> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> mengasumsikan variabel indikator <strong>saling berkorelasi</strong></li>
-</ul></li>
-</ul>
-</section>
-<section id="memilih-metode-estimasi" class="slide level2">
-<h2>Memilih metode estimasi</h2>
-<ul>
-<li><p><em>Maximum Likelihood</em> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> distribusi data (<em>multivariate</em>) normal, level pengukuran harus interval/<em>continuous</em>, tidak ada data <em>missing</em></p>
-<ul>
-<li>Gunakan <em>Robust Maximum Likelihood</em> (MLR) ketika asumsi <em>multivariate normality</em> tidak terpenuhi</li>
-</ul></li>
-<li><p><em>Generalized-least squares</em> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> menggunakan asumsi yang sama dengan <code>ML</code> namun performanya kurang baik apabila dibandingkan dengan <code>ML</code></p></li>
-<li><p><em>Weighted-least squares</em> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> dapat digunakan pada data kategorikal (nominal dan ordinal), estimasi menggunakan <em>polychoric correlation matrix</em>. Varian WLS, misalnya: WLSM, WLSMV, WLSMVS.</p></li>
-<li><p><em>Diagonally weighted-least squares</em> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> dapat digunakan pada data kategorikal, bekerja dengan baik pada sampel yang relatif kecil dan data yang tidak berdistribusi normal</p></li>
+<li class="fragment"><p><strong>Teori</strong> — berapa faktor yang dihipotesiskan berdasarkan literatur?</p></li>
 </ul>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -379,31 +567,328 @@ Rizqy Amelia Zein
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Tips memilih estimator</strong></p>
+<p><strong>Praktik terbaik</strong></p>
 </div>
 <div class="callout-content">
-<p>Untuk <strong>skala <em>Likert</em> dengan 6–7 pilihan</strong>, dengan respons yang relatif simetris, <strong>MLR sudah baik performanya</strong>. Untuk <strong>skala <em>Likert</em> 4 pilihan</strong> dengan distribusi yang sangat juling (<em>skew</em>), <strong>WLSMV merupakan pilihan yang lebih aman</strong> (<a href="https://psycnet.apa.org/record/2012-18631-001">Rhemtulla, Brosseau-Liard &amp; Savalei</a>, 2012).</p>
+<p>Gunakan kombinasi <strong><em>parallel analysis</em></strong> + <em>scree plot</em> + teori sebagai dasar keputusan. Di jamovi, <em>parallel analysis</em> tersedia langsung di menu EFA.</p>
 </div>
 </div>
 </div>
 </section>
-<section>
-<section id="demonstrasi-cfa" class="title-slide slide level1 center" data-background-color="#14497F">
-<h1>Demonstrasi CFA</h1>
-<p><a href="https://rameliaz.github.io/mg-sem-workshop/contoh-cfa.omv"><strong>Unduh Dataset Contoh CFA</strong></a></p>
-</section>
-<section id="latihan-mandiri-4-mencoba-confirmatory-factor-analysis" class="slide level2">
-<h2>Latihan mandiri 4️⃣: Mencoba <em>confirmatory factor analysis</em></h2>
+<section id="rotasi-dalam-efa" class="slide level2">
+<h2>Rotasi dalam EFA</h2>
 <ul>
-<li><p>Unduh <a href="https://rameliaz.github.io/mg-sem-workshop/materials/dataset-pilpres2024.csv">Dataset Latihan SEM</a></p></li>
-<li><p>Unduh <a href="https://rameliaz.github.io/mg-sem-workshop/materials/codebook-pilpres2024.csv">Kamus Data disini</a></p></li>
-<li><p>Lakukan CFA pada skala <em>social dominance orientation</em></p>
+<li class="fragment"><strong>Orthogonal</strong> (faktor tidak berkorelasi) — Varimax
 <ul>
-<li>Diukur dengan skala <em>Likert</em>, 6 <em>item</em> dengan 7 pilihan jawaban</li>
+<li class="fragment">Menghasilkan satu matriks: <em>factor loadings</em></li>
+<li class="fragment">Asumsi independensi sering <strong>tidak realistis</strong> dalam psikologi</li>
 </ul></li>
-<li><p>Laporkan <em>model fit</em>, <em>factor loading</em>, dan <em>multivariate normality</em></p></li>
-<li><p>Lakukan penyesuaian apabila perlu</p></li>
+<li class="fragment"><strong>Oblique</strong> (faktor boleh berkorelasi) — Promax, Direct Oblimin
+<ul>
+<li class="fragment">Menghasilkan <em>pattern matrix</em> (kontribusi unik faktor ke <em>item</em>) — <strong>ini yang dilaporkan</strong></li>
+<li class="fragment">Juga menghasilkan <em>structure matrix</em> dan <em>factor correlation matrix</em></li>
+</ul></li>
 </ul>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>Konstruk psikologi hampir <strong>selalu berkorelasi</strong>, misalnya: kelelahan emosional dan sinisme pada <em>burnout</em>. Gunakan rotasi <strong>oblique</strong> sebagai <em>default</em>. Jika korelasi antar faktor sangat rendah (&lt; 0.15), rotasi <em>orthogonal</em> bisa dipertimbangkan.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="metode-ekstraksi-di-jamovi" class="slide level2">
+<h2>Metode ekstraksi di jamovi</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 30%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Metode</th>
+<th>Asumsi</th>
+<th>Kapan digunakan</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Minimum Residual (MinRes)</strong></td>
+<td>Tidak diperlukan normalitas</td>
+<td><em>Default</em> yang aman untuk data psikologi; meminimalkan residual korelasi</td>
+</tr>
+<tr class="even">
+<td><strong>Principal Axis Factoring (PAF)</strong></td>
+<td>Tidak diperlukan normalitas</td>
+<td>Data tidak normal; sampel moderat</td>
+</tr>
+<tr class="odd">
+<td><strong>Maximum Likelihood (ML)</strong></td>
+<td>Normalitas multivariat</td>
+<td>Data mendekati normal; ingin <em>fit indices</em> formal (RMSEA, CFI)</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Untuk skala <em>Likert</em> yang tidak terlalu juling, <strong>MinRes sudah cukup baik</strong>. Gunakan ML jika ingin melaporkan <em>fit indices</em> secara formal dalam artikel.</p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="asumsi-kesiapan-data" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1>Asumsi &amp; Kesiapan Data</h1>
+
+</section>
+<section id="kaiser-meyer-olkin-kmo" class="slide level2">
+<h2><em>Kaiser-Meyer-Olkin</em> (KMO)</h2>
+<ul>
+<li>Apakah pola korelasi antar <em>item</em> cukup kompak untuk analisis faktor?</li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>KMO</th>
+<th style="text-align: center;">Interpretasi</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&gt; 0.90</td>
+<td style="text-align: center;"><em>Marvelous</em></td>
+</tr>
+<tr class="even">
+<td>0.80–0.90</td>
+<td style="text-align: center;"><em>Meritorious</em></td>
+</tr>
+<tr class="odd">
+<td>0.70–0.80</td>
+<td style="text-align: center;"><em>Middling</em></td>
+</tr>
+<tr class="even">
+<td>0.60–0.70</td>
+<td style="text-align: center;"><em>Mediocre</em></td>
+</tr>
+<tr class="odd">
+<td>&lt; 0.50</td>
+<td style="text-align: center;">Tidak layak — jangan lanjutkan EFA</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="bartletts-test-of-sphericity" class="slide level2">
+<h2>Bartlett’s test of sphericity</h2>
+<ul>
+<li>H₀: matriks korelasi = matriks identitas (tidak ada korelasi antar <em>item</em>)</li>
+<li><em>p</em> &lt; .05 <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> tolak H₀ <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> ada korelasi yang cukup <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> EFA layak dilakukan</li>
+</ul>
+</section>
+<section id="ukuran-sampel-yang-dibutuhkan" class="slide level2">
+<h2>Ukuran sampel yang dibutuhkan</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>N</th>
+<th>Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt; 100</td>
+<td>Tidak memadai — hindari</td>
+</tr>
+<tr class="even">
+<td>100–200</td>
+<td>Minimal, hanya jika <em>loadings</em> tinggi (&gt; 0.70)</td>
+</tr>
+<tr class="odd">
+<td>200–300</td>
+<td>Cukup</td>
+</tr>
+<tr class="even">
+<td>300–500</td>
+<td>Baik</td>
+</tr>
+<tr class="odd">
+<td>&gt; 500</td>
+<td>Sangat baik</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Aturan rasio <em>item</em>:partisipan yang <strong>direkomendasikan</strong>: 10:1
+<ul>
+<li>Contoh: 20 <em>item</em> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> targetkan N ≥ 200, idealnya N ≥ 300</li>
+</ul></li>
+</ul>
+<div class="callout callout-caution callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><em>Rule of Thumb</em></strong></p>
+</div>
+<div class="callout-content">
+<p><em>Loadings</em> rendah dan <em>communalities</em> rendah membutuhkan N yang <strong>lebih besar</strong>. Jangan memaksakan analisis faktor pada sampel yang terlalu kecil.</p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="evaluasi-pelaporan" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1>Evaluasi &amp; Pelaporan</h1>
+
+</section>
+<section id="fit-indices-khusus-ekstraksi-ml" class="slide level2">
+<h2><em>Fit indices</em> (khusus ekstraksi ML)</h2>
+<ul>
+<li class="fragment"><strong>Chi-square (χ²)</strong>: H₀ = model fit sempurna; p &gt; .05 = fit baik
+<ul>
+<li class="fragment"><strong>Masalah</strong>: sangat sensitif terhadap N besar — hampir selalu signifikan jika N &gt; 300, meskipun model sebenarnya baik. Jangan jadikan satu-satunya kriteria.</li>
+</ul></li>
+<li class="fragment"><strong>RMSEA</strong> &lt; .05 = sangat baik; .05–.08 = cukup baik; &gt; .10 = tidak dapat diterima
+<ul>
+<li class="fragment">Selalu sertakan <strong>90% CI</strong></li>
+</ul></li>
+<li class="fragment"><strong>CFI/TLI</strong> &gt; .95 = baik; &gt; .90 = dapat diterima</li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Catatan</strong></p>
+</div>
+<div class="callout-content">
+<p>Ambang batas RMSEA &lt; .06 (Hu &amp; Bentler, 1999) sering dikutip, tapi berasal dari kondisi simulasi yang spesifik. Untuk model dengan banyak indikator atau sampel besar, <strong>RMSEA &lt; .08 sudah dapat diterima</strong>, jangan terlalu kaku pada angka .06.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="reliabilitas-alpha-vs-omega" class="slide level2">
+<h2>Reliabilitas: alpha vs omega</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Cronbach’s α</strong></p>
+<ul>
+<li>Mengukur konsistensi internal</li>
+<li>Mengasumsikan semua <em>item</em> berkontribusi <em>sama</em> (<em>tau-equivalence</em>)</li>
+<li>Jika <em>loadings</em> berbeda-beda (yang hampir selalu terjadi), α bisa <em>underestimate</em> reliabilitas sesungguhnya</li>
+<li>Sensitif terhadap jumlah <em>item</em> — lebih banyak <em>item</em> = α lebih tinggi, meskipun <em>loadings</em> biasa saja</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>McDonald’s ω (Omega)</strong></p>
+<ul>
+<li>Dihitung langsung dari <em>factor loadings</em></li>
+<li>Tidak mengasumsikan <em>tau-equivalence</em></li>
+<li>Lebih akurat ketika <em>loadings</em> item tidak setara — yang hampir selalu terjadi pada skala psikologi nyata</li>
+</ul>
+</div></div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Laporkan keduanya</strong> — α dan ω. Jika ω &gt; α secara substansial, berarti asumsi <em>tau-equivalence</em> tidak terpenuhi. Keduanya tersedia langsung di <code>jamovi</code>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="checklist-pelaporan-efa" class="slide level2">
+<h2>Checklist pelaporan EFA</h2>
+<p>☐ <strong>Deskripsi sampel</strong> — N, karakteristik, cara pengumpulan data</p>
+<p>☐ <strong>Prosedur analisis</strong> — <em>software</em>, metode ekstraksi, kriteria jumlah faktor, jenis rotasi</p>
+<p>☐ <strong>Kelayakan analisis</strong> — nilai KMO, hasil Bartlett’s test (χ², df, p)</p>
+<p>☐ <strong>Hasil ekstraksi</strong> — jumlah faktor yang dipertahankan, eigenvalue, % variansi tiap faktor dan total</p>
+<p>☐ <strong><em>Pattern matrix</em></strong> setelah rotasi, lengkap dengan komunalitas (h²)</p>
+<p>☐ <strong>Korelasi antar faktor</strong> — jika menggunakan rotasi oblique</p>
+<p>☐ <strong>Reliabilitas</strong> — Cronbach’s α dan/atau McDonald’s ω per faktor</p>
+<p>☐ <strong><em>Fit indices</em></strong> — RMSEA + 90% CI, CFI, TLI (jika menggunakan ML)</p>
+</section>
+<section id="kesalahan-umum-dalam-efa" class="slide level2">
+<h2>Kesalahan umum dalam EFA</h2>
+<ul>
+<li class="fragment"><p><strong>Hanya mengandalkan Kaiser criterion</strong> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> menghasilkan terlalu banyak faktor. Selalu gunakan <em>parallel analysis</em>.</p></li>
+<li class="fragment"><p><strong>Menggunakan PCA untuk pengembangan skala</strong> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> PCA bukan model pengukuran. Gunakan EFA.</p></li>
+<li class="fragment"><p><strong>Rotasi orthogonal tanpa alasan</strong> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> konstruk psikologi hampir selalu berkorelasi. Gunakan oblique sebagai <em>default</em>.</p></li>
+<li class="fragment"><p><strong>Mengabaikan <em>cross-loadings</em></strong> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> <em>item</em> dengan <em>cross-loading</em> &gt; 0.30 menandakan batas konstruk yang tidak jelas — jangan diabaikan.</p></li>
+<li class="fragment"><p><strong>Melaporkan hanya <em>item</em> yang “berhasil”</strong> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> laporkan semua <em>item</em>, termasuk yang dihapus beserta alasannya.</p></li>
+<li class="fragment"><p><strong>Tidak melakukan CFA di sampel independen</strong> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> EFA hanya eksplorasi. Validasi strukturnya dengan CFA di sampel yang <strong>berbeda</strong>.</p></li>
+</ul>
+</section></section>
+<section>
+<section id="demonstrasi-di-jamovi" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1>Demonstrasi di <code>jamovi</code></h1>
+
+</section>
+<section id="konteks-burnout-pada-tenaga-kerja" class="slide level2">
+<h2>Konteks: <em>Burnout</em> pada tenaga kerja</h2>
+<ul>
+<li>Dataset yang kita gunakan: <strong>Dataset Contoh EFA</strong> (<code>dataset-burnout.omv</code>)
+<ul>
+<li>Dapat diunduh dari <em>navbar</em> di laman <em>workshop</em></li>
+</ul></li>
+<li>Menggunakan skala <strong><em>burnout</em></strong> yang mengukur beberapa dimensi kelelahan kerja
+<ul>
+<li><em>Item</em>-<em>item</em> berbentuk skala <em>Likert</em></li>
+</ul></li>
+<li><strong>Pertanyaan penelitian</strong>: berapa dimensi laten yang mendasari <em>item</em>-<em>item</em> dalam skala <em>burnout</em> ini?</li>
+</ul>
+</section>
+<section id="langkah-langkah-di-jamovi" class="slide level2">
+<h2>Langkah-langkah di jamovi</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Menjalankan EFA:</strong></p>
+<ol type="1">
+<li><strong>Analyses → Factor → Exploratory Factor Analysis</strong></li>
+<li>Masukkan semua <em>item</em> ke “Variables”</li>
+<li><strong>Extraction method</strong>: <em>Minimum Residual</em></li>
+<li><strong>Rotation</strong>: <em>Oblimin</em></li>
+<li><strong>Number of factors</strong>: <em>Parallel Analysis</em></li>
+</ol>
+</div><div class="column" style="width:50%;">
+<p><strong>Output yang harus dicek:</strong></p>
+<p>☑ <em>Factor loadings</em> (sembunyikan |λ| &lt; 0.30)</p>
+<p>☑ <em>Scree plot</em> + <em>parallel analysis plot</em></p>
+<p>☑ Komunalitas (h²)</p>
+<p>☑ KMO &amp; Bartlett’s test</p>
+<p>☑ Reliabilitas (α &amp; ω)</p>
+</div></div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Urutan membaca output</strong></p>
+</div>
+<div class="callout-content">
+<p>Asumsi (KMO &amp; Bartlett’s) <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> jumlah faktor (<em>parallel analysis</em> + <em>scree</em>) <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> <em>pattern matrix</em> (loading &amp; <em>cross-loading</em>) <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> komunalitas <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> reliabilitas</p>
+</div>
+</div>
+</div>
 </section>
 <section id="ada-pertanyaan" class="slide level2">
 <h2>Ada pertanyaan❓</h2>

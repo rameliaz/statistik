@@ -11,8 +11,8 @@
   <meta name="generator" content="quarto-1.10.3">
 
   <meta name="author" content="Rizqy Amelia Zein">
-  <meta name="dcterms.date" content="2026-04-10">
-  <title>Statistik dalam Penelitian Psikologi – Model Jalur</title>
+  <meta name="dcterms.date" content="2026-04-12">
+  <title>Statistik dalam Penelitian Psikologi – Pengantar Latent Variable Modeling</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -33,72 +33,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-14c7313e0bd1a6ac1391ac8d6dd3db46.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -199,7 +133,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Model Jalur</h1>
+  <h1 class="title">Pengantar <em>Latent Variable Modeling</em></h1>
   <p class="subtitle">Statistik dalam Penelitian Psikologi</p>
 
 <div class="quarto-title-authors">
@@ -216,317 +150,360 @@ Rizqy Amelia Zein
     </div>
 </div>
 
-  <p class="date">2026-04-10</p>
+  <p class="date">2026-04-12</p>
 </section>
 <section id="outline" class="slide level2">
 <h2><em>Outline</em></h2>
 <ul>
-<li>Definisi <em>path model</em></li>
-<li>Nama variabel dan koefisien jalur (<em>path coefficients</em>)
-<ul>
-<li>δ (delta), ε (epsilon), ξ (ksi), η (eta), λ (lambda), γ (gamma), β (beta), φ (phi), ζ (zeta)</li>
-</ul></li>
-<li>Representasi visual model jalur menggunakan diagram jalur (<em>path diagram</em>)</li>
-<li>Menggambarkan hubungan antar-variabel dengan menggunakan diagram jalur</li>
-<li><em>Syntax</em> <code>lavaan</code> untuk spesifikasi model jalur</li>
-<li>Asumsi kausalitas dan limitasi</li>
+<li>Apa yang dimaksud dengan variabel laten? Mengapa psikologi membutuhkannya?</li>
+<li><em>Classical Test Theory</em> sebagai model variabel laten paling sederhana</li>
+<li>Reliabilitas dan <em>measurement error</em>: mengapa skor observasi selalu mengandung <em>noise</em></li>
+<li><em>Attenuation bias</em>: bagaimana <em>measurement error</em> mendistorsi estimasi hubungan antar-variabel</li>
+<li>Keluarga model variabel laten: CTT → EFA → CFA → SEM</li>
+<li>Variabel laten dalam model <em>reflektif</em> vs <em>formatif</em></li>
+<li>Pilihan perangkat lunak</li>
+<li>Cakupan materi dan keterbatasannya</li>
 </ul>
 </section>
-<section id="analisis-jalur" class="slide level2">
-<h2>Analisis jalur</h2>
-<ul>
-<li class="fragment"><p><em>Path model</em> merupakan kelanjutan dari model regresi karena terdiri dari <strong>beberapa model regresi</strong> sekaligus dapat digunakan untuk menguji <em>direct</em>, <em>indirect</em>, dan <em>correlated effects</em>.</p></li>
-<li class="fragment"><p><em>Path model</em> disusun secara visual dengan aturan tertentu (konsensus)</p>
-<ul>
-<li class="fragment">Garis satu arah menggambarkan <em>direct effects</em>, yang merefleksikan <em>keterkaitan langsung</em> antara satu variabel dengan variabel lainnya. Asumsinya, <strong>tidak ada variabel lain diluar model</strong> yang berkorelasi dengan variabel tersebut.</li>
-<li class="fragment">Garis dua arah menggambarkan <em>covariance</em>/korelasi, yang mengimplikasikan bahwa keterkaitan antar-variabel masih mungkin ditentukan oleh <strong>variabel lain yang tidak ada di dalam model</strong>.</li>
-<li class="fragment">Garis <em>error terms</em> yang menunjukkan varians <em>observed variable</em> yang menjelaskan <strong>variabel lain yang tidak dapat dijelaskan/di luar model</strong>, yang juga mewakili <strong>measurement error</strong>.</li>
-</ul></li>
+<section>
+<section id="psikologi-mengukur-hal-hal-yang-tidak-bisa-dilihat" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1>Psikologi mengukur hal-hal yang tidak bisa dilihat</h1>
+
+</section>
+<section id="apakah-fisika-lebih-mudah-dari-psikologi" class="slide level2">
+<h2>Apakah fisika lebih mudah dari psikologi?</h2>
+
+<img data-src="https://media.giphy.com/media/3o7TKSjRrfIPjeiVyM/giphy.gif" class="quarto-figure quarto-figure-center r-stretch" style="width:55.0%"><ul>
+<li class="fragment">Fisika mengukur massa, kecepatan, suhu — semuanya bisa dikuantifikasi langsung dengan alat fisik.</li>
+<li class="fragment">Psikologi mengukur <strong>kecemasan</strong>, <strong>kepribadian</strong>, <strong>motivasi</strong> — konstruk yang tidak bisa ditimbang atau diukur dengan penggaris.</li>
+<li class="fragment">Pertanyaannya: bagaimana kita tahu bahwa alat ukur kita benar-benar mengukur konstruk yang dimaksud?</li>
 </ul>
 </section>
-<section id="korelasi-kausalitas" class="slide level2">
-<h2>Korelasi = kausalitas?</h2>
+<section id="contoh-variabel-laten-dalam-psikologi" class="slide level2">
+<h2>Contoh variabel laten dalam psikologi</h2>
 <ul>
-<li>Analisis jalur sebenarnya adalah <strong>bentuk yang lebih <em>sophisticated</em></strong> dari korelasi, dan</li>
+<li class="fragment"><p><strong>Kecemasan</strong> — tidak bisa diobservasi langsung, tetapi bisa diinferensi dari detak jantung cepat, telapak tangan berkeringat, sulit konsentrasi, dan laporan subjektif individu.</p></li>
+<li class="fragment"><p><strong>Kepribadian (Big 5)</strong> — <em>Openness</em>, <em>Conscientiousness</em>, <em>Extraversion</em>, <em>Agreeableness</em>, <em>Neuroticism</em> merupakan konstruk laten yang diukur melalui respon terhadap item-item pernyataan.</p></li>
+<li class="fragment"><p><strong>Prestasi belajar</strong> — tidak sepenuhnya tercermin dari nilai ujian saja; ada faktor <em>measurement error</em> dalam setiap tes.</p></li>
+<li class="fragment"><p>Semua konstruk ini disebut <strong>variabel laten</strong> (<em>latent variable</em>): variabel yang <strong>tidak dapat diamati secara langsung</strong>, tetapi dapat diinferensi dari variabel lain yang bisa diukur (<em>observed variables</em>).</p></li>
 </ul>
-<div class="callout callout-important callout-titled callout-style-default">
+</section>
+<section id="variabel-observed-vs-variabel-laten" class="slide level2">
+<h2>Variabel <em>observed</em> vs variabel <em>laten</em></h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li class="fragment"><strong>Variabel <em>observed</em></strong> (variabel manifes)
+<ul>
+<li class="fragment">Variabel yang <strong>dapat diukur atau diamati secara langsung</strong>.</li>
+<li class="fragment">Dalam skala psikologi: setiap <em>item</em> pernyataan adalah variabel <em>observed</em>.</li>
+<li class="fragment">Dalam studi eksperimen: skor tes, waktu reaksi, frekuensi perilaku.</li>
+</ul></li>
+<li class="fragment"><strong>Variabel <em>laten</em></strong>
+<ul>
+<li class="fragment">Konstruk yang <strong>tidak dapat diukur secara langsung</strong> — hanya bisa diinferensi.</li>
+<li class="fragment">Membutuhkan seperangkat variabel <em>observed</em> untuk mengoperasionalisasikannya.</li>
+<li class="fragment">Variabel <em>observed</em> berperan sebagai <strong>indikator</strong> dari variabel laten.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="libs/observed-latent.png" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
+</figure>
+</div>
+</div></div>
+</section></section>
+<section>
+<section id="classical-test-theory-ctt-model-variabel-laten-paling-sederhana" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1><em>Classical Test Theory</em> (CTT): model variabel laten paling sederhana</h1>
+
+</section>
+<section id="classical-test-theory-x-t-e" class="slide level2">
+<h2><em>Classical Test Theory</em>: X = T + E</h2>
+<ul>
+<li>Psikometri klasik mengasumsikan bahwa setiap <strong>skor observasi</strong> (<em>observed score</em>, <strong>X</strong>) terdiri atas dua komponen:</li>
+</ul>
+<p><span class="math display">\[X = T + E\]</span></p>
+<ul>
+<li class="fragment"><strong>T</strong> (<em>true score</em>): skor yang <em>seharusnya</em> diperoleh seseorang apabila pengukuran dilakukan dengan sempurna — bebas dari gangguan apapun.</li>
+<li class="fragment"><strong>E</strong> (<em>error</em>): <em>measurement error</em> — semua “gangguan” yang membuat skor observasi menyimpang dari skor murni.
+<ul>
+<li class="fragment">Kondisi fisik saat mengisi kuesioner</li>
+<li class="fragment">Ambiguitas item pernyataan</li>
+<li class="fragment">Perubahan suasana hati sesaat (<em>state</em>)</li>
+<li class="fragment">Faktor situasional lainnya</li>
+</ul></li>
+</ul>
+<div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Penting</strong></p>
+<p><strong>Implikasi penting</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>Correlation does not imply causation</strong></p>
+<p>CTT mengasumsikan bahwa <strong>rata-rata <em>error</em> adalah nol</strong> (E(e) = 0) dan <strong><em>error</em> tidak berkorelasi dengan skor murni</strong> (Cov(T, E) = 0). Artinya, <em>error</em> bersifat acak — bukan sistematis.</p>
 </div>
 </div>
 </div>
-<p>Yang harus dipenuhi sebagai bukti kausalitas:</p>
+</section>
+<section id="reliabilitas-seberapa-besar-t-dalam-x" class="slide level2">
+<h2>Reliabilitas: seberapa besar T dalam X?</h2>
 <ul>
-<li>Ada <strong>urutan waktu</strong> (<em>temporal order</em>) <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> desain penelitian <em>panel</em>/<em>longitudinal</em>/<em>time series</em></li>
-<li>Adanya <strong>korelasi</strong> antara kedua variabel</li>
-<li>Peneliti harus melakukan <strong>kontrol</strong> atas variabel lain (<em>confounding</em>)</li>
-<li>Peneliti melakukan <strong>manipulasi</strong> (<em>random assignment</em>) pada variabel X</li>
+<li>Apabila X = T + E, maka varians skor observasi (σ²ₓ) juga terdiri atas varians <em>true score</em> (σ²ᴛ) dan varians <em>error</em> (σ²ₑ):</li>
 </ul>
-</section>
-<section id="diagram-jalur" class="slide level2">
-<h2>Diagram jalur</h2>
-
-<img data-src="libs/path-diagram.png" class="quarto-figure quarto-figure-center r-stretch" style="width:40.0%"></section>
-<section id="ilustrasi-use-case" class="slide level2">
-<h2>Ilustrasi <em>use case</em></h2>
-<div class="columns">
-<div class="column" style="width:70%;">
-<p>Marimar adalah seorang wali murid di sebuah PAUD di Kota Surabaya. Pada suatu hari, ia mengamati seorang anak (dan orangtua) yang perilakunya menarik perhatiannya.</p>
-<p>Ibu anak tersebut bersikeras untuk menunggui anaknya di sekolah, padahal guru kelas meminta agar Ibu pulang saja, mempercayakan anak pada guru, dengan tujuan melatih kemandirian anaknya.</p>
-<p>Melihat ibunya yang menggerutu karena diminta bu Guru pulang, si anak menangis meraung-raung tidak mau ditinggalkan. Akhirnya, terpaksa bu Guru membiarkan si Ibu menunggu di sekolah.</p>
-<p>Marimar heran sekaligus penasaran, mengapa tiap anak <strong>memberikan respon yang berbeda</strong> ketika ditinggal orangtuanya di sekolah. Ada yang menangis meraung-raung, ada yang lebih santai dengan langsung bermain. Apakah ada kaitan antara kemandirian anak dengan karakteristik orangtuanya?</p>
-</div><div class="column" style="width:30%;">
-<p><img data-src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZW5kdDlocmllN3dscTl6N2Yyd2pvdjNqZGZ4OW5xZzIzdXowc2o2ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lv86aOL3XkZC0EadmR/giphy.gif"></p>
-</div></div>
-</section>
-<section id="variabel-yang-diukur-marimar" class="slide level2">
-<h2>Variabel yang diukur Marimar</h2>
+<p><span class="math display">\[\sigma^2_X = \sigma^2_T + \sigma^2_E\]</span></p>
 <ul>
-<li><strong>trust</strong> (variabel independen) = Kepercayaan ibu bahwa perkembangan anak dapat berlangsung secara natural (<a href="https://link.springer.com/article/10.1007/s11031-008-9092-2"><strong>trust in organismic development</strong></a>).
-<ul>
-<li>Makin tinggi skor, ibu makin percaya anaknya bisa berkembang secara natural.</li>
-<li>Diukur dengan skala <em>likert</em> yang terdiri dari 5 <em>item</em> dengan 7 pilihan respon <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> dari <strong>sangat tidak setuju</strong> sampai <strong>sangat setuju</strong>.</li>
-</ul></li>
-<li><strong>mandiri</strong> (variabel dependen) = Tingkat kemandirian anak. Anak dengan skor yang tinggi semakin menunjukkan independensi dan lebih santai ketika ditinggal orangtuanya di sekolah. Beberapa indikator perilakunya adalah:
-<ul>
-<li>Tidak menangis ketika ditinggal orangtuanya</li>
-<li>Tidak merengek atau merajuk ketika ditinggal</li>
-<li>Masuk ke dalam kelas tanpa ditemani</li>
-<li>Menaruh tas dalam loker yang disediakan tanpa bantuan orangtua</li>
-</ul></li>
+<li><strong>Reliabilitas</strong> (ρ) didefinisikan sebagai proporsi varians <em>true score</em> terhadap varians total:</li>
 </ul>
-</section>
-<section id="bagaimana-bentuk-diagram-jalurnya" class="slide level2">
-<h2>Bagaimana bentuk diagram jalurnya?</h2>
-
-<img data-src="libs/contoh-path.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
-<section id="nama-variabel-dan-koefisien-jalur" class="slide level2">
-<h2>Nama variabel dan koefisien jalur</h2>
+<p><span class="math display">\[\rho_{XX'} = \frac{\sigma^2_T}{\sigma^2_X} = \frac{\sigma^2_T}{\sigma^2_T + \sigma^2_E}\]</span></p>
 <table class="caption-top">
-<colgroup>
-<col style="width: 70%">
-<col style="width: 15%">
-<col style="width: 15%">
-</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Nama Variabel/Koefisien</th>
-<th style="text-align: center;">Huruf Yunani</th>
-<th style="text-align: center;">Huruf Latin</th>
+<th>Reliabilitas (α atau ω)</th>
+<th>Interpretasi</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><em>Error</em> pengukuran dari variabel X</td>
-<td style="text-align: center;">δ</td>
-<td style="text-align: center;">Delta</td>
+<td>≥ 0.90</td>
+<td>Sangat tinggi — <em>excellent</em></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><em>Error</em> pengukuran dari variabel Y</td>
-<td style="text-align: center;">ε</td>
-<td style="text-align: center;">Epsilon</td>
+<td>0.80 – 0.89</td>
+<td>Tinggi — <em>good</em></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Variabel eksogen</td>
-<td style="text-align: center;">ξ</td>
-<td style="text-align: center;">Ksi</td>
+<td>0.70 – 0.79</td>
+<td>Cukup — <em>acceptable</em></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Variabel endogen</td>
-<td style="text-align: center;">η</td>
-<td style="text-align: center;">Eta</td>
+<td>0.60 – 0.69</td>
+<td>Sedang — perlu perbaikan</td>
+</tr>
+<tr class="odd">
+<td>&lt; 0.60</td>
+<td>Rendah — <em>poor</em></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="nama-variabel-dan-koefisien-jalur-1" class="slide level2">
-<h2>Nama variabel dan koefisien jalur</h2>
+<section id="measurement-error-dan-attenuation-bias" class="slide level2">
+<h2><em>Measurement error</em> dan <em>attenuation bias</em></h2>
+<ul>
+<li><p>Masalahnya: kita tidak pernah mengukur <strong>T</strong> secara langsung — yang kita ukur selalu <strong>X</strong> (yang sudah “tercemari” oleh <em>error</em>).</p></li>
+<li><p>Konsekuensinya: ketika kita mengestimasi <strong>korelasi antar-variabel</strong>, korelasi yang kita hitung sebenarnya adalah korelasi antar <em>observed scores</em> (rₓᵧ), bukan korelasi antar <em>true scores</em> (rᴛₓᴛᵧ).</p></li>
+<li><p>Ini menyebabkan <strong>atenuasi</strong> — korelasi yang kita estimasi <strong>selalu lebih kecil</strong> dari korelasi yang sebenarnya:</p></li>
+</ul>
+<p><span class="math display">\[r_{XY} = r_{T_X T_Y} \times \sqrt{\rho_{XX'} \times \rho_{YY'}}\]</span></p>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><em>Attenuation bias</em></strong></p>
+</div>
+<div class="callout-content">
+<p>Semakin rendah reliabilitas alat ukur, semakin besar distorsi pada estimasi korelasi. Ini berarti <em>measurement error</em> yang tinggi akan membuat kita <strong>meremehkan</strong> kekuatan hubungan antar-variabel yang sesungguhnya.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="implikasi-attenuation-bias" class="slide level2">
+<h2>Implikasi <em>attenuation bias</em></h2>
+<p><strong>Contoh nyata</strong>: Misalkan korelasi <em>true scores</em> antara kecemasan dan prokrastinasi adalah <strong>0.60</strong>. Tetapi skala kecemasan yang digunakan memiliki reliabilitas <strong>0.70</strong> dan skala prokrastinasi <strong>0.65</strong>.</p>
+<p>Korelasi yang akan kita temukan di data:</p>
+<p><span class="math display">\[r_{XY} = 0.60 \times \sqrt{0.70 \times 0.65} = 0.60 \times 0.674 = \mathbf{0.40}\]</span></p>
+<ul>
+<li class="fragment">Dengan kata lain, kita akan <strong>melaporkan korelasi 0.40</strong> padahal hubungan yang sesungguhnya adalah <strong>0.60</strong> — perbedaan yang sangat substansial!</li>
+<li class="fragment">Ini juga berdampak pada <strong>efek size</strong> dalam regresi: koefisien regresi (β) pun ikut teratenuasi.</li>
+<li class="fragment">Solusinya? Perlu model statistik yang secara eksplisit <strong>memodelkan dan mengontrol <em>measurement error</em></strong> — inilah alasan utama mengapa kita perlu <em>latent variable modeling</em>.</li>
+</ul>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Koreksi atenuasi</strong></p>
+</div>
+<div class="callout-content">
+<p>Korelasi <em>true scores</em> dapat diestimasi dari korelasi <em>observed scores</em> dengan <strong>koreksi atenuasi</strong>: <span class="math inline">\(r_{T_X T_Y} = \frac{r_{XY}}{\sqrt{\rho_{XX'} \times \rho_{YY'}}}\)</span></p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="keluarga-model-variabel-laten" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1>Keluarga model variabel laten</h1>
+
+</section>
+<section id="dari-ctt-ke-sem-satu-keluarga-besar" class="slide level2">
+<h2>Dari CTT ke SEM: satu keluarga besar</h2>
 <table class="caption-top">
 <colgroup>
-<col style="width: 70%">
-<col style="width: 15%">
-<col style="width: 15%">
+<col style="width: 13%">
+<col style="width: 39%">
+<col style="width: 47%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Nama Variabel/Koefisien</th>
-<th style="text-align: center;">Huruf Yunani</th>
-<th style="text-align: center;">Huruf Latin</th>
+<th>Model</th>
+<th>Apa yang dimodelkan</th>
+<th>Kelebihan dibanding CTT</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><em>Direct effect</em> antara variabel laten dan indikatornya (<em>loading factor</em>)</td>
-<td style="text-align: center;">λ</td>
-<td style="text-align: center;">Lambda</td>
+<td><strong>CTT</strong></td>
+<td>X = T + E (level item)</td>
+<td>Fondasi — sederhana, tapi tidak menguji struktur laten</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><em>Direct effect</em> antara variabel endogen dan eksogen</td>
-<td style="text-align: center;">γ</td>
-<td style="text-align: center;">Gamma</td>
+<td><strong>EFA</strong></td>
+<td>Struktur faktor laten yang tidak diketahui</td>
+<td>Menemukan faktor laten secara <em>data-driven</em></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><em>Direct effect</em> antara dua variabel laten</td>
-<td style="text-align: center;">β</td>
-<td style="text-align: center;">Beta</td>
+<td><strong>CFA</strong></td>
+<td>Struktur faktor laten yang sudah dihipotesiskan</td>
+<td>Menguji validitas konstruk secara teori</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Korelasi (<em>covariance</em>) antara dua variabel laten</td>
-<td style="text-align: center;">φ</td>
-<td style="text-align: center;">Phi</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Varians <em>error</em> pengukuran dari sebuah variabel laten</td>
-<td style="text-align: center;">ζ</td>
-<td style="text-align: center;">Zeta</td>
+<td><strong>SEM</strong></td>
+<td>Hubungan antar faktor laten + model pengukuran</td>
+<td>Menguji model teoritis secara komprehensif</td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="contoh-model-dengan-koefisien-jalur" class="slide level2">
-<h2>Contoh model dengan koefisien jalur</h2>
-
-<img data-src="libs/contoh-model.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
-<section id="latihan-mandiri-2-membuat-diagram-jalur" class="slide level2">
-<h2>Latihan mandiri 2️⃣: Membuat diagram jalur</h2>
-<div class="columns">
-<div class="column" style="width:70%;">
-<p>Fernando Jose sebal sekali karena ia kembali kehilangan pengokotnya dan ini kali ketiga ia kehilangan pengokot yang baru dibelinya seminggu yang lalu.</p>
-<p>Teman-teman kerjanya memang punya kebiasaan buruk meminjam barang tanpa seijinnya. Ia akhirnya bertanya, apa ya yang menyebabkan teman-temannya berperilaku seperti itu?</p>
-<p>Akhirnya ia menduga, mungkin ada kaitannya dengan faktor kepribadian (<em>conscientiousness</em>) dan faktor situasional di tempat kerjanya.</p>
-<p>Untuk faktor situasi, ia mengamati sepertinya persepsi atas kondisi kerja yang informal dan relasi formal antara senior-junior mungkin juga berkaitan dengan timbulnya perilaku tersebut.</p>
-</div><div class="column" style="width:30%;">
-<p><img data-src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmE4MG9zbW0wcGhzOHZ6YmV2NzdleWtwaW1mcHo3amZ2ODV2NnQ5OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ggsPCNJznX7nX2RC6i/giphy.gif"></p>
-</div></div>
-</section>
-<section id="yang-diukur" class="slide level2">
-<h2>Yang diukur 📏</h2>
-<ul>
-<li><p><strong>con</strong> = Kecenderungan <em>conscientiousness</em> karyawan. Makin tinggi skornya, karyawan lebih mungkin menunjukkan kehati-hatian dan keteraturan dalam bekerja. Diukur dengan skala <em>Likert</em> berisi 6 <em>item</em> dengan 10 pilihan jawaban.</p></li>
-<li><p><strong>incivil</strong> = Intensitas perilaku tidak beradab. Makin besar skornya, karyawan akan lebih mungkin <em>emotionally abusive</em>, suka mengambil barang teman tanpa ijin, dan perilaku tidak pantas yang lain. Diukur dengan skala <em>Likert</em> berisi 4 <em>item</em> dengan 10 pilihan jawaban.</p></li>
-<li><p><strong>usia</strong> = Usia partisipan</p></li>
-</ul>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Tugas</strong></p>
+<p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>Rumuskan <strong>hipotesis</strong> penelitiannya kemudian buatlah <strong>diagram jalur</strong> beserta <strong>koefisien jalurnya</strong>. Bisa dengan MS Power Point atau <em>software</em> yang lain (misalnya, <a href="https://app.diagrams.net/">draw.io</a>).</p>
+<p>Keempat model ini membentuk <strong>satu kontinum</strong> dari yang paling sederhana (CTT) ke yang paling kompleks (SEM). Setiap model yang lebih canggih <em>mengandung</em> logika model sebelumnya.</p>
 </div>
 </div>
 </div>
-<h4 id="klik-disini-untuk-mengumpulkan-tugas"><a href="https://padlet.com/ameliazein/tugas-mandiri-workshop-multigroup-sem-8p34daek2641aic8">Klik disini untuk mengumpulkan tugas</a></h4>
 </section>
-<section id="lavaan-syntax" class="slide level2">
-<h2><code>lavaan</code> <em>Syntax</em></h2>
+<section id="apa-yang-efa-dan-cfa-tambahkan-dibandingkan-ctt" class="slide level2">
+<h2>Apa yang EFA dan CFA tambahkan dibandingkan CTT?</h2>
 <ul>
-<li class="fragment"><p><code>GAMLj</code> menyediakan dua opsi: fitur <em>syntax</em> atau <em>interactive</em></p>
-<ul>
-<li class="fragment">Kalau memilih fitur <em>interactive</em>, maka tampilan antarmukanya berupa <em>drag &amp; drop</em> (seperti SPSS).</li>
-<li class="fragment">Untuk fitur <em>syntax</em>, maka tampilan antarmukanya meminta pengguna untuk menspesifikasi model dengan <em>syntax</em>.</li>
-</ul></li>
-<li class="fragment"><p><code>jamovi</code> dan <code>JASP</code> mengadopsi <em>syntax</em> dari <em>package</em> <a href="http://lavaan.ugent.be/tutorial/index.html"><code>lavaan</code></a>, sehingga untuk menspesifikasi model, kita harus memasukkan <strong>serangkaian perintah</strong>.</p></li>
-<li class="fragment"><p>Meskipun begitu, <em>syntax</em> <code>lavaan</code> <strong>sangat sederhana</strong> dan familiar dengan <em>syntax</em> <code>lavaan</code> memberikan <strong>banyak keuntungan</strong>.</p></li>
-<li class="fragment"><p>Menjalankan perintah dengan <em>syntax</em> juga membantu peneliti untuk mereka-ulang hasil analisis datanya, serta mempermudah kolaborasi dengan peneliti yang terbiasa menggunakan perangkat lunak yang berbeda dengan kita.</p></li>
-<li class="fragment"><p>Oleh karena itu, dalam <em>workshop</em> ini peserta juga harus berlatih menulis <em>syntax</em>.</p></li>
+<li class="fragment"><p><strong>CTT</strong> bekerja di level <em>item</em> — hanya bisa menghitung reliabilitas dan korelasi item-total. CTT tidak menguji apakah item-item tersebut memang mengukur konstruk laten yang sama.</p></li>
+<li class="fragment"><p><strong>EFA</strong> (<em>Exploratory Factor Analysis</em>) memungkinkan kita untuk <em>menemukan</em> struktur faktor laten dari data — berguna saat teori belum jelas atau sedang dalam tahap eksplorasi.</p></li>
+<li class="fragment"><p><strong>CFA</strong> (<em>Confirmatory Factor Analysis</em>) memungkinkan kita untuk <em>menguji</em> apakah struktur faktor yang dihipotesiskan berdasarkan teori <strong>didukung oleh data</strong>. Ini adalah uji <strong>validitas konstruk</strong> yang paling ketat.</p></li>
+<li class="fragment"><p><strong>SEM</strong> menggabungkan model pengukuran (CFA) dengan model struktural (regresi/jalur) untuk menguji hipotesis teoritis yang kompleks sekaligus mengontrol <em>measurement error</em>.</p></li>
 </ul>
 </section>
-<section id="dasar-syntax-lavaan" class="slide level2">
-<h2>Dasar <em>syntax</em> <code>lavaan</code></h2>
+<section id="komponen-model-sem" class="slide level2">
+<h2>Komponen model SEM</h2>
+
+<img data-src="libs/contoh-model.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="model-pengukuran-measurement-model" class="slide level2">
+<h2>Model pengukuran (<em>measurement model</em>)</h2>
+
+<img data-src="libs/model-pengukuran2.png" class="quarto-figure quarto-figure-center r-stretch"></section></section>
+<section>
+<section id="reflektif-vs.-formatif" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1>Reflektif vs.&nbsp;Formatif</h1>
+
+</section>
+<section id="dua-cara-variabel-laten-bekerja" class="slide level2">
+<h2>Dua cara variabel laten “bekerja”</h2>
+<ul>
+<li class="fragment"><p>Dalam <em>latent variable modeling</em>, ada dua cara konseptual yang berbeda untuk memahami hubungan antara variabel laten dan indikatornya.</p></li>
+<li class="fragment"><p><strong>Model reflektif</strong>: variabel <strong>laten menyebabkan</strong> indikator bervariasi.</p>
+<ul>
+<li class="fragment">Jika depresi seseorang meningkat → skor pada item “saya merasa sedih”, “saya kehilangan minat”, “saya sulit tidur” <em>semuanya</em> akan meningkat.</li>
+<li class="fragment">Indikator harus saling berkorelasi tinggi — mereka semua “mencerminkan” konstruk yang sama.</li>
+</ul></li>
+<li class="fragment"><p><strong>Model formatif</strong>: indikator <strong>membentuk/mendefinisikan</strong> variabel laten.</p>
+<ul>
+<li class="fragment">“Status sosioekonomi” dibentuk oleh pendidikan, pendapatan, dan pekerjaan — menaikkan pendidikan tidak otomatis menaikkan pendapatan.</li>
+<li class="fragment">Indikator tidak harus saling berkorelasi.</li>
+</ul></li>
+</ul>
+</section>
+<section id="reflektif-vs.-formatif-visualisasi" class="slide level2">
+<h2>Reflektif vs.&nbsp;Formatif: visualisasi</h2>
+<div class="columns">
+<div class="column">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="libs/lavaan.png" class="quarto-figure quarto-figure-center" style="width:55.0%"></p>
+<p><img data-src="libs/reflektif.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
+<p><strong>Reflektif</strong>: panah dari laten ke indikator</p>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="libs/formatif.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<p><strong>Formatif</strong>: panah dari indikator ke laten</p>
+</div></div>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Mengapa ini penting?</strong></p>
+</div>
+<div class="callout-content">
+<p>Mayoritas konstruk psikologi menggunakan model <strong>reflektif</strong>, misalnya: skala kepribadian, kecemasan, depresi, dll. Menggunakan model formatif untuk konstruk reflektif (atau sebaliknya) adalah kesalahan konseptual yang serius.</p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="perangkat-lunak-dan-cakupan-materi" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1>Perangkat lunak dan cakupan materi</h1>
 
-<aside><div>
-<p>Baujean, A.A. (2014). Latent Variable Modeling Using R: A step-by-step guide. New York: Routledge.</p>
-</div></aside></section>
-<section id="contoh-cfa-1" class="slide level2">
-<h2>Contoh CFA (1)</h2>
-
-<img data-src="libs/path-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># CFA</span></span>
-<span id="cb1-2"><a></a>trust <span class="ot">=</span><span class="er">~</span> trust1 <span class="sc">+</span> trust2 <span class="sc">+</span> trust3 <span class="sc">+</span> trust4 <span class="sc">+</span> trust5</span>
-<span id="cb1-3"><a></a></span>
-<span id="cb1-4"><a></a><span class="co"># Measurement error (residual)</span></span>
-<span id="cb1-5"><a></a>trust1 <span class="sc">~</span><span class="er">~</span> trust1</span>
-<span id="cb1-6"><a></a>trust2 <span class="sc">~</span><span class="er">~</span> trust2</span>
-<span id="cb1-7"><a></a>trust3 <span class="sc">~</span><span class="er">~</span> trust3</span>
-<span id="cb1-8"><a></a>trust4 <span class="sc">~</span><span class="er">~</span> trust4</span>
-<span id="cb1-9"><a></a>trust5 <span class="sc">~</span><span class="er">~</span> trust5</span>
-<span id="cb1-10"><a></a>trust <span class="sc">~</span><span class="er">~</span> trust</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="pilihan-perangkat-lunak" class="slide level2">
+<h2>Pilihan perangkat lunak</h2>
+<ul>
+<li class="fragment"><p><strong><code>jamovi</code></strong> — antarmuka grafis (<em>point-and-click</em>), gratis dan <em>open source</em>. Digunakan dalam workshop ini. <em>Module</em> SEMLj menyediakan EFA dan CFA dengan antarmuka yang <em>user-friendly</em>.</p></li>
+<li class="fragment"><p><strong><code>JASP</code></strong> — mirip jamovi, antarmuka grafis, gratis. Juga mendukung EFA dan CFA.</p></li>
+<li class="fragment"><p><strong><code>lavaan</code></strong> di <i class="fa-brands fa-r-project" aria-label="r-project"></i> — paket R yang paling lengkap dan fleksibel untuk SEM, CFA, EFA. Membutuhkan <em>coding</em>, tetapi memberikan kendali penuh atas spesifikasi model.</p></li>
+<li class="fragment"><p><strong><code>semopy</code></strong> di <i class="fa-brands fa-python" aria-label="python"></i> — alternatif di Python, sintaks mirip <code>lavaan</code>.</p></li>
+<li class="fragment"><p><strong><code>Mplus</code></strong>, <strong><code>LISREL</code></strong>, <strong><code>SPSS AMOS</code></strong>, <strong><code>EQS</code></strong> — perangkat lunak komersial dengan fitur lebih lengkap (termasuk <em>power analysis</em> dan simulasi), tetapi berbayar.</p></li>
+</ul>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Untuk workshop ini</strong></p>
+</div>
+<div class="callout-content">
+<p>Kita akan menggunakan <strong>jamovi</strong> dengan <em>module</em> <strong>SEMLj</strong>. Untuk analisis yang lebih lanjut, <code>lavaan</code> sangat direkomendasikan.</p>
+</div>
+</div>
 </div>
 </section>
-<section id="contoh-cfa-2" class="slide level2">
-<h2>Contoh CFA (2)</h2>
-
-<img data-src="libs/path-2.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># CFA</span></span>
-<span id="cb2-2"><a></a>mandiri <span class="ot">=</span><span class="er">~</span> mandiri1 <span class="sc">+</span> mandiri2 <span class="sc">+</span> mandiri3 <span class="sc">+</span> mandiri4</span>
-<span id="cb2-3"><a></a></span>
-<span id="cb2-4"><a></a><span class="co"># Measurement error (residual)</span></span>
-<span id="cb2-5"><a></a>mandiri1 <span class="sc">~</span><span class="er">~</span> mandiri1</span>
-<span id="cb2-6"><a></a>mandiri2 <span class="sc">~</span><span class="er">~</span> mandiri2</span>
-<span id="cb2-7"><a></a>mandiri3 <span class="sc">~</span><span class="er">~</span> mandiri3</span>
-<span id="cb2-8"><a></a>mandiri4 <span class="sc">~</span><span class="er">~</span> mandiri4</span>
-<span id="cb2-9"><a></a>mandiri <span class="sc">~</span><span class="er">~</span> mandiri</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="contoh-path-analysis-3" class="slide level2">
-<h2>Contoh <em>path analysis</em> (3)</h2>
-
-<img data-src="libs/path-3.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># Model Struktural</span></span>
-<span id="cb3-2"><a></a>mandiri <span class="sc">~</span> trust</span>
-<span id="cb3-3"><a></a></span>
-<span id="cb3-4"><a></a><span class="co"># Measurement error (residual)</span></span>
-<span id="cb3-5"><a></a>mandiri <span class="sc">~</span><span class="er">~</span> mandiri</span>
-<span id="cb3-6"><a></a>trust <span class="sc">~</span><span class="er">~</span> trust</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="contoh-full-model-4" class="slide level2">
-<h2>Contoh <em>full model</em> (4)</h2>
-
-<img data-src="libs/contoh-path.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># CFA</span></span>
-<span id="cb4-2"><a></a>mandiri <span class="ot">=</span><span class="er">~</span> mandiri1 <span class="sc">+</span> mandiri2 <span class="sc">+</span> mandiri3 <span class="sc">+</span> mandiri4</span>
-<span id="cb4-3"><a></a>trust <span class="ot">=</span><span class="er">~</span> trust1 <span class="sc">+</span> trust2 <span class="sc">+</span> trust3 <span class="sc">+</span> trust4 <span class="sc">+</span> trust5</span>
-<span id="cb4-4"><a></a></span>
-<span id="cb4-5"><a></a><span class="co"># Measurement error (residual)</span></span>
-<span id="cb4-6"><a></a>mandiri1 <span class="sc">~</span><span class="er">~</span> mandiri1</span>
-<span id="cb4-7"><a></a>mandiri2 <span class="sc">~</span><span class="er">~</span> mandiri2</span>
-<span id="cb4-8"><a></a>mandiri3 <span class="sc">~</span><span class="er">~</span> mandiri3</span>
-<span id="cb4-9"><a></a>mandiri4 <span class="sc">~</span><span class="er">~</span> mandiri4</span>
-<span id="cb4-10"><a></a></span>
-<span id="cb4-11"><a></a>trust1 <span class="sc">~</span><span class="er">~</span> trust1</span>
-<span id="cb4-12"><a></a>trust2 <span class="sc">~</span><span class="er">~</span> trust2</span>
-<span id="cb4-13"><a></a>trust3 <span class="sc">~</span><span class="er">~</span> trust3</span>
-<span id="cb4-14"><a></a>trust4 <span class="sc">~</span><span class="er">~</span> trust4</span>
-<span id="cb4-15"><a></a>trust5 <span class="sc">~</span><span class="er">~</span> trust5</span>
-<span id="cb4-16"><a></a></span>
-<span id="cb4-17"><a></a>trust <span class="sc">~</span><span class="er">~</span> trust</span>
-<span id="cb4-18"><a></a>mandiri <span class="sc">~</span><span class="er">~</span> mandiri</span>
-<span id="cb4-19"><a></a></span>
-<span id="cb4-20"><a></a><span class="co"># Model Struktural</span></span>
-<span id="cb4-21"><a></a>mandiri <span class="sc">~</span> trust</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="latihan-mandiri-3-menulis-syntax-lavaan" class="slide level2">
-<h2>Latihan mandiri 3️⃣: Menulis <em>syntax</em> <code>lavaan</code></h2>
-<p>Tulislah <em>syntax</em> <code>lavaan</code> dari diagram jalur yang sudah dibuat di Latihan mandiri 2️⃣</p>
-<h4 id="klik-disini-untuk-mengumpulkan-tugas-1"><a href="https://padlet.com/ameliazein/tugas-mandiri-workshop-multigroup-sem-8p34daek2641aic8">Klik disini untuk mengumpulkan tugas</a></h4>
+<section id="yang-tidak-dicakup-dalam-materi-ini" class="slide level2">
+<h2>Yang tidak dicakup dalam materi ini</h2>
+<ul>
+<li><em>A priori power analysis</em>, Monte Carlo <em>simulation</em>, dan <em>accuracy in parameter estimation</em> (AIPE) untuk merencanakan jumlah sampel</li>
+<li><em>Sensitivity analysis</em> untuk CFA/SEM</li>
+<li>Model SEM dengan <em>missing data</em> (selain <em>listwise deletion</em>)</li>
+<li>Model SEM dengan variabel moderator/mediator (<em>mediated moderation</em>, <em>moderated mediation</em>)</li>
+<li><em>Hierarchical latent variable model</em> (<em>second-order</em> CFA / <em>bifactor model</em>)</li>
+<li><a href="http://www.annualreviews.org/doi/10.1146/annurev-clinpsy-032813-153700"><em>Exploratory</em> SEM (ESEM)</a></li>
+<li><em>Partial least square</em> (PLS) — berbeda secara fundamental dari CB-SEM</li>
+<li><em>Mixture model</em> dan <em>latent growth curve</em> (SEM untuk data longitudinal)</li>
+<li><a href="https://journals.sagepub.com/doi/10.1177/23328584251388032"><em>Multiple indicators, multiple causes</em> (MIMIC) model</a></li>
+</ul>
 </section>
 <section id="ada-pertanyaan" class="slide level2">
 <h2>Ada pertanyaan❓</h2>
@@ -549,7 +526,7 @@ Rizqy Amelia Zein
 </div>
 
 
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -859,82 +836,6 @@ Rizqy Amelia Zein
       color: white !important;
     }
     </style>
-    
-
-    <script>
-
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-
-      // slide changes (different for each slide format).
-
-      (function () {
-
-        // dispatch for htmlwidgets
-
-        function fireSlideEnter() {
-
-          const event = window.document.createEvent("Event");
-
-          event.initEvent("slideenter", true, true);
-
-          window.document.dispatchEvent(event);
-
-        }
-
-    
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-
-          fireSlideEnter();
-
-    
-
-          // dispatch for shiny
-
-          if (window.jQuery) {
-
-            if (previousSlide) {
-
-              window.jQuery(previousSlide).trigger("hidden");
-
-            }
-
-            if (currentSlide) {
-
-              window.jQuery(currentSlide).trigger("shown");
-
-            }
-
-          }
-
-        }
-
-    
-
-        // hookup for slidy
-
-        if (window.w3c_slidy) {
-
-          window.w3c_slidy.add_observer(function (slide_num) {
-
-            // slide_num starts at position 1
-
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-
-          });
-
-        }
-
-    
-
-      })();
-
-    </script>
-
-    
-
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

@@ -55,7 +55,20 @@ Klik _navigation bar_ yang mengarah pada PDF materi, kemudian tekan `ctrl` dan `
 * Pelaporan hasil sesuai APA & terjemahan OR ke bahasa yang dipahami semua orang
 * Kesalahan umum: OR vs. *risk ratio*, *events per variable* (EPV), *stepwise selection*
 
-### Bagian 4️⃣: Pengantar _Latent Variable Modeling_
+### Bagian 4️⃣: Analisis ROC (*Receiver Operating Characteristic*)
+
+* Uji diagnostik dalam psikologi: konteks dan permasalahan
+* Review: *confusion matrix*, *sensitivity*, dan *specificity*
+* *Positive Predictive Value* (PPV) dan *Negative Predictive Value* (NPV)
+* *Trade-off* antara *sensitivity* dan *specificity*
+* Kurva ROC: cara membangun dan membacanya
+* *Area Under the Curve* (AUC): ringkasan performa dalam satu angka
+* Youden's Index: menentukan *cut-off* optimal
+* Membandingkan beberapa alat ukur sekaligus
+* Pengaruh prevalensi pada PPV dan NPV
+* Demonstrasi di jamovi (modul PPDA → TestROC)
+
+### Bagian 5️⃣: Pengantar _Latent Variable Modeling_
 
 * Apa yang dimaksud dengan variabel laten? Mengapa psikologi membutuhkannya?
 * _Classical Test Theory_ sebagai model variabel laten paling sederhana
@@ -66,7 +79,7 @@ Klik _navigation bar_ yang mengarah pada PDF materi, kemudian tekan `ctrl` dan `
 * Pilihan perangkat lunak
 * Cakupan materi dan keterbatasannya
 
-### Bagian 5️⃣: Model Jalur (*Path Model*) dan Model Regresi
+### Bagian 6️⃣: Model Jalur (*Path Model*) dan Model Regresi
 
 * Definisi *path model*
 * Nama variabel dan koefisien jalur (*path coefficients*)
@@ -81,7 +94,7 @@ Klik _navigation bar_ yang mengarah pada PDF materi, kemudian tekan `ctrl` dan `
 Untuk menggambar diagram jalur, mahasiswa dapat menggunakan MS Power Point, Canva, atau _software_ lainnya yang serupa. Rekomendasi saya: gunakan [draw.io](https://app.diagrams.net/?src=about) yang merupakan _software open source_ dan sangat unggul untuk menggambar berbagai macam diagram, termasuk _flowchart_.
 :::
 
-### Bagian 6️⃣: _Principal Component Analysis_ (PCA) dan _Exploratory Factor Analysis_ (EFA)
+### Bagian 7️⃣: _Principal Component Analysis_ (PCA) dan _Exploratory Factor Analysis_ (EFA)
 
 * Mengapa kita perlu analisis faktor? *Measurement error* dan *attenuation bias*
 * Keluarga model variabel laten: CTT → EFA → CFA → SEM
@@ -96,7 +109,7 @@ Untuk menggambar diagram jalur, mahasiswa dapat menggunakan MS Power Point, Canv
 * Evaluasi model: *fit indices* (RMSEA, CFI, TLI) dan reliabilitas (α vs. ω)
 * Checklist pelaporan EFA & kesalahan umum
 
-### Bagian 7️⃣: _Confirmatory Factor Analysis_ (CFA)
+### Bagian 8️⃣: _Confirmatory Factor Analysis_ (CFA)
 
 * Definisi *factor analysis*
 * *Exploratory* vs *confirmatory factor analysis*

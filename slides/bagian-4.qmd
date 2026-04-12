@@ -1,5 +1,5 @@
 ---
-title: "Pengantar _Latent Variable Modeling_"
+title: "Analisis ROC (*Receiver Operating Characteristic*)"
 subtitle: "Statistik dalam Penelitian Psikologi"
 author: "Rizqy Amelia Zein"
 institute:
@@ -19,245 +19,411 @@ execute:
 
 ## *Outline*
 
-* Apa yang dimaksud dengan variabel laten? Mengapa psikologi membutuhkannya?
-* _Classical Test Theory_ sebagai model variabel laten paling sederhana
-* Reliabilitas dan *measurement error*: mengapa skor observasi selalu mengandung *noise*
-* *Attenuation bias*: bagaimana *measurement error* mendistorsi estimasi hubungan antar-variabel
-* Keluarga model variabel laten: CTT → EFA → CFA → SEM
-* Variabel laten dalam model *reflektif* vs *formatif*
-* Pilihan perangkat lunak
-* Cakupan materi dan keterbatasannya
+* Uji diagnostik dalam psikologi: konteks dan permasalahan
+* Review: *confusion matrix*, *sensitivity*, dan *specificity*
+* *Positive Predictive Value* (PPV) dan *Negative Predictive Value* (NPV)
+* *Trade-off* antara *sensitivity* dan *specificity*
+* Kurva ROC: cara membangun dan membacanya
+* *Area Under the Curve* (AUC): ringkasan performa dalam satu angka
+* Youden's Index: menentukan *cut-off* optimal
+* Membandingkan beberapa alat ukur sekaligus
+* Pengaruh prevalensi pada PPV dan NPV
+* Demonstrasi di jamovi
+* Pelaporan hasil
 
-# Psikologi mengukur hal-hal yang tidak bisa dilihat {background-color="#14497F" .center}
+# Uji diagnostik dalam psikologi {background-color="#14497F" .center}
 
-## Apakah fisika lebih mudah dari psikologi?
-
-![](https://media.giphy.com/media/3o7TKSjRrfIPjeiVyM/giphy.gif){fig-align="center" width="55%"}
-
-::: {.incremental}
-* Fisika mengukur massa, kecepatan, suhu — semuanya bisa dikuantifikasi langsung dengan alat fisik.
-* Psikologi mengukur **kecemasan**, **kepribadian**, **motivasi** — konstruk yang tidak bisa ditimbang atau diukur dengan penggaris.
-* Pertanyaannya: bagaimana kita tahu bahwa alat ukur kita benar-benar mengukur konstruk yang dimaksud?
-:::
-
-## Contoh variabel laten dalam psikologi
+## Apa yang ingin kita ketahui?
 
 ::: {.incremental}
-* **Kecemasan** — tidak bisa diobservasi langsung, tetapi bisa diinferensi dari detak jantung cepat, telapak tangan berkeringat, sulit konsentrasi, dan laporan subjektif individu.
-
-* **Kepribadian (Big 5)** — *Openness*, *Conscientiousness*, *Extraversion*, *Agreeableness*, *Neuroticism* merupakan konstruk laten yang diukur melalui respon terhadap item-item pernyataan.
-
-* **Prestasi belajar** — tidak sepenuhnya tercermin dari nilai ujian saja; ada faktor *measurement error* dalam setiap tes.
-
-* Semua konstruk ini disebut **variabel laten** (*latent variable*): variabel yang **tidak dapat diamati secara langsung**, tetapi dapat diinferensi dari variabel lain yang bisa diukur (*observed variables*).
+* Seorang psikolog klinis ingin membuat *screening tool* sederhana untuk mendeteksi dini gejala depresi pada mahasiswa baru.
+* Setelah mengembangkan alat tersebut, ia perlu menjawab pertanyaan: **seberapa akurat alat ini dalam memisahkan antara mahasiswa yang mengalami depresi dengan yang tidak?**
+* Untuk menjawabnya, ia membandingkan hasil ukur alat barunya dengan hasil asesmen mendalam oleh psikolog klinis berlisensi sebagai ***gold standard***.
+* Perbandingan inilah yang menjadi inti analisis ROC.
 :::
 
-## Variabel *observed* vs variabel *laten*
+::: {.callout-note}
+#### *Gold standard*
+*Gold standard* adalah metode referensi terbaik yang tersedia — bisa berupa wawancara diagnostik terstruktur (misal: SCID, MINI), penilaian panel ahli, atau diagnosis resmi. Akurasi alat yang kita uji selalu relatif terhadap *gold standard* yang digunakan.
+:::
+
+## Contoh-contoh uji diagnostik dalam psikologi
+
+::: {.incremental}
+* **Skrining depresi**: PHQ-9 dibandingkan dengan wawancara SCID sebagai *gold standard*
+* **Deteksi gangguan kecemasan**: GAD-7 dibandingkan dengan diagnosis klinis DSM-5
+* **Skrining burnout**: alat *screening* singkat dibandingkan dengan MBI (*Maslach Burnout Inventory*) penuh
+* **Deteksi *mental health* umum**: *Self-Reporting Questionnaire* (SRQ-20 WHO) digunakan untuk memisahkan populasi dengan dan tanpa gangguan mental-emosional di layanan kesehatan primer
+:::
+
+::: {.callout-tip}
+#### Mengapa tidak cukup hanya dengan korelasi?
+Korelasi tinggi antara alat baru dan *gold standard* belum menjamin akurasi diagnostik yang baik — korelasi tidak memberikan informasi tentang *cut-off* optimal, *sensitivity*, atau *specificity* pada berbagai titik potong.
+:::
+
+# *Confusion matrix*: fondasi evaluasi diagnostik {background-color="#14497F" .center}
+
+## Review dari Bagian 3
+
+Dari **Bagian 3** (Regresi Logistik), kita sudah mengenal *confusion matrix*. Di sini kita menggunakannya dalam konteks uji diagnostik: membandingkan hasil alat *screening* dengan *gold standard*.
+
+|  | *Gold standard*: **Negatif** | *Gold standard*: **Positif** |
+|--|:---:|:---:|
+| **Alat: Negatif** | **TN** (*True Negative*) | **FN** (*False Negative*) |
+| **Alat: Positif** | **FP** (*False Positive*) | **TP** (*True Positive*) |
+
+* **TP**: Alat mengatakan positif — dan memang positif ✓
+* **TN**: Alat mengatakan negatif — dan memang negatif ✓
+* **FP**: Alat mengatakan positif — padahal negatif ✗ (*false alarm*)
+* **FN**: Alat mengatakan negatif — padahal positif ✗ (*miss*)
+
+## *Sensitivity* — kemampuan mendeteksi yang sakit
+
+$$\text{Sensitivity} = \frac{TP}{TP + FN}$$
+
+**Pertanyaan yang dijawab:** "Dari semua orang yang benar-benar mengalami gangguan, berapa persen yang berhasil dideteksi oleh alat ini?"
+
+::: {.incremental}
+* *Sensitivity* tinggi berarti **sedikit *false negative*** — kasus yang sakit jarang terlewat
+* Sangat penting ketika **konsekuensi miss sangat besar**: skrining risiko bunuh diri, skrining gangguan psikosis dini, skrining kekerasan dalam rumah tangga
+* *Sensitivity* = 1.0 berarti alat tidak pernah melewatkan satu pun kasus positif — tapi biasanya dicapai dengan mengorbankan *specificity*
+:::
+
+::: {.callout-note}
+*Sensitivity* juga dikenal sebagai ***True Positive Rate*** (TPR) atau ***Recall***.
+:::
+
+## *Specificity* — kemampuan membebaskan yang sehat
+
+$$\text{Specificity} = \frac{TN}{TN + FP}$$
+
+**Pertanyaan yang dijawab:** "Dari semua orang yang tidak mengalami gangguan, berapa persen yang benar-benar dinyatakan negatif oleh alat ini?"
+
+::: {.incremental}
+* *Specificity* tinggi berarti **sedikit *false positive*** — orang sehat jarang salah diklasifikasikan
+* Sangat penting ketika **konsekuensi *false alarm* sangat besar**: stigma, intervensi yang tidak perlu, biaya yang tinggi, keputusan seleksi/rekrutmen
+* *Specificity* = 1.0 berarti alat tidak pernah salah mengklasifikasikan orang sehat sebagai positif
+:::
+
+::: {.callout-note}
+*Specificity* juga dikenal sebagai ***True Negative Rate*** (TNR). Kebalikannya (FP/(TN+FP)) disebut ***False Positive Rate*** (FPR) — sumbu X kurva ROC.
+:::
+
+## Contoh: SRQ-20 sebagai *gold standard*, MHI sebagai alat yang diuji
+
+**Konteks**: N = 300; 90 orang dengan gangguan mental-emosional (SRQ-20 positif), 210 orang sehat
+
+| *Cut-off* MHI = 50 | *Gold standard*: Sehat | *Gold standard*: Gangguan |
+|---|:---:|:---:|
+| **MHI: Negatif** (< 50) | **TN = 168** | **FN = 18** |
+| **MHI: Positif** (≥ 50) | **FP = 42** | **TP = 72** |
+
+$$\text{Sensitivity} = \frac{72}{72 + 18} = 0.80 \quad (80\%)$$
+
+$$\text{Specificity} = \frac{168}{168 + 42} = 0.80 \quad (80\%)$$
+
+::: {.callout-tip}
+Dengan *cut-off* 50, alat MHI berhasil mendeteksi 80% kasus gangguan dan 80% kasus sehat. Tetapi apakah ini *cut-off* yang optimal? Inilah yang akan dijawab oleh analisis ROC.
+:::
+
+# PPV dan NPV: nilai prediktif dalam konteks klinis {background-color="#14497F" .center}
+
+## *Positive Predictive Value* (PPV)
+
+$$\text{PPV} = \frac{TP}{TP + FP}$$
+
+**Pertanyaan yang dijawab:** "Jika alat menunjukkan hasil *positif*, seberapa besar kemungkinan orang ini benar-benar mengalami gangguan?"
+
+Dari contoh tadi:
+
+$$\text{PPV} = \frac{72}{72 + 42} = 0.63 \quad (63\%)$$
+
+::: {.callout-warning}
+#### PPV bergantung pada prevalensi
+PPV **bukan** sifat tetap dari alat ukur — ia sangat bergantung pada **prevalensi** gangguan dalam populasi yang dites. Alat yang sama akan menghasilkan PPV berbeda jika digunakan pada populasi dengan prevalensi berbeda.
+:::
+
+## *Negative Predictive Value* (NPV)
+
+$$\text{NPV} = \frac{TN}{TN + FN}$$
+
+**Pertanyaan yang dijawab:** "Jika alat menunjukkan hasil *negatif*, seberapa besar kemungkinan orang ini benar-benar sehat?"
+
+Dari contoh tadi:
+
+$$\text{NPV} = \frac{168}{168 + 18} = 0.90 \quad (90\%)$$
+
+**Empat metrik dalam satu tabel:**
+
+| Metrik | Nilai | Pertanyaan |
+|--------|:-----:|-----------|
+| *Sensitivity* | 80% | Dari yang sakit, berapa % terdeteksi? |
+| *Specificity* | 80% | Dari yang sehat, berapa % "lolos"? |
+| PPV | 63% | Jika positif, seberapa yakin? |
+| NPV | 90% | Jika negatif, seberapa yakin? |
+
+## *Sensitivity* vs *specificity*: dua tujuan yang saling tarik-menarik
 
 :::: {.columns}
 ::: {.column width="55%"}
 
 ::: {.incremental}
-* **Variabel *observed*** (variabel manifes)
-  - Variabel yang **dapat diukur atau diamati secara langsung**.
-  - Dalam skala psikologi: setiap *item* pernyataan adalah variabel *observed*.
-  - Dalam studi eksperimen: skor tes, waktu reaksi, frekuensi perilaku.
-
-* **Variabel *laten***
-  - Konstruk yang **tidak dapat diukur secara langsung** — hanya bisa diinferensi.
-  - Membutuhkan seperangkat variabel *observed* untuk mengoperasionalisasikannya.
-  - Variabel *observed* berperan sebagai **indikator** dari variabel laten.
+* Setiap alat diagnostik memiliki satu distribusi skor untuk kelompok "positif" (*cases*) dan satu untuk kelompok "negatif" (*controls*).
+* Ketika dua distribusi ini **saling tumpang tindih**, tidak ada *cut-off* yang bisa memisahkan keduanya dengan sempurna.
+* Menurunkan *cut-off* → **sensitivity naik** (lebih banyak kasus tertangkap) tapi **specificity turun** (lebih banyak *false alarm*).
+* Menaikkan *cut-off* → **specificity naik** (lebih sedikit *false alarm*) tapi **sensitivity turun** (lebih banyak kasus terlewat).
 :::
 
 :::
 ::: {.column width="45%"}
 
-![](libs/observed-latent.png){fig-align="center" width="90%"}
+::: {.callout-tip}
+#### Pemilihan *cut-off* adalah keputusan etis dan klinis
+Tidak ada *cut-off* "terbaik" secara universal — pilihan tergantung pada:
+
+* Konsekuensi *false negative* vs *false positive*
+* Biaya intervensi
+* Prevalensi gangguan
+* Konteks penggunaan (skrining vs diagnosis formal)
+:::
 
 :::
 ::::
 
-# *Classical Test Theory* (CTT): model variabel laten paling sederhana {background-color="#14497F" .center}
+# Kurva ROC {background-color="#14497F" .center}
 
-## *Classical Test Theory*: X = T + E
-
-* Psikometri klasik mengasumsikan bahwa setiap **skor observasi** (*observed score*, **X**) terdiri atas dua komponen:
-
-$$X = T + E$$
+## Apa itu kurva ROC?
 
 ::: {.incremental}
-* **T** (*true score*): skor yang *seharusnya* diperoleh seseorang apabila pengukuran dilakukan dengan sempurna — bebas dari gangguan apapun.
-* **E** (*error*): *measurement error* — semua "gangguan" yang membuat skor observasi menyimpang dari skor murni.
-  - Kondisi fisik saat mengisi kuesioner
-  - Ambiguitas item pernyataan
-  - Perubahan suasana hati sesaat (*state*)
-  - Faktor situasional lainnya
+* Kurva ROC (*Receiver Operating Characteristic*) adalah visualisasi performa diagnostik sebuah alat **di semua nilai *cut-off* yang mungkin secara bersamaan**.
+* Untuk setiap *cut-off*, kita menghitung *sensitivity* (TPR) dan *false positive rate* (1 − *specificity*), lalu memplotnya:
+  - Sumbu Y: *Sensitivity* (TPR) — 0 sampai 1
+  - Sumbu X: *False Positive Rate* (1 − *Specificity*) — 0 sampai 1
+* **Garis diagonal** (dari [0,0] ke [1,1]) = kinerja alat yang setara dengan tebakan acak (*no discrimination*).
+* Kurva yang **melengkung jauh ke sudut kiri atas** menunjukkan alat yang baik: *sensitivity* tinggi tanpa banyak *false positive*.
 :::
 
-::: {.callout-tip}
-#### Implikasi penting
-CTT mengasumsikan bahwa **rata-rata *error* adalah nol** (E(e) = 0) dan ***error* tidak berkorelasi dengan skor murni** (Cov(T, E) = 0). Artinya, *error* bersifat acak — bukan sistematis.
-:::
+## Membaca kurva ROC
 
-## Reliabilitas: seberapa besar T dalam X?
-
-* Apabila X = T + E, maka varians skor observasi (σ²ₓ) juga terdiri atas varians *true score* (σ²ᴛ) dan varians *error* (σ²ₑ):
-
-$$\sigma^2_X = \sigma^2_T + \sigma^2_E$$
-
-* **Reliabilitas** (ρ) didefinisikan sebagai proporsi varians *true score* terhadap varians total:
-
-$$\rho_{XX'} = \frac{\sigma^2_T}{\sigma^2_X} = \frac{\sigma^2_T}{\sigma^2_T + \sigma^2_E}$$
-
-| Reliabilitas (α atau ω) | Interpretasi |
-|-------------------------|--------------|
-| ≥ 0.90 | Sangat tinggi — *excellent* |
-| 0.80 – 0.89 | Tinggi — *good* |
-| 0.70 – 0.79 | Cukup — *acceptable* |
-| 0.60 – 0.69 | Sedang — perlu perbaikan |
-| < 0.60 | Rendah — *poor* |
-
-## *Measurement error* dan *attenuation bias*
-
-* Masalahnya: kita tidak pernah mengukur **T** secara langsung — yang kita ukur selalu **X** (yang sudah "tercemari" oleh *error*).
-
-* Konsekuensinya: ketika kita mengestimasi **korelasi antar-variabel**, korelasi yang kita hitung sebenarnya adalah korelasi antar *observed scores* (rₓᵧ), bukan korelasi antar *true scores* (rᴛₓᴛᵧ).
-
-* Ini menyebabkan **atenuasi** — korelasi yang kita estimasi **selalu lebih kecil** dari korelasi yang sebenarnya:
-
-$$r_{XY} = r_{T_X T_Y} \times \sqrt{\rho_{XX'} \times \rho_{YY'}}$$
-
-::: {.callout-warning}
-#### *Attenuation bias*
-Semakin rendah reliabilitas alat ukur, semakin besar distorsi pada estimasi korelasi. Ini berarti *measurement error* yang tinggi akan membuat kita **meremehkan** kekuatan hubungan antar-variabel yang sesungguhnya.
-:::
-
-## Implikasi *attenuation bias*
-
-**Contoh nyata**: Misalkan korelasi *true scores* antara kecemasan dan prokrastinasi adalah **0.60**. Tetapi skala kecemasan yang digunakan memiliki reliabilitas **0.70** dan skala prokrastinasi **0.65**.
-
-Korelasi yang akan kita temukan di data:
-
-$$r_{XY} = 0.60 \times \sqrt{0.70 \times 0.65} = 0.60 \times 0.674 = \mathbf{0.40}$$
+:::: {.columns}
+::: {.column width="55%"}
 
 ::: {.incremental}
-* Dengan kata lain, kita akan **melaporkan korelasi 0.40** padahal hubungan yang sesungguhnya adalah **0.60** — perbedaan yang sangat substansial!
-* Ini juga berdampak pada **efek size** dalam regresi: koefisien regresi (β) pun ikut teratenuasi.
-* Solusinya? Perlu model statistik yang secara eksplisit **memodelkan dan mengontrol *measurement error*** — inilah alasan utama mengapa kita perlu *latent variable modeling*.
+* **Sudut kiri atas [0, 1]** = titik ideal: *sensitivity* = 1 dan *false positive rate* = 0 — alat sempurna.
+* **Garis diagonal** = kinerja acak — tidak lebih baik dari koin yang dilempar.
+* Titik-titik di sepanjang kurva merepresentasikan performa pada **berbagai nilai *cut-off***.
+* Semakin tinggi *cut-off*, titik bergerak ke **kiri bawah** (sensitivity turun, specificity naik).
+* Semakin rendah *cut-off*, titik bergerak ke **kanan atas** (sensitivity naik, specificity turun).
 :::
 
-::: {.callout-tip}
-#### Koreksi atenuasi
-Korelasi *true scores* dapat diestimasi dari korelasi *observed scores* dengan **koreksi atenuasi**: $r_{T_X T_Y} = \frac{r_{XY}}{\sqrt{\rho_{XX'} \times \rho_{YY'}}}$
 :::
-
-# Keluarga model variabel laten {background-color="#14497F" .center}
-
-## Dari CTT ke SEM: satu keluarga besar
-
-| Model | Apa yang dimodelkan | Kelebihan dibanding CTT |
-|-------|---------------------|-------------------------|
-| **CTT** | X = T + E (level item) | Fondasi — sederhana, tapi tidak menguji struktur laten |
-| **EFA** | Struktur faktor laten yang tidak diketahui | Menemukan faktor laten secara *data-driven* |
-| **CFA** | Struktur faktor laten yang sudah dihipotesiskan | Menguji validitas konstruk secara teori |
-| **SEM** | Hubungan antar faktor laten + model pengukuran | Menguji model teoritis secara komprehensif |
+::: {.column width="45%"}
 
 ::: {.callout-note}
-Keempat model ini membentuk **satu kontinum** dari yang paling sederhana (CTT) ke yang paling kompleks (SEM). Setiap model yang lebih canggih *mengandung* logika model sebelumnya.
+#### Mengapa "Receiver Operating Characteristic"?
+Nama ini berasal dari *radar engineering* di era Perang Dunia II — digunakan untuk mengevaluasi kemampuan sistem radar dalam memisahkan sinyal pesawat musuh dari *noise*. Konsep yang sama diterapkan dalam diagnostik medis dan psikologis sejak tahun 1970-an.
 :::
 
-## Apa yang EFA dan CFA tambahkan dibandingkan CTT?
-
-::: {.incremental}
-* **CTT** bekerja di level *item* — hanya bisa menghitung reliabilitas dan korelasi item-total. CTT tidak menguji apakah item-item tersebut memang mengukur konstruk laten yang sama.
-
-* **EFA** (*Exploratory Factor Analysis*) memungkinkan kita untuk *menemukan* struktur faktor laten dari data — berguna saat teori belum jelas atau sedang dalam tahap eksplorasi.
-
-* **CFA** (*Confirmatory Factor Analysis*) memungkinkan kita untuk *menguji* apakah struktur faktor yang dihipotesiskan berdasarkan teori **didukung oleh data**. Ini adalah uji **validitas konstruk** yang paling ketat.
-
-* **SEM** menggabungkan model pengukuran (CFA) dengan model struktural (regresi/jalur) untuk menguji hipotesis teoritis yang kompleks sekaligus mengontrol *measurement error*.
 :::
+::::
 
-## Komponen model SEM
+# *Area Under the Curve* (AUC) {background-color="#14497F" .center}
 
-![](libs/contoh-model.png){fig-align="center"}
+## AUC — satu angka untuk merangkum keseluruhan performa
 
-## Model pengukuran (*measurement model*)
+**Definisi probabilistik:** AUC adalah probabilitas bahwa apabila kita mengambil satu orang dengan gangguan dan satu orang sehat secara acak, alat akan memberikan **skor yang lebih tinggi** kepada orang dengan gangguan.
 
-![](libs/model-pengukuran2.png){fig-align="center"}
-
-# Reflektif vs. Formatif {background-color="#14497F" .center}
-
-## Dua cara variabel laten "bekerja"
-
-::: {.incremental}
-* Dalam *latent variable modeling*, ada dua cara konseptual yang berbeda untuk memahami hubungan antara variabel laten dan indikatornya.
-
-* **Model reflektif**: variabel **laten menyebabkan** indikator bervariasi.
-  - Jika depresi seseorang meningkat → skor pada item "saya merasa sedih", "saya kehilangan minat", "saya sulit tidur" *semuanya* akan meningkat.
-  - Indikator harus saling berkorelasi tinggi — mereka semua "mencerminkan" konstruk yang sama.
-
-* **Model formatif**: indikator **membentuk/mendefinisikan** variabel laten.
-  - "Status sosioekonomi" dibentuk oleh pendidikan, pendapatan, dan pekerjaan — menaikkan pendidikan tidak otomatis menaikkan pendapatan.
-  - Indikator tidak harus saling berkorelasi.
-:::
-
-## Reflektif vs. Formatif: visualisasi
-
-::: {.columns}
-::: {.column}
-
-![](libs/reflektif.png){fig-align="center"}
-
-**Reflektif**: panah dari laten ke indikator
-
-:::
-::: {.column}
-
-![](libs/formatif.png){fig-align="center"}
-
-**Formatif**: panah dari indikator ke laten
-
-:::
-:::
+| AUC | Interpretasi |
+|:---:|:------------|
+| 0.50 | Tidak lebih baik dari tebakan acak — alat tidak bermanfaat |
+| 0.60–0.70 | Lemah — performa terbatas, perlu perbaikan alat |
+| 0.70–0.80 | Cukup — bisa digunakan dengan hati-hati |
+| 0.80–0.90 | Baik — alat performa tinggi |
+| 0.90–1.00 | Sangat baik — atau *overfitting*? Cek dulu! |
 
 ::: {.callout-warning}
-#### Mengapa ini penting?
-Mayoritas konstruk psikologi menggunakan model **reflektif**, misalnya: skala kepribadian, kecemasan, depresi, dll. Menggunakan model formatif untuk konstruk reflektif (atau sebaliknya) adalah kesalahan konseptual yang serius.
+#### AUC bukan satu-satunya pertimbangan
+AUC yang tinggi tidak secara otomatis berarti alat siap digunakan secara klinis. Pertimbangkan juga: *sensitivity* dan *specificity* pada *cut-off* yang dipilih, PPV/NPV dalam populasi target, dan kemudahan penggunaan alat.
 :::
 
-# Perangkat lunak dan cakupan materi {background-color="#14497F" .center}
+## AUC: perbandingan dengan konteks yang sudah familiar
 
-## Pilihan perangkat lunak
+Dari **Bagian 3**, kita sudah mengenal AUC sebagai ukuran performa model regresi logistik.
 
 ::: {.incremental}
-* **`jamovi`** — antarmuka grafis (*point-and-click*), gratis dan *open source*. Digunakan dalam workshop ini. *Module* SEMLj menyediakan EFA dan CFA dengan antarmuka yang *user-friendly*.
+* Di Bagian 3, AUC mengukur seberapa baik **model regresi logistik** (dengan semua prediktornya) memisahkan kasus positif dari negatif.
+* Di analisis ROC ini, AUC mengukur seberapa baik **satu alat ukur tunggal** (dengan berbagai *cut-off*) memisahkan kasus positif dari negatif.
+* Prinsip interpretasinya sama persis — yang berbeda adalah objek yang dievaluasi: model multivariat vs. satu alat ukur dengan ambang batas.
+:::
 
-* **`JASP`** — mirip jamovi, antarmuka grafis, gratis. Juga mendukung EFA dan CFA.
+::: {.callout-note}
+#### *Confidence interval* untuk AUC
+Selalu laporkan 95% CI untuk AUC. Jika CI melewati 0.50, performa alat tidak berbeda secara signifikan dari tebakan acak.
+:::
 
-* **`lavaan`** di {{< fa brands r-project >}} — paket R yang paling lengkap dan fleksibel untuk SEM, CFA, EFA. Membutuhkan *coding*, tetapi memberikan kendali penuh atas spesifikasi model.
+# Youden's Index: *cut-off* optimal {background-color="#14497F" .center}
 
-* **`semopy`** di {{< fa brands python >}} — alternatif di Python, sintaks mirip `lavaan`.
+## Apa itu Youden's Index?
 
-* **`Mplus`**, **`LISREL`**, **`SPSS AMOS`**, **`EQS`** — perangkat lunak komersial dengan fitur lebih lengkap (termasuk *power analysis* dan simulasi), tetapi berbayar.
+$$J = \text{Sensitivity} + \text{Specificity} - 1$$
+
+::: {.incremental}
+* Youden's Index (J) adalah ukuran yang menyeimbangkan *sensitivity* dan *specificity* dalam satu angka.
+* Nilainya berkisar dari 0 (kinerja setara tebakan) hingga 1 (kinerja sempurna).
+* ***Cut-off* optimal** berdasarkan Youden's Index adalah nilai *cut-off* yang **memaksimalkan J** — yang memberikan kombinasi *sensitivity* + *specificity* tertinggi.
+* Ini merupakan titik pada kurva ROC yang **paling jauh dari garis diagonal** ke arah sudut kiri atas.
 :::
 
 ::: {.callout-tip}
-#### Untuk workshop ini
-Kita akan menggunakan **jamovi** dengan *module* **SEMLj**. Untuk analisis yang lebih lanjut, `lavaan` sangat direkomendasikan.
+#### Kapan Youden's Index tidak cukup?
+Youden's Index memperlakukan *sensitivity* dan *specificity* sebagai **sama pentingnya**. Jika konteks klinis menuntut prioritas berbeda (misalnya *sensitivity* lebih penting daripada *specificity*), gunakan fungsi *utility* atau pertimbangan klinis eksplisit dalam memilih *cut-off*.
 :::
 
-## Yang tidak dicakup dalam materi ini
+## Tabel *sensitivity-specificity*: memilih *cut-off* dengan tepat
 
-* _A priori power analysis_, Monte Carlo _simulation_, dan *accuracy in parameter estimation* (AIPE) untuk merencanakan jumlah sampel
-* _Sensitivity analysis_ untuk CFA/SEM
-* Model SEM dengan *missing data* (selain *listwise deletion*)
-* Model SEM dengan variabel moderator/mediator (*mediated moderation*, *moderated mediation*)
-* _Hierarchical latent variable model_ (*second-order* CFA / *bifactor model*)
-* [_Exploratory_ SEM (ESEM)](http://www.annualreviews.org/doi/10.1146/annurev-clinpsy-032813-153700)
-* _Partial least square_ (PLS) — berbeda secara fundamental dari CB-SEM
-* _Mixture model_ dan _latent growth curve_ (SEM untuk data longitudinal)
-* [_Multiple indicators, multiple causes_ (MIMIC) model](https://journals.sagepub.com/doi/10.1177/23328584251388032)
+**Contoh tabel *cut-off* untuk alat MHI (sebagian):**
+
+| *Cut-off* | *Sensitivity* | *Specificity* | Youden's J |
+|:---------:|:-------------:|:-------------:|:----------:|
+| 40 | 0.94 | 0.60 | 0.54 |
+| 45 | 0.89 | 0.70 | 0.59 |
+| **50** | **0.80** | **0.80** | **0.60** ← optimal |
+| 55 | 0.69 | 0.88 | 0.57 |
+| 60 | 0.53 | 0.93 | 0.46 |
+
+::: {.callout-tip}
+*Cut-off* 50 memberikan Youden's J tertinggi (0.60). Dalam jamovi, tabel ini tersedia secara otomatis melalui opsi **Sensitivity-Specificity Tables** di modul PPDA → TestROC.
+:::
+
+# Membandingkan beberapa alat ukur {background-color="#14497F" .center}
+
+## ROC untuk membandingkan dua tes sekaligus
+
+Analisis ROC juga bisa digunakan untuk menjawab: "**Dari dua alat *screening* ini, mana yang lebih akurat?**"
+
+::: {.incremental}
+* Buat kurva ROC untuk masing-masing alat pada **sampel yang sama** dengan ***gold standard* yang sama**.
+* Bandingkan AUC kedua alat — alat dengan AUC lebih tinggi secara umum lebih akurat.
+* Gunakan **uji signifikansi** untuk membandingkan AUC (metode DeLong et al., 1988) — tersedia di jamovi PPDA.
+* Jika interval kepercayaan AUC kedua alat saling tumpang tindih, perbedaan mungkin tidak signifikan secara statistik.
+:::
+
+::: {.callout-note}
+#### Pertimbangan lain selain AUC
+Bahkan jika dua alat memiliki AUC serupa, salah satunya mungkin lebih dipilih karena: lebih singkat (*item* lebih sedikit), lebih mudah dipahami peserta, biaya lebih rendah, atau memiliki profil *sensitivity-specificity* yang lebih sesuai dengan konteks penggunaan.
+:::
+
+# Pengaruh prevalensi pada PPV dan NPV {background-color="#14497F" .center}
+
+## Mengapa prevalensi sangat penting?
+
+*Sensitivity* dan *specificity* adalah sifat **intrinsik** alat ukur — tidak berubah ketika prevalensi berubah. Tetapi PPV dan NPV sangat bergantung pada prevalensi.
+
+**Simulasi: alat dengan sensitivity = 80%, specificity = 80%**
+
+| Prevalensi | PPV | NPV |
+|:----------:|:---:|:---:|
+| 50% (klinik psikiatri) | 80% | 80% |
+| 30% (layanan primer) | 63% | 90% |
+| 10% (skrining populasi umum) | 31% | 97% |
+| 2% (skrining wajib semua orang) | **8%** | **>99%** |
+
+::: {.callout-warning}
+#### Implikasi untuk penggunaan alat
+Jika alat skrining yang sama digunakan pada populasi dengan prevalensi sangat rendah (misalnya 2%), sebagian besar hasil "positif" adalah *false positive* — hanya 8% dari mereka yang dinyatakan positif benar-benar mengalami gangguan! Ini mempunyai konsekuensi etis yang serius.
+:::
+
+# Demonstrasi di jamovi {background-color="#14497F" .center}
+
+## Konteks: MHI vs SRQ-20
+
+::: {.incremental}
+* Dataset: **Dataset Contoh Analisis ROC** (`roc.omv`)
+  - Dapat diunduh dari *navbar* di laman mata kuliah
+
+* Variabel:
+  - **MentalHealthIndex**: skor total *Mental Health Inventory* (MHI) yang ingin diuji akurasinya
+  - **SRQ_Diagnostik**: keputusan diagnosis berdasarkan *Self-Reporting Questionnaire* (SRQ-20 WHO) — digunakan sebagai *gold standard*
+
+* Pertanyaan penelitian: **Pada *cut-off* berapa MHI dapat memisahkan peserta dengan dan tanpa gangguan mental-emosional dengan optimal?**
+
+* SRQ-20 adalah alat skrining standar WHO yang digunakan dalam RISKESDAS (2007, 2013, 2018) — sehingga menjadi *gold standard* yang tepat untuk konteks Indonesia.
+:::
+
+## Langkah-langkah di jamovi
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Persiapan:**
+
+1. Pasang *module* **PPDA** terlebih dahulu
+   - Menu **☰ → Manage modules → Available → PPDA**
+2. Buka dataset `roc.omv`
+3. Pastikan variabel diagnostik (*gold standard*) sudah dalam format **kategorikal** (0 = negatif, 1 = positif)
+
+**Menjalankan TestROC:**
+
+4. **PPDA → TestROC**
+5. Masukkan **MentalHealthIndex** ke kolom *Dependent Variable*
+6. Masukkan **SRQ_Diagnostik** ke kolom *Class Variable*
+
+:::
+::: {.column width="50%"}
+
+**Output yang harus diaktifkan:**
+
+☑ *ROC Curves* — visualisasi kurva ROC
+
+☑ *Standard error bars* — *confidence interval* pada kurva
+
+☑ *Sensitivity-Specificity Tables* — tabel untuk memilih *cut-off*
+
+☑ *AUC* — *area under the curve* dan CI-nya
+
+**Urutan membaca output:**
+
+AUC (+ 95% CI) → Kurva ROC → Tabel *cut-off* → Pilih *cut-off* berdasarkan Youden's J → Hitung PPV dan NPV
+
+:::
+::::
+
+## Checklist pelaporan analisis ROC
+
+☐ **Deskripsi alat dan *gold standard*** — apa yang diukur, bagaimana *gold standard* ditetapkan
+
+☐ **Prevalensi dalam sampel** — proporsi kasus positif
+
+☐ **AUC** — nilai, 95% CI, dan interpretasi
+
+☐ ***Cut-off* yang dipilih** — nilai dan justifikasinya (misalnya: Youden's Index)
+
+☐ ***Sensitivity* dan *specificity*** pada *cut-off* yang dipilih
+
+☐ **PPV dan NPV** — sertakan catatan tentang prevalensi yang digunakan
+
+☐ **Kurva ROC** — sertakan sebagai figur jika memungkinkan
+
+## Contoh paragraf hasil
+
+> "Analisis ROC dilakukan untuk menentukan *cut-off* optimal *Mental Health Inventory* (MHI) menggunakan keputusan diagnostik SRQ-20 WHO sebagai *gold standard* (N = 300; prevalensi gangguan mental-emosional = 30%). AUC = 0.87 (95% CI [0.82, 0.92]), mengindikasikan performa diagnostik yang baik.
+>
+> Berdasarkan Youden's Index, *cut-off* optimal MHI adalah ≥ 50 (J = 0.60), dengan *sensitivity* = 80%, *specificity* = 80%, PPV = 63%, dan NPV = 90%. Temuan ini menunjukkan bahwa MHI memiliki performa diagnostik yang memadai untuk digunakan sebagai alat *screening* pada populasi layanan kesehatan primer dengan prevalensi setara."
+
+::: {.callout-warning}
+#### Ingat batasan pelaporan PPV/NPV
+Selalu sebutkan prevalensi yang digunakan saat menghitung PPV dan NPV — karena nilai tersebut tidak berlaku untuk populasi dengan prevalensi yang berbeda.
+:::
+
+## Tiga kesalahan umum dalam analisis ROC
+
+::: {.incremental}
+1. **Menggunakan *cut-off* dari literatur tanpa validasi lokal** — *cut-off* yang optimal di satu populasi (misal: Barat, klinik spesialis) mungkin tidak optimal di populasi yang berbeda (misal: Indonesia, layanan primer). Selalu validasi secara lokal.
+
+2. **Mengabaikan konteks ketika memilih *cut-off*** — Youden's Index hanyalah titik awal. Keputusan klinis akhir harus mempertimbangkan konsekuensi *false negative* vs *false positive* yang spesifik untuk konteks penggunaan.
+
+3. **Melaporkan PPV/NPV tanpa menyebutkan prevalensi** — PPV = 63% tidak bermakna tanpa informasi bahwa angka itu dihitung pada prevalensi 30%. Pembaca yang menggunakan alat di populasi dengan prevalensi 10% akan mendapat gambaran yang sangat menyesatkan.
+:::
 
 ## Ada pertanyaan❓
 

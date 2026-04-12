@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.10.3">
 
   <meta name="author" content="Rizqy Amelia Zein">
-  <meta name="dcterms.date" content="2026-04-10">
+  <meta name="dcterms.date" content="2026-04-12">
   <title>Statistik dalam Penelitian Psikologi – Regresi Logistik Binomial</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -150,7 +150,7 @@ Rizqy Amelia Zein
     </div>
 </div>
 
-  <p class="date">2026-04-10</p>
+  <p class="date">2026-04-12</p>
 </section>
 <section id="outline" class="slide level2">
 <h2><em>Outline</em></h2>
@@ -197,8 +197,8 @@ Rizqy Amelia Zein
 <h1>Mengapa bukan regresi linear?</h1>
 
 </section>
-<section id="regresi-linear-menghasilkan-prediksi-yang-mustahil" class="slide level2">
-<h2>Regresi linear menghasilkan prediksi yang mustahil</h2>
+<section id="regresi-linear-dan-prediksi-yang-mustahil" class="slide level2">
+<h2>Regresi linear dan prediksi yang mustahil</h2>
 <p>Misalnya kita ingin memprediksi <strong>putus studi mahasiswa PJJ</strong> berdasarkan jarak ke kelompok belajar (pokjar):</p>
 <table class="caption-top">
 <colgroup>
@@ -243,12 +243,14 @@ Rizqy Amelia Zein
 </section>
 <section id="solusi-fungsi-logistik-kurva-s" class="slide level2">
 <h2>Solusi: fungsi logistik (kurva S)</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
 <p><span class="math display">\[P = \frac{1}{1 + e^{-(\beta_0 + \beta_1 X)}}\]</span></p>
 <p>Tiga sifat penting kurva S (<em>sigmoid</em>):</p>
 <ul>
-<li class="fragment"><strong>Asimptot bawah = 0</strong> — probabilitas tidak pernah negatif</li>
-<li class="fragment"><strong>Asimptot atas = 1</strong> — probabilitas tidak pernah melampaui 1</li>
-<li class="fragment"><strong>Transisi halus di bagian tengah</strong> — perubahan probabilitas melambat di ujung-ujungnya</li>
+<li><strong>Asimptot bawah = 0</strong> — probabilitas tidak pernah negatif</li>
+<li><strong>Asimptot atas = 1</strong> — probabilitas tidak pernah melampaui 1</li>
+<li><strong>Transisi halus di bagian tengah</strong> — perubahan probabilitas melambat di ujung-ujungnya</li>
 </ul>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
@@ -263,14 +265,22 @@ Rizqy Amelia Zein
 </div>
 </div>
 </div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="libs/logregr.jpg" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div></div>
+<!-- end columns -->
 </section></section>
 <section>
 <section id="rantai-konsep-p-odds-log-odds-odds-ratio" class="title-slide slide level1 center" data-background-color="#14497F">
 <h1>Rantai konsep: P → <em>Odds</em> → <em>Log Odds</em> → <em>Odds Ratio</em></h1>
 
 </section>
-<section id="probabilitas-titik-awal-yang-sudah-kita-kenal" class="slide level2">
-<h2>Probabilitas — titik awal yang sudah kita kenal</h2>
+<section id="probabilitas-1" class="slide level2">
+<h2>Probabilitas 1️⃣</h2>
 <p><span class="math display">\[P(A) = \frac{\text{jumlah kejadian A}}{\text{total kemungkinan}}\]</span></p>
 <p><strong>Contoh dari dataset PJJ (N = 450):</strong></p>
 <table class="caption-top">
@@ -299,24 +309,22 @@ Rizqy Amelia Zein
 </tr>
 </tbody>
 </table>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Regresi logistik memodelkan <em>log odss</em></strong></p>
-</div>
-<div class="callout-content">
-<p>Regresi logistik <strong>tidak memodelkan P secara langsung</strong> — ia memodelkan transformasinya, yaitu <em>log odds</em>. Mengapa? Karena probabilitas tidak linear, sementara <em>log odds</em> bisa diperlakukan sebagai linear terhadap prediktor.</p>
-</div>
-</div>
-</div>
 </section>
-<section id="odds-berapa-kali-lebih-mungkin-terjadi-dibanding-tidak-terjadi" class="slide level2">
-<h2><em>Odds</em> — “berapa kali lebih mungkin terjadi dibanding tidak terjadi”</h2>
+<section id="probabilitas-1-1" class="slide level2">
+<h2>Probabilitas 1️⃣</h2>
+<ul>
+<li>Regresi logistik <strong>tidak memodelkan probabilitas secara langsung</strong></li>
+<li>Yang dimodelkan adalah transformasinya, yaitu <em>log odds</em></li>
+<li>Mengapa?
+<ul>
+<li>Karena probabilitas tidak linear, sementara <em>log odds</em> bisa diperlakukan sebagai linear terhadap prediktor</li>
+</ul></li>
+</ul>
+</section>
+<section id="odds" class="slide level2">
+<h2><em>Odds</em></h2>
 <p><span class="math display">\[\text{Odds} = \frac{P}{1 - P}\]</span></p>
-<p><strong>Contoh:</strong> Jika P(putus studi) = 0.30, maka Odds = 0.30 / 0.70 = <strong>0.43</strong></p>
+<p><strong>Definisi:</strong> “<em>Berapa kali suatu kejadian lebih mungkin terjadi dibandingkan tidak terjadi</em>” <strong>Contoh:</strong> Jika P(putus studi) = 0.30, maka Odds = 0.30 / 0.70 = <strong>0.43</strong></p>
 <p>Cara baca: “Untuk setiap 7 mahasiswa yang bertahan, ada 3 yang putus studi” (3:7)</p>
 <table class="caption-top">
 <thead>
@@ -354,19 +362,23 @@ Rizqy Amelia Zein
 </tr>
 </tbody>
 </table>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+</section>
+<section id="interpretasi-odds" class="slide level2">
+<h2>Interpretasi <em>odds</em></h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li>Odds = 1 artinya peluang terjadi <strong>sama dengan</strong> tidak terjadi.</li>
+<li>Odds &gt; 1 artinya lebih mungkin terjadi; Odds &lt; 1 artinya lebih tidak mungkin.</li>
+</ul>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="libs/odds.webp" class="quarto-figure quarto-figure-center"></p>
+</figure>
 </div>
-<p><strong>Interpretasi <em>odds</em></strong></p>
-</div>
-<div class="callout-content">
-<p>Odds = 1 artinya peluang terjadi <strong>sama dengan</strong> tidak terjadi. Odds &gt; 1 artinya lebih mungkin terjadi; Odds &lt; 1 artinya lebih tidak mungkin.</p>
-</div>
-</div>
-</div>
+</div></div>
+<!-- end columns -->
 </section>
 <section id="log-odds-logit-membuat-odds-simetris-dan-linear" class="slide level2">
 <h2><em>Log odds</em> (logit) — membuat <em>odds</em> simetris dan linear</h2>
@@ -1071,7 +1083,7 @@ Rizqy Amelia Zein
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>ROC <em>curve</em> dan AUC tersedia di jamovi. Untuk pembahasan lebih dalam tentang ROC, Anda bisa membaca materi terpisah di <a href="https://hackmd.io/@ameliazein/roc">hackmd.io/<span class="citation" data-cites="ameliazein/roc">@ameliazein/roc</span></a>.</p>
+<p>ROC <em>curve</em> dan AUC tersedia di jamovi. Pembahasan mendalam tentang analisis ROC — termasuk PPV/NPV, Youden’s Index, dan penentuan <em>cut-off</em> optimal — ada di <strong>Bagian 4</strong>.</p>
 </div>
 </div>
 </div>

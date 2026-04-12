@@ -45,7 +45,7 @@ execute:
 
 # Mengapa bukan regresi linear? {background-color="#14497F" .center}
 
-## Regresi linear menghasilkan prediksi yang mustahil
+## Regresi linear dan prediksi yang mustahil
 
 Misalnya kita ingin memprediksi **putus studi mahasiswa PJJ** berdasarkan jarak ke kelompok belajar (pokjar):
 
@@ -62,24 +62,31 @@ Misalnya kita ingin memprediksi **putus studi mahasiswa PJJ** berdasarkan jarak 
 
 ## Solusi: fungsi logistik (kurva S)
 
+::: {.columns}
+::: {.column width="70%"}
+
 $$P = \frac{1}{1 + e^{-(\beta_0 + \beta_1 X)}}$$
 
 Tiga sifat penting kurva S (*sigmoid*):
 
-::: {.incremental}
 * **Asimptot bawah = 0** — probabilitas tidak pernah negatif
 * **Asimptot atas = 1** — probabilitas tidak pernah melampaui 1
 * **Transisi halus di bagian tengah** — perubahan probabilitas melambat di ujung-ujungnya
-:::
 
 ::: {.callout-note}
 #### Rentang _outcome_ selalu 0-1 meskipun prediktor nilainya ekstrim
 Tidak peduli seberapa ekstrim nilai prediktor (X), probabilitas yang diprediksi **tetap berada dalam rentang yang valid**. Inilah keunggulan utama regresi logistik dibanding OLS untuk *outcome* biner.
 :::
+:::
+::: {.column width="30%"}
+![](libs/logregr.jpg){fig-align="center"}
+:::
+:::
+<!-- end columns -->
 
 # Rantai konsep: P → *Odds* → *Log Odds* → *Odds Ratio* {background-color="#14497F" .center}
 
-## Probabilitas — titik awal yang sudah kita kenal
+## Probabilitas 1️⃣
 
 $$P(A) = \frac{\text{jumlah kejadian A}}{\text{total kemungkinan}}$$
 
@@ -91,15 +98,19 @@ $$P(A) = \frac{\text{jumlah kejadian A}}{\text{total kemungkinan}}$$
 | 8 dari 200 mahasiswa pernah mencoba bunuh diri | P(percobaan) = 0.04 |
 | 60 dari 200 karyawan *resign* dalam 1 tahun | P(turnover) = 0.30 |
 
-::: {.callout-note}
-#### Regresi logistik memodelkan _log odss_
-Regresi logistik **tidak memodelkan P secara langsung** — ia memodelkan transformasinya, yaitu *log odds*. Mengapa? Karena probabilitas tidak linear, sementara *log odds* bisa diperlakukan sebagai linear terhadap prediktor.
-:::
 
-## *Odds* — "berapa kali lebih mungkin terjadi dibanding tidak terjadi"
+## Probabilitas 1️⃣
+
+* Regresi logistik **tidak memodelkan probabilitas secara langsung** 
+* Yang dimodelkan adalah transformasinya, yaitu *log odds*
+* Mengapa? 
+  - Karena probabilitas tidak linear, sementara *log odds* bisa diperlakukan sebagai linear terhadap prediktor
+
+## *Odds*
 
 $$\text{Odds} = \frac{P}{1 - P}$$
 
+**Definisi:** "_Berapa kali suatu kejadian lebih mungkin terjadi dibandingkan tidak terjadi_"
 **Contoh:** Jika P(putus studi) = 0.30, maka Odds = 0.30 / 0.70 = **0.43**
 
 Cara baca: "Untuk setiap 7 mahasiswa yang bertahan, ada 3 yang putus studi" (3:7)
@@ -112,10 +123,21 @@ Cara baca: "Untuk setiap 7 mahasiswa yang bertahan, ada 3 yang putus studi" (3:7
 | 0.75 | 3.00 | 3 banding 1 |
 | 0.90 | 9.00 | 9 banding 1 |
 
-::: {.callout-tip}
-#### Interpretasi _odds_
-Odds = 1 artinya peluang terjadi **sama dengan** tidak terjadi. Odds > 1 artinya lebih mungkin terjadi; Odds < 1 artinya lebih tidak mungkin.
+## Interpretasi _odds_
+
+::: {.columns}
+::: {.column}
+* Odds = 1 artinya peluang terjadi **sama dengan** tidak terjadi. 
+* Odds > 1 artinya lebih mungkin terjadi; Odds < 1 artinya lebih tidak mungkin.
+
 :::
+::: {.column}
+
+![](libs/odds.webp){fig-align="center"}
+:::
+:::
+<!-- end columns -->
+
 
 ## *Log odds* (logit) — membuat *odds* simetris dan linear
 
@@ -446,7 +468,7 @@ Dari *confusion matrix* tadi (TP=130, TN=240, FP=30, FN=50, N=450):
 | > 0.90 | Sangat baik — atau *overfitting*? Cek dulu! |
 
 ::: {.callout-note}
-ROC *curve* dan AUC tersedia di jamovi. Untuk pembahasan lebih dalam tentang ROC, Anda bisa membaca materi terpisah di [hackmd.io/@ameliazein/roc](https://hackmd.io/@ameliazein/roc).
+ROC *curve* dan AUC tersedia di jamovi. Pembahasan mendalam tentang analisis ROC — termasuk PPV/NPV, Youden's Index, dan penentuan *cut-off* optimal — ada di **Bagian 4**.
 :::
 
 # Pelaporan Hasil {background-color="#14497F" .center}

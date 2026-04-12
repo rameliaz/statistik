@@ -15,6 +15,7 @@ project:
     - slides/bagian-5.qmd
     - slides/bagian-6.qmd
     - slides/bagian-7.qmd
+    - slides/bagian-8.qmd
 
 website:
   title: "Statistik dalam Penelitian Psikologi"
@@ -33,15 +34,17 @@ website:
           - text: "Bagian 2: Regresi OLS"
             href: slides/bagian-2.html
           - text: "Bagian 3: Regresi Logistik"
-            href: slides/bagian-4.html            
-          - text: "Bagian 4: Pengantar LVM"
             href: slides/bagian-3.html
-          - text: "Bagian 5: Model Jalur"
+          - text: "Bagian 4: Analisis ROC"
+            href: slides/bagian-4.html
+          - text: "Bagian 5: Pengantar LVM"
             href: slides/bagian-5.html
-          - text: "Bagian 6: EFA-PCA"
+          - text: "Bagian 6: Model Jalur"
             href: slides/bagian-6.html
-          - text: "Bagian 7: CFA"
+          - text: "Bagian 7: EFA-PCA"
             href: slides/bagian-7.html
+          - text: "Bagian 8: CFA"
+            href: slides/bagian-8.html
       - text: "Materi (pdf)"
         menu:
           - text: "Bagian 1: Korelasi"
@@ -49,25 +52,29 @@ website:
           - text: "Bagian 2: Regresi OLS"
             href: "slides/bagian-2.html?print-pdf"
           - text: "Bagian 3: Regresi Logistik"
-            href: "slides/bagian-4.html?print-pdf"
-          - text: "Bagian 4: Pengantar LVM"
             href: "slides/bagian-3.html?print-pdf"
-          - text: "Bagian 5: Model Jalur"
+          - text: "Bagian 4: Analisis ROC"
+            href: "slides/bagian-4.html?print-pdf"
+          - text: "Bagian 5: Pengantar LVM"
             href: "slides/bagian-5.html?print-pdf"
-          - text: "Bagian 6: EFA-PCA"
+          - text: "Bagian 6: Model Jalur"
             href: "slides/bagian-6.html?print-pdf"
-          - text: "Bagian 7: CFA"
+          - text: "Bagian 7: EFA-PCA"
             href: "slides/bagian-7.html?print-pdf"
+          - text: "Bagian 8: CFA"
+            href: "slides/bagian-8.html?print-pdf"
       - text: "Dataset"
         menu:
           - text: "Dataset Contoh Korelasi"
             href: materials/corr.omv
           - text: "Dataset Latihan Korelasi"
             href: materials/latihancorr.csv
-          - text: "Dataset Latihan Regresi OLS"
+          - text: "Dataset Contoh Regresi OLS"
             href: materials/dataset-sekolah.omv
           - text: "Dataset Contoh Regresi Logistik"
-            href: materials/dataset-social-support.omv            
+            href: materials/dataset-social-support.omv
+          - text: "Dataset Contoh Analisis ROC"
+            href: materials/roc.omv
           - text: "Dataset Contoh EFA-PCA"
             href: materials/dataset-burnout.omv
           - text: "Dataset Contoh CFA"
