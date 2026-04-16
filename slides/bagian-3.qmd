@@ -33,14 +33,15 @@ execute:
 ## *Outcome* biner ada di berbagai konteks
 
 ::: {.incremental}
-* **Putus studi PJJ:** Sepertiga mahasiswa PJJ tidak menyelesaikan studinya sebelum semester kelima ([Tinto, 1987](https://press.uchicago.edu/ucp/books/book/chicago/L/bo3630345.html); [Park & Choi, 2009(https://www.jstor.org/stable/jeductechsoci.12.4.207)])
+* **Putus studi PJJ:** Sepertiga mahasiswa PJJ tidak menyelesaikan studinya sebelum semester kelima ([Tinto, 1987](https://press.uchicago.edu/ucp/books/book/chicago/L/bo3630345.html); [Park & Choi, 2009](https://www.jstor.org/stable/jeductechsoci.12.4.207))
 * **Relapse gangguan kecemasan:** 40–60% pasien mengalami kekambuhan dalam jangka panjang setelah remisi ([Bruce et al., 2005](https://psychiatryonline.org/doi/full/10.1176/appi.ajp.162.6.1179))
 * **Turnover karyawan:** 15–20% per tahun dianggap normal; di atas angka itu menandakan masalah organisasi (SHRM, 2023)
 * **Percobaan bunuh diri:** Sekitar 2.4% prajurit militer AS melakukan percobaan bunuh diri dalam satu tahun ([Kessler et al., 2014](https://pmc.ncbi.nlm.nih.gov/articles/PMC4860903/))
 :::
 
 ::: {.callout-note}
-*Outcome* ini bukan skor 1–100 (data _continous_). Mereka adalah **keputusan biner**: terjadi (1) atau tidak terjadi (0). Kita membutuhkan metode statistik yang dirancang untuk memodelkan **probabilitas** kejadian seperti ini.
+#### _Outcome_ Biner
+*Outcome* dari semua penelitian di atas bukan skor 1–100 (data _continous_). Mereka adalah **keputusan biner**: terjadi (1) atau tidak terjadi (0). Kita membutuhkan metode statistik yang dirancang untuk memodelkan **probabilitas** kejadian seperti ini.
 :::
 
 # Mengapa bukan regresi linear? {background-color="#14497F" .center}
@@ -57,13 +58,13 @@ Misalnya kita ingin memprediksi **putus studi mahasiswa PJJ** berdasarkan jarak 
 
 : {tbl-colwidths="[20,25,40,15]"}
 
-* **Masalah fundamental:** Probabilitas harus berada di rentang 0 sampai 1. Regresi linear tidak menjamin ini — ia memodelkan hubungan linear tanpa batas (∞).
+* **Masalah fundamental:** Probabilitas harus berada di **rentang 0 sampai 1**. Regresi linear tidak menjamin ini — ia memodelkan hubungan linear tanpa batas (∞).
 * **Yang dibutuhkan:** Sebuah fungsi yang secara otomatis *membatasi* prediksi dalam rentang [0, 1].
 
 ## Solusi: fungsi logistik (kurva S)
 
 ::: {.columns}
-::: {.column width="70%"}
+::: {.column width="55%"}
 
 $$P = \frac{1}{1 + e^{-(\beta_0 + \beta_1 X)}}$$
 
@@ -78,19 +79,19 @@ Tiga sifat penting kurva S (*sigmoid*):
 Tidak peduli seberapa ekstrim nilai prediktor (X), probabilitas yang diprediksi **tetap berada dalam rentang yang valid**. Inilah keunggulan utama regresi logistik dibanding OLS untuk *outcome* biner.
 :::
 :::
-::: {.column width="30%"}
+::: {.column width="45%"}
 ![](libs/logregr.jpg){fig-align="center"}
 :::
 :::
 <!-- end columns -->
 
-# Rantai konsep: P → *Odds* → *Log Odds* → *Odds Ratio* {background-color="#14497F" .center}
+# Rantai konsep: P → Odds → Log Odds → Odds Ratio {background-color="#14497F" .center}
 
 ## Probabilitas 1️⃣
 
 $$P(A) = \frac{\text{jumlah kejadian A}}{\text{total kemungkinan}}$$
 
-**Contoh dari dataset PJJ (N = 450):**
+**Contoh:**
 
 | Konteks | Probabilitas |
 |---------|:------------:|
@@ -98,8 +99,9 @@ $$P(A) = \frac{\text{jumlah kejadian A}}{\text{total kemungkinan}}$$
 | 8 dari 200 mahasiswa pernah mencoba bunuh diri | P(percobaan) = 0.04 |
 | 60 dari 200 karyawan *resign* dalam 1 tahun | P(turnover) = 0.30 |
 
+: {tbl-colwidths="[75,25]"}
 
-## Probabilitas 1️⃣
+## Probabilitas 2️⃣
 
 * Regresi logistik **tidak memodelkan probabilitas secara langsung** 
 * Yang dimodelkan adalah transformasinya, yaitu *log odds*
@@ -123,12 +125,15 @@ Cara baca: "Untuk setiap 7 mahasiswa yang bertahan, ada 3 yang putus studi" (3:7
 | 0.75 | 3.00 | 3 banding 1 |
 | 0.90 | 9.00 | 9 banding 1 |
 
+: {tbl-colwidths="[25,25,50]"}
+
 ## Interpretasi _odds_
 
 ::: {.columns}
 ::: {.column}
 * Odds = 1 artinya peluang terjadi **sama dengan** tidak terjadi. 
-* Odds > 1 artinya lebih mungkin terjadi; Odds < 1 artinya lebih tidak mungkin.
+* Odds > 1 artinya **lebih mungkin** terjadi (vs. tidak terjadi). 
+* Odds < 1 artinya **lebih tidak mungkin** terjadi (vs. tidak terjadi).
 
 :::
 ::: {.column}
@@ -145,15 +150,19 @@ Cara baca: "Untuk setiap 7 mahasiswa yang bertahan, ada 3 yang putus studi" (3:7
 
 **Solusi: *Log odds* (logit)**
 
+## *Log odds* (logit) — membuat *odds* simetris dan linear
+
 $$\text{Logit}(P) = \ln\!\left(\frac{P}{1-P}\right)$$
 
-| P | *Odds* | *Logit* |
+| P | Odds | Logit |
 |:---:|:---:|:---:|
 | 0.10 | 0.11 | −2.20 |
 | 0.25 | 0.33 | −1.10 |
 | 0.50 | 1.00 | 0.00 |
 | 0.75 | 3.00 | +1.10 |
 | 0.90 | 9.00 | +2.20 |
+
+: {tbl-colwidths="[33,34,33]"}
 
 Perhatikan: *logit* simetris di sekitar 0 dan rentangnya −∞ sampai +∞. **Inilah yang dimodelkan secara linear** oleh regresi logistik.
 
@@ -173,11 +182,15 @@ $$P = \frac{1}{1 + e^{-(\beta_0 + \beta_1 X_1 + \cdots + \beta_k X_k)}}$$
 * β₁, …, βₖ = koefisien regresi (perubahan *logit* per satu unit prediktor)
 * **e^β = *Odds Ratio*** {{< fa circle-arrow-right >}} **inilah yang diinterpretasikan dalam sebagai _effect size_ dari regresi logistik**
 
-## *Odds Ratio* (OR) — ukuran efek utama
+## *Odds Ratio* (OR) — _effect size_ utama
+
+_Odds ratio_ (OR) merupakan _effect size_ utama dari model regresi logistik.
 
 $$OR = e^{\beta}$$
 
 OR mengukur seberapa banyak *odds* berubah ketika prediktor naik 1 unit, dengan prediktor lain dikontrol.
+
+## *Odds Ratio* (OR) — _effect size_ utama
 
 | OR | Interpretasi |
 |:--:|--------------|
@@ -187,6 +200,8 @@ OR mengukur seberapa banyak *odds* berubah ketika prediktor naik 1 unit, dengan 
 | = 1.50 | *Odds* naik 50% |
 | = 2.00 | *Odds* naik 100% (dua kali lipat) |
 | = 0.50 | *Odds* turun 50% (setengahnya) |
+
+: {tbl-colwidths="[20,80]"}
 
 ::: {.callout-warning}
 #### Selalu laporkan 95% *Confidence Interval* untuk OR! 
@@ -212,7 +227,7 @@ Jika CI melewati 1.0, prediktor tidak signifikan secara statistik — misalnya O
 Keterlibatan akademik yang tinggi dapat "**mencegah**" efek jarak yang jauh antara tempat tinggal mahasiswa dengan pokjar. Bisa dijadikan dasar untuk mendesain intervensi program PJJ.
 :::
 
-# Estimasi & *Fit* Model {background-color="#14497F" .center}
+# Estimasi & Ketepatan Model {background-color="#14497F" .center}
 
 ## *Maximum Likelihood Estimation* (MLE)
 
@@ -226,9 +241,9 @@ Cari β yang membuat variabel _outcome_ yang kita observasi **"paling mungkin te
 
 ::: {.callout-note}
 #### Mengapa MLE
-Karena MLE, kita **tidak mendapatkan F-statistic** seperti dalam OLS/ANOVA. Sebagai gantinya, kita mendapatkan **χ²** sebagai uji signifikansi keseluruhan model.
+Karena MLE, kita **tidak mendapatkan F-statistics** seperti dalam OLS/ANOVA. Sebagai gantinya, kita mendapatkan **χ²** sebagai uji signifikansi keseluruhan model.
 
-Jika _software_ menampilkan peringatan _Algorithm did not converge_ — biasanya tanda sampel terlalu kecil atau ada *perfect separation* (lihat bagian berikutnya).
+Jika _software_ menampilkan peringatan `algorithm did not converge`, biasanya tanda sampel terlalu kecil atau ada *perfect separation* (lihat bagian berikutnya).
 :::
 
 
@@ -236,11 +251,15 @@ Jika _software_ menampilkan peringatan _Algorithm did not converge_ — biasanya
 
 **Deviance** = −2 × *log-likelihood* (makin kecil, makin baik)
 
-| | *Deviance* | Arti |
+| Terminologi | Nilai Deviance | Interpretasi |
 |--|:---------:|------|
-| **Null deviance** | 612.4 | Model tanpa prediktor — "tebakan terbaik tanpa informasi" |
-| **Residual deviance** | 487.2 | Model dengan prediktor kita |
-| **Penurunan** | **125.2** | Bukti bahwa prediktor berguna |
+| **Null deviance** | 612.4 | Model tanpa prediktor (_null model_) |
+| **Residual deviance** | 487.2 | Model dengan prediktor |
+| **Penurunan** | **125.2** | Bukti bahwa prediktor meningkatkan kemampuan model memprediksi _outcome_ |
+
+: {tbl-colwidths="[30,15,55]"}
+
+## *Deviance* & *Likelihood Ratio Test* — uji omnibus model
 
 **Likelihood Ratio Test:**
 
@@ -250,16 +269,16 @@ $$\chi^2(3) = 125.2,\ p < .001 \rightarrow \text{Model secara keseluruhan signif
 
 ::: {.callout-note}
 #### Uji Omnibus
-Ini adalah **uji omnibus** — setara dengan uji F keseluruhan dalam regresi linear. Di jamovi, angka ini muncul di bagian *Model Fit* sebagai **Model χ²**.
+Ini adalah **uji omnibus** — setara dengan uji F keseluruhan dalam regresi linear. Di `jamovi`, angka ini muncul di bagian *Model Fit* sebagai **Model χ²**.
 :::
 
 ## AIC & BIC — memilih model terbaik
 
-Prinsipnya sama dengan regresi OLS yang sudah kita pelajari di Bagian 3: menambah prediktor **selalu** menurunkan *deviance*, bahkan jika prediktor itu tidak bermakna (*overfitting*).
+Prinsipnya sama dengan regresi OLS yang sudah kita pelajari di [Bagian 3](https://rameliaz.github.io/statistik/slides/bagian-3.html#/title-slide): menambah prediktor **selalu** menurunkan *deviance*, bahkan ketika prediktor itu tidak bermakna secara substantif untuk menjelaskan variabel _outcome_ ([*overfitting*](https://en.wikipedia.org/wiki/Overfitting)).
 
 $$\text{AIC} = -2\log L + 2k \qquad \text{BIC} = -2\log L + k\ln(n)$$
 
-Di mana k = jumlah parameter, n = ukuran sampel. **Makin kecil, makin baik — hanya bermakna untuk membandingkan model.**
+Di mana k = jumlah parameter, n = ukuran sampel. **Makin kecil, makin baik — hanya bermakna kalau ada model lain yang digunakan sebagai perbandingan.**
 
 | Model | Prediktor | AIC | BIC | |
 |-------|-----------|:---:|:---:|-|
@@ -267,13 +286,17 @@ Di mana k = jumlah parameter, n = ukuran sampel. **Makin kecil, makin baik — h
 | Model 2 | Jarak + Keterlibatan | 489.7 | 502.1 | ← Terbaik |
 | Model 3 | Jarak + Keterlibatan + Usia + Gender | 493.2 | 518.9 | |
 
-Model 2 menang: *fit* bagus tanpa terlalu kompleks. BIC lebih ketat dari AIC karena penaltinya lebih besar — pilih BIC jika prioritasnya parsimoni.
+: {tbl-colwidths="[10,42,12,12,24]"}
+
+Model 2 paling baik: model *fit* baik (AIC lebih kecil dari Model 1) dan tidak terlalu kompleks (BIC paling kecil diantara model yang lain). BIC lebih ketat dari AIC karena penaltinya lebih besar. Pilih BIC jika prioritasnya memilih model yang paling sederhana (parsimoni).
 
 ## Pseudo R² — seberapa banyak variasi yang dijelaskan?
 
-**Masalah:** Regresi logistik tidak punya R² seperti OLS karena tidak ada "total *variance*" yang bisa dibagi seperti dalam OLS.
+* Regresi logistik tidak punya R² seperti OLS karena tidak ada "total *variance*" yang bisa dibagi seperti dalam OLS.
+* **Solusinya Pseudo R²** 
+  — Ada beberapa versi, yang paling sering digunakan adalah **Nagelkerke R²:**
 
-**Solusi: Pseudo R²** — ada beberapa versi, yang paling sering dilaporkan adalah **Nagelkerke R²:**
+## Interpretasi Pseudo R²
 
 | Nagelkerke R² | Interpretasi |
 |:-------------:|--------------|
@@ -282,10 +305,11 @@ Model 2 menang: *fit* bagus tanpa terlalu kompleks. BIC lebih ketat dari AIC kar
 | 0.40–0.60 | Baik |
 | > 0.60 | Sangat baik |
 
-::: {.callout-warning}
-#### Interpretasi Pseudo R²
-Pseudo R² **bukan** "proporsi varians yang dijelaskan" seperti R² OLS, jadi jangan diinterpretasikan dengan cara yang sama! Lebih tepat diartikan sebagai "peningkatan *fit* dibanding _null model_." Nilainya cenderung lebih rendah dari R² OLS.
-:::
+: {tbl-colwidths="[30,70]"}
+
+* Pseudo R² **bukan** "proporsi varians yang dijelaskan" seperti R² OLS, jadi jangan diinterpretasikan dengan cara yang sama! Lebih tepat diartikan sebagai "peningkatan *fit* dibanding _null model_." Nilainya cenderung lebih rendah dari R² OLS.
+
+* Cara melaporkan yang benar: _"Nagelkerke R² = .32, mengindikasikan bahwa model dengan prediktor memberikan peningkatan *fit* yang substansial dibandingkan model tanpa prediktor."_
 
 # Model dengan Banyak Prediktor {background-color="#14497F" .center}
 
@@ -295,13 +319,17 @@ Pseudo R² **bukan** "proporsi varians yang dijelaskan" seperti R² OLS, jadi ja
 
 Contoh: Mahasiswa yang tinggal jauh dari pokjar cenderung punya keterlibatan akademik yang lebih rendah (karena kesempatan terlibat lebih terbatas). Efek jarak dan efek keterlibatan **saling tumpang tindih**.
 
-| Prediktor | *Unadjusted* OR | *Adjusted* OR | 95% CI |
+| Prediktor | Unadjusted OR | Adjusted OR | 95% CI |
 |-----------|:--------------:|:-------------:|--------|
 | Jarak (per 10 km) | 1.70 | 1.63 | [1.21, 2.19] |
 | Keterlibatan akademik | 0.48 | 0.52 | [0.38, 0.71] |
 | Usia (per 10 tahun) | 1.15 | 1.08 | [0.88, 1.32] |
 
+: {tbl-colwidths="[34,20,20,26]"}
+
 Setelah dikontrol, efek jarak sedikit mengecil — sebagian efeknya bekerja *melalui* keterlibatan akademik.
+
+## Adjusted OR — efek prediktor setelah mengontrol variabel lain
 
 ::: {.callout-warning}
 #### Laporkan *Adjusted* OR
@@ -314,6 +342,15 @@ Dalam artikel ilmiah, **selalu laporkan *adjusted* OR** dari model dengan predik
 
 $$\text{logit}(P) = \beta_0 + \beta_1(\text{Jarak}) + \beta_2(\text{Keterlibatan}) + \beta_3(\text{Jarak} \times \text{Keterlibatan})$$
 
+Masukkan suku interaksi (_interaction terms_) antara `jarak` dan `keterlibatan` di dalam model.
+
+::: {.callout-important}
+#### Selalu _Centering_ Prediktor!
+Agar _main effects_ dapat diinterpretasi, maka semua prediktor yang dibuatkan suku interaksinya, harus selalu di-_centering_. Artinya, nilai setiap orang dikurangi dengan nilai rata-rata, sehingga nilai 0 = rata-rata.
+:::
+
+## Interaksi — efek prediktor yang berbeda antar subgrup
+
 **Hasil:** β₃ = −0.08, p = .03 → Interaksi signifikan!
 
 | Subgrup | Efek jarak pada *odds* putus studi | Interpretasi |
@@ -321,7 +358,10 @@ $$\text{logit}(P) = \beta_0 + \beta_1(\text{Jarak}) + \beta_2(\text{Keterlibatan
 | Keterlibatan **rendah** | OR = 1.12 per km | Jarak sangat berpengaruh |
 | Keterlibatan **tinggi** | OR = 1.02 per km | Jarak hampir tidak berpengaruh |
 
+: {tbl-colwidths="[25,35,40]"}
+
 ::: {.callout-tip}
+#### Interpretasi
 Keterlibatan akademik yang tinggi bisa **men-*buffer*** dampak jarak yang jauh, sehingga bisa dijadikan dasar untuk merancang intervensi yang tepat sasaran.
 :::
 
@@ -343,7 +383,7 @@ Keterlibatan akademik yang tinggi bisa **men-*buffer*** dampak jarak yang jauh, 
 
 * *Forward*: tambahkan prediktor satu per satu berdasarkan p-value
 * *Backward*: mulai dari semua prediktor, hapus yang tidak signifikan
-* **Masalah:** *Overfitting*, inflasi *Type I error*, hasil tidak *replicable*
+* **Masalah:** *Overfitting*, inflasi *Type I error*, hasil sulit dicoba-ulang (replikasi)
 
 :::
 ::::
@@ -395,11 +435,13 @@ Cara memeriksa dan interpretasinya sama persis seperti dalam regresi OLS — gun
 | 5–10 | *Moderate* — perlu hati-hati |
 | > 10 | Masalah serius |
 
-**Contoh masalah:**
-"Durasi studi (semester)" dan "biaya pendidikan kumulatif" — keduanya naik bersama, korelasi r = 0.95 → VIF ≈ 18 → tidak bisa diestimasi secara stabil.
+: {tbl-colwidths="[15,85]"}
+
+**Contoh problem:**
+"Durasi studi (semester)" dan "biaya kuliah kumulatif" — keduanya naik bersama, korelasi r = 0.95 → VIF ≈ 18 → model sulit diestimasi secara stabil.
 
 ::: {.callout-tip}
-Jamovi menampilkan VIF secara otomatis di *output* regresi logistik — centang **Collinearity Statistics** di opsi **Model Coefficients**.
+`jamovi` menampilkan VIF secara otomatis di *output* regresi logistik — centang **Collinearity Statistics** di opsi **Model Coefficients**.
 :::
 
 ## *Perfect separation* — ketika prediktor _too goood to be true_
@@ -415,21 +457,23 @@ Jamovi menampilkan VIF secara otomatis di *output* regresi logistik — centang 
 
 * Koefisien sangat besar (β > 10 atau < −10)
 * *Standard error* sangat besar
-* Pesan "Algorithm did not converge"
+* Pesan _error_ `Algorithm did not converge`
 
-Jika ini terjadi, cek distribusi prediktor dan *outcome* — sering kali tanda bahwa ada **kategori yang terlalu kecil**.
+Jika ini terjadi, cek distribusi prediktor dan *outcome* karena umumnya berarti bahwa ada **kejadian yang frekuensi terjadinya terlalu kecil**.
 :::
 
 # Evaluasi Akurasi Prediksi {background-color="#14497F" .center}
 
-## *Confusion matrix* — dasar evaluasi akurasi
+## *Confusion matrix* — dasar evaluasi akurasi klasifikasi model
 
-Setelah model difit, gunakan *threshold default* P ≥ 0.50 → prediksi *outcome* terjadi; P < 0.50 → prediksi tidak terjadi.
+Setelah model diestimasi, gunakan *threshold default* P ≥ 0.50 → prediksi *outcome* terjadi; P < 0.50 → prediksi tidak terjadi.
 
 |  | Prediksi: Tidak Terjadi | Prediksi: Terjadi |
 |--|:---:|:---:|
 | **Aktual: Tidak Terjadi** | 240 **(TN)** | 30 **(FP)** |
 | **Aktual: Terjadi** | 50 **(FN)** | 130 **(TP)** |
+
+: {tbl-colwidths="[30,35,35]"}
 
 * **TP** (*True Positive*): Prediksi terjadi → aktual terjadi ✓
 * **TN** (*True Negative*): Prediksi tidak terjadi → aktual tidak terjadi ✓
@@ -446,11 +490,13 @@ Dari *confusion matrix* tadi (TP=130, TN=240, FP=30, FN=50, N=450):
 | **Sensitivity** | TP/(TP+FN) | 72.2% | Dari yang benar-benar terjadi, berapa % terdeteksi? |
 | **Specificity** | TN/(TN+FP) | 88.9% | Dari yang tidak terjadi, berapa % diprediksi benar? |
 
+: {tbl-colwidths="[15,18,10,57]"}
+
 ::: {.callout-tip}
 #### Trade-off *sensitivity* vs *specificity*
 
 * **Screening risiko bunuh diri** → prioritaskan *sensitivity* tinggi — lebih baik *over-identify* daripada ada yang terlewat
-* **Diagnosis klinis formal** → prioritaskan *specificity* tinggi — *false positive* berdampak stigma dan biaya
+* **Diagnosis klinis formal** → prioritaskan *specificity* tinggi — *false positive* berdampak stigma dan biaya perawatan
 
 *Default threshold* = 0.50 — bisa disesuaikan sesuai konteks dan pertimbangan etis.
 :::
@@ -461,14 +507,66 @@ Dari *confusion matrix* tadi (TP=130, TN=240, FP=30, FN=50, N=450):
 
 | AUC | Interpretasi |
 |:---:|:-------------|
-| 0.50 | Tidak lebih baik dari tebakan |
+| 0.50 | Tidak lebih baik dari tebakan acak |
 | 0.60–0.70 | Lemah |
 | 0.70–0.80 | Cukup |
 | 0.80–0.90 | Baik |
-| > 0.90 | Sangat baik — atau *overfitting*? Cek dulu! |
+| > 0.90 | Sangat baik — atau model *overfitting*? Cek dulu! |
+
+: {tbl-colwidths="[15,85]"}
 
 ::: {.callout-note}
-ROC *curve* dan AUC tersedia di jamovi. Pembahasan mendalam tentang analisis ROC — termasuk PPV/NPV, Youden's Index, dan penentuan *cut-off* optimal — ada di **Bagian 4**.
+ROC *curve* dan AUC tersedia di jamovi. Pembahasan mendalam tentang analisis ROC — termasuk PPV/NPV, Youden's Index, dan penentuan *cut-off* optimal — ada di [**Bagian 4**](/docs/slides/bagian-4.html).
+:::
+
+# Demonstrasi di `jamovi` {background-color="#14497F" .center}
+
+## Konteks: apa yang memprediksi putus studi (_dropout_) dalam PJJ?
+
+* Dataset: **Dataset Contoh Regresi Logistik** ([`dataset-dropout.omv`](materials/dataset-dropout.omv))
+
+**Variabel:**
+- `putus_studi`: outcome (0 = lanjut, 1 = putus studi sebelum semester ke-5)
+- `usia`: 18–65 tahun
+- `jenis_kelamin`: 0 = Perempuan, 1 = Laki-laki
+- `metode_kuliah`: 1 = Tatap Muka Terbatas, 2 = Daring, 3 = Mandiri, tanpa kuliah
+- `kecemasan_akademik`: skor kecemasan awal (0–63)
+- `jarak_pokjar_km`: 0.5–50 km
+- `keterlibatan_akademik`: skor keterlibatan (1–7)
+
+## Langkah-langkah di `jamovi`
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Menjalankan regresi logistik:**
+
+1. **Analyses → Regression → Logistic Regression → 2 Outcomes (Binomial)**
+2. Masukkan variabel *outcome* ke **Dependent Variable**
+3. Masukkan prediktor ke **Covariates** (kontinu) atau **Factors** (kategorikal)
+4. `jamovi` akan melakukan *dummy coding* secara otomatis untuk variabel kategorikal
+
+:::
+::: {.column width="50%"}
+
+**Output yang harus dicek:**
+
+☑ *Model Fit* — Model χ², Nagelkerke R²
+
+☑ *Model Coefficients* — β, OR, 95% CI, p
+
+☑ *Collinearity Statistics* — VIF
+
+☑ *Prediction Table* — akurasi, *sensitivity*, *specificity*
+
+☑ *ROC Curve* — AUC
+
+:::
+::::
+
+::: {.callout-tip}
+#### Urutan membaca output
+Omnibus (Model χ²) → Pseudo R² → Koefisien per prediktor (OR + CI) → VIF → Akurasi klasifikasi → AUC
 :::
 
 # Pelaporan Hasil {background-color="#14497F" .center}
@@ -499,8 +597,6 @@ ROC *curve* dan AUC tersedia di jamovi. Pembahasan mendalam tentang analisis ROC
 
 ## Menerjemahkan OR ke bahasa yang dipahami semua orang
 
-Jangan serahkan interpretasi ke pembaca — terjemahkan OR ke kalimat yang konkrit.
-
 **Contoh: OR = 1.05 untuk jarak ke pokjar (per 1 km)**
 
 * **Opsi 1 — Persentase perubahan *odds*:**
@@ -513,67 +609,23 @@ Jangan serahkan interpretasi ke pembaca — terjemahkan OR ke kalimat yang konkr
   "Mahasiswa yang tinggal 5 km dari pokjar memiliki peluang ~20% putus studi; mahasiswa yang tinggal 15 km memiliki peluang ~30%."
 
 ::: {.callout-warning}
-**OR ≠ *Risk Ratio* (RR).** Jangan tulis "X kali lebih *mungkin*" untuk OR — itu bahasa RR. OR harus dikatakan: "X kali lebih tinggi ***odds***-nya" (Zhang & Yu, 1998, *JAMA*). Perbedaan ini penting terutama jika prevalensi *outcome* > 10%.
+**OR ≠ *Risk Ratio* (RR).** Jangan gunakan "X kali lebih *mungkin*" untuk interpretasi OR, karena ini adalah interpretasi RR. OR harus diinterpretasi: "X kali lebih tinggi ***odds***-nya" ([Zhang & Yu, 1998](https://jamanetwork.com/journals/jama/fullarticle/188182)). Perbedaan ini penting terutama jika prevalensi *outcome* > 10%.
 :::
 
-## Enam kesalahan umum
+## 6️⃣ kesalahan umum
 
 ::: {.incremental}
 1. **Mengaburkan OR dengan *Risk Ratio*** — "X kali lebih mungkin" bukan cara yang benar untuk menginterpretasikan OR. Kata yang tepat: "X kali lebih tinggi *odds*-nya".
 
-2. **Mengklaim kausalitas** — Regresi logistik adalah korelasional. Kausalitas membutuhkan desain eksperimental atau *quasi*-eksperimental.
+2. **Mengklaim kausalitas** — Regresi logistik adalah analisis korelasional. Kausalitas harus memenuhi asumsi **temporalitas** dan kendali terhadap **_confounding_**, sehingga harus diuji dengan desain eksperimental atau *quasi*-eksperimental.
 
 3. **Mengabaikan multikolinearitas** — "Usia" dan "tahun lahir" keduanya dimasukkan sebagai prediktor? Sudah pasti multikolinear.
 
 4. **Tidak memeriksa asumsi** — Terutama linearitas dalam *logit* dan kemungkinan *perfect separation*.
 
-5. **Hanya melaporkan prediktor yang signifikan** — Laporkan **semua** prediktor yang dimasukkan ke model — bukan *cherry-pick* yang p < .05.
+5. **Hanya melaporkan prediktor yang signifikan** — Laporkan **semua** prediktor yang dimasukkan ke model, jangan hanya yang "signifikan" (_p_ < .05.)
 
 6. **EPV terlalu rendah** — *Events per variable* (EPV): minimal 10 kejadian per prediktor. Dengan hanya 50 kejadian (*events*), jangan masukkan lebih dari 5 prediktor — estimasi akan tidak stabil.
-:::
-
-# Demonstrasi di jamovi {background-color="#14497F" .center}
-
-## Konteks: apa yang memprediksi pemberian dukungan sosial?
-
-* Dataset: **Dataset Contoh Regresi Logistik** (`dataset-social-support.omv`)
-  - Dapat diunduh dari *navbar* di laman mata kuliah
-
-* Pertanyaan penelitian berkaitan dengan faktor-faktor yang memprediksi *outcome* biner dalam konteks psikologi klinis/sosial
-
-## Langkah-langkah di jamovi
-
-:::: {.columns}
-::: {.column width="50%"}
-
-**Menjalankan regresi logistik:**
-
-1. **Analyses → Regression → Logistic Regression → 2 Outcomes (Binomial)**
-2. Masukkan variabel *outcome* ke **Dependent Variable**
-3. Masukkan prediktor ke **Covariates** (kontinu) atau **Factors** (kategorikal)
-4. Jamovi akan melakukan *dummy coding* secara otomatis untuk variabel kategorikal
-
-:::
-::: {.column width="50%"}
-
-**Output yang harus dicek:**
-
-☑ *Model Fit* — Model χ², Nagelkerke R²
-
-☑ *Model Coefficients* — β, OR, 95% CI, p
-
-☑ *Collinearity Statistics* — VIF
-
-☑ *Prediction Table* — akurasi, *sensitivity*, *specificity*
-
-☑ *ROC Curve* — AUC
-
-:::
-::::
-
-::: {.callout-tip}
-#### Urutan membaca output
-Omnibus (Model χ²) → Pseudo R² → Koefisien per prediktor (OR + CI) → VIF → Akurasi klasifikasi → AUC
 :::
 
 ## Ada pertanyaan❓

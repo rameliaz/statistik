@@ -52,7 +52,6 @@ Klik _navigation bar_ yang mengarah pada PDF materi, kemudian tekan `ctrl` dan `
 * Model dengan banyak prediktor: *adjusted* OR dan efek interaksi
 * Asumsi regresi logistik (lebih longgar dari OLS: tidak perlu normalitas residual atau homoskedastisitas)
 * Evaluasi akurasi prediksi: *confusion matrix*, *sensitivity*, *specificity*, AUC
-* Pelaporan hasil sesuai APA & terjemahan OR ke bahasa yang dipahami semua orang
 * Kesalahan umum: OR vs. *risk ratio*, *events per variable* (EPV), *stepwise selection*
 
 ### Bagian 4️⃣: Analisis ROC (*Receiver Operating Characteristic*)

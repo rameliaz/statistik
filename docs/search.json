@@ -623,32 +623,53 @@
     "text": "Diagnostik model: deteksi outliers 3️⃣\n\n\n\nDari output di samping, dapat disimpulkan bahwa apabila outlier tidak disertakan dalam analisis, maka perubahan rerata, median, dan standar deviasi keseluruhan sampel kurang dari 1 dari nilai asalnya."
   },
   {
-    "objectID": "slides/bagian-2.html#cara-melaporkannya-dalam-manuskrip",
-    "href": "slides/bagian-2.html#cara-melaporkannya-dalam-manuskrip",
+    "objectID": "slides/bagian-2.html#cara-melaporkannya-dalam-manuskrip-1",
+    "href": "slides/bagian-2.html#cara-melaporkannya-dalam-manuskrip-1",
     "title": "Regresi Linear (Ordinary Least Square)",
-    "section": "Cara melaporkannya dalam manuskrip",
-    "text": "Cara melaporkannya dalam manuskrip\n“… untuk menguji hipotesis penelitian, peneliti melakukan analisis regresi ordinary least square (OLS). Hasil analisis menunjukkan bahwa model cocok menggambarkan data dan mampu menjelaskan kurang dari 40% varians tingkat kemandirian siswa (F(1,398) = 221, p = .001, R2 = .357).\nKecenderungan neuroticism ibu berkontribusi berarti dalam menjelaskan varians tingkat kemandirian siswa, dimana perubahan kecenderungan neuroticism sebesar 1 poin diasosiasikan dengan perubahan tingkat kemandirian anak sebesar 0.544 (B = 0.544 95% CI [0.472, 0.616], SE = 0.036, t = 14.88, p = .001). Berbeda dengan yang dihipotesiskan sebelumnya, ibu dengan tingkat neuroticism yang tinggi justru mengasuh anak dengan tingkat kemandirian yang juga tinggi.\nSetelah dilakukan diagnostik, varians yang tidak dapat dijelaskan oleh model berdistribusi normal dan ketika dikorelasikan dengan nilai prediktif tingkat kemandirian siswa dan kecenderungan neuroticism ibu, maka menghasilkan varians yang homogen (homoskedastik).\nDiagnostik outlier dilakukan dengan menggunakan Cook’s distance, dan menghasilkan kesimpulan bahwa apabila outlier tidak disertakan dalam model, maka perubahan rerata, nilai tengah, dan simpangan baku kurang dari satu dari nilai awalnya, sehingga tidak berpotensi mendistorsi garis regresi…”"
+    "section": "Cara melaporkannya dalam manuskrip 1️⃣",
+    "text": "Cara melaporkannya dalam manuskrip 1️⃣\n\nUntuk menguji hipotesis penelitian, peneliti melakukan analisis regresi ordinary least square (OLS). Hasil analisis menunjukkan bahwa model cocok menggambarkan data dan mampu menjelaskan kurang dari 40% varians tingkat kemandirian siswa (F(1,398) = 221, p = .001, R2 = .357). Kecenderungan neuroticism ibu berkontribusi berarti dalam menjelaskan varians tingkat kemandirian siswa, dimana perubahan kecenderungan neuroticism sebesar 1 poin diasosiasikan dengan perubahan tingkat kemandirian anak sebesar 0.544 (B = 0.544 95% CI [0.472, 0.616], SE = 0.036, t = 14.88, p = .001). Berbeda dengan yang dihipotesiskan sebelumnya, ibu dengan tingkat neuroticism yang tinggi justru mengasuh anak dengan tingkat kemandirian yang juga tinggi. Setelah dilakukan diagnostik, varians yang tidak dapat dijelaskan oleh model berdistribusi normal dan ketika dikorelasikan dengan nilai prediktif tingkat kemandirian siswa dan kecenderungan neuroticism ibu, maka menghasilkan varians yang homogen (homoskedastik)."
+  },
+  {
+    "objectID": "slides/bagian-2.html#cara-melaporkannya-dalam-manuskrip-2",
+    "href": "slides/bagian-2.html#cara-melaporkannya-dalam-manuskrip-2",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Cara melaporkannya dalam manuskrip 2️⃣",
+    "text": "Cara melaporkannya dalam manuskrip 2️⃣\n\nDiagnostik outlier dilakukan dengan menggunakan Cook’s distance, dan menghasilkan kesimpulan bahwa apabila outlier tidak disertakan dalam model, maka perubahan rerata, nilai tengah, dan simpangan baku kurang dari satu dari nilai awalnya, sehingga tidak berpotensi mendistorsi garis regresi."
   },
   {
     "objectID": "slides/bagian-2.html#latihan-2",
     "href": "slides/bagian-2.html#latihan-2",
     "title": "Regresi Linear (Ordinary Least Square)",
     "section": "Latihan 2️⃣",
-    "text": "Latihan 2️⃣\n\nTernyata, neuroticism berkorelasi positif dengan tingkat kemandirian.\nMarimar tidak menyerah - ia lalu menambahkan interaksi antara neuroticism dengan trust\n\nMungkin saja ibu yang percaya/kurang percaya bahwa anak dapat berkembang secara natural, korelasi antara neuroticism dengan kemandirian akan negatif, sesuai.\nSelain itu, ia ingin tahu kaitan antara pendapatan keluarga dengan tingkat kemandirian anak.\n\nTambahkan variabel trust, neu, dan hi dalam kolom covariates."
+    "text": "Latihan 2️⃣\n\nTernyata, neuroticism berkorelasi positif dengan tingkat kemandirian.\n\nIni berbeda dengan hipotesis Marimar sebelumnya.\n\nMarimar tidak menyerah - ia lalu menambahkan interaksi antara neuroticism dengan trust\n\nMungkin saja ibu yang percaya/kurang percaya bahwa anak dapat berkembang secara natural, korelasi antara neuroticism dengan kemandirian akan negatif, sesuai.\nSelain itu, ia ingin tahu kaitan antara pendapatan keluarga dengan tingkat kemandirian anak.\n\nTambahkan variabel trust, neu, dan hi dalam kolom covariates."
+  },
+  {
+    "objectID": "slides/bagian-2.html#regresi-dengan-suku-interaksi-interaction-terms",
+    "href": "slides/bagian-2.html#regresi-dengan-suku-interaksi-interaction-terms",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Regresi dengan suku interaksi (interaction terms)",
+    "text": "Regresi dengan suku interaksi (interaction terms)\nAda 2️⃣ hal yang diestimasi:\nMain effect\n\nArtinya, efek langsung satu prediktor terhadap outcome, tanpa mempertimbangkan nilai prediktor lain dalam model (prediktor lain di-hold constant = 0)\nTetapi, dalam model regresi dengan suku interaksi, main effect merupakan efek kondisional pada nilai tertentu dari moderator, yaitu rata-ratanya setelah centering\nContoh: ketika main effect neuroticism (b) = 0.31, maka b adalah efek neuroticism terhadap kemandirian ketika trust in organismic development = rata-rata\n\nInteraction effect\n\nEfek interaksi adalah interpretasi substantif dari koefisien (slope) suku interaksi, yaitu seberapa besar efek X1 terhadap outcome berubah setiap satu unit perubahan X2\nJika signifikan, artinya hubungan antara X1 dan outcome tidak konstan, melainkan berbeda-beda tergantung nilai X2"
+  },
+  {
+    "objectID": "slides/bagian-2.html#mean-centering-pada-suku-interaksi-interaction-terms",
+    "href": "slides/bagian-2.html#mean-centering-pada-suku-interaksi-interaction-terms",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Mean-centering pada suku interaksi (interaction terms)",
+    "text": "Mean-centering pada suku interaksi (interaction terms)\n\nKetika melakukan analisis regresi dengan suku interaksi, maka kita perlu melakukan prosedur mean centering untuk prediktor dan moderator.\nAlasannya, koefisien main effect akan lebih mudah diinterpretasi\n\nTanpa centering, koefisien untuk X1 adalah efek X1 ketika X2 = 0, yang tidak memiliki makna substantif\nDengan centering, koefisien X1 adalah efek X1 ketika X2 berada di rata-ratanya\n\nSelain itu, mencegah multikolinearitas antara prediktor dan suku interaksi\n\nTanpa centering, variabel interaksi (X1 × X2) sangat berkorelasi dengan X1 dan X1 secara terpisah karena merupakan hasil kali keduanya\nCentering tidak menghilangkan multikolinearitas secara substantif (yang alasannya conceptual overlap), tetapi hanya mengurangi korelasi artifisial antara main effect dan suku interaksi"
   },
   {
     "objectID": "slides/bagian-2.html#latihan-2-1",
     "href": "slides/bagian-2.html#latihan-2-1",
     "title": "Regresi Linear (Ordinary Least Square)",
     "section": "Latihan 2️⃣",
-    "text": "Latihan 2️⃣\n\nLakukan semua langkah yang sudah dilakukan di Latihan 1️⃣\nPada opsi model builder, klik add new block\n\nKlik Block 1, sampai keluar shading di pinggir kotak, lalu masukkan hi\nKlik Block 2, sampai keluar shading di pinggir kotak\nKemudian sambil menekan tombol ctrl, klik neu kemudian trust, lalu klik tanda panah yang kedua dan pilih interaction\n\nDengan begitu kita punya 2 model regresi\n\nModel 1 prediktornya hi\nModel 2 prediktornya hi dan interaksi antara neu dengan trust\n\nPada opsi assumption checks, tambahkan centang pada collinearity statistics\nPada opsi model fit, klik AIC dan BIC.\nPada opsi estimated marginal means, masukkan neu dan trust dalam terms 1"
+    "text": "Latihan 2️⃣\n\nLakukan semua langkah yang sudah dilakukan di Latihan 1️⃣\nPada opsi model builder, klik add new block\n\nKlik Block 1, sampai keluar shading di pinggir kotak, lalu masukkan hi\nKlik Block 2, sampai keluar shading di pinggir kotak\nUntuk membuat suku interaksi, sambil menekan tombol ctrl, klik neu_mc kemudian trust_mc, lalu klik tanda panah yang kedua dan pilih interaction\nMasukkan neu_mc dan trust_mc sebagai prediktor individual untuk mengestimasi main effect\n\nDengan begitu kita punya 2 model regresi\n\nModel 1 prediktornya hi\nModel 2 prediktornya hi dan interaksi antara neu dengan trust (main effect + interction effect)\n\nPada opsi assumption checks, tambahkan centang pada collinearity statistics\nPada opsi model fit, klik AIC dan BIC.\nPada opsi estimated marginal means, masukkan neu_mc dan trust_mc dalam terms 1"
   },
   {
     "objectID": "slides/bagian-2.html#model-fit-2",
     "href": "slides/bagian-2.html#model-fit-2",
     "title": "Regresi Linear (Ordinary Least Square)",
     "section": "Model fit",
-    "text": "Model fit\n\n\nModel 2 (F(2,397) = 146, p = .001, Adj. R2 = .42) dapat menjelaskan varians tingkat kemandirian anak lebih baik daripada Model 1 (F(1,398) = 172, p = .001, Adj. R2 = .30), dengan overlapping variances sebesar 42% dibanding 30%.\nInformation criteria (AIC & BIC)\n\nDigunakan untuk mengakomodasi kelemahan dari R2 (apabila prediktor dalam model ditambah terus, maka nilai R2 akan terus naik)\nKelemahan R2 ini serupa dengan prinsip reliabilitas dan jumlah aitem\nRumus dari information criteria memberi “penalti” kepada model yang mengandung lebih banyak variabel prediktor\nPilih model dengan AIC dan BIC yang terkecil (Model 2)"
+    "text": "Model fit\n\nModel 2 (F(2,397) = 74.3, p = .001, Adj. R2 = .424) dapat menjelaskan varians tingkat kemandirian anak lebih baik daripada Model 1 (F(1,398) = 171.8, p = .001, R2 = .300), dengan overlapping variances sebesar 42.4% dibanding 30%.\nInformation criteria (AIC & BIC)\n\nDigunakan untuk mengakomodasi kelemahan dari R2 (apabila prediktor dalam model ditambah terus, maka nilai R2 akan terus naik)\nKelemahan R2 ini serupa dengan prinsip reliabilitas dan jumlah aitem\nRumus dari information criteria memberi “penalti” kepada model yang mengandung lebih banyak variabel prediktor\nPilih model dengan AIC dan BIC yang terkecil (Model 2)"
   },
   {
     "objectID": "slides/bagian-2.html#model-comparison",
@@ -662,28 +683,42 @@
     "href": "slides/bagian-2.html#koefisien-model-2",
     "title": "Regresi Linear (Ordinary Least Square)",
     "section": "Koefisien model 2",
-    "text": "Koefisien model 2\n\nPendapatan keluarga dapat menjelaskan variasi kemandirian anak (B = 0.200 95% CI [0.103, 0.297], SE = 0.04, t = 4.06, p = .001).\nArtinya, anak yang dibesarkan di keluarga dengan tingkat pendapatan yang tinggi, maka cenderung lebih mandiri.\nInteraksi antara neuroticism dengan trust in organismic development juga signifikan dalam menjelaskan varians kemandirian anak (B = 0.019 95% CI [0.015, 0.023], SE = 0.002, t = 9.15, p = .001)."
+    "text": "Koefisien model 2\n\nPendapatan keluarga dapat menjelaskan variasi kemandirian anak (B = 0.153 95% CI [0.025, 0.281], SE = 0.065, t = 2.354, p = .019). Artinya, anak yang dibesarkan di keluarga dengan tingkat pendapatan yang tinggi, maka cenderung lebih mandiri.\nMain effect neuroticism (B = 0.387 95% CI [0.261, 0.514], SE = 0.064, t = 6.018, p = .001) dan trust in organismic development (B = 0.391 95% CI [0.275, 0.508], SE = 0.059, t = 6.609, p = .001) secara independen menjelaskan tingkat kemandirian anak.\nTidak ada bukti bahwa ada interaksi antara neuroticism dengan trust in organismic development dalam menjelaskan varians kemandirian anak (B = -0.005 95% CI [-0.019, 0.018], SE = 0.009, t = -0.05, p = .955)."
   },
   {
     "objectID": "slides/bagian-2.html#estimated-marginal-means",
     "href": "slides/bagian-2.html#estimated-marginal-means",
     "title": "Regresi Linear (Ordinary Least Square)",
     "section": "Estimated Marginal Means",
-    "text": "Estimated Marginal Means\n\n\n\nInterpretasi slopes pada interaction terms:\n\nUnstandardized B yang positif artinya, pada ibu dengan trust in organismic development yang tinggi (+1SD), korelasi antara kecenderungan neuroticism dengan kemandirian anak juga semakin positif/menguat."
+    "text": "Estimated Marginal Means\n\n\n\nInterpretasi slopes pada suku interaksi - bisa di-probe dengan estimated marginal means\n\nDalam konteks analisis yang kita lakukan, suku interaksi nonsignifikan, sehingga kita melihat dua garis regresi yang sejajar, tidak berpotongan\nArtinya, masing-masing prediktor berkontribusi menjelaskan varians outcome secara independen"
+  },
+  {
+    "objectID": "slides/bagian-2.html#estimated-marginal-means-1",
+    "href": "slides/bagian-2.html#estimated-marginal-means-1",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Estimated Marginal Means",
+    "text": "Estimated Marginal Means\nSeandainya suku interaksi signifikan, lihat tanda slope-nya\n\nUnstandardized B yang positif artinya, pada ibu dengan trust in organismic development yang tinggi (+1SD), korelasi antara kecenderungan neuroticism dengan kemandirian anak juga semakin positif/menguat\nUnstandardized B yang negatif, sebaliknya, ibu dengan kecenderungan trust yang di atas rata-rata (+1SD), korelasi antara neuroticism dengan kemandirian justru melemah/negatif"
   },
   {
     "objectID": "slides/bagian-2.html#diagnostik-kolinearitas",
     "href": "slides/bagian-2.html#diagnostik-kolinearitas",
     "title": "Regresi Linear (Ordinary Least Square)",
     "section": "Diagnostik kolinearitas",
-    "text": "Diagnostik kolinearitas\n\n\n\nDapat dideteksi dengan melakukan analisis melihat variance inflated factors (VIF).\n\nBila VIF &lt; 2.5, maka multi-kolinearitas kemungkinan besar tidak terjadi.\n\nPenelitian longitudinal punya potensi terjadinya autokorelasi (residual time 1 dan time 2 berkorelasi)\n\nDapat dicek dengan tes Durbin-Watson\nBila nilai p analisis autokorelasi &gt; .05, maka autokorelasi residual tidak terjadi."
+    "text": "Diagnostik kolinearitas\n\n\n\nDapat dideteksi dengan melakukan analisis melihat variance inflated factors (VIF)\n\nBila VIF &lt; 5, maka multi-kolinearitas tidak terjadi\n\nPenelitian longitudinal punya potensi terjadinya autokorelasi (residual time 1 dan time 2 berkorelasi)\n\nDapat dicek dengan tes Durbin-Watson\nBila nilai p analisis autokorelasi &gt; .05, maka autokorelasi residual tidak terjadi\nUmumnya, untuk data cross-sectional, autokorelasi tidak terlalu relevan"
   },
   {
     "objectID": "slides/bagian-2.html#bagaimana-melaporkannya",
     "href": "slides/bagian-2.html#bagaimana-melaporkannya",
     "title": "Regresi Linear (Ordinary Least Square)",
     "section": "Bagaimana melaporkannya?",
-    "text": "Bagaimana melaporkannya?\n“…untuk menginvestigasi keterkaitan antara pendapatan keluarga, kecenderungan neuroticism ibu, dan kepercayaan ibu bahwa perkembangan anak dapat terjadi secara natural dengan tingkat kemandirian anak, peneliti melakukan analisis regresi linear hirarkial dengan interaction terms. Peneliti menyusun dua model, dimana; model 1 mengestimasi varians tingkat kemandirian anak dengan pendapatan keluarga inti sebagai prediktor, sedangkan pada model 2 peneliti menambahkan prediktor berupa interaction terms antara neuroticism dengan trust.\nKetika dibandingkan, Model 1 dan Model 2 berbeda signifikan (F(1,397) = 83.7, p = .001). R2 bertambah sebesar 12.2% (ΔR2 = .122). Model 2 (F(2,397) = 146, p = .001, Adj. R2 = .420, AIC = 2472, BIC = 2488) dapat menjelaskan varians tingkat kemandirian anak lebih baik daripada Model 1 (F(1,398) = 172, p = .001, Adj. R2 = .300, AIC = 2547, BIC = 2559).\nPendapatan keluarga dapat menjelaskan variasi kemandirian anak (B = 0.200 95% CI [0.103, 0.297], SE = 0.04, t = 4.06, p = .001). Interaksi antara neuroticism dengan trust juga signifikan (B = 0.019 95% CI [0.015, 0.023], SE = 0.002, t = 9.15, p = .001). Artinya, korelasi antara kecenderungan neuroticism ibu dengan kemandirian anak akan menguat pada ibu yang trust nya tinggi.\nPotensi multikolinearitas dideteksi dengan VIF dan hasil analisis menunjukkan multikolinearitas kemungkinan besar tidak terjadi (VIF = 1.93)…”"
+    "text": "Bagaimana melaporkannya?\n\nUntuk menginvestigasi keterkaitan antara pendapatan keluarga, kecenderungan neuroticism ibu, dan kepercayaan ibu bahwa perkembangan anak dapat terjadi secara natural dengan tingkat kemandirian anak, peneliti melakukan analisis regresi linear hirarkial dengan interaction terms. Peneliti menyusun dua model, dimana; model 1 mengestimasi varians tingkat kemandirian anak dengan pendapatan keluarga inti sebagai prediktor, sedangkan pada model 2 peneliti menambahkan prediktor berupa interaction terms antara neuroticism dengan trust.\n\n\nKetika dibandingkan, Model 1 dan Model 2 berbeda signifikan (F(1,397) = 29.5, p = .001). R2 bertambah sedikit (ΔR2 = .128). Model 2 (F(2,397) = 74.3, p = .001, Adj. R2 = .429, AIC = 2472, BIC = 2496) dapat menjelaskan varians tingkat kemandirian anak sedikit lebih baik daripada Model 1 (F(1,398) = 171.8, p = .001, Adj. R2 = .300, AIC = 2547, BIC = 2559)."
+  },
+  {
+    "objectID": "slides/bagian-2.html#bagaimana-melaporkannya-1",
+    "href": "slides/bagian-2.html#bagaimana-melaporkannya-1",
+    "title": "Regresi Linear (Ordinary Least Square)",
+    "section": "Bagaimana melaporkannya?",
+    "text": "Bagaimana melaporkannya?\n\nPendapatan keluarga dapat menjelaskan variasi kemandirian anak (B = 0.153 95% CI [0.025, 0.281], SE = 0.065, t = 2.354, p = .019). Main effect neuroticism (B = 0.387 95% CI [0.261, 0.514], SE = 0.064, t = 6.018, p = .001) dan trust in organismic development (B = 0.391 95% CI [0.275, 0.508], SE = 0.059, t = 6.609, p = .001) secara independen menjelaskan tingkat kemandirian anak. Tidak ada bukti bahwa interaksi antara neuroticism dengan trust in organismic development dapat menjelaskan varians kemandirian anak (B = -0.005 95% CI [-0.019, 0.018], SE = 0.009, t = -0.05, p = .955).\n\n\nPotensi multikolinearitas dideteksi dengan VIF dan hasil analisis menunjukkan multikolinearitas kemungkinan tidak terjadi (VIF = 1.03 - 3.47)."
   },
   {
     "objectID": "slides/bagian-2.html#latihan-mandiri-1",
@@ -886,7 +921,7 @@
     "href": "slides/bagian-3.html#outcome-biner-ada-di-berbagai-konteks",
     "title": "Regresi Logistik Binomial",
     "section": "Outcome biner ada di berbagai konteks",
-    "text": "Outcome biner ada di berbagai konteks\n\nPutus studi PJJ: Sepertiga mahasiswa PJJ tidak menyelesaikan studinya sebelum semester kelima (Tinto, 1987; [Park & Choi, 2009(https://www.jstor.org/stable/jeductechsoci.12.4.207)])\nRelapse gangguan kecemasan: 40–60% pasien mengalami kekambuhan dalam jangka panjang setelah remisi (Bruce et al., 2005)\nTurnover karyawan: 15–20% per tahun dianggap normal; di atas angka itu menandakan masalah organisasi (SHRM, 2023)\nPercobaan bunuh diri: Sekitar 2.4% prajurit militer AS melakukan percobaan bunuh diri dalam satu tahun (Kessler et al., 2014)\n\n\n\n\n\n\n\nNote\n\n\nOutcome ini bukan skor 1–100 (data continous). Mereka adalah keputusan biner: terjadi (1) atau tidak terjadi (0). Kita membutuhkan metode statistik yang dirancang untuk memodelkan probabilitas kejadian seperti ini."
+    "text": "Outcome biner ada di berbagai konteks\n\nPutus studi PJJ: Sepertiga mahasiswa PJJ tidak menyelesaikan studinya sebelum semester kelima (Tinto, 1987; Park & Choi, 2009)\nRelapse gangguan kecemasan: 40–60% pasien mengalami kekambuhan dalam jangka panjang setelah remisi (Bruce et al., 2005)\nTurnover karyawan: 15–20% per tahun dianggap normal; di atas angka itu menandakan masalah organisasi (SHRM, 2023)\nPercobaan bunuh diri: Sekitar 2.4% prajurit militer AS melakukan percobaan bunuh diri dalam satu tahun (Kessler et al., 2014)\n\n\n\n\n\n\n\nOutcome Biner\n\n\nOutcome dari semua penelitian di atas bukan skor 1–100 (data continous). Mereka adalah keputusan biner: terjadi (1) atau tidak terjadi (0). Kita membutuhkan metode statistik yang dirancang untuk memodelkan probabilitas kejadian seperti ini."
   },
   {
     "objectID": "slides/bagian-3.html#regresi-linear-dan-prediksi-yang-mustahil",
@@ -907,35 +942,42 @@
     "href": "slides/bagian-3.html#probabilitas-1",
     "title": "Regresi Logistik Binomial",
     "section": "Probabilitas 1️⃣",
-    "text": "Probabilitas 1️⃣\n\\[P(A) = \\frac{\\text{jumlah kejadian A}}{\\text{total kemungkinan}}\\]\nContoh dari dataset PJJ (N = 450):\n\n\n\n\n\n\n\nKonteks\nProbabilitas\n\n\n\n\n135 dari 450 mahasiswa putus studi sebelum semester ke-5\nP(putus studi) = 0.30\n\n\n8 dari 200 mahasiswa pernah mencoba bunuh diri\nP(percobaan) = 0.04\n\n\n60 dari 200 karyawan resign dalam 1 tahun\nP(turnover) = 0.30"
+    "text": "Probabilitas 1️⃣\n\\[P(A) = \\frac{\\text{jumlah kejadian A}}{\\text{total kemungkinan}}\\]\nContoh:\n\n\n\n\n\n\n\nKonteks\nProbabilitas\n\n\n\n\n135 dari 450 mahasiswa putus studi sebelum semester ke-5\nP(putus studi) = 0.30\n\n\n8 dari 200 mahasiswa pernah mencoba bunuh diri\nP(percobaan) = 0.04\n\n\n60 dari 200 karyawan resign dalam 1 tahun\nP(turnover) = 0.30"
   },
   {
-    "objectID": "slides/bagian-3.html#probabilitas-1-1",
-    "href": "slides/bagian-3.html#probabilitas-1-1",
+    "objectID": "slides/bagian-3.html#probabilitas-2",
+    "href": "slides/bagian-3.html#probabilitas-2",
     "title": "Regresi Logistik Binomial",
-    "section": "Probabilitas 1️⃣",
-    "text": "Probabilitas 1️⃣\n\nRegresi logistik tidak memodelkan probabilitas secara langsung\nYang dimodelkan adalah transformasinya, yaitu log odds\nMengapa?\n\nKarena probabilitas tidak linear, sementara log odds bisa diperlakukan sebagai linear terhadap prediktor"
+    "section": "Probabilitas 2️⃣",
+    "text": "Probabilitas 2️⃣\n\nRegresi logistik tidak memodelkan probabilitas secara langsung\nYang dimodelkan adalah transformasinya, yaitu log odds\nMengapa?\n\nKarena probabilitas tidak linear, sementara log odds bisa diperlakukan sebagai linear terhadap prediktor"
   },
   {
     "objectID": "slides/bagian-3.html#odds",
     "href": "slides/bagian-3.html#odds",
     "title": "Regresi Logistik Binomial",
     "section": "Odds",
-    "text": "Odds\n\\[\\text{Odds} = \\frac{P}{1 - P}\\]\nDefinisi: “Berapa kali suatu kejadian lebih mungkin terjadi dibandingkan tidak terjadi” Contoh: Jika P(putus studi) = 0.30, maka Odds = 0.30 / 0.70 = 0.43\nCara baca: “Untuk setiap 7 mahasiswa yang bertahan, ada 3 yang putus studi” (3:7)\n\n\n\nP(kejadian)\nOdds\nCara baca\n\n\n\n\n0.10\n0.11\n1 banding 9\n\n\n0.25\n0.33\n1 banding 3\n\n\n0.50\n1.00\nSama rata\n\n\n0.75\n3.00\n3 banding 1\n\n\n0.90\n9.00\n9 banding 1"
+    "text": "Odds\n\\[\\text{Odds} = \\frac{P}{1 - P}\\]\nDefinisi: “Berapa kali suatu kejadian lebih mungkin terjadi dibandingkan tidak terjadi” Contoh: Jika P(putus studi) = 0.30, maka Odds = 0.30 / 0.70 = 0.43\nCara baca: “Untuk setiap 7 mahasiswa yang bertahan, ada 3 yang putus studi” (3:7)\n\n\n\n\n\n\n\n\nP(kejadian)\nOdds\nCara baca\n\n\n\n\n0.10\n0.11\n1 banding 9\n\n\n0.25\n0.33\n1 banding 3\n\n\n0.50\n1.00\nSama rata\n\n\n0.75\n3.00\n3 banding 1\n\n\n0.90\n9.00\n9 banding 1"
   },
   {
     "objectID": "slides/bagian-3.html#interpretasi-odds",
     "href": "slides/bagian-3.html#interpretasi-odds",
     "title": "Regresi Logistik Binomial",
     "section": "Interpretasi odds",
-    "text": "Interpretasi odds\n\n\n\nOdds = 1 artinya peluang terjadi sama dengan tidak terjadi.\nOdds &gt; 1 artinya lebih mungkin terjadi; Odds &lt; 1 artinya lebih tidak mungkin."
+    "text": "Interpretasi odds\n\n\n\nOdds = 1 artinya peluang terjadi sama dengan tidak terjadi.\nOdds &gt; 1 artinya lebih mungkin terjadi (vs. tidak terjadi).\nOdds &lt; 1 artinya lebih tidak mungkin terjadi (vs. tidak terjadi)."
   },
   {
     "objectID": "slides/bagian-3.html#log-odds-logit-membuat-odds-simetris-dan-linear",
     "href": "slides/bagian-3.html#log-odds-logit-membuat-odds-simetris-dan-linear",
     "title": "Regresi Logistik Binomial",
     "section": "Log odds (logit) — membuat odds simetris dan linear",
-    "text": "Log odds (logit) — membuat odds simetris dan linear\nMasalah odds: Rentangnya 0 sampai ∞, dan tidak simetris — nilai di bawah 1 terkompresi, nilai di atas 1 tidak terbatas.\nSolusi: Log odds (logit)\n\\[\\text{Logit}(P) = \\ln\\!\\left(\\frac{P}{1-P}\\right)\\]\n\n\n\nP\nOdds\nLogit\n\n\n\n\n0.10\n0.11\n−2.20\n\n\n0.25\n0.33\n−1.10\n\n\n0.50\n1.00\n0.00\n\n\n0.75\n3.00\n+1.10\n\n\n0.90\n9.00\n+2.20\n\n\n\nPerhatikan: logit simetris di sekitar 0 dan rentangnya −∞ sampai +∞. Inilah yang dimodelkan secara linear oleh regresi logistik."
+    "text": "Log odds (logit) — membuat odds simetris dan linear\nMasalah odds: Rentangnya 0 sampai ∞, dan tidak simetris — nilai di bawah 1 terkompresi, nilai di atas 1 tidak terbatas.\nSolusi: Log odds (logit)"
+  },
+  {
+    "objectID": "slides/bagian-3.html#log-odds-logit-membuat-odds-simetris-dan-linear-1",
+    "href": "slides/bagian-3.html#log-odds-logit-membuat-odds-simetris-dan-linear-1",
+    "title": "Regresi Logistik Binomial",
+    "section": "Log odds (logit) — membuat odds simetris dan linear",
+    "text": "Log odds (logit) — membuat odds simetris dan linear\n\\[\\text{Logit}(P) = \\ln\\!\\left(\\frac{P}{1-P}\\right)\\]\n\n\n\n\n\n\n\n\nP\nOdds\nLogit\n\n\n\n\n0.10\n0.11\n−2.20\n\n\n0.25\n0.33\n−1.10\n\n\n0.50\n1.00\n0.00\n\n\n0.75\n3.00\n+1.10\n\n\n0.90\n9.00\n+2.20\n\n\n\nPerhatikan: logit simetris di sekitar 0 dan rentangnya −∞ sampai +∞. Inilah yang dimodelkan secara linear oleh regresi logistik."
   },
   {
     "objectID": "slides/bagian-3.html#persamaan-model-regresi-logistik",
@@ -945,11 +987,18 @@
     "text": "Persamaan model regresi logistik\nPersamaan dalam logit (yang berjalan di belakang layar):\n\\[\\ln\\!\\left(\\frac{P}{1-P}\\right) = \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + \\cdots + \\beta_k X_k\\]\nUntuk memprediksi probabilitas, balik transformasinya:\n\\[P = \\frac{1}{1 + e^{-(\\beta_0 + \\beta_1 X_1 + \\cdots + \\beta_k X_k)}}\\]\nKomponen:\n\nβ₀ = intercept (log odds ketika semua prediktor = 0)\nβ₁, …, βₖ = koefisien regresi (perubahan logit per satu unit prediktor)\ne^β = Odds Ratio  inilah yang diinterpretasikan dalam sebagai effect size dari regresi logistik"
   },
   {
-    "objectID": "slides/bagian-3.html#odds-ratio-or-ukuran-efek-utama",
-    "href": "slides/bagian-3.html#odds-ratio-or-ukuran-efek-utama",
+    "objectID": "slides/bagian-3.html#odds-ratio-or-effect-size-utama",
+    "href": "slides/bagian-3.html#odds-ratio-or-effect-size-utama",
     "title": "Regresi Logistik Binomial",
-    "section": "Odds Ratio (OR) — ukuran efek utama",
-    "text": "Odds Ratio (OR) — ukuran efek utama\n\\[OR = e^{\\beta}\\]\nOR mengukur seberapa banyak odds berubah ketika prediktor naik 1 unit, dengan prediktor lain dikontrol.\n\n\n\nOR\nInterpretasi\n\n\n\n\n= 1.00\nTidak ada efek\n\n\n&gt; 1.00\nOdds outcome naik\n\n\n&lt; 1.00\nOdds outcome turun\n\n\n= 1.50\nOdds naik 50%\n\n\n= 2.00\nOdds naik 100% (dua kali lipat)\n\n\n= 0.50\nOdds turun 50% (setengahnya)\n\n\n\n\n\n\n\n\n\nSelalu laporkan 95% Confidence Interval untuk OR!\n\n\nJika CI melewati 1.0, prediktor tidak signifikan secara statistik — misalnya OR = 1.20, 95% CI [0.85, 1.69] → tidak signifikan."
+    "section": "Odds Ratio (OR) — effect size utama",
+    "text": "Odds Ratio (OR) — effect size utama\nOdds ratio (OR) merupakan effect size utama dari model regresi logistik.\n\\[OR = e^{\\beta}\\]\nOR mengukur seberapa banyak odds berubah ketika prediktor naik 1 unit, dengan prediktor lain dikontrol."
+  },
+  {
+    "objectID": "slides/bagian-3.html#odds-ratio-or-effect-size-utama-1",
+    "href": "slides/bagian-3.html#odds-ratio-or-effect-size-utama-1",
+    "title": "Regresi Logistik Binomial",
+    "section": "Odds Ratio (OR) — effect size utama",
+    "text": "Odds Ratio (OR) — effect size utama\n\n\n\n\n\n\n\nOR\nInterpretasi\n\n\n\n\n= 1.00\nTidak ada efek\n\n\n&gt; 1.00\nOdds outcome naik\n\n\n&lt; 1.00\nOdds outcome turun\n\n\n= 1.50\nOdds naik 50%\n\n\n= 2.00\nOdds naik 100% (dua kali lipat)\n\n\n= 0.50\nOdds turun 50% (setengahnya)\n\n\n\n\n\n\n\n\n\nSelalu laporkan 95% Confidence Interval untuk OR!\n\n\nJika CI melewati 1.0, prediktor tidak signifikan secara statistik — misalnya OR = 1.20, 95% CI [0.85, 1.69] → tidak signifikan."
   },
   {
     "objectID": "slides/bagian-3.html#studi-kasus-apa-yang-memprediksi-putus-studi-pjj",
@@ -963,49 +1012,77 @@
     "href": "slides/bagian-3.html#maximum-likelihood-estimation-mle",
     "title": "Regresi Logistik Binomial",
     "section": "Maximum Likelihood Estimation (MLE)",
-    "text": "Maximum Likelihood Estimation (MLE)\nRegresi linear (OLS):\nCari β yang meminimalkan jumlah kuadrat error (SSE)\nRegresi logistik (MLE):\nCari β yang membuat variabel outcome yang kita observasi “paling mungkin terjadi”\n\n\n\n\n\n\nMengapa MLE\n\n\nKarena MLE, kita tidak mendapatkan F-statistic seperti dalam OLS/ANOVA. Sebagai gantinya, kita mendapatkan χ² sebagai uji signifikansi keseluruhan model.\nJika software menampilkan peringatan Algorithm did not converge — biasanya tanda sampel terlalu kecil atau ada perfect separation (lihat bagian berikutnya)."
+    "text": "Maximum Likelihood Estimation (MLE)\nRegresi linear (OLS):\nCari β yang meminimalkan jumlah kuadrat error (SSE)\nRegresi logistik (MLE):\nCari β yang membuat variabel outcome yang kita observasi “paling mungkin terjadi”\n\n\n\n\n\n\nMengapa MLE\n\n\nKarena MLE, kita tidak mendapatkan F-statistics seperti dalam OLS/ANOVA. Sebagai gantinya, kita mendapatkan χ² sebagai uji signifikansi keseluruhan model.\nJika software menampilkan peringatan algorithm did not converge, biasanya tanda sampel terlalu kecil atau ada perfect separation (lihat bagian berikutnya)."
   },
   {
     "objectID": "slides/bagian-3.html#deviance-likelihood-ratio-test-uji-omnibus-model",
     "href": "slides/bagian-3.html#deviance-likelihood-ratio-test-uji-omnibus-model",
     "title": "Regresi Logistik Binomial",
     "section": "Deviance & Likelihood Ratio Test — uji omnibus model",
-    "text": "Deviance & Likelihood Ratio Test — uji omnibus model\nDeviance = −2 × log-likelihood (makin kecil, makin baik)\n\n\n\n\n\n\n\n\n\nDeviance\nArti\n\n\n\n\nNull deviance\n612.4\nModel tanpa prediktor — “tebakan terbaik tanpa informasi”\n\n\nResidual deviance\n487.2\nModel dengan prediktor kita\n\n\nPenurunan\n125.2\nBukti bahwa prediktor berguna\n\n\n\nLikelihood Ratio Test:\n\\[\\chi^2 = \\text{Null deviance} - \\text{Residual deviance}\\]\n\\[\\chi^2(3) = 125.2,\\ p &lt; .001 \\rightarrow \\text{Model secara keseluruhan signifikan!}\\]\n\n\n\n\n\n\nUji Omnibus\n\n\nIni adalah uji omnibus — setara dengan uji F keseluruhan dalam regresi linear. Di jamovi, angka ini muncul di bagian Model Fit sebagai Model χ²."
+    "text": "Deviance & Likelihood Ratio Test — uji omnibus model\nDeviance = −2 × log-likelihood (makin kecil, makin baik)\n\n\n\n\n\n\n\n\nTerminologi\nNilai Deviance\nInterpretasi\n\n\n\n\nNull deviance\n612.4\nModel tanpa prediktor (null model)\n\n\nResidual deviance\n487.2\nModel dengan prediktor\n\n\nPenurunan\n125.2\nBukti bahwa prediktor meningkatkan kemampuan model memprediksi outcome"
+  },
+  {
+    "objectID": "slides/bagian-3.html#deviance-likelihood-ratio-test-uji-omnibus-model-1",
+    "href": "slides/bagian-3.html#deviance-likelihood-ratio-test-uji-omnibus-model-1",
+    "title": "Regresi Logistik Binomial",
+    "section": "Deviance & Likelihood Ratio Test — uji omnibus model",
+    "text": "Deviance & Likelihood Ratio Test — uji omnibus model\nLikelihood Ratio Test:\n\\[\\chi^2 = \\text{Null deviance} - \\text{Residual deviance}\\]\n\\[\\chi^2(3) = 125.2,\\ p &lt; .001 \\rightarrow \\text{Model secara keseluruhan signifikan!}\\]\n\n\n\n\n\n\nUji Omnibus\n\n\nIni adalah uji omnibus — setara dengan uji F keseluruhan dalam regresi linear. Di jamovi, angka ini muncul di bagian Model Fit sebagai Model χ²."
   },
   {
     "objectID": "slides/bagian-3.html#aic-bic-memilih-model-terbaik",
     "href": "slides/bagian-3.html#aic-bic-memilih-model-terbaik",
     "title": "Regresi Logistik Binomial",
     "section": "AIC & BIC — memilih model terbaik",
-    "text": "AIC & BIC — memilih model terbaik\nPrinsipnya sama dengan regresi OLS yang sudah kita pelajari di Bagian 3: menambah prediktor selalu menurunkan deviance, bahkan jika prediktor itu tidak bermakna (overfitting).\n\\[\\text{AIC} = -2\\log L + 2k \\qquad \\text{BIC} = -2\\log L + k\\ln(n)\\]\nDi mana k = jumlah parameter, n = ukuran sampel. Makin kecil, makin baik — hanya bermakna untuk membandingkan model.\n\n\n\nModel\nPrediktor\nAIC\nBIC\n\n\n\n\n\nModel 1\nJarak saja\n502.1\n510.3\n\n\n\nModel 2\nJarak + Keterlibatan\n489.7\n502.1\n← Terbaik\n\n\nModel 3\nJarak + Keterlibatan + Usia + Gender\n493.2\n518.9\n\n\n\n\nModel 2 menang: fit bagus tanpa terlalu kompleks. BIC lebih ketat dari AIC karena penaltinya lebih besar — pilih BIC jika prioritasnya parsimoni."
+    "text": "AIC & BIC — memilih model terbaik\nPrinsipnya sama dengan regresi OLS yang sudah kita pelajari di Bagian 3: menambah prediktor selalu menurunkan deviance, bahkan ketika prediktor itu tidak bermakna secara substantif untuk menjelaskan variabel outcome (overfitting).\n\\[\\text{AIC} = -2\\log L + 2k \\qquad \\text{BIC} = -2\\log L + k\\ln(n)\\]\nDi mana k = jumlah parameter, n = ukuran sampel. Makin kecil, makin baik — hanya bermakna kalau ada model lain yang digunakan sebagai perbandingan.\n\n\n\n\n\n\n\n\n\n\nModel\nPrediktor\nAIC\nBIC\n\n\n\n\n\nModel 1\nJarak saja\n502.1\n510.3\n\n\n\nModel 2\nJarak + Keterlibatan\n489.7\n502.1\n← Terbaik\n\n\nModel 3\nJarak + Keterlibatan + Usia + Gender\n493.2\n518.9\n\n\n\n\nModel 2 paling baik: model fit baik (AIC lebih kecil dari Model 1) dan tidak terlalu kompleks (BIC paling kecil diantara model yang lain). BIC lebih ketat dari AIC karena penaltinya lebih besar. Pilih BIC jika prioritasnya memilih model yang paling sederhana (parsimoni)."
   },
   {
     "objectID": "slides/bagian-3.html#pseudo-r²-seberapa-banyak-variasi-yang-dijelaskan",
     "href": "slides/bagian-3.html#pseudo-r²-seberapa-banyak-variasi-yang-dijelaskan",
     "title": "Regresi Logistik Binomial",
     "section": "Pseudo R² — seberapa banyak variasi yang dijelaskan?",
-    "text": "Pseudo R² — seberapa banyak variasi yang dijelaskan?\nMasalah: Regresi logistik tidak punya R² seperti OLS karena tidak ada “total variance” yang bisa dibagi seperti dalam OLS.\nSolusi: Pseudo R² — ada beberapa versi, yang paling sering dilaporkan adalah Nagelkerke R²:\n\n\n\nNagelkerke R²\nInterpretasi\n\n\n\n\n&lt; 0.20\nLemah\n\n\n0.20–0.40\nCukup\n\n\n0.40–0.60\nBaik\n\n\n&gt; 0.60\nSangat baik\n\n\n\n\n\n\n\n\n\nInterpretasi Pseudo R²\n\n\nPseudo R² bukan “proporsi varians yang dijelaskan” seperti R² OLS, jadi jangan diinterpretasikan dengan cara yang sama! Lebih tepat diartikan sebagai “peningkatan fit dibanding null model.” Nilainya cenderung lebih rendah dari R² OLS."
+    "text": "Pseudo R² — seberapa banyak variasi yang dijelaskan?\n\nRegresi logistik tidak punya R² seperti OLS karena tidak ada “total variance” yang bisa dibagi seperti dalam OLS.\nSolusinya Pseudo R² — Ada beberapa versi, yang paling sering digunakan adalah Nagelkerke R²:"
+  },
+  {
+    "objectID": "slides/bagian-3.html#interpretasi-pseudo-r²",
+    "href": "slides/bagian-3.html#interpretasi-pseudo-r²",
+    "title": "Regresi Logistik Binomial",
+    "section": "Interpretasi Pseudo R²",
+    "text": "Interpretasi Pseudo R²\n\n\n\n\n\n\n\nNagelkerke R²\nInterpretasi\n\n\n\n\n&lt; 0.20\nLemah\n\n\n0.20–0.40\nCukup\n\n\n0.40–0.60\nBaik\n\n\n&gt; 0.60\nSangat baik\n\n\n\n\nPseudo R² bukan “proporsi varians yang dijelaskan” seperti R² OLS, jadi jangan diinterpretasikan dengan cara yang sama! Lebih tepat diartikan sebagai “peningkatan fit dibanding null model.” Nilainya cenderung lebih rendah dari R² OLS.\nCara melaporkan yang benar: “Nagelkerke R² = .32, mengindikasikan bahwa model dengan prediktor memberikan peningkatan fit yang substansial dibandingkan model tanpa prediktor.”"
   },
   {
     "objectID": "slides/bagian-3.html#adjusted-or-efek-prediktor-setelah-mengontrol-variabel-lain",
     "href": "slides/bagian-3.html#adjusted-or-efek-prediktor-setelah-mengontrol-variabel-lain",
     "title": "Regresi Logistik Binomial",
     "section": "Adjusted OR — efek prediktor setelah mengontrol variabel lain",
-    "text": "Adjusted OR — efek prediktor setelah mengontrol variabel lain\nMasalah confounding: Dalam analisis bivariat, efek yang terlihat bisa dipengaruhi oleh variabel ketiga.\nContoh: Mahasiswa yang tinggal jauh dari pokjar cenderung punya keterlibatan akademik yang lebih rendah (karena kesempatan terlibat lebih terbatas). Efek jarak dan efek keterlibatan saling tumpang tindih.\n\n\n\nPrediktor\nUnadjusted OR\nAdjusted OR\n95% CI\n\n\n\n\nJarak (per 10 km)\n1.70\n1.63\n[1.21, 2.19]\n\n\nKeterlibatan akademik\n0.48\n0.52\n[0.38, 0.71]\n\n\nUsia (per 10 tahun)\n1.15\n1.08\n[0.88, 1.32]\n\n\n\nSetelah dikontrol, efek jarak sedikit mengecil — sebagian efeknya bekerja melalui keterlibatan akademik.\n\n\n\n\n\n\nLaporkan Adjusted OR\n\n\nDalam artikel ilmiah, selalu laporkan adjusted OR dari model dengan prediktor berganda, bukan unadjusted OR dari analisis bivariat."
+    "text": "Adjusted OR — efek prediktor setelah mengontrol variabel lain\nMasalah confounding: Dalam analisis bivariat, efek yang terlihat bisa dipengaruhi oleh variabel ketiga.\nContoh: Mahasiswa yang tinggal jauh dari pokjar cenderung punya keterlibatan akademik yang lebih rendah (karena kesempatan terlibat lebih terbatas). Efek jarak dan efek keterlibatan saling tumpang tindih.\n\n\n\n\n\n\n\n\n\nPrediktor\nUnadjusted OR\nAdjusted OR\n95% CI\n\n\n\n\nJarak (per 10 km)\n1.70\n1.63\n[1.21, 2.19]\n\n\nKeterlibatan akademik\n0.48\n0.52\n[0.38, 0.71]\n\n\nUsia (per 10 tahun)\n1.15\n1.08\n[0.88, 1.32]\n\n\n\nSetelah dikontrol, efek jarak sedikit mengecil — sebagian efeknya bekerja melalui keterlibatan akademik."
+  },
+  {
+    "objectID": "slides/bagian-3.html#adjusted-or-efek-prediktor-setelah-mengontrol-variabel-lain-1",
+    "href": "slides/bagian-3.html#adjusted-or-efek-prediktor-setelah-mengontrol-variabel-lain-1",
+    "title": "Regresi Logistik Binomial",
+    "section": "Adjusted OR — efek prediktor setelah mengontrol variabel lain",
+    "text": "Adjusted OR — efek prediktor setelah mengontrol variabel lain\n\n\n\n\n\n\nLaporkan Adjusted OR\n\n\nDalam artikel ilmiah, selalu laporkan adjusted OR dari model dengan prediktor berganda, bukan unadjusted OR dari analisis bivariat."
   },
   {
     "objectID": "slides/bagian-3.html#interaksi-efek-prediktor-yang-berbeda-antar-subgrup",
     "href": "slides/bagian-3.html#interaksi-efek-prediktor-yang-berbeda-antar-subgrup",
     "title": "Regresi Logistik Binomial",
     "section": "Interaksi — efek prediktor yang berbeda antar subgrup",
-    "text": "Interaksi — efek prediktor yang berbeda antar subgrup\nPertanyaan: Apakah efek jarak pada putus studi berbeda tergantung tingkat keterlibatan akademik?\n\\[\\text{logit}(P) = \\beta_0 + \\beta_1(\\text{Jarak}) + \\beta_2(\\text{Keterlibatan}) + \\beta_3(\\text{Jarak} \\times \\text{Keterlibatan})\\]\nHasil: β₃ = −0.08, p = .03 → Interaksi signifikan!\n\n\n\n\n\n\n\n\nSubgrup\nEfek jarak pada odds putus studi\nInterpretasi\n\n\n\n\nKeterlibatan rendah\nOR = 1.12 per km\nJarak sangat berpengaruh\n\n\nKeterlibatan tinggi\nOR = 1.02 per km\nJarak hampir tidak berpengaruh\n\n\n\n\n\n\n\n\n\nTip\n\n\nKeterlibatan akademik yang tinggi bisa men-buffer dampak jarak yang jauh, sehingga bisa dijadikan dasar untuk merancang intervensi yang tepat sasaran."
+    "text": "Interaksi — efek prediktor yang berbeda antar subgrup\nPertanyaan: Apakah efek jarak pada putus studi berbeda tergantung tingkat keterlibatan akademik?\n\\[\\text{logit}(P) = \\beta_0 + \\beta_1(\\text{Jarak}) + \\beta_2(\\text{Keterlibatan}) + \\beta_3(\\text{Jarak} \\times \\text{Keterlibatan})\\]\nMasukkan suku interaksi (interaction terms) antara jarak dan keterlibatan di dalam model.\n\n\n\n\n\n\nSelalu Centering Prediktor!\n\n\nAgar main effects dapat diinterpretasi, maka semua prediktor yang dibuatkan suku interaksinya, harus selalu di-centering. Artinya, nilai setiap orang dikurangi dengan nilai rata-rata, sehingga nilai 0 = rata-rata."
+  },
+  {
+    "objectID": "slides/bagian-3.html#interaksi-efek-prediktor-yang-berbeda-antar-subgrup-1",
+    "href": "slides/bagian-3.html#interaksi-efek-prediktor-yang-berbeda-antar-subgrup-1",
+    "title": "Regresi Logistik Binomial",
+    "section": "Interaksi — efek prediktor yang berbeda antar subgrup",
+    "text": "Interaksi — efek prediktor yang berbeda antar subgrup\nHasil: β₃ = −0.08, p = .03 → Interaksi signifikan!\n\n\n\n\n\n\n\n\nSubgrup\nEfek jarak pada odds putus studi\nInterpretasi\n\n\n\n\nKeterlibatan rendah\nOR = 1.12 per km\nJarak sangat berpengaruh\n\n\nKeterlibatan tinggi\nOR = 1.02 per km\nJarak hampir tidak berpengaruh\n\n\n\n\n\n\n\n\n\nInterpretasi\n\n\nKeterlibatan akademik yang tinggi bisa men-buffer dampak jarak yang jauh, sehingga bisa dijadikan dasar untuk merancang intervensi yang tepat sasaran."
   },
   {
     "objectID": "slides/bagian-3.html#strategi-membangun-model-mulai-dari-teori",
     "href": "slides/bagian-3.html#strategi-membangun-model-mulai-dari-teori",
     "title": "Regresi Logistik Binomial",
     "section": "Strategi membangun model — mulai dari teori",
-    "text": "Strategi membangun model — mulai dari teori\n\n\n✅ Theory-driven (direkomendasikan)\n\nPilih prediktor berdasarkan teori dan literatur sebelum melihat data\nUji hipotesis yang sudah pre-specified\nLaporkan semua model yang diuji — bukan hanya yang paling bagus hasilnya secara statistik\n\n\n⚠️ Stepwise selection (kontroversial)\n\nForward: tambahkan prediktor satu per satu berdasarkan p-value\nBackward: mulai dari semua prediktor, hapus yang tidak signifikan\nMasalah: Overfitting, inflasi Type I error, hasil tidak replicable\n\n\n\n\n\n\n\n\nKapan analisis eksplorasi dibenarkan?\n\n\nAnalisis eksplorasi boleh dilakukan untuk generate hipotesis, tapi harus dipisahkan dari analisis konfirmatori. Mencampur keduanya dalam satu sampel adalah salah satu bentuk questionable research practice."
+    "text": "Strategi membangun model — mulai dari teori\n\n\n✅ Theory-driven (direkomendasikan)\n\nPilih prediktor berdasarkan teori dan literatur sebelum melihat data\nUji hipotesis yang sudah pre-specified\nLaporkan semua model yang diuji — bukan hanya yang paling bagus hasilnya secara statistik\n\n\n⚠️ Stepwise selection (kontroversial)\n\nForward: tambahkan prediktor satu per satu berdasarkan p-value\nBackward: mulai dari semua prediktor, hapus yang tidak signifikan\nMasalah: Overfitting, inflasi Type I error, hasil sulit dicoba-ulang (replikasi)\n\n\n\n\n\n\n\n\nKapan analisis eksplorasi dibenarkan?\n\n\nAnalisis eksplorasi boleh dilakukan untuk generate hipotesis, tapi harus dipisahkan dari analisis konfirmatori. Mencampur keduanya dalam satu sampel adalah salah satu bentuk questionable research practice."
   },
   {
     "objectID": "slides/bagian-3.html#kabar-baik-lebih-longgar-dari-ols",
@@ -1019,35 +1096,49 @@
     "href": "slides/bagian-3.html#multikolinearitas-sudah-familiar-dari-bagian-3",
     "title": "Regresi Logistik Binomial",
     "section": "Multikolinearitas — sudah familiar dari Bagian 3",
-    "text": "Multikolinearitas — sudah familiar dari Bagian 3\nCara memeriksa dan interpretasinya sama persis seperti dalam regresi OLS — gunakan VIF:\n\n\n\nVIF\nInterpretasi\n\n\n\n\n&lt; 5\nTidak ada masalah\n\n\n5–10\nModerate — perlu hati-hati\n\n\n&gt; 10\nMasalah serius\n\n\n\nContoh masalah: “Durasi studi (semester)” dan “biaya pendidikan kumulatif” — keduanya naik bersama, korelasi r = 0.95 → VIF ≈ 18 → tidak bisa diestimasi secara stabil.\n\n\n\n\n\n\nTip\n\n\nJamovi menampilkan VIF secara otomatis di output regresi logistik — centang Collinearity Statistics di opsi Model Coefficients."
+    "text": "Multikolinearitas — sudah familiar dari Bagian 3\nCara memeriksa dan interpretasinya sama persis seperti dalam regresi OLS — gunakan VIF:\n\n\n\n\n\n\n\nVIF\nInterpretasi\n\n\n\n\n&lt; 5\nTidak ada masalah\n\n\n5–10\nModerate — perlu hati-hati\n\n\n&gt; 10\nMasalah serius\n\n\n\nContoh problem: “Durasi studi (semester)” dan “biaya kuliah kumulatif” — keduanya naik bersama, korelasi r = 0.95 → VIF ≈ 18 → model sulit diestimasi secara stabil.\n\n\n\n\n\n\nTip\n\n\njamovi menampilkan VIF secara otomatis di output regresi logistik — centang Collinearity Statistics di opsi Model Coefficients."
   },
   {
     "objectID": "slides/bagian-3.html#perfect-separation-ketika-prediktor-too-goood-to-be-true",
     "href": "slides/bagian-3.html#perfect-separation-ketika-prediktor-too-goood-to-be-true",
     "title": "Regresi Logistik Binomial",
     "section": "Perfect separation — ketika prediktor too goood to be true",
-    "text": "Perfect separation — ketika prediktor too goood to be true\nMasalah: Satu prediktor memisahkan outcome secara sempurna — semua Y = 1 ada di satu sisi, semua Y = 0 di sisi lain.\nContoh: Semua mahasiswa dengan jarak &gt; 45 km putus studi (100%). Semua mahasiswa dengan jarak ≤ 45 km lanjut studi (100%).\nAkibat: Koefisien meluncur ke ±∞, standard error sangat besar, model tidak converge.\n\n\n\n\n\n\nTanda-tanda di output\n\n\n\nKoefisien sangat besar (β &gt; 10 atau &lt; −10)\nStandard error sangat besar\nPesan “Algorithm did not converge”\n\nJika ini terjadi, cek distribusi prediktor dan outcome — sering kali tanda bahwa ada kategori yang terlalu kecil."
+    "text": "Perfect separation — ketika prediktor too goood to be true\nMasalah: Satu prediktor memisahkan outcome secara sempurna — semua Y = 1 ada di satu sisi, semua Y = 0 di sisi lain.\nContoh: Semua mahasiswa dengan jarak &gt; 45 km putus studi (100%). Semua mahasiswa dengan jarak ≤ 45 km lanjut studi (100%).\nAkibat: Koefisien meluncur ke ±∞, standard error sangat besar, model tidak converge.\n\n\n\n\n\n\nTanda-tanda di output\n\n\n\nKoefisien sangat besar (β &gt; 10 atau &lt; −10)\nStandard error sangat besar\nPesan error Algorithm did not converge\n\nJika ini terjadi, cek distribusi prediktor dan outcome karena umumnya berarti bahwa ada kejadian yang frekuensi terjadinya terlalu kecil."
   },
   {
-    "objectID": "slides/bagian-3.html#confusion-matrix-dasar-evaluasi-akurasi",
-    "href": "slides/bagian-3.html#confusion-matrix-dasar-evaluasi-akurasi",
+    "objectID": "slides/bagian-3.html#confusion-matrix-dasar-evaluasi-akurasi-klasifikasi-model",
+    "href": "slides/bagian-3.html#confusion-matrix-dasar-evaluasi-akurasi-klasifikasi-model",
     "title": "Regresi Logistik Binomial",
-    "section": "Confusion matrix — dasar evaluasi akurasi",
-    "text": "Confusion matrix — dasar evaluasi akurasi\nSetelah model difit, gunakan threshold default P ≥ 0.50 → prediksi outcome terjadi; P &lt; 0.50 → prediksi tidak terjadi.\n\n\n\n\nPrediksi: Tidak Terjadi\nPrediksi: Terjadi\n\n\n\n\nAktual: Tidak Terjadi\n240 (TN)\n30 (FP)\n\n\nAktual: Terjadi\n50 (FN)\n130 (TP)\n\n\n\n\nTP (True Positive): Prediksi terjadi → aktual terjadi ✓\nTN (True Negative): Prediksi tidak terjadi → aktual tidak terjadi ✓\nFP (False Positive): Prediksi terjadi → aktual tidak terjadi ✗ (false alarm)\nFN (False Negative): Prediksi tidak terjadi → aktual terjadi ✗ (miss — sering yang paling berbahaya)"
+    "section": "Confusion matrix — dasar evaluasi akurasi klasifikasi model",
+    "text": "Confusion matrix — dasar evaluasi akurasi klasifikasi model\nSetelah model diestimasi, gunakan threshold default P ≥ 0.50 → prediksi outcome terjadi; P &lt; 0.50 → prediksi tidak terjadi.\n\n\n\n\n\n\n\n\n\nPrediksi: Tidak Terjadi\nPrediksi: Terjadi\n\n\n\n\nAktual: Tidak Terjadi\n240 (TN)\n30 (FP)\n\n\nAktual: Terjadi\n50 (FN)\n130 (TP)\n\n\n\n\nTP (True Positive): Prediksi terjadi → aktual terjadi ✓\nTN (True Negative): Prediksi tidak terjadi → aktual tidak terjadi ✓\nFP (False Positive): Prediksi terjadi → aktual tidak terjadi ✗ (false alarm)\nFN (False Negative): Prediksi tidak terjadi → aktual terjadi ✗ (miss — sering yang paling berbahaya)"
   },
   {
     "objectID": "slides/bagian-3.html#sensitivity-specificity-dan-akurasi",
     "href": "slides/bagian-3.html#sensitivity-specificity-dan-akurasi",
     "title": "Regresi Logistik Binomial",
     "section": "Sensitivity, specificity, dan akurasi",
-    "text": "Sensitivity, specificity, dan akurasi\nDari confusion matrix tadi (TP=130, TN=240, FP=30, FN=50, N=450):\n\n\n\n\n\n\n\n\n\nMetrik\nFormula\nNilai\nPertanyaan yang dijawab\n\n\n\n\nAkurasi\n(TP+TN)/N\n82.2%\nBerapa % prediksi yang benar?\n\n\nSensitivity\nTP/(TP+FN)\n72.2%\nDari yang benar-benar terjadi, berapa % terdeteksi?\n\n\nSpecificity\nTN/(TN+FP)\n88.9%\nDari yang tidak terjadi, berapa % diprediksi benar?\n\n\n\n\n\n\n\n\n\nTrade-off sensitivity vs specificity\n\n\n\nScreening risiko bunuh diri → prioritaskan sensitivity tinggi — lebih baik over-identify daripada ada yang terlewat\nDiagnosis klinis formal → prioritaskan specificity tinggi — false positive berdampak stigma dan biaya\n\nDefault threshold = 0.50 — bisa disesuaikan sesuai konteks dan pertimbangan etis."
+    "text": "Sensitivity, specificity, dan akurasi\nDari confusion matrix tadi (TP=130, TN=240, FP=30, FN=50, N=450):\n\n\n\n\n\n\n\n\n\nMetrik\nFormula\nNilai\nPertanyaan yang dijawab\n\n\n\n\nAkurasi\n(TP+TN)/N\n82.2%\nBerapa % prediksi yang benar?\n\n\nSensitivity\nTP/(TP+FN)\n72.2%\nDari yang benar-benar terjadi, berapa % terdeteksi?\n\n\nSpecificity\nTN/(TN+FP)\n88.9%\nDari yang tidak terjadi, berapa % diprediksi benar?\n\n\n\n\n\n\n\n\n\nTrade-off sensitivity vs specificity\n\n\n\nScreening risiko bunuh diri → prioritaskan sensitivity tinggi — lebih baik over-identify daripada ada yang terlewat\nDiagnosis klinis formal → prioritaskan specificity tinggi — false positive berdampak stigma dan biaya perawatan\n\nDefault threshold = 0.50 — bisa disesuaikan sesuai konteks dan pertimbangan etis."
   },
   {
     "objectID": "slides/bagian-3.html#auc-ringkasan-performa-model-dalam-satu-angka",
     "href": "slides/bagian-3.html#auc-ringkasan-performa-model-dalam-satu-angka",
     "title": "Regresi Logistik Binomial",
     "section": "AUC — ringkasan performa model dalam satu angka",
-    "text": "AUC — ringkasan performa model dalam satu angka\nAUC (Area Under the ROC Curve) = probabilitas bahwa model memberikan predicted probability yang lebih tinggi kepada kasus positif dibanding kasus negatif yang diambil secara acak.\n\n\n\nAUC\nInterpretasi\n\n\n\n\n0.50\nTidak lebih baik dari tebakan\n\n\n0.60–0.70\nLemah\n\n\n0.70–0.80\nCukup\n\n\n0.80–0.90\nBaik\n\n\n&gt; 0.90\nSangat baik — atau overfitting? Cek dulu!\n\n\n\n\n\n\n\n\n\nNote\n\n\nROC curve dan AUC tersedia di jamovi. Pembahasan mendalam tentang analisis ROC — termasuk PPV/NPV, Youden’s Index, dan penentuan cut-off optimal — ada di Bagian 4."
+    "text": "AUC — ringkasan performa model dalam satu angka\nAUC (Area Under the ROC Curve) = probabilitas bahwa model memberikan predicted probability yang lebih tinggi kepada kasus positif dibanding kasus negatif yang diambil secara acak.\n\n\n\n\n\n\n\nAUC\nInterpretasi\n\n\n\n\n0.50\nTidak lebih baik dari tebakan acak\n\n\n0.60–0.70\nLemah\n\n\n0.70–0.80\nCukup\n\n\n0.80–0.90\nBaik\n\n\n&gt; 0.90\nSangat baik — atau model overfitting? Cek dulu!\n\n\n\n\n\n\n\n\n\nNote\n\n\nROC curve dan AUC tersedia di jamovi. Pembahasan mendalam tentang analisis ROC — termasuk PPV/NPV, Youden’s Index, dan penentuan cut-off optimal — ada di Bagian 4."
+  },
+  {
+    "objectID": "slides/bagian-3.html#konteks-apa-yang-memprediksi-putus-studi-dropout-dalam-pjj",
+    "href": "slides/bagian-3.html#konteks-apa-yang-memprediksi-putus-studi-dropout-dalam-pjj",
+    "title": "Regresi Logistik Binomial",
+    "section": "Konteks: apa yang memprediksi putus studi (dropout) dalam PJJ?",
+    "text": "Konteks: apa yang memprediksi putus studi (dropout) dalam PJJ?\n\nDataset: Dataset Contoh Regresi Logistik (dataset-dropout.omv)\n\nVariabel: - putus_studi: outcome (0 = lanjut, 1 = putus studi sebelum semester ke-5) - usia: 18–65 tahun - jenis_kelamin: 0 = Perempuan, 1 = Laki-laki - metode_kuliah: 1 = Tatap Muka Terbatas, 2 = Daring, 3 = Mandiri, tanpa kuliah - kecemasan_akademik: skor kecemasan awal (0–63) - jarak_pokjar_km: 0.5–50 km - keterlibatan_akademik: skor keterlibatan (1–7)"
+  },
+  {
+    "objectID": "slides/bagian-3.html#langkah-langkah-di-jamovi",
+    "href": "slides/bagian-3.html#langkah-langkah-di-jamovi",
+    "title": "Regresi Logistik Binomial",
+    "section": "Langkah-langkah di jamovi",
+    "text": "Langkah-langkah di jamovi\n\n\nMenjalankan regresi logistik:\n\nAnalyses → Regression → Logistic Regression → 2 Outcomes (Binomial)\nMasukkan variabel outcome ke Dependent Variable\nMasukkan prediktor ke Covariates (kontinu) atau Factors (kategorikal)\njamovi akan melakukan dummy coding secara otomatis untuk variabel kategorikal\n\n\nOutput yang harus dicek:\n☑ Model Fit — Model χ², Nagelkerke R²\n☑ Model Coefficients — β, OR, 95% CI, p\n☑ Collinearity Statistics — VIF\n☑ Prediction Table — akurasi, sensitivity, specificity\n☑ ROC Curve — AUC\n\n\n\n\n\n\n\nUrutan membaca output\n\n\nOmnibus (Model χ²) → Pseudo R² → Koefisien per prediktor (OR + CI) → VIF → Akurasi klasifikasi → AUC"
   },
   {
     "objectID": "slides/bagian-3.html#checklist-pelaporan-regresi-logistik",
@@ -1068,28 +1159,14 @@
     "href": "slides/bagian-3.html#menerjemahkan-or-ke-bahasa-yang-dipahami-semua-orang",
     "title": "Regresi Logistik Binomial",
     "section": "Menerjemahkan OR ke bahasa yang dipahami semua orang",
-    "text": "Menerjemahkan OR ke bahasa yang dipahami semua orang\nJangan serahkan interpretasi ke pembaca — terjemahkan OR ke kalimat yang konkrit.\nContoh: OR = 1.05 untuk jarak ke pokjar (per 1 km)\n\nOpsi 1 — Persentase perubahan odds: “Setiap tambahan 1 km jarak dari pokjar, odds putus studi naik 5%.”\nOpsi 2 — Interval konkrit: “Mahasiswa yang tinggal 10 km lebih jauh punya odds putus studi 1.63 kali lebih tinggi.” (karena 1.05^10 = 1.63)\nOpsi 3 — Perbandingan probabilitas: “Mahasiswa yang tinggal 5 km dari pokjar memiliki peluang ~20% putus studi; mahasiswa yang tinggal 15 km memiliki peluang ~30%.”\n\n\n\n\n\n\n\nWarning\n\n\nOR ≠ Risk Ratio (RR). Jangan tulis “X kali lebih mungkin” untuk OR — itu bahasa RR. OR harus dikatakan: “X kali lebih tinggi odds-nya” (Zhang & Yu, 1998, JAMA). Perbedaan ini penting terutama jika prevalensi outcome &gt; 10%."
+    "text": "Menerjemahkan OR ke bahasa yang dipahami semua orang\nContoh: OR = 1.05 untuk jarak ke pokjar (per 1 km)\n\nOpsi 1 — Persentase perubahan odds: “Setiap tambahan 1 km jarak dari pokjar, odds putus studi naik 5%.”\nOpsi 2 — Interval konkrit: “Mahasiswa yang tinggal 10 km lebih jauh punya odds putus studi 1.63 kali lebih tinggi.” (karena 1.05^10 = 1.63)\nOpsi 3 — Perbandingan probabilitas: “Mahasiswa yang tinggal 5 km dari pokjar memiliki peluang ~20% putus studi; mahasiswa yang tinggal 15 km memiliki peluang ~30%.”\n\n\n\n\n\n\n\nWarning\n\n\nOR ≠ Risk Ratio (RR). Jangan gunakan “X kali lebih mungkin” untuk interpretasi OR, karena ini adalah interpretasi RR. OR harus diinterpretasi: “X kali lebih tinggi odds-nya” (Zhang & Yu, 1998). Perbedaan ini penting terutama jika prevalensi outcome &gt; 10%."
   },
   {
-    "objectID": "slides/bagian-3.html#enam-kesalahan-umum",
-    "href": "slides/bagian-3.html#enam-kesalahan-umum",
+    "objectID": "slides/bagian-3.html#kesalahan-umum",
+    "href": "slides/bagian-3.html#kesalahan-umum",
     "title": "Regresi Logistik Binomial",
-    "section": "Enam kesalahan umum",
-    "text": "Enam kesalahan umum\n\nMengaburkan OR dengan Risk Ratio — “X kali lebih mungkin” bukan cara yang benar untuk menginterpretasikan OR. Kata yang tepat: “X kali lebih tinggi odds-nya”.\nMengklaim kausalitas — Regresi logistik adalah korelasional. Kausalitas membutuhkan desain eksperimental atau quasi-eksperimental.\nMengabaikan multikolinearitas — “Usia” dan “tahun lahir” keduanya dimasukkan sebagai prediktor? Sudah pasti multikolinear.\nTidak memeriksa asumsi — Terutama linearitas dalam logit dan kemungkinan perfect separation.\nHanya melaporkan prediktor yang signifikan — Laporkan semua prediktor yang dimasukkan ke model — bukan cherry-pick yang p &lt; .05.\nEPV terlalu rendah — Events per variable (EPV): minimal 10 kejadian per prediktor. Dengan hanya 50 kejadian (events), jangan masukkan lebih dari 5 prediktor — estimasi akan tidak stabil."
-  },
-  {
-    "objectID": "slides/bagian-3.html#konteks-apa-yang-memprediksi-pemberian-dukungan-sosial",
-    "href": "slides/bagian-3.html#konteks-apa-yang-memprediksi-pemberian-dukungan-sosial",
-    "title": "Regresi Logistik Binomial",
-    "section": "Konteks: apa yang memprediksi pemberian dukungan sosial?",
-    "text": "Konteks: apa yang memprediksi pemberian dukungan sosial?\n\nDataset: Dataset Contoh Regresi Logistik (dataset-social-support.omv)\n\nDapat diunduh dari navbar di laman mata kuliah\n\nPertanyaan penelitian berkaitan dengan faktor-faktor yang memprediksi outcome biner dalam konteks psikologi klinis/sosial"
-  },
-  {
-    "objectID": "slides/bagian-3.html#langkah-langkah-di-jamovi",
-    "href": "slides/bagian-3.html#langkah-langkah-di-jamovi",
-    "title": "Regresi Logistik Binomial",
-    "section": "Langkah-langkah di jamovi",
-    "text": "Langkah-langkah di jamovi\n\n\nMenjalankan regresi logistik:\n\nAnalyses → Regression → Logistic Regression → 2 Outcomes (Binomial)\nMasukkan variabel outcome ke Dependent Variable\nMasukkan prediktor ke Covariates (kontinu) atau Factors (kategorikal)\nJamovi akan melakukan dummy coding secara otomatis untuk variabel kategorikal\n\n\nOutput yang harus dicek:\n☑ Model Fit — Model χ², Nagelkerke R²\n☑ Model Coefficients — β, OR, 95% CI, p\n☑ Collinearity Statistics — VIF\n☑ Prediction Table — akurasi, sensitivity, specificity\n☑ ROC Curve — AUC\n\n\n\n\n\n\n\nUrutan membaca output\n\n\nOmnibus (Model χ²) → Pseudo R² → Koefisien per prediktor (OR + CI) → VIF → Akurasi klasifikasi → AUC"
+    "section": "6️⃣ kesalahan umum",
+    "text": "6️⃣ kesalahan umum\n\nMengaburkan OR dengan Risk Ratio — “X kali lebih mungkin” bukan cara yang benar untuk menginterpretasikan OR. Kata yang tepat: “X kali lebih tinggi odds-nya”.\nMengklaim kausalitas — Regresi logistik adalah analisis korelasional. Kausalitas harus memenuhi asumsi temporalitas dan kendali terhadap confounding, sehingga harus diuji dengan desain eksperimental atau quasi-eksperimental.\nMengabaikan multikolinearitas — “Usia” dan “tahun lahir” keduanya dimasukkan sebagai prediktor? Sudah pasti multikolinear.\nTidak memeriksa asumsi — Terutama linearitas dalam logit dan kemungkinan perfect separation.\nHanya melaporkan prediktor yang signifikan — Laporkan semua prediktor yang dimasukkan ke model, jangan hanya yang “signifikan” (p &lt; .05.)\nEPV terlalu rendah — Events per variable (EPV): minimal 10 kejadian per prediktor. Dengan hanya 50 kejadian (events), jangan masukkan lebih dari 5 prediktor — estimasi akan tidak stabil."
   },
   {
     "objectID": "slides/bagian-3.html#ada-pertanyaan",
@@ -1222,14 +1299,14 @@
     "href": "slides/bagian-7.html#outline",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Outline",
-    "text": "Outline\n\nMengapa kita perlu analisis faktor?\nPrincipal Component Analysis (PCA)\nExploratory Factor Analysis (EFA)\nAsumsi & kesiapan data\nEvaluasi model & pelaporan hasil\nDemonstrasi di jamovi"
+    "text": "Outline\n\nMengapa kita perlu melakukan analisis faktor?\nPrincipal Component Analysis (PCA)\nExploratory Factor Analysis (EFA)\nAsumsi & kesiapan data\nEvaluasi model & pelaporan hasil\nDemonstrasi di jamovi"
   },
   {
     "objectID": "slides/bagian-7.html#bayangkan-skala-psikologi-dengan-20-item",
     "href": "slides/bagian-7.html#bayangkan-skala-psikologi-dengan-20-item",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Bayangkan skala psikologi dengan 20 item…",
-    "text": "Bayangkan skala psikologi dengan 20 item…\n\nSeorang peneliti mengembangkan skala kelelahan kerja (burnout) dengan 20 item\nApakah 20 item itu mengukur 20 hal yang benar-benar berbeda?\nAtau ada beberapa dimensi yang lebih mendasar di baliknya?\nMasalah yang muncul kalau tidak ada reduksi:\n\nTidak bisa divisualisasikan (kita tidak bisa memplot 20 dimensi sekaligus)\nRegresi dengan 20 prediktor: risiko overfitting sangat tinggi\nItem-item yang saling berkorelasi tinggi menunjukkan adanya redundansi"
+    "text": "Bayangkan skala psikologi dengan 20 item…\n\nSeorang peneliti mengembangkan skala kelelahan kerja (burnout) dengan 20 item\nApakah 20 item itu mengukur 20 hal yang benar-benar berbeda?\nAtau ada beberapa dimensi yang lebih mendasar di baliknya?\nMasalah yang muncul kalau tidak ada reduksi:\n\nTidak bisa divisualisasikan (kita akan kesulitan membuat visualisasi 20 “dimensi” sekaligus)\nRegresi dengan 20 prediktor: risiko overfitting sangat tinggi\nItem-item yang saling berkorelasi tinggi menunjukkan adanya redundansi"
   },
   {
     "objectID": "slides/bagian-7.html#measurement-error-mendistorsi-estimasi",
@@ -1243,14 +1320,14 @@
     "href": "slides/bagian-7.html#keluarga-model-variabel-laten",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Keluarga model variabel laten",
-    "text": "Keluarga model variabel laten\n\n\n\n\n\n\n\n\nModel\nPertanyaan yang dijawab\nDalam workshop ini\n\n\n\n\nCTT\n“Seberapa reliabel skor total ini?”\nBagian 5\n\n\nEFA\n“Berapa faktor laten yang mendasari item-item ini?”\nBagian 7\n\n\nCFA\n“Apakah struktur faktor yang saya hipotesiskan cocok dengan data?”\nBagian 8\n\n\nSEM\n“Bagaimana faktor-faktor laten saling mempengaruhi?”\nPengantar di Bagian 5–6"
+    "text": "Keluarga model variabel laten\n\n\n\n\n\n\n\n\nModel\nPertanyaan yang dijawab\nDalam mata kuliah ini\n\n\n\n\nCTT\n“Seberapa reliabel skor total ini?”\nBagian 5\n\n\nEFA\n“Berapa faktor laten yang mendasari item-item ini?”\nBagian 7\n\n\nCFA\n“Apakah struktur faktor yang saya hipotesiskan sesuai dengan data?”\nBagian 8\n\n\nSEM\n“Bagaimana faktor-faktor laten saling mempengaruhi?”\nTidak dibahas"
   },
   {
-    "objectID": "slides/bagian-7.html#efa-vs-cfa-sekilas",
-    "href": "slides/bagian-7.html#efa-vs-cfa-sekilas",
+    "objectID": "slides/bagian-7.html#efa-vs-cfa-perbandingannya",
+    "href": "slides/bagian-7.html#efa-vs-cfa-perbandingannya",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
-    "section": "EFA vs CFA — sekilas",
-    "text": "EFA vs CFA — sekilas\n\n\n\n\n\n\n\nEFA\nCFA\n\n\n\n\nJumlah faktor belum diketahui — biarkan data menunjukkan strukturnya\nJumlah faktor sudah ditentukan sebelum mengambil data\n\n\nPeneliti tidak memiliki model hipotesis a priori\nPeneliti sudah memiliki model hipotesis a priori\n\n\nCocok untuk eksplorasi dan pengembangan skala\nCocok untuk konfirmasi dan pengujian validitas konstruk\n\n\n\n\n\n\n\n\n\nWarning\n\n\nSangat tidak disarankan melakukan EFA kemudian CFA pada sampel yang sama — kita akan bahas lebih dalam di Bagian 8."
+    "section": "EFA vs CFA — perbandingannya",
+    "text": "EFA vs CFA — perbandingannya\n\n\n\n\n\n\n\nEFA\nCFA\n\n\n\n\nJumlah faktor belum diketahui — biarkan data mendikte strukturnya\nJumlah faktor sudah ditentukan (melalui hipotesis) sebelum mengambil data\n\n\nPeneliti tidak memiliki model hipotesis a priori\nPeneliti sudah memiliki model hipotesis a priori\n\n\nCocok untuk eksplorasi dan pengembangan skala\nCocok untuk konfirmasi dan pengujian validitas konstruk\n\n\n\n\n\n\n\n\n\nSangat tidak disarankan\n\n\n…melakukan EFA kemudian CFA pada sampel yang sama — kita akan bahas lebih dalam di Bagian 8."
   },
   {
     "objectID": "slides/bagian-7.html#apa-itu-pca",
@@ -1271,35 +1348,35 @@
     "href": "slides/bagian-7.html#eigenvalue-scree-plot",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Eigenvalue & scree plot",
-    "text": "Eigenvalue & scree plot\n\nEigenvalue (λ): mengukur seberapa banyak variansi yang dijelaskan oleh setiap komponen. Total eigenvalue = jumlah item.\nKaiser criterion: pertahankan komponen dengan λ &gt; 1\n\nLogika: komponen dengan λ &lt; 1 menjelaskan variansi kurang dari satu item tunggal\n\n\n\n\n\n\n\n\nKaiser criterion sering over-extract\n\n\nKaiser criterion bisa menghasilkan terlalu banyak komponen — bahkan dari data yang sepenuhnya acak! Selalu kombinasikan dengan scree plot dan parallel analysis.\n\n\n\n\nScree plot: grafik eigenvalue dari tertinggi ke terendah — cari “elbow” (titik siku) di mana kurva mulai mendatar. Pertahankan komponen sebelum elbow."
+    "text": "Eigenvalue & scree plot\n\nEigenvalue (λ): mengukur seberapa banyak varians yang dijelaskan oleh setiap komponen. Total eigenvalue = jumlah item.\nKaiser criterion: pertahankan komponen dengan λ &gt; 1\n\nLogika: komponen dengan λ &lt; 1 menjelaskan varians kurang dari satu item tunggal\n\n\n\n\n\n\n\n\nKaiser criterion sering over-extract\n\n\nKaiser criterion bisa menghasilkan terlalu banyak komponen — bahkan dari data yang sepenuhnya acak! Selalu kombinasikan dengan scree plot dan parallel analysis.\n\n\n\n\nScree plot: grafik eigenvalue dari tertinggi ke terendah — cari “elbow” (titik siku) di mana kurva mulai mendatar. Pertahankan komponen sebelum elbow."
   },
   {
     "objectID": "slides/bagian-7.html#component-loadings-rotasi",
     "href": "slides/bagian-7.html#component-loadings-rotasi",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Component loadings & rotasi",
-    "text": "Component loadings & rotasi\n\nComponent loading: korelasi antara item asli dengan komponen. Rentang −1 sampai +1.\n\n|loading| &gt; 0.40  item bermakna untuk komponen ini (salient loading)\n|loading| &lt; 0.30  item tidak relevan untuk komponen ini\n\nRotasi mengejar simple structure (Thurstone, 1947): setiap item load tinggi di satu komponen, mendekati nol di yang lain\n\n\n\n\n\n\n\n\n\n\nOrthogonal\nOblique\n\n\n\n\nKomponen\nTidak berkorelasi\nBoleh berkorelasi\n\n\nMetode umum\nVarimax\nPromax, Direct Oblimin\n\n\n\n\n\n\n\n\n\nNote\n\n\nRotasi tidak mengubah total variansi yang dijelaskan — hanya mendistribusikannya agar lebih mudah diinterpretasikan."
+    "text": "Component loadings & rotasi\n\nComponent loading: korelasi antara item asli dengan komponen. Rentang −1 sampai +1.\n\n|loading| &gt; 0.40  item bermakna untuk komponen ini (salient loading)\n|loading| &lt; 0.30  item tidak relevan untuk komponen ini\n\nRotasi mengejar simple structure (Thurstone, 1947): setiap item load tinggi di satu komponen, mendekati nol di yang lain\n\n\n\n\n\n\n\n\n\n\nOrthogonal\nOblique\n\n\n\n\nKomponen\nTidak berkorelasi\nBoleh berkorelasi\n\n\nMetode umum\nVarimax\nPromax, Direct Oblimin\n\n\n\n\n\n\n\n\n\nNote\n\n\nRotasi tidak mengubah total variani yang dijelaskan — hanya mendistribusikannya agar lebih mudah diinterpretasikan."
   },
   {
     "objectID": "slides/bagian-7.html#pca-vs-efa-kontras-lengkap",
     "href": "slides/bagian-7.html#pca-vs-efa-kontras-lengkap",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "PCA vs EFA — kontras lengkap",
-    "text": "PCA vs EFA — kontras lengkap\n\n\n\n\n\n\n\n\nAspek\nPCA\nEFA\n\n\n\n\nTujuan\nReduksi dimensi; feature extraction\nIdentifikasi & validasi konstruk laten\n\n\nPosisi dalam ML\nUnsupervised learning — preprocessing sebelum model prediktif\nPsikometri — pengembangan & validasi skala\n\n\nModel\nKomponen = fungsi linear item\nItem = fungsi linear faktor + error\n\n\nVariansi\nTotal variansi (termasuk unique & error)\nHanya common variance\n\n\nError pengukuran\nTidak dimodelkan\nEksplisit dimodelkan per item\n\n\nFaktor/komponen\nSelalu orthogonal (tidak berkorelasi)\nBoleh berkorelasi (rotasi oblique)\n\n\nKapan digunakan\nTidak ada teori konstruk laten; tujuannya kompresi data\nAda teori tentang faktor laten; tujuannya pengukuran\n\n\n\n\n\n\n\n\n\nTip\n\n\nJika communalities tinggi (&gt; 0.60) dan struktur jelas, hasil PCA dan EFA sering hampir identik secara praktis. Perbedaan muncul ketika communalities rendah atau struktur kompleks."
+    "text": "PCA vs EFA — kontras lengkap\n\n\n\n\n\n\n\n\nAspek\nPCA\nEFA\n\n\n\n\nTujuan\nReduksi dimensi; feature extraction\nIdentifikasi & validasi konstruk laten\n\n\nPosisi dalam ML\nUnsupervised learning — preprocessing sebelum model prediktif\nPsikometri — pengembangan & validasi skala\n\n\nModel\nKomponen = fungsi linear item\nItem = fungsi linear faktor + error\n\n\nVarians\nTotal varians (termasuk unique & error)\nHanya common variance\n\n\nError pengukuran\nTidak dimodelkan\nEksplisit dimodelkan per item\n\n\nFaktor/komponen\nSelalu orthogonal (tidak berkorelasi)\nBoleh berkorelasi (rotasi oblique)\n\n\nKapan digunakan\nTidak ada teori konstruk laten; tujuannya kompresi data\nAda teori tentang faktor laten; tujuannya pengukuran\n\n\n\n\n\n\n\n\n\nTip\n\n\nJika communalities tinggi (&gt; 0.60) dan struktur jelas, hasil PCA dan EFA sering hampir identik secara praktis. Perbedaan muncul ketika communalities rendah atau struktur kompleks."
   },
   {
     "objectID": "slides/bagian-7.html#komunalitas-h²-keunikan",
     "href": "slides/bagian-7.html#komunalitas-h²-keunikan",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Komunalitas (h²) & keunikan",
-    "text": "Komunalitas (h²) & keunikan\n\n\n\nKomunalitas (h²): proporsi variansi item yang dijelaskan oleh semua faktor bersama\nKeunikan (u²): 1 − h² = variansi yang tidak dijelaskan oleh faktor mana pun (variansi spesifik + error)\n\n\n\n\n\n\n\n\nh²\nInterpretasi\n\n\n\n\n&gt; 0.50\nBaik \n\n\n0.30–0.50\nCukup — perlu evaluasi\n\n\n&lt; 0.30\nBermasalah — pertimbangkan menghapus item\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\nItem dengan h² rendah mengukur sesuatu yang unik apabila dibandingkan dengan item lain.\nEvaluasi ulang redaksinya sebelum memutuskan untuk menghapus item."
+    "text": "Komunalitas (h²) & keunikan\n\n\n\nKomunalitas (h²): proporsi varians item yang dijelaskan oleh semua faktor bersama\nKeunikan (u²): 1 − h² = varians yang tidak dijelaskan oleh faktor mana pun (varians spesifik + error)\n\n\n\n\n\n\n\n\nh²\nInterpretasi\n\n\n\n\n&gt; 0.50\nBaik \n\n\n0.30–0.50\nCukup — perlu evaluasi\n\n\n&lt; 0.30\nBermasalah — pertimbangkan menghapus item\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\nItem dengan h² rendah mengukur sesuatu yang unik apabila dibandingkan dengan item lain.\nEvaluasi ulang redaksinya sebelum memutuskan untuk menghapus item."
   },
   {
-    "objectID": "slides/bagian-7.html#menentukan-jumlah-faktor-jangan-hanya-kaiser",
-    "href": "slides/bagian-7.html#menentukan-jumlah-faktor-jangan-hanya-kaiser",
+    "objectID": "slides/bagian-7.html#menentukan-jumlah-faktor-jangan-hanya-mengandalkan-kaiser",
+    "href": "slides/bagian-7.html#menentukan-jumlah-faktor-jangan-hanya-mengandalkan-kaiser",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
-    "section": "Menentukan jumlah faktor — jangan hanya Kaiser!",
-    "text": "Menentukan jumlah faktor — jangan hanya Kaiser!\n\nKaiser criterion (λ &gt; 1) — mudah, tapi konsisten over-extract. Gunakan sebagai acuan awal saja.\nScree plot — visual dan intuitif, tapi subjektif. Dua peneliti bisa membaca scree plot yang sama secara berbeda.\nParallel analysis  direkomendasikan\n\nBandingkan eigenvalue data nyata dengan eigenvalue dari data acak (dimensi yang sama)\nPertahankan faktor di mana eigenvalue nyata &gt; eigenvalue acak (persentil ke-95)\nPaling akurat secara empiris; tidak subjektif (Hayton, Allen & Scarpello, 2004)\n\nTeori — berapa faktor yang dihipotesiskan berdasarkan literatur?\n\n\n\n\n\n\n\nPraktik terbaik\n\n\nGunakan kombinasi parallel analysis + scree plot + teori sebagai dasar keputusan. Di jamovi, parallel analysis tersedia langsung di menu EFA."
+    "section": "Menentukan jumlah faktor — jangan hanya mengandalkan Kaiser!",
+    "text": "Menentukan jumlah faktor — jangan hanya mengandalkan Kaiser!\n\nKaiser criterion (λ &gt; 1) — mudah, tapi konsisten over-extract. Gunakan sebagai acuan awal saja.\nScree plot — visual dan intuitif, tapi subjektif. Dua peneliti bisa membaca scree plot yang sama secara berbeda.\nParallel analysis  direkomendasikan\n\nBandingkan eigenvalue data nyata dengan eigenvalue dari data acak (dimensi yang sama)\nPertahankan faktor di mana eigenvalue nyata &gt; eigenvalue acak (persentil ke-95)\nPaling akurat secara empiris; tidak subjektif (Hayton, Allen & Scarpello, 2004)\n\nTeori — berapa faktor yang disebutkan di literatur?\n\n\n\n\n\n\n\nPraktik terbaik\n\n\nGunakan kombinasi parallel analysis + scree plot + teori sebagai dasar keputusan. Di jamovi, parallel analysis tersedia langsung di menu EFA."
   },
   {
     "objectID": "slides/bagian-7.html#rotasi-dalam-efa",
@@ -1348,14 +1425,14 @@
     "href": "slides/bagian-7.html#reliabilitas-alpha-vs-omega",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Reliabilitas: alpha vs omega",
-    "text": "Reliabilitas: alpha vs omega\n\n\nCronbach’s α\n\nMengukur konsistensi internal\nMengasumsikan semua item berkontribusi sama (tau-equivalence)\nJika loadings berbeda-beda (yang hampir selalu terjadi), α bisa underestimate reliabilitas sesungguhnya\nSensitif terhadap jumlah item — lebih banyak item = α lebih tinggi, meskipun loadings biasa saja\n\n\nMcDonald’s ω (Omega)\n\nDihitung langsung dari factor loadings\nTidak mengasumsikan tau-equivalence\nLebih akurat ketika loadings item tidak setara — yang hampir selalu terjadi pada skala psikologi nyata\n\n\n\n\n\n\n\n\nTip\n\n\nLaporkan keduanya — α dan ω. Jika ω &gt; α secara substansial, berarti asumsi tau-equivalence tidak terpenuhi. Keduanya tersedia langsung di jamovi."
+    "text": "Reliabilitas: alpha vs omega\n\n\nCronbach’s α\n\nMengukur konsistensi internal\nMengasumsikan semua item berkontribusi sama (tau-equivalence)\nJika loadings berbeda-beda (yang hampir selalu terjadi), α bisa underestimate reliabilitas sesungguhnya\nSensitif terhadap jumlah item — lebih banyak item = α lebih tinggi, meskipun loadings biasa saja\n\n\nMcDonald’s ω (Omega)\n\nDihitung langsung dari factor loadings\nTidak mengasumsikan tau-equivalence\nLebih akurat ketika loadings item tidak setara — yang hampir selalu terjadi pada skala psikologi nyata\n\n\n\n\n\n\n\n\nLaporkan α dan ω\n\n\nJika ω &gt; α secara substansial, berarti asumsi tau-equivalence tidak terpenuhi. Keduanya tersedia langsung di jamovi."
   },
   {
     "objectID": "slides/bagian-7.html#checklist-pelaporan-efa",
     "href": "slides/bagian-7.html#checklist-pelaporan-efa",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Checklist pelaporan EFA",
-    "text": "Checklist pelaporan EFA\n☐ Deskripsi sampel — N, karakteristik, cara pengumpulan data\n☐ Prosedur analisis — software, metode ekstraksi, kriteria jumlah faktor, jenis rotasi\n☐ Kelayakan analisis — nilai KMO, hasil Bartlett’s test (χ², df, p)\n☐ Hasil ekstraksi — jumlah faktor yang dipertahankan, eigenvalue, % variansi tiap faktor dan total\n☐ Pattern matrix setelah rotasi, lengkap dengan komunalitas (h²)\n☐ Korelasi antar faktor — jika menggunakan rotasi oblique\n☐ Reliabilitas — Cronbach’s α dan/atau McDonald’s ω per faktor\n☐ Fit indices — RMSEA + 90% CI, CFI, TLI (jika menggunakan ML)"
+    "text": "Checklist pelaporan EFA\n☐ Deskripsi sampel — N, karakteristik, cara pengumpulan data\n☐ Prosedur analisis — software, metode ekstraksi, kriteria jumlah faktor, jenis rotasi\n☐ Kelayakan analisis — nilai KMO, hasil Bartlett’s test (χ², df, p)\n☐ Hasil ekstraksi — jumlah faktor yang dipertahankan, eigenvalue, % varians tiap faktor dan total\n☐ Pattern matrix setelah rotasi, lengkap dengan komunalitas (h²)\n☐ Korelasi antar faktor — jika menggunakan rotasi oblique\n☐ Reliabilitas — Cronbach’s α dan/atau McDonald’s ω per faktor\n☐ Fit indices — RMSEA + 90% CI, CFI, TLI (jika menggunakan ML)"
   },
   {
     "objectID": "slides/bagian-7.html#kesalahan-umum-dalam-efa",
@@ -1365,11 +1442,11 @@
     "text": "Kesalahan umum dalam EFA\n\nHanya mengandalkan Kaiser criterion  menghasilkan terlalu banyak faktor. Selalu gunakan parallel analysis.\nMenggunakan PCA untuk pengembangan skala  PCA bukan model pengukuran. Gunakan EFA.\nRotasi orthogonal tanpa alasan  konstruk psikologi hampir selalu berkorelasi. Gunakan oblique sebagai default.\nMengabaikan cross-loadings  item dengan cross-loading &gt; 0.30 menandakan batas konstruk yang tidak jelas — jangan diabaikan.\nMelaporkan hanya item yang “berhasil”  laporkan semua item, termasuk yang dihapus beserta alasannya.\nTidak melakukan CFA di sampel independen  EFA hanya eksplorasi. Validasi strukturnya dengan CFA di sampel yang berbeda."
   },
   {
-    "objectID": "slides/bagian-7.html#konteks-burnout-pada-tenaga-kerja",
-    "href": "slides/bagian-7.html#konteks-burnout-pada-tenaga-kerja",
+    "objectID": "slides/bagian-7.html#konteks-burnout-pada-mahasiswa",
+    "href": "slides/bagian-7.html#konteks-burnout-pada-mahasiswa",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
-    "section": "Konteks: Burnout pada tenaga kerja",
-    "text": "Konteks: Burnout pada tenaga kerja\n\nDataset yang kita gunakan: Dataset Contoh EFA (dataset-burnout.omv)\n\nDapat diunduh dari navbar di laman workshop\n\nMenggunakan skala burnout yang mengukur beberapa dimensi kelelahan kerja\n\nItem-item berbentuk skala Likert\n\nPertanyaan penelitian: berapa dimensi laten yang mendasari item-item dalam skala burnout ini?"
+    "section": "Konteks: Burnout pada mahasiswa",
+    "text": "Konteks: Burnout pada mahasiswa\n\nDataset yang kita gunakan: Dataset Contoh EFA (dataset-burnout.omv)\nKonteks penelitian: Data simulasi yang merepresentasikan burnout akademik mahasiswa pascasarjana\nPertanyaan penelitian: berapa dimensi laten yang mendasari item-item dalam skala burnout ini?\n\nVariabel demografis: - usia: 20–35 tahun - jenis_kelamin: 0 = Perempuan, 1 = Laki-laki - semester: semester aktif (1–4) - ipk: Indeks Prestasi Kumulatif (2.00–4.00)\nVariabel item (15 item, skala Likert 1–5): - ab_ee_1 s.d. ab_ee_5: Emotional Exhaustion — merasa lelah, terkuras, kehabisan energi karena tuntutan akademik - ab_cy_1 s.d. ab_cy_5: Cynicism — sikap jarak, tidak peduli, pesimis terhadap studi - ab_ef_1 s.d. ab_ef_5: Academic Efficacy — keyakinan pada kemampuan akademik diri sendiri (skor tinggi = efikasi tinggi)"
   },
   {
     "objectID": "slides/bagian-7.html#langkah-langkah-di-jamovi",

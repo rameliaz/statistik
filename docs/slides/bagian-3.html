@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.10.3">
 
   <meta name="author" content="Rizqy Amelia Zein">
-  <meta name="dcterms.date" content="2026-04-12">
+  <meta name="dcterms.date" content="2026-04-16">
   <title>Statistik dalam Penelitian Psikologi – Regresi Logistik Binomial</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -150,7 +150,7 @@ Rizqy Amelia Zein
     </div>
 </div>
 
-  <p class="date">2026-04-12</p>
+  <p class="date">2026-04-16</p>
 </section>
 <section id="outline" class="slide level2">
 <h2><em>Outline</em></h2>
@@ -173,7 +173,7 @@ Rizqy Amelia Zein
 <section id="outcome-biner-ada-di-berbagai-konteks" class="slide level2">
 <h2><em>Outcome</em> biner ada di berbagai konteks</h2>
 <ul>
-<li class="fragment"><strong>Putus studi PJJ:</strong> Sepertiga mahasiswa PJJ tidak menyelesaikan studinya sebelum semester kelima (<a href="https://press.uchicago.edu/ucp/books/book/chicago/L/bo3630345.html">Tinto, 1987</a>; [Park &amp; Choi, 2009(https://www.jstor.org/stable/jeductechsoci.12.4.207)])</li>
+<li class="fragment"><strong>Putus studi PJJ:</strong> Sepertiga mahasiswa PJJ tidak menyelesaikan studinya sebelum semester kelima (<a href="https://press.uchicago.edu/ucp/books/book/chicago/L/bo3630345.html">Tinto, 1987</a>; <a href="https://www.jstor.org/stable/jeductechsoci.12.4.207">Park &amp; Choi, 2009</a>)</li>
 <li class="fragment"><strong>Relapse gangguan kecemasan:</strong> 40–60% pasien mengalami kekambuhan dalam jangka panjang setelah remisi (<a href="https://psychiatryonline.org/doi/full/10.1176/appi.ajp.162.6.1179">Bruce et al., 2005</a>)</li>
 <li class="fragment"><strong>Turnover karyawan:</strong> 15–20% per tahun dianggap normal; di atas angka itu menandakan masalah organisasi (SHRM, 2023)</li>
 <li class="fragment"><strong>Percobaan bunuh diri:</strong> Sekitar 2.4% prajurit militer AS melakukan percobaan bunuh diri dalam satu tahun (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4860903/">Kessler et al., 2014</a>)</li>
@@ -184,10 +184,10 @@ Rizqy Amelia Zein
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Note</strong></p>
+<p><strong><em>Outcome</em> Biner</strong></p>
 </div>
 <div class="callout-content">
-<p><em>Outcome</em> ini bukan skor 1–100 (data <em>continous</em>). Mereka adalah <strong>keputusan biner</strong>: terjadi (1) atau tidak terjadi (0). Kita membutuhkan metode statistik yang dirancang untuk memodelkan <strong>probabilitas</strong> kejadian seperti ini.</p>
+<p><em>Outcome</em> dari semua penelitian di atas bukan skor 1–100 (data <em>continous</em>). Mereka adalah <strong>keputusan biner</strong>: terjadi (1) atau tidak terjadi (0). Kita membutuhkan metode statistik yang dirancang untuk memodelkan <strong>probabilitas</strong> kejadian seperti ini.</p>
 </div>
 </div>
 </div>
@@ -237,14 +237,14 @@ Rizqy Amelia Zein
 </tbody>
 </table>
 <ul>
-<li><strong>Masalah fundamental:</strong> Probabilitas harus berada di rentang 0 sampai 1. Regresi linear tidak menjamin ini — ia memodelkan hubungan linear tanpa batas (∞).</li>
+<li><strong>Masalah fundamental:</strong> Probabilitas harus berada di <strong>rentang 0 sampai 1</strong>. Regresi linear tidak menjamin ini — ia memodelkan hubungan linear tanpa batas (∞).</li>
 <li><strong>Yang dibutuhkan:</strong> Sebuah fungsi yang secara otomatis <em>membatasi</em> prediksi dalam rentang [0, 1].</li>
 </ul>
 </section>
 <section id="solusi-fungsi-logistik-kurva-s" class="slide level2">
 <h2>Solusi: fungsi logistik (kurva S)</h2>
 <div class="columns">
-<div class="column" style="width:70%;">
+<div class="column" style="width:55%;">
 <p><span class="math display">\[P = \frac{1}{1 + e^{-(\beta_0 + \beta_1 X)}}\]</span></p>
 <p>Tiga sifat penting kurva S (<em>sigmoid</em>):</p>
 <ul>
@@ -265,7 +265,7 @@ Rizqy Amelia Zein
 </div>
 </div>
 </div>
-</div><div class="column" style="width:30%;">
+</div><div class="column" style="width:45%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="libs/logregr.jpg" class="quarto-figure quarto-figure-center"></p>
@@ -276,17 +276,17 @@ Rizqy Amelia Zein
 </section></section>
 <section>
 <section id="rantai-konsep-p-odds-log-odds-odds-ratio" class="title-slide slide level1 center" data-background-color="#14497F">
-<h1>Rantai konsep: P → <em>Odds</em> → <em>Log Odds</em> → <em>Odds Ratio</em></h1>
+<h1>Rantai konsep: P → Odds → Log Odds → Odds Ratio</h1>
 
 </section>
 <section id="probabilitas-1" class="slide level2">
 <h2>Probabilitas 1️⃣</h2>
 <p><span class="math display">\[P(A) = \frac{\text{jumlah kejadian A}}{\text{total kemungkinan}}\]</span></p>
-<p><strong>Contoh dari dataset PJJ (N = 450):</strong></p>
+<p><strong>Contoh:</strong></p>
 <table class="caption-top">
 <colgroup>
-<col style="width: 39%">
-<col style="width: 60%">
+<col style="width: 75%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -310,8 +310,8 @@ Rizqy Amelia Zein
 </tbody>
 </table>
 </section>
-<section id="probabilitas-1-1" class="slide level2">
-<h2>Probabilitas 1️⃣</h2>
+<section id="probabilitas-2" class="slide level2">
+<h2>Probabilitas 2️⃣</h2>
 <ul>
 <li>Regresi logistik <strong>tidak memodelkan probabilitas secara langsung</strong></li>
 <li>Yang dimodelkan adalah transformasinya, yaitu <em>log odds</em></li>
@@ -327,6 +327,11 @@ Rizqy Amelia Zein
 <p><strong>Definisi:</strong> “<em>Berapa kali suatu kejadian lebih mungkin terjadi dibandingkan tidak terjadi</em>” <strong>Contoh:</strong> Jika P(putus studi) = 0.30, maka Odds = 0.30 / 0.70 = <strong>0.43</strong></p>
 <p>Cara baca: “Untuk setiap 7 mahasiswa yang bertahan, ada 3 yang putus studi” (3:7)</p>
 <table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 50%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">P(kejadian)</th>
@@ -369,7 +374,8 @@ Rizqy Amelia Zein
 <div class="column">
 <ul>
 <li>Odds = 1 artinya peluang terjadi <strong>sama dengan</strong> tidak terjadi.</li>
-<li>Odds &gt; 1 artinya lebih mungkin terjadi; Odds &lt; 1 artinya lebih tidak mungkin.</li>
+<li>Odds &gt; 1 artinya <strong>lebih mungkin</strong> terjadi (vs.&nbsp;tidak terjadi).</li>
+<li>Odds &lt; 1 artinya <strong>lebih tidak mungkin</strong> terjadi (vs.&nbsp;tidak terjadi).</li>
 </ul>
 </div><div class="column">
 <div class="quarto-figure quarto-figure-center">
@@ -384,13 +390,21 @@ Rizqy Amelia Zein
 <h2><em>Log odds</em> (logit) — membuat <em>odds</em> simetris dan linear</h2>
 <p><strong>Masalah <em>odds</em>:</strong> Rentangnya 0 sampai ∞, dan tidak simetris — nilai di bawah 1 terkompresi, nilai di atas 1 tidak terbatas.</p>
 <p><strong>Solusi: <em>Log odds</em> (logit)</strong></p>
+</section>
+<section id="log-odds-logit-membuat-odds-simetris-dan-linear-1" class="slide level2">
+<h2><em>Log odds</em> (logit) — membuat <em>odds</em> simetris dan linear</h2>
 <p><span class="math display">\[\text{Logit}(P) = \ln\!\left(\frac{P}{1-P}\right)\]</span></p>
 <table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 34%">
+<col style="width: 33%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">P</th>
-<th style="text-align: center;"><em>Odds</em></th>
-<th style="text-align: center;"><em>Logit</em></th>
+<th style="text-align: center;">Odds</th>
+<th style="text-align: center;">Logit</th>
 </tr>
 </thead>
 <tbody>
@@ -436,11 +450,19 @@ Rizqy Amelia Zein
 <li><strong>e^β = <em>Odds Ratio</em></strong> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> <strong>inilah yang diinterpretasikan dalam sebagai <em>effect size</em> dari regresi logistik</strong></li>
 </ul>
 </section>
-<section id="odds-ratio-or-ukuran-efek-utama" class="slide level2">
-<h2><em>Odds Ratio</em> (OR) — ukuran efek utama</h2>
+<section id="odds-ratio-or-effect-size-utama" class="slide level2">
+<h2><em>Odds Ratio</em> (OR) — <em>effect size</em> utama</h2>
+<p><em>Odds ratio</em> (OR) merupakan <em>effect size</em> utama dari model regresi logistik.</p>
 <p><span class="math display">\[OR = e^{\beta}\]</span></p>
 <p>OR mengukur seberapa banyak <em>odds</em> berubah ketika prediktor naik 1 unit, dengan prediktor lain dikontrol.</p>
+</section>
+<section id="odds-ratio-or-effect-size-utama-1" class="slide level2">
+<h2><em>Odds Ratio</em> (OR) — <em>effect size</em> utama</h2>
 <table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 80%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">OR</th>
@@ -553,8 +575,8 @@ Rizqy Amelia Zein
 </div>
 </section></section>
 <section>
-<section id="estimasi-fit-model" class="title-slide slide level1 center" data-background-color="#14497F">
-<h1>Estimasi &amp; <em>Fit</em> Model</h1>
+<section id="estimasi-ketepatan-model" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1>Estimasi &amp; Ketepatan Model</h1>
 
 </section>
 <section id="maximum-likelihood-estimation-mle" class="slide level2">
@@ -572,8 +594,8 @@ Rizqy Amelia Zein
 <p><strong>Mengapa MLE</strong></p>
 </div>
 <div class="callout-content">
-<p>Karena MLE, kita <strong>tidak mendapatkan F-statistic</strong> seperti dalam OLS/ANOVA. Sebagai gantinya, kita mendapatkan <strong>χ²</strong> sebagai uji signifikansi keseluruhan model.</p>
-<p>Jika <em>software</em> menampilkan peringatan <em>Algorithm did not converge</em> — biasanya tanda sampel terlalu kecil atau ada <em>perfect separation</em> (lihat bagian berikutnya).</p>
+<p>Karena MLE, kita <strong>tidak mendapatkan F-statistics</strong> seperti dalam OLS/ANOVA. Sebagai gantinya, kita mendapatkan <strong>χ²</strong> sebagai uji signifikansi keseluruhan model.</p>
+<p>Jika <em>software</em> menampilkan peringatan <code>algorithm did not converge</code>, biasanya tanda sampel terlalu kecil atau ada <em>perfect separation</em> (lihat bagian berikutnya).</p>
 </div>
 </div>
 </div>
@@ -583,35 +605,38 @@ Rizqy Amelia Zein
 <p><strong>Deviance</strong> = −2 × <em>log-likelihood</em> (makin kecil, makin baik)</p>
 <table class="caption-top">
 <colgroup>
-<col style="width: 10%">
-<col style="width: 57%">
-<col style="width: 31%">
+<col style="width: 30%">
+<col style="width: 15%">
+<col style="width: 55%">
 </colgroup>
 <thead>
 <tr class="header">
-<th></th>
-<th style="text-align: center;"><em>Deviance</em></th>
-<th>Arti</th>
+<th>Terminologi</th>
+<th style="text-align: center;">Nilai Deviance</th>
+<th>Interpretasi</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><strong>Null deviance</strong></td>
 <td style="text-align: center;">612.4</td>
-<td>Model tanpa prediktor — “tebakan terbaik tanpa informasi”</td>
+<td>Model tanpa prediktor (<em>null model</em>)</td>
 </tr>
 <tr class="even">
 <td><strong>Residual deviance</strong></td>
 <td style="text-align: center;">487.2</td>
-<td>Model dengan prediktor kita</td>
+<td>Model dengan prediktor</td>
 </tr>
 <tr class="odd">
 <td><strong>Penurunan</strong></td>
 <td style="text-align: center;"><strong>125.2</strong></td>
-<td>Bukti bahwa prediktor berguna</td>
+<td>Bukti bahwa prediktor meningkatkan kemampuan model memprediksi <em>outcome</em></td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="deviance-likelihood-ratio-test-uji-omnibus-model-1" class="slide level2">
+<h2><em>Deviance</em> &amp; <em>Likelihood Ratio Test</em> — uji omnibus model</h2>
 <p><strong>Likelihood Ratio Test:</strong></p>
 <p><span class="math display">\[\chi^2 = \text{Null deviance} - \text{Residual deviance}\]</span></p>
 <p><span class="math display">\[\chi^2(3) = 125.2,\ p &lt; .001 \rightarrow \text{Model secara keseluruhan signifikan!}\]</span></p>
@@ -624,17 +649,24 @@ Rizqy Amelia Zein
 <p><strong>Uji Omnibus</strong></p>
 </div>
 <div class="callout-content">
-<p>Ini adalah <strong>uji omnibus</strong> — setara dengan uji F keseluruhan dalam regresi linear. Di jamovi, angka ini muncul di bagian <em>Model Fit</em> sebagai <strong>Model χ²</strong>.</p>
+<p>Ini adalah <strong>uji omnibus</strong> — setara dengan uji F keseluruhan dalam regresi linear. Di <code>jamovi</code>, angka ini muncul di bagian <em>Model Fit</em> sebagai <strong>Model χ²</strong>.</p>
 </div>
 </div>
 </div>
 </section>
 <section id="aic-bic-memilih-model-terbaik" class="slide level2">
 <h2>AIC &amp; BIC — memilih model terbaik</h2>
-<p>Prinsipnya sama dengan regresi OLS yang sudah kita pelajari di Bagian 3: menambah prediktor <strong>selalu</strong> menurunkan <em>deviance</em>, bahkan jika prediktor itu tidak bermakna (<em>overfitting</em>).</p>
+<p>Prinsipnya sama dengan regresi OLS yang sudah kita pelajari di <a href="https://rameliaz.github.io/statistik/slides/bagian-3.html#/title-slide">Bagian 3</a>: menambah prediktor <strong>selalu</strong> menurunkan <em>deviance</em>, bahkan ketika prediktor itu tidak bermakna secara substantif untuk menjelaskan variabel <em>outcome</em> (<a href="https://en.wikipedia.org/wiki/Overfitting"><em>overfitting</em></a>).</p>
 <p><span class="math display">\[\text{AIC} = -2\log L + 2k \qquad \text{BIC} = -2\log L + k\ln(n)\]</span></p>
-<p>Di mana k = jumlah parameter, n = ukuran sampel. <strong>Makin kecil, makin baik — hanya bermakna untuk membandingkan model.</strong></p>
+<p>Di mana k = jumlah parameter, n = ukuran sampel. <strong>Makin kecil, makin baik — hanya bermakna kalau ada model lain yang digunakan sebagai perbandingan.</strong></p>
 <table class="caption-top">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 42%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 24%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Model</th>
@@ -668,13 +700,22 @@ Rizqy Amelia Zein
 </tr>
 </tbody>
 </table>
-<p>Model 2 menang: <em>fit</em> bagus tanpa terlalu kompleks. BIC lebih ketat dari AIC karena penaltinya lebih besar — pilih BIC jika prioritasnya parsimoni.</p>
+<p>Model 2 paling baik: model <em>fit</em> baik (AIC lebih kecil dari Model 1) dan tidak terlalu kompleks (BIC paling kecil diantara model yang lain). BIC lebih ketat dari AIC karena penaltinya lebih besar. Pilih BIC jika prioritasnya memilih model yang paling sederhana (parsimoni).</p>
 </section>
 <section id="pseudo-r²-seberapa-banyak-variasi-yang-dijelaskan" class="slide level2">
 <h2>Pseudo R² — seberapa banyak variasi yang dijelaskan?</h2>
-<p><strong>Masalah:</strong> Regresi logistik tidak punya R² seperti OLS karena tidak ada “total <em>variance</em>” yang bisa dibagi seperti dalam OLS.</p>
-<p><strong>Solusi: Pseudo R²</strong> — ada beberapa versi, yang paling sering dilaporkan adalah <strong>Nagelkerke R²:</strong></p>
+<ul>
+<li>Regresi logistik tidak punya R² seperti OLS karena tidak ada “total <em>variance</em>” yang bisa dibagi seperti dalam OLS.</li>
+<li><strong>Solusinya Pseudo R²</strong> — Ada beberapa versi, yang paling sering digunakan adalah <strong>Nagelkerke R²:</strong></li>
+</ul>
+</section>
+<section id="interpretasi-pseudo-r²" class="slide level2">
+<h2>Interpretasi Pseudo R²</h2>
 <table class="caption-top">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 70%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Nagelkerke R²</th>
@@ -700,19 +741,10 @@ Rizqy Amelia Zein
 </tr>
 </tbody>
 </table>
-<div class="callout callout-warning callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Interpretasi Pseudo R²</strong></p>
-</div>
-<div class="callout-content">
-<p>Pseudo R² <strong>bukan</strong> “proporsi varians yang dijelaskan” seperti R² OLS, jadi jangan diinterpretasikan dengan cara yang sama! Lebih tepat diartikan sebagai “peningkatan <em>fit</em> dibanding <em>null model</em>.” Nilainya cenderung lebih rendah dari R² OLS.</p>
-</div>
-</div>
-</div>
+<ul>
+<li><p>Pseudo R² <strong>bukan</strong> “proporsi varians yang dijelaskan” seperti R² OLS, jadi jangan diinterpretasikan dengan cara yang sama! Lebih tepat diartikan sebagai “peningkatan <em>fit</em> dibanding <em>null model</em>.” Nilainya cenderung lebih rendah dari R² OLS.</p></li>
+<li><p>Cara melaporkan yang benar: <em>“Nagelkerke R² = .32, mengindikasikan bahwa model dengan prediktor memberikan peningkatan <em>fit</em> yang substansial dibandingkan model tanpa prediktor.”</em></p></li>
+</ul>
 </section></section>
 <section>
 <section id="model-dengan-banyak-prediktor" class="title-slide slide level1 center" data-background-color="#14497F">
@@ -724,11 +756,17 @@ Rizqy Amelia Zein
 <p><strong>Masalah <em>confounding</em>:</strong> Dalam analisis bivariat, efek yang terlihat bisa dipengaruhi oleh variabel ketiga.</p>
 <p>Contoh: Mahasiswa yang tinggal jauh dari pokjar cenderung punya keterlibatan akademik yang lebih rendah (karena kesempatan terlibat lebih terbatas). Efek jarak dan efek keterlibatan <strong>saling tumpang tindih</strong>.</p>
 <table class="caption-top">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 26%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Prediktor</th>
-<th style="text-align: center;"><em>Unadjusted</em> OR</th>
-<th style="text-align: center;"><em>Adjusted</em> OR</th>
+<th style="text-align: center;">Unadjusted OR</th>
+<th style="text-align: center;">Adjusted OR</th>
 <th>95% CI</th>
 </tr>
 </thead>
@@ -754,6 +792,9 @@ Rizqy Amelia Zein
 </tbody>
 </table>
 <p>Setelah dikontrol, efek jarak sedikit mengecil — sebagian efeknya bekerja <em>melalui</em> keterlibatan akademik.</p>
+</section>
+<section id="adjusted-or-efek-prediktor-setelah-mengontrol-variabel-lain-1" class="slide level2">
+<h2>Adjusted OR — efek prediktor setelah mengontrol variabel lain</h2>
 <div class="callout callout-warning callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -772,12 +813,29 @@ Rizqy Amelia Zein
 <h2>Interaksi — efek prediktor yang berbeda antar subgrup</h2>
 <p><strong>Pertanyaan:</strong> Apakah efek jarak pada putus studi <em>berbeda</em> tergantung tingkat keterlibatan akademik?</p>
 <p><span class="math display">\[\text{logit}(P) = \beta_0 + \beta_1(\text{Jarak}) + \beta_2(\text{Keterlibatan}) + \beta_3(\text{Jarak} \times \text{Keterlibatan})\]</span></p>
+<p>Masukkan suku interaksi (<em>interaction terms</em>) antara <code>jarak</code> dan <code>keterlibatan</code> di dalam model.</p>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Selalu <em>Centering</em> Prediktor!</strong></p>
+</div>
+<div class="callout-content">
+<p>Agar <em>main effects</em> dapat diinterpretasi, maka semua prediktor yang dibuatkan suku interaksinya, harus selalu di-<em>centering</em>. Artinya, nilai setiap orang dikurangi dengan nilai rata-rata, sehingga nilai 0 = rata-rata.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="interaksi-efek-prediktor-yang-berbeda-antar-subgrup-1" class="slide level2">
+<h2>Interaksi — efek prediktor yang berbeda antar subgrup</h2>
 <p><strong>Hasil:</strong> β₃ = −0.08, p = .03 → Interaksi signifikan!</p>
 <table class="caption-top">
 <colgroup>
-<col style="width: 15%">
-<col style="width: 61%">
-<col style="width: 23%">
+<col style="width: 25%">
+<col style="width: 35%">
+<col style="width: 40%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -805,7 +863,7 @@ Rizqy Amelia Zein
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Tip</strong></p>
+<p><strong>Interpretasi</strong></p>
 </div>
 <div class="callout-content">
 <p>Keterlibatan akademik yang tinggi bisa <strong>men-<em>buffer</em></strong> dampak jarak yang jauh, sehingga bisa dijadikan dasar untuk merancang intervensi yang tepat sasaran.</p>
@@ -828,7 +886,7 @@ Rizqy Amelia Zein
 <ul>
 <li><em>Forward</em>: tambahkan prediktor satu per satu berdasarkan p-value</li>
 <li><em>Backward</em>: mulai dari semua prediktor, hapus yang tidak signifikan</li>
-<li><strong>Masalah:</strong> <em>Overfitting</em>, inflasi <em>Type I error</em>, hasil tidak <em>replicable</em></li>
+<li><strong>Masalah:</strong> <em>Overfitting</em>, inflasi <em>Type I error</em>, hasil sulit dicoba-ulang (replikasi)</li>
 </ul>
 </div></div>
 <div class="callout callout-warning callout-titled callout-style-default">
@@ -888,6 +946,10 @@ Rizqy Amelia Zein
 <h2>Multikolinearitas — sudah familiar dari Bagian 3</h2>
 <p>Cara memeriksa dan interpretasinya sama persis seperti dalam regresi OLS — gunakan <strong>VIF</strong>:</p>
 <table class="caption-top">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 85%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">VIF</th>
@@ -909,7 +971,7 @@ Rizqy Amelia Zein
 </tr>
 </tbody>
 </table>
-<p><strong>Contoh masalah:</strong> “Durasi studi (semester)” dan “biaya pendidikan kumulatif” — keduanya naik bersama, korelasi r = 0.95 → VIF ≈ 18 → tidak bisa diestimasi secara stabil.</p>
+<p><strong>Contoh problem:</strong> “Durasi studi (semester)” dan “biaya kuliah kumulatif” — keduanya naik bersama, korelasi r = 0.95 → VIF ≈ 18 → model sulit diestimasi secara stabil.</p>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -919,7 +981,7 @@ Rizqy Amelia Zein
 <p><strong>Tip</strong></p>
 </div>
 <div class="callout-content">
-<p>Jamovi menampilkan VIF secara otomatis di <em>output</em> regresi logistik — centang <strong>Collinearity Statistics</strong> di opsi <strong>Model Coefficients</strong>.</p>
+<p><code>jamovi</code> menampilkan VIF secara otomatis di <em>output</em> regresi logistik — centang <strong>Collinearity Statistics</strong> di opsi <strong>Model Coefficients</strong>.</p>
 </div>
 </div>
 </div>
@@ -941,9 +1003,9 @@ Rizqy Amelia Zein
 <ul>
 <li>Koefisien sangat besar (β &gt; 10 atau &lt; −10)</li>
 <li><em>Standard error</em> sangat besar</li>
-<li>Pesan “Algorithm did not converge”</li>
+<li>Pesan <em>error</em> <code>Algorithm did not converge</code></li>
 </ul>
-<p>Jika ini terjadi, cek distribusi prediktor dan <em>outcome</em> — sering kali tanda bahwa ada <strong>kategori yang terlalu kecil</strong>.</p>
+<p>Jika ini terjadi, cek distribusi prediktor dan <em>outcome</em> karena umumnya berarti bahwa ada <strong>kejadian yang frekuensi terjadinya terlalu kecil</strong>.</p>
 </div>
 </div>
 </div>
@@ -953,10 +1015,15 @@ Rizqy Amelia Zein
 <h1>Evaluasi Akurasi Prediksi</h1>
 
 </section>
-<section id="confusion-matrix-dasar-evaluasi-akurasi" class="slide level2">
-<h2><em>Confusion matrix</em> — dasar evaluasi akurasi</h2>
-<p>Setelah model difit, gunakan <em>threshold default</em> P ≥ 0.50 → prediksi <em>outcome</em> terjadi; P &lt; 0.50 → prediksi tidak terjadi.</p>
-<table class="caption-top">
+<section id="confusion-matrix-dasar-evaluasi-akurasi-klasifikasi-model" class="slide level2">
+<h2><em>Confusion matrix</em> — dasar evaluasi akurasi klasifikasi model</h2>
+<p>Setelah model diestimasi, gunakan <em>threshold default</em> P ≥ 0.50 → prediksi <em>outcome</em> terjadi; P &lt; 0.50 → prediksi tidak terjadi.</p>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 35%">
+<col style="width: 35%">
+</colgroup>
 <thead>
 <tr class="header">
 <th></th>
@@ -987,12 +1054,12 @@ Rizqy Amelia Zein
 <section id="sensitivity-specificity-dan-akurasi" class="slide level2">
 <h2><em>Sensitivity</em>, <em>specificity</em>, dan akurasi</h2>
 <p>Dari <em>confusion matrix</em> tadi (TP=130, TN=240, FP=30, FN=50, N=450):</p>
-<table class="caption-top">
+<table class="caption-top" style="width:100%;">
 <colgroup>
-<col style="width: 16%">
+<col style="width: 15%">
 <col style="width: 18%">
-<col style="width: 14%">
-<col style="width: 50%">
+<col style="width: 10%">
+<col style="width: 56%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1034,7 +1101,7 @@ Rizqy Amelia Zein
 <div class="callout-content">
 <ul>
 <li><strong>Screening risiko bunuh diri</strong> → prioritaskan <em>sensitivity</em> tinggi — lebih baik <em>over-identify</em> daripada ada yang terlewat</li>
-<li><strong>Diagnosis klinis formal</strong> → prioritaskan <em>specificity</em> tinggi — <em>false positive</em> berdampak stigma dan biaya</li>
+<li><strong>Diagnosis klinis formal</strong> → prioritaskan <em>specificity</em> tinggi — <em>false positive</em> berdampak stigma dan biaya perawatan</li>
 </ul>
 <p><em>Default threshold</em> = 0.50 — bisa disesuaikan sesuai konteks dan pertimbangan etis.</p>
 </div>
@@ -1045,6 +1112,10 @@ Rizqy Amelia Zein
 <h2>AUC — ringkasan performa model dalam satu angka</h2>
 <p><strong>AUC</strong> (<em>Area Under the ROC Curve</em>) = probabilitas bahwa model memberikan <em>predicted probability</em> yang lebih tinggi kepada kasus positif dibanding kasus negatif yang diambil secara acak.</p>
 <table class="caption-top">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 85%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">AUC</th>
@@ -1054,7 +1125,7 @@ Rizqy Amelia Zein
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">0.50</td>
-<td style="text-align: left;">Tidak lebih baik dari tebakan</td>
+<td style="text-align: left;">Tidak lebih baik dari tebakan acak</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">0.60–0.70</td>
@@ -1070,7 +1141,7 @@ Rizqy Amelia Zein
 </tr>
 <tr class="odd">
 <td style="text-align: center;">&gt; 0.90</td>
-<td style="text-align: left;">Sangat baik — atau <em>overfitting</em>? Cek dulu!</td>
+<td style="text-align: left;">Sangat baik — atau model <em>overfitting</em>? Cek dulu!</td>
 </tr>
 </tbody>
 </table>
@@ -1083,7 +1154,52 @@ Rizqy Amelia Zein
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>ROC <em>curve</em> dan AUC tersedia di jamovi. Pembahasan mendalam tentang analisis ROC — termasuk PPV/NPV, Youden’s Index, dan penentuan <em>cut-off</em> optimal — ada di <strong>Bagian 4</strong>.</p>
+<p>ROC <em>curve</em> dan AUC tersedia di jamovi. Pembahasan mendalam tentang analisis ROC — termasuk PPV/NPV, Youden’s Index, dan penentuan <em>cut-off</em> optimal — ada di <a href="..\docs/slides/bagian-4.html"><strong>Bagian 4</strong></a>.</p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="demonstrasi-di-jamovi" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1>Demonstrasi di <code>jamovi</code></h1>
+
+</section>
+<section id="konteks-apa-yang-memprediksi-putus-studi-dropout-dalam-pjj" class="slide level2">
+<h2>Konteks: apa yang memprediksi putus studi (<em>dropout</em>) dalam PJJ?</h2>
+<ul>
+<li>Dataset: <strong>Dataset Contoh Regresi Logistik</strong> (<a href="materials/dataset-dropout.omv"><code>dataset-dropout.omv</code></a>)</li>
+</ul>
+<p><strong>Variabel:</strong> - <code>putus_studi</code>: outcome (0 = lanjut, 1 = putus studi sebelum semester ke-5) - <code>usia</code>: 18–65 tahun - <code>jenis_kelamin</code>: 0 = Perempuan, 1 = Laki-laki - <code>metode_kuliah</code>: 1 = Tatap Muka Terbatas, 2 = Daring, 3 = Mandiri, tanpa kuliah - <code>kecemasan_akademik</code>: skor kecemasan awal (0–63) - <code>jarak_pokjar_km</code>: 0.5–50 km - <code>keterlibatan_akademik</code>: skor keterlibatan (1–7)</p>
+</section>
+<section id="langkah-langkah-di-jamovi" class="slide level2">
+<h2>Langkah-langkah di <code>jamovi</code></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Menjalankan regresi logistik:</strong></p>
+<ol type="1">
+<li><strong>Analyses → Regression → Logistic Regression → 2 Outcomes (Binomial)</strong></li>
+<li>Masukkan variabel <em>outcome</em> ke <strong>Dependent Variable</strong></li>
+<li>Masukkan prediktor ke <strong>Covariates</strong> (kontinu) atau <strong>Factors</strong> (kategorikal)</li>
+<li><code>jamovi</code> akan melakukan <em>dummy coding</em> secara otomatis untuk variabel kategorikal</li>
+</ol>
+</div><div class="column" style="width:50%;">
+<p><strong>Output yang harus dicek:</strong></p>
+<p>☑ <em>Model Fit</em> — Model χ², Nagelkerke R²</p>
+<p>☑ <em>Model Coefficients</em> — β, OR, 95% CI, p</p>
+<p>☑ <em>Collinearity Statistics</em> — VIF</p>
+<p>☑ <em>Prediction Table</em> — akurasi, <em>sensitivity</em>, <em>specificity</em></p>
+<p>☑ <em>ROC Curve</em> — AUC</p>
+</div></div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Urutan membaca output</strong></p>
+</div>
+<div class="callout-content">
+<p>Omnibus (Model χ²) → Pseudo R² → Koefisien per prediktor (OR + CI) → VIF → Akurasi klasifikasi → AUC</p>
 </div>
 </div>
 </div>
@@ -1113,7 +1229,6 @@ Rizqy Amelia Zein
 </section>
 <section id="menerjemahkan-or-ke-bahasa-yang-dipahami-semua-orang" class="slide level2">
 <h2>Menerjemahkan OR ke bahasa yang dipahami semua orang</h2>
-<p>Jangan serahkan interpretasi ke pembaca — terjemahkan OR ke kalimat yang konkrit.</p>
 <p><strong>Contoh: OR = 1.05 untuk jarak ke pokjar (per 1 km)</strong></p>
 <ul>
 <li><p><strong>Opsi 1 — Persentase perubahan <em>odds</em>:</strong> “Setiap tambahan 1 km jarak dari pokjar, <em>odds</em> putus studi naik 5%.”</p></li>
@@ -1129,69 +1244,21 @@ Rizqy Amelia Zein
 <p><strong>Warning</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>OR ≠ <em>Risk Ratio</em> (RR).</strong> Jangan tulis “X kali lebih <em>mungkin</em>” untuk OR — itu bahasa RR. OR harus dikatakan: “X kali lebih tinggi <strong><em>odds</em></strong>-nya” (Zhang &amp; Yu, 1998, <em>JAMA</em>). Perbedaan ini penting terutama jika prevalensi <em>outcome</em> &gt; 10%.</p>
+<p><strong>OR ≠ <em>Risk Ratio</em> (RR).</strong> Jangan gunakan “X kali lebih <em>mungkin</em>” untuk interpretasi OR, karena ini adalah interpretasi RR. OR harus diinterpretasi: “X kali lebih tinggi <strong><em>odds</em></strong>-nya” (<a href="https://jamanetwork.com/journals/jama/fullarticle/188182">Zhang &amp; Yu, 1998</a>). Perbedaan ini penting terutama jika prevalensi <em>outcome</em> &gt; 10%.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="enam-kesalahan-umum" class="slide level2">
-<h2>Enam kesalahan umum</h2>
+<section id="kesalahan-umum" class="slide level2">
+<h2>6️⃣ kesalahan umum</h2>
 <ol type="1">
 <li class="fragment"><p><strong>Mengaburkan OR dengan <em>Risk Ratio</em></strong> — “X kali lebih mungkin” bukan cara yang benar untuk menginterpretasikan OR. Kata yang tepat: “X kali lebih tinggi <em>odds</em>-nya”.</p></li>
-<li class="fragment"><p><strong>Mengklaim kausalitas</strong> — Regresi logistik adalah korelasional. Kausalitas membutuhkan desain eksperimental atau <em>quasi</em>-eksperimental.</p></li>
+<li class="fragment"><p><strong>Mengklaim kausalitas</strong> — Regresi logistik adalah analisis korelasional. Kausalitas harus memenuhi asumsi <strong>temporalitas</strong> dan kendali terhadap <strong><em>confounding</em></strong>, sehingga harus diuji dengan desain eksperimental atau <em>quasi</em>-eksperimental.</p></li>
 <li class="fragment"><p><strong>Mengabaikan multikolinearitas</strong> — “Usia” dan “tahun lahir” keduanya dimasukkan sebagai prediktor? Sudah pasti multikolinear.</p></li>
 <li class="fragment"><p><strong>Tidak memeriksa asumsi</strong> — Terutama linearitas dalam <em>logit</em> dan kemungkinan <em>perfect separation</em>.</p></li>
-<li class="fragment"><p><strong>Hanya melaporkan prediktor yang signifikan</strong> — Laporkan <strong>semua</strong> prediktor yang dimasukkan ke model — bukan <em>cherry-pick</em> yang p &lt; .05.</p></li>
+<li class="fragment"><p><strong>Hanya melaporkan prediktor yang signifikan</strong> — Laporkan <strong>semua</strong> prediktor yang dimasukkan ke model, jangan hanya yang “signifikan” (<em>p</em> &lt; .05.)</p></li>
 <li class="fragment"><p><strong>EPV terlalu rendah</strong> — <em>Events per variable</em> (EPV): minimal 10 kejadian per prediktor. Dengan hanya 50 kejadian (<em>events</em>), jangan masukkan lebih dari 5 prediktor — estimasi akan tidak stabil.</p></li>
 </ol>
-</section></section>
-<section>
-<section id="demonstrasi-di-jamovi" class="title-slide slide level1 center" data-background-color="#14497F">
-<h1>Demonstrasi di jamovi</h1>
-
-</section>
-<section id="konteks-apa-yang-memprediksi-pemberian-dukungan-sosial" class="slide level2">
-<h2>Konteks: apa yang memprediksi pemberian dukungan sosial?</h2>
-<ul>
-<li>Dataset: <strong>Dataset Contoh Regresi Logistik</strong> (<code>dataset-social-support.omv</code>)
-<ul>
-<li>Dapat diunduh dari <em>navbar</em> di laman mata kuliah</li>
-</ul></li>
-<li>Pertanyaan penelitian berkaitan dengan faktor-faktor yang memprediksi <em>outcome</em> biner dalam konteks psikologi klinis/sosial</li>
-</ul>
-</section>
-<section id="langkah-langkah-di-jamovi" class="slide level2">
-<h2>Langkah-langkah di jamovi</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Menjalankan regresi logistik:</strong></p>
-<ol type="1">
-<li><strong>Analyses → Regression → Logistic Regression → 2 Outcomes (Binomial)</strong></li>
-<li>Masukkan variabel <em>outcome</em> ke <strong>Dependent Variable</strong></li>
-<li>Masukkan prediktor ke <strong>Covariates</strong> (kontinu) atau <strong>Factors</strong> (kategorikal)</li>
-<li>Jamovi akan melakukan <em>dummy coding</em> secara otomatis untuk variabel kategorikal</li>
-</ol>
-</div><div class="column" style="width:50%;">
-<p><strong>Output yang harus dicek:</strong></p>
-<p>☑ <em>Model Fit</em> — Model χ², Nagelkerke R²</p>
-<p>☑ <em>Model Coefficients</em> — β, OR, 95% CI, p</p>
-<p>☑ <em>Collinearity Statistics</em> — VIF</p>
-<p>☑ <em>Prediction Table</em> — akurasi, <em>sensitivity</em>, <em>specificity</em></p>
-<p>☑ <em>ROC Curve</em> — AUC</p>
-</div></div>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Urutan membaca output</strong></p>
-</div>
-<div class="callout-content">
-<p>Omnibus (Model χ²) → Pseudo R² → Koefisien per prediktor (OR + CI) → VIF → Akurasi klasifikasi → AUC</p>
-</div>
-</div>
-</div>
 </section>
 <section id="ada-pertanyaan" class="slide level2">
 <h2>Ada pertanyaan❓</h2>

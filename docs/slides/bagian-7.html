@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.10.3">
 
   <meta name="author" content="Rizqy Amelia Zein">
-  <meta name="dcterms.date" content="2026-04-12">
+  <meta name="dcterms.date" content="2026-04-16">
   <title>Statistik dalam Penelitian Psikologi – Principal Component Analysis &amp; Exploratory Factor Analysis</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -150,12 +150,12 @@ Rizqy Amelia Zein
     </div>
 </div>
 
-  <p class="date">2026-04-12</p>
+  <p class="date">2026-04-16</p>
 </section>
 <section id="outline" class="slide level2">
 <h2><em>Outline</em></h2>
 <ul>
-<li>Mengapa kita perlu analisis faktor?</li>
+<li>Mengapa kita perlu melakukan analisis faktor?</li>
 <li><em>Principal Component Analysis</em> (PCA)</li>
 <li><em>Exploratory Factor Analysis</em> (EFA)</li>
 <li>Asumsi &amp; kesiapan data</li>
@@ -176,7 +176,7 @@ Rizqy Amelia Zein
 <li class="fragment">Atau ada <strong>beberapa dimensi</strong> yang lebih mendasar di baliknya?</li>
 <li class="fragment">Masalah yang muncul kalau tidak ada reduksi:
 <ul>
-<li class="fragment">Tidak bisa divisualisasikan (kita tidak bisa memplot 20 dimensi sekaligus)</li>
+<li class="fragment">Tidak bisa divisualisasikan (kita akan kesulitan membuat visualisasi 20 “dimensi” sekaligus)</li>
 <li class="fragment">Regresi dengan 20 prediktor: risiko <em>overfitting</em> sangat tinggi</li>
 <li class="fragment"><em>Item</em>-<em>item</em> yang saling berkorelasi tinggi menunjukkan adanya <strong>redundansi</strong></li>
 </ul></li>
@@ -217,7 +217,7 @@ Rizqy Amelia Zein
 <tr class="header">
 <th>Model</th>
 <th>Pertanyaan yang dijawab</th>
-<th>Dalam workshop ini</th>
+<th>Dalam mata kuliah ini</th>
 </tr>
 </thead>
 <tbody>
@@ -233,19 +233,19 @@ Rizqy Amelia Zein
 </tr>
 <tr class="odd">
 <td><strong>CFA</strong></td>
-<td>“Apakah struktur faktor yang saya hipotesiskan cocok dengan data?”</td>
+<td>“Apakah struktur faktor yang saya hipotesiskan sesuai dengan data?”</td>
 <td>Bagian 8</td>
 </tr>
 <tr class="even">
 <td><strong>SEM</strong></td>
 <td>“Bagaimana faktor-faktor laten saling mempengaruhi?”</td>
-<td>Pengantar di Bagian 5–6</td>
+<td>Tidak dibahas</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="efa-vs-cfa-sekilas" class="slide level2">
-<h2>EFA vs CFA — sekilas</h2>
+<section id="efa-vs-cfa-perbandingannya" class="slide level2">
+<h2>EFA vs CFA — perbandingannya</h2>
 <table class="caption-top">
 <colgroup>
 <col style="width: 50%">
@@ -259,8 +259,8 @@ Rizqy Amelia Zein
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Jumlah faktor <strong>belum diketahui</strong> — biarkan data menunjukkan strukturnya</td>
-<td style="text-align: left;">Jumlah faktor <strong>sudah ditentukan</strong> sebelum mengambil data</td>
+<td style="text-align: left;">Jumlah faktor <strong>belum diketahui</strong> — biarkan data mendikte strukturnya</td>
+<td style="text-align: left;">Jumlah faktor <strong>sudah ditentukan</strong> (melalui hipotesis) sebelum mengambil data</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Peneliti <strong>tidak memiliki</strong> model hipotesis <em>a priori</em></td>
@@ -278,10 +278,10 @@ Rizqy Amelia Zein
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Warning</strong></p>
+<p><strong>Sangat tidak disarankan</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>Sangat tidak disarankan</strong> melakukan EFA kemudian CFA pada <strong>sampel yang sama</strong> — kita akan bahas lebih dalam di Bagian 8.</p>
+<p>…melakukan EFA kemudian CFA pada <strong>sampel yang sama</strong> — kita akan bahas lebih dalam di Bagian 8.</p>
 </div>
 </div>
 </div>
@@ -352,10 +352,10 @@ Rizqy Amelia Zein
 <section id="eigenvalue-scree-plot" class="slide level2">
 <h2><em>Eigenvalue</em> &amp; <em>scree plot</em></h2>
 <ul>
-<li><strong>Eigenvalue (λ)</strong>: mengukur seberapa banyak variansi yang dijelaskan oleh setiap komponen. Total eigenvalue = jumlah <em>item</em>.</li>
+<li><strong>Eigenvalue (λ)</strong>: mengukur seberapa banyak varians yang dijelaskan oleh setiap komponen. Total eigenvalue = jumlah <em>item</em>.</li>
 <li><strong>Kaiser criterion</strong>: pertahankan komponen dengan λ &gt; 1
 <ul>
-<li>Logika: komponen dengan λ &lt; 1 menjelaskan variansi <em>kurang</em> dari satu <em>item</em> tunggal</li>
+<li>Logika: komponen dengan λ &lt; 1 menjelaskan varians <em>kurang</em> dari satu <em>item</em> tunggal</li>
 </ul></li>
 </ul>
 <div class="callout callout-caution callout-titled callout-style-default">
@@ -420,7 +420,7 @@ Rizqy Amelia Zein
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>Rotasi <strong>tidak</strong> mengubah total variansi yang dijelaskan — hanya mendistribusikannya agar lebih mudah diinterpretasikan.</p>
+<p>Rotasi <strong>tidak</strong> mengubah total variani yang dijelaskan — hanya mendistribusikannya agar lebih mudah diinterpretasikan.</p>
 </div>
 </div>
 </div>
@@ -462,8 +462,8 @@ Rizqy Amelia Zein
 <td><em>Item</em> = fungsi linear faktor + <em>error</em></td>
 </tr>
 <tr class="even">
-<td><strong>Variansi</strong></td>
-<td>Total variansi (termasuk <em>unique</em> &amp; <em>error</em>)</td>
+<td><strong>Varians</strong></td>
+<td>Total varians (termasuk <em>unique</em> &amp; <em>error</em>)</td>
 <td>Hanya <em>common variance</em></td>
 </tr>
 <tr class="odd">
@@ -502,8 +502,8 @@ Rizqy Amelia Zein
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><p><strong>Komunalitas (h²)</strong>: proporsi variansi <em>item</em> yang dijelaskan oleh <em>semua</em> faktor bersama</p></li>
-<li><p><strong>Keunikan (u²)</strong>: 1 − h² = variansi yang <em>tidak</em> dijelaskan oleh faktor mana pun (variansi spesifik + <em>error</em>)</p></li>
+<li><p><strong>Komunalitas (h²)</strong>: proporsi varians <em>item</em> yang dijelaskan oleh <em>semua</em> faktor bersama</p></li>
+<li><p><strong>Keunikan (u²)</strong>: 1 − h² = varians yang <em>tidak</em> dijelaskan oleh faktor mana pun (varians spesifik + <em>error</em>)</p></li>
 </ul>
 <table class="caption-top">
 <colgroup>
@@ -548,8 +548,8 @@ Rizqy Amelia Zein
 </div>
 </div></div>
 </section>
-<section id="menentukan-jumlah-faktor-jangan-hanya-kaiser" class="slide level2">
-<h2>Menentukan jumlah faktor — jangan hanya Kaiser!</h2>
+<section id="menentukan-jumlah-faktor-jangan-hanya-mengandalkan-kaiser" class="slide level2">
+<h2>Menentukan jumlah faktor — jangan hanya mengandalkan Kaiser!</h2>
 <ul>
 <li class="fragment"><p><strong>Kaiser criterion</strong> (λ &gt; 1) — mudah, tapi konsisten <em>over-extract</em>. Gunakan sebagai acuan awal saja.</p></li>
 <li class="fragment"><p><strong><em>Scree plot</em></strong> — visual dan intuitif, tapi subjektif. Dua peneliti bisa membaca <em>scree plot</em> yang sama secara berbeda.</p></li>
@@ -559,7 +559,7 @@ Rizqy Amelia Zein
 <li class="fragment">Pertahankan faktor di mana eigenvalue nyata <strong>&gt;</strong> eigenvalue acak (persentil ke-95)</li>
 <li class="fragment">Paling akurat secara empiris; tidak subjektif (Hayton, Allen &amp; Scarpello, 2004)</li>
 </ul></li>
-<li class="fragment"><p><strong>Teori</strong> — berapa faktor yang dihipotesiskan berdasarkan literatur?</p></li>
+<li class="fragment"><p><strong>Teori</strong> — berapa faktor yang disebutkan di literatur?</p></li>
 </ul>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -570,7 +570,7 @@ Rizqy Amelia Zein
 <p><strong>Praktik terbaik</strong></p>
 </div>
 <div class="callout-content">
-<p>Gunakan kombinasi <strong><em>parallel analysis</em></strong> + <em>scree plot</em> + teori sebagai dasar keputusan. Di jamovi, <em>parallel analysis</em> tersedia langsung di menu EFA.</p>
+<p>Gunakan kombinasi <strong><em>parallel analysis</em></strong> + <em>scree plot</em> + teori sebagai dasar keputusan. Di <code>jamovi</code>, <em>parallel analysis</em> tersedia langsung di menu EFA.</p>
 </div>
 </div>
 </div>
@@ -604,7 +604,7 @@ Rizqy Amelia Zein
 </div>
 </section>
 <section id="metode-ekstraksi-di-jamovi" class="slide level2">
-<h2>Metode ekstraksi di jamovi</h2>
+<h2>Metode ekstraksi di <code>jamovi</code></h2>
 <table class="caption-top">
 <colgroup>
 <col style="width: 30%">
@@ -777,7 +777,7 @@ Rizqy Amelia Zein
 <p><strong>Catatan</strong></p>
 </div>
 <div class="callout-content">
-<p>Ambang batas RMSEA &lt; .06 (Hu &amp; Bentler, 1999) sering dikutip, tapi berasal dari kondisi simulasi yang spesifik. Untuk model dengan banyak indikator atau sampel besar, <strong>RMSEA &lt; .08 sudah dapat diterima</strong>, jangan terlalu kaku pada angka .06.</p>
+<p>Ambang batas RMSEA &lt; .06 (<a href="https://www.tandfonline.com/doi/abs/10.1080/10705519909540118">Hu &amp; Bentler, 1999</a>) sering dikutip, tapi berasal dari kondisi simulasi yang spesifik. Untuk model dengan banyak indikator atau sampel besar, <strong>RMSEA &lt; .08 sudah dapat diterima</strong>, jangan terlalu kaku pada angka .06.</p>
 </div>
 </div>
 </div>
@@ -807,10 +807,10 @@ Rizqy Amelia Zein
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Tip</strong></p>
+<p><strong>Laporkan α dan ω</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>Laporkan keduanya</strong> — α dan ω. Jika ω &gt; α secara substansial, berarti asumsi <em>tau-equivalence</em> tidak terpenuhi. Keduanya tersedia langsung di <code>jamovi</code>.</p>
+<p>Jika ω &gt; α secara substansial, berarti asumsi <em>tau-equivalence</em> tidak terpenuhi. Keduanya tersedia langsung di <code>jamovi</code>.</p>
 </div>
 </div>
 </div>
@@ -820,7 +820,7 @@ Rizqy Amelia Zein
 <p>☐ <strong>Deskripsi sampel</strong> — N, karakteristik, cara pengumpulan data</p>
 <p>☐ <strong>Prosedur analisis</strong> — <em>software</em>, metode ekstraksi, kriteria jumlah faktor, jenis rotasi</p>
 <p>☐ <strong>Kelayakan analisis</strong> — nilai KMO, hasil Bartlett’s test (χ², df, p)</p>
-<p>☐ <strong>Hasil ekstraksi</strong> — jumlah faktor yang dipertahankan, eigenvalue, % variansi tiap faktor dan total</p>
+<p>☐ <strong>Hasil ekstraksi</strong> — jumlah faktor yang dipertahankan, eigenvalue, % varians tiap faktor dan total</p>
 <p>☐ <strong><em>Pattern matrix</em></strong> setelah rotasi, lengkap dengan komunalitas (h²)</p>
 <p>☐ <strong>Korelasi antar faktor</strong> — jika menggunakan rotasi oblique</p>
 <p>☐ <strong>Reliabilitas</strong> — Cronbach’s α dan/atau McDonald’s ω per faktor</p>
@@ -842,22 +842,18 @@ Rizqy Amelia Zein
 <h1>Demonstrasi di <code>jamovi</code></h1>
 
 </section>
-<section id="konteks-burnout-pada-tenaga-kerja" class="slide level2">
-<h2>Konteks: <em>Burnout</em> pada tenaga kerja</h2>
+<section id="konteks-burnout-pada-mahasiswa" class="slide level2">
+<h2>Konteks: <em>Burnout</em> pada mahasiswa</h2>
 <ul>
-<li>Dataset yang kita gunakan: <strong>Dataset Contoh EFA</strong> (<code>dataset-burnout.omv</code>)
-<ul>
-<li>Dapat diunduh dari <em>navbar</em> di laman <em>workshop</em></li>
-</ul></li>
-<li>Menggunakan skala <strong><em>burnout</em></strong> yang mengukur beberapa dimensi kelelahan kerja
-<ul>
-<li><em>Item</em>-<em>item</em> berbentuk skala <em>Likert</em></li>
-</ul></li>
-<li><strong>Pertanyaan penelitian</strong>: berapa dimensi laten yang mendasari <em>item</em>-<em>item</em> dalam skala <em>burnout</em> ini?</li>
+<li><p>Dataset yang kita gunakan: <strong>Dataset Contoh EFA</strong> (<a href="..\docs/materials/dataset-burnout.omv"><code>dataset-burnout.omv</code></a>)</p></li>
+<li><p><strong>Konteks penelitian:</strong> Data simulasi yang merepresentasikan <em>burnout</em> akademik mahasiswa pascasarjana</p></li>
+<li><p><strong>Pertanyaan penelitian</strong>: berapa dimensi laten yang mendasari <em>item</em>-<em>item</em> dalam skala <em>burnout</em> ini?</p></li>
 </ul>
+<p><strong>Variabel demografis:</strong> - <code>usia</code>: 20–35 tahun - <code>jenis_kelamin</code>: 0 = Perempuan, 1 = Laki-laki - <code>semester</code>: semester aktif (1–4) - <code>ipk</code>: Indeks Prestasi Kumulatif (2.00–4.00)</p>
+<p><strong>Variabel item (15 item, skala Likert 1–5):</strong> - <code>ab_ee_1</code> s.d. <code>ab_ee_5</code>: <em>Emotional Exhaustion</em> — merasa lelah, terkuras, kehabisan energi karena tuntutan akademik - <code>ab_cy_1</code> s.d. <code>ab_cy_5</code>: <em>Cynicism</em> — sikap jarak, tidak peduli, pesimis terhadap studi - <code>ab_ef_1</code> s.d. <code>ab_ef_5</code>: <em>Academic Efficacy</em> — keyakinan pada kemampuan akademik diri sendiri (skor tinggi = efikasi tinggi)</p>
 </section>
 <section id="langkah-langkah-di-jamovi" class="slide level2">
-<h2>Langkah-langkah di jamovi</h2>
+<h2>Langkah-langkah di <code>jamovi</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Menjalankan EFA:</strong></p>
