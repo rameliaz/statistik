@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.10.3">
 
   <meta name="author" content="Rizqy Amelia Zein">
-  <meta name="dcterms.date" content="2026-04-16">
+  <meta name="dcterms.date" content="2026-04-23">
   <title>Statistik dalam Penelitian Psikologi – Regresi Logistik Binomial</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -150,7 +150,7 @@ Rizqy Amelia Zein
     </div>
 </div>
 
-  <p class="date">2026-04-16</p>
+  <p class="date">2026-04-23</p>
 </section>
 <section id="outline" class="slide level2">
 <h2><em>Outline</em></h2>
@@ -591,7 +591,7 @@ Rizqy Amelia Zein
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Mengapa MLE</strong></p>
+<p><strong>Mengapa MLE❓</strong></p>
 </div>
 <div class="callout-content">
 <p>Karena MLE, kita <strong>tidak mendapatkan F-statistics</strong> seperti dalam OLS/ANOVA. Sebagai gantinya, kita mendapatkan <strong>χ²</strong> sebagai uji signifikansi keseluruhan model.</p>
@@ -742,8 +742,8 @@ Rizqy Amelia Zein
 </tbody>
 </table>
 <ul>
-<li><p>Pseudo R² <strong>bukan</strong> “proporsi varians yang dijelaskan” seperti R² OLS, jadi jangan diinterpretasikan dengan cara yang sama! Lebih tepat diartikan sebagai “peningkatan <em>fit</em> dibanding <em>null model</em>.” Nilainya cenderung lebih rendah dari R² OLS.</p></li>
-<li><p>Cara melaporkan yang benar: <em>“Nagelkerke R² = .32, mengindikasikan bahwa model dengan prediktor memberikan peningkatan <em>fit</em> yang substansial dibandingkan model tanpa prediktor.”</em></p></li>
+<li><p>Pseudo R² <strong>bukan</strong> “proporsi varians yang dijelaskan” seperti R² OLS, jadi <strong>jangan diinterpretasikan dengan cara yang sama</strong>. Lebih tepat diartikan sebagai <em>peningkatan model fit dibanding null model.</em> Nilainya cenderung lebih rendah dari R² OLS.</p></li>
+<li><p>Cara melaporkan yang benar: <em>“Nagelkerke R² = .32, mengindikasikan bahwa model dengan prediktor memberikan peningkatan <em>model fit</em> yang substansial dibandingkan model tanpa prediktor.”</em></p></li>
 </ul>
 </section></section>
 <section>
@@ -809,8 +809,8 @@ Rizqy Amelia Zein
 </div>
 </div>
 </section>
-<section id="interaksi-efek-prediktor-yang-berbeda-antar-subgrup" class="slide level2">
-<h2>Interaksi — efek prediktor yang berbeda antar subgrup</h2>
+<section id="interaksi-efek-prediktor-yang-berbeda-antar-subkelompok" class="slide level2">
+<h2>Interaksi — efek prediktor yang berbeda antar subkelompok</h2>
 <p><strong>Pertanyaan:</strong> Apakah efek jarak pada putus studi <em>berbeda</em> tergantung tingkat keterlibatan akademik?</p>
 <p><span class="math display">\[\text{logit}(P) = \beta_0 + \beta_1(\text{Jarak}) + \beta_2(\text{Keterlibatan}) + \beta_3(\text{Jarak} \times \text{Keterlibatan})\]</span></p>
 <p>Masukkan suku interaksi (<em>interaction terms</em>) antara <code>jarak</code> dan <code>keterlibatan</code> di dalam model.</p>
@@ -828,7 +828,7 @@ Rizqy Amelia Zein
 </div>
 </div>
 </section>
-<section id="interaksi-efek-prediktor-yang-berbeda-antar-subgrup-1" class="slide level2">
+<section id="interaksi-efek-prediktor-yang-berbeda-antar-subgrup" class="slide level2">
 <h2>Interaksi — efek prediktor yang berbeda antar subgrup</h2>
 <p><strong>Hasil:</strong> β₃ = −0.08, p = .03 → Interaksi signifikan!</p>
 <table class="caption-top">
@@ -848,12 +848,12 @@ Rizqy Amelia Zein
 <tr class="odd">
 <td>Keterlibatan <strong>rendah</strong></td>
 <td style="text-align: center;">OR = 1.12 per km</td>
-<td>Jarak sangat berpengaruh</td>
+<td>Jarak ada efeknya</td>
 </tr>
 <tr class="even">
 <td>Keterlibatan <strong>tinggi</strong></td>
 <td style="text-align: center;">OR = 1.02 per km</td>
-<td>Jarak hampir tidak berpengaruh</td>
+<td>Jarak hampir tidak ada efeknya</td>
 </tr>
 </tbody>
 </table>
@@ -908,8 +908,8 @@ Rizqy Amelia Zein
 <h1>Asumsi Regresi Logistik</h1>
 
 </section>
-<section id="kabar-baik-lebih-longgar-dari-ols" class="slide level2">
-<h2>Kabar baik: lebih longgar dari OLS!</h2>
+<section id="lebih-longgar-dari-ols" class="slide level2">
+<h2>Lebih longgar dari OLS!🎉</h2>
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Yang HARUS dipenuhi:</strong></p>
@@ -942,8 +942,8 @@ Rizqy Amelia Zein
 </div>
 </div>
 </section>
-<section id="multikolinearitas-sudah-familiar-dari-bagian-3" class="slide level2">
-<h2>Multikolinearitas — sudah familiar dari Bagian 3</h2>
+<section id="multikolinearitas" class="slide level2">
+<h2>Multikolinearitas</h2>
 <p>Cara memeriksa dan interpretasinya sama persis seperti dalam regresi OLS — gunakan <strong>VIF</strong>:</p>
 <table class="caption-top">
 <colgroup>
@@ -1108,8 +1108,8 @@ Rizqy Amelia Zein
 </div>
 </div>
 </section>
-<section id="auc-ringkasan-performa-model-dalam-satu-angka" class="slide level2">
-<h2>AUC — ringkasan performa model dalam satu angka</h2>
+<section id="area-under-the-curve-auc" class="slide level2">
+<h2><em>Area Under the Curve</em> (AUC)</h2>
 <p><strong>AUC</strong> (<em>Area Under the ROC Curve</em>) = probabilitas bahwa model memberikan <em>predicted probability</em> yang lebih tinggi kepada kasus positif dibanding kasus negatif yang diambil secara acak.</p>
 <table class="caption-top">
 <colgroup>
@@ -1241,10 +1241,10 @@ Rizqy Amelia Zein
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Warning</strong></p>
+<p><strong>OR ≠ <em>Risk Ratio</em> (RR).</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>OR ≠ <em>Risk Ratio</em> (RR).</strong> Jangan gunakan “X kali lebih <em>mungkin</em>” untuk interpretasi OR, karena ini adalah interpretasi RR. OR harus diinterpretasi: “X kali lebih tinggi <strong><em>odds</em></strong>-nya” (<a href="https://jamanetwork.com/journals/jama/fullarticle/188182">Zhang &amp; Yu, 1998</a>). Perbedaan ini penting terutama jika prevalensi <em>outcome</em> &gt; 10%.</p>
+<p>Jangan gunakan “X kali lebih <em>mungkin</em>” untuk interpretasi OR, karena ini adalah interpretasi RR. OR harus diinterpretasi: “X kali lebih tinggi <strong><em>odds</em></strong>-nya” (<a href="https://jamanetwork.com/journals/jama/fullarticle/188182">Zhang &amp; Yu, 1998</a>). Perbedaan ini penting terutama jika prevalensi <em>outcome</em> &gt; 10%.</p>
 </div>
 </div>
 </div>

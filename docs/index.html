@@ -438,7 +438,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#sumber-belajar-lainnya" id="toc-sumber-belajar-lainnya" class="nav-link" data-scroll-target="#sumber-belajar-lainnya">Sumber belajar lainnya</a></li>
   <li><a href="#sebelum-mulai-materi" id="toc-sebelum-mulai-materi" class="nav-link" data-scroll-target="#sebelum-mulai-materi">Sebelum mulai materi</a></li>
-  <li><a href="#cara-instalasi-module-semlj-v1.2.5" id="toc-cara-instalasi-module-semlj-v1.2.5" class="nav-link" data-scroll-target="#cara-instalasi-module-semlj-v1.2.5">Cara instalasi <em>module</em> SEMLj v1.2.5</a></li>
+  <li><a href="#cara-instalasi-module-jamovi" id="toc-cara-instalasi-module-jamovi" class="nav-link" data-scroll-target="#cara-instalasi-module-jamovi">Cara instalasi <em>module</em> <code>jamovi</code></a></li>
   <li><a href="#tutorial-jamovi-modules" id="toc-tutorial-jamovi-modules" class="nav-link" data-scroll-target="#tutorial-jamovi-modules">Tutorial jamovi + <em>modules</em></a></li>
   </ul>
 </nav>
@@ -468,6 +468,20 @@ ul.task-list li input[type="checkbox"] {
 
 <p>Laman web ini berisi materi <strong>Statistik dalam Penelitian Psikologi</strong>.</p>
 <p>Materi berlisensi <a href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons"><i class="fa fa-universal-access"></i></i> BY 4.0</a>. <strong>Materi bebas digunakan kembali namun wajib mengatribusi sumber aslinya</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><em>Software</em> yang digunakan
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Demonstrasi atas analisis statistik yang disiapkan dalam laman ini menggunakan <code>jamovi</code> sebagai alat bantu analisis. Meskipun, tentu saja, analisis statistik sifatnya <em>software agnostic</em>. Anda <strong>bebas menggunakan alat bantu analisis yang lain</strong>. Misalnya <code>jasp</code>, <code>SPSS</code>, <i class="fa-brands fa-r-project"></i>, <i class="fa-brands fa-python"></i>, bahkan Microsoft Excel <i class="fa-regular fa-file-excel"></i> sekalipun.</p>
+<p>Untuk perencanaan jumlah sampel dengan <em>a priori power analysis</em>, Anda bisa menggunakan <a href="https://www.psychologie.hhu.de/arbeitsgruppen/allgemeine-psychologie-und-arbeitspsychologie/gpower">G*Power</a> atau modul <a href="https://blog.jamovi.org/2024/10/28/pamlj.html"><code>PAMLj</code></a> atau <a href="https://open.lnu.se/index.php/metapsychology/article/view/3078/3073"><code>jpower</code></a> di <code>jamovi</code>.</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -523,13 +537,12 @@ ul.task-list li input[type="checkbox"] {
 <li>Fungsi logistik dan kurva S (<em>sigmoid</em>)</li>
 <li>Rantai konsep: probabilitas → <em>odds</em> → <em>log odds</em> (logit) → <em>odds ratio</em> (OR)</li>
 <li>Persamaan model &amp; interpretasi koefisien (β dan OR = e^β)</li>
-<li>Estimasi dengan <em>Maximum Likelihood</em> (MLE): <em>deviance</em>, <em>Likelihood Ratio Test</em></li>
+<li>Estimasi dengan <em>Maximum Likelihood</em> (MLE)</li>
 <li>Membandingkan model: AIC, BIC, dan Pseudo R² (Nagelkerke)</li>
-<li>Model dengan banyak prediktor: <em>adjusted</em> OR dan efek interaksi</li>
-<li>Asumsi regresi logistik (lebih longgar dari OLS: tidak perlu normalitas residual atau homoskedastisitas)</li>
-<li>Evaluasi akurasi prediksi: <em>confusion matrix</em>, <em>sensitivity</em>, <em>specificity</em>, AUC</li>
-<li>Pelaporan hasil sesuai APA &amp; terjemahan OR ke bahasa yang dipahami semua orang</li>
-<li>Kesalahan umum: OR vs.&nbsp;<em>risk ratio</em>, <em>events per variable</em> (EPV), <em>stepwise selection</em></li>
+<li>Model dengan banyak prediktor</li>
+<li>Asumsi regresi logistik</li>
+<li>Evaluasi akurasi prediksi</li>
+<li>Kesalahan umum dalam melakukan analisis regresi logistik</li>
 </ul>
 </section>
 <section id="bagian-4-analisis-roc-receiver-operating-characteristic" class="level3">
@@ -540,20 +553,20 @@ ul.task-list li input[type="checkbox"] {
 <li><em>Positive Predictive Value</em> (PPV) dan <em>Negative Predictive Value</em> (NPV)</li>
 <li><em>Trade-off</em> antara <em>sensitivity</em> dan <em>specificity</em></li>
 <li>Kurva ROC: cara membangun dan membacanya</li>
-<li><em>Area Under the Curve</em> (AUC): ringkasan performa dalam satu angka</li>
+<li><em>Area Under the Curve</em> (AUC)</li>
 <li>Youden’s Index: menentukan <em>cut-off</em> optimal</li>
 <li>Membandingkan beberapa alat ukur sekaligus</li>
 <li>Pengaruh prevalensi pada PPV dan NPV</li>
-<li>Demonstrasi di jamovi (modul PPDA → TestROC)</li>
+<li>Demonstrasi di <code>jamovi</code> (modul PPDA → TestROC)</li>
 </ul>
 </section>
 <section id="bagian-5-pengantar-latent-variable-modeling" class="level3">
 <h3 class="anchored" data-anchor-id="bagian-5-pengantar-latent-variable-modeling">Bagian 5️⃣: Pengantar <em>Latent Variable Modeling</em></h3>
 <ul>
-<li>Apa yang dimaksud dengan variabel laten? Mengapa psikologi membutuhkannya?</li>
+<li>Apa yang dimaksud dengan variabel laten?</li>
 <li><em>Classical Test Theory</em> sebagai model variabel laten paling sederhana</li>
-<li>Reliabilitas dan <em>measurement error</em>: mengapa skor observasi selalu mengandung <em>noise</em></li>
-<li><em>Attenuation bias</em>: bagaimana <em>measurement error</em> mendistorsi estimasi hubungan antar-variabel</li>
+<li>Reliabilitas dan <em>measurement error</em></li>
+<li><em>Attenuation bias</em></li>
 <li>Keluarga model variabel laten: CTT → EFA → CFA → SEM</li>
 <li>Variabel laten dalam model <em>reflektif</em> vs <em>formatif</em></li>
 <li>Pilihan perangkat lunak</li>
@@ -635,10 +648,10 @@ ul.task-list li input[type="checkbox"] {
 <li>Mahasiswa sangat disarankan untuk menonton <a href="https://datalab.cc/tools/jamovi">video tutorial jamovi</a> sebelum <em>workshop</em> untuk belajar menavigasikan menu dan fitur yang ada dalam <code>jamovi</code>. Cukup hanya dengan menonton bagian <em>Welcome</em>, <em>Installing jamovi</em>, dan <em>Navigating jamovi</em> (total durasi kurang lebih hanya 7 menit).</li>
 </ul>
 </section>
-<section id="cara-instalasi-module-semlj-v1.2.5" class="level2">
-<h2 class="anchored" data-anchor-id="cara-instalasi-module-semlj-v1.2.5">Cara instalasi <em>module</em> SEMLj v1.2.5</h2>
+<section id="cara-instalasi-module-jamovi" class="level2">
+<h2 class="anchored" data-anchor-id="cara-instalasi-module-jamovi">Cara instalasi <em>module</em> <code>jamovi</code></h2>
 <p>Gunakan <strong>jamovi versi stabil yang terbaru</strong> (2.6.44) <a href="https://www.jamovi.org/downloads/jamovi-2.6.44.0-win-x64.exe">untuk Windows</a> atau <a href="https://www.jamovi.org/download.html">MacOS</a>.</p>
-<p>Mohon untuk menyimak video cara mengelola <em>modules</em> di jamovi berikut ini. Di video ini saya mencontohkan cara instalasi <em>module</em> GAMLj. Instalasi <em>modules</em> SEMj v1.2.5 mengikuti prosedur yang persis sama.</p>
+<p>Mohon untuk menyimak video cara mengelola <em>modules</em> di jamovi berikut ini. Di video ini saya mencontohkan cara instalasi <em>module</em> GAMLj. Instalasi <em>module</em> yang lain mengikuti prosedur yang persis sama.</p>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/XWavBKgTEuU" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
 <section id="tutorial-jamovi-modules" class="level2">

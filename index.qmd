@@ -6,6 +6,12 @@ Laman web ini berisi materi **Statistik dalam Penelitian Psikologi**.
 
 Materi berlisensi [<i class="fab fa-creative-commons"><i class="fa fa-universal-access"></i></i> BY 4.0](https://creativecommons.org/licenses/by/4.0/). **Materi bebas digunakan kembali namun wajib mengatribusi sumber aslinya**.
 
+::: {.callout-note}
+#### _Software_ yang digunakan
+Demonstrasi atas analisis statistik yang disiapkan dalam laman ini menggunakan `jamovi` sebagai alat bantu analisis. Meskipun, tentu saja, analisis statistik sifatnya _software agnostic_. Anda **bebas menggunakan alat bantu analisis yang lain**. Misalnya `jasp`, `SPSS`, <i class="fa-brands fa-r-project"></i>, <i class="fa-brands fa-python"></i>, bahkan Microsoft Excel <i class="fa-regular fa-file-excel"></i> sekalipun. 
+
+Untuk perencanaan jumlah sampel dengan *a priori power analysis*, Anda bisa menggunakan [G*Power](https://www.psychologie.hhu.de/arbeitsgruppen/allgemeine-psychologie-und-arbeitspsychologie/gpower) atau modul [`PAMLj`](https://blog.jamovi.org/2024/10/28/pamlj.html) atau [`jpower`](https://open.lnu.se/index.php/metapsychology/article/view/3078/3073) di `jamovi`.
+:::
 
 ::: {.callout-note}
 #### Unduh materi dalam bentuk PDF 
@@ -47,12 +53,12 @@ Klik _navigation bar_ yang mengarah pada PDF materi, kemudian tekan `ctrl` dan `
 * Fungsi logistik dan kurva S (*sigmoid*)
 * Rantai konsep: probabilitas → *odds* → *log odds* (logit) → *odds ratio* (OR)
 * Persamaan model & interpretasi koefisien (β dan OR = e^β)
-* Estimasi dengan *Maximum Likelihood* (MLE): *deviance*, *Likelihood Ratio Test*
+* Estimasi dengan *Maximum Likelihood* (MLE)
 * Membandingkan model: AIC, BIC, dan Pseudo R² (Nagelkerke)
-* Model dengan banyak prediktor: *adjusted* OR dan efek interaksi
-* Asumsi regresi logistik (lebih longgar dari OLS: tidak perlu normalitas residual atau homoskedastisitas)
-* Evaluasi akurasi prediksi: *confusion matrix*, *sensitivity*, *specificity*, AUC
-* Kesalahan umum: OR vs. *risk ratio*, *events per variable* (EPV), *stepwise selection*
+* Model dengan banyak prediktor
+* Asumsi regresi logistik
+* Evaluasi akurasi prediksi
+* Kesalahan umum dalam melakukan analisis regresi logistik
 
 ### Bagian 4️⃣: Analisis ROC (*Receiver Operating Characteristic*)
 
@@ -61,18 +67,18 @@ Klik _navigation bar_ yang mengarah pada PDF materi, kemudian tekan `ctrl` dan `
 * *Positive Predictive Value* (PPV) dan *Negative Predictive Value* (NPV)
 * *Trade-off* antara *sensitivity* dan *specificity*
 * Kurva ROC: cara membangun dan membacanya
-* *Area Under the Curve* (AUC): ringkasan performa dalam satu angka
+* *Area Under the Curve* (AUC)
 * Youden's Index: menentukan *cut-off* optimal
 * Membandingkan beberapa alat ukur sekaligus
 * Pengaruh prevalensi pada PPV dan NPV
-* Demonstrasi di jamovi (modul PPDA → TestROC)
+* Demonstrasi di `jamovi` (modul PPDA → TestROC)
 
 ### Bagian 5️⃣: Pengantar _Latent Variable Modeling_
 
-* Apa yang dimaksud dengan variabel laten? Mengapa psikologi membutuhkannya?
+* Apa yang dimaksud dengan variabel laten? 
 * _Classical Test Theory_ sebagai model variabel laten paling sederhana
-* Reliabilitas dan *measurement error*: mengapa skor observasi selalu mengandung *noise*
-* *Attenuation bias*: bagaimana *measurement error* mendistorsi estimasi hubungan antar-variabel
+* Reliabilitas dan *measurement error*
+* *Attenuation bias*
 * Keluarga model variabel laten: CTT → EFA → CFA → SEM
 * Variabel laten dalam model *reflektif* vs *formatif*
 * Pilihan perangkat lunak
@@ -132,11 +138,11 @@ Untuk menggambar diagram jalur, mahasiswa dapat menggunakan MS Power Point, Canv
 * Sebaiknya semua mahasiswa sudah memasang `jamovi` pada perangkatnya masing-masing, untuk menghindari terlalu banyaknya waktu untuk menyelesaikan *troubleshooting* instalasi ketika kuliah.
 * Mahasiswa sangat disarankan untuk menonton [video tutorial jamovi](https://datalab.cc/tools/jamovi) sebelum *workshop* untuk belajar menavigasikan menu dan fitur yang ada dalam `jamovi`. Cukup hanya dengan menonton bagian *Welcome*, *Installing jamovi*, dan *Navigating jamovi* (total durasi kurang lebih hanya 7 menit).
 
-## Cara instalasi *module* SEMLj v1.2.5
+## Cara instalasi *module* `jamovi`
 
 Gunakan **jamovi versi stabil yang terbaru** (2.6.44) [untuk Windows](https://www.jamovi.org/downloads/jamovi-2.6.44.0-win-x64.exe) atau [MacOS](https://www.jamovi.org/download.html).
 
-Mohon untuk menyimak video cara mengelola *modules* di jamovi berikut ini. Di video ini saya mencontohkan cara instalasi _module_ GAMLj. Instalasi _modules_ SEMj v1.2.5 mengikuti prosedur yang persis sama.
+Mohon untuk menyimak video cara mengelola *modules* di jamovi berikut ini. Di video ini saya mencontohkan cara instalasi _module_ GAMLj. Instalasi _module_ yang lain mengikuti prosedur yang persis sama.
 
 {{< video https://www.youtube.com/watch?v=XWavBKgTEuU >}}
 

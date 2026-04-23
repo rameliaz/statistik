@@ -240,7 +240,7 @@ Cari β yang **meminimalkan** jumlah kuadrat *error* (SSE)
 Cari β yang membuat variabel _outcome_ yang kita observasi **"paling mungkin terjadi"**
 
 ::: {.callout-note}
-#### Mengapa MLE
+#### Mengapa MLE❓
 Karena MLE, kita **tidak mendapatkan F-statistics** seperti dalam OLS/ANOVA. Sebagai gantinya, kita mendapatkan **χ²** sebagai uji signifikansi keseluruhan model.
 
 Jika _software_ menampilkan peringatan `algorithm did not converge`, biasanya tanda sampel terlalu kecil atau ada *perfect separation* (lihat bagian berikutnya).
@@ -307,9 +307,9 @@ Model 2 paling baik: model *fit* baik (AIC lebih kecil dari Model 1) dan tidak t
 
 : {tbl-colwidths="[30,70]"}
 
-* Pseudo R² **bukan** "proporsi varians yang dijelaskan" seperti R² OLS, jadi jangan diinterpretasikan dengan cara yang sama! Lebih tepat diartikan sebagai "peningkatan *fit* dibanding _null model_." Nilainya cenderung lebih rendah dari R² OLS.
+* Pseudo R² **bukan** "proporsi varians yang dijelaskan" seperti R² OLS, jadi **jangan diinterpretasikan dengan cara yang sama**. Lebih tepat diartikan sebagai _peningkatan model fit dibanding null model._ Nilainya cenderung lebih rendah dari R² OLS.
 
-* Cara melaporkan yang benar: _"Nagelkerke R² = .32, mengindikasikan bahwa model dengan prediktor memberikan peningkatan *fit* yang substansial dibandingkan model tanpa prediktor."_
+* Cara melaporkan yang benar: _"Nagelkerke R² = .32, mengindikasikan bahwa model dengan prediktor memberikan peningkatan *model fit* yang substansial dibandingkan model tanpa prediktor."_
 
 # Model dengan Banyak Prediktor {background-color="#14497F" .center}
 
@@ -336,7 +336,7 @@ Setelah dikontrol, efek jarak sedikit mengecil — sebagian efeknya bekerja *mel
 Dalam artikel ilmiah, **selalu laporkan *adjusted* OR** dari model dengan prediktor berganda, bukan *unadjusted* OR dari analisis bivariat.
 :::
 
-## Interaksi — efek prediktor yang berbeda antar subgrup
+## Interaksi — efek prediktor yang berbeda antar subkelompok
 
 **Pertanyaan:** Apakah efek jarak pada putus studi *berbeda* tergantung tingkat keterlibatan akademik?
 
@@ -355,8 +355,8 @@ Agar _main effects_ dapat diinterpretasi, maka semua prediktor yang dibuatkan su
 
 | Subgrup | Efek jarak pada *odds* putus studi | Interpretasi |
 |---------|:----------------------------------:|--------------|
-| Keterlibatan **rendah** | OR = 1.12 per km | Jarak sangat berpengaruh |
-| Keterlibatan **tinggi** | OR = 1.02 per km | Jarak hampir tidak berpengaruh |
+| Keterlibatan **rendah** | OR = 1.12 per km | Jarak ada efeknya |
+| Keterlibatan **tinggi** | OR = 1.02 per km | Jarak hampir tidak ada efeknya |
 
 : {tbl-colwidths="[25,35,40]"}
 
@@ -395,7 +395,7 @@ Analisis eksplorasi boleh dilakukan untuk *generate* hipotesis, tapi **harus dip
 
 # Asumsi Regresi Logistik {background-color="#14497F" .center}
 
-## Kabar baik: lebih longgar dari OLS!
+## Lebih longgar dari OLS!🎉
 
 :::: {.columns}
 ::: {.column width="55%"}
@@ -425,7 +425,7 @@ Analisis eksplorasi boleh dilakukan untuk *generate* hipotesis, tapi **harus dip
 Meskipun lebih longgar, asumsi yang ada **tetap harus dicek dan dilaporkan**. Terutama multikolinearitas (dengan VIF) dan kemungkinan *perfect separation*.
 :::
 
-## Multikolinearitas — sudah familiar dari Bagian 3
+## Multikolinearitas
 
 Cara memeriksa dan interpretasinya sama persis seperti dalam regresi OLS — gunakan **VIF**:
 
@@ -501,7 +501,7 @@ Dari *confusion matrix* tadi (TP=130, TN=240, FP=30, FN=50, N=450):
 *Default threshold* = 0.50 — bisa disesuaikan sesuai konteks dan pertimbangan etis.
 :::
 
-## AUC — ringkasan performa model dalam satu angka
+## *Area Under the Curve* (AUC)
 
 **AUC** (*Area Under the ROC Curve*) = probabilitas bahwa model memberikan *predicted probability* yang lebih tinggi kepada kasus positif dibanding kasus negatif yang diambil secara acak.
 
@@ -609,7 +609,8 @@ Omnibus (Model χ²) → Pseudo R² → Koefisien per prediktor (OR + CI) → VI
   "Mahasiswa yang tinggal 5 km dari pokjar memiliki peluang ~20% putus studi; mahasiswa yang tinggal 15 km memiliki peluang ~30%."
 
 ::: {.callout-warning}
-**OR ≠ *Risk Ratio* (RR).** Jangan gunakan "X kali lebih *mungkin*" untuk interpretasi OR, karena ini adalah interpretasi RR. OR harus diinterpretasi: "X kali lebih tinggi ***odds***-nya" ([Zhang & Yu, 1998](https://jamanetwork.com/journals/jama/fullarticle/188182)). Perbedaan ini penting terutama jika prevalensi *outcome* > 10%.
+#### OR ≠ *Risk Ratio* (RR).
+Jangan gunakan "X kali lebih *mungkin*" untuk interpretasi OR, karena ini adalah interpretasi RR. OR harus diinterpretasi: "X kali lebih tinggi ***odds***-nya" ([Zhang & Yu, 1998](https://jamanetwork.com/journals/jama/fullarticle/188182)). Perbedaan ini penting terutama jika prevalensi *outcome* > 10%.
 :::
 
 ## 6️⃣ kesalahan umum
