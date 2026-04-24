@@ -501,7 +501,7 @@
     "href": "slides/bagian-2.html#scatterplot",
     "title": "Regresi Linear (Ordinary Least Square)",
     "section": "Scatterplot",
-    "text": "Scatterplot\n\n\n\n\n\n\n\nScatterplot 1. Neuroticism dan Kemandirian\n\n\n\n\n\n\nScatterplot 2. Trust dan Kemandirian\n\n\nBagaimana kekuatan dan arah hubungan pada scatterplot 1 dan 2?"
+    "text": "Scatterplot\n\n\n\n\n\n\n\n\nScatterplot 1. Neuroticism dan Kemandirian\n\n\n\n\n\n\n\n\nScatterplot 2. Trust dan Kemandirian\n\n\n\nBagaimana kekuatan dan arah hubungan pada scatterplot 1 dan 2?"
   },
   {
     "objectID": "slides/bagian-2.html#menebak-korelasi",
@@ -529,7 +529,7 @@
     "href": "slides/bagian-2.html#regresi-linear",
     "title": "Regresi Linear (Ordinary Least Square)",
     "section": "Regresi linear",
-    "text": "Regresi linear\n\n\n\nMerupakan kelanjutan yang lebih kompleks dari Pearson’s r\nIde dasarnya adalah menyusun persamaan garis yang dapat digunakan untuk memperkirakan nilai Y ketika nilai X diketahui\n\nContohnya, kita tahu bahwa kemandirian berkorelasi positif dan sedang dengan neuroticism dan trust\nNamun dengan regresi, kita bisa mengestimasi tingkat kemandirian anak, ketika hanya informasi mengenai neuroticism dan trust yang tersedia.\n\nOLS bekerja dengan pendekatan least square, artinya mencari jumlah kuadrat terkecil antara garis regresi (nilai Y yang diperkirakan oleh model) dengan nilai Y yang diobservasi."
+    "text": "Regresi linear\n\n\n\nMerupakan kelanjutan yang lebih kompleks dari Pearson’s r\nIde dasarnya adalah menyusun persamaan garis yang dapat digunakan untuk memperkirakan nilai Y ketika nilai X diketahui\n\nContohnya, kita memiliki hipotesis bahwa kemandirian berkorelasi positif dan sedang dengan neuroticism dan trust dan memang menemukan korelasi antara keduanya\nNamun dengan regresi, kita bisa mengestimasi tingkat kemandirian anak, ketika hanya informasi mengenai neuroticism dan trust yang tersedia.\n\nOLS bekerja dengan pendekatan least square, artinya mencari jumlah kuadrat terkecil antara garis regresi (nilai Y yang diperkirakan oleh model) dengan nilai Y yang diobservasi."
   },
   {
     "objectID": "slides/bagian-2.html#persamaan-garis-regresi",
@@ -578,7 +578,7 @@
     "href": "slides/bagian-2.html#koefisien-model",
     "title": "Regresi Linear (Ordinary Least Square)",
     "section": "Koefisien model",
-    "text": "Koefisien model\n\nKecenderungan neuroticism ibu dapat menjelaskan variasi kemandirian anak (B = 0.544 95% CI [0.472, 0.616], SE = 0.036, t = 14.88, p = .001).\nInterpretasi standardized (β) dan unstandardized (B) estimates\n\nUnstandardized (B) estimates: Setiap perubahan neuroticism sebesar 1 poin, maka tingkat kemandirian juga berubah sebesar 0.544 poin.\nStandardized (β) estimates: Setiap berubah neuroticism sebesar 1SD, maka tingkat kemandirian juga berubah sebesar 0.161SD.\n\n\n\n\n\n\n\nTips\n\n\nSelalu laporkan unstandardized estimates dan confidence interval (Appelbaum et al., 2018)."
+    "text": "Koefisien model\n\nKecenderungan neuroticism ibu dapat menjelaskan variasi kemandirian anak (B = 0.544 95% CI [0.472, 0.616], SE = 0.036, t = 14.88, p = .001).\nInterpretasi standardized (β) dan unstandardized (B) estimates\n\nUnstandardized (B) estimates: Setiap perubahan neuroticism sebesar 1 poin, maka tingkat kemandirian juga berubah sebesar 0.544 poin.\nStandardized (β) estimates: Setiap perubahan neuroticism sebesar 1SD, maka tingkat kemandirian juga berubah sebesar 0.598SD.\n\n\n\n\n\n\n\nTips\n\n\nSelalu laporkan unstandardized estimates dan confidence interval (Appelbaum et al., 2018)."
   },
   {
     "objectID": "slides/bagian-2.html#diagnostik-model-distribusi-residual",
@@ -655,14 +655,14 @@
     "href": "slides/bagian-2.html#mean-centering-pada-suku-interaksi-interaction-terms",
     "title": "Regresi Linear (Ordinary Least Square)",
     "section": "Mean-centering pada suku interaksi (interaction terms)",
-    "text": "Mean-centering pada suku interaksi (interaction terms)\n\nKetika melakukan analisis regresi dengan suku interaksi, maka kita perlu melakukan prosedur mean centering untuk prediktor dan moderator.\nAlasannya, koefisien main effect akan lebih mudah diinterpretasi\n\nTanpa centering, koefisien untuk X1 adalah efek X1 ketika X2 = 0, yang tidak memiliki makna substantif\nDengan centering, koefisien X1 adalah efek X1 ketika X2 berada di rata-ratanya\n\nSelain itu, mencegah multikolinearitas antara prediktor dan suku interaksi\n\nTanpa centering, variabel interaksi (X1 × X2) sangat berkorelasi dengan X1 dan X1 secara terpisah karena merupakan hasil kali keduanya\nCentering tidak menghilangkan multikolinearitas secara substantif (yang alasannya conceptual overlap), tetapi hanya mengurangi korelasi artifisial antara main effect dan suku interaksi"
+    "text": "Mean-centering pada suku interaksi (interaction terms)\n\nKetika melakukan analisis regresi dengan suku interaksi, maka kita perlu melakukan prosedur mean centering untuk prediktor dan moderator.\nAlasannya, koefisien main effect akan lebih mudah diinterpretasi\n\nTanpa centering, koefisien untuk X1 adalah efek X1 ketika X2 = 0, yang tidak memiliki makna substantif\nDengan centering, koefisien X1 adalah efek X1 ketika X2 berada di rata-ratanya\n\nSelain itu, mencegah multikolinearitas antara prediktor dan suku interaksi\n\nTanpa centering, variabel interaksi (X1 × X2) sangat berkorelasi dengan X1 dan X2 secara terpisah karena merupakan hasil kali keduanya\nCentering tidak menghilangkan multikolinearitas secara substantif (yang alasannya conceptual overlap), tetapi hanya mengurangi korelasi artifisial antara main effect dan suku interaksi"
   },
   {
     "objectID": "slides/bagian-2.html#latihan-2-1",
     "href": "slides/bagian-2.html#latihan-2-1",
     "title": "Regresi Linear (Ordinary Least Square)",
     "section": "Latihan 2️⃣",
-    "text": "Latihan 2️⃣\n\nLakukan semua langkah yang sudah dilakukan di Latihan 1️⃣\nPada opsi model builder, klik add new block\n\nKlik Block 1, sampai keluar shading di pinggir kotak, lalu masukkan hi\nKlik Block 2, sampai keluar shading di pinggir kotak\nUntuk membuat suku interaksi, sambil menekan tombol ctrl, klik neu_mc kemudian trust_mc, lalu klik tanda panah yang kedua dan pilih interaction\nMasukkan neu_mc dan trust_mc sebagai prediktor individual untuk mengestimasi main effect\n\nDengan begitu kita punya 2 model regresi\n\nModel 1 prediktornya hi\nModel 2 prediktornya hi dan interaksi antara neu dengan trust (main effect + interction effect)\n\nPada opsi assumption checks, tambahkan centang pada collinearity statistics\nPada opsi model fit, klik AIC dan BIC.\nPada opsi estimated marginal means, masukkan neu_mc dan trust_mc dalam terms 1"
+    "text": "Latihan 2️⃣\n\nLakukan semua langkah yang sudah dilakukan di Latihan 1️⃣\nPada opsi model builder, klik add new block\n\nKlik Block 1, sampai keluar shading di pinggir kotak, lalu masukkan hi\nKlik Block 2, sampai keluar shading di pinggir kotak\nUntuk membuat suku interaksi, sambil menekan tombol ctrl, klik neu_mc kemudian trust_mc, lalu klik tanda panah yang kedua dan pilih interaction\nMasukkan neu_mc dan trust_mc sebagai prediktor individual untuk mengestimasi main effect\n\nDengan begitu kita punya 2 model regresi\n\nModel 1 prediktornya hi\nModel 2 prediktornya hi dan interaksi antara neu dengan trust (main effect + interaction effect)\n\nPada opsi assumption checks, tambahkan centang pada collinearity statistics\nPada opsi model fit, klik AIC dan BIC.\nPada opsi estimated marginal means, masukkan neu_mc dan trust_mc dalam terms 1"
   },
   {
     "objectID": "slides/bagian-2.html#model-fit-2",
@@ -676,7 +676,7 @@
     "href": "slides/bagian-2.html#model-comparison",
     "title": "Regresi Linear (Ordinary Least Square)",
     "section": "Model comparison",
-    "text": "Model comparison\n\n\nKetika dibandingkan, Model 1 dan Model 2 berbeda signifikan (F(1,397) = 83.7, p = .001). ΔR2 = .122, artinya selisih R2 Model 1 dan Model 2 = .122 atau R2 naik sebesar 12.2%\nCoba perhatikan Residuals Model 1 dengan Model 2"
+    "text": "Model comparison\n\n\nKetika dibandingkan, Model 1 dan Model 2 berbeda signifikan (F(1,397) = 29.5, p = .001). ΔR2 = .122, artinya selisih R2 Model 1 dan Model 2 = .128 atau R2 naik sebesar 12.8%\nCoba perhatikan Residuals Model 1 dengan Model 2"
   },
   {
     "objectID": "slides/bagian-2.html#koefisien-model-2",
@@ -711,7 +711,7 @@
     "href": "slides/bagian-2.html#bagaimana-melaporkannya",
     "title": "Regresi Linear (Ordinary Least Square)",
     "section": "Bagaimana melaporkannya?",
-    "text": "Bagaimana melaporkannya?\n\nUntuk menginvestigasi keterkaitan antara pendapatan keluarga, kecenderungan neuroticism ibu, dan kepercayaan ibu bahwa perkembangan anak dapat terjadi secara natural dengan tingkat kemandirian anak, peneliti melakukan analisis regresi linear hirarkial dengan interaction terms. Peneliti menyusun dua model, dimana; model 1 mengestimasi varians tingkat kemandirian anak dengan pendapatan keluarga inti sebagai prediktor, sedangkan pada model 2 peneliti menambahkan prediktor berupa interaction terms antara neuroticism dengan trust.\n\n\nKetika dibandingkan, Model 1 dan Model 2 berbeda signifikan (F(1,397) = 29.5, p = .001). R2 bertambah sedikit (ΔR2 = .128). Model 2 (F(2,397) = 74.3, p = .001, Adj. R2 = .429, AIC = 2472, BIC = 2496) dapat menjelaskan varians tingkat kemandirian anak sedikit lebih baik daripada Model 1 (F(1,398) = 171.8, p = .001, Adj. R2 = .300, AIC = 2547, BIC = 2559)."
+    "text": "Bagaimana melaporkannya?\n\nUntuk menginvestigasi keterkaitan antara pendapatan keluarga, kecenderungan neuroticism ibu, dan kepercayaan ibu bahwa perkembangan anak dapat terjadi secara natural dengan tingkat kemandirian anak, peneliti melakukan analisis regresi linear hirarkial dengan interaction terms. Peneliti menyusun dua model, dimana; model 1 mengestimasi varians tingkat kemandirian anak dengan pendapatan keluarga inti sebagai prediktor, sedangkan pada model 2 peneliti menambahkan prediktor berupa interaction terms antara neuroticism dengan trust.\n\n\nKetika dibandingkan, Model 1 dan Model 2 berbeda signifikan (F(1,397) = 29.5, p = .001). R2 bertambah sedikit (ΔR2 = .128). Model 2 (F(2,397) = 74.3, p = .001, Adj. R2 = .424, AIC = 2472, BIC = 2496) dapat menjelaskan varians tingkat kemandirian anak sedikit lebih baik daripada Model 1 (F(1,398) = 171.8, p = .001, Adj. R2 = .300, AIC = 2547, BIC = 2559)."
   },
   {
     "objectID": "slides/bagian-2.html#bagaimana-melaporkannya-1",
@@ -751,42 +751,42 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Statistik dalam Penelitian Psikologi",
+    "title": "Statistik Lanjut sdalam Penelitian Psikologi",
     "section": "",
-    "text": "Laman web ini berisi materi Statistik dalam Penelitian Psikologi.\nMateri berlisensi  BY 4.0. Materi bebas digunakan kembali namun wajib mengatribusi sumber aslinya."
+    "text": "Laman web ini berisi materi Statistik Lanjut dalam Penelitian Psikologi.\nMateri berlisensi  BY 4.0. Materi bebas digunakan kembali namun wajib mengatribusi sumber aslinya."
   },
   {
     "objectID": "index.html#outline-materi",
     "href": "index.html#outline-materi",
-    "title": "Statistik dalam Penelitian Psikologi",
+    "title": "Statistik Lanjut sdalam Penelitian Psikologi",
     "section": "Outline materi",
     "text": "Outline materi\n\nBagian 1️⃣: Korelasi\n\nJenis-jenis koefisien korelasi\nFaktor-faktor yang membuat koefisien korelasi bervariasi\nKoreksi atenuasi dan measurement error\nVariance-covariance dan correlation matrix\nWARNING! Covariance/correlation matrix is not positive definite\nHeywood dan Ultra-Heywood case\nBivariat, part, dan partial correlation\nMetrik variabel (standardized vs unstandardized)\n\n\n\nBagian 2️⃣: Ordinary Least Square Regression\n\nBerlatih menginspeksi data secara visual dengan scatterplot\nModel regresi linear (ordinary least square)\nMenarik garis regresi (fitted regression line)\nVarians yang dapat dan yang tidak dapat dijelaskan oleh model (R2)\nMenguji hipotesis\nMengecek kecocokan model dengan data (model fit)\nMengecek asumsi\n\nDistribusi (normalitas) residual\nHomoskedastisitas\nMultikolinearitas\n\nMendeteksi outliers\nMenguji interaction effects dan model change\nMenulis hasil analisis regresi linear dengan interaction terms dalam manuskrip\n\n\n\nBagian 3️⃣: Regresi Logistik Binomial\n\nMengapa regresi linear tidak cocok untuk outcome biner?\nFungsi logistik dan kurva S (sigmoid)\nRantai konsep: probabilitas → odds → log odds (logit) → odds ratio (OR)\nPersamaan model & interpretasi koefisien (β dan OR = e^β)\nEstimasi dengan Maximum Likelihood (MLE)\nMembandingkan model: AIC, BIC, dan Pseudo R² (Nagelkerke)\nModel dengan banyak prediktor\nAsumsi regresi logistik\nEvaluasi akurasi prediksi\nKesalahan umum dalam melakukan analisis regresi logistik\n\n\n\nBagian 4️⃣: Analisis ROC (Receiver Operating Characteristic)\n\nUji diagnostik dalam psikologi: konteks dan permasalahan\nReview: confusion matrix, sensitivity, dan specificity\nPositive Predictive Value (PPV) dan Negative Predictive Value (NPV)\nTrade-off antara sensitivity dan specificity\nKurva ROC: cara membangun dan membacanya\nArea Under the Curve (AUC)\nYouden’s Index: menentukan cut-off optimal\nMembandingkan beberapa alat ukur sekaligus\nPengaruh prevalensi pada PPV dan NPV\nDemonstrasi di jamovi (modul PPDA → TestROC)\n\n\n\nBagian 5️⃣: Pengantar Latent Variable Modeling\n\nApa yang dimaksud dengan variabel laten?\nClassical Test Theory sebagai model variabel laten paling sederhana\nReliabilitas dan measurement error\nAttenuation bias\nKeluarga model variabel laten: CTT → EFA → CFA → SEM\nVariabel laten dalam model reflektif vs formatif\nPilihan perangkat lunak\nCakupan materi dan keterbatasannya\n\n\n\nBagian 6️⃣: Model Jalur (Path Model) dan Model Regresi\n\nDefinisi path model\nNama variabel dan koefisien jalur (path coefficients)\n\nδ (delta), ε (epsilon), ξ (ksi), η (eta), λ (lambda), γ (gamma), β (beta), φ (phi), ζ (zeta)\n\nRepresentasi visual model jalur menggunakan diagram jalur (path diagram)\nMenggambarkan hubungan antar-variabel dengan menggunakan diagram jalur\nSpesifikasi model dengan syntax lavaan untuk spesifikasi model jalur di module SEMLj\nAsumsi kausalitas (?) dan limitasi\n\n\n\n\n\n\n\nTipMenggambar diagram jalur\n\n\n\nUntuk menggambar diagram jalur, mahasiswa dapat menggunakan MS Power Point, Canva, atau software lainnya yang serupa. Rekomendasi saya: gunakan draw.io yang merupakan software open source dan sangat unggul untuk menggambar berbagai macam diagram, termasuk flowchart.\n\n\n\n\nBagian 7️⃣: Principal Component Analysis (PCA) dan Exploratory Factor Analysis (EFA)\n\nMengapa kita perlu analisis faktor? Measurement error dan attenuation bias\nKeluarga model variabel laten: CTT → EFA → CFA → SEM\nPrincipal Component Analysis (PCA): reduksi dimensi & unsupervised learning dalam ML\nEigenvalue, scree plot, dan component loadings\nPCA vs EFA: tujuan, model, dan kapan menggunakan yang mana\nKomunalitas (h²) dan keunikan\nMenentukan jumlah faktor: parallel analysis, scree plot, Kaiser criterion\nRotasi orthogonal vs. oblique\nMetode ekstraksi faktor: MinRes, PAF, dan Maximum Likelihood\nAsumsi & kesiapan data: KMO, Bartlett’s test, dan ukuran sampel\nEvaluasi model: fit indices (RMSEA, CFI, TLI) dan reliabilitas (α vs. ω)\nChecklist pelaporan EFA & kesalahan umum\n\n\n\nBagian 8️⃣: Confirmatory Factor Analysis (CFA)\n\nDefinisi factor analysis\nExploratory vs confirmatory factor analysis\nKapan menggunakan CFA?\nConstraining parameter model\nModel pengukuran (paralel, tau equivalence, dan congeneric)\nVariabel indikator (reflektif vs formatif)\nCorrelated error variances\nMetode estimasi\nMenuliskan hasil analisis CFA dalam laporan penelitian"
   },
   {
     "objectID": "index.html#sumber-belajar-lainnya",
     "href": "index.html#sumber-belajar-lainnya",
-    "title": "Statistik dalam Penelitian Psikologi",
+    "title": "Statistik Lanjut sdalam Penelitian Psikologi",
     "section": "Sumber belajar lainnya",
     "text": "Sumber belajar lainnya\n\nLearning Statistics with jamovi\nVideo tutorial jamovi dari Datalab\nMateri workshop SEM: Sacha Epskamp\nCho, E. (2016). Making Reliability Reliable: A Systematic approach to reliability coefficients. Organizational Research Methods, 19(4), 651-682."
   },
   {
     "objectID": "index.html#sebelum-mulai-materi",
     "href": "index.html#sebelum-mulai-materi",
-    "title": "Statistik dalam Penelitian Psikologi",
+    "title": "Statistik Lanjut sdalam Penelitian Psikologi",
     "section": "Sebelum mulai materi",
     "text": "Sebelum mulai materi\n\nSebaiknya semua mahasiswa sudah memasang jamovi pada perangkatnya masing-masing, untuk menghindari terlalu banyaknya waktu untuk menyelesaikan troubleshooting instalasi ketika kuliah.\nMahasiswa sangat disarankan untuk menonton video tutorial jamovi sebelum workshop untuk belajar menavigasikan menu dan fitur yang ada dalam jamovi. Cukup hanya dengan menonton bagian Welcome, Installing jamovi, dan Navigating jamovi (total durasi kurang lebih hanya 7 menit)."
   },
   {
     "objectID": "index.html#cara-instalasi-module-jamovi",
     "href": "index.html#cara-instalasi-module-jamovi",
-    "title": "Statistik dalam Penelitian Psikologi",
+    "title": "Statistik Lanjut sdalam Penelitian Psikologi",
     "section": "Cara instalasi module jamovi",
     "text": "Cara instalasi module jamovi\nGunakan jamovi versi stabil yang terbaru (2.6.44) untuk Windows atau MacOS.\nMohon untuk menyimak video cara mengelola modules di jamovi berikut ini. Di video ini saya mencontohkan cara instalasi module GAMLj. Instalasi module yang lain mengikuti prosedur yang persis sama."
   },
   {
     "objectID": "index.html#tutorial-jamovi-modules",
     "href": "index.html#tutorial-jamovi-modules",
-    "title": "Statistik dalam Penelitian Psikologi",
+    "title": "Statistik Lanjut sdalam Penelitian Psikologi",
     "section": "Tutorial jamovi + modules",
     "text": "Tutorial jamovi + modules\nSaat ini, sudah cukup banyak tutorial jamovi yang tersedia. Salah satu yang paling populer dan komperhensif adalah tutorial di bawah ini ⬇️\n\nSimak seluruh video tutorial di  playlist."
   },
@@ -796,13 +796,6 @@
     "title": "Korelasi",
     "section": "Outline",
     "text": "Outline\n\nJenis-jenis koefisien korelasi\nFaktor-faktor yang membuat koefisien korelasi bervariasi\nKoreksi atenuasi dan measurement error\nVariance-covariance dan correlation matrix\nWARNING! Covariance/correlation matrix is not positive definite\nHeywood dan ultra-Heywood case\nBivariat, part, dan partial correlation\nMetrik variabel (standardized vs unstandardized)"
-  },
-  {
-    "objectID": "slides/bagian-1.html#mengapa-memulai-dari-korelasi",
-    "href": "slides/bagian-1.html#mengapa-memulai-dari-korelasi",
-    "title": "Korelasi",
-    "section": "Mengapa memulai dari korelasi?",
-    "text": "Mengapa memulai dari korelasi?"
   },
   {
     "objectID": "slides/bagian-1.html#mengapa-memulai-dari-korelasi-1",
@@ -823,7 +816,7 @@
     "href": "slides/bagian-1.html#faktor-faktor-yang-mempengaruhi-arah-dan-magnitude-korelasi-1",
     "title": "Korelasi",
     "section": "Faktor-faktor yang mempengaruhi arah dan magnitude korelasi 1️⃣",
-    "text": "Faktor-faktor yang mempengaruhi arah dan magnitude korelasi 1️⃣\n\nLevel pengukuran (apakah variabel tersebut nominal, ordinal, interval, atau rasio)\n\nSehingga berdampak pada variabilitas (restriction range) dan normalitas data\n\nLinearitas\n\nSemua teknik korelasi mengasumsikan korelasi antar-variabel linier, sehingga korelasi yang tidak linier akan memberikan informasi tidak adanya korelasi (padahal tidak selalu).\n\nAdanya data outlier\nKoreksi atenuasi"
+    "text": "Faktor-faktor yang mempengaruhi arah dan magnitude korelasi 1️⃣\n\nLevel pengukuran (apakah variabel tersebut nominal, ordinal, interval, atau rasio)\n\nSehingga berdampak pada variabilitas (restriction range) dan normalitas data\n\nLinearitas\n\nSemua teknik korelasi mengasumsikan korelasi antar-variabel linier, sehingga korelasi yang tidak linier akan memberikan informasi tidak adanya korelasi (padahal tidak selalu).\n\nAdanya data outlier  adanya data yang outlier membuat estimasi korelasi menjadi inflated.\nKoreksi atenuasi  akan dibahas di bagian selanjutnya."
   },
   {
     "objectID": "slides/bagian-1.html#faktor-faktor-yang-mempengaruhi-arah-dan-magnitude-korelasi-2",
@@ -833,32 +826,25 @@
     "text": "Faktor-faktor yang mempengaruhi arah dan magnitude korelasi 2️⃣\n\nJumlah sampel\n\nJumlah sampel yang terlalu sedikit akan memberikan estimasi yang kurang akurat (karena standard errornya besar)\n\nSampling variance\n\nYang kemudian berefek pada confidence interval, effect size, dan statistical power\n\nMissing data\n\nKalau data tidak lengkap, estimasi koefisien korelasi akan langsung terdampak.\nAda beberapa pilihan:  listwise deletion, pairwise deletion, dan data imputation.\nListwise deletion tidak disarankan karena membuat jumlah sampel turun drastis  mengurangi statistical power."
   },
   {
-    "objectID": "slides/bagian-1.html#section",
-    "href": "slides/bagian-1.html#section",
+    "objectID": "slides/bagian-1.html#variance-covariance-correlation-matrix-1",
+    "href": "slides/bagian-1.html#variance-covariance-correlation-matrix-1",
     "title": "Korelasi",
-    "section": "",
-    "text": "Silahkan unduh dan buka Dataset Korelasi, untuk melihat contoh."
+    "section": "Variance-covariance & correlation matrix 1️⃣",
+    "text": "Variance-covariance & correlation matrix 1️⃣\n\nUntuk melakukan SEM, maka perangkat lunak membutuhkan variance-covariance matrix untuk mengestimasi parameter model\nPada bagian diagonal variance-covariance matrix menunjukkan varians, sedangkan sisanya adalah covariance\n\n\n\nJumlah nilai unik (non-redundant information) dalam variance-covariance matrix adalah p(p+1)/2\n\ndimana p adalah jumlah observed variable\nSehingga dengan contoh di atas maka jumlah nilai unik adalah 3(3+1)/2=6, yaitu 3 varians (diagonal) dan 3 covariance (sisanya)"
   },
   {
-    "objectID": "slides/bagian-1.html#variance-covariance-dan-correlation-matrix-1",
-    "href": "slides/bagian-1.html#variance-covariance-dan-correlation-matrix-1",
+    "objectID": "slides/bagian-1.html#variance-covariance-correlation-matrix-2",
+    "href": "slides/bagian-1.html#variance-covariance-correlation-matrix-2",
     "title": "Korelasi",
-    "section": "Variance-covariance dan correlation matrix 1️⃣",
-    "text": "Variance-covariance dan correlation matrix 1️⃣\n\nUntuk melakukan SEM, maka perangkat lunak membutuhkan variance-covariance matrix untuk mengestimasi parameter model\nPada bagian diagonal variance-covariance matrix menunjukkan varians, sedangkan sisanya adalah covariance\n\n\n\nJumlah nilai unik (non-redundant information) dalam variance-covariance matrix adalah p(p+1)/2\n\ndimana p adalah jumlah observed variable\nSehingga dengan contoh di atas maka jumlah nilai unik adalah 3(3+1)/2=6, yaitu 3 varians (diagonal) dan 3 covariance (sisanya)"
-  },
-  {
-    "objectID": "slides/bagian-1.html#variance-covariance-dan-correlation-matrix-2",
-    "href": "slides/bagian-1.html#variance-covariance-dan-correlation-matrix-2",
-    "title": "Korelasi",
-    "section": "Variance-covariance dan correlation matrix 2️⃣",
-    "text": "Variance-covariance dan correlation matrix 2️⃣\n\nSebagian besar perangkat lunak SEM menggunakan variance-covariance matrix bukan correlation matrix\n\nIngat❗ korelasi pada dasarnya adalah standardized covariance.\n\nMenggunakan correlation matrix biasanya lebih sering menghasilkan parameter yang statistically significant tapi standard error yang tidak akurat.\nOleh karena itu, meskipun user menginput correlation matrix, maka perangkat lunak akan mengubahnya dulu menjadi variance-covariance matrix, baru parameter model dapat diestimasi."
+    "section": "Variance-covariance & correlation matrix 2️⃣",
+    "text": "Variance-covariance & correlation matrix 2️⃣\n\nSebagian besar perangkat lunak SEM menggunakan variance-covariance matrix bukan correlation matrix\n\nIngat❗ korelasi pada dasarnya adalah standardized covariance.\n\nTETAPI, menggunakan correlation matrix sebagai input SEM biasanya lebih sering menghasilkan parameter yang statistically significant tapi standard error-nya tidak akurat.\nOleh karena itu, meskipun user menginput correlation matrix, maka perangkat lunak akan mengubahnya dulu menjadi variance-covariance matrix, baru parameter model dapat diestimasi."
   },
   {
     "objectID": "slides/bagian-1.html#koreksi-atenuasi",
     "href": "slides/bagian-1.html#koreksi-atenuasi",
     "title": "Korelasi",
     "section": "Koreksi Atenuasi",
-    "text": "Koreksi Atenuasi\n\nAsumsi dasar dalam Psikometri adalah skor kasar (observed score) mengandung skor murni (true score) dan measurement error, sehingga dalam mengestimasi korelasi, measurement error perlu dibuang agar estimasi lebih akurat.\nDengan teknik koreksi atenuasi, kita dapat ‘membuang’ measurement error, sehingga kita dapat mengestimasi korelasi antar-variabel menggunakan true score-nya.\nTetapi apabila reliabilitas skala kita kurang baik, maka setelah dikoreksi koefisien korelasi bisa lebih dari 1 ❗\nMisalnya diketahui bahwa korelasi observed scores antar dua variabel (rab) adalah 0.9 dan reliabilitas skala a (Cronbach’s α) adalah 0.6 dan skala b adalah 0.7, maka:"
+    "text": "Koreksi Atenuasi\n\nAsumsi dasar dalam Psikometri adalah skor kasar (observed score) mengandung skor murni (true score) dan measurement error, sehingga dalam mengestimasi korelasi, measurement error perlu “dikontrol secara statistik” agar estimasi korelasi lebih akurat.\nDengan teknik koreksi atenuasi, kita dapat ‘mengontrol’ measurement error, sehingga kita dapat mengestimasi korelasi antar-variabel menggunakan true score-nya.\nTetapi apabila reliabilitas skala kita kurang baik, maka setelah dikoreksi koefisien korelasi bisa lebih dari 1 ❗\nMisalnya diketahui bahwa korelasi observed scores antar dua variabel (rab) adalah 0.9 dan reliabilitas skala a (Cronbach’s α) adalah 0.6 dan skala b adalah 0.7, maka:"
   },
   {
     "objectID": "slides/bagian-1.html#warning-covariancecorrelation-matrix-is-not-positive-definite",
@@ -889,11 +875,11 @@
     "text": "Korelasi Bivariat: Part dan partial correlation"
   },
   {
-    "objectID": "slides/bagian-1.html#metrik-variabel-standardized-vs-unstandardized",
-    "href": "slides/bagian-1.html#metrik-variabel-standardized-vs-unstandardized",
+    "objectID": "slides/bagian-1.html#parameter-model-standardized-vs-unstandardized",
+    "href": "slides/bagian-1.html#parameter-model-standardized-vs-unstandardized",
     "title": "Korelasi",
-    "section": "Metrik variabel (standardized vs unstandardized)",
-    "text": "Metrik variabel (standardized vs unstandardized)\n\nUnstandardized solution/estimates\n\nDapat dibandingkan antar kelompok sampel\nMerupakan parameter yang digunakan oleh perangkat lunak untuk menghitung standard error dan taraf signifikansi (p-value)\nMembandingkan unstandardised factor loading harus melihat standard errornya juga\n\nStandardized solution/estimates\n\nHanya interpretable untuk kelompok sampel yang diuji — tidak bisa dibandingkan dengan kelompok sampel yang lain.\nBerguna untuk membandingkan factor loading antar-variabel di dalam model\nApabila variabel dalam model memiliki unit pengukuran yang berbeda, maka standardized estimates akan sangat membantu\n\nAda banyak perbedaan pendapat mengenai metrik mana yang harus dilaporkan, tetapi…\n\nSelalu laporkan unstandardized solution/estimates dan standard errornya"
+    "section": "Parameter model (standardized vs unstandardized)",
+    "text": "Parameter model (standardized vs unstandardized)\n\nUnstandardized solution/estimates\n\nDapat dibandingkan antar kelompok sampel\nMerupakan parameter yang digunakan oleh perangkat lunak untuk menghitung standard error dan taraf signifikansi (p-value)\nMembandingkan unstandardized factor loading harus melihat standard errornya juga\n\nStandardized solution/estimates\n\nHanya interpretable untuk kelompok sampel yang diuji — tidak bisa dibandingkan dengan kelompok sampel yang lain.\nBerguna untuk membandingkan factor loading antar-variabel di dalam model\nApabila variabel dalam model memiliki unit pengukuran yang berbeda, maka standardized estimates akan sangat membantu\n\nAda banyak perbedaan pendapat mengenai parameter mana yang harus dilaporkan, tetapi…\n\nSelalu laporkan unstandardized solution/estimates dan standard errornya"
   },
   {
     "objectID": "slides/bagian-1.html#tugas-1-membuat-correlation-matrix-dan-melakukan-koreksi-atenuasi",
