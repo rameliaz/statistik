@@ -18,7 +18,7 @@ project:
     - slides/bagian-8.qmd
 
 website:
-  title: "Statistik dalam Penelitian Psikologi"
+  title: "Statistik Lanjut dalam Penelitian Psikologi"
   navbar:
     left:
       - href: https://rameliaz.github.io/
