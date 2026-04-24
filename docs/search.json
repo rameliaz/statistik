@@ -751,42 +751,42 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Statistik Lanjut sdalam Penelitian Psikologi",
+    "title": "Statistik Lanjut dalam Penelitian Psikologi",
     "section": "",
     "text": "Laman web ini berisi materi Statistik Lanjut dalam Penelitian Psikologi.\nMateri berlisensi  BY 4.0. Materi bebas digunakan kembali namun wajib mengatribusi sumber aslinya."
   },
   {
     "objectID": "index.html#outline-materi",
     "href": "index.html#outline-materi",
-    "title": "Statistik Lanjut sdalam Penelitian Psikologi",
+    "title": "Statistik Lanjut dalam Penelitian Psikologi",
     "section": "Outline materi",
     "text": "Outline materi\n\nBagian 1️⃣: Korelasi\n\nJenis-jenis koefisien korelasi\nFaktor-faktor yang membuat koefisien korelasi bervariasi\nKoreksi atenuasi dan measurement error\nVariance-covariance dan correlation matrix\nWARNING! Covariance/correlation matrix is not positive definite\nHeywood dan Ultra-Heywood case\nBivariat, part, dan partial correlation\nMetrik variabel (standardized vs unstandardized)\n\n\n\nBagian 2️⃣: Ordinary Least Square Regression\n\nBerlatih menginspeksi data secara visual dengan scatterplot\nModel regresi linear (ordinary least square)\nMenarik garis regresi (fitted regression line)\nVarians yang dapat dan yang tidak dapat dijelaskan oleh model (R2)\nMenguji hipotesis\nMengecek kecocokan model dengan data (model fit)\nMengecek asumsi\n\nDistribusi (normalitas) residual\nHomoskedastisitas\nMultikolinearitas\n\nMendeteksi outliers\nMenguji interaction effects dan model change\nMenulis hasil analisis regresi linear dengan interaction terms dalam manuskrip\n\n\n\nBagian 3️⃣: Regresi Logistik Binomial\n\nMengapa regresi linear tidak cocok untuk outcome biner?\nFungsi logistik dan kurva S (sigmoid)\nRantai konsep: probabilitas → odds → log odds (logit) → odds ratio (OR)\nPersamaan model & interpretasi koefisien (β dan OR = e^β)\nEstimasi dengan Maximum Likelihood (MLE)\nMembandingkan model: AIC, BIC, dan Pseudo R² (Nagelkerke)\nModel dengan banyak prediktor\nAsumsi regresi logistik\nEvaluasi akurasi prediksi\nKesalahan umum dalam melakukan analisis regresi logistik\n\n\n\nBagian 4️⃣: Analisis ROC (Receiver Operating Characteristic)\n\nUji diagnostik dalam psikologi: konteks dan permasalahan\nReview: confusion matrix, sensitivity, dan specificity\nPositive Predictive Value (PPV) dan Negative Predictive Value (NPV)\nTrade-off antara sensitivity dan specificity\nKurva ROC: cara membangun dan membacanya\nArea Under the Curve (AUC)\nYouden’s Index: menentukan cut-off optimal\nMembandingkan beberapa alat ukur sekaligus\nPengaruh prevalensi pada PPV dan NPV\nDemonstrasi di jamovi (modul PPDA → TestROC)\n\n\n\nBagian 5️⃣: Pengantar Latent Variable Modeling\n\nApa yang dimaksud dengan variabel laten?\nClassical Test Theory sebagai model variabel laten paling sederhana\nReliabilitas dan measurement error\nAttenuation bias\nKeluarga model variabel laten: CTT → EFA → CFA → SEM\nVariabel laten dalam model reflektif vs formatif\nPilihan perangkat lunak\nCakupan materi dan keterbatasannya\n\n\n\nBagian 6️⃣: Model Jalur (Path Model) dan Model Regresi\n\nDefinisi path model\nNama variabel dan koefisien jalur (path coefficients)\n\nδ (delta), ε (epsilon), ξ (ksi), η (eta), λ (lambda), γ (gamma), β (beta), φ (phi), ζ (zeta)\n\nRepresentasi visual model jalur menggunakan diagram jalur (path diagram)\nMenggambarkan hubungan antar-variabel dengan menggunakan diagram jalur\nSpesifikasi model dengan syntax lavaan untuk spesifikasi model jalur di module SEMLj\nAsumsi kausalitas (?) dan limitasi\n\n\n\n\n\n\n\nTipMenggambar diagram jalur\n\n\n\nUntuk menggambar diagram jalur, mahasiswa dapat menggunakan MS Power Point, Canva, atau software lainnya yang serupa. Rekomendasi saya: gunakan draw.io yang merupakan software open source dan sangat unggul untuk menggambar berbagai macam diagram, termasuk flowchart.\n\n\n\n\nBagian 7️⃣: Principal Component Analysis (PCA) dan Exploratory Factor Analysis (EFA)\n\nMengapa kita perlu analisis faktor? Measurement error dan attenuation bias\nKeluarga model variabel laten: CTT → EFA → CFA → SEM\nPrincipal Component Analysis (PCA): reduksi dimensi & unsupervised learning dalam ML\nEigenvalue, scree plot, dan component loadings\nPCA vs EFA: tujuan, model, dan kapan menggunakan yang mana\nKomunalitas (h²) dan keunikan\nMenentukan jumlah faktor: parallel analysis, scree plot, Kaiser criterion\nRotasi orthogonal vs. oblique\nMetode ekstraksi faktor: MinRes, PAF, dan Maximum Likelihood\nAsumsi & kesiapan data: KMO, Bartlett’s test, dan ukuran sampel\nEvaluasi model: fit indices (RMSEA, CFI, TLI) dan reliabilitas (α vs. ω)\nChecklist pelaporan EFA & kesalahan umum\n\n\n\nBagian 8️⃣: Confirmatory Factor Analysis (CFA)\n\nDefinisi factor analysis\nExploratory vs confirmatory factor analysis\nKapan menggunakan CFA?\nConstraining parameter model\nModel pengukuran (paralel, tau equivalence, dan congeneric)\nVariabel indikator (reflektif vs formatif)\nCorrelated error variances\nMetode estimasi\nMenuliskan hasil analisis CFA dalam laporan penelitian"
   },
   {
     "objectID": "index.html#sumber-belajar-lainnya",
     "href": "index.html#sumber-belajar-lainnya",
-    "title": "Statistik Lanjut sdalam Penelitian Psikologi",
+    "title": "Statistik Lanjut dalam Penelitian Psikologi",
     "section": "Sumber belajar lainnya",
     "text": "Sumber belajar lainnya\n\nLearning Statistics with jamovi\nVideo tutorial jamovi dari Datalab\nMateri workshop SEM: Sacha Epskamp\nCho, E. (2016). Making Reliability Reliable: A Systematic approach to reliability coefficients. Organizational Research Methods, 19(4), 651-682."
   },
   {
     "objectID": "index.html#sebelum-mulai-materi",
     "href": "index.html#sebelum-mulai-materi",
-    "title": "Statistik Lanjut sdalam Penelitian Psikologi",
+    "title": "Statistik Lanjut dalam Penelitian Psikologi",
     "section": "Sebelum mulai materi",
     "text": "Sebelum mulai materi\n\nSebaiknya semua mahasiswa sudah memasang jamovi pada perangkatnya masing-masing, untuk menghindari terlalu banyaknya waktu untuk menyelesaikan troubleshooting instalasi ketika kuliah.\nMahasiswa sangat disarankan untuk menonton video tutorial jamovi sebelum workshop untuk belajar menavigasikan menu dan fitur yang ada dalam jamovi. Cukup hanya dengan menonton bagian Welcome, Installing jamovi, dan Navigating jamovi (total durasi kurang lebih hanya 7 menit)."
   },
   {
     "objectID": "index.html#cara-instalasi-module-jamovi",
     "href": "index.html#cara-instalasi-module-jamovi",
-    "title": "Statistik Lanjut sdalam Penelitian Psikologi",
+    "title": "Statistik Lanjut dalam Penelitian Psikologi",
     "section": "Cara instalasi module jamovi",
     "text": "Cara instalasi module jamovi\nGunakan jamovi versi stabil yang terbaru (2.6.44) untuk Windows atau MacOS.\nMohon untuk menyimak video cara mengelola modules di jamovi berikut ini. Di video ini saya mencontohkan cara instalasi module GAMLj. Instalasi module yang lain mengikuti prosedur yang persis sama."
   },
   {
     "objectID": "index.html#tutorial-jamovi-modules",
     "href": "index.html#tutorial-jamovi-modules",
-    "title": "Statistik Lanjut sdalam Penelitian Psikologi",
+    "title": "Statistik Lanjut dalam Penelitian Psikologi",
     "section": "Tutorial jamovi + modules",
     "text": "Tutorial jamovi + modules\nSaat ini, sudah cukup banyak tutorial jamovi yang tersedia. Salah satu yang paling populer dan komperhensif adalah tutorial di bawah ini ⬇️\n\nSimak seluruh video tutorial di  playlist."
   },
