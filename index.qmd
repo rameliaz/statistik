@@ -31,6 +31,8 @@ Klik _navigation bar_ yang mengarah pada PDF materi, kemudian tekan `ctrl` dan `
 * Bivariat, *part*, dan *partial correlation*
 * Metrik variabel (*standardized* vs *unstandardized*)
 
+[{{< fa file-powerpoint >}} Buka Materi Korelasi](slides/bagian-1.html){.btn .btn-primary}
+
 ### Bagian 2️⃣: _Ordinary Least Square Regression_
 
 * Berlatih menginspeksi data secara visual dengan _scatterplot_
@@ -47,6 +49,8 @@ Klik _navigation bar_ yang mengarah pada PDF materi, kemudian tekan `ctrl` dan `
 * Menguji _interaction effects_ dan _model change_
 * Menulis hasil analisis regresi linear dengan _interaction terms_ dalam manuskrip
 
+[{{< fa file-powerpoint >}} Buka Materi Regresi OLS](slides/bagian-2.html){.btn .btn-primary}
+
 ### Bagian 3️⃣: Regresi Logistik Binomial
 
 * Mengapa regresi linear tidak cocok untuk *outcome* biner?
@@ -59,6 +63,8 @@ Klik _navigation bar_ yang mengarah pada PDF materi, kemudian tekan `ctrl` dan `
 * Asumsi regresi logistik
 * Evaluasi akurasi prediksi
 * Kesalahan umum dalam melakukan analisis regresi logistik
+
+[{{< fa file-powerpoint >}} Buka Materi Regresi Logistik](slides/bagian-3.html){.btn .btn-primary}
 
 ### Bagian 4️⃣: Analisis ROC (*Receiver Operating Characteristic*)
 
@@ -73,6 +79,8 @@ Klik _navigation bar_ yang mengarah pada PDF materi, kemudian tekan `ctrl` dan `
 * Pengaruh prevalensi pada PPV dan NPV
 * Demonstrasi di `jamovi` (modul PPDA → TestROC)
 
+[{{< fa file-powerpoint >}} Buka Materi ROC](slides/bagian-4.html){.btn .btn-primary}
+
 ### Bagian 5️⃣: Pengantar _Latent Variable Modeling_
 
 * Apa yang dimaksud dengan variabel laten? 
@@ -83,6 +91,8 @@ Klik _navigation bar_ yang mengarah pada PDF materi, kemudian tekan `ctrl` dan `
 * Variabel laten dalam model *reflektif* vs *formatif*
 * Pilihan perangkat lunak
 * Cakupan materi dan keterbatasannya
+
+[{{< fa file-powerpoint >}} Buka Materi LVM](slides/bagian-5.html){.btn .btn-primary}
 
 ### Bagian 6️⃣: Model Jalur (*Path Model*) dan Model Regresi
 
@@ -99,6 +109,8 @@ Klik _navigation bar_ yang mengarah pada PDF materi, kemudian tekan `ctrl` dan `
 Untuk menggambar diagram jalur, mahasiswa dapat menggunakan MS Power Point, Canva, atau _software_ lainnya yang serupa. Rekomendasi saya: gunakan [draw.io](https://app.diagrams.net/?src=about) yang merupakan _software open source_ dan sangat unggul untuk menggambar berbagai macam diagram, termasuk _flowchart_.
 :::
 
+[{{< fa file-powerpoint >}} Buka Materi *Path Model*](slides/bagian-6.html){.btn .btn-primary}
+
 ### Bagian 7️⃣: _Principal Component Analysis_ (PCA) dan _Exploratory Factor Analysis_ (EFA)
 
 * Mengapa kita perlu analisis faktor? *Measurement error* dan *attenuation bias*
@@ -114,6 +126,8 @@ Untuk menggambar diagram jalur, mahasiswa dapat menggunakan MS Power Point, Canv
 * Evaluasi model: *fit indices* (RMSEA, CFI, TLI) dan reliabilitas (α vs. ω)
 * Checklist pelaporan EFA & kesalahan umum
 
+[{{< fa file-powerpoint >}} Buka Materi PCA EFA](slides/bagian-7.html){.btn .btn-primary}
+
 ### Bagian 8️⃣: _Confirmatory Factor Analysis_ (CFA)
 
 * Definisi *factor analysis*
@@ -125,6 +139,8 @@ Untuk menggambar diagram jalur, mahasiswa dapat menggunakan MS Power Point, Canv
 * *Correlated error variances*
 * Metode estimasi
 * Menuliskan hasil analisis CFA dalam laporan penelitian
+
+[{{< fa file-powerpoint >}} Buka Materi CFA](slides/bagian-8.html){.btn .btn-primary}
 
 ## Sumber belajar lainnya
 
