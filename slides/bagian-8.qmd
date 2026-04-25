@@ -209,6 +209,39 @@ Ada tiga macam model pengukuran:
 Untuk **skala _Likert_ dengan 6–7 pilihan**, dengan respons yang relatif simetris, **MLR sudah baik performanya**. Untuk **skala _Likert_ 4 pilihan** dengan distribusi yang sangat juling (_skew_), **WLSMV merupakan pilihan yang lebih aman** ([Rhemtulla, Brosseau-Liard & Savalei](https://psycnet.apa.org/record/2012-18631-001), 2012).
 :::
 
+## *Average Variance Extracted* (AVE)
+
+::: {.incremental}
+
+* AVE mengukur **seberapa besar varians pada variabel indikator yang dijelaskan oleh faktor laten**, dibandingkan dengan varians yang berasal dari *error*
+
+* Formula AVE (dengan λᵢ = *standardized factor loading* tiap indikator):
+
+$$AVE = \frac{\sum \lambda_i^2}{\sum \lambda_i^2 + \sum (1 - \lambda_i^2)}$$
+
+* Intinya: dari seluruh varians indikator, berapa proporsinya yang merupakan benar-benar "sinyal" dari konstruk dan bukan *noise*?
+
+* **Kriteria** {{< fa circle-arrow-right >}} AVE ≥ 0.50 ([Fornell & Larcker, 1981](https://doi.org/10.2307/3151312))
+  - AVE < 0.50 berarti *error variance* lebih besar daripada *construct variance* {{< fa circle-arrow-right >}} validitas konvergen **tidak terpenuhi**
+
+:::
+
+## AVE vs. *Composite Reliability* (CR)
+
+| | AVE | *Composite Reliability* |
+| :--- | :--- | :--- |
+| **Yang diukur** | Rasio sinyal-terhadap-total per indikator | Konsistensi internal skala |
+| **Sensitif terhadap** | *Loading* rendah sangat menekan nilai AVE | Kurang sensitif — *loading* yang tinggi dapat mengompensasi yang rendah |
+| **Kriteria** | ≥ 0.50 | ≥ 0.70 |
+| **Kegunaan utama** | Validitas konvergen & diskriminan | Reliabilitas (alternatif Cronbach's α) |
+
+: {tbl-colwidths="[30,35,35]"}
+
+::: {.callout-warning}
+#### CR tinggi belum tentu AVE tinggi
+Skala dengan *loading* sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilkan CR ≈ 0.78 namun AVE ≈ 0.36. CR fokus pada *"apakah item-item saling berkaitan?"*; AVE fokus pada *"apakah item-item benar-benar mewakili konstruknya?"*
+:::
+
 # Demonstrasi CFA {background-color="#14497F" .center}
 
 [**Unduh Dataset Contoh CFA**](https://rameliaz.github.io/mg-sem-workshop/contoh-cfa.omv)
