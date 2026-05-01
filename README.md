@@ -2,7 +2,7 @@
 
 Repositori ini menyimpan materi pengajaran untuk mata kuliah **Statistik Lanjut dalam Penelitian Psikologi**.
 
-Website: [rameliaz.github.io/statistik](https://rameliaz.github.io/statistik)
+Website: [rameliaz.github.io/statistik-lanjut](https://rameliaz.github.io/statistik-lanjut)
 
 ## Deskripsi
 
