@@ -8,7 +8,7 @@ Materi berlisensi [<i class="fab fa-creative-commons"><i class="fa fa-universal-
 
 ::: {.callout-note}
 #### _Software_ yang digunakan
-Demonstrasi atas analisis statistik yang disiapkan dalam laman ini menggunakan `jamovi` sebagai alat bantu analisis. Meskipun, tentu saja, analisis statistik sifatnya _software agnostic_. Anda **bebas menggunakan alat bantu analisis yang lain**. Misalnya `jasp`, `SPSS`, <i class="fa-brands fa-r-project"></i>, <i class="fa-brands fa-python"></i>, bahkan Microsoft Excel <i class="fa-regular fa-file-excel"></i> sekalipun. 
+Demonstrasi atas analisis statistik yang disiapkan dalam laman ini menggunakan `jamovi` sebagai alat bantu analisis. Meskipun,git ou tentu saja, analisis statistik sifatnya _software agnostic_. Anda **bebas menggunakan alat bantu analisis yang lain**. Misalnya `jasp`, `SPSS`, <i class="fa-brands fa-r-project"></i>, <i class="fa-brands fa-python"></i>, bahkan Microsoft Excel <i class="fa-regular fa-file-excel"></i> sekalipun. 
 
 Untuk perencanaan jumlah sampel dengan *a priori power analysis*, Anda bisa menggunakan [G*Power](https://www.psychologie.hhu.de/arbeitsgruppen/allgemeine-psychologie-und-arbeitspsychologie/gpower) atau modul [`PAMLj`](https://blog.jamovi.org/2024/10/28/pamlj.html) atau [`jpower`](https://open.lnu.se/index.php/metapsychology/article/view/3078/3073) di `jamovi`.
 :::
