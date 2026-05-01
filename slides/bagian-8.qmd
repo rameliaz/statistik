@@ -231,7 +231,7 @@ $$AVE = \frac{\sum \lambda_i^2}{\sum \lambda_i^2 + \sum (1 - \lambda_i^2)}$$
 | | AVE | *Composite Reliability* |
 | :--- | :--- | :--- |
 | **Yang diukur** | Rasio sinyal-terhadap-total per indikator | Konsistensi internal skala |
-| **Sensitif terhadap** | *Loading* rendah sangat menekan nilai AVE | Kurang sensitif — *loading* yang tinggi dapat mengompensasi yang rendah |
+| **Sensitif terhadap** | *Loading* rendah sangat menekan nilai AVE | Kurang sensitif — *loading* yang tinggi dapat mengompensasi *loading* yang rendah |
 | **Kriteria** | ≥ 0.50 | ≥ 0.70 |
 | **Kegunaan utama** | Validitas konvergen & diskriminan | Reliabilitas (alternatif Cronbach's α) |
 

@@ -138,6 +138,7 @@ Untuk menggambar diagram jalur, mahasiswa dapat menggunakan MS Power Point, Canv
 * Variabel indikator (reflektif vs formatif)
 * *Correlated error variances*
 * Metode estimasi
+* _Average variance extracted_ (AVE)
 * Menuliskan hasil analisis CFA dalam laporan penelitian
 
 [{{< fa file-powerpoint >}} Buka Materi CFA](slides/bagian-8.html){.btn .btn-primary}

@@ -32,11 +32,11 @@ execute:
 ::: {.incremental}
 * Seorang peneliti mengembangkan skala **kelelahan kerja** (*burnout*) dengan 20 *item*
 * Apakah 20 *item* itu mengukur **20 hal yang benar-benar berbeda**?
-* Atau ada **beberapa dimensi** yang lebih mendasar di baliknya?
+* Atau ada **beberapa dimensi laten** yang diwakili oleh beberapa *item* sekaligus?
 * Masalah yang muncul kalau tidak ada reduksi:
-  - Tidak bisa divisualisasikan (kita akan kesulitan membuat visualisasi 20 "dimensi" sekaligus)
+  - Tidak bisa divisualisasikan (kita akan kesulitan membuat visualisasi 20 *item* sekaligus)
   - Regresi dengan 20 prediktor: risiko *overfitting* sangat tinggi
-  - *Item*-*item* yang saling berkorelasi tinggi menunjukkan adanya **redundansi**
+  - *Item*-*item* yang saling berkorelasi tinggi menunjukkan adanya **redundansi** ➡️ mungkin *item*-*item* ini mengukur dimensi laten yang sama?
 :::
 
 ## *Measurement error* mendistorsi estimasi
@@ -45,7 +45,7 @@ execute:
 
 $$r_{XY_{observed}} = r_{T_X T_Y} \times \sqrt{\rho_{XX'} \times \rho_{YY'}}$$
 
-* Analisis faktor secara eksplisit **memodelkan** *error* per *item* {{< fa circle-arrow-right >}} memisahkan **sinyal** (*common variance*) dari **noise** (*residual*/*unique variance*)
+* Analisis faktor secara eksplisit **memodelkan** *error* per *item* {{< fa circle-arrow-right >}} memisahkan **sinyal** (*common variance*) dari ***noise*** (*residual*/*unique variance*)
 
 ::: {.callout-tip}
 #### Ingat dari Materi Korelasi!
@@ -59,15 +59,15 @@ Koefisien korelasi yang terobservasi selalu lebih kecil dari korelasi sesungguhn
 | **CTT** | "Seberapa reliabel skor total ini?" | Bagian 5 |
 | **EFA** | "Berapa faktor laten yang mendasari *item*-*item* ini?" | **Bagian 7** |
 | **CFA** | "Apakah struktur faktor yang saya hipotesiskan sesuai dengan data?" | Bagian 8 |
-| **SEM** | "Bagaimana faktor-faktor laten saling mempengaruhi?" | Tidak dibahas |
+| **SEM** | "Bagaimana faktor-faktor laten saling mempengaruhi?" | Tidak dibahas. [Klik disini apabila tertarik belajar mandiri.](https://rameliaz.github.io/mg-sem-workshop/) |
 
 : {tbl-colwidths="[20,50,30]"}
 
-## EFA vs CFA — perbandingannya
+## EFA vs. CFA
 
 | EFA | CFA |
 | :--- | :--- |
-| Jumlah faktor **belum diketahui** — biarkan data mendikte strukturnya | Jumlah faktor **sudah ditentukan** (melalui hipotesis) sebelum mengambil data |
+| Jumlah faktor **belum diketahui**, kita membiarkan dataset "mengungkap" strukturnya | Jumlah faktor **sudah ditentukan** (melalui hipotesis) sebelum mengambil data |
 | Peneliti **tidak memiliki** model hipotesis *a priori* | Peneliti **sudah memiliki** model hipotesis *a priori* |
 | Cocok untuk **eksplorasi** dan pengembangan skala | Cocok untuk **konfirmasi** dan pengujian validitas konstruk |
 
@@ -100,9 +100,9 @@ Koefisien korelasi yang terobservasi selalu lebih kecil dari korelasi sesungguhn
 ::: {.column width="50%"}
 **Analogi sederhana:**
 
-* Data asli = 20 kolom (*item*)
-* *Component scores* = 3–4 kolom ringkasan
-* Mempertahankan sebanyak mungkin informasi dengan sesedikit mungkin variabel
+* Dataset berisi 20 kolom/variabel (*item*)
+* *Component scores* = 3–4 kolom skor komposit
+* Mempertahankan sebanyak mungkin informasi dengan sesedikit mungkin komponen
 :::
 ::::
 
@@ -111,9 +111,9 @@ Koefisien korelasi yang terobservasi selalu lebih kecil dari korelasi sesungguhn
 ::: {.incremental}
 * PCA adalah salah satu teknik **_unsupervised learning_** yang paling banyak digunakan dalam *machine learning*
 * **Reduksi dimensi sebelum pemodelan prediktif**
-  - Dataset dengan ratusan/ribuan variabel (misalnya data genomik, neuroimaging, NLP) susah dimodelkan langsung
+  - Dataset dengan ratusan/ribuan variabel (misalnya data genomik, *neuroimaging*, NLP) susah dimodelkan langsung
   - PCA meringkas variabel-variabel yang saling berkorelasi menjadi komponen yang independen (*orthogonal*)
-  - Komponen ini kemudian digunakan sebagai prediktor dalam regresi atau klasifikasi — mengurangi *overfitting*
+  - Komponen ini kemudian digunakan sebagai prediktor dalam regresi atau klasifikasi, supaya mengurangi *overfitting*
 * **Visualisasi data berdimensi tinggi**
   - Plot PC1 vs PC2 memungkinkan kita melihat "peta" distribusi observasi dalam 2D
 * **_Feature extraction_** dalam *deep learning* dan *computer vision*
@@ -128,15 +128,19 @@ EFA memiliki aplikasi yang berbeda, bukan untuk reduksi dimensi secara umum, mel
 ## *Eigenvalue* & *scree plot*
 
 * **Eigenvalue (λ)**: mengukur seberapa banyak varians yang dijelaskan oleh setiap komponen. Total eigenvalue = jumlah *item*.
-* **Kaiser criterion**: pertahankan komponen dengan λ > 1
+* **Kaiser *criterion***: pertahankan komponen dengan λ > 1
   - Logika: komponen dengan λ < 1 menjelaskan varians *kurang* dari satu *item* tunggal
 
 ::: {.callout-caution}
-#### Kaiser criterion sering *over-extract*
-Kaiser criterion bisa menghasilkan terlalu banyak komponen — bahkan dari data yang sepenuhnya acak! Selalu kombinasikan dengan *scree plot* dan *parallel analysis*.
+#### Kaiser *criterion* sering *over-extract*
+Kaiser *criterion* bisa menghasilkan terlalu banyak komponen — bahkan dari data yang sepenuhnya acak! Selalu kombinasikan dengan *scree plot* dan *parallel analysis*.
 :::
 
-* ***Scree plot***: grafik eigenvalue dari tertinggi ke terendah — cari "elbow" (titik siku) di mana kurva mulai mendatar. Pertahankan komponen **sebelum** elbow.
+* ***Scree plot***: grafik Eigenvalue dari tertinggi ke terendah — cari "*elbow*" (titik siku) di mana kurva mulai mendatar. Pertahankan komponen **sebelum** *elbow*.
+
+## Contoh *scree plot*
+
+![](libs/scree.png){fig-align="center"}
 
 ## *Component loadings* & rotasi
 
@@ -144,7 +148,7 @@ Kaiser criterion bisa menghasilkan terlalu banyak komponen — bahkan dari data 
   - |loading| > 0.40 {{< fa circle-arrow-right >}} *item* bermakna untuk komponen ini (*salient loading*)
   - |loading| < 0.30 {{< fa circle-arrow-right >}} *item* tidak relevan untuk komponen ini
 
-* **Rotasi** mengejar *simple structure* (Thurstone, 1947): setiap *item* *load* tinggi di **satu** komponen, mendekati nol di yang lain
+* **Rotasi** mengejar *simple structure* ([Thurstone, 1954](https://www.cambridge.org/core/journals/psychometrika/article/abs/an-analytical-method-for-simple-structure/C9EE5AE670053FC512D66EC8B964D443)): setiap *item* *loaded* tinggi di **satu** komponen, mendekati nol di yang lain
 
 | | Orthogonal | Oblique |
 |---|---|---|
@@ -154,12 +158,12 @@ Kaiser criterion bisa menghasilkan terlalu banyak komponen — bahkan dari data 
 : {tbl-colwidths="[25,37,38]"}
 
 ::: {.callout-note}
-Rotasi **tidak** mengubah total variani yang dijelaskan — hanya mendistribusikannya agar lebih mudah diinterpretasikan.
+Rotasi **tidak** mengubah total varians yang dijelaskan, tetapi hanya mendistribusikannya agar lebih mudah diinterpretasikan.
 :::
 
-# *Exploratory Factor Analysis* (EFA) {background-color="#14497F" .center}
+# *Exploratory Factor Analysis (EFA) {background-color="#14497F" .center}
 
-## PCA vs EFA — kontras lengkap
+## PCA vs. EFA
 
 | Aspek | PCA | EFA |
 |-------|-----|-----|
@@ -168,8 +172,8 @@ Rotasi **tidak** mengubah total variani yang dijelaskan — hanya mendistribusik
 | **Model** | Komponen = fungsi linear *item* | *Item* = fungsi linear faktor + *error* |
 | **Varians** | Total varians (termasuk *unique* & *error*) | Hanya *common variance* |
 | **Error pengukuran** | Tidak dimodelkan | Eksplisit dimodelkan per *item* |
-| **Faktor/komponen** | Selalu *orthogonal* (tidak berkorelasi) | Boleh berkorelasi (rotasi oblique) |
-| **Kapan digunakan** | Tidak ada teori konstruk laten; tujuannya kompresi data | Ada teori tentang faktor laten; tujuannya pengukuran |
+| **Faktor/komponen** | Selalu *orthogonal* (tidak berkorelasi) | Boleh berkorelasi (rotasi *oblique*) |
+| **Kapan digunakan** | Tidak ada teori konstruk laten; tujuannya kompresi/menyederhanakan struktur dataset | Ada teori tentang faktor laten; tujuannya mengeksplorasi model pengukuran |
 
 : {tbl-colwidths="[28,36,36]"}
 
@@ -182,15 +186,15 @@ Jika *communalities* tinggi (> 0.60) dan struktur jelas, hasil PCA dan EFA serin
 :::: {.columns}
 ::: {.column width="55%"}
 
-* **Komunalitas (h²)**: proporsi varians *item* yang dijelaskan oleh *semua* faktor bersama
+* **Komunalitas (h²)**: proporsi varians *item* yang dijelaskan oleh *semua* faktor laten yang teridentifikasi
 
-* **Keunikan (u²)**: 1 − h² = varians yang *tidak* dijelaskan oleh faktor mana pun (varians spesifik + *error*)
+* **Keunikan (u²)**: 1 − h² = varians yang *tidak* dijelaskan oleh faktor manapun (varians spesifik i.e., *unique variance* + *error*)
 
 | h² | Interpretasi |
 |:---:|--------------|
 | > 0.50 | Baik {{< fa circle-check >}} |
-| 0.30–0.50 | Cukup — perlu evaluasi |
-| < 0.30 | Bermasalah — pertimbangkan menghapus *item* |
+| 0.30–0.50 | Cukup, tetapi perlu evaluasi |
+| < 0.30 | Bermasalah, cek *wording*nya dan pertimbangkan menghapus *item* |
 
 :::
 ::: {.column width="45%"}
@@ -198,13 +202,13 @@ Jika *communalities* tinggi (> 0.60) dan struktur jelas, hasil PCA dan EFA serin
 ::: {.callout-warning}
 Item dengan h² rendah mengukur sesuatu yang unik apabila dibandingkan dengan *item* lain.
 
-Evaluasi ulang redaksinya sebelum memutuskan untuk menghapus _item_.
+Evaluasi ulang redaksi (*wording*) *item* tersebut sebelum memutuskan untuk menghapus _item_.
 :::
 
 :::
 ::::
 
-## Menentukan jumlah faktor — jangan hanya mengandalkan Kaiser!
+## Menentukan jumlah faktor
 
 ::: {.incremental}
 * **Kaiser criterion** (λ > 1) — mudah, tapi konsisten *over-extract*. Gunakan sebagai acuan awal saja.
@@ -214,9 +218,9 @@ Evaluasi ulang redaksinya sebelum memutuskan untuk menghapus _item_.
 * ***Parallel analysis*** {{< fa circle-arrow-right >}} **direkomendasikan**
   - Bandingkan eigenvalue data nyata dengan eigenvalue dari **data acak** (dimensi yang sama)
   - Pertahankan faktor di mana eigenvalue nyata **>** eigenvalue acak (persentil ke-95)
-  - Paling akurat secara empiris; tidak subjektif (Hayton, Allen & Scarpello, 2004)
+  - Paling akurat secara empiris; tidak subjektif ([Hayton, Allen & Scarpello, 2004](https://journals.sagepub.com/doi/abs/10.1177/1094428104263675))
 
-* **Teori** — berapa faktor yang disebutkan di literatur?
+* **Teori** — berapa faktor laten yang disebutkan di literatur?
 :::
 
 ::: {.callout-tip}
@@ -227,11 +231,11 @@ Gunakan kombinasi ***parallel analysis*** + *scree plot* + teori sebagai dasar k
 ## Rotasi dalam EFA
 
 ::: {.incremental}
-* **Orthogonal** (faktor tidak berkorelasi) — Varimax
+* ***Orthogonal*** (faktor tidak berkorelasi) — Varimax
   - Menghasilkan satu matriks: *factor loadings*
   - Asumsi independensi sering **tidak realistis** dalam psikologi
 
-* **Oblique** (faktor boleh berkorelasi) — Promax, Direct Oblimin
+* ***Oblique*** (faktor boleh berkorelasi) — Promax, Direct Oblimin
   - Menghasilkan *pattern matrix* (kontribusi unik faktor ke *item*) — **ini yang dilaporkan**
   - Juga menghasilkan *structure matrix* dan *factor correlation matrix*
 :::
@@ -268,7 +272,7 @@ Untuk skala *Likert* yang tidak terlalu juling, **MinRes sudah cukup baik**. Gun
 | 0.60–0.70 | *Mediocre* |
 | < 0.50 | Tidak layak — jangan lanjutkan EFA |
 
-## Bartlett's test of sphericity
+## Bartlett's *test of sphericity*
 
 * H₀: matriks korelasi = matriks identitas (tidak ada korelasi antar *item*)
 * _p_ < .05 {{< fa circle-arrow-right >}} tolak H₀ {{< fa circle-arrow-right >}} ada korelasi yang cukup {{< fa circle-arrow-right >}} EFA layak dilakukan
@@ -288,7 +292,7 @@ Untuk skala *Likert* yang tidak terlalu juling, **MinRes sudah cukup baik**. Gun
 
 ::: {.callout-caution}
 #### _Rule of Thumb_
-*Loadings* rendah dan *communalities* rendah membutuhkan N yang **lebih besar**. Jangan memaksakan analisis faktor pada sampel yang terlalu kecil.
+*Loadings* rendah dan *communalities* rendah membutuhkan *N* yang **lebih besar**. Jangan memaksakan analisis faktor pada sampel yang terlalu kecil.
 :::
 
 # Evaluasi & Pelaporan {background-color="#14497F" .center}
@@ -307,10 +311,10 @@ Untuk skala *Likert* yang tidak terlalu juling, **MinRes sudah cukup baik**. Gun
 
 ::: {.callout-note}
 #### Catatan
-Ambang batas RMSEA < .06 ([Hu & Bentler, 1999](https://www.tandfonline.com/doi/abs/10.1080/10705519909540118)) sering dikutip, tapi berasal dari kondisi simulasi yang spesifik. Untuk model dengan banyak indikator atau sampel besar, **RMSEA < .08 sudah dapat diterima**, jangan terlalu kaku pada angka .06.
+Ambang batas RMSEA < .06 ([Hu & Bentler, 1999](https://www.tandfonline.com/doi/abs/10.1080/10705519909540118)) sering dikutip, tapi berasal dari kondisi simulasi yang spesifik. Untuk model dengan banyak indikator atau sampel besar, **RMSEA < .08 sudah dapat diterima**, jangan terlalu terpatok pada angka .06.
 :::
 
-## Reliabilitas: alpha vs omega
+## Reliabilitas: alpha vs. omega
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -399,7 +403,7 @@ Jika ω > α secara substansial, berarti asumsi *tau-equivalence* tidak terpenuh
 :::: {.columns}
 ::: {.column width="50%"}
 
-**Menjalankan EFA:**
+**Mengeksekusi EFA:**
 
 1. **Analyses → Factor → Exploratory Factor Analysis**
 2. Masukkan semua *item* ke "Variables"

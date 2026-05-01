@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.10.3">
 
   <meta name="author" content="Rizqy Amelia Zein">
-  <meta name="dcterms.date" content="2026-04-25">
+  <meta name="dcterms.date" content="2026-05-01">
   <title>Statistik Lanjut dalam Penelitian Psikologi – Pengantar Latent Variable Modeling</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -147,12 +147,12 @@ Rizqy Amelia Zein
     </div>
 </div>
 
-  <p class="date">2026-04-25</p>
+  <p class="date">2026-05-01</p>
 </section>
 <section id="outline" class="slide level2">
 <h2><em>Outline</em></h2>
 <ul>
-<li>Apa yang dimaksud dengan variabel laten? Mengapa psikologi membutuhkannya?</li>
+<li>Apa yang dimaksud dengan variabel laten?</li>
 <li><em>Classical Test Theory</em> sebagai model variabel laten paling sederhana</li>
 <li>Reliabilitas dan <em>measurement error</em>: mengapa skor observasi selalu mengandung <em>noise</em></li>
 <li><em>Attenuation bias</em>: bagaimana <em>measurement error</em> mendistorsi estimasi hubungan antar-variabel</li>
@@ -167,8 +167,8 @@ Rizqy Amelia Zein
 <h1>Psikologi mengukur hal-hal yang tidak bisa dilihat</h1>
 
 </section>
-<section id="apakah-fisika-lebih-mudah-dari-psikologi" class="slide level2">
-<h2>Apakah fisika lebih mudah dari psikologi?</h2>
+<section id="psikologi-vs.-fisika" class="slide level2">
+<h2>Psikologi vs.&nbsp;Fisika</h2>
 
 <img data-src="https://media.giphy.com/media/3o7TKSjRrfIPjeiVyM/giphy.gif" class="quarto-figure quarto-figure-center r-stretch" style="width:55.0%"><ul>
 <li class="fragment">Fisika mengukur massa, kecepatan, suhu — semuanya bisa dikuantifikasi langsung dengan alat fisik.</li>
@@ -179,7 +179,7 @@ Rizqy Amelia Zein
 <section id="contoh-variabel-laten-dalam-psikologi" class="slide level2">
 <h2>Contoh variabel laten dalam psikologi</h2>
 <ul>
-<li class="fragment"><p><strong>Kecemasan</strong> — tidak bisa diobservasi langsung, tetapi bisa diinferensi dari detak jantung cepat, telapak tangan berkeringat, sulit konsentrasi, dan laporan subjektif individu.</p></li>
+<li class="fragment"><p><strong>Kecemasan</strong> — tidak bisa diobservasi langsung, tetapi bisa diinferensi (i.e., disimpulkan) dari detak jantung cepat, telapak tangan berkeringat, sulit konsentrasi, dan laporan subjektif individu.</p></li>
 <li class="fragment"><p><strong>Kepribadian (Big 5)</strong> — <em>Openness</em>, <em>Conscientiousness</em>, <em>Extraversion</em>, <em>Agreeableness</em>, <em>Neuroticism</em> merupakan konstruk laten yang diukur melalui respon terhadap item-item pernyataan.</p></li>
 <li class="fragment"><p><strong>Prestasi belajar</strong> — tidak sepenuhnya tercermin dari nilai ujian saja; ada faktor <em>measurement error</em> dalam setiap tes.</p></li>
 <li class="fragment"><p>Semua konstruk ini disebut <strong>variabel laten</strong> (<em>latent variable</em>): variabel yang <strong>tidak dapat diamati secara langsung</strong>, tetapi dapat diinferensi dari variabel lain yang bisa diukur (<em>observed variables</em>).</p></li>
@@ -212,8 +212,8 @@ Rizqy Amelia Zein
 </div></div>
 </section></section>
 <section>
-<section id="classical-test-theory-ctt-model-variabel-laten-paling-sederhana" class="title-slide slide level1 center" data-background-color="#14497F">
-<h1><em>Classical Test Theory</em> (CTT): model variabel laten paling sederhana</h1>
+<section id="classical-test-theory-ctt" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1>Classical Test Theory (CTT)</h1>
 
 </section>
 <section id="classical-test-theory-x-t-e" class="slide level2">
@@ -223,10 +223,10 @@ Rizqy Amelia Zein
 </ul>
 <p><span class="math display">\[X = T + E\]</span></p>
 <ul>
-<li class="fragment"><strong>T</strong> (<em>true score</em>): skor yang <em>seharusnya</em> diperoleh seseorang apabila pengukuran dilakukan dengan sempurna — bebas dari gangguan apapun.</li>
-<li class="fragment"><strong>E</strong> (<em>error</em>): <em>measurement error</em> — semua “gangguan” yang membuat skor observasi menyimpang dari skor murni.
+<li class="fragment"><strong>T</strong> (<em>true score</em>): skor yang <em>seharusnya</em> diperoleh seseorang apabila pengukuran dilakukan dengan sempurna — bebas dari <em>noise</em> apapun.</li>
+<li class="fragment"><strong>E</strong> (<em>error</em>): <em>measurement error</em> — semua <em>noise</em> yang membuat skor observasi menyimpang dari skor murni.
 <ul>
-<li class="fragment">Kondisi fisik saat mengisi kuesioner</li>
+<li class="fragment">Kondisi fisik/kesehatan partisipan saat mengisi kuesioner</li>
 <li class="fragment">Ambiguitas item pernyataan</li>
 <li class="fragment">Perubahan suasana hati sesaat (<em>state</em>)</li>
 <li class="fragment">Faktor situasional lainnya</li>
@@ -241,7 +241,7 @@ Rizqy Amelia Zein
 <p><strong>Implikasi penting</strong></p>
 </div>
 <div class="callout-content">
-<p>CTT mengasumsikan bahwa <strong>rata-rata <em>error</em> adalah nol</strong> (E(e) = 0) dan <strong><em>error</em> tidak berkorelasi dengan skor murni</strong> (Cov(T, E) = 0). Artinya, <em>error</em> bersifat acak — bukan sistematis.</p>
+<p>CTT mengasumsikan bahwa <strong>rata-rata <em>error</em> adalah nol</strong> (E(e) = 0) dan <strong><em>error</em> tidak berkorelasi dengan skor murni</strong> (Cov(T, E) = 0). Artinya, <em>error</em> bersifat <em>stochastic</em> (acak), bukan sistematis.</p>
 </div>
 </div>
 </div>
@@ -290,9 +290,9 @@ Rizqy Amelia Zein
 <section id="measurement-error-dan-attenuation-bias" class="slide level2">
 <h2><em>Measurement error</em> dan <em>attenuation bias</em></h2>
 <ul>
-<li><p>Masalahnya: kita tidak pernah mengukur <strong>T</strong> secara langsung — yang kita ukur selalu <strong>X</strong> (yang sudah “tercemari” oleh <em>error</em>).</p></li>
-<li><p>Konsekuensinya: ketika kita mengestimasi <strong>korelasi antar-variabel</strong>, korelasi yang kita hitung sebenarnya adalah korelasi antar <em>observed scores</em> (rₓᵧ), bukan korelasi antar <em>true scores</em> (rᴛₓᴛᵧ).</p></li>
-<li><p>Ini menyebabkan <strong>atenuasi</strong> — korelasi yang kita estimasi <strong>selalu lebih kecil</strong> dari korelasi yang sebenarnya:</p></li>
+<li><p>Persoalannya, kita tidak bisa mengukur <strong>T</strong> secara langsung, yang kita ukur selalu <strong>X</strong> (yang sudah “tercemari” oleh <em>error</em>).</p></li>
+<li><p>Konsekuensinya, ketika kita mengestimasi <strong>korelasi antar-variabel</strong>, korelasi yang kita hitung sebenarnya adalah korelasi antar <em>observed scores</em> (rₓᵧ), bukan korelasi antar <em>true scores</em> (rᴛₓᴛᵧ).</p></li>
+<li><p>Ini menyebabkan <strong>bias atenuasi</strong>: korelasi yang kita estimasi <strong>selalu lebih kecil</strong> dari korelasi yang sebenarnya:</p></li>
 </ul>
 <p><span class="math display">\[r_{XY} = r_{T_X T_Y} \times \sqrt{\rho_{XX'} \times \rho_{YY'}}\]</span></p>
 <div class="callout callout-warning callout-titled callout-style-default">
@@ -304,7 +304,7 @@ Rizqy Amelia Zein
 <p><strong><em>Attenuation bias</em></strong></p>
 </div>
 <div class="callout-content">
-<p>Semakin rendah reliabilitas alat ukur, semakin besar distorsi pada estimasi korelasi. Ini berarti <em>measurement error</em> yang tinggi akan membuat kita <strong>meremehkan</strong> kekuatan hubungan antar-variabel yang sesungguhnya.</p>
+<p>Semakin rendah reliabilitas alat ukur, semakin besar distorsi (<em>noise</em>) pada estimasi korelasi. Ini berarti <em>measurement error</em> yang tinggi akan membuat kita <em>underestimate</em> kekuatan hubungan antar-variabel yang sesungguhnya.</p>
 </div>
 </div>
 </div>
@@ -315,9 +315,9 @@ Rizqy Amelia Zein
 <p>Korelasi yang akan kita temukan di data:</p>
 <p><span class="math display">\[r_{XY} = 0.60 \times \sqrt{0.70 \times 0.65} = 0.60 \times 0.674 = \mathbf{0.40}\]</span></p>
 <ul>
-<li class="fragment">Dengan kata lain, kita akan <strong>melaporkan korelasi 0.40</strong> padahal hubungan yang sesungguhnya adalah <strong>0.60</strong> — perbedaan yang sangat substansial!</li>
-<li class="fragment">Ini juga berdampak pada <strong>efek size</strong> dalam regresi: koefisien regresi (β) pun ikut teratenuasi.</li>
-<li class="fragment">Solusinya? Perlu model statistik yang secara eksplisit <strong>memodelkan dan mengontrol <em>measurement error</em></strong> — inilah alasan utama mengapa kita perlu <em>latent variable modeling</em>.</li>
+<li class="fragment">Dengan kata lain, kita akan <strong>melaporkan korelasi 0.40</strong> padahal hubungan yang sesungguhnya adalah <strong>0.60</strong>. Perbedaan ini sangat substansial!</li>
+<li class="fragment">Ini juga berdampak pada <strong><em>effect size</em></strong> dalam regresi: koefisien regresi (β) pun ikut teratenuasi.</li>
+<li class="fragment">Oleh karena itu, kita membutuhkan model statistik yang secara eksplisit <strong>memodelkan dan mengontrol <em>measurement error</em></strong>. Inilah kegunaan utama <em>latent variable modeling</em>.</li>
 </ul>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -362,17 +362,17 @@ Rizqy Amelia Zein
 <tr class="even">
 <td><strong>EFA</strong></td>
 <td>Struktur faktor laten yang tidak diketahui</td>
-<td>Menemukan faktor laten secara <em>data-driven</em></td>
+<td>Menemukan faktor laten dari suatu dataset (<em>data-driven</em>)</td>
 </tr>
 <tr class="odd">
 <td><strong>CFA</strong></td>
-<td>Struktur faktor laten yang sudah dihipotesiskan</td>
-<td>Menguji validitas konstruk secara teori</td>
+<td>Struktur faktor laten yang sudah dihipotesiskan oleh teori</td>
+<td>Menguji validitas konstruk berdasarkan teori</td>
 </tr>
 <tr class="even">
 <td><strong>SEM</strong></td>
 <td>Hubungan antar faktor laten + model pengukuran</td>
-<td>Menguji model teoritis secara komprehensif</td>
+<td>Menguji hubungan antara variabel laten sesuai yang dihipotesiskan oleh teori</td>
 </tr>
 </tbody>
 </table>
@@ -385,7 +385,7 @@ Rizqy Amelia Zein
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>Keempat model ini membentuk <strong>satu kontinum</strong> dari yang paling sederhana (CTT) ke yang paling kompleks (SEM). Setiap model yang lebih canggih <em>mengandung</em> logika model sebelumnya.</p>
+<p>Keempat model ini membentuk <strong>satu kontinum</strong> dari yang paling sederhana (CTT) ke yang paling kompleks (SEM). Setiap model yang lebih kompleks <em>mengandung</em> logika model sebelumnya.</p>
 </div>
 </div>
 </div>
@@ -394,7 +394,7 @@ Rizqy Amelia Zein
 <h2>Apa yang EFA dan CFA tambahkan dibandingkan CTT?</h2>
 <ul>
 <li class="fragment"><p><strong>CTT</strong> bekerja di level <em>item</em> — hanya bisa menghitung reliabilitas dan korelasi item-total. CTT tidak menguji apakah item-item tersebut memang mengukur konstruk laten yang sama.</p></li>
-<li class="fragment"><p><strong>EFA</strong> (<em>Exploratory Factor Analysis</em>) memungkinkan kita untuk <em>menemukan</em> struktur faktor laten dari data — berguna saat teori belum jelas atau sedang dalam tahap eksplorasi.</p></li>
+<li class="fragment"><p><strong>EFA</strong> (<em>Exploratory Factor Analysis</em>) memungkinkan kita untuk <em>menemukan</em> struktur faktor laten dari data. Berguna saat teori belum terlalu matang bukti empirisnya atau sedang dalam tahap eksplorasi.</p></li>
 <li class="fragment"><p><strong>CFA</strong> (<em>Confirmatory Factor Analysis</em>) memungkinkan kita untuk <em>menguji</em> apakah struktur faktor yang dihipotesiskan berdasarkan teori <strong>didukung oleh data</strong>. Ini adalah uji <strong>validitas konstruk</strong> yang paling ketat.</p></li>
 <li class="fragment"><p><strong>SEM</strong> menggabungkan model pengukuran (CFA) dengan model struktural (regresi/jalur) untuk menguji hipotesis teoritis yang kompleks sekaligus mengontrol <em>measurement error</em>.</p></li>
 </ul>
@@ -408,8 +408,8 @@ Rizqy Amelia Zein
 
 <img data-src="libs/model-pengukuran2.png" class="quarto-figure quarto-figure-center r-stretch"></section></section>
 <section>
-<section id="reflektif-vs.-formatif" class="title-slide slide level1 center" data-background-color="#14497F">
-<h1>Reflektif vs.&nbsp;Formatif</h1>
+<section id="model-reflektif-vs.-formatif" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1>Model Reflektif vs.&nbsp;Formatif</h1>
 
 </section>
 <section id="dua-cara-variabel-laten-bekerja" class="slide level2">
@@ -461,18 +461,18 @@ Rizqy Amelia Zein
 </div>
 </section></section>
 <section>
-<section id="perangkat-lunak-dan-cakupan-materi" class="title-slide slide level1 center" data-background-color="#14497F">
-<h1>Perangkat lunak dan cakupan materi</h1>
+<section id="perangkat-lunak" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1>Perangkat lunak</h1>
 
 </section>
 <section id="pilihan-perangkat-lunak" class="slide level2">
 <h2>Pilihan perangkat lunak</h2>
 <ul>
 <li class="fragment"><p><strong><code>jamovi</code></strong> — antarmuka grafis (<em>point-and-click</em>), gratis dan <em>open source</em>. Digunakan dalam workshop ini. <em>Module</em> SEMLj menyediakan EFA dan CFA dengan antarmuka yang <em>user-friendly</em>.</p></li>
-<li class="fragment"><p><strong><code>JASP</code></strong> — mirip jamovi, antarmuka grafis, gratis. Juga mendukung EFA dan CFA.</p></li>
-<li class="fragment"><p><strong><code>lavaan</code></strong> di <i class="fa-brands fa-r-project" aria-label="r-project"></i> — paket R yang paling lengkap dan fleksibel untuk SEM, CFA, EFA. Membutuhkan <em>coding</em>, tetapi memberikan kendali penuh atas spesifikasi model.</p></li>
-<li class="fragment"><p><strong><code>semopy</code></strong> di <i class="fa-brands fa-python" aria-label="python"></i> — alternatif di Python, sintaks mirip <code>lavaan</code>.</p></li>
-<li class="fragment"><p><strong><code>Mplus</code></strong>, <strong><code>LISREL</code></strong>, <strong><code>SPSS AMOS</code></strong>, <strong><code>EQS</code></strong> — perangkat lunak komersial dengan fitur lebih lengkap (termasuk <em>power analysis</em> dan simulasi), tetapi berbayar.</p></li>
+<li class="fragment"><p><strong><code>JASP</code></strong> — mirip <code>jamovi</code>, antarmuka grafis, gratis. Juga mendukung EFA dan CFA.</p></li>
+<li class="fragment"><p><strong><code>lavaan</code></strong> di <i class="fa-brands fa-r-project" aria-label="r-project"></i> — <em>package</em> <i class="fa-brands fa-r-project" aria-label="r-project"></i> yang paling lengkap dan fleksibel untuk SEM, CFA, EFA. Membutuhkan <em>coding</em>, tetapi memberikan kendali penuh atas spesifikasi model.</p></li>
+<li class="fragment"><p><strong><code>semopy</code></strong> di <i class="fa-brands fa-python" aria-label="python"></i> — alternatif di <i class="fa-brands fa-python" aria-label="python"></i>, <em>coding style</em> mirip <code>lavaan</code>.</p></li>
+<li class="fragment"><p><strong><code>Mplus</code></strong> — perangkat lunak komersial dengan fitur lebih lengkap (termasuk <em>power analysis</em> dan simulasi), tetapi <em>proprietary</em> (berbayar).</p></li>
 </ul>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -487,20 +487,6 @@ Rizqy Amelia Zein
 </div>
 </div>
 </div>
-</section>
-<section id="yang-tidak-dicakup-dalam-materi-ini" class="slide level2">
-<h2>Yang tidak dicakup dalam materi ini</h2>
-<ul>
-<li><em>A priori power analysis</em>, Monte Carlo <em>simulation</em>, dan <em>accuracy in parameter estimation</em> (AIPE) untuk merencanakan jumlah sampel</li>
-<li><em>Sensitivity analysis</em> untuk CFA/SEM</li>
-<li>Model SEM dengan <em>missing data</em> (selain <em>listwise deletion</em>)</li>
-<li>Model SEM dengan variabel moderator/mediator (<em>mediated moderation</em>, <em>moderated mediation</em>)</li>
-<li><em>Hierarchical latent variable model</em> (<em>second-order</em> CFA / <em>bifactor model</em>)</li>
-<li><a href="http://www.annualreviews.org/doi/10.1146/annurev-clinpsy-032813-153700"><em>Exploratory</em> SEM (ESEM)</a></li>
-<li><em>Partial least square</em> (PLS) — berbeda secara fundamental dari CB-SEM</li>
-<li><em>Mixture model</em> dan <em>latent growth curve</em> (SEM untuk data longitudinal)</li>
-<li><a href="https://journals.sagepub.com/doi/10.1177/23328584251388032"><em>Multiple indicators, multiple causes</em> (MIMIC) model</a></li>
-</ul>
 </section>
 <section id="ada-pertanyaan" class="slide level2">
 <h2>Ada pertanyaan❓</h2>

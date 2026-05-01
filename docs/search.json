@@ -123,7 +123,7 @@
     "href": "slides/bagian-8.html#ave-vs.-composite-reliability-cr",
     "title": "Confirmatory Factor Analysis (CFA)",
     "section": "AVE vs. Composite Reliability (CR)",
-    "text": "AVE vs. Composite Reliability (CR)\n\n\n\n\n\n\n\n\n\nAVE\nComposite Reliability\n\n\n\n\nYang diukur\nRasio sinyal-terhadap-total per indikator\nKonsistensi internal skala\n\n\nSensitif terhadap\nLoading rendah sangat menekan nilai AVE\nKurang sensitif — loading yang tinggi dapat mengompensasi yang rendah\n\n\nKriteria\n≥ 0.50\n≥ 0.70\n\n\nKegunaan utama\nValiditas konvergen & diskriminan\nReliabilitas (alternatif Cronbach’s α)\n\n\n\n\n\n\n\n\n\nCR tinggi belum tentu AVE tinggi\n\n\nSkala dengan loading sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilkan CR ≈ 0.78 namun AVE ≈ 0.36. CR fokus pada “apakah item-item saling berkaitan?”; AVE fokus pada “apakah item-item benar-benar mewakili konstruknya?”"
+    "text": "AVE vs. Composite Reliability (CR)\n\n\n\n\n\n\n\n\n\nAVE\nComposite Reliability\n\n\n\n\nYang diukur\nRasio sinyal-terhadap-total per indikator\nKonsistensi internal skala\n\n\nSensitif terhadap\nLoading rendah sangat menekan nilai AVE\nKurang sensitif — loading yang tinggi dapat mengompensasi loading yang rendah\n\n\nKriteria\n≥ 0.50\n≥ 0.70\n\n\nKegunaan utama\nValiditas konvergen & diskriminan\nReliabilitas (alternatif Cronbach’s α)\n\n\n\n\n\n\n\n\n\nCR tinggi belum tentu AVE tinggi\n\n\nSkala dengan loading sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilkan CR ≈ 0.78 namun AVE ≈ 0.36. CR fokus pada “apakah item-item saling berkaitan?”; AVE fokus pada “apakah item-item benar-benar mewakili konstruknya?”"
   },
   {
     "objectID": "slides/bagian-8.html#latihan-mandiri-4-mencoba-confirmatory-factor-analysis",
@@ -774,7 +774,7 @@
     "href": "index.html#outline-materi",
     "title": "Statistik Lanjut dalam Penelitian Psikologi",
     "section": "Outline materi",
-    "text": "Outline materi\n\nBagian 1️⃣: Korelasi\n\nJenis-jenis koefisien korelasi\nFaktor-faktor yang membuat koefisien korelasi bervariasi\nKoreksi atenuasi dan measurement error\nVariance-covariance dan correlation matrix\nWARNING! Covariance/correlation matrix is not positive definite\nHeywood dan Ultra-Heywood case\nBivariat, part, dan partial correlation\nMetrik variabel (standardized vs unstandardized)\n\n Buka Materi Korelasi\n\n\nBagian 2️⃣: Ordinary Least Square Regression\n\nBerlatih menginspeksi data secara visual dengan scatterplot\nModel regresi linear (ordinary least square)\nMenarik garis regresi (fitted regression line)\nVarians yang dapat dan yang tidak dapat dijelaskan oleh model (R2)\nMenguji hipotesis\nMengecek kecocokan model dengan data (model fit)\nMengecek asumsi\n\nDistribusi (normalitas) residual\nHomoskedastisitas\nMultikolinearitas\n\nMendeteksi outliers\nMenguji interaction effects dan model change\nMenulis hasil analisis regresi linear dengan interaction terms dalam manuskrip\n\n Buka Materi Regresi OLS\n\n\nBagian 3️⃣: Regresi Logistik Binomial\n\nMengapa regresi linear tidak cocok untuk outcome biner?\nFungsi logistik dan kurva S (sigmoid)\nRantai konsep: probabilitas → odds → log odds (logit) → odds ratio (OR)\nPersamaan model & interpretasi koefisien (β dan OR = e^β)\nEstimasi dengan Maximum Likelihood (MLE)\nMembandingkan model: AIC, BIC, dan Pseudo R² (Nagelkerke)\nModel dengan banyak prediktor\nAsumsi regresi logistik\nEvaluasi akurasi prediksi\nKesalahan umum dalam melakukan analisis regresi logistik\n\n Buka Materi Regresi Logistik\n\n\nBagian 4️⃣: Analisis ROC (Receiver Operating Characteristic)\n\nUji diagnostik dalam psikologi: konteks dan permasalahan\nReview: confusion matrix, sensitivity, dan specificity\nPositive Predictive Value (PPV) dan Negative Predictive Value (NPV)\nTrade-off antara sensitivity dan specificity\nKurva ROC: cara membangun dan membacanya\nArea Under the Curve (AUC)\nYouden’s Index: menentukan cut-off optimal\nMembandingkan beberapa alat ukur sekaligus\nPengaruh prevalensi pada PPV dan NPV\nDemonstrasi di jamovi (modul PPDA → TestROC)\n\n Buka Materi ROC\n\n\nBagian 5️⃣: Pengantar Latent Variable Modeling\n\nApa yang dimaksud dengan variabel laten?\nClassical Test Theory sebagai model variabel laten paling sederhana\nReliabilitas dan measurement error\nAttenuation bias\nKeluarga model variabel laten: CTT → EFA → CFA → SEM\nVariabel laten dalam model reflektif vs formatif\nPilihan perangkat lunak\nCakupan materi dan keterbatasannya\n\n Buka Materi LVM\n\n\nBagian 6️⃣: Model Jalur (Path Model) dan Model Regresi\n\nDefinisi path model\nNama variabel dan koefisien jalur (path coefficients)\n\nδ (delta), ε (epsilon), ξ (ksi), η (eta), λ (lambda), γ (gamma), β (beta), φ (phi), ζ (zeta)\n\nRepresentasi visual model jalur menggunakan diagram jalur (path diagram)\nMenggambarkan hubungan antar-variabel dengan menggunakan diagram jalur\nSpesifikasi model dengan syntax lavaan untuk spesifikasi model jalur di module SEMLj\nAsumsi kausalitas (?) dan limitasi\n\n\n\n\n\n\n\nTipMenggambar diagram jalur\n\n\n\nUntuk menggambar diagram jalur, mahasiswa dapat menggunakan MS Power Point, Canva, atau software lainnya yang serupa. Rekomendasi saya: gunakan draw.io yang merupakan software open source dan sangat unggul untuk menggambar berbagai macam diagram, termasuk flowchart.\n\n\n Buka Materi Path Model\n\n\nBagian 7️⃣: Principal Component Analysis (PCA) dan Exploratory Factor Analysis (EFA)\n\nMengapa kita perlu analisis faktor? Measurement error dan attenuation bias\nKeluarga model variabel laten: CTT → EFA → CFA → SEM\nPrincipal Component Analysis (PCA): reduksi dimensi & unsupervised learning dalam ML\nEigenvalue, scree plot, dan component loadings\nPCA vs EFA: tujuan, model, dan kapan menggunakan yang mana\nKomunalitas (h²) dan keunikan\nMenentukan jumlah faktor: parallel analysis, scree plot, Kaiser criterion\nRotasi orthogonal vs. oblique\nMetode ekstraksi faktor: MinRes, PAF, dan Maximum Likelihood\nAsumsi & kesiapan data: KMO, Bartlett’s test, dan ukuran sampel\nEvaluasi model: fit indices (RMSEA, CFI, TLI) dan reliabilitas (α vs. ω)\nChecklist pelaporan EFA & kesalahan umum\n\n Buka Materi PCA EFA\n\n\nBagian 8️⃣: Confirmatory Factor Analysis (CFA)\n\nDefinisi factor analysis\nExploratory vs confirmatory factor analysis\nKapan menggunakan CFA?\nConstraining parameter model\nModel pengukuran (paralel, tau equivalence, dan congeneric)\nVariabel indikator (reflektif vs formatif)\nCorrelated error variances\nMetode estimasi\nMenuliskan hasil analisis CFA dalam laporan penelitian\n\n Buka Materi CFA"
+    "text": "Outline materi\n\nBagian 1️⃣: Korelasi\n\nJenis-jenis koefisien korelasi\nFaktor-faktor yang membuat koefisien korelasi bervariasi\nKoreksi atenuasi dan measurement error\nVariance-covariance dan correlation matrix\nWARNING! Covariance/correlation matrix is not positive definite\nHeywood dan Ultra-Heywood case\nBivariat, part, dan partial correlation\nMetrik variabel (standardized vs unstandardized)\n\n Buka Materi Korelasi\n\n\nBagian 2️⃣: Ordinary Least Square Regression\n\nBerlatih menginspeksi data secara visual dengan scatterplot\nModel regresi linear (ordinary least square)\nMenarik garis regresi (fitted regression line)\nVarians yang dapat dan yang tidak dapat dijelaskan oleh model (R2)\nMenguji hipotesis\nMengecek kecocokan model dengan data (model fit)\nMengecek asumsi\n\nDistribusi (normalitas) residual\nHomoskedastisitas\nMultikolinearitas\n\nMendeteksi outliers\nMenguji interaction effects dan model change\nMenulis hasil analisis regresi linear dengan interaction terms dalam manuskrip\n\n Buka Materi Regresi OLS\n\n\nBagian 3️⃣: Regresi Logistik Binomial\n\nMengapa regresi linear tidak cocok untuk outcome biner?\nFungsi logistik dan kurva S (sigmoid)\nRantai konsep: probabilitas → odds → log odds (logit) → odds ratio (OR)\nPersamaan model & interpretasi koefisien (β dan OR = e^β)\nEstimasi dengan Maximum Likelihood (MLE)\nMembandingkan model: AIC, BIC, dan Pseudo R² (Nagelkerke)\nModel dengan banyak prediktor\nAsumsi regresi logistik\nEvaluasi akurasi prediksi\nKesalahan umum dalam melakukan analisis regresi logistik\n\n Buka Materi Regresi Logistik\n\n\nBagian 4️⃣: Analisis ROC (Receiver Operating Characteristic)\n\nUji diagnostik dalam psikologi: konteks dan permasalahan\nReview: confusion matrix, sensitivity, dan specificity\nPositive Predictive Value (PPV) dan Negative Predictive Value (NPV)\nTrade-off antara sensitivity dan specificity\nKurva ROC: cara membangun dan membacanya\nArea Under the Curve (AUC)\nYouden’s Index: menentukan cut-off optimal\nMembandingkan beberapa alat ukur sekaligus\nPengaruh prevalensi pada PPV dan NPV\nDemonstrasi di jamovi (modul PPDA → TestROC)\n\n Buka Materi ROC\n\n\nBagian 5️⃣: Pengantar Latent Variable Modeling\n\nApa yang dimaksud dengan variabel laten?\nClassical Test Theory sebagai model variabel laten paling sederhana\nReliabilitas dan measurement error\nAttenuation bias\nKeluarga model variabel laten: CTT → EFA → CFA → SEM\nVariabel laten dalam model reflektif vs formatif\nPilihan perangkat lunak\nCakupan materi dan keterbatasannya\n\n Buka Materi LVM\n\n\nBagian 6️⃣: Model Jalur (Path Model) dan Model Regresi\n\nDefinisi path model\nNama variabel dan koefisien jalur (path coefficients)\n\nδ (delta), ε (epsilon), ξ (ksi), η (eta), λ (lambda), γ (gamma), β (beta), φ (phi), ζ (zeta)\n\nRepresentasi visual model jalur menggunakan diagram jalur (path diagram)\nMenggambarkan hubungan antar-variabel dengan menggunakan diagram jalur\nSpesifikasi model dengan syntax lavaan untuk spesifikasi model jalur di module SEMLj\nAsumsi kausalitas (?) dan limitasi\n\n\n\n\n\n\n\nTipMenggambar diagram jalur\n\n\n\nUntuk menggambar diagram jalur, mahasiswa dapat menggunakan MS Power Point, Canva, atau software lainnya yang serupa. Rekomendasi saya: gunakan draw.io yang merupakan software open source dan sangat unggul untuk menggambar berbagai macam diagram, termasuk flowchart.\n\n\n Buka Materi Path Model\n\n\nBagian 7️⃣: Principal Component Analysis (PCA) dan Exploratory Factor Analysis (EFA)\n\nMengapa kita perlu analisis faktor? Measurement error dan attenuation bias\nKeluarga model variabel laten: CTT → EFA → CFA → SEM\nPrincipal Component Analysis (PCA): reduksi dimensi & unsupervised learning dalam ML\nEigenvalue, scree plot, dan component loadings\nPCA vs EFA: tujuan, model, dan kapan menggunakan yang mana\nKomunalitas (h²) dan keunikan\nMenentukan jumlah faktor: parallel analysis, scree plot, Kaiser criterion\nRotasi orthogonal vs. oblique\nMetode ekstraksi faktor: MinRes, PAF, dan Maximum Likelihood\nAsumsi & kesiapan data: KMO, Bartlett’s test, dan ukuran sampel\nEvaluasi model: fit indices (RMSEA, CFI, TLI) dan reliabilitas (α vs. ω)\nChecklist pelaporan EFA & kesalahan umum\n\n Buka Materi PCA EFA\n\n\nBagian 8️⃣: Confirmatory Factor Analysis (CFA)\n\nDefinisi factor analysis\nExploratory vs confirmatory factor analysis\nKapan menggunakan CFA?\nConstraining parameter model\nModel pengukuran (paralel, tau equivalence, dan congeneric)\nVariabel indikator (reflektif vs formatif)\nCorrelated error variances\nMetode estimasi\nAverage variance extracted (AVE)\nMenuliskan hasil analisis CFA dalam laporan penelitian\n\n Buka Materi CFA"
   },
   {
     "objectID": "index.html#sumber-belajar-lainnya",
@@ -914,28 +914,28 @@
     "href": "slides/bagian-3.html#outline",
     "title": "Regresi Logistik Binomial",
     "section": "Outline",
-    "text": "Outline\n\nMengapa regresi linear tidak bisa digunakan untuk outcome biner?\nRantai konsep: probabilitas, odds, log odds, dan odds ratio\nPersamaan model & interpretasi koefisien\nEstimasi model: Maximum Likelihood dan uji fit\nModel dengan banyak prediktor\nAsumsi regresi logistik\nEvaluasi akurasi prediksi\nPelaporan hasil"
+    "text": "Outline\n\nMengapa regresi linear tidak bisa digunakan untuk outcome biner?\nRantai konsep dasar: probabilitas, odds, log odds, dan odds ratio\nPersamaan model & interpretasi koefisien model\nEstimasi model: Maximum Likelihood dan uji ketepatan model (model fit)\nModel dengan banyak prediktor\nAsumsi regresi logistik\nEvaluasi akurasi prediksi\nPelaporan hasil"
   },
   {
-    "objectID": "slides/bagian-3.html#outcome-biner-ada-di-berbagai-konteks",
-    "href": "slides/bagian-3.html#outcome-biner-ada-di-berbagai-konteks",
+    "objectID": "slides/bagian-3.html#outcome-biner-ada-di-berbagai-konteks-penelitian-psikologi",
+    "href": "slides/bagian-3.html#outcome-biner-ada-di-berbagai-konteks-penelitian-psikologi",
     "title": "Regresi Logistik Binomial",
-    "section": "Outcome biner ada di berbagai konteks",
-    "text": "Outcome biner ada di berbagai konteks\n\nPutus studi PJJ: Sepertiga mahasiswa PJJ tidak menyelesaikan studinya sebelum semester kelima (Tinto, 1987; Park & Choi, 2009)\nRelapse gangguan kecemasan: 40–60% pasien mengalami kekambuhan dalam jangka panjang setelah remisi (Bruce et al., 2005)\nTurnover karyawan: 15–20% per tahun dianggap normal; di atas angka itu menandakan masalah organisasi (SHRM, 2023)\nPercobaan bunuh diri: Sekitar 2.4% prajurit militer AS melakukan percobaan bunuh diri dalam satu tahun (Kessler et al., 2014)\n\n\n\n\n\n\n\nOutcome Biner\n\n\nOutcome dari semua penelitian di atas bukan skor 1–100 (data continous). Mereka adalah keputusan biner: terjadi (1) atau tidak terjadi (0). Kita membutuhkan metode statistik yang dirancang untuk memodelkan probabilitas kejadian seperti ini."
+    "section": "Outcome biner ada di berbagai konteks penelitian psikologi",
+    "text": "Outcome biner ada di berbagai konteks penelitian psikologi\n\nPutus studi PJJ: Sepertiga mahasiswa PJJ tidak menyelesaikan studinya sebelum semester kelima (Tinto, 1987; Park & Choi, 2009)\nRelapse gangguan kecemasan: 40–60% pasien mengalami kekambuhan dalam jangka panjang setelah remisi (Bruce et al., 2005)\nTurnover karyawan: perasaan kesepian di tempat kerja (workplace loneliness) yang diukur pada baseline dapat memprediksi job turnover enam bulan kemudian, setelah mengontrol variabel sosiodemografis (Sasaki, et al., 2025)\nPercobaan bunuh diri: Sekitar 2.4% prajurit militer AS melakukan percobaan bunuh diri dalam satu tahun (Kessler et al., 2014)\n\n\n\n\n\n\n\nOutcome Biner\n\n\nOutcome dari semua penelitian di atas bukan skor 1–100 (data continous). Variabel-variabel di atas adalah keputusan biner: terjadi (1) atau tidak terjadi (0). Kita membutuhkan metode statistik yang dirancang untuk memodelkan probabilitas kejadian seperti ini."
   },
   {
     "objectID": "slides/bagian-3.html#regresi-linear-dan-prediksi-yang-mustahil",
     "href": "slides/bagian-3.html#regresi-linear-dan-prediksi-yang-mustahil",
     "title": "Regresi Logistik Binomial",
     "section": "Regresi linear dan prediksi yang mustahil",
-    "text": "Regresi linear dan prediksi yang mustahil\nMisalnya kita ingin memprediksi putus studi mahasiswa PJJ berdasarkan jarak ke kelompok belajar (pokjar):\n\n\n\n\n\n\n\n\n\nMahasiswa\nJarak ke pokjar\nPrediksi P(putus studi) dengan OLS\nValid?\n\n\n\n\nA\n5 km\n0.25\n✓\n\n\nB\n50 km\n1.45\n✗\n\n\nC\n0 km\n−0.10\n✗\n\n\n\n\nMasalah fundamental: Probabilitas harus berada di rentang 0 sampai 1. Regresi linear tidak menjamin ini — ia memodelkan hubungan linear tanpa batas (∞).\nYang dibutuhkan: Sebuah fungsi yang secara otomatis membatasi prediksi dalam rentang [0, 1]."
+    "text": "Regresi linear dan prediksi yang mustahil\nMisalnya kita ingin memprediksi putus studi mahasiswa PJJ berdasarkan jarak ke kelompok belajar (pokjar):\n\n\n\n\n\n\n\n\n\nMahasiswa\nJarak ke pokjar\nPrediksi P(putus studi) dengan OLS\nValid?\n\n\n\n\nA\n5 km\n0.25\n✓\n\n\nB\n50 km\n1.45\n✗\n\n\nC\n0 km\n−0.10\n✗\n\n\n\n\nMasalah fundamental: Probabilitas harus berada di rentang 0 sampai 1. Regresi linear tidak bisa membatasi nilai slope sesuai rentang ini — ia memodelkan hubungan linear tanpa batas (∞).\nYang dibutuhkan dalam konteks ini: Sebuah fungsi yang secara otomatis membatasi prediksi dalam rentang [0, 1]."
   },
   {
     "objectID": "slides/bagian-3.html#solusi-fungsi-logistik-kurva-s",
     "href": "slides/bagian-3.html#solusi-fungsi-logistik-kurva-s",
     "title": "Regresi Logistik Binomial",
     "section": "Solusi: fungsi logistik (kurva S)",
-    "text": "Solusi: fungsi logistik (kurva S)\n\n\n\\[P = \\frac{1}{1 + e^{-(\\beta_0 + \\beta_1 X)}}\\]\nTiga sifat penting kurva S (sigmoid):\n\nAsimptot bawah = 0 — probabilitas tidak pernah negatif\nAsimptot atas = 1 — probabilitas tidak pernah melampaui 1\nTransisi halus di bagian tengah — perubahan probabilitas melambat di ujung-ujungnya\n\n\n\n\n\n\n\nRentang outcome selalu 0-1 meskipun prediktor nilainya ekstrim\n\n\nTidak peduli seberapa ekstrim nilai prediktor (X), probabilitas yang diprediksi tetap berada dalam rentang yang valid. Inilah keunggulan utama regresi logistik dibanding OLS untuk outcome biner."
+    "text": "Solusi: fungsi logistik (kurva S)\n\n\n\\[P = \\frac{1}{1 + e^{-(\\beta_0 + \\beta_1 X)}}\\]\nTiga karakteristik penting kurva S (sigmoid):\n\nAsimptot bawah = 0 — probabilitas tidak pernah negatif\nAsimptot atas = 1 — probabilitas tidak pernah melampaui 1\nTransisi halus di bagian tengah — perubahan probabilitas melambat di ujung-ujungnya\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRentang outcome selalu 0-1 meskipun prediktor nilainya ekstrim\n\n\nTidak peduli seberapa ekstrim nilai prediktor (X), probabilitas yang diprediksi tetap berada dalam rentang yang valid."
   },
   {
     "objectID": "slides/bagian-3.html#probabilitas-1",
@@ -949,14 +949,14 @@
     "href": "slides/bagian-3.html#probabilitas-2",
     "title": "Regresi Logistik Binomial",
     "section": "Probabilitas 2️⃣",
-    "text": "Probabilitas 2️⃣\n\nRegresi logistik tidak memodelkan probabilitas secara langsung\nYang dimodelkan adalah transformasinya, yaitu log odds\nMengapa?\n\nKarena probabilitas tidak linear, sementara log odds bisa diperlakukan sebagai linear terhadap prediktor"
+    "text": "Probabilitas 2️⃣\n\nRegresi logistik tidak memodelkan probabilitas secara langsung\nYang dimodelkan adalah transformasinya, yaitu log odds\nMengapa?\n\nKarena probabilitas tidak linear, sementara log odds bisa dimodelkan secara linear terhadap prediktor"
   },
   {
     "objectID": "slides/bagian-3.html#odds",
     "href": "slides/bagian-3.html#odds",
     "title": "Regresi Logistik Binomial",
     "section": "Odds",
-    "text": "Odds\n\\[\\text{Odds} = \\frac{P}{1 - P}\\]\nDefinisi: “Berapa kali suatu kejadian lebih mungkin terjadi dibandingkan tidak terjadi” Contoh: Jika P(putus studi) = 0.30, maka Odds = 0.30 / 0.70 = 0.43\nCara baca: “Untuk setiap 7 mahasiswa yang bertahan, ada 3 yang putus studi” (3:7)\n\n\n\n\n\n\n\n\nP(kejadian)\nOdds\nCara baca\n\n\n\n\n0.10\n0.11\n1 banding 9\n\n\n0.25\n0.33\n1 banding 3\n\n\n0.50\n1.00\nSama rata\n\n\n0.75\n3.00\n3 banding 1\n\n\n0.90\n9.00\n9 banding 1"
+    "text": "Odds\n\\[\\text{Odds} = \\frac{P}{1 - P}\\]\nDefinisi: “Berapa kali suatu kejadian lebih mungkin terjadi dibandingkan tidak terjadi”\nContoh: Jika P(putus studi) = 0.30, maka Odds = 0.30 / 0.70 = 0.43\nCara baca: “Untuk setiap 7 mahasiswa yang bertahan, ada 3 yang putus studi” (3:7)\n\n\n\n\n\n\n\n\nP(kejadian)\nOdds\nCara baca\n\n\n\n\n0.10\n0.11\n1 banding 9\n\n\n0.25\n0.33\n1 banding 3\n\n\n0.50\n1.00\nSama rata\n\n\n0.75\n3.00\n3 banding 1\n\n\n0.90\n9.00\n9 banding 1"
   },
   {
     "objectID": "slides/bagian-3.html#interpretasi-odds",
@@ -966,53 +966,53 @@
     "text": "Interpretasi odds\n\n\n\nOdds = 1 artinya peluang terjadi sama dengan tidak terjadi.\nOdds &gt; 1 artinya lebih mungkin terjadi (vs. tidak terjadi).\nOdds &lt; 1 artinya lebih tidak mungkin terjadi (vs. tidak terjadi)."
   },
   {
-    "objectID": "slides/bagian-3.html#log-odds-logit-membuat-odds-simetris-dan-linear",
-    "href": "slides/bagian-3.html#log-odds-logit-membuat-odds-simetris-dan-linear",
+    "objectID": "slides/bagian-3.html#log-odds-logit",
+    "href": "slides/bagian-3.html#log-odds-logit",
     "title": "Regresi Logistik Binomial",
-    "section": "Log odds (logit) — membuat odds simetris dan linear",
-    "text": "Log odds (logit) — membuat odds simetris dan linear\nMasalah odds: Rentangnya 0 sampai ∞, dan tidak simetris — nilai di bawah 1 terkompresi, nilai di atas 1 tidak terbatas.\nSolusi: Log odds (logit)"
+    "section": "Log odds (logit)",
+    "text": "Log odds (logit)\n\nMasalahnya, rentang odds hanya antara 0 sampai ∞, dan tidak simetris — nilai di bawah 1 terkompresi, nilai di atas 1 tidak terbatas.\nSolusinya, gunakan log odds (logit) yang bisa membuat odds menjadi simetris dan linear."
   },
   {
-    "objectID": "slides/bagian-3.html#log-odds-logit-membuat-odds-simetris-dan-linear-1",
-    "href": "slides/bagian-3.html#log-odds-logit-membuat-odds-simetris-dan-linear-1",
+    "objectID": "slides/bagian-3.html#log-odds-logit-1",
+    "href": "slides/bagian-3.html#log-odds-logit-1",
     "title": "Regresi Logistik Binomial",
-    "section": "Log odds (logit) — membuat odds simetris dan linear",
-    "text": "Log odds (logit) — membuat odds simetris dan linear\n\\[\\text{Logit}(P) = \\ln\\!\\left(\\frac{P}{1-P}\\right)\\]\n\n\n\n\n\n\n\n\nP\nOdds\nLogit\n\n\n\n\n0.10\n0.11\n−2.20\n\n\n0.25\n0.33\n−1.10\n\n\n0.50\n1.00\n0.00\n\n\n0.75\n3.00\n+1.10\n\n\n0.90\n9.00\n+2.20\n\n\n\nPerhatikan: logit simetris di sekitar 0 dan rentangnya −∞ sampai +∞. Inilah yang dimodelkan secara linear oleh regresi logistik."
+    "section": "Log odds (logit)",
+    "text": "Log odds (logit)\n\\[\\text{Logit}(P) = \\ln\\!\\left(\\frac{P}{1-P}\\right)\\]\n\n\n\n\n\n\n\n\nP\nOdds\nLogit\n\n\n\n\n0.10\n0.11\n−2.20\n\n\n0.25\n0.33\n−1.10\n\n\n0.50\n1.00\n0.00\n\n\n0.75\n3.00\n+1.10\n\n\n0.90\n9.00\n+2.20\n\n\n\nPerhatikan: logit simetris di sekitar 0 dan rentangnya −∞ sampai +∞. Inilah yang dimodelkan secara linear oleh regresi logistik."
   },
   {
     "objectID": "slides/bagian-3.html#persamaan-model-regresi-logistik",
     "href": "slides/bagian-3.html#persamaan-model-regresi-logistik",
     "title": "Regresi Logistik Binomial",
     "section": "Persamaan model regresi logistik",
-    "text": "Persamaan model regresi logistik\nPersamaan dalam logit (yang berjalan di belakang layar):\n\\[\\ln\\!\\left(\\frac{P}{1-P}\\right) = \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + \\cdots + \\beta_k X_k\\]\nUntuk memprediksi probabilitas, balik transformasinya:\n\\[P = \\frac{1}{1 + e^{-(\\beta_0 + \\beta_1 X_1 + \\cdots + \\beta_k X_k)}}\\]\nKomponen:\n\nβ₀ = intercept (log odds ketika semua prediktor = 0)\nβ₁, …, βₖ = koefisien regresi (perubahan logit per satu unit prediktor)\ne^β = Odds Ratio  inilah yang diinterpretasikan dalam sebagai effect size dari regresi logistik"
+    "text": "Persamaan model regresi logistik\nPersamaan dalam logit (yang berjalan di balik software):\n\\[\\ln\\!\\left(\\frac{P}{1-P}\\right) = \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + \\cdots + \\beta_k X_k\\]\nUntuk memprediksi probabilitas, balik transformasinya:\n\\[P = \\frac{1}{1 + e^{-(\\beta_0 + \\beta_1 X_1 + \\cdots + \\beta_k X_k)}}\\]\nKomponen:\n\nβ₀ = intercept (log odds ketika semua prediktor = 0)\nβ₁, …, βₖ = koefisien regresi (perubahan logit per satu unit prediktor)\neβ = Odds Ratio  inilah yang diinterpretasikan dalam sebagai effect size dari regresi logistik"
   },
   {
     "objectID": "slides/bagian-3.html#odds-ratio-or-effect-size-utama",
     "href": "slides/bagian-3.html#odds-ratio-or-effect-size-utama",
     "title": "Regresi Logistik Binomial",
     "section": "Odds Ratio (OR) — effect size utama",
-    "text": "Odds Ratio (OR) — effect size utama\nOdds ratio (OR) merupakan effect size utama dari model regresi logistik.\n\\[OR = e^{\\beta}\\]\nOR mengukur seberapa banyak odds berubah ketika prediktor naik 1 unit, dengan prediktor lain dikontrol."
+    "text": "Odds Ratio (OR) — effect size utama\nOdds ratio (OR) merupakan effect size utama dari model regresi logistik.\n\\[OR = e^{\\beta}\\]\nOR mengukur seberapa banyak odds berubah ketika prediktor naik 1 unit, dengan asumsi prediktor yang lain nilainya konstan, tidak berubah (i.e., kalau ada beberapa prediktor di dalam model)."
   },
   {
     "objectID": "slides/bagian-3.html#odds-ratio-or-effect-size-utama-1",
     "href": "slides/bagian-3.html#odds-ratio-or-effect-size-utama-1",
     "title": "Regresi Logistik Binomial",
     "section": "Odds Ratio (OR) — effect size utama",
-    "text": "Odds Ratio (OR) — effect size utama\n\n\n\n\n\n\n\nOR\nInterpretasi\n\n\n\n\n= 1.00\nTidak ada efek\n\n\n&gt; 1.00\nOdds outcome naik\n\n\n&lt; 1.00\nOdds outcome turun\n\n\n= 1.50\nOdds naik 50%\n\n\n= 2.00\nOdds naik 100% (dua kali lipat)\n\n\n= 0.50\nOdds turun 50% (setengahnya)\n\n\n\n\n\n\n\n\n\nSelalu laporkan 95% Confidence Interval untuk OR!\n\n\nJika CI melewati 1.0, prediktor tidak signifikan secara statistik — misalnya OR = 1.20, 95% CI [0.85, 1.69] → tidak signifikan."
+    "text": "Odds Ratio (OR) — effect size utama\n\n\n\n\n\n\n\nOR\nInterpretasi\n\n\n\n\n= 1.00\nTidak ada efek\n\n\n&gt; 1.00\nOdds outcome naik\n\n\n&lt; 1.00\nOdds outcome turun\n\n\n= 1.50\nOdds naik 50%\n\n\n= 2.00\nOdds naik 100% (dua kali lipat)\n\n\n= 0.50\nOdds turun 50% (setengahnya)\n\n\n\n\n\n\n\n\n\nSelalu cek dan laporkan 95% Confidence Interval untuk OR!\n\n\nJika CI melewati 1.0, prediktor tidak signifikan secara statistik — misalnya OR = 1.20, 95% CI [0.85, 1.69] → tidak signifikan."
   },
   {
     "objectID": "slides/bagian-3.html#studi-kasus-apa-yang-memprediksi-putus-studi-pjj",
     "href": "slides/bagian-3.html#studi-kasus-apa-yang-memprediksi-putus-studi-pjj",
     "title": "Regresi Logistik Binomial",
     "section": "Studi kasus: apa yang memprediksi putus studi PJJ?",
-    "text": "Studi kasus: apa yang memprediksi putus studi PJJ?\nKonteks: 450 mahasiswa PJJ; 30% putus studi sebelum semester ke-5\nPrediktor: Jarak ke pokjar, keterlibatan akademik, kecemasan akademik awal\n\n\n\n\n\n\n\n\n\n\n\nPrediktor\nβ\nOR\n95% CI\np\nInterpretasi\n\n\n\n\nJarak (per 10 km)\n0.49\n1.63\n[1.21, 2.19]\n&lt;.001\nJarak +10 km → odds +63%\n\n\nKeterlibatan akademik\n−0.65\n0.52\n[0.38, 0.71]\n&lt;.001\nKeterlibatan ↑ → odds −48%\n\n\nKecemasan akademik\n0.02\n1.02\n[0.99, 1.05]\n.182\nTidak signifikan\n\n\n\n\n\n\n\n\n\nInterpretasi\n\n\nKeterlibatan akademik yang tinggi dapat “mencegah” efek jarak yang jauh antara tempat tinggal mahasiswa dengan pokjar. Bisa dijadikan dasar untuk mendesain intervensi program PJJ."
+    "text": "Studi kasus: apa yang memprediksi putus studi PJJ?\nKonteks: 450 mahasiswa PJJ; 30% putus studi sebelum semester ke-5\nPrediktor: Jarak ke pokjar, keterlibatan akademik, kecemasan akademik awal\n\n\n\n\n\n\n\n\n\n\n\nPrediktor\nβ\nOR\n95% CI\np\nInterpretasi\n\n\n\n\nJarak (per 10 km)\n0.49\n1.63\n[1.21, 2.19]\n&lt;.001\nJarak +10 km → odds +63%\n\n\nKeterlibatan akademik\n−0.65\n0.52\n[0.38, 0.71]\n&lt;.001\nKeterlibatan ↑ → odds −48%\n\n\nKecemasan akademik\n0.02\n1.02\n[0.99, 1.05]\n.182\nTidak signifikan\n\n\n\n\n\n\n\n\n\nInterpretasi\n\n\nKeterlibatan akademik yang tinggi dapat “mencegah” efek jarak yang jauh antara tempat tinggal mahasiswa dengan pokjar. Interpretasinya: temuan ini bisa dijadikan dasar untuk mendesain intervensi yang mencegah dropout mahasiswa program PJJ."
   },
   {
     "objectID": "slides/bagian-3.html#maximum-likelihood-estimation-mle",
     "href": "slides/bagian-3.html#maximum-likelihood-estimation-mle",
     "title": "Regresi Logistik Binomial",
     "section": "Maximum Likelihood Estimation (MLE)",
-    "text": "Maximum Likelihood Estimation (MLE)\nRegresi linear (OLS):\nCari β yang meminimalkan jumlah kuadrat error (SSE)\nRegresi logistik (MLE):\nCari β yang membuat variabel outcome yang kita observasi “paling mungkin terjadi”\n\n\n\n\n\n\nMengapa MLE❓\n\n\nKarena MLE, kita tidak mendapatkan F-statistics seperti dalam OLS/ANOVA. Sebagai gantinya, kita mendapatkan χ² sebagai uji signifikansi keseluruhan model.\nJika software menampilkan peringatan algorithm did not converge, biasanya tanda sampel terlalu kecil atau ada perfect separation (lihat bagian berikutnya)."
+    "text": "Maximum Likelihood Estimation (MLE)\nRegresi linear (OLS):\nCari β yang meminimalkan jumlah kuadrat error (SSE)\nRegresi logistik (MLE):\nCari β yang membuat variabel outcome yang kita observasi “paling mungkin terjadi”\n\n\n\n\n\n\nMengapa MLE❓\n\n\nKarena MLE, kita tidak mendapatkan F-statistics seperti dalam OLS/ANOVA. Sebagai gantinya, kita mendapatkan χ² sebagai uji signifikansi keseluruhan model.\nJika software menampilkan peringatan algorithm did not converge, biasanya tanda sampel terlalu kecil atau ada perfect separation (akan dibahas di bagian berikutnya)."
   },
   {
     "objectID": "slides/bagian-3.html#deviance-likelihood-ratio-test-uji-omnibus-model",
@@ -1033,35 +1033,35 @@
     "href": "slides/bagian-3.html#aic-bic-memilih-model-terbaik",
     "title": "Regresi Logistik Binomial",
     "section": "AIC & BIC — memilih model terbaik",
-    "text": "AIC & BIC — memilih model terbaik\nPrinsipnya sama dengan regresi OLS yang sudah kita pelajari di Bagian 3: menambah prediktor selalu menurunkan deviance, bahkan ketika prediktor itu tidak bermakna secara substantif untuk menjelaskan variabel outcome (overfitting).\n\\[\\text{AIC} = -2\\log L + 2k \\qquad \\text{BIC} = -2\\log L + k\\ln(n)\\]\nDi mana k = jumlah parameter, n = ukuran sampel. Makin kecil, makin baik — hanya bermakna kalau ada model lain yang digunakan sebagai perbandingan.\n\n\n\n\n\n\n\n\n\n\nModel\nPrediktor\nAIC\nBIC\n\n\n\n\n\nModel 1\nJarak saja\n502.1\n510.3\n\n\n\nModel 2\nJarak + Keterlibatan\n489.7\n502.1\n← Terbaik\n\n\nModel 3\nJarak + Keterlibatan + Usia + Gender\n493.2\n518.9\n\n\n\n\nModel 2 paling baik: model fit baik (AIC lebih kecil dari Model 1) dan tidak terlalu kompleks (BIC paling kecil diantara model yang lain). BIC lebih ketat dari AIC karena penaltinya lebih besar. Pilih BIC jika prioritasnya memilih model yang paling sederhana (parsimoni)."
+    "text": "AIC & BIC — memilih model terbaik\nPrinsipnya sama dengan regresi OLS yang sudah kita pelajari di Bagian 2: menambah prediktor selalu menurunkan deviance, bahkan ketika prediktor itu tidak bermakna secara substantif untuk menjelaskan variabel outcome (overfitting).\n\\[\\text{AIC} = -2\\log L + 2k \\qquad \\text{BIC} = -2\\log L + k\\ln(n)\\]\nDi mana k = jumlah parameter, n = ukuran sampel. Makin kecil, makin baik — hanya bermakna kalau ada model lain yang digunakan sebagai perbandingan."
   },
   {
-    "objectID": "slides/bagian-3.html#pseudo-r²-seberapa-banyak-variasi-yang-dijelaskan",
-    "href": "slides/bagian-3.html#pseudo-r²-seberapa-banyak-variasi-yang-dijelaskan",
+    "objectID": "slides/bagian-3.html#aic-bic-contohnya",
+    "href": "slides/bagian-3.html#aic-bic-contohnya",
     "title": "Regresi Logistik Binomial",
-    "section": "Pseudo R² — seberapa banyak variasi yang dijelaskan?",
-    "text": "Pseudo R² — seberapa banyak variasi yang dijelaskan?\n\nRegresi logistik tidak punya R² seperti OLS karena tidak ada “total variance” yang bisa dibagi seperti dalam OLS.\nSolusinya Pseudo R² — Ada beberapa versi, yang paling sering digunakan adalah Nagelkerke R²:"
+    "section": "AIC & BIC — contohnya",
+    "text": "AIC & BIC — contohnya\n\n\n\n\n\n\n\n\n\n\nModel\nPrediktor\nAIC\nBIC\n\n\n\n\n\nModel 1\nJarak saja\n502.1\n510.3\n\n\n\nModel 2\nJarak + Keterlibatan\n489.7\n502.1\n← Terbaik\n\n\nModel 3\nJarak + Keterlibatan + Usia + Gender\n493.2\n518.9\n\n\n\n\n\nModel 2 performanya paling baik: model fit baik (AIC lebih kecil dari Model 1) dan tidak terlalu kompleks (BIC paling kecil diantara model yang lain).\nBIC lebih ketat dari AIC karena penaltinya lebih besar.\n\nSebaiknya, pilih model berdasarkan nilai BIC-nya jika prioritasnya memilih model yang paling “sederhana” (parsimonious)."
+  },
+  {
+    "objectID": "slides/bagian-3.html#pseudo-r²",
+    "href": "slides/bagian-3.html#pseudo-r²",
+    "title": "Regresi Logistik Binomial",
+    "section": "Pseudo R²",
+    "text": "Pseudo R²\n\nRegresi logistik tidak punya R² seperti OLS karena tidak ada “total variance” yang bisa dibagi seperti dalam OLS.\nOleh karena itu, regresi logistik menggunakan Pseudo R² — Ada beberapa versi, yang paling sering digunakan adalah Nagelkerke R²."
   },
   {
     "objectID": "slides/bagian-3.html#interpretasi-pseudo-r²",
     "href": "slides/bagian-3.html#interpretasi-pseudo-r²",
     "title": "Regresi Logistik Binomial",
     "section": "Interpretasi Pseudo R²",
-    "text": "Interpretasi Pseudo R²\n\n\n\n\n\n\n\nNagelkerke R²\nInterpretasi\n\n\n\n\n&lt; 0.20\nLemah\n\n\n0.20–0.40\nCukup\n\n\n0.40–0.60\nBaik\n\n\n&gt; 0.60\nSangat baik\n\n\n\n\nPseudo R² bukan “proporsi varians yang dijelaskan” seperti R² OLS, jadi jangan diinterpretasikan dengan cara yang sama. Lebih tepat diartikan sebagai peningkatan model fit dibanding null model. Nilainya cenderung lebih rendah dari R² OLS.\nCara melaporkan yang benar: “Nagelkerke R² = .32, mengindikasikan bahwa model dengan prediktor memberikan peningkatan model fit yang substansial dibandingkan model tanpa prediktor.”"
+    "text": "Interpretasi Pseudo R²\n\n\n\n\n\n\n\nNagelkerke R²\nInterpretasi\n\n\n\n\n&lt; 0.20\nLemah\n\n\n0.20–0.40\nCukup\n\n\n0.40–0.60\nBaik\n\n\n&gt; 0.60\nSangat baik\n\n\n\n\nPseudo R² bukan “proporsi varians yang dijelaskan” seperti R² OLS, jadi jangan diinterpretasikan dengan cara yang sama.\n\nLebih tepat diartikan sebagai peningkatan model fit dibanding null model.\nNilainya cenderung lebih rendah dari R² OLS.\n\nCara melaporkan yang benar: “Nagelkerke R² = .32, mengindikasikan bahwa model dengan prediktor memberikan peningkatan model fit yang substansial dibandingkan model tanpa prediktor.”"
   },
   {
     "objectID": "slides/bagian-3.html#adjusted-or-efek-prediktor-setelah-mengontrol-variabel-lain",
     "href": "slides/bagian-3.html#adjusted-or-efek-prediktor-setelah-mengontrol-variabel-lain",
     "title": "Regresi Logistik Binomial",
     "section": "Adjusted OR — efek prediktor setelah mengontrol variabel lain",
-    "text": "Adjusted OR — efek prediktor setelah mengontrol variabel lain\nMasalah confounding: Dalam analisis bivariat, efek yang terlihat bisa dipengaruhi oleh variabel ketiga.\nContoh: Mahasiswa yang tinggal jauh dari pokjar cenderung punya keterlibatan akademik yang lebih rendah (karena kesempatan terlibat lebih terbatas). Efek jarak dan efek keterlibatan saling tumpang tindih.\n\n\n\n\n\n\n\n\n\nPrediktor\nUnadjusted OR\nAdjusted OR\n95% CI\n\n\n\n\nJarak (per 10 km)\n1.70\n1.63\n[1.21, 2.19]\n\n\nKeterlibatan akademik\n0.48\n0.52\n[0.38, 0.71]\n\n\nUsia (per 10 tahun)\n1.15\n1.08\n[0.88, 1.32]\n\n\n\nSetelah dikontrol, efek jarak sedikit mengecil — sebagian efeknya bekerja melalui keterlibatan akademik."
-  },
-  {
-    "objectID": "slides/bagian-3.html#adjusted-or-efek-prediktor-setelah-mengontrol-variabel-lain-1",
-    "href": "slides/bagian-3.html#adjusted-or-efek-prediktor-setelah-mengontrol-variabel-lain-1",
-    "title": "Regresi Logistik Binomial",
-    "section": "Adjusted OR — efek prediktor setelah mengontrol variabel lain",
-    "text": "Adjusted OR — efek prediktor setelah mengontrol variabel lain\n\n\n\n\n\n\nLaporkan Adjusted OR\n\n\nDalam artikel ilmiah, selalu laporkan adjusted OR dari model dengan prediktor berganda, bukan unadjusted OR dari analisis bivariat."
+    "text": "Adjusted OR — efek prediktor setelah mengontrol variabel lain\n\nMasalah confounding: Dalam analisis bivariat, efek yang terlihat bisa dipengaruhi oleh variabel ketiga.\nContohnya: Mahasiswa yang tinggal jauh dari pokjar cenderung punya keterlibatan akademik yang lebih rendah (karena kesempatan terlibat lebih terbatas).\n\nEfek jarak dan efek keterlibatan saling tumpang tindih.\n\n\n\n\n\n\n\n\nLaporkan Adjusted OR\n\n\nDalam artikel ilmiah, selalu laporkan adjusted OR dari model dengan prediktor yang jumlahnya lebih dari 1, bukan unadjusted OR dari analisis bivariat."
   },
   {
     "objectID": "slides/bagian-3.html#interaksi-efek-prediktor-yang-berbeda-antar-subkelompok",
@@ -1071,18 +1071,18 @@
     "text": "Interaksi — efek prediktor yang berbeda antar subkelompok\nPertanyaan: Apakah efek jarak pada putus studi berbeda tergantung tingkat keterlibatan akademik?\n\\[\\text{logit}(P) = \\beta_0 + \\beta_1(\\text{Jarak}) + \\beta_2(\\text{Keterlibatan}) + \\beta_3(\\text{Jarak} \\times \\text{Keterlibatan})\\]\nMasukkan suku interaksi (interaction terms) antara jarak dan keterlibatan di dalam model.\n\n\n\n\n\n\nSelalu Centering Prediktor!\n\n\nAgar main effects dapat diinterpretasi, maka semua prediktor yang dibuatkan suku interaksinya, harus selalu di-centering. Artinya, nilai setiap orang dikurangi dengan nilai rata-rata, sehingga nilai 0 = rata-rata."
   },
   {
-    "objectID": "slides/bagian-3.html#interaksi-efek-prediktor-yang-berbeda-antar-subgrup",
-    "href": "slides/bagian-3.html#interaksi-efek-prediktor-yang-berbeda-antar-subgrup",
+    "objectID": "slides/bagian-3.html#interaksi-efek-prediktor-yang-berbeda-antar-subkelompok-1",
+    "href": "slides/bagian-3.html#interaksi-efek-prediktor-yang-berbeda-antar-subkelompok-1",
     "title": "Regresi Logistik Binomial",
-    "section": "Interaksi — efek prediktor yang berbeda antar subgrup",
-    "text": "Interaksi — efek prediktor yang berbeda antar subgrup\nHasil: β₃ = −0.08, p = .03 → Interaksi signifikan!\n\n\n\n\n\n\n\n\nSubgrup\nEfek jarak pada odds putus studi\nInterpretasi\n\n\n\n\nKeterlibatan rendah\nOR = 1.12 per km\nJarak ada efeknya\n\n\nKeterlibatan tinggi\nOR = 1.02 per km\nJarak hampir tidak ada efeknya\n\n\n\n\n\n\n\n\n\nInterpretasi\n\n\nKeterlibatan akademik yang tinggi bisa men-buffer dampak jarak yang jauh, sehingga bisa dijadikan dasar untuk merancang intervensi yang tepat sasaran."
+    "section": "Interaksi — efek prediktor yang berbeda antar subkelompok",
+    "text": "Interaksi — efek prediktor yang berbeda antar subkelompok\nHasil: β₃ = −0.08, p = .03 → Interaksi signifikan!\n\n\n\n\n\n\n\n\nSubkelompok\nEfek jarak pada odds putus studi\nInterpretasi\n\n\n\n\nKeterlibatan rendah\nOR = 1.12 per km\nJarak ada efeknya\n\n\nKeterlibatan tinggi\nOR = 1.02 per km\nJarak hampir tidak ada efeknya\n\n\n\n\n\n\n\n\n\nInterpretasi\n\n\nKeterlibatan akademik yang tinggi bisa men-buffer dampak jarak yang jauh, sehingga bisa dijadikan dasar untuk merancang intervensi yang tepat sasaran."
   },
   {
-    "objectID": "slides/bagian-3.html#strategi-membangun-model-mulai-dari-teori",
-    "href": "slides/bagian-3.html#strategi-membangun-model-mulai-dari-teori",
+    "objectID": "slides/bagian-3.html#strategi-permodelan-mulai-dari-teori",
+    "href": "slides/bagian-3.html#strategi-permodelan-mulai-dari-teori",
     "title": "Regresi Logistik Binomial",
-    "section": "Strategi membangun model — mulai dari teori",
-    "text": "Strategi membangun model — mulai dari teori\n\n\n✅ Theory-driven (direkomendasikan)\n\nPilih prediktor berdasarkan teori dan literatur sebelum melihat data\nUji hipotesis yang sudah pre-specified\nLaporkan semua model yang diuji — bukan hanya yang paling bagus hasilnya secara statistik\n\n\n⚠️ Stepwise selection (kontroversial)\n\nForward: tambahkan prediktor satu per satu berdasarkan p-value\nBackward: mulai dari semua prediktor, hapus yang tidak signifikan\nMasalah: Overfitting, inflasi Type I error, hasil sulit dicoba-ulang (replikasi)\n\n\n\n\n\n\n\n\nKapan analisis eksplorasi dibenarkan?\n\n\nAnalisis eksplorasi boleh dilakukan untuk generate hipotesis, tapi harus dipisahkan dari analisis konfirmatori. Mencampur keduanya dalam satu sampel adalah salah satu bentuk questionable research practice."
+    "section": "Strategi permodelan — mulai dari teori",
+    "text": "Strategi permodelan — mulai dari teori\n\n\n✅ Theory-driven (direkomendasikan)\n\nPilih prediktor berdasarkan teori dan literatur sebelum melihat data\nUji hipotesis yang sudah pre-specified\nLaporkan semua model yang diuji — bukan hanya yang paling bagus hasilnya secara statistik\n\n\n⚠️ Stepwise selection (kontroversial)\n\nForward: tambahkan prediktor satu per satu berdasarkan p-value\nBackward: mulai dari semua prediktor, hapus yang tidak signifikan\nMasalah: Overfitting, inflasi Type I error, hasil sulit dicoba-ulang (replikasi)\n\n\n\n\n\n\n\n\nKapan analisis eksplorasi dibenarkan?\n\n\nAnalisis eksplorasi boleh dilakukan untuk mengenerate hipotesis, tapi harus dipisahkan dari analisis konfirmatori. Mencampur keduanya dalam satu sampel yang sama adalah salah satu bentuk questionable research practice."
   },
   {
     "objectID": "slides/bagian-3.html#lebih-longgar-dari-ols",
@@ -1099,11 +1099,11 @@
     "text": "Multikolinearitas\nCara memeriksa dan interpretasinya sama persis seperti dalam regresi OLS — gunakan VIF:\n\n\n\n\n\n\n\nVIF\nInterpretasi\n\n\n\n\n&lt; 5\nTidak ada masalah\n\n\n5–10\nModerate — perlu hati-hati\n\n\n&gt; 10\nMasalah serius\n\n\n\nContoh problem: “Durasi studi (semester)” dan “biaya kuliah kumulatif” — keduanya naik bersama, korelasi r = 0.95 → VIF ≈ 18 → model sulit diestimasi secara stabil.\n\n\n\n\n\n\nTip\n\n\njamovi menampilkan VIF secara otomatis di output regresi logistik — centang Collinearity Statistics di opsi Model Coefficients."
   },
   {
-    "objectID": "slides/bagian-3.html#perfect-separation-ketika-prediktor-too-goood-to-be-true",
-    "href": "slides/bagian-3.html#perfect-separation-ketika-prediktor-too-goood-to-be-true",
+    "objectID": "slides/bagian-3.html#perfect-separation-ketika-prediktor-too-good-to-be-true",
+    "href": "slides/bagian-3.html#perfect-separation-ketika-prediktor-too-good-to-be-true",
     "title": "Regresi Logistik Binomial",
-    "section": "Perfect separation — ketika prediktor too goood to be true",
-    "text": "Perfect separation — ketika prediktor too goood to be true\nMasalah: Satu prediktor memisahkan outcome secara sempurna — semua Y = 1 ada di satu sisi, semua Y = 0 di sisi lain.\nContoh: Semua mahasiswa dengan jarak &gt; 45 km putus studi (100%). Semua mahasiswa dengan jarak ≤ 45 km lanjut studi (100%).\nAkibat: Koefisien meluncur ke ±∞, standard error sangat besar, model tidak converge.\n\n\n\n\n\n\nTanda-tanda di output\n\n\n\nKoefisien sangat besar (β &gt; 10 atau &lt; −10)\nStandard error sangat besar\nPesan error Algorithm did not converge\n\nJika ini terjadi, cek distribusi prediktor dan outcome karena umumnya berarti bahwa ada kejadian yang frekuensi terjadinya terlalu kecil."
+    "section": "Perfect separation — ketika prediktor too good to be true",
+    "text": "Perfect separation — ketika prediktor too good to be true\n\nAda kemungkinan Anda harus menangani prediktor yang bisa memisahkan outcome secara sempurna.\n\nSemua Y = 1 ada di satu sisi, semua Y = 0 di sisi lain.\n\nContohnya, semua mahasiswa dengan jarak &gt; 45 km putus studi (100%). Semua mahasiswa dengan jarak ≤ 45 km lanjut studi (100%).\nAkibatnya, koefisien slope meluncur ke ±∞, standard error sangat besar, model tidak bisa diestimasi (non-convergence problem).\n\n\n\n\n\n\n\nTanda-tanda di output\n\n\n\nKoefisien sangat besar (β &gt; 10 atau &lt; −10)\nStandard error sangat besar\nPesan error Algorithm did not converge\n\nJika ini terjadi, cek distribusi prediktor dan outcome karena umumnya berarti bahwa ada kejadian yang frekuensi terjadinya terlalu kecil."
   },
   {
     "objectID": "slides/bagian-3.html#confusion-matrix-dasar-evaluasi-akurasi-klasifikasi-model",
@@ -1117,14 +1117,14 @@
     "href": "slides/bagian-3.html#sensitivity-specificity-dan-akurasi",
     "title": "Regresi Logistik Binomial",
     "section": "Sensitivity, specificity, dan akurasi",
-    "text": "Sensitivity, specificity, dan akurasi\nDari confusion matrix tadi (TP=130, TN=240, FP=30, FN=50, N=450):\n\n\n\n\n\n\n\n\n\nMetrik\nFormula\nNilai\nPertanyaan yang dijawab\n\n\n\n\nAkurasi\n(TP+TN)/N\n82.2%\nBerapa % prediksi yang benar?\n\n\nSensitivity\nTP/(TP+FN)\n72.2%\nDari yang benar-benar terjadi, berapa % terdeteksi?\n\n\nSpecificity\nTN/(TN+FP)\n88.9%\nDari yang tidak terjadi, berapa % diprediksi benar?\n\n\n\n\n\n\n\n\n\nTrade-off sensitivity vs specificity\n\n\n\nScreening risiko bunuh diri → prioritaskan sensitivity tinggi — lebih baik over-identify daripada ada yang terlewat\nDiagnosis klinis formal → prioritaskan specificity tinggi — false positive berdampak stigma dan biaya perawatan\n\nDefault threshold = 0.50 — bisa disesuaikan sesuai konteks dan pertimbangan etis."
+    "text": "Sensitivity, specificity, dan akurasi\nDari confusion matrix tadi (TP=130, TN=240, FP=30, FN=50, N=450):\n\n\n\n\n\n\n\n\n\nMetrik\nFormula\nNilai\nPertanyaan yang dijawab\n\n\n\n\nAkurasi\n(TP+TN)/N\n82.2%\nBerapa % prediksi kejadian yang benar?\n\n\nSensitivity\nTP/(TP+FN)\n72.2%\nDari yang benar-benar terjadi, berapa % terdeteksi?\n\n\nSpecificity\nTN/(TN+FP)\n88.9%\nDari yang tidak terjadi, berapa % diprediksi benar?\n\n\n\n\n\n\n\n\n\nTrade-off sensitivity vs specificity\n\n\n\nScreening risiko bunuh diri → prioritaskan sensitivity tinggi — lebih baik over-identify daripada ada yang terlewat\nDiagnosis klinis formal → prioritaskan specificity tinggi — false positive berdampak stigma dan biaya perawatan\n\nDefault threshold = 0.50 — bisa disesuaikan sesuai konteks dan pertimbangan etis."
   },
   {
     "objectID": "slides/bagian-3.html#area-under-the-curve-auc",
     "href": "slides/bagian-3.html#area-under-the-curve-auc",
     "title": "Regresi Logistik Binomial",
     "section": "Area Under the Curve (AUC)",
-    "text": "Area Under the Curve (AUC)\nAUC (Area Under the ROC Curve) = probabilitas bahwa model memberikan predicted probability yang lebih tinggi kepada kasus positif dibanding kasus negatif yang diambil secara acak.\n\n\n\n\n\n\n\nAUC\nInterpretasi\n\n\n\n\n0.50\nTidak lebih baik dari tebakan acak\n\n\n0.60–0.70\nLemah\n\n\n0.70–0.80\nCukup\n\n\n0.80–0.90\nBaik\n\n\n&gt; 0.90\nSangat baik — atau model overfitting? Cek dulu!\n\n\n\n\n\n\n\n\n\nNote\n\n\nROC curve dan AUC tersedia di jamovi. Pembahasan mendalam tentang analisis ROC — termasuk PPV/NPV, Youden’s Index, dan penentuan cut-off optimal — ada di Bagian 4."
+    "text": "Area Under the Curve (AUC)\nAUC (Area Under the ROC Curve) = probabilitas bahwa model memberikan predicted probability yang lebih tinggi kepada kasus positif dibanding kasus negatif yang diambil secara acak.\n\n\n\n\n\n\n\nAUC\nInterpretasi\n\n\n\n\n0.50\nTidak lebih baik dari tebakan acak\n\n\n0.60–0.70\nLemah\n\n\n0.70–0.80\nCukup\n\n\n0.80–0.90\nBaik\n\n\n&gt; 0.90\nSangat baik — tetapi bisa jadi model overfitting1? Cek dulu!\n\n\n\n\n\n\n\n\n\nNote\n\n\nROC curve dan AUC tersedia di jamovi. Pembahasan mendalam tentang analisis ROC — termasuk PPV/NPV, Youden’s Index, dan penentuan cut-off optimal — ada di Bagian 4.\n\n\n\nAnaloginya — Seseorang menghapal soal dan jawaban dari buku latihan soal CPNS, padahal tidak ada satupun soal yang dia hapalkan sebelumnya keluar di soal ujian yang sebenarnya."
   },
   {
     "objectID": "slides/bagian-3.html#konteks-apa-yang-memprediksi-putus-studi-dropout-dalam-pjj",
@@ -1155,11 +1155,11 @@
     "text": "Contoh paragraf hasil\n\n“Regresi logistik binomial dilakukan untuk memprediksi putus studi mahasiswa PJJ menggunakan tiga prediktor: jarak ke pokjar, kecemasan akademik awal, dan keterlibatan akademik. Model secara keseluruhan signifikan, χ²(3, N = 450) = 125.2, p &lt; .001, Nagelkerke R² = .32. Model berhasil mengklasifikasikan 82.2% kasus dengan benar (sensitivity = 72.2%, specificity = 88.9%, AUC = .84).\nJarak ke pokjar secara signifikan memprediksi putus studi (OR = 1.05, 95% CI [1.02, 1.08], p &lt; .001): setiap tambahan 10 km jarak dari pokjar, odds putus studi mahasiswa meningkat sebesar 63%. Keterlibatan akademik juga berperan signifikan (OR = 0.52, 95% CI [0.38, 0.71], p &lt; .001) — mahasiswa dengan keterlibatan lebih tinggi memiliki odds putus studi yang lebih rendah. Kecemasan akademik awal tidak memprediksi putus studi secara signifikan (OR = 1.02, 95% CI [0.99, 1.05], p = .182).”"
   },
   {
-    "objectID": "slides/bagian-3.html#menerjemahkan-or-ke-bahasa-yang-dipahami-semua-orang",
-    "href": "slides/bagian-3.html#menerjemahkan-or-ke-bahasa-yang-dipahami-semua-orang",
+    "objectID": "slides/bagian-3.html#menginterpretasi-or",
+    "href": "slides/bagian-3.html#menginterpretasi-or",
     "title": "Regresi Logistik Binomial",
-    "section": "Menerjemahkan OR ke bahasa yang dipahami semua orang",
-    "text": "Menerjemahkan OR ke bahasa yang dipahami semua orang\nContoh: OR = 1.05 untuk jarak ke pokjar (per 1 km)\n\nOpsi 1 — Persentase perubahan odds: “Setiap tambahan 1 km jarak dari pokjar, odds putus studi naik 5%.”\nOpsi 2 — Interval konkrit: “Mahasiswa yang tinggal 10 km lebih jauh punya odds putus studi 1.63 kali lebih tinggi.” (karena 1.05^10 = 1.63)\nOpsi 3 — Perbandingan probabilitas: “Mahasiswa yang tinggal 5 km dari pokjar memiliki peluang ~20% putus studi; mahasiswa yang tinggal 15 km memiliki peluang ~30%.”\n\n\n\n\n\n\n\nOR ≠ Risk Ratio (RR).\n\n\nJangan gunakan “X kali lebih mungkin” untuk interpretasi OR, karena ini adalah interpretasi RR. OR harus diinterpretasi: “X kali lebih tinggi odds-nya” (Zhang & Yu, 1998). Perbedaan ini penting terutama jika prevalensi outcome &gt; 10%."
+    "section": "Menginterpretasi OR",
+    "text": "Menginterpretasi OR\nContoh: OR = 1.05 untuk jarak ke pokjar (per 1 km)\n\nOpsi 1 — Persentase perubahan odds: “Setiap tambahan 1 km jarak dari pokjar, odds putus studi naik 5%.”\nOpsi 2 — Interval konkrit: “Mahasiswa yang tinggal 10 km lebih jauh dari pokjar punya odds putus studi 1.63 kali lebih tinggi dibandingkan mahasiswa yang tinggal 10 km lebih dekat.” (karena 1.05^10 = 1.63)\n\n\n\n\n\n\n\nOR ≠ Risk Ratio (RR)\n\n\nData yang sama, cara menghitung berbeda:\n\n\n\n\nCara menghitung\nContoh (30% vs 20%)\n\n\n\n\nRR\nP(A) / P(B)\n30% / 20% = 1.50\n\n\nOR\nOdds(A) / Odds(B)\n(30/70) / (20/80) = 1.71\n\n\n\nOR selalu lebih ekstrim (lebih jauh dari 1.0) dibanding RR ketika prevalensi outcome tinggi. Jangan gunakan “X kali lebih mungkin” untuk OR. Istilah yang tepat adalah: “X kali lebih tinggi odds-nya” (Zhang & Yu, 1998)."
   },
   {
     "objectID": "slides/bagian-3.html#kesalahan-umum",
@@ -1180,21 +1180,21 @@
     "href": "slides/bagian-5.html#outline",
     "title": "Pengantar Latent Variable Modeling",
     "section": "Outline",
-    "text": "Outline\n\nApa yang dimaksud dengan variabel laten? Mengapa psikologi membutuhkannya?\nClassical Test Theory sebagai model variabel laten paling sederhana\nReliabilitas dan measurement error: mengapa skor observasi selalu mengandung noise\nAttenuation bias: bagaimana measurement error mendistorsi estimasi hubungan antar-variabel\nKeluarga model variabel laten: CTT → EFA → CFA → SEM\nVariabel laten dalam model reflektif vs formatif\nPilihan perangkat lunak\nCakupan materi dan keterbatasannya"
+    "text": "Outline\n\nApa yang dimaksud dengan variabel laten?\nClassical Test Theory sebagai model variabel laten paling sederhana\nReliabilitas dan measurement error: mengapa skor observasi selalu mengandung noise\nAttenuation bias: bagaimana measurement error mendistorsi estimasi hubungan antar-variabel\nKeluarga model variabel laten: CTT → EFA → CFA → SEM\nVariabel laten dalam model reflektif vs formatif\nPilihan perangkat lunak\nCakupan materi dan keterbatasannya"
   },
   {
-    "objectID": "slides/bagian-5.html#apakah-fisika-lebih-mudah-dari-psikologi",
-    "href": "slides/bagian-5.html#apakah-fisika-lebih-mudah-dari-psikologi",
+    "objectID": "slides/bagian-5.html#psikologi-vs.-fisika",
+    "href": "slides/bagian-5.html#psikologi-vs.-fisika",
     "title": "Pengantar Latent Variable Modeling",
-    "section": "Apakah fisika lebih mudah dari psikologi?",
-    "text": "Apakah fisika lebih mudah dari psikologi?\n\n\nFisika mengukur massa, kecepatan, suhu — semuanya bisa dikuantifikasi langsung dengan alat fisik.\nPsikologi mengukur kecemasan, kepribadian, motivasi — konstruk yang tidak bisa ditimbang atau diukur dengan penggaris.\nPertanyaannya: bagaimana kita tahu bahwa alat ukur kita benar-benar mengukur konstruk yang dimaksud?"
+    "section": "Psikologi vs. Fisika",
+    "text": "Psikologi vs. Fisika\n\n\nFisika mengukur massa, kecepatan, suhu — semuanya bisa dikuantifikasi langsung dengan alat fisik.\nPsikologi mengukur kecemasan, kepribadian, motivasi — konstruk yang tidak bisa ditimbang atau diukur dengan penggaris.\nPertanyaannya: bagaimana kita tahu bahwa alat ukur kita benar-benar mengukur konstruk yang dimaksud?"
   },
   {
     "objectID": "slides/bagian-5.html#contoh-variabel-laten-dalam-psikologi",
     "href": "slides/bagian-5.html#contoh-variabel-laten-dalam-psikologi",
     "title": "Pengantar Latent Variable Modeling",
     "section": "Contoh variabel laten dalam psikologi",
-    "text": "Contoh variabel laten dalam psikologi\n\nKecemasan — tidak bisa diobservasi langsung, tetapi bisa diinferensi dari detak jantung cepat, telapak tangan berkeringat, sulit konsentrasi, dan laporan subjektif individu.\nKepribadian (Big 5) — Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism merupakan konstruk laten yang diukur melalui respon terhadap item-item pernyataan.\nPrestasi belajar — tidak sepenuhnya tercermin dari nilai ujian saja; ada faktor measurement error dalam setiap tes.\nSemua konstruk ini disebut variabel laten (latent variable): variabel yang tidak dapat diamati secara langsung, tetapi dapat diinferensi dari variabel lain yang bisa diukur (observed variables)."
+    "text": "Contoh variabel laten dalam psikologi\n\nKecemasan — tidak bisa diobservasi langsung, tetapi bisa diinferensi (i.e., disimpulkan) dari detak jantung cepat, telapak tangan berkeringat, sulit konsentrasi, dan laporan subjektif individu.\nKepribadian (Big 5) — Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism merupakan konstruk laten yang diukur melalui respon terhadap item-item pernyataan.\nPrestasi belajar — tidak sepenuhnya tercermin dari nilai ujian saja; ada faktor measurement error dalam setiap tes.\nSemua konstruk ini disebut variabel laten (latent variable): variabel yang tidak dapat diamati secara langsung, tetapi dapat diinferensi dari variabel lain yang bisa diukur (observed variables)."
   },
   {
     "objectID": "slides/bagian-5.html#variabel-observed-vs-variabel-laten",
@@ -1208,7 +1208,7 @@
     "href": "slides/bagian-5.html#classical-test-theory-x-t-e",
     "title": "Pengantar Latent Variable Modeling",
     "section": "Classical Test Theory: X = T + E",
-    "text": "Classical Test Theory: X = T + E\n\nPsikometri klasik mengasumsikan bahwa setiap skor observasi (observed score, X) terdiri atas dua komponen:\n\n\\[X = T + E\\]\n\nT (true score): skor yang seharusnya diperoleh seseorang apabila pengukuran dilakukan dengan sempurna — bebas dari gangguan apapun.\nE (error): measurement error — semua “gangguan” yang membuat skor observasi menyimpang dari skor murni.\n\nKondisi fisik saat mengisi kuesioner\nAmbiguitas item pernyataan\nPerubahan suasana hati sesaat (state)\nFaktor situasional lainnya\n\n\n\n\n\n\n\n\nImplikasi penting\n\n\nCTT mengasumsikan bahwa rata-rata error adalah nol (E(e) = 0) dan error tidak berkorelasi dengan skor murni (Cov(T, E) = 0). Artinya, error bersifat acak — bukan sistematis."
+    "text": "Classical Test Theory: X = T + E\n\nPsikometri klasik mengasumsikan bahwa setiap skor observasi (observed score, X) terdiri atas dua komponen:\n\n\\[X = T + E\\]\n\nT (true score): skor yang seharusnya diperoleh seseorang apabila pengukuran dilakukan dengan sempurna — bebas dari noise apapun.\nE (error): measurement error — semua noise yang membuat skor observasi menyimpang dari skor murni.\n\nKondisi fisik/kesehatan partisipan saat mengisi kuesioner\nAmbiguitas item pernyataan\nPerubahan suasana hati sesaat (state)\nFaktor situasional lainnya\n\n\n\n\n\n\n\n\nImplikasi penting\n\n\nCTT mengasumsikan bahwa rata-rata error adalah nol (E(e) = 0) dan error tidak berkorelasi dengan skor murni (Cov(T, E) = 0). Artinya, error bersifat stochastic (acak), bukan sistematis."
   },
   {
     "objectID": "slides/bagian-5.html#reliabilitas-seberapa-besar-t-dalam-x",
@@ -1222,28 +1222,28 @@
     "href": "slides/bagian-5.html#measurement-error-dan-attenuation-bias",
     "title": "Pengantar Latent Variable Modeling",
     "section": "Measurement error dan attenuation bias",
-    "text": "Measurement error dan attenuation bias\n\nMasalahnya: kita tidak pernah mengukur T secara langsung — yang kita ukur selalu X (yang sudah “tercemari” oleh error).\nKonsekuensinya: ketika kita mengestimasi korelasi antar-variabel, korelasi yang kita hitung sebenarnya adalah korelasi antar observed scores (rₓᵧ), bukan korelasi antar true scores (rᴛₓᴛᵧ).\nIni menyebabkan atenuasi — korelasi yang kita estimasi selalu lebih kecil dari korelasi yang sebenarnya:\n\n\\[r_{XY} = r_{T_X T_Y} \\times \\sqrt{\\rho_{XX'} \\times \\rho_{YY'}}\\]\n\n\n\n\n\n\nAttenuation bias\n\n\nSemakin rendah reliabilitas alat ukur, semakin besar distorsi pada estimasi korelasi. Ini berarti measurement error yang tinggi akan membuat kita meremehkan kekuatan hubungan antar-variabel yang sesungguhnya."
+    "text": "Measurement error dan attenuation bias\n\nPersoalannya, kita tidak bisa mengukur T secara langsung, yang kita ukur selalu X (yang sudah “tercemari” oleh error).\nKonsekuensinya, ketika kita mengestimasi korelasi antar-variabel, korelasi yang kita hitung sebenarnya adalah korelasi antar observed scores (rₓᵧ), bukan korelasi antar true scores (rᴛₓᴛᵧ).\nIni menyebabkan bias atenuasi: korelasi yang kita estimasi selalu lebih kecil dari korelasi yang sebenarnya:\n\n\\[r_{XY} = r_{T_X T_Y} \\times \\sqrt{\\rho_{XX'} \\times \\rho_{YY'}}\\]\n\n\n\n\n\n\nAttenuation bias\n\n\nSemakin rendah reliabilitas alat ukur, semakin besar distorsi (noise) pada estimasi korelasi. Ini berarti measurement error yang tinggi akan membuat kita underestimate kekuatan hubungan antar-variabel yang sesungguhnya."
   },
   {
     "objectID": "slides/bagian-5.html#implikasi-attenuation-bias",
     "href": "slides/bagian-5.html#implikasi-attenuation-bias",
     "title": "Pengantar Latent Variable Modeling",
     "section": "Implikasi attenuation bias",
-    "text": "Implikasi attenuation bias\nContoh nyata: Misalkan korelasi true scores antara kecemasan dan prokrastinasi adalah 0.60. Tetapi skala kecemasan yang digunakan memiliki reliabilitas 0.70 dan skala prokrastinasi 0.65.\nKorelasi yang akan kita temukan di data:\n\\[r_{XY} = 0.60 \\times \\sqrt{0.70 \\times 0.65} = 0.60 \\times 0.674 = \\mathbf{0.40}\\]\n\nDengan kata lain, kita akan melaporkan korelasi 0.40 padahal hubungan yang sesungguhnya adalah 0.60 — perbedaan yang sangat substansial!\nIni juga berdampak pada efek size dalam regresi: koefisien regresi (β) pun ikut teratenuasi.\nSolusinya? Perlu model statistik yang secara eksplisit memodelkan dan mengontrol measurement error — inilah alasan utama mengapa kita perlu latent variable modeling.\n\n\n\n\n\n\n\nKoreksi atenuasi\n\n\nKorelasi true scores dapat diestimasi dari korelasi observed scores dengan koreksi atenuasi: \\(r_{T_X T_Y} = \\frac{r_{XY}}{\\sqrt{\\rho_{XX'} \\times \\rho_{YY'}}}\\)"
+    "text": "Implikasi attenuation bias\nContoh nyata: Misalkan korelasi true scores antara kecemasan dan prokrastinasi adalah 0.60. Tetapi skala kecemasan yang digunakan memiliki reliabilitas 0.70 dan skala prokrastinasi 0.65.\nKorelasi yang akan kita temukan di data:\n\\[r_{XY} = 0.60 \\times \\sqrt{0.70 \\times 0.65} = 0.60 \\times 0.674 = \\mathbf{0.40}\\]\n\nDengan kata lain, kita akan melaporkan korelasi 0.40 padahal hubungan yang sesungguhnya adalah 0.60. Perbedaan ini sangat substansial!\nIni juga berdampak pada effect size dalam regresi: koefisien regresi (β) pun ikut teratenuasi.\nOleh karena itu, kita membutuhkan model statistik yang secara eksplisit memodelkan dan mengontrol measurement error. Inilah kegunaan utama latent variable modeling.\n\n\n\n\n\n\n\nKoreksi atenuasi\n\n\nKorelasi true scores dapat diestimasi dari korelasi observed scores dengan koreksi atenuasi: \\(r_{T_X T_Y} = \\frac{r_{XY}}{\\sqrt{\\rho_{XX'} \\times \\rho_{YY'}}}\\)"
   },
   {
     "objectID": "slides/bagian-5.html#dari-ctt-ke-sem-satu-keluarga-besar",
     "href": "slides/bagian-5.html#dari-ctt-ke-sem-satu-keluarga-besar",
     "title": "Pengantar Latent Variable Modeling",
     "section": "Dari CTT ke SEM: satu keluarga besar",
-    "text": "Dari CTT ke SEM: satu keluarga besar\n\n\n\n\n\n\n\n\nModel\nApa yang dimodelkan\nKelebihan dibanding CTT\n\n\n\n\nCTT\nX = T + E (level item)\nFondasi — sederhana, tapi tidak menguji struktur laten\n\n\nEFA\nStruktur faktor laten yang tidak diketahui\nMenemukan faktor laten secara data-driven\n\n\nCFA\nStruktur faktor laten yang sudah dihipotesiskan\nMenguji validitas konstruk secara teori\n\n\nSEM\nHubungan antar faktor laten + model pengukuran\nMenguji model teoritis secara komprehensif\n\n\n\n\n\n\n\n\n\nNote\n\n\nKeempat model ini membentuk satu kontinum dari yang paling sederhana (CTT) ke yang paling kompleks (SEM). Setiap model yang lebih canggih mengandung logika model sebelumnya."
+    "text": "Dari CTT ke SEM: satu keluarga besar\n\n\n\n\n\n\n\n\nModel\nApa yang dimodelkan\nKelebihan dibanding CTT\n\n\n\n\nCTT\nX = T + E (level item)\nFondasi — sederhana, tapi tidak menguji struktur laten\n\n\nEFA\nStruktur faktor laten yang tidak diketahui\nMenemukan faktor laten dari suatu dataset (data-driven)\n\n\nCFA\nStruktur faktor laten yang sudah dihipotesiskan oleh teori\nMenguji validitas konstruk berdasarkan teori\n\n\nSEM\nHubungan antar faktor laten + model pengukuran\nMenguji hubungan antara variabel laten sesuai yang dihipotesiskan oleh teori\n\n\n\n\n\n\n\n\n\nNote\n\n\nKeempat model ini membentuk satu kontinum dari yang paling sederhana (CTT) ke yang paling kompleks (SEM). Setiap model yang lebih kompleks mengandung logika model sebelumnya."
   },
   {
     "objectID": "slides/bagian-5.html#apa-yang-efa-dan-cfa-tambahkan-dibandingkan-ctt",
     "href": "slides/bagian-5.html#apa-yang-efa-dan-cfa-tambahkan-dibandingkan-ctt",
     "title": "Pengantar Latent Variable Modeling",
     "section": "Apa yang EFA dan CFA tambahkan dibandingkan CTT?",
-    "text": "Apa yang EFA dan CFA tambahkan dibandingkan CTT?\n\nCTT bekerja di level item — hanya bisa menghitung reliabilitas dan korelasi item-total. CTT tidak menguji apakah item-item tersebut memang mengukur konstruk laten yang sama.\nEFA (Exploratory Factor Analysis) memungkinkan kita untuk menemukan struktur faktor laten dari data — berguna saat teori belum jelas atau sedang dalam tahap eksplorasi.\nCFA (Confirmatory Factor Analysis) memungkinkan kita untuk menguji apakah struktur faktor yang dihipotesiskan berdasarkan teori didukung oleh data. Ini adalah uji validitas konstruk yang paling ketat.\nSEM menggabungkan model pengukuran (CFA) dengan model struktural (regresi/jalur) untuk menguji hipotesis teoritis yang kompleks sekaligus mengontrol measurement error."
+    "text": "Apa yang EFA dan CFA tambahkan dibandingkan CTT?\n\nCTT bekerja di level item — hanya bisa menghitung reliabilitas dan korelasi item-total. CTT tidak menguji apakah item-item tersebut memang mengukur konstruk laten yang sama.\nEFA (Exploratory Factor Analysis) memungkinkan kita untuk menemukan struktur faktor laten dari data. Berguna saat teori belum terlalu matang bukti empirisnya atau sedang dalam tahap eksplorasi.\nCFA (Confirmatory Factor Analysis) memungkinkan kita untuk menguji apakah struktur faktor yang dihipotesiskan berdasarkan teori didukung oleh data. Ini adalah uji validitas konstruk yang paling ketat.\nSEM menggabungkan model pengukuran (CFA) dengan model struktural (regresi/jalur) untuk menguji hipotesis teoritis yang kompleks sekaligus mengontrol measurement error."
   },
   {
     "objectID": "slides/bagian-5.html#komponen-model-sem",
@@ -1278,14 +1278,7 @@
     "href": "slides/bagian-5.html#pilihan-perangkat-lunak",
     "title": "Pengantar Latent Variable Modeling",
     "section": "Pilihan perangkat lunak",
-    "text": "Pilihan perangkat lunak\n\njamovi — antarmuka grafis (point-and-click), gratis dan open source. Digunakan dalam workshop ini. Module SEMLj menyediakan EFA dan CFA dengan antarmuka yang user-friendly.\nJASP — mirip jamovi, antarmuka grafis, gratis. Juga mendukung EFA dan CFA.\nlavaan di  — paket R yang paling lengkap dan fleksibel untuk SEM, CFA, EFA. Membutuhkan coding, tetapi memberikan kendali penuh atas spesifikasi model.\nsemopy di  — alternatif di Python, sintaks mirip lavaan.\nMplus, LISREL, SPSS AMOS, EQS — perangkat lunak komersial dengan fitur lebih lengkap (termasuk power analysis dan simulasi), tetapi berbayar.\n\n\n\n\n\n\n\nUntuk workshop ini\n\n\nKita akan menggunakan jamovi dengan module SEMLj. Untuk analisis yang lebih lanjut, lavaan sangat direkomendasikan."
-  },
-  {
-    "objectID": "slides/bagian-5.html#yang-tidak-dicakup-dalam-materi-ini",
-    "href": "slides/bagian-5.html#yang-tidak-dicakup-dalam-materi-ini",
-    "title": "Pengantar Latent Variable Modeling",
-    "section": "Yang tidak dicakup dalam materi ini",
-    "text": "Yang tidak dicakup dalam materi ini\n\nA priori power analysis, Monte Carlo simulation, dan accuracy in parameter estimation (AIPE) untuk merencanakan jumlah sampel\nSensitivity analysis untuk CFA/SEM\nModel SEM dengan missing data (selain listwise deletion)\nModel SEM dengan variabel moderator/mediator (mediated moderation, moderated mediation)\nHierarchical latent variable model (second-order CFA / bifactor model)\nExploratory SEM (ESEM)\nPartial least square (PLS) — berbeda secara fundamental dari CB-SEM\nMixture model dan latent growth curve (SEM untuk data longitudinal)\nMultiple indicators, multiple causes (MIMIC) model"
+    "text": "Pilihan perangkat lunak\n\njamovi — antarmuka grafis (point-and-click), gratis dan open source. Digunakan dalam workshop ini. Module SEMLj menyediakan EFA dan CFA dengan antarmuka yang user-friendly.\nJASP — mirip jamovi, antarmuka grafis, gratis. Juga mendukung EFA dan CFA.\nlavaan di  — package  yang paling lengkap dan fleksibel untuk SEM, CFA, EFA. Membutuhkan coding, tetapi memberikan kendali penuh atas spesifikasi model.\nsemopy di  — alternatif di , coding style mirip lavaan.\nMplus — perangkat lunak komersial dengan fitur lebih lengkap (termasuk power analysis dan simulasi), tetapi proprietary (berbayar).\n\n\n\n\n\n\n\nUntuk workshop ini\n\n\nKita akan menggunakan jamovi dengan module SEMLj. Untuk analisis yang lebih lanjut, lavaan sangat direkomendasikan."
   },
   {
     "objectID": "slides/bagian-5.html#ada-pertanyaan",
@@ -1306,7 +1299,7 @@
     "href": "slides/bagian-7.html#bayangkan-skala-psikologi-dengan-20-item",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Bayangkan skala psikologi dengan 20 item…",
-    "text": "Bayangkan skala psikologi dengan 20 item…\n\nSeorang peneliti mengembangkan skala kelelahan kerja (burnout) dengan 20 item\nApakah 20 item itu mengukur 20 hal yang benar-benar berbeda?\nAtau ada beberapa dimensi yang lebih mendasar di baliknya?\nMasalah yang muncul kalau tidak ada reduksi:\n\nTidak bisa divisualisasikan (kita akan kesulitan membuat visualisasi 20 “dimensi” sekaligus)\nRegresi dengan 20 prediktor: risiko overfitting sangat tinggi\nItem-item yang saling berkorelasi tinggi menunjukkan adanya redundansi"
+    "text": "Bayangkan skala psikologi dengan 20 item…\n\nSeorang peneliti mengembangkan skala kelelahan kerja (burnout) dengan 20 item\nApakah 20 item itu mengukur 20 hal yang benar-benar berbeda?\nAtau ada beberapa dimensi laten yang diwakili oleh beberapa item sekaligus?\nMasalah yang muncul kalau tidak ada reduksi:\n\nTidak bisa divisualisasikan (kita akan kesulitan membuat visualisasi 20 item sekaligus)\nRegresi dengan 20 prediktor: risiko overfitting sangat tinggi\nItem-item yang saling berkorelasi tinggi menunjukkan adanya redundansi ➡️ mungkin item-item ini mengukur dimensi laten yang sama?"
   },
   {
     "objectID": "slides/bagian-7.html#measurement-error-mendistorsi-estimasi",
@@ -1320,63 +1313,70 @@
     "href": "slides/bagian-7.html#keluarga-model-variabel-laten",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Keluarga model variabel laten",
-    "text": "Keluarga model variabel laten\n\n\n\n\n\n\n\n\nModel\nPertanyaan yang dijawab\nDalam mata kuliah ini\n\n\n\n\nCTT\n“Seberapa reliabel skor total ini?”\nBagian 5\n\n\nEFA\n“Berapa faktor laten yang mendasari item-item ini?”\nBagian 7\n\n\nCFA\n“Apakah struktur faktor yang saya hipotesiskan sesuai dengan data?”\nBagian 8\n\n\nSEM\n“Bagaimana faktor-faktor laten saling mempengaruhi?”\nTidak dibahas"
+    "text": "Keluarga model variabel laten\n\n\n\n\n\n\n\n\nModel\nPertanyaan yang dijawab\nDalam mata kuliah ini\n\n\n\n\nCTT\n“Seberapa reliabel skor total ini?”\nBagian 5\n\n\nEFA\n“Berapa faktor laten yang mendasari item-item ini?”\nBagian 7\n\n\nCFA\n“Apakah struktur faktor yang saya hipotesiskan sesuai dengan data?”\nBagian 8\n\n\nSEM\n“Bagaimana faktor-faktor laten saling mempengaruhi?”\nTidak dibahas. Klik disini apabila tertarik belajar mandiri."
   },
   {
-    "objectID": "slides/bagian-7.html#efa-vs-cfa-perbandingannya",
-    "href": "slides/bagian-7.html#efa-vs-cfa-perbandingannya",
+    "objectID": "slides/bagian-7.html#efa-vs.-cfa",
+    "href": "slides/bagian-7.html#efa-vs.-cfa",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
-    "section": "EFA vs CFA — perbandingannya",
-    "text": "EFA vs CFA — perbandingannya\n\n\n\n\n\n\n\nEFA\nCFA\n\n\n\n\nJumlah faktor belum diketahui — biarkan data mendikte strukturnya\nJumlah faktor sudah ditentukan (melalui hipotesis) sebelum mengambil data\n\n\nPeneliti tidak memiliki model hipotesis a priori\nPeneliti sudah memiliki model hipotesis a priori\n\n\nCocok untuk eksplorasi dan pengembangan skala\nCocok untuk konfirmasi dan pengujian validitas konstruk\n\n\n\n\n\n\n\n\n\nSangat tidak disarankan\n\n\n…melakukan EFA kemudian CFA pada sampel yang sama — kita akan bahas lebih dalam di Bagian 8."
+    "section": "EFA vs. CFA",
+    "text": "EFA vs. CFA\n\n\n\n\n\n\n\nEFA\nCFA\n\n\n\n\nJumlah faktor belum diketahui, kita membiarkan dataset “mengungkap” strukturnya\nJumlah faktor sudah ditentukan (melalui hipotesis) sebelum mengambil data\n\n\nPeneliti tidak memiliki model hipotesis a priori\nPeneliti sudah memiliki model hipotesis a priori\n\n\nCocok untuk eksplorasi dan pengembangan skala\nCocok untuk konfirmasi dan pengujian validitas konstruk\n\n\n\n\n\n\n\n\n\nSangat tidak disarankan\n\n\n…melakukan EFA kemudian CFA pada sampel yang sama — kita akan bahas lebih dalam di Bagian 8."
   },
   {
     "objectID": "slides/bagian-7.html#apa-itu-pca",
     "href": "slides/bagian-7.html#apa-itu-pca",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Apa itu PCA?",
-    "text": "Apa itu PCA?\n\nPCA mencari “arah” (component) dalam ruang data yang menangkap varians sebesar mungkin\nHasilnya adalah principal components yang merupakan kombinasi linear dari item-item asli\nTujuan utama: reduksi dimensi — meringkas banyak item menjadi sedikit variabel ringkasan (“payung”) yang lebih besar\nPenting: PCA bukan model pengukuran — ia tidak mengasumsikan adanya konstruk laten yang menyebabkan item bervariasi\n\n\n\nHierarki komponen:\n\nPC1 — arah dengan varians terbesar\nPC2 — orthogonal terhadap PC1, varians terbesar berikutnya\nPC3, PC4, … — dst., selalu orthogonal (tidak berkorelasi) terhadap semua komponen sebelumnya\n\n\nAnalogi sederhana:\n\nData asli = 20 kolom (item)\nComponent scores = 3–4 kolom ringkasan\nMempertahankan sebanyak mungkin informasi dengan sesedikit mungkin variabel"
+    "text": "Apa itu PCA?\n\nPCA mencari “arah” (component) dalam ruang data yang menangkap varians sebesar mungkin\nHasilnya adalah principal components yang merupakan kombinasi linear dari item-item asli\nTujuan utama: reduksi dimensi — meringkas banyak item menjadi sedikit variabel ringkasan (“payung”) yang lebih besar\nPenting: PCA bukan model pengukuran — ia tidak mengasumsikan adanya konstruk laten yang menyebabkan item bervariasi\n\n\n\nHierarki komponen:\n\nPC1 — arah dengan varians terbesar\nPC2 — orthogonal terhadap PC1, varians terbesar berikutnya\nPC3, PC4, … — dst., selalu orthogonal (tidak berkorelasi) terhadap semua komponen sebelumnya\n\n\nAnalogi sederhana:\n\nDataset berisi 20 kolom/variabel (item)\nComponent scores = 3–4 kolom skor komposit\nMempertahankan sebanyak mungkin informasi dengan sesedikit mungkin komponen"
   },
   {
     "objectID": "slides/bagian-7.html#aplikasi-pca-reduksi-dimensi-machine-learning",
     "href": "slides/bagian-7.html#aplikasi-pca-reduksi-dimensi-machine-learning",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Aplikasi PCA: reduksi dimensi & machine learning",
-    "text": "Aplikasi PCA: reduksi dimensi & machine learning\n\nPCA adalah salah satu teknik unsupervised learning yang paling banyak digunakan dalam machine learning\nReduksi dimensi sebelum pemodelan prediktif\n\nDataset dengan ratusan/ribuan variabel (misalnya data genomik, neuroimaging, NLP) susah dimodelkan langsung\nPCA meringkas variabel-variabel yang saling berkorelasi menjadi komponen yang independen (orthogonal)\nKomponen ini kemudian digunakan sebagai prediktor dalam regresi atau klasifikasi — mengurangi overfitting\n\nVisualisasi data berdimensi tinggi\n\nPlot PC1 vs PC2 memungkinkan kita melihat “peta” distribusi observasi dalam 2D\n\nFeature extraction dalam deep learning dan computer vision\n\nMisalnya: ribuan piksel wajah → beberapa principal components sebagai input model\n\n\n\n\n\n\n\n\nAplikasi EFA\n\n\nEFA memiliki aplikasi yang berbeda, bukan untuk reduksi dimensi secara umum, melainkan khusus untuk mengidentifikasi konstruk laten dalam pengembangan dan validasi skala psikologi."
+    "text": "Aplikasi PCA: reduksi dimensi & machine learning\n\nPCA adalah salah satu teknik unsupervised learning yang paling banyak digunakan dalam machine learning\nReduksi dimensi sebelum pemodelan prediktif\n\nDataset dengan ratusan/ribuan variabel (misalnya data genomik, neuroimaging, NLP) susah dimodelkan langsung\nPCA meringkas variabel-variabel yang saling berkorelasi menjadi komponen yang independen (orthogonal)\nKomponen ini kemudian digunakan sebagai prediktor dalam regresi atau klasifikasi, supaya mengurangi overfitting\n\nVisualisasi data berdimensi tinggi\n\nPlot PC1 vs PC2 memungkinkan kita melihat “peta” distribusi observasi dalam 2D\n\nFeature extraction dalam deep learning dan computer vision\n\nMisalnya: ribuan piksel wajah → beberapa principal components sebagai input model\n\n\n\n\n\n\n\n\nAplikasi EFA\n\n\nEFA memiliki aplikasi yang berbeda, bukan untuk reduksi dimensi secara umum, melainkan khusus untuk mengidentifikasi konstruk laten dalam pengembangan dan validasi skala psikologi."
   },
   {
     "objectID": "slides/bagian-7.html#eigenvalue-scree-plot",
     "href": "slides/bagian-7.html#eigenvalue-scree-plot",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Eigenvalue & scree plot",
-    "text": "Eigenvalue & scree plot\n\nEigenvalue (λ): mengukur seberapa banyak varians yang dijelaskan oleh setiap komponen. Total eigenvalue = jumlah item.\nKaiser criterion: pertahankan komponen dengan λ &gt; 1\n\nLogika: komponen dengan λ &lt; 1 menjelaskan varians kurang dari satu item tunggal\n\n\n\n\n\n\n\n\nKaiser criterion sering over-extract\n\n\nKaiser criterion bisa menghasilkan terlalu banyak komponen — bahkan dari data yang sepenuhnya acak! Selalu kombinasikan dengan scree plot dan parallel analysis.\n\n\n\n\nScree plot: grafik eigenvalue dari tertinggi ke terendah — cari “elbow” (titik siku) di mana kurva mulai mendatar. Pertahankan komponen sebelum elbow."
+    "text": "Eigenvalue & scree plot\n\nEigenvalue (λ): mengukur seberapa banyak varians yang dijelaskan oleh setiap komponen. Total eigenvalue = jumlah item.\nKaiser criterion: pertahankan komponen dengan λ &gt; 1\n\nLogika: komponen dengan λ &lt; 1 menjelaskan varians kurang dari satu item tunggal\n\n\n\n\n\n\n\n\nKaiser criterion sering over-extract\n\n\nKaiser criterion bisa menghasilkan terlalu banyak komponen — bahkan dari data yang sepenuhnya acak! Selalu kombinasikan dengan scree plot dan parallel analysis.\n\n\n\n\nScree plot: grafik Eigenvalue dari tertinggi ke terendah — cari “elbow” (titik siku) di mana kurva mulai mendatar. Pertahankan komponen sebelum elbow."
+  },
+  {
+    "objectID": "slides/bagian-7.html#contoh-scree-plot",
+    "href": "slides/bagian-7.html#contoh-scree-plot",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "Contoh scree plot",
+    "text": "Contoh scree plot"
   },
   {
     "objectID": "slides/bagian-7.html#component-loadings-rotasi",
     "href": "slides/bagian-7.html#component-loadings-rotasi",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Component loadings & rotasi",
-    "text": "Component loadings & rotasi\n\nComponent loading: korelasi antara item asli dengan komponen. Rentang −1 sampai +1.\n\n|loading| &gt; 0.40  item bermakna untuk komponen ini (salient loading)\n|loading| &lt; 0.30  item tidak relevan untuk komponen ini\n\nRotasi mengejar simple structure (Thurstone, 1947): setiap item load tinggi di satu komponen, mendekati nol di yang lain\n\n\n\n\n\n\n\n\n\n\nOrthogonal\nOblique\n\n\n\n\nKomponen\nTidak berkorelasi\nBoleh berkorelasi\n\n\nMetode umum\nVarimax\nPromax, Direct Oblimin\n\n\n\n\n\n\n\n\n\nNote\n\n\nRotasi tidak mengubah total variani yang dijelaskan — hanya mendistribusikannya agar lebih mudah diinterpretasikan."
+    "text": "Component loadings & rotasi\n\nComponent loading: korelasi antara item asli dengan komponen. Rentang −1 sampai +1.\n\n|loading| &gt; 0.40  item bermakna untuk komponen ini (salient loading)\n|loading| &lt; 0.30  item tidak relevan untuk komponen ini\n\nRotasi mengejar simple structure (Thurstone, 1954): setiap item loaded tinggi di satu komponen, mendekati nol di yang lain\n\n\n\n\n\n\n\n\n\n\nOrthogonal\nOblique\n\n\n\n\nKomponen\nTidak berkorelasi\nBoleh berkorelasi\n\n\nMetode umum\nVarimax\nPromax, Direct Oblimin\n\n\n\n\n\n\n\n\n\nNote\n\n\nRotasi tidak mengubah total varians yang dijelaskan, tetapi hanya mendistribusikannya agar lebih mudah diinterpretasikan."
   },
   {
-    "objectID": "slides/bagian-7.html#pca-vs-efa-kontras-lengkap",
-    "href": "slides/bagian-7.html#pca-vs-efa-kontras-lengkap",
+    "objectID": "slides/bagian-7.html#pca-vs.-efa",
+    "href": "slides/bagian-7.html#pca-vs.-efa",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
-    "section": "PCA vs EFA — kontras lengkap",
-    "text": "PCA vs EFA — kontras lengkap\n\n\n\n\n\n\n\n\nAspek\nPCA\nEFA\n\n\n\n\nTujuan\nReduksi dimensi; feature extraction\nIdentifikasi & validasi konstruk laten\n\n\nPosisi dalam ML\nUnsupervised learning — preprocessing sebelum model prediktif\nPsikometri — pengembangan & validasi skala\n\n\nModel\nKomponen = fungsi linear item\nItem = fungsi linear faktor + error\n\n\nVarians\nTotal varians (termasuk unique & error)\nHanya common variance\n\n\nError pengukuran\nTidak dimodelkan\nEksplisit dimodelkan per item\n\n\nFaktor/komponen\nSelalu orthogonal (tidak berkorelasi)\nBoleh berkorelasi (rotasi oblique)\n\n\nKapan digunakan\nTidak ada teori konstruk laten; tujuannya kompresi data\nAda teori tentang faktor laten; tujuannya pengukuran\n\n\n\n\n\n\n\n\n\nTip\n\n\nJika communalities tinggi (&gt; 0.60) dan struktur jelas, hasil PCA dan EFA sering hampir identik secara praktis. Perbedaan muncul ketika communalities rendah atau struktur kompleks."
+    "section": "PCA vs. EFA",
+    "text": "PCA vs. EFA\n\n\n\n\n\n\n\n\nAspek\nPCA\nEFA\n\n\n\n\nTujuan\nReduksi dimensi; feature extraction\nIdentifikasi & validasi konstruk laten\n\n\nPosisi dalam ML\nUnsupervised learning — preprocessing sebelum model prediktif\nPsikometri — pengembangan & validasi skala\n\n\nModel\nKomponen = fungsi linear item\nItem = fungsi linear faktor + error\n\n\nVarians\nTotal varians (termasuk unique & error)\nHanya common variance\n\n\nError pengukuran\nTidak dimodelkan\nEksplisit dimodelkan per item\n\n\nFaktor/komponen\nSelalu orthogonal (tidak berkorelasi)\nBoleh berkorelasi (rotasi oblique)\n\n\nKapan digunakan\nTidak ada teori konstruk laten; tujuannya kompresi/menyederhanakan struktur dataset\nAda teori tentang faktor laten; tujuannya mengeksplorasi model pengukuran\n\n\n\n\n\n\n\n\n\nTip\n\n\nJika communalities tinggi (&gt; 0.60) dan struktur jelas, hasil PCA dan EFA sering hampir identik secara praktis. Perbedaan muncul ketika communalities rendah atau struktur kompleks."
   },
   {
     "objectID": "slides/bagian-7.html#komunalitas-h²-keunikan",
     "href": "slides/bagian-7.html#komunalitas-h²-keunikan",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Komunalitas (h²) & keunikan",
-    "text": "Komunalitas (h²) & keunikan\n\n\n\nKomunalitas (h²): proporsi varians item yang dijelaskan oleh semua faktor bersama\nKeunikan (u²): 1 − h² = varians yang tidak dijelaskan oleh faktor mana pun (varians spesifik + error)\n\n\n\n\n\n\n\n\nh²\nInterpretasi\n\n\n\n\n&gt; 0.50\nBaik \n\n\n0.30–0.50\nCukup — perlu evaluasi\n\n\n&lt; 0.30\nBermasalah — pertimbangkan menghapus item\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\nItem dengan h² rendah mengukur sesuatu yang unik apabila dibandingkan dengan item lain.\nEvaluasi ulang redaksinya sebelum memutuskan untuk menghapus item."
+    "text": "Komunalitas (h²) & keunikan\n\n\n\nKomunalitas (h²): proporsi varians item yang dijelaskan oleh semua faktor laten yang teridentifikasi\nKeunikan (u²): 1 − h² = varians yang tidak dijelaskan oleh faktor manapun (varians spesifik i.e., unique variance + error)\n\n\n\n\n\n\n\n\nh²\nInterpretasi\n\n\n\n\n&gt; 0.50\nBaik \n\n\n0.30–0.50\nCukup, tetapi perlu evaluasi\n\n\n&lt; 0.30\nBermasalah, cek wordingnya dan pertimbangkan menghapus item\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\nItem dengan h² rendah mengukur sesuatu yang unik apabila dibandingkan dengan item lain.\nEvaluasi ulang redaksi (wording) item tersebut sebelum memutuskan untuk menghapus item."
   },
   {
-    "objectID": "slides/bagian-7.html#menentukan-jumlah-faktor-jangan-hanya-mengandalkan-kaiser",
-    "href": "slides/bagian-7.html#menentukan-jumlah-faktor-jangan-hanya-mengandalkan-kaiser",
+    "objectID": "slides/bagian-7.html#menentukan-jumlah-faktor",
+    "href": "slides/bagian-7.html#menentukan-jumlah-faktor",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
-    "section": "Menentukan jumlah faktor — jangan hanya mengandalkan Kaiser!",
-    "text": "Menentukan jumlah faktor — jangan hanya mengandalkan Kaiser!\n\nKaiser criterion (λ &gt; 1) — mudah, tapi konsisten over-extract. Gunakan sebagai acuan awal saja.\nScree plot — visual dan intuitif, tapi subjektif. Dua peneliti bisa membaca scree plot yang sama secara berbeda.\nParallel analysis  direkomendasikan\n\nBandingkan eigenvalue data nyata dengan eigenvalue dari data acak (dimensi yang sama)\nPertahankan faktor di mana eigenvalue nyata &gt; eigenvalue acak (persentil ke-95)\nPaling akurat secara empiris; tidak subjektif (Hayton, Allen & Scarpello, 2004)\n\nTeori — berapa faktor yang disebutkan di literatur?\n\n\n\n\n\n\n\nPraktik terbaik\n\n\nGunakan kombinasi parallel analysis + scree plot + teori sebagai dasar keputusan. Di jamovi, parallel analysis tersedia langsung di menu EFA."
+    "section": "Menentukan jumlah faktor",
+    "text": "Menentukan jumlah faktor\n\nKaiser criterion (λ &gt; 1) — mudah, tapi konsisten over-extract. Gunakan sebagai acuan awal saja.\nScree plot — visual dan intuitif, tapi subjektif. Dua peneliti bisa membaca scree plot yang sama secara berbeda.\nParallel analysis  direkomendasikan\n\nBandingkan eigenvalue data nyata dengan eigenvalue dari data acak (dimensi yang sama)\nPertahankan faktor di mana eigenvalue nyata &gt; eigenvalue acak (persentil ke-95)\nPaling akurat secara empiris; tidak subjektif (Hayton, Allen & Scarpello, 2004)\n\nTeori — berapa faktor laten yang disebutkan di literatur?\n\n\n\n\n\n\n\nPraktik terbaik\n\n\nGunakan kombinasi parallel analysis + scree plot + teori sebagai dasar keputusan. Di jamovi, parallel analysis tersedia langsung di menu EFA."
   },
   {
     "objectID": "slides/bagian-7.html#rotasi-dalam-efa",
@@ -1418,14 +1418,14 @@
     "href": "slides/bagian-7.html#fit-indices-khusus-ekstraksi-ml",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Fit indices (khusus ekstraksi ML)",
-    "text": "Fit indices (khusus ekstraksi ML)\n\nChi-square (χ²): H₀ = model fit sempurna; p &gt; .05 = fit baik\n\nMasalah: sangat sensitif terhadap N besar — hampir selalu signifikan jika N &gt; 300, meskipun model sebenarnya baik. Jangan jadikan satu-satunya kriteria.\n\nRMSEA &lt; .05 = sangat baik; .05–.08 = cukup baik; &gt; .10 = tidak dapat diterima\n\nSelalu sertakan 90% CI\n\nCFI/TLI &gt; .95 = baik; &gt; .90 = dapat diterima\n\n\n\n\n\n\n\nCatatan\n\n\nAmbang batas RMSEA &lt; .06 (Hu & Bentler, 1999) sering dikutip, tapi berasal dari kondisi simulasi yang spesifik. Untuk model dengan banyak indikator atau sampel besar, RMSEA &lt; .08 sudah dapat diterima, jangan terlalu kaku pada angka .06."
+    "text": "Fit indices (khusus ekstraksi ML)\n\nChi-square (χ²): H₀ = model fit sempurna; p &gt; .05 = fit baik\n\nMasalah: sangat sensitif terhadap N besar — hampir selalu signifikan jika N &gt; 300, meskipun model sebenarnya baik. Jangan jadikan satu-satunya kriteria.\n\nRMSEA &lt; .05 = sangat baik; .05–.08 = cukup baik; &gt; .10 = tidak dapat diterima\n\nSelalu sertakan 90% CI\n\nCFI/TLI &gt; .95 = baik; &gt; .90 = dapat diterima\n\n\n\n\n\n\n\nCatatan\n\n\nAmbang batas RMSEA &lt; .06 (Hu & Bentler, 1999) sering dikutip, tapi berasal dari kondisi simulasi yang spesifik. Untuk model dengan banyak indikator atau sampel besar, RMSEA &lt; .08 sudah dapat diterima, jangan terlalu terpatok pada angka .06."
   },
   {
-    "objectID": "slides/bagian-7.html#reliabilitas-alpha-vs-omega",
-    "href": "slides/bagian-7.html#reliabilitas-alpha-vs-omega",
+    "objectID": "slides/bagian-7.html#reliabilitas-alpha-vs.-omega",
+    "href": "slides/bagian-7.html#reliabilitas-alpha-vs.-omega",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
-    "section": "Reliabilitas: alpha vs omega",
-    "text": "Reliabilitas: alpha vs omega\n\n\nCronbach’s α\n\nMengukur konsistensi internal\nMengasumsikan semua item berkontribusi sama (tau-equivalence)\nJika loadings berbeda-beda (yang hampir selalu terjadi), α bisa underestimate reliabilitas sesungguhnya\nSensitif terhadap jumlah item — lebih banyak item = α lebih tinggi, meskipun loadings biasa saja\n\n\nMcDonald’s ω (Omega)\n\nDihitung langsung dari factor loadings\nTidak mengasumsikan tau-equivalence\nLebih akurat ketika loadings item tidak setara — yang hampir selalu terjadi pada skala psikologi nyata\n\n\n\n\n\n\n\n\nLaporkan α dan ω\n\n\nJika ω &gt; α secara substansial, berarti asumsi tau-equivalence tidak terpenuhi. Keduanya tersedia langsung di jamovi."
+    "section": "Reliabilitas: alpha vs. omega",
+    "text": "Reliabilitas: alpha vs. omega\n\n\nCronbach’s α\n\nMengukur konsistensi internal\nMengasumsikan semua item berkontribusi sama (tau-equivalence)\nJika loadings berbeda-beda (yang hampir selalu terjadi), α bisa underestimate reliabilitas sesungguhnya\nSensitif terhadap jumlah item — lebih banyak item = α lebih tinggi, meskipun loadings biasa saja\n\n\nMcDonald’s ω (Omega)\n\nDihitung langsung dari factor loadings\nTidak mengasumsikan tau-equivalence\nLebih akurat ketika loadings item tidak setara — yang hampir selalu terjadi pada skala psikologi nyata\n\n\n\n\n\n\n\n\nLaporkan α dan ω\n\n\nJika ω &gt; α secara substansial, berarti asumsi tau-equivalence tidak terpenuhi. Keduanya tersedia langsung di jamovi."
   },
   {
     "objectID": "slides/bagian-7.html#checklist-pelaporan-efa",
@@ -1453,7 +1453,7 @@
     "href": "slides/bagian-7.html#langkah-langkah-di-jamovi",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Langkah-langkah di jamovi",
-    "text": "Langkah-langkah di jamovi\n\n\nMenjalankan EFA:\n\nAnalyses → Factor → Exploratory Factor Analysis\nMasukkan semua item ke “Variables”\nExtraction method: Minimum Residual\nRotation: Oblimin\nNumber of factors: Parallel Analysis\n\n\nOutput yang harus dicek:\n☑ Factor loadings (sembunyikan |λ| &lt; 0.30)\n☑ Scree plot + parallel analysis plot\n☑ Komunalitas (h²)\n☑ KMO & Bartlett’s test\n☑ Reliabilitas (α & ω)\n\n\n\n\n\n\n\nUrutan membaca output\n\n\nAsumsi (KMO & Bartlett’s)  jumlah faktor (parallel analysis + scree)  pattern matrix (loading & cross-loading)  komunalitas  reliabilitas"
+    "text": "Langkah-langkah di jamovi\n\n\nMengeksekusi EFA:\n\nAnalyses → Factor → Exploratory Factor Analysis\nMasukkan semua item ke “Variables”\nExtraction method: Minimum Residual\nRotation: Oblimin\nNumber of factors: Parallel Analysis\n\n\nOutput yang harus dicek:\n☑ Factor loadings (sembunyikan |λ| &lt; 0.30)\n☑ Scree plot + parallel analysis plot\n☑ Komunalitas (h²)\n☑ KMO & Bartlett’s test\n☑ Reliabilitas (α & ω)\n\n\n\n\n\n\n\nUrutan membaca output\n\n\nAsumsi (KMO & Bartlett’s)  jumlah faktor (parallel analysis + scree)  pattern matrix (loading & cross-loading)  komunalitas  reliabilitas"
   },
   {
     "objectID": "slides/bagian-7.html#ada-pertanyaan",

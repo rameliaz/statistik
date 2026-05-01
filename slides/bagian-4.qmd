@@ -303,7 +303,7 @@ Analisis ROC juga bisa digunakan untuk menjawab: "**Dari dua alat *screening* in
 ::: {.incremental}
 * Buat kurva ROC untuk masing-masing alat pada **sampel yang sama** dengan ***gold standard* yang sama**.
 * Bandingkan AUC kedua alat — alat dengan AUC lebih tinggi secara umum lebih akurat.
-* Gunakan **uji signifikansi** untuk membandingkan AUC (metode DeLong et al., 1988) — tersedia di jamovi PPDA.
+* Gunakan **uji signifikansi** untuk membandingkan AUC (metode DeLong et al., 1988) — tersedia di `jamovi` PPDA.
 * Jika interval kepercayaan AUC kedua alat saling tumpang tindih, perbedaan mungkin tidak signifikan secara statistik.
 :::
 

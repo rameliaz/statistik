@@ -18,7 +18,7 @@ execute:
 
 ## *Outline*
 
-* Apa yang dimaksud dengan variabel laten? Mengapa psikologi membutuhkannya?
+* Apa yang dimaksud dengan variabel laten?
 * _Classical Test Theory_ sebagai model variabel laten paling sederhana
 * Reliabilitas dan *measurement error*: mengapa skor observasi selalu mengandung *noise*
 * *Attenuation bias*: bagaimana *measurement error* mendistorsi estimasi hubungan antar-variabel
@@ -29,7 +29,7 @@ execute:
 
 # Psikologi mengukur hal-hal yang tidak bisa dilihat {background-color="#14497F" .center}
 
-## Apakah fisika lebih mudah dari psikologi?
+## Psikologi vs. Fisika
 
 ![](https://media.giphy.com/media/3o7TKSjRrfIPjeiVyM/giphy.gif){fig-align="center" width="55%"}
 
@@ -42,7 +42,7 @@ execute:
 ## Contoh variabel laten dalam psikologi
 
 ::: {.incremental}
-* **Kecemasan** — tidak bisa diobservasi langsung, tetapi bisa diinferensi dari detak jantung cepat, telapak tangan berkeringat, sulit konsentrasi, dan laporan subjektif individu.
+* **Kecemasan** — tidak bisa diobservasi langsung, tetapi bisa diinferensi (i.e., disimpulkan) dari detak jantung cepat, telapak tangan berkeringat, sulit konsentrasi, dan laporan subjektif individu.
 
 * **Kepribadian (Big 5)** — *Openness*, *Conscientiousness*, *Extraversion*, *Agreeableness*, *Neuroticism* merupakan konstruk laten yang diukur melalui respon terhadap item-item pernyataan.
 
@@ -76,7 +76,7 @@ execute:
 :::
 ::::
 
-# *Classical Test Theory* (CTT): model variabel laten paling sederhana {background-color="#14497F" .center}
+# Classical Test Theory (CTT) {background-color="#14497F" .center}
 
 ## *Classical Test Theory*: X = T + E
 
@@ -85,9 +85,9 @@ execute:
 $$X = T + E$$
 
 ::: {.incremental}
-* **T** (*true score*): skor yang *seharusnya* diperoleh seseorang apabila pengukuran dilakukan dengan sempurna — bebas dari gangguan apapun.
-* **E** (*error*): *measurement error* — semua "gangguan" yang membuat skor observasi menyimpang dari skor murni.
-  - Kondisi fisik saat mengisi kuesioner
+* **T** (*true score*): skor yang *seharusnya* diperoleh seseorang apabila pengukuran dilakukan dengan sempurna — bebas dari *noise* apapun.
+* **E** (*error*): *measurement error* — semua *noise* yang membuat skor observasi menyimpang dari skor murni.
+  - Kondisi fisik/kesehatan partisipan saat mengisi kuesioner
   - Ambiguitas item pernyataan
   - Perubahan suasana hati sesaat (*state*)
   - Faktor situasional lainnya
@@ -95,7 +95,7 @@ $$X = T + E$$
 
 ::: {.callout-tip}
 #### Implikasi penting
-CTT mengasumsikan bahwa **rata-rata *error* adalah nol** (E(e) = 0) dan ***error* tidak berkorelasi dengan skor murni** (Cov(T, E) = 0). Artinya, *error* bersifat acak — bukan sistematis.
+CTT mengasumsikan bahwa **rata-rata *error* adalah nol** (E(e) = 0) dan ***error* tidak berkorelasi dengan skor murni** (Cov(T, E) = 0). Artinya, *error* bersifat *stochastic* (acak), bukan sistematis.
 :::
 
 ## Reliabilitas: seberapa besar T dalam X?
@@ -118,17 +118,17 @@ $$\rho_{XX'} = \frac{\sigma^2_T}{\sigma^2_X} = \frac{\sigma^2_T}{\sigma^2_T + \s
 
 ## *Measurement error* dan *attenuation bias*
 
-* Masalahnya: kita tidak pernah mengukur **T** secara langsung — yang kita ukur selalu **X** (yang sudah "tercemari" oleh *error*).
+* Persoalannya, kita tidak bisa mengukur **T** secara langsung, yang kita ukur selalu **X** (yang sudah "tercemari" oleh *error*).
 
-* Konsekuensinya: ketika kita mengestimasi **korelasi antar-variabel**, korelasi yang kita hitung sebenarnya adalah korelasi antar *observed scores* (rₓᵧ), bukan korelasi antar *true scores* (rᴛₓᴛᵧ).
+* Konsekuensinya, ketika kita mengestimasi **korelasi antar-variabel**, korelasi yang kita hitung sebenarnya adalah korelasi antar *observed scores* (rₓᵧ), bukan korelasi antar *true scores* (rᴛₓᴛᵧ).
 
-* Ini menyebabkan **atenuasi** — korelasi yang kita estimasi **selalu lebih kecil** dari korelasi yang sebenarnya:
+* Ini menyebabkan **bias atenuasi**: korelasi yang kita estimasi **selalu lebih kecil** dari korelasi yang sebenarnya:
 
 $$r_{XY} = r_{T_X T_Y} \times \sqrt{\rho_{XX'} \times \rho_{YY'}}$$
 
 ::: {.callout-warning}
 #### *Attenuation bias*
-Semakin rendah reliabilitas alat ukur, semakin besar distorsi pada estimasi korelasi. Ini berarti *measurement error* yang tinggi akan membuat kita **meremehkan** kekuatan hubungan antar-variabel yang sesungguhnya.
+Semakin rendah reliabilitas alat ukur, semakin besar distorsi (*noise*) pada estimasi korelasi. Ini berarti *measurement error* yang tinggi akan membuat kita *underestimate* kekuatan hubungan antar-variabel yang sesungguhnya.
 :::
 
 ## Implikasi *attenuation bias*
@@ -140,9 +140,9 @@ Korelasi yang akan kita temukan di data:
 $$r_{XY} = 0.60 \times \sqrt{0.70 \times 0.65} = 0.60 \times 0.674 = \mathbf{0.40}$$
 
 ::: {.incremental}
-* Dengan kata lain, kita akan **melaporkan korelasi 0.40** padahal hubungan yang sesungguhnya adalah **0.60** — perbedaan yang sangat substansial!
-* Ini juga berdampak pada **efek size** dalam regresi: koefisien regresi (β) pun ikut teratenuasi.
-* Solusinya? Perlu model statistik yang secara eksplisit **memodelkan dan mengontrol *measurement error*** — inilah alasan utama mengapa kita perlu *latent variable modeling*.
+* Dengan kata lain, kita akan **melaporkan korelasi 0.40** padahal hubungan yang sesungguhnya adalah **0.60**. Perbedaan ini sangat substansial!
+* Ini juga berdampak pada ***effect size*** dalam regresi: koefisien regresi (β) pun ikut teratenuasi.
+* Oleh karena itu, kita membutuhkan model statistik yang secara eksplisit **memodelkan dan mengontrol *measurement error***. Inilah kegunaan utama *latent variable modeling*.
 :::
 
 ::: {.callout-tip}
@@ -157,12 +157,12 @@ Korelasi *true scores* dapat diestimasi dari korelasi *observed scores* dengan *
 | Model | Apa yang dimodelkan | Kelebihan dibanding CTT |
 |-------|---------------------|-------------------------|
 | **CTT** | X = T + E (level item) | Fondasi — sederhana, tapi tidak menguji struktur laten |
-| **EFA** | Struktur faktor laten yang tidak diketahui | Menemukan faktor laten secara *data-driven* |
-| **CFA** | Struktur faktor laten yang sudah dihipotesiskan | Menguji validitas konstruk secara teori |
-| **SEM** | Hubungan antar faktor laten + model pengukuran | Menguji model teoritis secara komprehensif |
+| **EFA** | Struktur faktor laten yang tidak diketahui | Menemukan faktor laten dari suatu dataset (*data-driven*) |
+| **CFA** | Struktur faktor laten yang sudah dihipotesiskan oleh teori | Menguji validitas konstruk berdasarkan teori |
+| **SEM** | Hubungan antar faktor laten + model pengukuran | Menguji hubungan antara variabel laten sesuai yang dihipotesiskan oleh teori |
 
 ::: {.callout-note}
-Keempat model ini membentuk **satu kontinum** dari yang paling sederhana (CTT) ke yang paling kompleks (SEM). Setiap model yang lebih canggih *mengandung* logika model sebelumnya.
+Keempat model ini membentuk **satu kontinum** dari yang paling sederhana (CTT) ke yang paling kompleks (SEM). Setiap model yang lebih kompleks *mengandung* logika model sebelumnya.
 :::
 
 ## Apa yang EFA dan CFA tambahkan dibandingkan CTT?
@@ -170,7 +170,7 @@ Keempat model ini membentuk **satu kontinum** dari yang paling sederhana (CTT) k
 ::: {.incremental}
 * **CTT** bekerja di level *item* — hanya bisa menghitung reliabilitas dan korelasi item-total. CTT tidak menguji apakah item-item tersebut memang mengukur konstruk laten yang sama.
 
-* **EFA** (*Exploratory Factor Analysis*) memungkinkan kita untuk *menemukan* struktur faktor laten dari data — berguna saat teori belum jelas atau sedang dalam tahap eksplorasi.
+* **EFA** (*Exploratory Factor Analysis*) memungkinkan kita untuk *menemukan* struktur faktor laten dari data. Berguna saat teori belum terlalu matang bukti empirisnya atau sedang dalam tahap eksplorasi.
 
 * **CFA** (*Confirmatory Factor Analysis*) memungkinkan kita untuk *menguji* apakah struktur faktor yang dihipotesiskan berdasarkan teori **didukung oleh data**. Ini adalah uji **validitas konstruk** yang paling ketat.
 
@@ -185,7 +185,7 @@ Keempat model ini membentuk **satu kontinum** dari yang paling sederhana (CTT) k
 
 ![](libs/model-pengukuran2.png){fig-align="center"}
 
-# Reflektif vs. Formatif {background-color="#14497F" .center}
+# Model Reflektif vs. Formatif {background-color="#14497F" .center}
 
 ## Dua cara variabel laten "bekerja"
 
@@ -225,38 +225,26 @@ Keempat model ini membentuk **satu kontinum** dari yang paling sederhana (CTT) k
 Mayoritas konstruk psikologi menggunakan model **reflektif**, misalnya: skala kepribadian, kecemasan, depresi, dll. Menggunakan model formatif untuk konstruk reflektif (atau sebaliknya) adalah kesalahan konseptual yang serius.
 :::
 
-# Perangkat lunak dan cakupan materi {background-color="#14497F" .center}
+# Perangkat lunak {background-color="#14497F" .center}
 
 ## Pilihan perangkat lunak
 
 ::: {.incremental}
 * **`jamovi`** — antarmuka grafis (*point-and-click*), gratis dan *open source*. Digunakan dalam workshop ini. *Module* SEMLj menyediakan EFA dan CFA dengan antarmuka yang *user-friendly*.
 
-* **`JASP`** — mirip jamovi, antarmuka grafis, gratis. Juga mendukung EFA dan CFA.
+* **`JASP`** — mirip `jamovi`, antarmuka grafis, gratis. Juga mendukung EFA dan CFA.
 
-* **`lavaan`** di {{< fa brands r-project >}} — paket R yang paling lengkap dan fleksibel untuk SEM, CFA, EFA. Membutuhkan *coding*, tetapi memberikan kendali penuh atas spesifikasi model.
+* **`lavaan`** di {{< fa brands r-project >}} — *package* {{< fa brands r-project >}} yang paling lengkap dan fleksibel untuk SEM, CFA, EFA. Membutuhkan *coding*, tetapi memberikan kendali penuh atas spesifikasi model.
 
-* **`semopy`** di {{< fa brands python >}} — alternatif di Python, sintaks mirip `lavaan`.
+* **`semopy`** di {{< fa brands python >}} — alternatif di {{< fa brands python >}}, *coding style* mirip `lavaan`.
 
-* **`Mplus`**, **`LISREL`**, **`SPSS AMOS`**, **`EQS`** — perangkat lunak komersial dengan fitur lebih lengkap (termasuk *power analysis* dan simulasi), tetapi berbayar.
+* **`Mplus`** — perangkat lunak komersial dengan fitur lebih lengkap (termasuk *power analysis* dan simulasi), tetapi *proprietary* (berbayar).
 :::
 
 ::: {.callout-tip}
 #### Untuk workshop ini
 Kita akan menggunakan **jamovi** dengan *module* **SEMLj**. Untuk analisis yang lebih lanjut, `lavaan` sangat direkomendasikan.
 :::
-
-## Yang tidak dicakup dalam materi ini
-
-* _A priori power analysis_, Monte Carlo _simulation_, dan *accuracy in parameter estimation* (AIPE) untuk merencanakan jumlah sampel
-* _Sensitivity analysis_ untuk CFA/SEM
-* Model SEM dengan *missing data* (selain *listwise deletion*)
-* Model SEM dengan variabel moderator/mediator (*mediated moderation*, *moderated mediation*)
-* _Hierarchical latent variable model_ (*second-order* CFA / *bifactor model*)
-* [_Exploratory_ SEM (ESEM)](http://www.annualreviews.org/doi/10.1146/annurev-clinpsy-032813-153700)
-* _Partial least square_ (PLS) — berbeda secara fundamental dari CB-SEM
-* _Mixture model_ dan _latent growth curve_ (SEM untuk data longitudinal)
-* [_Multiple indicators, multiple causes_ (MIMIC) model](https://journals.sagepub.com/doi/10.1177/23328584251388032)
 
 ## Ada pertanyaan❓
 

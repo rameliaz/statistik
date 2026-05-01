@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.10.3">
 
   <meta name="author" content="Rizqy Amelia Zein">
-  <meta name="dcterms.date" content="2026-04-25">
+  <meta name="dcterms.date" content="2026-05-01">
   <title>Statistik Lanjut dalam Penelitian Psikologi – Principal Component Analysis &amp; Exploratory Factor Analysis</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -147,7 +147,7 @@ Rizqy Amelia Zein
     </div>
 </div>
 
-  <p class="date">2026-04-25</p>
+  <p class="date">2026-05-01</p>
 </section>
 <section id="outline" class="slide level2">
 <h2><em>Outline</em></h2>
@@ -170,12 +170,12 @@ Rizqy Amelia Zein
 <ul>
 <li class="fragment">Seorang peneliti mengembangkan skala <strong>kelelahan kerja</strong> (<em>burnout</em>) dengan 20 <em>item</em></li>
 <li class="fragment">Apakah 20 <em>item</em> itu mengukur <strong>20 hal yang benar-benar berbeda</strong>?</li>
-<li class="fragment">Atau ada <strong>beberapa dimensi</strong> yang lebih mendasar di baliknya?</li>
+<li class="fragment">Atau ada <strong>beberapa dimensi laten</strong> yang diwakili oleh beberapa <em>item</em> sekaligus?</li>
 <li class="fragment">Masalah yang muncul kalau tidak ada reduksi:
 <ul>
-<li class="fragment">Tidak bisa divisualisasikan (kita akan kesulitan membuat visualisasi 20 “dimensi” sekaligus)</li>
+<li class="fragment">Tidak bisa divisualisasikan (kita akan kesulitan membuat visualisasi 20 <em>item</em> sekaligus)</li>
 <li class="fragment">Regresi dengan 20 prediktor: risiko <em>overfitting</em> sangat tinggi</li>
-<li class="fragment"><em>Item</em>-<em>item</em> yang saling berkorelasi tinggi menunjukkan adanya <strong>redundansi</strong></li>
+<li class="fragment"><em>Item</em>-<em>item</em> yang saling berkorelasi tinggi menunjukkan adanya <strong>redundansi</strong> ➡️ mungkin <em>item</em>-<em>item</em> ini mengukur dimensi laten yang sama?</li>
 </ul></li>
 </ul>
 </section>
@@ -186,7 +186,7 @@ Rizqy Amelia Zein
 </ul>
 <p><span class="math display">\[r_{XY_{observed}} = r_{T_X T_Y} \times \sqrt{\rho_{XX'} \times \rho_{YY'}}\]</span></p>
 <ul>
-<li>Analisis faktor secara eksplisit <strong>memodelkan</strong> <em>error</em> per <em>item</em> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> memisahkan <strong>sinyal</strong> (<em>common variance</em>) dari <strong>noise</strong> (<em>residual</em>/<em>unique variance</em>)</li>
+<li>Analisis faktor secara eksplisit <strong>memodelkan</strong> <em>error</em> per <em>item</em> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> memisahkan <strong>sinyal</strong> (<em>common variance</em>) dari <strong><em>noise</em></strong> (<em>residual</em>/<em>unique variance</em>)</li>
 </ul>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -236,13 +236,13 @@ Rizqy Amelia Zein
 <tr class="even">
 <td><strong>SEM</strong></td>
 <td>“Bagaimana faktor-faktor laten saling mempengaruhi?”</td>
-<td>Tidak dibahas</td>
+<td>Tidak dibahas. <a href="https://rameliaz.github.io/mg-sem-workshop/">Klik disini apabila tertarik belajar mandiri.</a></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="efa-vs-cfa-perbandingannya" class="slide level2">
-<h2>EFA vs CFA — perbandingannya</h2>
+<section id="efa-vs.-cfa" class="slide level2">
+<h2>EFA vs.&nbsp;CFA</h2>
 <table class="caption-top">
 <colgroup>
 <col style="width: 50%">
@@ -256,7 +256,7 @@ Rizqy Amelia Zein
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Jumlah faktor <strong>belum diketahui</strong> — biarkan data mendikte strukturnya</td>
+<td style="text-align: left;">Jumlah faktor <strong>belum diketahui</strong>, kita membiarkan dataset “mengungkap” strukturnya</td>
 <td style="text-align: left;">Jumlah faktor <strong>sudah ditentukan</strong> (melalui hipotesis) sebelum mengambil data</td>
 </tr>
 <tr class="even">
@@ -307,9 +307,9 @@ Rizqy Amelia Zein
 </div><div class="column" style="width:50%;">
 <p><strong>Analogi sederhana:</strong></p>
 <ul>
-<li>Data asli = 20 kolom (<em>item</em>)</li>
-<li><em>Component scores</em> = 3–4 kolom ringkasan</li>
-<li>Mempertahankan sebanyak mungkin informasi dengan sesedikit mungkin variabel</li>
+<li>Dataset berisi 20 kolom/variabel (<em>item</em>)</li>
+<li><em>Component scores</em> = 3–4 kolom skor komposit</li>
+<li>Mempertahankan sebanyak mungkin informasi dengan sesedikit mungkin komponen</li>
 </ul>
 </div></div>
 </section>
@@ -319,9 +319,9 @@ Rizqy Amelia Zein
 <li class="fragment">PCA adalah salah satu teknik <strong><em>unsupervised learning</em></strong> yang paling banyak digunakan dalam <em>machine learning</em></li>
 <li class="fragment"><strong>Reduksi dimensi sebelum pemodelan prediktif</strong>
 <ul>
-<li class="fragment">Dataset dengan ratusan/ribuan variabel (misalnya data genomik, neuroimaging, NLP) susah dimodelkan langsung</li>
+<li class="fragment">Dataset dengan ratusan/ribuan variabel (misalnya data genomik, <em>neuroimaging</em>, NLP) susah dimodelkan langsung</li>
 <li class="fragment">PCA meringkas variabel-variabel yang saling berkorelasi menjadi komponen yang independen (<em>orthogonal</em>)</li>
-<li class="fragment">Komponen ini kemudian digunakan sebagai prediktor dalam regresi atau klasifikasi — mengurangi <em>overfitting</em></li>
+<li class="fragment">Komponen ini kemudian digunakan sebagai prediktor dalam regresi atau klasifikasi, supaya mengurangi <em>overfitting</em></li>
 </ul></li>
 <li class="fragment"><strong>Visualisasi data berdimensi tinggi</strong>
 <ul>
@@ -350,7 +350,7 @@ Rizqy Amelia Zein
 <h2><em>Eigenvalue</em> &amp; <em>scree plot</em></h2>
 <ul>
 <li><strong>Eigenvalue (λ)</strong>: mengukur seberapa banyak varians yang dijelaskan oleh setiap komponen. Total eigenvalue = jumlah <em>item</em>.</li>
-<li><strong>Kaiser criterion</strong>: pertahankan komponen dengan λ &gt; 1
+<li><strong>Kaiser <em>criterion</em></strong>: pertahankan komponen dengan λ &gt; 1
 <ul>
 <li>Logika: komponen dengan λ &lt; 1 menjelaskan varians <em>kurang</em> dari satu <em>item</em> tunggal</li>
 </ul></li>
@@ -361,17 +361,21 @@ Rizqy Amelia Zein
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Kaiser criterion sering <em>over-extract</em></strong></p>
+<p><strong>Kaiser <em>criterion</em> sering <em>over-extract</em></strong></p>
 </div>
 <div class="callout-content">
-<p>Kaiser criterion bisa menghasilkan terlalu banyak komponen — bahkan dari data yang sepenuhnya acak! Selalu kombinasikan dengan <em>scree plot</em> dan <em>parallel analysis</em>.</p>
+<p>Kaiser <em>criterion</em> bisa menghasilkan terlalu banyak komponen — bahkan dari data yang sepenuhnya acak! Selalu kombinasikan dengan <em>scree plot</em> dan <em>parallel analysis</em>.</p>
 </div>
 </div>
 </div>
 <ul>
-<li><strong><em>Scree plot</em></strong>: grafik eigenvalue dari tertinggi ke terendah — cari “elbow” (titik siku) di mana kurva mulai mendatar. Pertahankan komponen <strong>sebelum</strong> elbow.</li>
+<li><strong><em>Scree plot</em></strong>: grafik Eigenvalue dari tertinggi ke terendah — cari “<em>elbow</em>” (titik siku) di mana kurva mulai mendatar. Pertahankan komponen <strong>sebelum</strong> <em>elbow</em>.</li>
 </ul>
 </section>
+<section id="contoh-scree-plot" class="slide level2">
+<h2>Contoh <em>scree plot</em></h2>
+
+<img data-src="libs/scree.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="component-loadings-rotasi" class="slide level2">
 <h2><em>Component loadings</em> &amp; rotasi</h2>
 <ul>
@@ -380,7 +384,7 @@ Rizqy Amelia Zein
 <li>|loading| &gt; 0.40 <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> <em>item</em> bermakna untuk komponen ini (<em>salient loading</em>)</li>
 <li>|loading| &lt; 0.30 <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> <em>item</em> tidak relevan untuk komponen ini</li>
 </ul></li>
-<li><strong>Rotasi</strong> mengejar <em>simple structure</em> (Thurstone, 1947): setiap <em>item</em> <em>load</em> tinggi di <strong>satu</strong> komponen, mendekati nol di yang lain</li>
+<li><strong>Rotasi</strong> mengejar <em>simple structure</em> (<a href="https://www.cambridge.org/core/journals/psychometrika/article/abs/an-analytical-method-for-simple-structure/C9EE5AE670053FC512D66EC8B964D443">Thurstone, 1954</a>): setiap <em>item</em> <em>loaded</em> tinggi di <strong>satu</strong> komponen, mendekati nol di yang lain</li>
 </ul>
 <table class="caption-top">
 <colgroup>
@@ -417,18 +421,18 @@ Rizqy Amelia Zein
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>Rotasi <strong>tidak</strong> mengubah total variani yang dijelaskan — hanya mendistribusikannya agar lebih mudah diinterpretasikan.</p>
+<p>Rotasi <strong>tidak</strong> mengubah total varians yang dijelaskan, tetapi hanya mendistribusikannya agar lebih mudah diinterpretasikan.</p>
 </div>
 </div>
 </div>
 </section></section>
 <section>
-<section id="exploratory-factor-analysis-efa" class="title-slide slide level1 center" data-background-color="#14497F">
-<h1><em>Exploratory Factor Analysis</em> (EFA)</h1>
+<section id="exploratory-factor-analysis-efa-background-color14497f-.center" class="title-slide slide level1 center">
+<h1>*Exploratory Factor Analysis (EFA) {background-color=“#14497F” .center}</h1>
 
 </section>
-<section id="pca-vs-efa-kontras-lengkap" class="slide level2">
-<h2>PCA vs EFA — kontras lengkap</h2>
+<section id="pca-vs.-efa" class="slide level2">
+<h2>PCA vs.&nbsp;EFA</h2>
 <table class="caption-top">
 <colgroup>
 <col style="width: 28%">
@@ -471,12 +475,12 @@ Rizqy Amelia Zein
 <tr class="even">
 <td><strong>Faktor/komponen</strong></td>
 <td>Selalu <em>orthogonal</em> (tidak berkorelasi)</td>
-<td>Boleh berkorelasi (rotasi oblique)</td>
+<td>Boleh berkorelasi (rotasi <em>oblique</em>)</td>
 </tr>
 <tr class="odd">
 <td><strong>Kapan digunakan</strong></td>
-<td>Tidak ada teori konstruk laten; tujuannya kompresi data</td>
-<td>Ada teori tentang faktor laten; tujuannya pengukuran</td>
+<td>Tidak ada teori konstruk laten; tujuannya kompresi/menyederhanakan struktur dataset</td>
+<td>Ada teori tentang faktor laten; tujuannya mengeksplorasi model pengukuran</td>
 </tr>
 </tbody>
 </table>
@@ -499,8 +503,8 @@ Rizqy Amelia Zein
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><p><strong>Komunalitas (h²)</strong>: proporsi varians <em>item</em> yang dijelaskan oleh <em>semua</em> faktor bersama</p></li>
-<li><p><strong>Keunikan (u²)</strong>: 1 − h² = varians yang <em>tidak</em> dijelaskan oleh faktor mana pun (varians spesifik + <em>error</em>)</p></li>
+<li><p><strong>Komunalitas (h²)</strong>: proporsi varians <em>item</em> yang dijelaskan oleh <em>semua</em> faktor laten yang teridentifikasi</p></li>
+<li><p><strong>Keunikan (u²)</strong>: 1 − h² = varians yang <em>tidak</em> dijelaskan oleh faktor manapun (varians spesifik i.e., <em>unique variance</em> + <em>error</em>)</p></li>
 </ul>
 <table class="caption-top">
 <colgroup>
@@ -520,11 +524,11 @@ Rizqy Amelia Zein
 </tr>
 <tr class="even">
 <td style="text-align: center;">0.30–0.50</td>
-<td>Cukup — perlu evaluasi</td>
+<td>Cukup, tetapi perlu evaluasi</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">&lt; 0.30</td>
-<td>Bermasalah — pertimbangkan menghapus <em>item</em></td>
+<td>Bermasalah, cek <em>wording</em>nya dan pertimbangkan menghapus <em>item</em></td>
 </tr>
 </tbody>
 </table>
@@ -539,14 +543,14 @@ Rizqy Amelia Zein
 </div>
 <div class="callout-content">
 <p>Item dengan h² rendah mengukur sesuatu yang unik apabila dibandingkan dengan <em>item</em> lain.</p>
-<p>Evaluasi ulang redaksinya sebelum memutuskan untuk menghapus <em>item</em>.</p>
+<p>Evaluasi ulang redaksi (<em>wording</em>) <em>item</em> tersebut sebelum memutuskan untuk menghapus <em>item</em>.</p>
 </div>
 </div>
 </div>
 </div></div>
 </section>
-<section id="menentukan-jumlah-faktor-jangan-hanya-mengandalkan-kaiser" class="slide level2">
-<h2>Menentukan jumlah faktor — jangan hanya mengandalkan Kaiser!</h2>
+<section id="menentukan-jumlah-faktor" class="slide level2">
+<h2>Menentukan jumlah faktor</h2>
 <ul>
 <li class="fragment"><p><strong>Kaiser criterion</strong> (λ &gt; 1) — mudah, tapi konsisten <em>over-extract</em>. Gunakan sebagai acuan awal saja.</p></li>
 <li class="fragment"><p><strong><em>Scree plot</em></strong> — visual dan intuitif, tapi subjektif. Dua peneliti bisa membaca <em>scree plot</em> yang sama secara berbeda.</p></li>
@@ -554,9 +558,9 @@ Rizqy Amelia Zein
 <ul>
 <li class="fragment">Bandingkan eigenvalue data nyata dengan eigenvalue dari <strong>data acak</strong> (dimensi yang sama)</li>
 <li class="fragment">Pertahankan faktor di mana eigenvalue nyata <strong>&gt;</strong> eigenvalue acak (persentil ke-95)</li>
-<li class="fragment">Paling akurat secara empiris; tidak subjektif (Hayton, Allen &amp; Scarpello, 2004)</li>
+<li class="fragment">Paling akurat secara empiris; tidak subjektif (<a href="https://journals.sagepub.com/doi/abs/10.1177/1094428104263675">Hayton, Allen &amp; Scarpello, 2004</a>)</li>
 </ul></li>
-<li class="fragment"><p><strong>Teori</strong> — berapa faktor yang disebutkan di literatur?</p></li>
+<li class="fragment"><p><strong>Teori</strong> — berapa faktor laten yang disebutkan di literatur?</p></li>
 </ul>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -575,12 +579,12 @@ Rizqy Amelia Zein
 <section id="rotasi-dalam-efa" class="slide level2">
 <h2>Rotasi dalam EFA</h2>
 <ul>
-<li class="fragment"><strong>Orthogonal</strong> (faktor tidak berkorelasi) — Varimax
+<li class="fragment"><strong><em>Orthogonal</em></strong> (faktor tidak berkorelasi) — Varimax
 <ul>
 <li class="fragment">Menghasilkan satu matriks: <em>factor loadings</em></li>
 <li class="fragment">Asumsi independensi sering <strong>tidak realistis</strong> dalam psikologi</li>
 </ul></li>
-<li class="fragment"><strong>Oblique</strong> (faktor boleh berkorelasi) — Promax, Direct Oblimin
+<li class="fragment"><strong><em>Oblique</em></strong> (faktor boleh berkorelasi) — Promax, Direct Oblimin
 <ul>
 <li class="fragment">Menghasilkan <em>pattern matrix</em> (kontribusi unik faktor ke <em>item</em>) — <strong>ini yang dilaporkan</strong></li>
 <li class="fragment">Juga menghasilkan <em>structure matrix</em> dan <em>factor correlation matrix</em></li>
@@ -689,7 +693,7 @@ Rizqy Amelia Zein
 </table>
 </section>
 <section id="bartletts-test-of-sphericity" class="slide level2">
-<h2>Bartlett’s test of sphericity</h2>
+<h2>Bartlett’s <em>test of sphericity</em></h2>
 <ul>
 <li>H₀: matriks korelasi = matriks identitas (tidak ada korelasi antar <em>item</em>)</li>
 <li><em>p</em> &lt; .05 <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> tolak H₀ <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> ada korelasi yang cukup <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> EFA layak dilakukan</li>
@@ -742,7 +746,7 @@ Rizqy Amelia Zein
 <p><strong><em>Rule of Thumb</em></strong></p>
 </div>
 <div class="callout-content">
-<p><em>Loadings</em> rendah dan <em>communalities</em> rendah membutuhkan N yang <strong>lebih besar</strong>. Jangan memaksakan analisis faktor pada sampel yang terlalu kecil.</p>
+<p><em>Loadings</em> rendah dan <em>communalities</em> rendah membutuhkan <em>N</em> yang <strong>lebih besar</strong>. Jangan memaksakan analisis faktor pada sampel yang terlalu kecil.</p>
 </div>
 </div>
 </div>
@@ -774,13 +778,13 @@ Rizqy Amelia Zein
 <p><strong>Catatan</strong></p>
 </div>
 <div class="callout-content">
-<p>Ambang batas RMSEA &lt; .06 (<a href="https://www.tandfonline.com/doi/abs/10.1080/10705519909540118">Hu &amp; Bentler, 1999</a>) sering dikutip, tapi berasal dari kondisi simulasi yang spesifik. Untuk model dengan banyak indikator atau sampel besar, <strong>RMSEA &lt; .08 sudah dapat diterima</strong>, jangan terlalu kaku pada angka .06.</p>
+<p>Ambang batas RMSEA &lt; .06 (<a href="https://www.tandfonline.com/doi/abs/10.1080/10705519909540118">Hu &amp; Bentler, 1999</a>) sering dikutip, tapi berasal dari kondisi simulasi yang spesifik. Untuk model dengan banyak indikator atau sampel besar, <strong>RMSEA &lt; .08 sudah dapat diterima</strong>, jangan terlalu terpatok pada angka .06.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="reliabilitas-alpha-vs-omega" class="slide level2">
-<h2>Reliabilitas: alpha vs omega</h2>
+<section id="reliabilitas-alpha-vs.-omega" class="slide level2">
+<h2>Reliabilitas: alpha vs.&nbsp;omega</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Cronbach’s α</strong></p>
@@ -853,7 +857,7 @@ Rizqy Amelia Zein
 <h2>Langkah-langkah di <code>jamovi</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Menjalankan EFA:</strong></p>
+<p><strong>Mengeksekusi EFA:</strong></p>
 <ol type="1">
 <li><strong>Analyses → Factor → Exploratory Factor Analysis</strong></li>
 <li>Masukkan semua <em>item</em> ke “Variables”</li>

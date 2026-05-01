@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.10.3">
 
   <meta name="author" content="Rizqy Amelia Zein">
-  <meta name="dcterms.date" content="2026-04-25">
+  <meta name="dcterms.date" content="2026-05-01">
   <title>Statistik Lanjut dalam Penelitian Psikologi – Regresi Logistik Binomial</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -147,15 +147,15 @@ Rizqy Amelia Zein
     </div>
 </div>
 
-  <p class="date">2026-04-25</p>
+  <p class="date">2026-05-01</p>
 </section>
 <section id="outline" class="slide level2">
 <h2><em>Outline</em></h2>
 <ul>
 <li>Mengapa regresi linear tidak bisa digunakan untuk <em>outcome</em> biner?</li>
-<li>Rantai konsep: probabilitas, <em>odds</em>, <em>log odds</em>, dan <em>odds ratio</em></li>
-<li>Persamaan model &amp; interpretasi koefisien</li>
-<li>Estimasi model: <em>Maximum Likelihood</em> dan uji <em>fit</em></li>
+<li>Rantai konsep dasar: probabilitas, <em>odds</em>, <em>log odds</em>, dan <em>odds ratio</em></li>
+<li>Persamaan model &amp; interpretasi koefisien model</li>
+<li>Estimasi model: <em>Maximum Likelihood</em> dan uji ketepatan model (<em>model fit</em>)</li>
 <li>Model dengan banyak prediktor</li>
 <li>Asumsi regresi logistik</li>
 <li>Evaluasi akurasi prediksi</li>
@@ -167,12 +167,12 @@ Rizqy Amelia Zein
 <h1>Variabel biner dalam penelitian psikologi</h1>
 
 </section>
-<section id="outcome-biner-ada-di-berbagai-konteks" class="slide level2">
-<h2><em>Outcome</em> biner ada di berbagai konteks</h2>
+<section id="outcome-biner-ada-di-berbagai-konteks-penelitian-psikologi" class="slide level2">
+<h2><em>Outcome</em> biner ada di berbagai konteks penelitian psikologi</h2>
 <ul>
 <li class="fragment"><strong>Putus studi PJJ:</strong> Sepertiga mahasiswa PJJ tidak menyelesaikan studinya sebelum semester kelima (<a href="https://press.uchicago.edu/ucp/books/book/chicago/L/bo3630345.html">Tinto, 1987</a>; <a href="https://www.jstor.org/stable/jeductechsoci.12.4.207">Park &amp; Choi, 2009</a>)</li>
 <li class="fragment"><strong>Relapse gangguan kecemasan:</strong> 40–60% pasien mengalami kekambuhan dalam jangka panjang setelah remisi (<a href="https://psychiatryonline.org/doi/full/10.1176/appi.ajp.162.6.1179">Bruce et al., 2005</a>)</li>
-<li class="fragment"><strong>Turnover karyawan:</strong> 15–20% per tahun dianggap normal; di atas angka itu menandakan masalah organisasi (SHRM, 2023)</li>
+<li class="fragment"><strong>Turnover karyawan:</strong> perasaan kesepian di tempat kerja (<em>workplace loneliness</em>) yang diukur pada <em>baseline</em> dapat memprediksi <em>job turnover</em> enam bulan kemudian, setelah mengontrol variabel sosiodemografis (<a href="https://academic.oup.com/joh/article/67/1/uiaf009/7997388">Sasaki, et al., 2025</a>)</li>
 <li class="fragment"><strong>Percobaan bunuh diri:</strong> Sekitar 2.4% prajurit militer AS melakukan percobaan bunuh diri dalam satu tahun (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4860903/">Kessler et al., 2014</a>)</li>
 </ul>
 <div class="callout callout-note callout-titled callout-style-default">
@@ -184,7 +184,7 @@ Rizqy Amelia Zein
 <p><strong><em>Outcome</em> Biner</strong></p>
 </div>
 <div class="callout-content">
-<p><em>Outcome</em> dari semua penelitian di atas bukan skor 1–100 (data <em>continous</em>). Mereka adalah <strong>keputusan biner</strong>: terjadi (1) atau tidak terjadi (0). Kita membutuhkan metode statistik yang dirancang untuk memodelkan <strong>probabilitas</strong> kejadian seperti ini.</p>
+<p><em>Outcome</em> dari semua penelitian di atas bukan skor 1–100 (data <em>continous</em>). Variabel-variabel di atas adalah <strong>keputusan biner</strong>: terjadi (1) atau tidak terjadi (0). Kita membutuhkan metode statistik yang dirancang untuk memodelkan <strong>probabilitas</strong> kejadian seperti ini.</p>
 </div>
 </div>
 </div>
@@ -234,8 +234,8 @@ Rizqy Amelia Zein
 </tbody>
 </table>
 <ul>
-<li><strong>Masalah fundamental:</strong> Probabilitas harus berada di <strong>rentang 0 sampai 1</strong>. Regresi linear tidak menjamin ini — ia memodelkan hubungan linear tanpa batas (∞).</li>
-<li><strong>Yang dibutuhkan:</strong> Sebuah fungsi yang secara otomatis <em>membatasi</em> prediksi dalam rentang [0, 1].</li>
+<li><strong>Masalah fundamental:</strong> Probabilitas harus berada di <strong>rentang 0 sampai 1</strong>. Regresi linear tidak bisa membatasi nilai <em>slope</em> sesuai rentang ini — ia memodelkan hubungan linear tanpa batas (∞).</li>
+<li><strong>Yang dibutuhkan dalam konteks ini:</strong> Sebuah fungsi yang secara otomatis <em>membatasi</em> prediksi dalam rentang [0, 1].</li>
 </ul>
 </section>
 <section id="solusi-fungsi-logistik-kurva-s" class="slide level2">
@@ -243,12 +243,20 @@ Rizqy Amelia Zein
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><span class="math display">\[P = \frac{1}{1 + e^{-(\beta_0 + \beta_1 X)}}\]</span></p>
-<p>Tiga sifat penting kurva S (<em>sigmoid</em>):</p>
+<p>Tiga karakteristik penting kurva S (<em>sigmoid</em>):</p>
 <ul>
 <li><strong>Asimptot bawah = 0</strong> — probabilitas tidak pernah negatif</li>
 <li><strong>Asimptot atas = 1</strong> — probabilitas tidak pernah melampaui 1</li>
 <li><strong>Transisi halus di bagian tengah</strong> — perubahan probabilitas melambat di ujung-ujungnya</li>
 </ul>
+</div><div class="column" style="width:45%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="libs/logregr.jpg" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div></div>
+<!-- end columns -->
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -258,22 +266,14 @@ Rizqy Amelia Zein
 <p><strong>Rentang <em>outcome</em> selalu 0-1 meskipun prediktor nilainya ekstrim</strong></p>
 </div>
 <div class="callout-content">
-<p>Tidak peduli seberapa ekstrim nilai prediktor (X), probabilitas yang diprediksi <strong>tetap berada dalam rentang yang valid</strong>. Inilah keunggulan utama regresi logistik dibanding OLS untuk <em>outcome</em> biner.</p>
+<p>Tidak peduli seberapa ekstrim nilai prediktor (X), probabilitas yang diprediksi <strong>tetap berada dalam rentang yang valid</strong>.</p>
 </div>
 </div>
 </div>
-</div><div class="column" style="width:45%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="libs/logregr.jpg" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-</div></div>
-<!-- end columns -->
 </section></section>
 <section>
-<section id="rantai-konsep-p-odds-log-odds-odds-ratio" class="title-slide slide level1 center" data-background-color="#14497F">
-<h1>Rantai konsep: P → Odds → Log Odds → Odds Ratio</h1>
+<section id="rantai-konsep-dasar-p-odds-log-odds-odds-ratio" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1>Rantai konsep dasar: P → Odds → Log Odds → Odds Ratio</h1>
 
 </section>
 <section id="probabilitas-1" class="slide level2">
@@ -314,14 +314,15 @@ Rizqy Amelia Zein
 <li>Yang dimodelkan adalah transformasinya, yaitu <em>log odds</em></li>
 <li>Mengapa?
 <ul>
-<li>Karena probabilitas tidak linear, sementara <em>log odds</em> bisa diperlakukan sebagai linear terhadap prediktor</li>
+<li>Karena probabilitas tidak linear, sementara <em>log odds</em> bisa dimodelkan secara linear terhadap prediktor</li>
 </ul></li>
 </ul>
 </section>
 <section id="odds" class="slide level2">
 <h2><em>Odds</em></h2>
 <p><span class="math display">\[\text{Odds} = \frac{P}{1 - P}\]</span></p>
-<p><strong>Definisi:</strong> “<em>Berapa kali suatu kejadian lebih mungkin terjadi dibandingkan tidak terjadi</em>” <strong>Contoh:</strong> Jika P(putus studi) = 0.30, maka Odds = 0.30 / 0.70 = <strong>0.43</strong></p>
+<p><strong>Definisi:</strong> “<em>Berapa kali suatu kejadian lebih mungkin terjadi dibandingkan tidak terjadi</em>”</p>
+<p><strong>Contoh:</strong> Jika P(putus studi) = 0.30, maka Odds = 0.30 / 0.70 = <strong>0.43</strong></p>
 <p>Cara baca: “Untuk setiap 7 mahasiswa yang bertahan, ada 3 yang putus studi” (3:7)</p>
 <table class="caption-top">
 <colgroup>
@@ -377,19 +378,21 @@ Rizqy Amelia Zein
 </div><div class="column">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="libs/odds.webp" class="quarto-figure quarto-figure-center"></p>
+<p><img data-src="libs/odds.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 </div></div>
 <!-- end columns -->
 </section>
-<section id="log-odds-logit-membuat-odds-simetris-dan-linear" class="slide level2">
-<h2><em>Log odds</em> (logit) — membuat <em>odds</em> simetris dan linear</h2>
-<p><strong>Masalah <em>odds</em>:</strong> Rentangnya 0 sampai ∞, dan tidak simetris — nilai di bawah 1 terkompresi, nilai di atas 1 tidak terbatas.</p>
-<p><strong>Solusi: <em>Log odds</em> (logit)</strong></p>
+<section id="log-odds-logit" class="slide level2">
+<h2><em>Log odds</em> (logit)</h2>
+<ul>
+<li><p><strong>Masalahnya,</strong> rentang <em>odds</em> hanya antara 0 sampai ∞, dan tidak simetris — nilai di bawah 1 terkompresi, nilai di atas 1 tidak terbatas.</p></li>
+<li><p><strong>Solusinya, gunakan <em>log odds</em> (logit)</strong> yang bisa membuat <em>odds</em> menjadi simetris dan linear.</p></li>
+</ul>
 </section>
-<section id="log-odds-logit-membuat-odds-simetris-dan-linear-1" class="slide level2">
-<h2><em>Log odds</em> (logit) — membuat <em>odds</em> simetris dan linear</h2>
+<section id="log-odds-logit-1" class="slide level2">
+<h2><em>Log odds</em> (logit)</h2>
 <p><span class="math display">\[\text{Logit}(P) = \ln\!\left(\frac{P}{1-P}\right)\]</span></p>
 <table class="caption-top">
 <colgroup>
@@ -436,7 +439,7 @@ Rizqy Amelia Zein
 </section>
 <section id="persamaan-model-regresi-logistik" class="slide level2">
 <h2>Persamaan model regresi logistik</h2>
-<p><strong>Persamaan dalam <em>logit</em> (yang berjalan di belakang layar):</strong></p>
+<p><strong>Persamaan dalam <em>logit</em> (yang berjalan di balik <em>software</em>):</strong></p>
 <p><span class="math display">\[\ln\!\left(\frac{P}{1-P}\right) = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_k X_k\]</span></p>
 <p><strong>Untuk memprediksi probabilitas, balik transformasinya:</strong></p>
 <p><span class="math display">\[P = \frac{1}{1 + e^{-(\beta_0 + \beta_1 X_1 + \cdots + \beta_k X_k)}}\]</span></p>
@@ -444,14 +447,14 @@ Rizqy Amelia Zein
 <ul>
 <li>β₀ = <em>intercept</em> (<em>log odds</em> ketika semua prediktor = 0)</li>
 <li>β₁, …, βₖ = koefisien regresi (perubahan <em>logit</em> per satu unit prediktor)</li>
-<li><strong>e^β = <em>Odds Ratio</em></strong> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> <strong>inilah yang diinterpretasikan dalam sebagai <em>effect size</em> dari regresi logistik</strong></li>
+<li><strong>e<sup>β</sup></strong> = <em>Odds Ratio</em> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> <strong>inilah yang diinterpretasikan dalam sebagai <em>effect size</em> dari regresi logistik</strong></li>
 </ul>
 </section>
 <section id="odds-ratio-or-effect-size-utama" class="slide level2">
 <h2><em>Odds Ratio</em> (OR) — <em>effect size</em> utama</h2>
 <p><em>Odds ratio</em> (OR) merupakan <em>effect size</em> utama dari model regresi logistik.</p>
 <p><span class="math display">\[OR = e^{\beta}\]</span></p>
-<p>OR mengukur seberapa banyak <em>odds</em> berubah ketika prediktor naik 1 unit, dengan prediktor lain dikontrol.</p>
+<p>OR mengukur seberapa banyak <em>odds</em> berubah ketika prediktor naik 1 unit, dengan asumsi prediktor yang lain nilainya konstan, tidak berubah (i.e., kalau ada beberapa prediktor di dalam model).</p>
 </section>
 <section id="odds-ratio-or-effect-size-utama-1" class="slide level2">
 <h2><em>Odds Ratio</em> (OR) — <em>effect size</em> utama</h2>
@@ -499,7 +502,7 @@ Rizqy Amelia Zein
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Selalu laporkan 95% <em>Confidence Interval</em> untuk OR!</strong></p>
+<p><strong>Selalu cek dan laporkan 95% <em>Confidence Interval</em> untuk OR!</strong></p>
 </div>
 <div class="callout-content">
 <p>Jika CI melewati 1.0, prediktor tidak signifikan secara statistik — misalnya OR = 1.20, 95% CI [0.85, 1.69] → tidak signifikan.</p>
@@ -566,7 +569,7 @@ Rizqy Amelia Zein
 <p><strong>Interpretasi</strong></p>
 </div>
 <div class="callout-content">
-<p>Keterlibatan akademik yang tinggi dapat “<strong>mencegah</strong>” efek jarak yang jauh antara tempat tinggal mahasiswa dengan pokjar. Bisa dijadikan dasar untuk mendesain intervensi program PJJ.</p>
+<p>Keterlibatan akademik yang tinggi dapat “<strong>mencegah</strong>” efek jarak yang jauh antara tempat tinggal mahasiswa dengan pokjar. Interpretasinya: temuan ini bisa dijadikan dasar untuk mendesain intervensi yang mencegah <em>dropout</em> mahasiswa program PJJ.</p>
 </div>
 </div>
 </div>
@@ -592,13 +595,13 @@ Rizqy Amelia Zein
 </div>
 <div class="callout-content">
 <p>Karena MLE, kita <strong>tidak mendapatkan F-statistics</strong> seperti dalam OLS/ANOVA. Sebagai gantinya, kita mendapatkan <strong>χ²</strong> sebagai uji signifikansi keseluruhan model.</p>
-<p>Jika <em>software</em> menampilkan peringatan <code>algorithm did not converge</code>, biasanya tanda sampel terlalu kecil atau ada <em>perfect separation</em> (lihat bagian berikutnya).</p>
+<p>Jika <em>software</em> menampilkan peringatan <code>algorithm did not converge</code>, biasanya tanda sampel terlalu kecil atau ada <em>perfect separation</em> (akan dibahas di bagian berikutnya).</p>
 </div>
 </div>
 </div>
 </section>
 <section id="deviance-likelihood-ratio-test-uji-omnibus-model" class="slide level2">
-<h2><em>Deviance</em> &amp; <em>Likelihood Ratio Test</em> — uji omnibus model</h2>
+<h2><em>Deviance</em> &amp; <em>Likelihood Ratio Test</em> — uji <em>omnibus</em> model</h2>
 <p><strong>Deviance</strong> = −2 × <em>log-likelihood</em> (makin kecil, makin baik)</p>
 <table class="caption-top">
 <colgroup>
@@ -653,16 +656,19 @@ Rizqy Amelia Zein
 </section>
 <section id="aic-bic-memilih-model-terbaik" class="slide level2">
 <h2>AIC &amp; BIC — memilih model terbaik</h2>
-<p>Prinsipnya sama dengan regresi OLS yang sudah kita pelajari di <a href="https://rameliaz.github.io/statistik/slides/bagian-3.html#/title-slide">Bagian 3</a>: menambah prediktor <strong>selalu</strong> menurunkan <em>deviance</em>, bahkan ketika prediktor itu tidak bermakna secara substantif untuk menjelaskan variabel <em>outcome</em> (<a href="https://en.wikipedia.org/wiki/Overfitting"><em>overfitting</em></a>).</p>
+<p>Prinsipnya sama dengan regresi OLS yang sudah kita pelajari di <a href="https://rameliaz.github.io/statistik/slides/bagian-2.html#/title-slide">Bagian 2</a>: menambah prediktor <strong>selalu</strong> menurunkan <em>deviance</em>, bahkan ketika prediktor itu tidak bermakna secara substantif untuk menjelaskan variabel <em>outcome</em> (<a href="https://en.wikipedia.org/wiki/Overfitting"><em>overfitting</em></a>).</p>
 <p><span class="math display">\[\text{AIC} = -2\log L + 2k \qquad \text{BIC} = -2\log L + k\ln(n)\]</span></p>
 <p>Di mana k = jumlah parameter, n = ukuran sampel. <strong>Makin kecil, makin baik — hanya bermakna kalau ada model lain yang digunakan sebagai perbandingan.</strong></p>
-<table class="caption-top">
+</section>
+<section id="aic-bic-contohnya" class="slide level2">
+<h2>AIC &amp; BIC — contohnya</h2>
+<table class="caption-top" style="width:90%;">
 <colgroup>
-<col style="width: 10%">
+<col style="width: 12%">
 <col style="width: 42%">
 <col style="width: 12%">
 <col style="width: 12%">
-<col style="width: 24%">
+<col style="width: 12%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -697,21 +703,27 @@ Rizqy Amelia Zein
 </tr>
 </tbody>
 </table>
-<p>Model 2 paling baik: model <em>fit</em> baik (AIC lebih kecil dari Model 1) dan tidak terlalu kompleks (BIC paling kecil diantara model yang lain). BIC lebih ketat dari AIC karena penaltinya lebih besar. Pilih BIC jika prioritasnya memilih model yang paling sederhana (parsimoni).</p>
+<ul>
+<li><strong>Model 2 performanya paling baik</strong>: model <em>fit</em> baik (AIC lebih kecil dari Model 1) dan tidak terlalu kompleks (BIC paling kecil diantara model yang lain).</li>
+<li>BIC lebih ketat dari AIC karena penaltinya lebih besar.
+<ul>
+<li>Sebaiknya, pilih model berdasarkan nilai BIC-nya jika prioritasnya memilih model yang paling “sederhana” (<em>parsimonious</em>).</li>
+</ul></li>
+</ul>
 </section>
-<section id="pseudo-r²-seberapa-banyak-variasi-yang-dijelaskan" class="slide level2">
-<h2>Pseudo R² — seberapa banyak variasi yang dijelaskan?</h2>
+<section id="pseudo-r²" class="slide level2">
+<h2>Pseudo R²</h2>
 <ul>
 <li>Regresi logistik tidak punya R² seperti OLS karena tidak ada “total <em>variance</em>” yang bisa dibagi seperti dalam OLS.</li>
-<li><strong>Solusinya Pseudo R²</strong> — Ada beberapa versi, yang paling sering digunakan adalah <strong>Nagelkerke R²:</strong></li>
+<li><strong>Oleh karena itu, regresi logistik menggunakan Pseudo R²</strong> — Ada beberapa versi, yang paling sering digunakan adalah <strong>Nagelkerke R²</strong>.</li>
 </ul>
 </section>
 <section id="interpretasi-pseudo-r²" class="slide level2">
 <h2>Interpretasi Pseudo R²</h2>
-<table class="caption-top">
+<table class="caption-top" style="width:60%;">
 <colgroup>
 <col style="width: 30%">
-<col style="width: 70%">
+<col style="width: 30%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -739,8 +751,12 @@ Rizqy Amelia Zein
 </tbody>
 </table>
 <ul>
-<li><p>Pseudo R² <strong>bukan</strong> “proporsi varians yang dijelaskan” seperti R² OLS, jadi <strong>jangan diinterpretasikan dengan cara yang sama</strong>. Lebih tepat diartikan sebagai <em>peningkatan model fit dibanding null model.</em> Nilainya cenderung lebih rendah dari R² OLS.</p></li>
-<li><p>Cara melaporkan yang benar: <em>“Nagelkerke R² = .32, mengindikasikan bahwa model dengan prediktor memberikan peningkatan <em>model fit</em> yang substansial dibandingkan model tanpa prediktor.”</em></p></li>
+<li>Pseudo R² <strong>bukan</strong> “proporsi varians yang dijelaskan” seperti R² OLS, jadi <strong>jangan diinterpretasikan dengan cara yang sama</strong>.
+<ul>
+<li>Lebih tepat diartikan sebagai <em>peningkatan model fit dibanding null model.</em></li>
+<li>Nilainya cenderung lebih rendah dari R² OLS.</li>
+</ul></li>
+<li><strong>Cara melaporkan yang benar</strong>: <em>“Nagelkerke R² = .32, mengindikasikan bahwa model dengan prediktor memberikan peningkatan <em>model fit</em> yang substansial dibandingkan model tanpa prediktor.”</em></li>
 </ul>
 </section></section>
 <section>
@@ -749,49 +765,14 @@ Rizqy Amelia Zein
 
 </section>
 <section id="adjusted-or-efek-prediktor-setelah-mengontrol-variabel-lain" class="slide level2">
-<h2>Adjusted OR — efek prediktor setelah mengontrol variabel lain</h2>
-<p><strong>Masalah <em>confounding</em>:</strong> Dalam analisis bivariat, efek yang terlihat bisa dipengaruhi oleh variabel ketiga.</p>
-<p>Contoh: Mahasiswa yang tinggal jauh dari pokjar cenderung punya keterlibatan akademik yang lebih rendah (karena kesempatan terlibat lebih terbatas). Efek jarak dan efek keterlibatan <strong>saling tumpang tindih</strong>.</p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 34%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 26%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Prediktor</th>
-<th style="text-align: center;">Unadjusted OR</th>
-<th style="text-align: center;">Adjusted OR</th>
-<th>95% CI</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Jarak (per 10 km)</td>
-<td style="text-align: center;">1.70</td>
-<td style="text-align: center;">1.63</td>
-<td>[1.21, 2.19]</td>
-</tr>
-<tr class="even">
-<td>Keterlibatan akademik</td>
-<td style="text-align: center;">0.48</td>
-<td style="text-align: center;">0.52</td>
-<td>[0.38, 0.71]</td>
-</tr>
-<tr class="odd">
-<td>Usia (per 10 tahun)</td>
-<td style="text-align: center;">1.15</td>
-<td style="text-align: center;">1.08</td>
-<td>[0.88, 1.32]</td>
-</tr>
-</tbody>
-</table>
-<p>Setelah dikontrol, efek jarak sedikit mengecil — sebagian efeknya bekerja <em>melalui</em> keterlibatan akademik.</p>
-</section>
-<section id="adjusted-or-efek-prediktor-setelah-mengontrol-variabel-lain-1" class="slide level2">
-<h2>Adjusted OR — efek prediktor setelah mengontrol variabel lain</h2>
+<h2><em>Adjusted</em> OR — efek prediktor setelah mengontrol variabel lain</h2>
+<ul>
+<li><strong>Masalah <em>confounding</em>:</strong> Dalam analisis bivariat, efek yang terlihat bisa dipengaruhi oleh variabel ketiga.</li>
+<li><strong>Contohnya</strong>: Mahasiswa yang tinggal jauh dari pokjar cenderung punya keterlibatan akademik yang lebih rendah (karena kesempatan terlibat lebih terbatas).
+<ul>
+<li>Efek jarak dan efek keterlibatan <strong>saling tumpang tindih</strong>.</li>
+</ul></li>
+</ul>
 <div class="callout callout-warning callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -801,7 +782,7 @@ Rizqy Amelia Zein
 <p><strong>Laporkan <em>Adjusted</em> OR</strong></p>
 </div>
 <div class="callout-content">
-<p>Dalam artikel ilmiah, <strong>selalu laporkan <em>adjusted</em> OR</strong> dari model dengan prediktor berganda, bukan <em>unadjusted</em> OR dari analisis bivariat.</p>
+<p>Dalam artikel ilmiah, <strong>selalu laporkan <em>adjusted</em> OR</strong> dari model dengan prediktor yang jumlahnya lebih dari 1, bukan <em>unadjusted</em> OR dari analisis bivariat.</p>
 </div>
 </div>
 </div>
@@ -825,8 +806,8 @@ Rizqy Amelia Zein
 </div>
 </div>
 </section>
-<section id="interaksi-efek-prediktor-yang-berbeda-antar-subgrup" class="slide level2">
-<h2>Interaksi — efek prediktor yang berbeda antar subgrup</h2>
+<section id="interaksi-efek-prediktor-yang-berbeda-antar-subkelompok-1" class="slide level2">
+<h2>Interaksi — efek prediktor yang berbeda antar subkelompok</h2>
 <p><strong>Hasil:</strong> β₃ = −0.08, p = .03 → Interaksi signifikan!</p>
 <table class="caption-top">
 <colgroup>
@@ -836,7 +817,7 @@ Rizqy Amelia Zein
 </colgroup>
 <thead>
 <tr class="header">
-<th>Subgrup</th>
+<th>Subkelompok</th>
 <th style="text-align: center;">Efek jarak pada <em>odds</em> putus studi</th>
 <th>Interpretasi</th>
 </tr>
@@ -868,22 +849,22 @@ Rizqy Amelia Zein
 </div>
 </div>
 </section>
-<section id="strategi-membangun-model-mulai-dari-teori" class="slide level2">
-<h2>Strategi membangun model — mulai dari teori</h2>
+<section id="strategi-permodelan-mulai-dari-teori" class="slide level2">
+<h2>Strategi permodelan — mulai dari teori</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>✅ <em>Theory-driven</em> (direkomendasikan)</strong></p>
 <ol type="1">
-<li>Pilih prediktor berdasarkan teori dan literatur <strong>sebelum</strong> melihat data</li>
-<li>Uji hipotesis yang sudah <em>pre-specified</em></li>
-<li>Laporkan <strong>semua</strong> model yang diuji — bukan hanya yang paling bagus hasilnya secara statistik</li>
+<li class="fragment">Pilih prediktor berdasarkan teori dan literatur <strong>sebelum</strong> melihat data</li>
+<li class="fragment">Uji hipotesis yang sudah <em>pre-specified</em></li>
+<li class="fragment">Laporkan <strong>semua</strong> model yang diuji — bukan hanya yang paling bagus hasilnya secara statistik</li>
 </ol>
 </div><div class="column" style="width:50%;">
 <p><strong>⚠️ <em>Stepwise selection</em> (kontroversial)</strong></p>
 <ul>
-<li><em>Forward</em>: tambahkan prediktor satu per satu berdasarkan p-value</li>
-<li><em>Backward</em>: mulai dari semua prediktor, hapus yang tidak signifikan</li>
-<li><strong>Masalah:</strong> <em>Overfitting</em>, inflasi <em>Type I error</em>, hasil sulit dicoba-ulang (replikasi)</li>
+<li class="fragment"><em>Forward</em>: tambahkan prediktor satu per satu berdasarkan p-value</li>
+<li class="fragment"><em>Backward</em>: mulai dari semua prediktor, hapus yang tidak signifikan</li>
+<li class="fragment"><strong>Masalah:</strong> <em>Overfitting</em>, inflasi <em>Type I error</em>, hasil sulit dicoba-ulang (replikasi)</li>
 </ul>
 </div></div>
 <div class="callout callout-warning callout-titled callout-style-default">
@@ -895,7 +876,7 @@ Rizqy Amelia Zein
 <p><strong>Kapan analisis eksplorasi dibenarkan?</strong></p>
 </div>
 <div class="callout-content">
-<p>Analisis eksplorasi boleh dilakukan untuk <em>generate</em> hipotesis, tapi <strong>harus dipisahkan</strong> dari analisis konfirmatori. Mencampur keduanya dalam satu sampel adalah salah satu bentuk <a href="https://journals.sagepub.com/doi/abs/10.1177/1948550615612150"><em>questionable research practice</em></a>.</p>
+<p>Analisis eksplorasi boleh dilakukan untuk men<em>generate</em> hipotesis, tapi <strong>harus dipisahkan</strong> dari analisis konfirmatori. Mencampur keduanya dalam satu sampel yang sama adalah salah satu bentuk <a href="https://journals.sagepub.com/doi/abs/10.1177/1948550615612150"><em>questionable research practice</em></a>.</p>
 </div>
 </div>
 </div>
@@ -983,11 +964,16 @@ Rizqy Amelia Zein
 </div>
 </div>
 </section>
-<section id="perfect-separation-ketika-prediktor-too-goood-to-be-true" class="slide level2">
-<h2><em>Perfect separation</em> — ketika prediktor <em>too goood to be true</em></h2>
-<p><strong>Masalah:</strong> Satu prediktor memisahkan <em>outcome</em> secara sempurna — semua Y = 1 ada di satu sisi, semua Y = 0 di sisi lain.</p>
-<p><strong>Contoh:</strong> Semua mahasiswa dengan jarak &gt; 45 km putus studi (100%). Semua mahasiswa dengan jarak ≤ 45 km lanjut studi (100%).</p>
-<p><strong>Akibat:</strong> Koefisien meluncur ke ±∞, <em>standard error</em> sangat besar, model tidak <em>converge</em>.</p>
+<section id="perfect-separation-ketika-prediktor-too-good-to-be-true" class="slide level2">
+<h2><em>Perfect separation</em> — ketika prediktor <em>too good to be true</em></h2>
+<ul>
+<li><p>Ada kemungkinan Anda harus menangani prediktor yang bisa memisahkan <em>outcome</em> secara sempurna.</p>
+<ul>
+<li>Semua Y = 1 ada di satu sisi, semua Y = 0 di sisi lain.</li>
+</ul></li>
+<li><p><strong>Contohnya</strong>, semua mahasiswa dengan jarak &gt; 45 km putus studi (100%). Semua mahasiswa dengan jarak ≤ 45 km lanjut studi (100%).</p></li>
+<li><p><strong>Akibatnya</strong>, koefisien <em>slope</em> meluncur ke ±∞, <em>standard error</em> sangat besar, model tidak bisa diestimasi (<em>non-convergence problem</em>).</p></li>
+</ul>
 <div class="callout callout-warning callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1071,7 +1057,7 @@ Rizqy Amelia Zein
 <td><strong>Akurasi</strong></td>
 <td>(TP+TN)/N</td>
 <td style="text-align: center;">82.2%</td>
-<td>Berapa % prediksi yang benar?</td>
+<td>Berapa % prediksi kejadian yang benar?</td>
 </tr>
 <tr class="even">
 <td><strong>Sensitivity</strong></td>
@@ -1138,7 +1124,7 @@ Rizqy Amelia Zein
 </tr>
 <tr class="odd">
 <td style="text-align: center;">&gt; 0.90</td>
-<td style="text-align: left;">Sangat baik — atau model <em>overfitting</em>? Cek dulu!</td>
+<td style="text-align: left;">Sangat baik — tetapi bisa jadi model <em>overfitting</em><sup>1</sup>? Cek dulu!</td>
 </tr>
 </tbody>
 </table>
@@ -1151,11 +1137,11 @@ Rizqy Amelia Zein
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>ROC <em>curve</em> dan AUC tersedia di jamovi. Pembahasan mendalam tentang analisis ROC — termasuk PPV/NPV, Youden’s Index, dan penentuan <em>cut-off</em> optimal — ada di <a href="..\docs/slides/bagian-4.html"><strong>Bagian 4</strong></a>.</p>
+<p>ROC <em>curve</em> dan AUC tersedia di jamovi. Pembahasan mendalam tentang analisis ROC — termasuk PPV/NPV, Youden’s Index, dan penentuan <em>cut-off</em> optimal — ada di <a href="slides/bagian-4.html"><strong>Bagian 4</strong></a>.</p>
 </div>
 </div>
 </div>
-</section></section>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Analoginya — Seseorang menghapal soal dan jawaban dari buku latihan soal CPNS, padahal tidak ada satupun soal yang dia hapalkan sebelumnya keluar di soal ujian yang sebenarnya.</p></li></ol></aside></section></section>
 <section>
 <section id="demonstrasi-di-jamovi" class="title-slide slide level1 center" data-background-color="#14497F">
 <h1>Demonstrasi di <code>jamovi</code></h1>
@@ -1224,13 +1210,12 @@ Rizqy Amelia Zein
 <p>Jarak ke pokjar secara signifikan memprediksi putus studi (<em>OR</em> = 1.05, 95% CI [1.02, 1.08], <em>p</em> &lt; .001): setiap tambahan 10 km jarak dari pokjar, <em>odds</em> putus studi mahasiswa meningkat sebesar 63%. Keterlibatan akademik juga berperan signifikan (<em>OR</em> = 0.52, 95% CI [0.38, 0.71], <em>p</em> &lt; .001) — mahasiswa dengan keterlibatan lebih tinggi memiliki <em>odds</em> putus studi yang lebih rendah. Kecemasan akademik awal tidak memprediksi putus studi secara signifikan (<em>OR</em> = 1.02, 95% CI [0.99, 1.05], <em>p</em> = .182).”</p>
 </blockquote>
 </section>
-<section id="menerjemahkan-or-ke-bahasa-yang-dipahami-semua-orang" class="slide level2">
-<h2>Menerjemahkan OR ke bahasa yang dipahami semua orang</h2>
+<section id="menginterpretasi-or" class="slide level2">
+<h2>Menginterpretasi OR</h2>
 <p><strong>Contoh: OR = 1.05 untuk jarak ke pokjar (per 1 km)</strong></p>
 <ul>
 <li><p><strong>Opsi 1 — Persentase perubahan <em>odds</em>:</strong> “Setiap tambahan 1 km jarak dari pokjar, <em>odds</em> putus studi naik 5%.”</p></li>
-<li><p><strong>Opsi 2 — Interval konkrit:</strong> “Mahasiswa yang tinggal 10 km lebih jauh punya <em>odds</em> putus studi 1.63 kali lebih tinggi.” <em>(karena 1.05^10 = 1.63)</em></p></li>
-<li><p><strong>Opsi 3 — Perbandingan probabilitas:</strong> “Mahasiswa yang tinggal 5 km dari pokjar memiliki peluang ~20% putus studi; mahasiswa yang tinggal 15 km memiliki peluang ~30%.”</p></li>
+<li><p><strong>Opsi 2 — Interval konkrit:</strong> “Mahasiswa yang tinggal 10 km lebih jauh dari pokjar punya <em>odds</em> putus studi 1.63 kali lebih tinggi <strong>dibandingkan mahasiswa yang tinggal 10 km lebih dekat</strong>.” <em>(karena 1.05^10 = 1.63)</em></p></li>
 </ul>
 <div class="callout callout-warning callout-titled callout-style-default">
 <div class="callout-body">
@@ -1238,10 +1223,32 @@ Rizqy Amelia Zein
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>OR ≠ <em>Risk Ratio</em> (RR).</strong></p>
+<p><strong>OR ≠ <em>Risk Ratio</em> (RR)</strong></p>
 </div>
 <div class="callout-content">
-<p>Jangan gunakan “X kali lebih <em>mungkin</em>” untuk interpretasi OR, karena ini adalah interpretasi RR. OR harus diinterpretasi: “X kali lebih tinggi <strong><em>odds</em></strong>-nya” (<a href="https://jamanetwork.com/journals/jama/fullarticle/188182">Zhang &amp; Yu, 1998</a>). Perbedaan ini penting terutama jika prevalensi <em>outcome</em> &gt; 10%.</p>
+<p>Data yang sama, cara menghitung berbeda:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>Cara menghitung</th>
+<th style="text-align: center;">Contoh (30% vs 20%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>RR</strong></td>
+<td>P(A) / P(B)</td>
+<td style="text-align: center;">30% / 20% = <strong>1.50</strong></td>
+</tr>
+<tr class="even">
+<td><strong>OR</strong></td>
+<td>Odds(A) / Odds(B)</td>
+<td style="text-align: center;">(30/70) / (20/80) = <strong>1.71</strong></td>
+</tr>
+</tbody>
+</table>
+<p>OR selalu lebih ekstrim (lebih jauh dari 1.0) dibanding RR ketika prevalensi <em>outcome</em> tinggi. Jangan gunakan “X kali lebih <em>mungkin</em>” untuk OR. Istilah yang tepat adalah: “X kali lebih tinggi <strong><em>odds</em></strong>-nya” (<a href="https://jamanetwork.com/journals/jama/fullarticle/188182">Zhang &amp; Yu, 1998</a>).</p>
 </div>
 </div>
 </div>
@@ -1279,6 +1286,7 @@ Rizqy Amelia Zein
 
 
 </section></section>
+
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
