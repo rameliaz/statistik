@@ -526,13 +526,14 @@ ROC *curve* dan AUC tersedia di jamovi. Pembahasan mendalam tentang analisis ROC
 * Dataset: **Dataset Contoh Regresi Logistik** ([`dataset-dropout.omv`](materials/dataset-dropout.omv))
 
 **Variabel:**
-- `putus_studi`: outcome (0 = lanjut, 1 = putus studi sebelum semester ke-5)
-- `usia`: 18–65 tahun
-- `jenis_kelamin`: 0 = Perempuan, 1 = Laki-laki
-- `metode_kuliah`: 1 = Tatap Muka Terbatas, 2 = Daring, 3 = Mandiri, tanpa kuliah
-- `kecemasan_akademik`: skor kecemasan awal (0–63)
-- `jarak_pokjar_km`: 0.5–50 km
-- `keterlibatan_akademik`: skor keterlibatan (1–7)
+
+* `putus_studi`: outcome (0 = lanjut, 1 = putus studi sebelum semester ke-5)
+* `usia`: 18–65 tahun
+* `jenis_kelamin`: 0 = Perempuan, 1 = Laki-laki
+* `metode_kuliah`: 1 = Tatap Muka Terbatas, 2 = Daring, 3 = Mandiri, tanpa kuliah
+* `kecemasan_akademik`: skor kecemasan awal (0–63)
+* `jarak_pokjar_km`: 0.5–50 km
+* `keterlibatan_akademik`: skor keterlibatan (1–7)
 
 ## Langkah-langkah di `jamovi`
 

@@ -1131,7 +1131,7 @@
     "href": "slides/bagian-3.html#konteks-apa-yang-memprediksi-putus-studi-dropout-dalam-pjj",
     "title": "Regresi Logistik Binomial",
     "section": "Konteks: apa yang memprediksi putus studi (dropout) dalam PJJ?",
-    "text": "Konteks: apa yang memprediksi putus studi (dropout) dalam PJJ?\n\nDataset: Dataset Contoh Regresi Logistik (dataset-dropout.omv)\n\nVariabel: - putus_studi: outcome (0 = lanjut, 1 = putus studi sebelum semester ke-5) - usia: 18–65 tahun - jenis_kelamin: 0 = Perempuan, 1 = Laki-laki - metode_kuliah: 1 = Tatap Muka Terbatas, 2 = Daring, 3 = Mandiri, tanpa kuliah - kecemasan_akademik: skor kecemasan awal (0–63) - jarak_pokjar_km: 0.5–50 km - keterlibatan_akademik: skor keterlibatan (1–7)"
+    "text": "Konteks: apa yang memprediksi putus studi (dropout) dalam PJJ?\n\nDataset: Dataset Contoh Regresi Logistik (dataset-dropout.omv)\n\nVariabel:\n\nputus_studi: outcome (0 = lanjut, 1 = putus studi sebelum semester ke-5)\nusia: 18–65 tahun\njenis_kelamin: 0 = Perempuan, 1 = Laki-laki\nmetode_kuliah: 1 = Tatap Muka Terbatas, 2 = Daring, 3 = Mandiri, tanpa kuliah\nkecemasan_akademik: skor kecemasan awal (0–63)\njarak_pokjar_km: 0.5–50 km\nketerlibatan_akademik: skor keterlibatan (1–7)"
   },
   {
     "objectID": "slides/bagian-3.html#langkah-langkah-di-jamovi",
