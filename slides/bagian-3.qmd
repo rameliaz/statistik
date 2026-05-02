@@ -514,7 +514,7 @@ Dari *confusion matrix* tadi (TP=130, TN=240, FP=30, FN=50, N=450):
 : {tbl-colwidths="[15,85]"}
 
 ::: {.callout-note}
-ROC *curve* dan AUC tersedia di jamovi. Pembahasan mendalam tentang analisis ROC — termasuk PPV/NPV, Youden's Index, dan penentuan *cut-off* optimal — ada di [**Bagian 4**](slides/bagian-4.html).
+ROC *curve* dan AUC tersedia di jamovi. Pembahasan mendalam tentang analisis ROC — termasuk PPV/NPV, Youden's Index, dan penentuan *cut-off* optimal — ada di [**Bagian 4**](/slides/bagian-4.html).
 :::
 
 [^1]: Analoginya — Seseorang menghapal soal dan jawaban dari buku latihan soal CPNS, padahal tidak ada satupun soal yang dia hapalkan sebelumnya keluar di soal ujian yang sebenarnya. 
@@ -523,7 +523,7 @@ ROC *curve* dan AUC tersedia di jamovi. Pembahasan mendalam tentang analisis ROC
 
 ## Konteks: apa yang memprediksi putus studi (_dropout_) dalam PJJ?
 
-* Dataset: **Dataset Contoh Regresi Logistik** ([`dataset-dropout.omv`](materials/dataset-dropout.omv))
+* Dataset: **Dataset Contoh Regresi Logistik** ([`dataset-dropout.omv`](/materials/dataset-dropout.omv))
 
 **Variabel:**
 

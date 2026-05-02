@@ -72,7 +72,7 @@ website:
           - text: "Dataset Contoh Regresi OLS"
             href: materials/dataset-sekolah.omv
           - text: "Dataset Contoh Regresi Logistik"
-            href: materials/dataset-droput.omv
+            href: materials/dataset-dropout.omv
           - text: "Dataset Contoh Analisis ROC"
             href: materials/roc.omv
           - text: "Dataset Contoh EFA-PCA"
