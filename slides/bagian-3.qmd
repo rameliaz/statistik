@@ -217,7 +217,7 @@ Jika CI melewati 1.0, prediktor tidak signifikan secara statistik — misalnya O
 | Prediktor | β | OR | 95% CI | p | Interpretasi |
 |-----------|:---:|:---:|--------|:---:|--------------|
 | Jarak (per 10 km) | 0.49 | 1.63 | [1.21, 2.19] | <.001 | Jarak +10 km → *odds* +63% |
-| Keterlibatan akademik | −0.65 | 0.52 | [0.38, 0.71] | <.001 | Keterlibatan ↑ → *odds* −48% |
+| Keterlibatan akademik | −0.65 | 0.52 | [0.38, 0.71] | <.001 | Keterlibatan ↑ → *odds* −52% |
 | Kecemasan akademik | 0.02 | 1.02 | [0.99, 1.05] | .182 | Tidak signifikan |
 
 : {tbl-colwidths="[30,8,8,20,10,24]"}
@@ -348,7 +348,7 @@ Agar _main effects_ dapat diinterpretasi, maka semua prediktor yang dibuatkan su
 
 **Hasil:** β₃ = −0.08, p = .03 → Interaksi signifikan!
 
-| Subkelompok | Efek jarak pada *odds* putus studi | Interpretasi |
+| Subkelompok | Efek jarak pada odds putus studi | Interpretasi |
 |---------|:----------------------------------:|--------------|
 | Keterlibatan **rendah** | OR = 1.12 per km | Jarak ada efeknya |
 | Keterlibatan **tinggi** | OR = 1.02 per km | Jarak hampir tidak ada efeknya |
