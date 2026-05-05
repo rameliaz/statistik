@@ -1,9 +1,10 @@
 ---
 title: "_Confirmatory Factor Analysis_ (CFA)"
-subtitle: "Statistik dalam Penelitian Psikologi"
+subtitle: "_Multigroup Structural Equation Modeling_: Bagian 4️⃣"
 author: "Rizqy Amelia Zein"
 institute:
   - "[_Departemen Psikologi, Universitas Airlangga_](https://psikologi.unair.ac.id/dosen-rizqy-amelia-zein/)"
+  - "[_Research Data & Methods Team, Center for Advanced Internet Studies_](https://www.cais-research.de/team/rizqy-amelia-zein/)"
 date: today
 format:
   unair-revealjs:
@@ -26,12 +27,14 @@ execute:
 * Variabel indikator (reflektif vs formatif)
 * *Correlated error variances*
 * Metode estimasi
+* *Average Variance Extracted* (AVE) dan validitas diskriminan
 * Menuliskan hasil analisis CFA dalam laporan penelitian
 
 ## Analisis faktor
 
 ::: {.columns}
 ::: {.column width="50%"}
+::: {.incremental}
 
 * Awalnya dikembangkan oleh Charles Spearman (1904) untuk menyelidiki [*g factor theory of intelligence*](https://en.wikipedia.org/wiki/G_factor_(psychometrics))
 
@@ -44,6 +47,7 @@ execute:
 * Mengasumsikan bahwa dua atau lebih *observed variable* memiliki *shared/common variance* (*commonality* atau *common factor*) {{< fa circle-arrow-right >}} ditunjukkan dengan ***factor loading***
 
 :::
+:::
 ::: {.column width="50%"}
 
 ![](https://media.giphy.com/media/l0IyjeA5mmMZjhyPm/giphy.gif)
@@ -51,9 +55,9 @@ execute:
 :::
 :::
 
-## EFA vs CFA
+## EFA vs. CFA
 
-| EFA | CFA |
+| Exploratory Factor Analysis | Confirmatory Factor Analysis |
 | :--- | :--- |
 | Mencari model yang cocok menggambarkan data, sehingga peneliti **mengeksplorasi berbagai pilihan model** yang cocok kemudian mencari rasionalisasi teoritisnya | Menguji hipotesis yang **sudah ditentukan sebelumnya**, sehingga peneliti ingin tahu apakah hipotesisnya didukung oleh data |
 | Jumlah faktor belum diketahui sampai peneliti melakukan analisisnya | Jumlah faktor sudah ditentukan sebelum mengambil data |
@@ -63,6 +67,8 @@ execute:
 
 
 ## *Confirmatory factor analysis*
+
+::: {.incremental}
 
 * Menyediakan solusi untuk mengkoreksi bias karena *measurement error* ketika mengestimasi korelasi antar-variabel
 
@@ -74,20 +80,25 @@ execute:
   - Kalau hal tsb dilakukan, maka tentu saja peneliti akan mendapatkan hasil yang 'sesuai prediksinya'
   - Ingat [Texas Sharpshooter Fallacy](https://en.wikipedia.org/wiki/Texas_sharpshooter_fallacy)
 
+:::
+
 ## _Texas sharpshooter fallacy_
 
 ![](https://i0.wp.com/www.bayesianspectacles.org/wp-content/uploads/2018/01/TexasSharpShooter.png?fit=357%2C300&ssl=1){fig-align="center"}
 
 ## [*Constraining parameter* model](https://psycnet.apa.org/record/2008-06808-005)
 
+::: {.incremental}
+
 * **Membatasi/menentukan varians** untuk setiap **variabel/faktor laten**
   - Dilakukan untuk mengeluarkan ***standardized estimates***
   - *Factor loading* di *z-score*kan
   - Sehingga *default*nya, *mean* variabel laten = 0, *variance* = 1
 
-* Membatasi/menentukan ***error covariance*** untuk setiap variabel/faktor laten
-  - Dilakukan untuk **menentukan *error variance***
+* Membatasi/menentukan ***error covariance*** untuk setiap variabel/faktor laten = 0
+  - Dilakukan agar *error variance* bebas diestimasi
 
+:::
 
 ## Jenis-jenis model pengukuran
 
@@ -101,11 +112,13 @@ Ada tiga macam model pengukuran:
 
 :::: {.columns}
 ::: {.column}
+::: {.incremental}
 
 * Model yang paling moderat dan *default* di berbagai perangkat lunak SEM
 * Asumsinya, **skala, *error variance*, dan *factor loading* boleh berbeda (dibebaskan)**
 * **Koefisien reliabilitas skala** yang mengasumsikan model pengukuran *congeneric* {{< fa circle-arrow-right >}} ω, McDonald's ω, ω total (ω~*t*~), Revelle's ω, *composite reliability*.
 
+:::
 :::
 ::: {.column}
 
@@ -118,6 +131,7 @@ Ada tiga macam model pengukuran:
 
 :::: {.columns}
 ::: {.column}
+::: {.incremental}
 
 * Model yang sedikit lebih rigid daripada *congeneric*
 * Asumsinya, **skala dan *error variance* boleh berbeda (dibebaskan)**, namun ***factor loading* harus sama (dibatasi)**
@@ -125,6 +139,7 @@ Ada tiga macam model pengukuran:
 * **Koefisien reliabilitas**: Formula Rulon, KR-20, Flanagan-Rulon, Guttman's λ~3~, λ~4~, Hoyt *method*
   - Pada kebanyakan kasus, jarang sekali ada kosntruk psikologi yang memenuhi asumsi _tau equivalence_, sehingga **sangat disarankan** untuk tidak menggunakan koefisien reliabilitas yang mengasumsikan _tau equivalence_
 
+:::
 :::
 ::: {.column}
 
@@ -149,19 +164,24 @@ Ada tiga macam model pengukuran:
 :::
 ::::
 
-## Reflektif vs Formatif
+## Model Reflektif vs. Formatif
+
+::: {.incremental}
 
 * Reflektif
   - **Variabel laten menjelaskan** mengapa **variabel indikator bervariasi**
   - Misalnya {{< fa circle-arrow-right >}} individu dengan intelegensi yang tinggi akan mendapatkan nilai yang berbeda dalam tes matematika
-  - Biasanya mengasumsikan bahwa **korelasi antar-variabel indikator = 0**
+  - Biasanya mengasumsikan bahwa **kovariansi antar-*error* (*residual*) variabel indikator = 0** (*local independence*) {{< fa circle-arrow-right >}} artinya, korelasi antar-indikator sepenuhnya dijelaskan oleh variabel laten, tidak ada sumber varians bersama lain di luar model
+  - Mayoritas konstruk psikologis mengasumsikan model pengukuran reflektif
 
 * Formatif
   - **Variabel *observed* menjelaskan** mengapa **variabel laten bervariasi**
   - Misalnya {{< fa circle-arrow-right >}} gengsi sebuah mobil ditentukan oleh usia mobil, kondisi, harga, dan intensitas pemakaian
   - Korelasi antara variabel *observed* tidak diketahui
   - Biasanya digunakan untuk menentukan indeks pada konstruk yang *orthogonal* (contoh {{< fa circle-arrow-right >}} kepribadian pada *Five Factor model*)
+  - Tetapi, **sangat jarang** konstruk psikologi yang mengasumsikan model formatif
 
+:::
 
 ## Model Reflektif
 
@@ -182,6 +202,8 @@ Ada tiga macam model pengukuran:
 
 ## Skor faktor (*factor scores*)
 
+::: {.incremental}
+
 * Apabila kita memiliki informasi tentang *factor loading*, maka kita bisa menghitung *factor scores* {{< fa circle-arrow-right >}} **estimasi** (*fitted*) skor variabel laten
 
 * Caranya dengan mengali *factor loading* dengan skor kasar {{< fa circle-arrow-right >}} metode regresi
@@ -193,7 +215,11 @@ Ada tiga macam model pengukuran:
   - **Metode Bartlett** {{< fa circle-arrow-right >}} mengasumsikan variabel indikator **tidak saling berkorelasi**
   - **Metode Anderson-Rubin** {{< fa circle-arrow-right >}} mengasumsikan variabel indikator **saling berkorelasi**
 
+:::
+
 ## Memilih metode estimasi
+
+::: {.incremental}
 
 * *Maximum Likelihood* {{< fa circle-arrow-right >}} distribusi data (*multivariate*) normal, level pengukuran harus interval/*continuous*, tidak ada data *missing*
   - Gunakan _Robust Maximum Likelihood_ (MLR) ketika asumsi _multivariate normality_ tidak terpenuhi
@@ -203,6 +229,8 @@ Ada tiga macam model pengukuran:
 * *Weighted-least squares* {{< fa circle-arrow-right >}} dapat digunakan pada data kategorikal (nominal dan ordinal), estimasi menggunakan *polychoric correlation matrix*. Varian WLS, misalnya: WLSM, WLSMV, WLSMVS.
 
 * *Diagonally weighted-least squares* {{< fa circle-arrow-right >}} dapat digunakan pada data kategorikal, bekerja dengan baik pada sampel yang relatif kecil dan data yang tidak berdistribusi normal
+
+:::
 
 ::: {.callout-tip}
 #### Tips memilih estimator
@@ -228,10 +256,10 @@ $$AVE = \frac{\sum \lambda_i^2}{\sum \lambda_i^2 + \sum (1 - \lambda_i^2)}$$
 
 ## AVE vs. *Composite Reliability* (CR)
 
-| | AVE | *Composite Reliability* |
+| | AVE | CR |
 | :--- | :--- | :--- |
 | **Yang diukur** | Rasio sinyal-terhadap-total per indikator | Konsistensi internal skala |
-| **Sensitif terhadap** | *Loading* rendah sangat menekan nilai AVE | Kurang sensitif — *loading* yang tinggi dapat mengompensasi *loading* yang rendah |
+| **Sensitif terhadap** | *Loading* rendah sangat menekan nilai AVE | Kurang sensitif — *loading* tinggi dapat mengompensasi |
 | **Kriteria** | ≥ 0.50 | ≥ 0.70 |
 | **Kegunaan utama** | Validitas konvergen & diskriminan | Reliabilitas (alternatif Cronbach's α) |
 
@@ -240,6 +268,58 @@ $$AVE = \frac{\sum \lambda_i^2}{\sum \lambda_i^2 + \sum (1 - \lambda_i^2)}$$
 ::: {.callout-warning}
 #### CR tinggi belum tentu AVE tinggi
 Skala dengan *loading* sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilkan CR ≈ 0.78 namun AVE ≈ 0.36. CR fokus pada *"apakah item-item saling berkaitan?"*; AVE fokus pada *"apakah item-item benar-benar mewakili konstruknya?"*
+:::
+
+## Validitas Diskriminan
+
+::: {.incremental}
+
+* Selain validitas konvergen, AVE juga digunakan untuk menguji **validitas diskriminan** — apakah setiap konstruk benar-benar berbeda dari konstruk lainnya
+
+* **Kriteria Fornell-Larcker**: AVE setiap konstruk harus **lebih besar** dari kuadrat korelasi antara konstruk tersebut dengan konstruk lain mana pun
+
+$$AVE_A > r^2_{AB} \quad \text{dan} \quad AVE_B > r^2_{AB}$$
+
+* Artinya: konstruk A **berbagi lebih banyak varians dengan indikatornya sendiri** daripada dengan konstruk B
+
+* Apabila kriteria ini tidak terpenuhi {{< fa circle-arrow-right >}} kemungkinan dua konstruk terlalu mirip dan **tidak dapat dibedakan** secara empiris
+
+:::
+
+::: {.callout-tip}
+#### Cara membaca tabel Fornell-Larcker
+Letakkan √AVE tiap konstruk di diagonal tabel korelasi antar-konstruk. Validitas diskriminan terpenuhi apabila **nilai diagonal (√AVE) lebih besar dari semua nilai di baris dan kolom yang sama**.
+:::
+
+## Menggunakan `semTools`{{< fa brands r-project >}} untuk menghitung AVE
+
+Setelah menjalankan model CFA, gunakan `semTools::reliability()` untuk menghitung AVE dan CR sekaligus:
+
+```{r}
+#| eval: false
+library(lavaan); library(semTools)
+
+fit <- cfa(model, data = data_anda, estimator = "MLR")
+
+reliability(fit)
+```
+
+## Menggunakan `semTools`{{< fa brands r-project >}} untuk menghitung AVE
+
+Output yang dihasilkan mencakup informasi berikut ini:
+
+| Baris output | Keterangan |
+| :--- | :--- |
+| `alpha` | Cronbach's α (mengasumsikan *tau equivalence*) |
+| `omega` | McDonald's ω (*congeneric*) |
+| `omega2` / `omega3` | Varian ω untuk model yang lebih kompleks |
+| **`ave`** | **AVE per faktor laten** |
+
+: {tbl-colwidths="[30,70]"}
+
+::: {.callout-tip}
+#### `jamovi` menyediakan perhitungan AVE + *composite reliability*
+Karena `SEMLj` juga menggunakan `semTools`, maka AVE tersedia bersama *composite reliability*.
 :::
 
 # Demonstrasi CFA {background-color="#14497F" .center}

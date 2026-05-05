@@ -4,7 +4,7 @@
     "href": "slides/bagian-8.html#outline",
     "title": "Confirmatory Factor Analysis (CFA)",
     "section": "Outline",
-    "text": "Outline\n\nDefinisi factor analysis\nExploratory vs confirmatory factor analysis\nKapan menggunakan CFA?\nConstraining parameter model\nModel pengukuran (paralel, tau equivalence, dan congeneric)\nVariabel indikator (reflektif vs formatif)\nCorrelated error variances\nMetode estimasi\nMenuliskan hasil analisis CFA dalam laporan penelitian"
+    "text": "Outline\n\nDefinisi factor analysis\nExploratory vs confirmatory factor analysis\nKapan menggunakan CFA?\nConstraining parameter model\nModel pengukuran (paralel, tau equivalence, dan congeneric)\nVariabel indikator (reflektif vs formatif)\nCorrelated error variances\nMetode estimasi\nAverage Variance Extracted (AVE) dan validitas diskriminan\nMenuliskan hasil analisis CFA dalam laporan penelitian"
   },
   {
     "objectID": "slides/bagian-8.html#analisis-faktor",
@@ -14,11 +14,11 @@
     "text": "Analisis faktor\n\n\n\nAwalnya dikembangkan oleh Charles Spearman (1904) untuk menyelidiki g factor theory of intelligence\nTerdiri dari:\n\nExploratory factor analysis (EFA)\nConfirmatory factor analysis (CFA)\n\nAnalisis faktor digunakan untuk menguji model common variance\nMengasumsikan bahwa dua atau lebih observed variable memiliki shared/common variance (commonality atau common factor)  ditunjukkan dengan factor loading"
   },
   {
-    "objectID": "slides/bagian-8.html#efa-vs-cfa",
-    "href": "slides/bagian-8.html#efa-vs-cfa",
+    "objectID": "slides/bagian-8.html#efa-vs.-cfa",
+    "href": "slides/bagian-8.html#efa-vs.-cfa",
     "title": "Confirmatory Factor Analysis (CFA)",
-    "section": "EFA vs CFA",
-    "text": "EFA vs CFA\n\n\n\n\n\n\n\nEFA\nCFA\n\n\n\n\nMencari model yang cocok menggambarkan data, sehingga peneliti mengeksplorasi berbagai pilihan model yang cocok kemudian mencari rasionalisasi teoritisnya\nMenguji hipotesis yang sudah ditentukan sebelumnya, sehingga peneliti ingin tahu apakah hipotesisnya didukung oleh data\n\n\nJumlah faktor belum diketahui sampai peneliti melakukan analisisnya\nJumlah faktor sudah ditentukan sebelum mengambil data\n\n\nPeneliti tidak memiliki model yang dihipotesiskan a priori\nPeneliti sudah memiliki model hipotesis yang ditentukan a priori"
+    "section": "EFA vs. CFA",
+    "text": "EFA vs. CFA\n\n\n\n\n\n\n\nExploratory Factor Analysis\nConfirmatory Factor Analysis\n\n\n\n\nMencari model yang cocok menggambarkan data, sehingga peneliti mengeksplorasi berbagai pilihan model yang cocok kemudian mencari rasionalisasi teoritisnya\nMenguji hipotesis yang sudah ditentukan sebelumnya, sehingga peneliti ingin tahu apakah hipotesisnya didukung oleh data\n\n\nJumlah faktor belum diketahui sampai peneliti melakukan analisisnya\nJumlah faktor sudah ditentukan sebelum mengambil data\n\n\nPeneliti tidak memiliki model yang dihipotesiskan a priori\nPeneliti sudah memiliki model hipotesis yang ditentukan a priori"
   },
   {
     "objectID": "slides/bagian-8.html#confirmatory-factor-analysis",
@@ -39,7 +39,7 @@
     "href": "slides/bagian-8.html#constraining-parameter-model",
     "title": "Confirmatory Factor Analysis (CFA)",
     "section": "Constraining parameter model",
-    "text": "Constraining parameter model\n\nMembatasi/menentukan varians untuk setiap variabel/faktor laten\n\nDilakukan untuk mengeluarkan standardized estimates\nFactor loading di z-scorekan\nSehingga defaultnya, mean variabel laten = 0, variance = 1\n\nMembatasi/menentukan error covariance untuk setiap variabel/faktor laten\n\nDilakukan untuk menentukan error variance"
+    "text": "Constraining parameter model\n\nMembatasi/menentukan varians untuk setiap variabel/faktor laten\n\nDilakukan untuk mengeluarkan standardized estimates\nFactor loading di z-scorekan\nSehingga defaultnya, mean variabel laten = 0, variance = 1\n\nMembatasi/menentukan error covariance untuk setiap variabel/faktor laten = 0\n\nDilakukan agar error variance bebas diestimasi"
   },
   {
     "objectID": "slides/bagian-8.html#jenis-jenis-model-pengukuran",
@@ -70,11 +70,11 @@
     "text": "Model parallel\n\n\n\nModel yang paling rigid\nAsumsinya, skala, error variance, dan factor loading harus sama (dibatasi)\n\nKoefisien reliabilitas: Spearman-Brown’s Formula, Standardized α."
   },
   {
-    "objectID": "slides/bagian-8.html#reflektif-vs-formatif",
-    "href": "slides/bagian-8.html#reflektif-vs-formatif",
+    "objectID": "slides/bagian-8.html#model-reflektif-vs.-formatif",
+    "href": "slides/bagian-8.html#model-reflektif-vs.-formatif",
     "title": "Confirmatory Factor Analysis (CFA)",
-    "section": "Reflektif vs Formatif",
-    "text": "Reflektif vs Formatif\n\nReflektif\n\nVariabel laten menjelaskan mengapa variabel indikator bervariasi\nMisalnya  individu dengan intelegensi yang tinggi akan mendapatkan nilai yang berbeda dalam tes matematika\nBiasanya mengasumsikan bahwa korelasi antar-variabel indikator = 0\n\nFormatif\n\nVariabel observed menjelaskan mengapa variabel laten bervariasi\nMisalnya  gengsi sebuah mobil ditentukan oleh usia mobil, kondisi, harga, dan intensitas pemakaian\nKorelasi antara variabel observed tidak diketahui\nBiasanya digunakan untuk menentukan indeks pada konstruk yang orthogonal (contoh  kepribadian pada Five Factor model)"
+    "section": "Model Reflektif vs. Formatif",
+    "text": "Model Reflektif vs. Formatif\n\nReflektif\n\nVariabel laten menjelaskan mengapa variabel indikator bervariasi\nMisalnya  individu dengan intelegensi yang tinggi akan mendapatkan nilai yang berbeda dalam tes matematika\nBiasanya mengasumsikan bahwa kovariansi antar-error (residual) variabel indikator = 0 (local independence)  artinya, korelasi antar-indikator sepenuhnya dijelaskan oleh variabel laten, tidak ada sumber varians bersama lain di luar model\nMayoritas konstruk psikologis mengasumsikan model pengukuran reflektif\n\nFormatif\n\nVariabel observed menjelaskan mengapa variabel laten bervariasi\nMisalnya  gengsi sebuah mobil ditentukan oleh usia mobil, kondisi, harga, dan intensitas pemakaian\nKorelasi antara variabel observed tidak diketahui\nBiasanya digunakan untuk menentukan indeks pada konstruk yang orthogonal (contoh  kepribadian pada Five Factor model)\nTetapi, sangat jarang konstruk psikologi yang mengasumsikan model formatif"
   },
   {
     "objectID": "slides/bagian-8.html#model-reflektif",
@@ -123,7 +123,28 @@
     "href": "slides/bagian-8.html#ave-vs.-composite-reliability-cr",
     "title": "Confirmatory Factor Analysis (CFA)",
     "section": "AVE vs. Composite Reliability (CR)",
-    "text": "AVE vs. Composite Reliability (CR)\n\n\n\n\n\n\n\n\n\nAVE\nComposite Reliability\n\n\n\n\nYang diukur\nRasio sinyal-terhadap-total per indikator\nKonsistensi internal skala\n\n\nSensitif terhadap\nLoading rendah sangat menekan nilai AVE\nKurang sensitif — loading yang tinggi dapat mengompensasi loading yang rendah\n\n\nKriteria\n≥ 0.50\n≥ 0.70\n\n\nKegunaan utama\nValiditas konvergen & diskriminan\nReliabilitas (alternatif Cronbach’s α)\n\n\n\n\n\n\n\n\n\nCR tinggi belum tentu AVE tinggi\n\n\nSkala dengan loading sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilkan CR ≈ 0.78 namun AVE ≈ 0.36. CR fokus pada “apakah item-item saling berkaitan?”; AVE fokus pada “apakah item-item benar-benar mewakili konstruknya?”"
+    "text": "AVE vs. Composite Reliability (CR)\n\n\n\n\n\n\n\n\n\nAVE\nCR\n\n\n\n\nYang diukur\nRasio sinyal-terhadap-total per indikator\nKonsistensi internal skala\n\n\nSensitif terhadap\nLoading rendah sangat menekan nilai AVE\nKurang sensitif — loading tinggi dapat mengompensasi\n\n\nKriteria\n≥ 0.50\n≥ 0.70\n\n\nKegunaan utama\nValiditas konvergen & diskriminan\nReliabilitas (alternatif Cronbach’s α)\n\n\n\n\n\n\n\n\n\nCR tinggi belum tentu AVE tinggi\n\n\nSkala dengan loading sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilkan CR ≈ 0.78 namun AVE ≈ 0.36. CR fokus pada “apakah item-item saling berkaitan?”; AVE fokus pada “apakah item-item benar-benar mewakili konstruknya?”"
+  },
+  {
+    "objectID": "slides/bagian-8.html#validitas-diskriminan",
+    "href": "slides/bagian-8.html#validitas-diskriminan",
+    "title": "Confirmatory Factor Analysis (CFA)",
+    "section": "Validitas Diskriminan",
+    "text": "Validitas Diskriminan\n\nSelain validitas konvergen, AVE juga digunakan untuk menguji validitas diskriminan — apakah setiap konstruk benar-benar berbeda dari konstruk lainnya\nKriteria Fornell-Larcker: AVE setiap konstruk harus lebih besar dari kuadrat korelasi antara konstruk tersebut dengan konstruk lain mana pun\n\n\\[AVE_A &gt; r^2_{AB} \\quad \\text{dan} \\quad AVE_B &gt; r^2_{AB}\\]\n\nArtinya: konstruk A berbagi lebih banyak varians dengan indikatornya sendiri daripada dengan konstruk B\nApabila kriteria ini tidak terpenuhi  kemungkinan dua konstruk terlalu mirip dan tidak dapat dibedakan secara empiris\n\n\n\n\n\n\n\nCara membaca tabel Fornell-Larcker\n\n\nLetakkan √AVE tiap konstruk di diagonal tabel korelasi antar-konstruk. Validitas diskriminan terpenuhi apabila nilai diagonal (√AVE) lebih besar dari semua nilai di baris dan kolom yang sama."
+  },
+  {
+    "objectID": "slides/bagian-8.html#menggunakan-semtoolsb58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320722d70726f6a656374203e7d7d-untuk-menghitung-ave",
+    "href": "slides/bagian-8.html#menggunakan-semtoolsb58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320722d70726f6a656374203e7d7d-untuk-menghitung-ave",
+    "title": "Confirmatory Factor Analysis (CFA)",
+    "section": "Menggunakan semTools untuk menghitung AVE",
+    "text": "Menggunakan semTools untuk menghitung AVE\nSetelah menjalankan model CFA, gunakan semTools::reliability() untuk menghitung AVE dan CR sekaligus:\n\nlibrary(lavaan); library(semTools)\n\nfit &lt;- cfa(model, data = data_anda, estimator = \"MLR\")\n\nreliability(fit)"
+  },
+  {
+    "objectID": "slides/bagian-8.html#menggunakan-semtoolsb58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320722d70726f6a656374203e7d7d-untuk-menghitung-ave-1",
+    "href": "slides/bagian-8.html#menggunakan-semtoolsb58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206272616e647320722d70726f6a656374203e7d7d-untuk-menghitung-ave-1",
+    "title": "Confirmatory Factor Analysis (CFA)",
+    "section": "Menggunakan semTools untuk menghitung AVE",
+    "text": "Menggunakan semTools untuk menghitung AVE\nOutput yang dihasilkan mencakup informasi berikut ini:\n\n\n\n\n\n\n\nBaris output\nKeterangan\n\n\n\n\nalpha\nCronbach’s α (mengasumsikan tau equivalence)\n\n\nomega\nMcDonald’s ω (congeneric)\n\n\nomega2 / omega3\nVarian ω untuk model yang lebih kompleks\n\n\nave\nAVE per faktor laten\n\n\n\n\n\n\n\n\n\njamovi menyediakan perhitungan AVE + composite reliability\n\n\nKarena SEMLj juga menggunakan semTools, maka AVE tersedia bersama composite reliability."
   },
   {
     "objectID": "slides/bagian-8.html#latihan-mandiri-4-mencoba-confirmatory-factor-analysis",
@@ -529,7 +550,7 @@
     "href": "slides/bagian-2.html#kekuatan-dan-arah-korelasi-1",
     "title": "Regresi Linear (Ordinary Least Square)",
     "section": "Kekuatan dan arah korelasi 1️⃣",
-    "text": "Kekuatan dan arah korelasi 1️⃣\nKorelasi yang tampak pada scatterplot tadi dapat dikonseptualisasikan dengan lebih jelas dengan menghitung koefisien korelasi, yang mengimplikasikan kekuatan hubungan.\n\nPearson’s r misalnya, biasanya ditulis dengan rxy, sedangkan Spearman’s ρ ditulis rs.\nBerkisar antara -1 s/d 1\n-1 artinya korelasi negatif sempurna, 1 artinya korelasi positif sempurna\nKoefisien korelasi Pearson’s r atau Spearman’s ρ dihitung dari kovarians (covariance/average cross product dari dua variabel).\n\nDua variabel yang sama sekali tak berkorelasi, maka kovarians nol."
+    "text": "Kekuatan dan arah korelasi 1️⃣\nKorelasi yang tampak pada scatterplot tadi dapat dikonseptualisasikan dengan lebih jelas dengan menghitung koefisien korelasi, yang mengimplikasikan kekuatan hubungan.\n\nPearson’s r misalnya, biasanya ditulis dengan rxy, sedangkan Spearman’s ρ ditulis rs.\nBerkisar antara -1 s/d 1\n-1 artinya korelasi negatif sempurna, 1 artinya korelasi positif sempurna\nKoefisien korelasi Pearson’s r dihitung dari kovarians (covariance/average cross product) dari dua variabel, sedangkan Spearman’s ρ dihitung dari kovarians peringkat (rank) kedua variabel — bukan nilai aslinya\n\nDua variabel yang sama sekali tak berkorelasi, maka kovarians nol"
   },
   {
     "objectID": "slides/bagian-2.html#kekuatan-dan-arah-korelasi-2",
@@ -690,7 +711,7 @@
     "href": "slides/bagian-2.html#model-comparison",
     "title": "Regresi Linear (Ordinary Least Square)",
     "section": "Model comparison",
-    "text": "Model comparison\n\n\nKetika dibandingkan, Model 1 dan Model 2 berbeda signifikan (F(1,397) = 29.5, p = .001). ΔR2 = .122, artinya selisih R2 Model 1 dan Model 2 = .128 atau R2 naik sebesar 12.8%\nCoba perhatikan Residuals Model 1 dengan Model 2"
+    "text": "Model comparison\n\n\nKetika dibandingkan, Model 1 dan Model 2 berbeda signifikan (F(1,397) = 29.5, p = .001). ΔR2 = .128, artinya selisih R2 Model 1 dan Model 2 = .128 atau R2 naik sebesar 12.8%\nCoba perhatikan Residuals Model 1 dengan Model 2"
   },
   {
     "objectID": "slides/bagian-2.html#koefisien-model-2",
@@ -718,7 +739,7 @@
     "href": "slides/bagian-2.html#diagnostik-kolinearitas",
     "title": "Regresi Linear (Ordinary Least Square)",
     "section": "Diagnostik kolinearitas",
-    "text": "Diagnostik kolinearitas\n\n\n\nDapat dideteksi dengan melakukan analisis melihat variance inflated factors (VIF)\n\nBila VIF &lt; 5, maka multi-kolinearitas tidak terjadi\n\nPenelitian longitudinal punya potensi terjadinya autokorelasi (residual time 1 dan time 2 berkorelasi)\n\nDapat dicek dengan tes Durbin-Watson\nBila nilai p analisis autokorelasi &gt; .05, maka autokorelasi residual tidak terjadi\nUmumnya, untuk data cross-sectional, autokorelasi tidak terlalu relevan"
+    "text": "Diagnostik kolinearitas\n\n\n\nDapat dideteksi dengan melakukan analisis melihat variance inflated factors (VIF)\n\nBila VIF &lt; 5, maka multi-kolinearitas tidak terjadi\n\nPenelitian longitudinal punya potensi terjadinya autokorelasi (residual time 1 dan time 2 berkorelasi)\n\nDapat dicek dengan tes Durbin-Watson (nilai statistik DW berkisar 0–4; nilai ~2 artinya tidak ada autokorelasi, &lt; 2 autokorelasi positif, &gt; 2 autokorelasi negatif)\nBeberapa perangkat lunak melaporkan nilai p untuk tes ini; bila p &gt; .05, autokorelasi residual tidak terjadi\nUmumnya, untuk data cross-sectional, autokorelasi tidak terlalu relevan"
   },
   {
     "objectID": "slides/bagian-2.html#bagaimana-melaporkannya",
