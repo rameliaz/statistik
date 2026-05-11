@@ -202,7 +202,7 @@ Korelasi yang tampak pada _scatterplot_ tadi dapat dikonseptualisasikan dengan l
 
 * Merupakan kelanjutan yang lebih kompleks dari _Pearson's_ r
 * Ide dasarnya adalah menyusun persamaan garis yang dapat digunakan untuk **memperkirakan** nilai Y ketika nilai X diketahui
-  - Contohnya, kita memiliki hipotesis bahwa **kemandirian** berkorelasi positif dan sedang dengan **neuroticism** dan **trust** dan memang menemukan korelasi antara keduanya
+  - Contohnya, kita memiliki hipotesis bahwa **kemandirian** berkorelasi dengan **neuroticism** (negatif) dan **trust** (positif) dan memang menemukan korelasi antara keduanya
   - Namun dengan regresi, kita bisa _mengestimasi_ tingkat kemandirian anak, ketika hanya informasi mengenai _neuroticism_ dan _trust_ yang tersedia.
 * OLS bekerja dengan pendekatan _least square_, artinya mencari **jumlah kuadrat terkecil** antara garis regresi (nilai Y yang diperkirakan oleh model) dengan nilai Y yang diobservasi.
 

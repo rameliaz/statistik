@@ -564,7 +564,7 @@
     "href": "slides/bagian-2.html#regresi-linear",
     "title": "Regresi Linear (Ordinary Least Square)",
     "section": "Regresi linear",
-    "text": "Regresi linear\n\n\n\nMerupakan kelanjutan yang lebih kompleks dari Pearson’s r\nIde dasarnya adalah menyusun persamaan garis yang dapat digunakan untuk memperkirakan nilai Y ketika nilai X diketahui\n\nContohnya, kita memiliki hipotesis bahwa kemandirian berkorelasi positif dan sedang dengan neuroticism dan trust dan memang menemukan korelasi antara keduanya\nNamun dengan regresi, kita bisa mengestimasi tingkat kemandirian anak, ketika hanya informasi mengenai neuroticism dan trust yang tersedia.\n\nOLS bekerja dengan pendekatan least square, artinya mencari jumlah kuadrat terkecil antara garis regresi (nilai Y yang diperkirakan oleh model) dengan nilai Y yang diobservasi."
+    "text": "Regresi linear\n\n\n\nMerupakan kelanjutan yang lebih kompleks dari Pearson’s r\nIde dasarnya adalah menyusun persamaan garis yang dapat digunakan untuk memperkirakan nilai Y ketika nilai X diketahui\n\nContohnya, kita memiliki hipotesis bahwa kemandirian berkorelasi dengan neuroticism (negatif) dan trust (positif) dan memang menemukan korelasi antara keduanya\nNamun dengan regresi, kita bisa mengestimasi tingkat kemandirian anak, ketika hanya informasi mengenai neuroticism dan trust yang tersedia.\n\nOLS bekerja dengan pendekatan least square, artinya mencari jumlah kuadrat terkecil antara garis regresi (nilai Y yang diperkirakan oleh model) dengan nilai Y yang diobservasi."
   },
   {
     "objectID": "slides/bagian-2.html#persamaan-garis-regresi",
