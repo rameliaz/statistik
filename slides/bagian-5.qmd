@@ -27,16 +27,25 @@ execute:
 * Pilihan perangkat lunak
 * Cakupan materi dan keterbatasannya
 
-# Psikologi mengukur hal-hal yang tidak bisa dilihat {background-color="#14497F" .center}
+# Psikologi dan variabel laten {background-color="#14497F" .center}
 
 ## Psikologi vs. Fisika
 
+::: {.columns}
+::: {.column}
+::: {.incremental}
+
+* Fisika mengukur massa, kecepatan, suhu — semuanya bisa diobservasi, diukur, dan dikuantifikasi langsung dengan alat ukur.
+* Psikologi mengukur **kecemasan**, **kepribadian**, **motivasi** — konstruk "ghaib" yang tidak bisa ditimbang atau diukur dengan penggaris.
+* Pertanyaannya: bagaimana kita tahu bahwa alat ukur yang kita gunakan benar-benar mengukur konstruk yang dimaksud?
+
+:::
+:::
+::: {.column}
+
 ![](https://media.giphy.com/media/3o7TKSjRrfIPjeiVyM/giphy.gif){fig-align="center" width="55%"}
 
-::: {.incremental}
-* Fisika mengukur massa, kecepatan, suhu — semuanya bisa dikuantifikasi langsung dengan alat fisik.
-* Psikologi mengukur **kecemasan**, **kepribadian**, **motivasi** — konstruk yang tidak bisa ditimbang atau diukur dengan penggaris.
-* Pertanyaannya: bagaimana kita tahu bahwa alat ukur kita benar-benar mengukur konstruk yang dimaksud?
+:::
 :::
 
 ## Contoh variabel laten dalam psikologi
@@ -44,11 +53,11 @@ execute:
 ::: {.incremental}
 * **Kecemasan** — tidak bisa diobservasi langsung, tetapi bisa diinferensi (i.e., disimpulkan) dari detak jantung cepat, telapak tangan berkeringat, sulit konsentrasi, dan laporan subjektif individu.
 
-* **Kepribadian (Big 5)** — *Openness*, *Conscientiousness*, *Extraversion*, *Agreeableness*, *Neuroticism* merupakan konstruk laten yang diukur melalui respon terhadap item-item pernyataan.
+* **Kepribadian (Big 5, *five factor model*)** — *Openness*, *Conscientiousness*, *Extraversion*, *Agreeableness*, *Neuroticism* merupakan konstruk laten yang diukur melalui respon terhadap *item*-*item* pernyataan dalam skala Likert.
 
 * **Prestasi belajar** — tidak sepenuhnya tercermin dari nilai ujian saja; ada faktor *measurement error* dalam setiap tes.
 
-* Semua konstruk ini disebut **variabel laten** (*latent variable*): variabel yang **tidak dapat diamati secara langsung**, tetapi dapat diinferensi dari variabel lain yang bisa diukur (*observed variables*).
+* Semua konstruk ini disebut **variabel laten** (*latent variable*): variabel yang **tidak dapat diamati secara langsung**, tetapi dapat diinferensi dari variabel lain yang bisa diukur langsung (*observed variables*).
 :::
 
 ## Variabel *observed* vs variabel *laten*
@@ -71,7 +80,7 @@ execute:
 :::
 ::: {.column width="45%"}
 
-![](libs/observed-latent.png){fig-align="center" width="90%"}
+![](libs/observed-latent.png){fig-align="center" width="75%"}
 
 :::
 ::::
@@ -80,7 +89,7 @@ execute:
 
 ## *Classical Test Theory*: X = T + E
 
-* Psikometri klasik mengasumsikan bahwa setiap **skor observasi** (*observed score*, **X**) terdiri atas dua komponen:
+* ... mengasumsikan bahwa setiap **skor observasi** (*observed score*, **X**) terdiri atas dua komponen:
 
 $$X = T + E$$
 
@@ -89,8 +98,7 @@ $$X = T + E$$
 * **E** (*error*): *measurement error* — semua *noise* yang membuat skor observasi menyimpang dari skor murni.
   - Kondisi fisik/kesehatan partisipan saat mengisi kuesioner
   - Ambiguitas item pernyataan
-  - Perubahan suasana hati sesaat (*state*)
-  - Faktor situasional lainnya
+  - Perubahan suasana hati sesaat (*state*)... dan faktor situasional lainnya
 :::
 
 ::: {.callout-tip}
@@ -107,6 +115,10 @@ $$\sigma^2_X = \sigma^2_T + \sigma^2_E$$
 * **Reliabilitas** (ρ) didefinisikan sebagai proporsi varians *true score* terhadap varians total:
 
 $$\rho_{XX'} = \frac{\sigma^2_T}{\sigma^2_X} = \frac{\sigma^2_T}{\sigma^2_T + \sigma^2_E}$$
+
+## Interpretasi Reliabilitas: seberapa besar T dalam X?
+
+Berikut ini adalah *rule of thumb* dalam menginterpretasi koefisien reliabilitas.
 
 | Reliabilitas (α atau ω) | Interpretasi |
 |-------------------------|--------------|
@@ -128,21 +140,21 @@ $$r_{XY} = r_{T_X T_Y} \times \sqrt{\rho_{XX'} \times \rho_{YY'}}$$
 
 ::: {.callout-warning}
 #### *Attenuation bias*
-Semakin rendah reliabilitas alat ukur, semakin besar distorsi (*noise*) pada estimasi korelasi. Ini berarti *measurement error* yang tinggi akan membuat kita *underestimate* kekuatan hubungan antar-variabel yang sesungguhnya.
+Semakin rendah reliabilitas alat ukur, semakin besar distorsi (*noise*) pada estimasi korelasi. Ini berarti *measurement error* yang tinggi akan membuat kita meng*underestimate* kekuatan hubungan antar-variabel yang sesungguhnya.
 :::
 
 ## Implikasi *attenuation bias*
 
-**Contoh nyata**: Misalkan korelasi *true scores* antara kecemasan dan prokrastinasi adalah **0.60**. Tetapi skala kecemasan yang digunakan memiliki reliabilitas **0.70** dan skala prokrastinasi **0.65**.
+**Contohnya**: Misalkan korelasi *true scores* antara kecemasan dan prokrastinasi adalah **0.60**. Tetapi skala kecemasan yang digunakan memiliki reliabilitas **0.70** dan skala prokrastinasi **0.65**.
 
 Korelasi yang akan kita temukan di data:
 
 $$r_{XY} = 0.60 \times \sqrt{0.70 \times 0.65} = 0.60 \times 0.674 = \mathbf{0.40}$$
 
 ::: {.incremental}
-* Dengan kata lain, kita akan **melaporkan korelasi 0.40** padahal hubungan yang sesungguhnya adalah **0.60**. Perbedaan ini sangat substansial!
+* Dengan kata lain, kita akan **melaporkan korelasi 0.40** padahal hubungan yang sesungguhnya adalah ~**0.60**. Perbedaan ini lumayan substansial.
 * Ini juga berdampak pada ***effect size*** dalam regresi: koefisien regresi (β) pun ikut teratenuasi.
-* Oleh karena itu, kita membutuhkan model statistik yang secara eksplisit **memodelkan dan mengontrol *measurement error***. Inilah kegunaan utama *latent variable modeling*.
+* Oleh karena itu, kita membutuhkan model statistik yang secara eksplisit **memodelkan dan mengontrol *measurement error***, dan inilah peran utama *latent variable modeling*.
 :::
 
 ::: {.callout-tip}
@@ -162,13 +174,15 @@ Korelasi *true scores* dapat diestimasi dari korelasi *observed scores* dengan *
 | **SEM** | Hubungan antar faktor laten + model pengukuran | Menguji hubungan antara variabel laten sesuai yang dihipotesiskan oleh teori |
 
 ::: {.callout-note}
+#### Penjelasannya
 Keempat model ini membentuk **satu kontinum** dari yang paling sederhana (CTT) ke yang paling kompleks (SEM). Setiap model yang lebih kompleks *mengandung* logika model sebelumnya.
 :::
 
 ## Apa yang EFA dan CFA tambahkan dibandingkan CTT?
 
 ::: {.incremental}
-* **CTT** bekerja di level *item* — hanya bisa menghitung reliabilitas dan korelasi item-total. CTT tidak menguji apakah item-item tersebut memang mengukur konstruk laten yang sama.
+* **CTT** bekerja di level *item* — hanya bisa menghitung reliabilitas dan korelasi item-total. 
+  - CTT tidak menguji apakah item-item tersebut memang mengukur konstruk laten yang sama.
 
 * **EFA** (*Exploratory Factor Analysis*) memungkinkan kita untuk *menemukan* struktur faktor laten dari data. Berguna saat teori belum terlalu matang bukti empirisnya atau sedang dalam tahap eksplorasi.
 
@@ -194,11 +208,17 @@ Keempat model ini membentuk **satu kontinum** dari yang paling sederhana (CTT) k
 
 * **Model reflektif**: variabel **laten menyebabkan** indikator bervariasi.
   - Jika depresi seseorang meningkat → skor pada item "saya merasa sedih", "saya kehilangan minat", "saya sulit tidur" *semuanya* akan meningkat.
-  - Indikator harus saling berkorelasi tinggi — mereka semua "mencerminkan" konstruk yang sama.
+  - Indikator harus saling berkorelasi — mereka semua "mencerminkan" konstruk yang sama.
+  - Tetapi, korelasi ini harus dijelaskan seluruhnya oleh faktor laten/konstruk yang diukur oleh indikator-indikator tsb.
 
 * **Model formatif**: indikator **membentuk/mendefinisikan** variabel laten.
   - "Status sosioekonomi" dibentuk oleh pendidikan, pendapatan, dan pekerjaan — menaikkan pendidikan tidak otomatis menaikkan pendapatan.
   - Indikator tidak harus saling berkorelasi.
+:::
+
+::: {.callout-warning}
+#### Mengapa ini penting?
+Mayoritas konstruk psikologi menggunakan model **reflektif**, misalnya: skala kepribadian, kecemasan, depresi, dll. Menggunakan model formatif untuk konstruk reflektif (atau sebaliknya) adalah kesalahan konseptual yang serius.
 :::
 
 ## Reflektif vs. Formatif: visualisasi
@@ -220,11 +240,6 @@ Keempat model ini membentuk **satu kontinum** dari yang paling sederhana (CTT) k
 :::
 :::
 
-::: {.callout-warning}
-#### Mengapa ini penting?
-Mayoritas konstruk psikologi menggunakan model **reflektif**, misalnya: skala kepribadian, kecemasan, depresi, dll. Menggunakan model formatif untuk konstruk reflektif (atau sebaliknya) adalah kesalahan konseptual yang serius.
-:::
-
 # Perangkat lunak {background-color="#14497F" .center}
 
 ## Pilihan perangkat lunak
@@ -239,11 +254,6 @@ Mayoritas konstruk psikologi menggunakan model **reflektif**, misalnya: skala ke
 * **`semopy`** di {{< fa brands python >}} — alternatif di {{< fa brands python >}}, *coding style* mirip `lavaan`.
 
 * **`Mplus`** — perangkat lunak komersial dengan fitur lebih lengkap (termasuk *power analysis* dan simulasi), tetapi *proprietary* (berbayar).
-:::
-
-::: {.callout-tip}
-#### Untuk workshop ini
-Kita akan menggunakan **jamovi** dengan *module* **SEMLj**. Untuk analisis yang lebih lanjut, `lavaan` sangat direkomendasikan.
 :::
 
 ## Ada pertanyaan❓

@@ -23,7 +23,7 @@ execute:
 * *Exploratory Factor Analysis* (EFA)
 * Asumsi & kesiapan data
 * Evaluasi model & pelaporan hasil
-* Demonstrasi di jamovi
+* Demonstrasi di `jamovi`
 
 # Mengapa analisis faktor? {background-color="#14497F" .center}
 
@@ -56,10 +56,10 @@ Koefisien korelasi yang terobservasi selalu lebih kecil dari korelasi sesungguhn
 
 | Model | Pertanyaan yang dijawab | Dalam mata kuliah ini |
 |-------|-------------------------|-------------------|
-| **CTT** | "Seberapa reliabel skor total ini?" | Bagian 5 |
+| **CTT** | "Seberapa reliabel skor total ini?" | [Bagian 5](/docs/slides/bagian-5.html) |
 | **EFA** | "Berapa faktor laten yang mendasari *item*-*item* ini?" | **Bagian 7** |
-| **CFA** | "Apakah struktur faktor yang saya hipotesiskan sesuai dengan data?" | Bagian 8 |
-| **SEM** | "Bagaimana faktor-faktor laten saling mempengaruhi?" | Tidak dibahas. [Klik disini apabila tertarik belajar mandiri.](https://rameliaz.github.io/mg-sem-workshop/) |
+| **CFA** | "Apakah struktur faktor yang saya hipotesiskan sesuai dengan data?" | [Bagian 8](/docs/slides/bagian-8.html) |
+| **SEM** | "Bagaimana faktor-faktor laten saling mempengaruhi?" | Tidak dibahas dalam mata kuliah ini. [Klik disini apabila tertarik belajar mandiri.](https://rameliaz.github.io/mg-sem-workshop/) |
 
 : {tbl-colwidths="[20,50,30]"}
 
@@ -78,7 +78,7 @@ Koefisien korelasi yang terobservasi selalu lebih kecil dari korelasi sesungguhn
 ...melakukan EFA kemudian CFA pada **sampel yang sama** — kita akan bahas lebih dalam di Bagian 8.
 :::
 
-# *Principal Component Analysis* (PCA) {background-color="#14497F" .center}
+# Principal Component Analysis (PCA) {background-color="#14497F" .center}
 
 ## Apa itu PCA?
 
@@ -114,6 +114,11 @@ Koefisien korelasi yang terobservasi selalu lebih kecil dari korelasi sesungguhn
   - Dataset dengan ratusan/ribuan variabel (misalnya data genomik, *neuroimaging*, NLP) susah dimodelkan langsung
   - PCA meringkas variabel-variabel yang saling berkorelasi menjadi komponen yang independen (*orthogonal*)
   - Komponen ini kemudian digunakan sebagai prediktor dalam regresi atau klasifikasi, supaya mengurangi *overfitting*
+:::
+
+## Aplikasi PCA: reduksi dimensi & *machine learning*
+
+::: {.incremental}
 * **Visualisasi data berdimensi tinggi**
   - Plot PC1 vs PC2 memungkinkan kita melihat "peta" distribusi observasi dalam 2D
 * **_Feature extraction_** dalam *deep learning* dan *computer vision*
@@ -161,7 +166,7 @@ Kaiser *criterion* bisa menghasilkan terlalu banyak komponen — bahkan dari dat
 Rotasi **tidak** mengubah total varians yang dijelaskan, tetapi hanya mendistribusikannya agar lebih mudah diinterpretasikan.
 :::
 
-# *Exploratory Factor Analysis (EFA) {background-color="#14497F" .center}
+# Exploratory Factor Analysis (EFA) {background-color="#14497F" .center}
 
 ## PCA vs. EFA
 
@@ -172,6 +177,13 @@ Rotasi **tidak** mengubah total varians yang dijelaskan, tetapi hanya mendistrib
 | **Model** | Komponen = fungsi linear *item* | *Item* = fungsi linear faktor + *error* |
 | **Varians** | Total varians (termasuk *unique* & *error*) | Hanya *common variance* |
 | **Error pengukuran** | Tidak dimodelkan | Eksplisit dimodelkan per *item* |
+
+: {tbl-colwidths="[28,36,36]"}
+
+## PCA vs. EFA
+
+| Aspek | PCA | EFA |
+|-------|-----|-----|
 | **Faktor/komponen** | Selalu *orthogonal* (tidak berkorelasi) | Boleh berkorelasi (rotasi *oblique*) |
 | **Kapan digunakan** | Tidak ada teori konstruk laten; tujuannya kompresi/menyederhanakan struktur dataset | Ada teori tentang faktor laten; tujuannya mengeksplorasi model pengukuran |
 
@@ -200,6 +212,7 @@ Jika *communalities* tinggi (> 0.60) dan struktur jelas, hasil PCA dan EFA serin
 ::: {.column width="45%"}
 
 ::: {.callout-warning}
+#### Peringatan
 Item dengan h² rendah mengukur sesuatu yang unik apabila dibandingkan dengan *item* lain.
 
 Evaluasi ulang redaksi (*wording*) *item* tersebut sebelum memutuskan untuk menghapus _item_.
@@ -216,9 +229,9 @@ Evaluasi ulang redaksi (*wording*) *item* tersebut sebelum memutuskan untuk meng
 * ***Scree plot*** — visual dan intuitif, tapi subjektif. Dua peneliti bisa membaca *scree plot* yang sama secara berbeda.
 
 * ***Parallel analysis*** {{< fa circle-arrow-right >}} **direkomendasikan**
-  - Bandingkan eigenvalue data nyata dengan eigenvalue dari **data acak** (dimensi yang sama)
-  - Pertahankan faktor di mana eigenvalue nyata **>** eigenvalue acak (persentil ke-95)
-  - Paling akurat secara empiris; tidak subjektif ([Hayton, Allen & Scarpello, 2004](https://journals.sagepub.com/doi/abs/10.1177/1094428104263675))
+  - Bandingkan eigenvalue data dengan eigenvalue dari **data acak/simulasi** (dimensi yang sama)
+  - Pertahankan faktor di mana eigenvalue dari data **>** eigenvalue simulasi (persentil ke-95)
+  - Paling akurat secara empiris; mengurangi potensi subjektivitas ([Hayton, Allen & Scarpello, 2004](https://journals.sagepub.com/doi/abs/10.1177/1094428104263675))
 
 * **Teori** — berapa faktor laten yang disebutkan di literatur?
 :::
@@ -248,7 +261,7 @@ Konstruk psikologi hampir **selalu berkorelasi**, misalnya: kelelahan emosional 
 
 | Metode | Asumsi | Kapan digunakan |
 |--------|--------|-----------------|
-| **Minimum Residual (MinRes)** | Tidak diperlukan normalitas | *Default* yang aman untuk data psikologi; meminimalkan residual korelasi |
+| **Minimum Residual (MinRes)** | Tidak diperlukan normalitas | *Default* yang aman untuk data skala psikologi; meminimalkan residual korelasi |
 | **Principal Axis Factoring (PAF)** | Tidak diperlukan normalitas | Data tidak normal; sampel moderat |
 | **Maximum Likelihood (ML)** | Normalitas multivariat | Data mendekati normal; ingin *fit indices* formal (RMSEA, CFI) |
 
@@ -262,7 +275,7 @@ Untuk skala *Likert* yang tidak terlalu juling, **MinRes sudah cukup baik**. Gun
 
 ## *Kaiser-Meyer-Olkin* (KMO)
 
-* Apakah pola korelasi antar *item* cukup kompak untuk analisis faktor?
+* Pertanyaan sentralnya: apakah pola korelasi antar *item* cukup koheren untuk analisis faktor?
 
 | KMO | Interpretasi |
 |-----|:------------:|
@@ -274,10 +287,10 @@ Untuk skala *Likert* yang tidak terlalu juling, **MinRes sudah cukup baik**. Gun
 
 ## Bartlett's *test of sphericity*
 
-* H₀: matriks korelasi = matriks identitas (tidak ada korelasi antar *item*)
+* H₀: matriks korelasi = matriks dengan asumsi *identity* (tidak ada korelasi antar *item* atau korelasi antar*item* = 0)
 * _p_ < .05 {{< fa circle-arrow-right >}} tolak H₀ {{< fa circle-arrow-right >}} ada korelasi yang cukup {{< fa circle-arrow-right >}} EFA layak dilakukan
 
-## Ukuran sampel yang dibutuhkan
+## *Rule of thumb* berapa *sample size* yang dibutuhkan
 
 | N | Keterangan |
 |---|------------|
@@ -289,11 +302,8 @@ Untuk skala *Likert* yang tidak terlalu juling, **MinRes sudah cukup baik**. Gun
 
 * Aturan rasio *item*:partisipan yang **direkomendasikan**: 10:1
   - Contoh: 20 *item* {{< fa circle-arrow-right >}} targetkan N ≥ 200, idealnya N ≥ 300
-
-::: {.callout-caution}
-#### _Rule of Thumb_
-*Loadings* rendah dan *communalities* rendah membutuhkan *N* yang **lebih besar**. Jangan memaksakan analisis faktor pada sampel yang terlalu kecil.
-:::
+* *Loadings* rendah dan *communalities* rendah membutuhkan *N* yang lebih besar 
+  - Jangan memaksakan analisis faktor pada sampel yang terlalu kecil
 
 # Evaluasi & Pelaporan {background-color="#14497F" .center}
 
@@ -301,17 +311,18 @@ Untuk skala *Likert* yang tidak terlalu juling, **MinRes sudah cukup baik**. Gun
 
 ::: {.incremental}
 * **Chi-square (χ²)**: H₀ = model fit sempurna; p > .05 = fit baik
-  - **Masalah**: sangat sensitif terhadap N besar — hampir selalu signifikan jika N > 300, meskipun model sebenarnya baik. Jangan jadikan satu-satunya kriteria.
+  - **Masalah**: sangat sensitif terhadap N besar, sehingga hampir selalu signifikan jika N > 300, meskipun model sebenarnya baik
+  - Oleh karena itu, jangan jadikan satu-satunya kriteria
 
 * **RMSEA** < .05 = sangat baik; .05–.08 = cukup baik; > .10 = tidak dapat diterima
   - Selalu sertakan **90% CI**
 
-* **CFI/TLI** > .95 = baik; > .90 = dapat diterima
+* **CFI/TLI** > .95 = baik; > .90 = model EFA dapat diterima
 :::
 
 ::: {.callout-note}
 #### Catatan
-Ambang batas RMSEA < .06 ([Hu & Bentler, 1999](https://www.tandfonline.com/doi/abs/10.1080/10705519909540118)) sering dikutip, tapi berasal dari kondisi simulasi yang spesifik. Untuk model dengan banyak indikator atau sampel besar, **RMSEA < .08 sudah dapat diterima**, jangan terlalu terpatok pada angka .06.
+Ambang batas RMSEA < .06 ([Hu & Bentler, 1999](https://www.tandfonline.com/doi/abs/10.1080/10705519909540118)) sering dikutip, tapi berasal dari kondisi simulasi yang spesifik. Untuk model dengan banyak indikator atau sampel besar, **RMSEA < .08 sudah dapat diterima**, jangan terlalu kaku mematok *cutoff* pada angka .06.
 :::
 
 ## Reliabilitas: alpha vs. omega
@@ -324,7 +335,7 @@ Ambang batas RMSEA < .06 ([Hu & Bentler, 1999](https://www.tandfonline.com/doi/a
 * Mengukur konsistensi internal
 * Mengasumsikan semua *item* berkontribusi *sama* (*tau-equivalence*)
 * Jika *loadings* berbeda-beda (yang hampir selalu terjadi), α bisa *underestimate* reliabilitas sesungguhnya
-* Sensitif terhadap jumlah *item* — lebih banyak *item* = α lebih tinggi, meskipun *loadings* biasa saja
+* Sensitif terhadap jumlah *item*, lebih banyak *item* = α lebih tinggi, meskipun *loadings* biasa saja
 
 :::
 ::: {.column width="50%"}
@@ -333,7 +344,7 @@ Ambang batas RMSEA < .06 ([Hu & Bentler, 1999](https://www.tandfonline.com/doi/a
 
 * Dihitung langsung dari *factor loadings*
 * Tidak mengasumsikan *tau-equivalence*
-* Lebih akurat ketika *loadings* item tidak setara — yang hampir selalu terjadi pada skala psikologi nyata
+* Lebih akurat ketika *loadings* item tidak setara, yang hampir selalu terjadi pada skala psikologi nyata
 
 :::
 ::::
@@ -388,15 +399,17 @@ Jika ω > α secara substansial, berarti asumsi *tau-equivalence* tidak terpenuh
 * **Pertanyaan penelitian**: berapa dimensi laten yang mendasari *item*-*item* dalam skala *burnout* ini?
 
 **Variabel demografis:**
-- `usia`: 20–35 tahun
-- `jenis_kelamin`: 0 = Perempuan, 1 = Laki-laki
-- `semester`: semester aktif (1–4)
-- `ipk`: Indeks Prestasi Kumulatif (2.00–4.00)
+  - `usia`: 20–35 tahun
+  - `jenis_kelamin`: 0 = Perempuan, 1 = Laki-laki
+  - `semester`: semester aktif (1–4)
+  - `ipk`: Indeks Prestasi Kumulatif (2.00–4.00)
+
+## Konteks: *Burnout* pada mahasiswa
 
 **Variabel item (15 item, skala Likert 1–5):**
-- `ab_ee_1` s.d. `ab_ee_5`: *Emotional Exhaustion* — merasa lelah, terkuras, kehabisan energi karena tuntutan akademik
-- `ab_cy_1` s.d. `ab_cy_5`: *Cynicism* — sikap jarak, tidak peduli, pesimis terhadap studi
-- `ab_ef_1` s.d. `ab_ef_5`: *Academic Efficacy* — keyakinan pada kemampuan akademik diri sendiri (skor tinggi = efikasi tinggi)
+  - `ab_ee_1` s.d. `ab_ee_5`: *Emotional Exhaustion* — merasa lelah, terkuras, kehabisan energi karena tuntutan akademik
+  - `ab_cy_1` s.d. `ab_cy_5`: *Cynicism* — sikap jarak, tidak peduli, pesimis terhadap studi
+  - `ab_ef_1` s.d. `ab_ef_5`: *Academic Efficacy* — keyakinan pada kemampuan akademik diri sendiri (skor tinggi = efikasi tinggi)
 
 ## Langkah-langkah di `jamovi`
 

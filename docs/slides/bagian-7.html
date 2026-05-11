@@ -157,7 +157,7 @@ Rizqy Amelia Zein
 <li><em>Exploratory Factor Analysis</em> (EFA)</li>
 <li>Asumsi &amp; kesiapan data</li>
 <li>Evaluasi model &amp; pelaporan hasil</li>
-<li>Demonstrasi di jamovi</li>
+<li>Demonstrasi di <code>jamovi</code></li>
 </ul>
 </section>
 <section>
@@ -221,7 +221,7 @@ Rizqy Amelia Zein
 <tr class="odd">
 <td><strong>CTT</strong></td>
 <td>“Seberapa reliabel skor total ini?”</td>
-<td>Bagian 5</td>
+<td><a href="..\docs/slides/bagian-5.html">Bagian 5</a></td>
 </tr>
 <tr class="even">
 <td><strong>EFA</strong></td>
@@ -231,12 +231,12 @@ Rizqy Amelia Zein
 <tr class="odd">
 <td><strong>CFA</strong></td>
 <td>“Apakah struktur faktor yang saya hipotesiskan sesuai dengan data?”</td>
-<td>Bagian 8</td>
+<td><a href="..\docs/slides/bagian-8.html">Bagian 8</a></td>
 </tr>
 <tr class="even">
 <td><strong>SEM</strong></td>
 <td>“Bagaimana faktor-faktor laten saling mempengaruhi?”</td>
-<td>Tidak dibahas. <a href="https://rameliaz.github.io/mg-sem-workshop/">Klik disini apabila tertarik belajar mandiri.</a></td>
+<td>Tidak dibahas dalam mata kuliah ini. <a href="https://rameliaz.github.io/mg-sem-workshop/">Klik disini apabila tertarik belajar mandiri.</a></td>
 </tr>
 </tbody>
 </table>
@@ -285,7 +285,7 @@ Rizqy Amelia Zein
 </section></section>
 <section>
 <section id="principal-component-analysis-pca" class="title-slide slide level1 center" data-background-color="#14497F">
-<h1><em>Principal Component Analysis</em> (PCA)</h1>
+<h1>Principal Component Analysis (PCA)</h1>
 
 </section>
 <section id="apa-itu-pca" class="slide level2">
@@ -323,6 +323,11 @@ Rizqy Amelia Zein
 <li class="fragment">PCA meringkas variabel-variabel yang saling berkorelasi menjadi komponen yang independen (<em>orthogonal</em>)</li>
 <li class="fragment">Komponen ini kemudian digunakan sebagai prediktor dalam regresi atau klasifikasi, supaya mengurangi <em>overfitting</em></li>
 </ul></li>
+</ul>
+</section>
+<section id="aplikasi-pca-reduksi-dimensi-machine-learning-1" class="slide level2">
+<h2>Aplikasi PCA: reduksi dimensi &amp; <em>machine learning</em></h2>
+<ul>
 <li class="fragment"><strong>Visualisasi data berdimensi tinggi</strong>
 <ul>
 <li class="fragment">Plot PC1 vs PC2 memungkinkan kita melihat “peta” distribusi observasi dalam 2D</li>
@@ -427,8 +432,8 @@ Rizqy Amelia Zein
 </div>
 </section></section>
 <section>
-<section id="exploratory-factor-analysis-efa-background-color14497f-.center" class="title-slide slide level1 center">
-<h1>*Exploratory Factor Analysis (EFA) {background-color=“#14497F” .center}</h1>
+<section id="exploratory-factor-analysis-efa" class="title-slide slide level1 center" data-background-color="#14497F">
+<h1>Exploratory Factor Analysis (EFA)</h1>
 
 </section>
 <section id="pca-vs.-efa" class="slide level2">
@@ -472,12 +477,31 @@ Rizqy Amelia Zein
 <td>Tidak dimodelkan</td>
 <td>Eksplisit dimodelkan per <em>item</em></td>
 </tr>
-<tr class="even">
+</tbody>
+</table>
+</section>
+<section id="pca-vs.-efa-1" class="slide level2">
+<h2>PCA vs.&nbsp;EFA</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 36%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Aspek</th>
+<th>PCA</th>
+<th>EFA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
 <td><strong>Faktor/komponen</strong></td>
 <td>Selalu <em>orthogonal</em> (tidak berkorelasi)</td>
 <td>Boleh berkorelasi (rotasi <em>oblique</em>)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>Kapan digunakan</strong></td>
 <td>Tidak ada teori konstruk laten; tujuannya kompresi/menyederhanakan struktur dataset</td>
 <td>Ada teori tentang faktor laten; tujuannya mengeksplorasi model pengukuran</td>
@@ -539,7 +563,7 @@ Rizqy Amelia Zein
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Warning</strong></p>
+<p><strong>Peringatan</strong></p>
 </div>
 <div class="callout-content">
 <p>Item dengan h² rendah mengukur sesuatu yang unik apabila dibandingkan dengan <em>item</em> lain.</p>
@@ -556,9 +580,9 @@ Rizqy Amelia Zein
 <li class="fragment"><p><strong><em>Scree plot</em></strong> — visual dan intuitif, tapi subjektif. Dua peneliti bisa membaca <em>scree plot</em> yang sama secara berbeda.</p></li>
 <li class="fragment"><p><strong><em>Parallel analysis</em></strong> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> <strong>direkomendasikan</strong></p>
 <ul>
-<li class="fragment">Bandingkan eigenvalue data nyata dengan eigenvalue dari <strong>data acak</strong> (dimensi yang sama)</li>
-<li class="fragment">Pertahankan faktor di mana eigenvalue nyata <strong>&gt;</strong> eigenvalue acak (persentil ke-95)</li>
-<li class="fragment">Paling akurat secara empiris; tidak subjektif (<a href="https://journals.sagepub.com/doi/abs/10.1177/1094428104263675">Hayton, Allen &amp; Scarpello, 2004</a>)</li>
+<li class="fragment">Bandingkan eigenvalue data dengan eigenvalue dari <strong>data acak/simulasi</strong> (dimensi yang sama)</li>
+<li class="fragment">Pertahankan faktor di mana eigenvalue dari data <strong>&gt;</strong> eigenvalue simulasi (persentil ke-95)</li>
+<li class="fragment">Paling akurat secara empiris; mengurangi potensi subjektivitas (<a href="https://journals.sagepub.com/doi/abs/10.1177/1094428104263675">Hayton, Allen &amp; Scarpello, 2004</a>)</li>
 </ul></li>
 <li class="fragment"><p><strong>Teori</strong> — berapa faktor laten yang disebutkan di literatur?</p></li>
 </ul>
@@ -623,7 +647,7 @@ Rizqy Amelia Zein
 <tr class="odd">
 <td><strong>Minimum Residual (MinRes)</strong></td>
 <td>Tidak diperlukan normalitas</td>
-<td><em>Default</em> yang aman untuk data psikologi; meminimalkan residual korelasi</td>
+<td><em>Default</em> yang aman untuk data skala psikologi; meminimalkan residual korelasi</td>
 </tr>
 <tr class="even">
 <td><strong>Principal Axis Factoring (PAF)</strong></td>
@@ -659,7 +683,7 @@ Rizqy Amelia Zein
 <section id="kaiser-meyer-olkin-kmo" class="slide level2">
 <h2><em>Kaiser-Meyer-Olkin</em> (KMO)</h2>
 <ul>
-<li>Apakah pola korelasi antar <em>item</em> cukup kompak untuk analisis faktor?</li>
+<li>Pertanyaan sentralnya: apakah pola korelasi antar <em>item</em> cukup koheren untuk analisis faktor?</li>
 </ul>
 <table class="caption-top">
 <thead>
@@ -695,12 +719,12 @@ Rizqy Amelia Zein
 <section id="bartletts-test-of-sphericity" class="slide level2">
 <h2>Bartlett’s <em>test of sphericity</em></h2>
 <ul>
-<li>H₀: matriks korelasi = matriks identitas (tidak ada korelasi antar <em>item</em>)</li>
+<li>H₀: matriks korelasi = matriks dengan asumsi <em>identity</em> (tidak ada korelasi antar <em>item</em> atau korelasi antar<em>item</em> = 0)</li>
 <li><em>p</em> &lt; .05 <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> tolak H₀ <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> ada korelasi yang cukup <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> EFA layak dilakukan</li>
 </ul>
 </section>
-<section id="ukuran-sampel-yang-dibutuhkan" class="slide level2">
-<h2>Ukuran sampel yang dibutuhkan</h2>
+<section id="rule-of-thumb-berapa-sample-size-yang-dibutuhkan" class="slide level2">
+<h2><em>Rule of thumb</em> berapa <em>sample size</em> yang dibutuhkan</h2>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -736,20 +760,11 @@ Rizqy Amelia Zein
 <ul>
 <li>Contoh: 20 <em>item</em> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> targetkan N ≥ 200, idealnya N ≥ 300</li>
 </ul></li>
+<li><em>Loadings</em> rendah dan <em>communalities</em> rendah membutuhkan <em>N</em> yang lebih besar
+<ul>
+<li>Jangan memaksakan analisis faktor pada sampel yang terlalu kecil</li>
+</ul></li>
 </ul>
-<div class="callout callout-caution callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong><em>Rule of Thumb</em></strong></p>
-</div>
-<div class="callout-content">
-<p><em>Loadings</em> rendah dan <em>communalities</em> rendah membutuhkan <em>N</em> yang <strong>lebih besar</strong>. Jangan memaksakan analisis faktor pada sampel yang terlalu kecil.</p>
-</div>
-</div>
-</div>
 </section></section>
 <section>
 <section id="evaluasi-pelaporan" class="title-slide slide level1 center" data-background-color="#14497F">
@@ -761,13 +776,14 @@ Rizqy Amelia Zein
 <ul>
 <li class="fragment"><strong>Chi-square (χ²)</strong>: H₀ = model fit sempurna; p &gt; .05 = fit baik
 <ul>
-<li class="fragment"><strong>Masalah</strong>: sangat sensitif terhadap N besar — hampir selalu signifikan jika N &gt; 300, meskipun model sebenarnya baik. Jangan jadikan satu-satunya kriteria.</li>
+<li class="fragment"><strong>Masalah</strong>: sangat sensitif terhadap N besar, sehingga hampir selalu signifikan jika N &gt; 300, meskipun model sebenarnya baik</li>
+<li class="fragment">Oleh karena itu, jangan jadikan satu-satunya kriteria</li>
 </ul></li>
 <li class="fragment"><strong>RMSEA</strong> &lt; .05 = sangat baik; .05–.08 = cukup baik; &gt; .10 = tidak dapat diterima
 <ul>
 <li class="fragment">Selalu sertakan <strong>90% CI</strong></li>
 </ul></li>
-<li class="fragment"><strong>CFI/TLI</strong> &gt; .95 = baik; &gt; .90 = dapat diterima</li>
+<li class="fragment"><strong>CFI/TLI</strong> &gt; .95 = baik; &gt; .90 = model EFA dapat diterima</li>
 </ul>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
@@ -778,7 +794,7 @@ Rizqy Amelia Zein
 <p><strong>Catatan</strong></p>
 </div>
 <div class="callout-content">
-<p>Ambang batas RMSEA &lt; .06 (<a href="https://www.tandfonline.com/doi/abs/10.1080/10705519909540118">Hu &amp; Bentler, 1999</a>) sering dikutip, tapi berasal dari kondisi simulasi yang spesifik. Untuk model dengan banyak indikator atau sampel besar, <strong>RMSEA &lt; .08 sudah dapat diterima</strong>, jangan terlalu terpatok pada angka .06.</p>
+<p>Ambang batas RMSEA &lt; .06 (<a href="https://www.tandfonline.com/doi/abs/10.1080/10705519909540118">Hu &amp; Bentler, 1999</a>) sering dikutip, tapi berasal dari kondisi simulasi yang spesifik. Untuk model dengan banyak indikator atau sampel besar, <strong>RMSEA &lt; .08 sudah dapat diterima</strong>, jangan terlalu kaku mematok <em>cutoff</em> pada angka .06.</p>
 </div>
 </div>
 </div>
@@ -792,14 +808,14 @@ Rizqy Amelia Zein
 <li>Mengukur konsistensi internal</li>
 <li>Mengasumsikan semua <em>item</em> berkontribusi <em>sama</em> (<em>tau-equivalence</em>)</li>
 <li>Jika <em>loadings</em> berbeda-beda (yang hampir selalu terjadi), α bisa <em>underestimate</em> reliabilitas sesungguhnya</li>
-<li>Sensitif terhadap jumlah <em>item</em> — lebih banyak <em>item</em> = α lebih tinggi, meskipun <em>loadings</em> biasa saja</li>
+<li>Sensitif terhadap jumlah <em>item</em>, lebih banyak <em>item</em> = α lebih tinggi, meskipun <em>loadings</em> biasa saja</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><strong>McDonald’s ω (Omega)</strong></p>
 <ul>
 <li>Dihitung langsung dari <em>factor loadings</em></li>
 <li>Tidak mengasumsikan <em>tau-equivalence</em></li>
-<li>Lebih akurat ketika <em>loadings</em> item tidak setara — yang hampir selalu terjadi pada skala psikologi nyata</li>
+<li>Lebih akurat ketika <em>loadings</em> item tidak setara, yang hampir selalu terjadi pada skala psikologi nyata</li>
 </ul>
 </div></div>
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -851,6 +867,9 @@ Rizqy Amelia Zein
 <li><p><strong>Pertanyaan penelitian</strong>: berapa dimensi laten yang mendasari <em>item</em>-<em>item</em> dalam skala <em>burnout</em> ini?</p></li>
 </ul>
 <p><strong>Variabel demografis:</strong> - <code>usia</code>: 20–35 tahun - <code>jenis_kelamin</code>: 0 = Perempuan, 1 = Laki-laki - <code>semester</code>: semester aktif (1–4) - <code>ipk</code>: Indeks Prestasi Kumulatif (2.00–4.00)</p>
+</section>
+<section id="konteks-burnout-pada-mahasiswa-1" class="slide level2">
+<h2>Konteks: <em>Burnout</em> pada mahasiswa</h2>
 <p><strong>Variabel item (15 item, skala Likert 1–5):</strong> - <code>ab_ee_1</code> s.d. <code>ab_ee_5</code>: <em>Emotional Exhaustion</em> — merasa lelah, terkuras, kehabisan energi karena tuntutan akademik - <code>ab_cy_1</code> s.d. <code>ab_cy_5</code>: <em>Cynicism</em> — sikap jarak, tidak peduli, pesimis terhadap studi - <code>ab_ef_1</code> s.d. <code>ab_ef_5</code>: <em>Academic Efficacy</em> — keyakinan pada kemampuan akademik diri sendiri (skor tinggi = efikasi tinggi)</p>
 </section>
 <section id="langkah-langkah-di-jamovi" class="slide level2">

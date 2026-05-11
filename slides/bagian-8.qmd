@@ -326,7 +326,7 @@ Karena `SEMLj` juga menggunakan `semTools`, maka AVE tersedia bersama *composite
 
 [**Unduh Dataset Contoh CFA**](https://rameliaz.github.io/mg-sem-workshop/contoh-cfa.omv)
 
-## Latihan mandiri 4️⃣: Mencoba *confirmatory factor analysis*
+## Latihan mandiri: Mencoba *confirmatory factor analysis*
 
 * Unduh [Dataset Latihan SEM](https://rameliaz.github.io/mg-sem-workshop/materials/dataset-pilpres2024.csv)
 

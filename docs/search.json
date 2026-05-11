@@ -147,11 +147,11 @@
     "text": "Menggunakan semTools untuk menghitung AVE\nOutput yang dihasilkan mencakup informasi berikut ini:\n\n\n\n\n\n\n\nBaris output\nKeterangan\n\n\n\n\nalpha\nCronbach’s α (mengasumsikan tau equivalence)\n\n\nomega\nMcDonald’s ω (congeneric)\n\n\nomega2 / omega3\nVarian ω untuk model yang lebih kompleks\n\n\nave\nAVE per faktor laten\n\n\n\n\n\n\n\n\n\njamovi menyediakan perhitungan AVE + composite reliability\n\n\nKarena SEMLj juga menggunakan semTools, maka AVE tersedia bersama composite reliability."
   },
   {
-    "objectID": "slides/bagian-8.html#latihan-mandiri-4-mencoba-confirmatory-factor-analysis",
-    "href": "slides/bagian-8.html#latihan-mandiri-4-mencoba-confirmatory-factor-analysis",
+    "objectID": "slides/bagian-8.html#latihan-mandiri-mencoba-confirmatory-factor-analysis",
+    "href": "slides/bagian-8.html#latihan-mandiri-mencoba-confirmatory-factor-analysis",
     "title": "Confirmatory Factor Analysis (CFA)",
-    "section": "Latihan mandiri 4️⃣: Mencoba confirmatory factor analysis",
-    "text": "Latihan mandiri 4️⃣: Mencoba confirmatory factor analysis\n\nUnduh Dataset Latihan SEM\nUnduh Kamus Data disini\nLakukan CFA pada skala social dominance orientation\n\nDiukur dengan skala Likert, 6 item dengan 7 pilihan jawaban\n\nLaporkan model fit, factor loading, dan multivariate normality\nLakukan penyesuaian apabila perlu"
+    "section": "Latihan mandiri: Mencoba confirmatory factor analysis",
+    "text": "Latihan mandiri: Mencoba confirmatory factor analysis\n\nUnduh Dataset Latihan SEM\nUnduh Kamus Data disini\nLakukan CFA pada skala social dominance orientation\n\nDiukur dengan skala Likert, 6 item dengan 7 pilihan jawaban\n\nLaporkan model fit, factor loading, dan multivariate normality\nLakukan penyesuaian apabila perlu"
   },
   {
     "objectID": "slides/bagian-8.html#ada-pertanyaan",
@@ -1208,14 +1208,14 @@
     "href": "slides/bagian-5.html#psikologi-vs.-fisika",
     "title": "Pengantar Latent Variable Modeling",
     "section": "Psikologi vs. Fisika",
-    "text": "Psikologi vs. Fisika\n\n\nFisika mengukur massa, kecepatan, suhu — semuanya bisa dikuantifikasi langsung dengan alat fisik.\nPsikologi mengukur kecemasan, kepribadian, motivasi — konstruk yang tidak bisa ditimbang atau diukur dengan penggaris.\nPertanyaannya: bagaimana kita tahu bahwa alat ukur kita benar-benar mengukur konstruk yang dimaksud?"
+    "text": "Psikologi vs. Fisika\n\n\n\nFisika mengukur massa, kecepatan, suhu — semuanya bisa diobservasi, diukur, dan dikuantifikasi langsung dengan alat ukur.\nPsikologi mengukur kecemasan, kepribadian, motivasi — konstruk “ghaib” yang tidak bisa ditimbang atau diukur dengan penggaris.\nPertanyaannya: bagaimana kita tahu bahwa alat ukur yang kita gunakan benar-benar mengukur konstruk yang dimaksud?"
   },
   {
     "objectID": "slides/bagian-5.html#contoh-variabel-laten-dalam-psikologi",
     "href": "slides/bagian-5.html#contoh-variabel-laten-dalam-psikologi",
     "title": "Pengantar Latent Variable Modeling",
     "section": "Contoh variabel laten dalam psikologi",
-    "text": "Contoh variabel laten dalam psikologi\n\nKecemasan — tidak bisa diobservasi langsung, tetapi bisa diinferensi (i.e., disimpulkan) dari detak jantung cepat, telapak tangan berkeringat, sulit konsentrasi, dan laporan subjektif individu.\nKepribadian (Big 5) — Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism merupakan konstruk laten yang diukur melalui respon terhadap item-item pernyataan.\nPrestasi belajar — tidak sepenuhnya tercermin dari nilai ujian saja; ada faktor measurement error dalam setiap tes.\nSemua konstruk ini disebut variabel laten (latent variable): variabel yang tidak dapat diamati secara langsung, tetapi dapat diinferensi dari variabel lain yang bisa diukur (observed variables)."
+    "text": "Contoh variabel laten dalam psikologi\n\nKecemasan — tidak bisa diobservasi langsung, tetapi bisa diinferensi (i.e., disimpulkan) dari detak jantung cepat, telapak tangan berkeringat, sulit konsentrasi, dan laporan subjektif individu.\nKepribadian (Big 5, five factor model) — Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism merupakan konstruk laten yang diukur melalui respon terhadap item-item pernyataan dalam skala Likert.\nPrestasi belajar — tidak sepenuhnya tercermin dari nilai ujian saja; ada faktor measurement error dalam setiap tes.\nSemua konstruk ini disebut variabel laten (latent variable): variabel yang tidak dapat diamati secara langsung, tetapi dapat diinferensi dari variabel lain yang bisa diukur langsung (observed variables)."
   },
   {
     "objectID": "slides/bagian-5.html#variabel-observed-vs-variabel-laten",
@@ -1229,42 +1229,49 @@
     "href": "slides/bagian-5.html#classical-test-theory-x-t-e",
     "title": "Pengantar Latent Variable Modeling",
     "section": "Classical Test Theory: X = T + E",
-    "text": "Classical Test Theory: X = T + E\n\nPsikometri klasik mengasumsikan bahwa setiap skor observasi (observed score, X) terdiri atas dua komponen:\n\n\\[X = T + E\\]\n\nT (true score): skor yang seharusnya diperoleh seseorang apabila pengukuran dilakukan dengan sempurna — bebas dari noise apapun.\nE (error): measurement error — semua noise yang membuat skor observasi menyimpang dari skor murni.\n\nKondisi fisik/kesehatan partisipan saat mengisi kuesioner\nAmbiguitas item pernyataan\nPerubahan suasana hati sesaat (state)\nFaktor situasional lainnya\n\n\n\n\n\n\n\n\nImplikasi penting\n\n\nCTT mengasumsikan bahwa rata-rata error adalah nol (E(e) = 0) dan error tidak berkorelasi dengan skor murni (Cov(T, E) = 0). Artinya, error bersifat stochastic (acak), bukan sistematis."
+    "text": "Classical Test Theory: X = T + E\n\n… mengasumsikan bahwa setiap skor observasi (observed score, X) terdiri atas dua komponen:\n\n\\[X = T + E\\]\n\nT (true score): skor yang seharusnya diperoleh seseorang apabila pengukuran dilakukan dengan sempurna — bebas dari noise apapun.\nE (error): measurement error — semua noise yang membuat skor observasi menyimpang dari skor murni.\n\nKondisi fisik/kesehatan partisipan saat mengisi kuesioner\nAmbiguitas item pernyataan\nPerubahan suasana hati sesaat (state)… dan faktor situasional lainnya\n\n\n\n\n\n\n\n\nImplikasi penting\n\n\nCTT mengasumsikan bahwa rata-rata error adalah nol (E(e) = 0) dan error tidak berkorelasi dengan skor murni (Cov(T, E) = 0). Artinya, error bersifat stochastic (acak), bukan sistematis."
   },
   {
     "objectID": "slides/bagian-5.html#reliabilitas-seberapa-besar-t-dalam-x",
     "href": "slides/bagian-5.html#reliabilitas-seberapa-besar-t-dalam-x",
     "title": "Pengantar Latent Variable Modeling",
     "section": "Reliabilitas: seberapa besar T dalam X?",
-    "text": "Reliabilitas: seberapa besar T dalam X?\n\nApabila X = T + E, maka varians skor observasi (σ²ₓ) juga terdiri atas varians true score (σ²ᴛ) dan varians error (σ²ₑ):\n\n\\[\\sigma^2_X = \\sigma^2_T + \\sigma^2_E\\]\n\nReliabilitas (ρ) didefinisikan sebagai proporsi varians true score terhadap varians total:\n\n\\[\\rho_{XX'} = \\frac{\\sigma^2_T}{\\sigma^2_X} = \\frac{\\sigma^2_T}{\\sigma^2_T + \\sigma^2_E}\\]\n\n\n\nReliabilitas (α atau ω)\nInterpretasi\n\n\n\n\n≥ 0.90\nSangat tinggi — excellent\n\n\n0.80 – 0.89\nTinggi — good\n\n\n0.70 – 0.79\nCukup — acceptable\n\n\n0.60 – 0.69\nSedang — perlu perbaikan\n\n\n&lt; 0.60\nRendah — poor"
+    "text": "Reliabilitas: seberapa besar T dalam X?\n\nApabila X = T + E, maka varians skor observasi (σ²ₓ) juga terdiri atas varians true score (σ²ᴛ) dan varians error (σ²ₑ):\n\n\\[\\sigma^2_X = \\sigma^2_T + \\sigma^2_E\\]\n\nReliabilitas (ρ) didefinisikan sebagai proporsi varians true score terhadap varians total:\n\n\\[\\rho_{XX'} = \\frac{\\sigma^2_T}{\\sigma^2_X} = \\frac{\\sigma^2_T}{\\sigma^2_T + \\sigma^2_E}\\]"
+  },
+  {
+    "objectID": "slides/bagian-5.html#interpretasi-reliabilitas-seberapa-besar-t-dalam-x",
+    "href": "slides/bagian-5.html#interpretasi-reliabilitas-seberapa-besar-t-dalam-x",
+    "title": "Pengantar Latent Variable Modeling",
+    "section": "Interpretasi Reliabilitas: seberapa besar T dalam X?",
+    "text": "Interpretasi Reliabilitas: seberapa besar T dalam X?\nBerikut ini adalah rule of thumb dalam menginterpretasi koefisien reliabilitas.\n\n\n\nReliabilitas (α atau ω)\nInterpretasi\n\n\n\n\n≥ 0.90\nSangat tinggi — excellent\n\n\n0.80 – 0.89\nTinggi — good\n\n\n0.70 – 0.79\nCukup — acceptable\n\n\n0.60 – 0.69\nSedang — perlu perbaikan\n\n\n&lt; 0.60\nRendah — poor"
   },
   {
     "objectID": "slides/bagian-5.html#measurement-error-dan-attenuation-bias",
     "href": "slides/bagian-5.html#measurement-error-dan-attenuation-bias",
     "title": "Pengantar Latent Variable Modeling",
     "section": "Measurement error dan attenuation bias",
-    "text": "Measurement error dan attenuation bias\n\nPersoalannya, kita tidak bisa mengukur T secara langsung, yang kita ukur selalu X (yang sudah “tercemari” oleh error).\nKonsekuensinya, ketika kita mengestimasi korelasi antar-variabel, korelasi yang kita hitung sebenarnya adalah korelasi antar observed scores (rₓᵧ), bukan korelasi antar true scores (rᴛₓᴛᵧ).\nIni menyebabkan bias atenuasi: korelasi yang kita estimasi selalu lebih kecil dari korelasi yang sebenarnya:\n\n\\[r_{XY} = r_{T_X T_Y} \\times \\sqrt{\\rho_{XX'} \\times \\rho_{YY'}}\\]\n\n\n\n\n\n\nAttenuation bias\n\n\nSemakin rendah reliabilitas alat ukur, semakin besar distorsi (noise) pada estimasi korelasi. Ini berarti measurement error yang tinggi akan membuat kita underestimate kekuatan hubungan antar-variabel yang sesungguhnya."
+    "text": "Measurement error dan attenuation bias\n\nPersoalannya, kita tidak bisa mengukur T secara langsung, yang kita ukur selalu X (yang sudah “tercemari” oleh error).\nKonsekuensinya, ketika kita mengestimasi korelasi antar-variabel, korelasi yang kita hitung sebenarnya adalah korelasi antar observed scores (rₓᵧ), bukan korelasi antar true scores (rᴛₓᴛᵧ).\nIni menyebabkan bias atenuasi: korelasi yang kita estimasi selalu lebih kecil dari korelasi yang sebenarnya:\n\n\\[r_{XY} = r_{T_X T_Y} \\times \\sqrt{\\rho_{XX'} \\times \\rho_{YY'}}\\]\n\n\n\n\n\n\nAttenuation bias\n\n\nSemakin rendah reliabilitas alat ukur, semakin besar distorsi (noise) pada estimasi korelasi. Ini berarti measurement error yang tinggi akan membuat kita mengunderestimate kekuatan hubungan antar-variabel yang sesungguhnya."
   },
   {
     "objectID": "slides/bagian-5.html#implikasi-attenuation-bias",
     "href": "slides/bagian-5.html#implikasi-attenuation-bias",
     "title": "Pengantar Latent Variable Modeling",
     "section": "Implikasi attenuation bias",
-    "text": "Implikasi attenuation bias\nContoh nyata: Misalkan korelasi true scores antara kecemasan dan prokrastinasi adalah 0.60. Tetapi skala kecemasan yang digunakan memiliki reliabilitas 0.70 dan skala prokrastinasi 0.65.\nKorelasi yang akan kita temukan di data:\n\\[r_{XY} = 0.60 \\times \\sqrt{0.70 \\times 0.65} = 0.60 \\times 0.674 = \\mathbf{0.40}\\]\n\nDengan kata lain, kita akan melaporkan korelasi 0.40 padahal hubungan yang sesungguhnya adalah 0.60. Perbedaan ini sangat substansial!\nIni juga berdampak pada effect size dalam regresi: koefisien regresi (β) pun ikut teratenuasi.\nOleh karena itu, kita membutuhkan model statistik yang secara eksplisit memodelkan dan mengontrol measurement error. Inilah kegunaan utama latent variable modeling.\n\n\n\n\n\n\n\nKoreksi atenuasi\n\n\nKorelasi true scores dapat diestimasi dari korelasi observed scores dengan koreksi atenuasi: \\(r_{T_X T_Y} = \\frac{r_{XY}}{\\sqrt{\\rho_{XX'} \\times \\rho_{YY'}}}\\)"
+    "text": "Implikasi attenuation bias\nContohnya: Misalkan korelasi true scores antara kecemasan dan prokrastinasi adalah 0.60. Tetapi skala kecemasan yang digunakan memiliki reliabilitas 0.70 dan skala prokrastinasi 0.65.\nKorelasi yang akan kita temukan di data:\n\\[r_{XY} = 0.60 \\times \\sqrt{0.70 \\times 0.65} = 0.60 \\times 0.674 = \\mathbf{0.40}\\]\n\nDengan kata lain, kita akan melaporkan korelasi 0.40 padahal hubungan yang sesungguhnya adalah ~0.60. Perbedaan ini lumayan substansial.\nIni juga berdampak pada effect size dalam regresi: koefisien regresi (β) pun ikut teratenuasi.\nOleh karena itu, kita membutuhkan model statistik yang secara eksplisit memodelkan dan mengontrol measurement error, dan inilah peran utama latent variable modeling.\n\n\n\n\n\n\n\nKoreksi atenuasi\n\n\nKorelasi true scores dapat diestimasi dari korelasi observed scores dengan koreksi atenuasi: \\(r_{T_X T_Y} = \\frac{r_{XY}}{\\sqrt{\\rho_{XX'} \\times \\rho_{YY'}}}\\)"
   },
   {
     "objectID": "slides/bagian-5.html#dari-ctt-ke-sem-satu-keluarga-besar",
     "href": "slides/bagian-5.html#dari-ctt-ke-sem-satu-keluarga-besar",
     "title": "Pengantar Latent Variable Modeling",
     "section": "Dari CTT ke SEM: satu keluarga besar",
-    "text": "Dari CTT ke SEM: satu keluarga besar\n\n\n\n\n\n\n\n\nModel\nApa yang dimodelkan\nKelebihan dibanding CTT\n\n\n\n\nCTT\nX = T + E (level item)\nFondasi — sederhana, tapi tidak menguji struktur laten\n\n\nEFA\nStruktur faktor laten yang tidak diketahui\nMenemukan faktor laten dari suatu dataset (data-driven)\n\n\nCFA\nStruktur faktor laten yang sudah dihipotesiskan oleh teori\nMenguji validitas konstruk berdasarkan teori\n\n\nSEM\nHubungan antar faktor laten + model pengukuran\nMenguji hubungan antara variabel laten sesuai yang dihipotesiskan oleh teori\n\n\n\n\n\n\n\n\n\nNote\n\n\nKeempat model ini membentuk satu kontinum dari yang paling sederhana (CTT) ke yang paling kompleks (SEM). Setiap model yang lebih kompleks mengandung logika model sebelumnya."
+    "text": "Dari CTT ke SEM: satu keluarga besar\n\n\n\n\n\n\n\n\nModel\nApa yang dimodelkan\nKelebihan dibanding CTT\n\n\n\n\nCTT\nX = T + E (level item)\nFondasi — sederhana, tapi tidak menguji struktur laten\n\n\nEFA\nStruktur faktor laten yang tidak diketahui\nMenemukan faktor laten dari suatu dataset (data-driven)\n\n\nCFA\nStruktur faktor laten yang sudah dihipotesiskan oleh teori\nMenguji validitas konstruk berdasarkan teori\n\n\nSEM\nHubungan antar faktor laten + model pengukuran\nMenguji hubungan antara variabel laten sesuai yang dihipotesiskan oleh teori\n\n\n\n\n\n\n\n\n\nPenjelasannya\n\n\nKeempat model ini membentuk satu kontinum dari yang paling sederhana (CTT) ke yang paling kompleks (SEM). Setiap model yang lebih kompleks mengandung logika model sebelumnya."
   },
   {
     "objectID": "slides/bagian-5.html#apa-yang-efa-dan-cfa-tambahkan-dibandingkan-ctt",
     "href": "slides/bagian-5.html#apa-yang-efa-dan-cfa-tambahkan-dibandingkan-ctt",
     "title": "Pengantar Latent Variable Modeling",
     "section": "Apa yang EFA dan CFA tambahkan dibandingkan CTT?",
-    "text": "Apa yang EFA dan CFA tambahkan dibandingkan CTT?\n\nCTT bekerja di level item — hanya bisa menghitung reliabilitas dan korelasi item-total. CTT tidak menguji apakah item-item tersebut memang mengukur konstruk laten yang sama.\nEFA (Exploratory Factor Analysis) memungkinkan kita untuk menemukan struktur faktor laten dari data. Berguna saat teori belum terlalu matang bukti empirisnya atau sedang dalam tahap eksplorasi.\nCFA (Confirmatory Factor Analysis) memungkinkan kita untuk menguji apakah struktur faktor yang dihipotesiskan berdasarkan teori didukung oleh data. Ini adalah uji validitas konstruk yang paling ketat.\nSEM menggabungkan model pengukuran (CFA) dengan model struktural (regresi/jalur) untuk menguji hipotesis teoritis yang kompleks sekaligus mengontrol measurement error."
+    "text": "Apa yang EFA dan CFA tambahkan dibandingkan CTT?\n\nCTT bekerja di level item — hanya bisa menghitung reliabilitas dan korelasi item-total.\n\nCTT tidak menguji apakah item-item tersebut memang mengukur konstruk laten yang sama.\n\nEFA (Exploratory Factor Analysis) memungkinkan kita untuk menemukan struktur faktor laten dari data. Berguna saat teori belum terlalu matang bukti empirisnya atau sedang dalam tahap eksplorasi.\nCFA (Confirmatory Factor Analysis) memungkinkan kita untuk menguji apakah struktur faktor yang dihipotesiskan berdasarkan teori didukung oleh data. Ini adalah uji validitas konstruk yang paling ketat.\nSEM menggabungkan model pengukuran (CFA) dengan model struktural (regresi/jalur) untuk menguji hipotesis teoritis yang kompleks sekaligus mengontrol measurement error."
   },
   {
     "objectID": "slides/bagian-5.html#komponen-model-sem",
@@ -1285,21 +1292,21 @@
     "href": "slides/bagian-5.html#dua-cara-variabel-laten-bekerja",
     "title": "Pengantar Latent Variable Modeling",
     "section": "Dua cara variabel laten “bekerja”",
-    "text": "Dua cara variabel laten “bekerja”\n\nDalam latent variable modeling, ada dua cara konseptual yang berbeda untuk memahami hubungan antara variabel laten dan indikatornya.\nModel reflektif: variabel laten menyebabkan indikator bervariasi.\n\nJika depresi seseorang meningkat → skor pada item “saya merasa sedih”, “saya kehilangan minat”, “saya sulit tidur” semuanya akan meningkat.\nIndikator harus saling berkorelasi tinggi — mereka semua “mencerminkan” konstruk yang sama.\n\nModel formatif: indikator membentuk/mendefinisikan variabel laten.\n\n“Status sosioekonomi” dibentuk oleh pendidikan, pendapatan, dan pekerjaan — menaikkan pendidikan tidak otomatis menaikkan pendapatan.\nIndikator tidak harus saling berkorelasi."
+    "text": "Dua cara variabel laten “bekerja”\n\nDalam latent variable modeling, ada dua cara konseptual yang berbeda untuk memahami hubungan antara variabel laten dan indikatornya.\nModel reflektif: variabel laten menyebabkan indikator bervariasi.\n\nJika depresi seseorang meningkat → skor pada item “saya merasa sedih”, “saya kehilangan minat”, “saya sulit tidur” semuanya akan meningkat.\nIndikator harus saling berkorelasi — mereka semua “mencerminkan” konstruk yang sama.\nTetapi, korelasi ini harus dijelaskan seluruhnya oleh faktor laten/konstruk yang diukur oleh indikator-indikator tsb.\n\nModel formatif: indikator membentuk/mendefinisikan variabel laten.\n\n“Status sosioekonomi” dibentuk oleh pendidikan, pendapatan, dan pekerjaan — menaikkan pendidikan tidak otomatis menaikkan pendapatan.\nIndikator tidak harus saling berkorelasi.\n\n\n\n\n\n\n\n\nMengapa ini penting?\n\n\nMayoritas konstruk psikologi menggunakan model reflektif, misalnya: skala kepribadian, kecemasan, depresi, dll. Menggunakan model formatif untuk konstruk reflektif (atau sebaliknya) adalah kesalahan konseptual yang serius."
   },
   {
     "objectID": "slides/bagian-5.html#reflektif-vs.-formatif-visualisasi",
     "href": "slides/bagian-5.html#reflektif-vs.-formatif-visualisasi",
     "title": "Pengantar Latent Variable Modeling",
     "section": "Reflektif vs. Formatif: visualisasi",
-    "text": "Reflektif vs. Formatif: visualisasi\n\n\n\n\n\n\n\nReflektif: panah dari laten ke indikator\n\n\n\n\n\n\nFormatif: panah dari indikator ke laten\n\n\n\n\n\n\n\nMengapa ini penting?\n\n\nMayoritas konstruk psikologi menggunakan model reflektif, misalnya: skala kepribadian, kecemasan, depresi, dll. Menggunakan model formatif untuk konstruk reflektif (atau sebaliknya) adalah kesalahan konseptual yang serius."
+    "text": "Reflektif vs. Formatif: visualisasi\n\n\n\n\n\n\n\nReflektif: panah dari laten ke indikator\n\n\n\n\n\n\nFormatif: panah dari indikator ke laten"
   },
   {
     "objectID": "slides/bagian-5.html#pilihan-perangkat-lunak",
     "href": "slides/bagian-5.html#pilihan-perangkat-lunak",
     "title": "Pengantar Latent Variable Modeling",
     "section": "Pilihan perangkat lunak",
-    "text": "Pilihan perangkat lunak\n\njamovi — antarmuka grafis (point-and-click), gratis dan open source. Digunakan dalam workshop ini. Module SEMLj menyediakan EFA dan CFA dengan antarmuka yang user-friendly.\nJASP — mirip jamovi, antarmuka grafis, gratis. Juga mendukung EFA dan CFA.\nlavaan di  — package  yang paling lengkap dan fleksibel untuk SEM, CFA, EFA. Membutuhkan coding, tetapi memberikan kendali penuh atas spesifikasi model.\nsemopy di  — alternatif di , coding style mirip lavaan.\nMplus — perangkat lunak komersial dengan fitur lebih lengkap (termasuk power analysis dan simulasi), tetapi proprietary (berbayar).\n\n\n\n\n\n\n\nUntuk workshop ini\n\n\nKita akan menggunakan jamovi dengan module SEMLj. Untuk analisis yang lebih lanjut, lavaan sangat direkomendasikan."
+    "text": "Pilihan perangkat lunak\n\njamovi — antarmuka grafis (point-and-click), gratis dan open source. Digunakan dalam workshop ini. Module SEMLj menyediakan EFA dan CFA dengan antarmuka yang user-friendly.\nJASP — mirip jamovi, antarmuka grafis, gratis. Juga mendukung EFA dan CFA.\nlavaan di  — package  yang paling lengkap dan fleksibel untuk SEM, CFA, EFA. Membutuhkan coding, tetapi memberikan kendali penuh atas spesifikasi model.\nsemopy di  — alternatif di , coding style mirip lavaan.\nMplus — perangkat lunak komersial dengan fitur lebih lengkap (termasuk power analysis dan simulasi), tetapi proprietary (berbayar)."
   },
   {
     "objectID": "slides/bagian-5.html#ada-pertanyaan",
@@ -1334,7 +1341,7 @@
     "href": "slides/bagian-7.html#keluarga-model-variabel-laten",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Keluarga model variabel laten",
-    "text": "Keluarga model variabel laten\n\n\n\n\n\n\n\n\nModel\nPertanyaan yang dijawab\nDalam mata kuliah ini\n\n\n\n\nCTT\n“Seberapa reliabel skor total ini?”\nBagian 5\n\n\nEFA\n“Berapa faktor laten yang mendasari item-item ini?”\nBagian 7\n\n\nCFA\n“Apakah struktur faktor yang saya hipotesiskan sesuai dengan data?”\nBagian 8\n\n\nSEM\n“Bagaimana faktor-faktor laten saling mempengaruhi?”\nTidak dibahas. Klik disini apabila tertarik belajar mandiri."
+    "text": "Keluarga model variabel laten\n\n\n\n\n\n\n\n\nModel\nPertanyaan yang dijawab\nDalam mata kuliah ini\n\n\n\n\nCTT\n“Seberapa reliabel skor total ini?”\nBagian 5\n\n\nEFA\n“Berapa faktor laten yang mendasari item-item ini?”\nBagian 7\n\n\nCFA\n“Apakah struktur faktor yang saya hipotesiskan sesuai dengan data?”\nBagian 8\n\n\nSEM\n“Bagaimana faktor-faktor laten saling mempengaruhi?”\nTidak dibahas dalam mata kuliah ini. Klik disini apabila tertarik belajar mandiri."
   },
   {
     "objectID": "slides/bagian-7.html#efa-vs.-cfa",
@@ -1355,7 +1362,14 @@
     "href": "slides/bagian-7.html#aplikasi-pca-reduksi-dimensi-machine-learning",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Aplikasi PCA: reduksi dimensi & machine learning",
-    "text": "Aplikasi PCA: reduksi dimensi & machine learning\n\nPCA adalah salah satu teknik unsupervised learning yang paling banyak digunakan dalam machine learning\nReduksi dimensi sebelum pemodelan prediktif\n\nDataset dengan ratusan/ribuan variabel (misalnya data genomik, neuroimaging, NLP) susah dimodelkan langsung\nPCA meringkas variabel-variabel yang saling berkorelasi menjadi komponen yang independen (orthogonal)\nKomponen ini kemudian digunakan sebagai prediktor dalam regresi atau klasifikasi, supaya mengurangi overfitting\n\nVisualisasi data berdimensi tinggi\n\nPlot PC1 vs PC2 memungkinkan kita melihat “peta” distribusi observasi dalam 2D\n\nFeature extraction dalam deep learning dan computer vision\n\nMisalnya: ribuan piksel wajah → beberapa principal components sebagai input model\n\n\n\n\n\n\n\n\nAplikasi EFA\n\n\nEFA memiliki aplikasi yang berbeda, bukan untuk reduksi dimensi secara umum, melainkan khusus untuk mengidentifikasi konstruk laten dalam pengembangan dan validasi skala psikologi."
+    "text": "Aplikasi PCA: reduksi dimensi & machine learning\n\nPCA adalah salah satu teknik unsupervised learning yang paling banyak digunakan dalam machine learning\nReduksi dimensi sebelum pemodelan prediktif\n\nDataset dengan ratusan/ribuan variabel (misalnya data genomik, neuroimaging, NLP) susah dimodelkan langsung\nPCA meringkas variabel-variabel yang saling berkorelasi menjadi komponen yang independen (orthogonal)\nKomponen ini kemudian digunakan sebagai prediktor dalam regresi atau klasifikasi, supaya mengurangi overfitting"
+  },
+  {
+    "objectID": "slides/bagian-7.html#aplikasi-pca-reduksi-dimensi-machine-learning-1",
+    "href": "slides/bagian-7.html#aplikasi-pca-reduksi-dimensi-machine-learning-1",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "Aplikasi PCA: reduksi dimensi & machine learning",
+    "text": "Aplikasi PCA: reduksi dimensi & machine learning\n\nVisualisasi data berdimensi tinggi\n\nPlot PC1 vs PC2 memungkinkan kita melihat “peta” distribusi observasi dalam 2D\n\nFeature extraction dalam deep learning dan computer vision\n\nMisalnya: ribuan piksel wajah → beberapa principal components sebagai input model\n\n\n\n\n\n\n\n\nAplikasi EFA\n\n\nEFA memiliki aplikasi yang berbeda, bukan untuk reduksi dimensi secara umum, melainkan khusus untuk mengidentifikasi konstruk laten dalam pengembangan dan validasi skala psikologi."
   },
   {
     "objectID": "slides/bagian-7.html#eigenvalue-scree-plot",
@@ -1383,21 +1397,28 @@
     "href": "slides/bagian-7.html#pca-vs.-efa",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "PCA vs. EFA",
-    "text": "PCA vs. EFA\n\n\n\n\n\n\n\n\nAspek\nPCA\nEFA\n\n\n\n\nTujuan\nReduksi dimensi; feature extraction\nIdentifikasi & validasi konstruk laten\n\n\nPosisi dalam ML\nUnsupervised learning — preprocessing sebelum model prediktif\nPsikometri — pengembangan & validasi skala\n\n\nModel\nKomponen = fungsi linear item\nItem = fungsi linear faktor + error\n\n\nVarians\nTotal varians (termasuk unique & error)\nHanya common variance\n\n\nError pengukuran\nTidak dimodelkan\nEksplisit dimodelkan per item\n\n\nFaktor/komponen\nSelalu orthogonal (tidak berkorelasi)\nBoleh berkorelasi (rotasi oblique)\n\n\nKapan digunakan\nTidak ada teori konstruk laten; tujuannya kompresi/menyederhanakan struktur dataset\nAda teori tentang faktor laten; tujuannya mengeksplorasi model pengukuran\n\n\n\n\n\n\n\n\n\nTip\n\n\nJika communalities tinggi (&gt; 0.60) dan struktur jelas, hasil PCA dan EFA sering hampir identik secara praktis. Perbedaan muncul ketika communalities rendah atau struktur kompleks."
+    "text": "PCA vs. EFA\n\n\n\n\n\n\n\n\nAspek\nPCA\nEFA\n\n\n\n\nTujuan\nReduksi dimensi; feature extraction\nIdentifikasi & validasi konstruk laten\n\n\nPosisi dalam ML\nUnsupervised learning — preprocessing sebelum model prediktif\nPsikometri — pengembangan & validasi skala\n\n\nModel\nKomponen = fungsi linear item\nItem = fungsi linear faktor + error\n\n\nVarians\nTotal varians (termasuk unique & error)\nHanya common variance\n\n\nError pengukuran\nTidak dimodelkan\nEksplisit dimodelkan per item"
+  },
+  {
+    "objectID": "slides/bagian-7.html#pca-vs.-efa-1",
+    "href": "slides/bagian-7.html#pca-vs.-efa-1",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "PCA vs. EFA",
+    "text": "PCA vs. EFA\n\n\n\n\n\n\n\n\nAspek\nPCA\nEFA\n\n\n\n\nFaktor/komponen\nSelalu orthogonal (tidak berkorelasi)\nBoleh berkorelasi (rotasi oblique)\n\n\nKapan digunakan\nTidak ada teori konstruk laten; tujuannya kompresi/menyederhanakan struktur dataset\nAda teori tentang faktor laten; tujuannya mengeksplorasi model pengukuran\n\n\n\n\n\n\n\n\n\nTip\n\n\nJika communalities tinggi (&gt; 0.60) dan struktur jelas, hasil PCA dan EFA sering hampir identik secara praktis. Perbedaan muncul ketika communalities rendah atau struktur kompleks."
   },
   {
     "objectID": "slides/bagian-7.html#komunalitas-h²-keunikan",
     "href": "slides/bagian-7.html#komunalitas-h²-keunikan",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Komunalitas (h²) & keunikan",
-    "text": "Komunalitas (h²) & keunikan\n\n\n\nKomunalitas (h²): proporsi varians item yang dijelaskan oleh semua faktor laten yang teridentifikasi\nKeunikan (u²): 1 − h² = varians yang tidak dijelaskan oleh faktor manapun (varians spesifik i.e., unique variance + error)\n\n\n\n\n\n\n\n\nh²\nInterpretasi\n\n\n\n\n&gt; 0.50\nBaik \n\n\n0.30–0.50\nCukup, tetapi perlu evaluasi\n\n\n&lt; 0.30\nBermasalah, cek wordingnya dan pertimbangkan menghapus item\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\nItem dengan h² rendah mengukur sesuatu yang unik apabila dibandingkan dengan item lain.\nEvaluasi ulang redaksi (wording) item tersebut sebelum memutuskan untuk menghapus item."
+    "text": "Komunalitas (h²) & keunikan\n\n\n\nKomunalitas (h²): proporsi varians item yang dijelaskan oleh semua faktor laten yang teridentifikasi\nKeunikan (u²): 1 − h² = varians yang tidak dijelaskan oleh faktor manapun (varians spesifik i.e., unique variance + error)\n\n\n\n\n\n\n\n\nh²\nInterpretasi\n\n\n\n\n&gt; 0.50\nBaik \n\n\n0.30–0.50\nCukup, tetapi perlu evaluasi\n\n\n&lt; 0.30\nBermasalah, cek wordingnya dan pertimbangkan menghapus item\n\n\n\n\n\n\n\n\n\n\nPeringatan\n\n\nItem dengan h² rendah mengukur sesuatu yang unik apabila dibandingkan dengan item lain.\nEvaluasi ulang redaksi (wording) item tersebut sebelum memutuskan untuk menghapus item."
   },
   {
     "objectID": "slides/bagian-7.html#menentukan-jumlah-faktor",
     "href": "slides/bagian-7.html#menentukan-jumlah-faktor",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Menentukan jumlah faktor",
-    "text": "Menentukan jumlah faktor\n\nKaiser criterion (λ &gt; 1) — mudah, tapi konsisten over-extract. Gunakan sebagai acuan awal saja.\nScree plot — visual dan intuitif, tapi subjektif. Dua peneliti bisa membaca scree plot yang sama secara berbeda.\nParallel analysis  direkomendasikan\n\nBandingkan eigenvalue data nyata dengan eigenvalue dari data acak (dimensi yang sama)\nPertahankan faktor di mana eigenvalue nyata &gt; eigenvalue acak (persentil ke-95)\nPaling akurat secara empiris; tidak subjektif (Hayton, Allen & Scarpello, 2004)\n\nTeori — berapa faktor laten yang disebutkan di literatur?\n\n\n\n\n\n\n\nPraktik terbaik\n\n\nGunakan kombinasi parallel analysis + scree plot + teori sebagai dasar keputusan. Di jamovi, parallel analysis tersedia langsung di menu EFA."
+    "text": "Menentukan jumlah faktor\n\nKaiser criterion (λ &gt; 1) — mudah, tapi konsisten over-extract. Gunakan sebagai acuan awal saja.\nScree plot — visual dan intuitif, tapi subjektif. Dua peneliti bisa membaca scree plot yang sama secara berbeda.\nParallel analysis  direkomendasikan\n\nBandingkan eigenvalue data dengan eigenvalue dari data acak/simulasi (dimensi yang sama)\nPertahankan faktor di mana eigenvalue dari data &gt; eigenvalue simulasi (persentil ke-95)\nPaling akurat secara empiris; mengurangi potensi subjektivitas (Hayton, Allen & Scarpello, 2004)\n\nTeori — berapa faktor laten yang disebutkan di literatur?\n\n\n\n\n\n\n\nPraktik terbaik\n\n\nGunakan kombinasi parallel analysis + scree plot + teori sebagai dasar keputusan. Di jamovi, parallel analysis tersedia langsung di menu EFA."
   },
   {
     "objectID": "slides/bagian-7.html#rotasi-dalam-efa",
@@ -1411,42 +1432,42 @@
     "href": "slides/bagian-7.html#metode-ekstraksi-di-jamovi",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Metode ekstraksi di jamovi",
-    "text": "Metode ekstraksi di jamovi\n\n\n\n\n\n\n\n\nMetode\nAsumsi\nKapan digunakan\n\n\n\n\nMinimum Residual (MinRes)\nTidak diperlukan normalitas\nDefault yang aman untuk data psikologi; meminimalkan residual korelasi\n\n\nPrincipal Axis Factoring (PAF)\nTidak diperlukan normalitas\nData tidak normal; sampel moderat\n\n\nMaximum Likelihood (ML)\nNormalitas multivariat\nData mendekati normal; ingin fit indices formal (RMSEA, CFI)\n\n\n\n\n\n\n\n\n\nNote\n\n\nUntuk skala Likert yang tidak terlalu juling, MinRes sudah cukup baik. Gunakan ML jika ingin melaporkan fit indices secara formal dalam artikel."
+    "text": "Metode ekstraksi di jamovi\n\n\n\n\n\n\n\n\nMetode\nAsumsi\nKapan digunakan\n\n\n\n\nMinimum Residual (MinRes)\nTidak diperlukan normalitas\nDefault yang aman untuk data skala psikologi; meminimalkan residual korelasi\n\n\nPrincipal Axis Factoring (PAF)\nTidak diperlukan normalitas\nData tidak normal; sampel moderat\n\n\nMaximum Likelihood (ML)\nNormalitas multivariat\nData mendekati normal; ingin fit indices formal (RMSEA, CFI)\n\n\n\n\n\n\n\n\n\nNote\n\n\nUntuk skala Likert yang tidak terlalu juling, MinRes sudah cukup baik. Gunakan ML jika ingin melaporkan fit indices secara formal dalam artikel."
   },
   {
     "objectID": "slides/bagian-7.html#kaiser-meyer-olkin-kmo",
     "href": "slides/bagian-7.html#kaiser-meyer-olkin-kmo",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Kaiser-Meyer-Olkin (KMO)",
-    "text": "Kaiser-Meyer-Olkin (KMO)\n\nApakah pola korelasi antar item cukup kompak untuk analisis faktor?\n\n\n\n\nKMO\nInterpretasi\n\n\n\n\n&gt; 0.90\nMarvelous\n\n\n0.80–0.90\nMeritorious\n\n\n0.70–0.80\nMiddling\n\n\n0.60–0.70\nMediocre\n\n\n&lt; 0.50\nTidak layak — jangan lanjutkan EFA"
+    "text": "Kaiser-Meyer-Olkin (KMO)\n\nPertanyaan sentralnya: apakah pola korelasi antar item cukup koheren untuk analisis faktor?\n\n\n\n\nKMO\nInterpretasi\n\n\n\n\n&gt; 0.90\nMarvelous\n\n\n0.80–0.90\nMeritorious\n\n\n0.70–0.80\nMiddling\n\n\n0.60–0.70\nMediocre\n\n\n&lt; 0.50\nTidak layak — jangan lanjutkan EFA"
   },
   {
     "objectID": "slides/bagian-7.html#bartletts-test-of-sphericity",
     "href": "slides/bagian-7.html#bartletts-test-of-sphericity",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Bartlett’s test of sphericity",
-    "text": "Bartlett’s test of sphericity\n\nH₀: matriks korelasi = matriks identitas (tidak ada korelasi antar item)\np &lt; .05  tolak H₀  ada korelasi yang cukup  EFA layak dilakukan"
+    "text": "Bartlett’s test of sphericity\n\nH₀: matriks korelasi = matriks dengan asumsi identity (tidak ada korelasi antar item atau korelasi antaritem = 0)\np &lt; .05  tolak H₀  ada korelasi yang cukup  EFA layak dilakukan"
   },
   {
-    "objectID": "slides/bagian-7.html#ukuran-sampel-yang-dibutuhkan",
-    "href": "slides/bagian-7.html#ukuran-sampel-yang-dibutuhkan",
+    "objectID": "slides/bagian-7.html#rule-of-thumb-berapa-sample-size-yang-dibutuhkan",
+    "href": "slides/bagian-7.html#rule-of-thumb-berapa-sample-size-yang-dibutuhkan",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
-    "section": "Ukuran sampel yang dibutuhkan",
-    "text": "Ukuran sampel yang dibutuhkan\n\n\n\nN\nKeterangan\n\n\n\n\n&lt; 100\nTidak memadai — hindari\n\n\n100–200\nMinimal, hanya jika loadings tinggi (&gt; 0.70)\n\n\n200–300\nCukup\n\n\n300–500\nBaik\n\n\n&gt; 500\nSangat baik\n\n\n\n\nAturan rasio item:partisipan yang direkomendasikan: 10:1\n\nContoh: 20 item  targetkan N ≥ 200, idealnya N ≥ 300\n\n\n\n\n\n\n\n\nRule of Thumb\n\n\nLoadings rendah dan communalities rendah membutuhkan N yang lebih besar. Jangan memaksakan analisis faktor pada sampel yang terlalu kecil."
+    "section": "Rule of thumb berapa sample size yang dibutuhkan",
+    "text": "Rule of thumb berapa sample size yang dibutuhkan\n\n\n\nN\nKeterangan\n\n\n\n\n&lt; 100\nTidak memadai — hindari\n\n\n100–200\nMinimal, hanya jika loadings tinggi (&gt; 0.70)\n\n\n200–300\nCukup\n\n\n300–500\nBaik\n\n\n&gt; 500\nSangat baik\n\n\n\n\nAturan rasio item:partisipan yang direkomendasikan: 10:1\n\nContoh: 20 item  targetkan N ≥ 200, idealnya N ≥ 300\n\nLoadings rendah dan communalities rendah membutuhkan N yang lebih besar\n\nJangan memaksakan analisis faktor pada sampel yang terlalu kecil"
   },
   {
     "objectID": "slides/bagian-7.html#fit-indices-khusus-ekstraksi-ml",
     "href": "slides/bagian-7.html#fit-indices-khusus-ekstraksi-ml",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Fit indices (khusus ekstraksi ML)",
-    "text": "Fit indices (khusus ekstraksi ML)\n\nChi-square (χ²): H₀ = model fit sempurna; p &gt; .05 = fit baik\n\nMasalah: sangat sensitif terhadap N besar — hampir selalu signifikan jika N &gt; 300, meskipun model sebenarnya baik. Jangan jadikan satu-satunya kriteria.\n\nRMSEA &lt; .05 = sangat baik; .05–.08 = cukup baik; &gt; .10 = tidak dapat diterima\n\nSelalu sertakan 90% CI\n\nCFI/TLI &gt; .95 = baik; &gt; .90 = dapat diterima\n\n\n\n\n\n\n\nCatatan\n\n\nAmbang batas RMSEA &lt; .06 (Hu & Bentler, 1999) sering dikutip, tapi berasal dari kondisi simulasi yang spesifik. Untuk model dengan banyak indikator atau sampel besar, RMSEA &lt; .08 sudah dapat diterima, jangan terlalu terpatok pada angka .06."
+    "text": "Fit indices (khusus ekstraksi ML)\n\nChi-square (χ²): H₀ = model fit sempurna; p &gt; .05 = fit baik\n\nMasalah: sangat sensitif terhadap N besar, sehingga hampir selalu signifikan jika N &gt; 300, meskipun model sebenarnya baik\nOleh karena itu, jangan jadikan satu-satunya kriteria\n\nRMSEA &lt; .05 = sangat baik; .05–.08 = cukup baik; &gt; .10 = tidak dapat diterima\n\nSelalu sertakan 90% CI\n\nCFI/TLI &gt; .95 = baik; &gt; .90 = model EFA dapat diterima\n\n\n\n\n\n\n\nCatatan\n\n\nAmbang batas RMSEA &lt; .06 (Hu & Bentler, 1999) sering dikutip, tapi berasal dari kondisi simulasi yang spesifik. Untuk model dengan banyak indikator atau sampel besar, RMSEA &lt; .08 sudah dapat diterima, jangan terlalu kaku mematok cutoff pada angka .06."
   },
   {
     "objectID": "slides/bagian-7.html#reliabilitas-alpha-vs.-omega",
     "href": "slides/bagian-7.html#reliabilitas-alpha-vs.-omega",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Reliabilitas: alpha vs. omega",
-    "text": "Reliabilitas: alpha vs. omega\n\n\nCronbach’s α\n\nMengukur konsistensi internal\nMengasumsikan semua item berkontribusi sama (tau-equivalence)\nJika loadings berbeda-beda (yang hampir selalu terjadi), α bisa underestimate reliabilitas sesungguhnya\nSensitif terhadap jumlah item — lebih banyak item = α lebih tinggi, meskipun loadings biasa saja\n\n\nMcDonald’s ω (Omega)\n\nDihitung langsung dari factor loadings\nTidak mengasumsikan tau-equivalence\nLebih akurat ketika loadings item tidak setara — yang hampir selalu terjadi pada skala psikologi nyata\n\n\n\n\n\n\n\n\nLaporkan α dan ω\n\n\nJika ω &gt; α secara substansial, berarti asumsi tau-equivalence tidak terpenuhi. Keduanya tersedia langsung di jamovi."
+    "text": "Reliabilitas: alpha vs. omega\n\n\nCronbach’s α\n\nMengukur konsistensi internal\nMengasumsikan semua item berkontribusi sama (tau-equivalence)\nJika loadings berbeda-beda (yang hampir selalu terjadi), α bisa underestimate reliabilitas sesungguhnya\nSensitif terhadap jumlah item, lebih banyak item = α lebih tinggi, meskipun loadings biasa saja\n\n\nMcDonald’s ω (Omega)\n\nDihitung langsung dari factor loadings\nTidak mengasumsikan tau-equivalence\nLebih akurat ketika loadings item tidak setara, yang hampir selalu terjadi pada skala psikologi nyata\n\n\n\n\n\n\n\n\nLaporkan α dan ω\n\n\nJika ω &gt; α secara substansial, berarti asumsi tau-equivalence tidak terpenuhi. Keduanya tersedia langsung di jamovi."
   },
   {
     "objectID": "slides/bagian-7.html#checklist-pelaporan-efa",
@@ -1467,7 +1488,14 @@
     "href": "slides/bagian-7.html#konteks-burnout-pada-mahasiswa",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Konteks: Burnout pada mahasiswa",
-    "text": "Konteks: Burnout pada mahasiswa\n\nDataset yang kita gunakan: Dataset Contoh EFA (dataset-burnout.omv)\nKonteks penelitian: Data simulasi yang merepresentasikan burnout akademik mahasiswa pascasarjana\nPertanyaan penelitian: berapa dimensi laten yang mendasari item-item dalam skala burnout ini?\n\nVariabel demografis: - usia: 20–35 tahun - jenis_kelamin: 0 = Perempuan, 1 = Laki-laki - semester: semester aktif (1–4) - ipk: Indeks Prestasi Kumulatif (2.00–4.00)\nVariabel item (15 item, skala Likert 1–5): - ab_ee_1 s.d. ab_ee_5: Emotional Exhaustion — merasa lelah, terkuras, kehabisan energi karena tuntutan akademik - ab_cy_1 s.d. ab_cy_5: Cynicism — sikap jarak, tidak peduli, pesimis terhadap studi - ab_ef_1 s.d. ab_ef_5: Academic Efficacy — keyakinan pada kemampuan akademik diri sendiri (skor tinggi = efikasi tinggi)"
+    "text": "Konteks: Burnout pada mahasiswa\n\nDataset yang kita gunakan: Dataset Contoh EFA (dataset-burnout.omv)\nKonteks penelitian: Data simulasi yang merepresentasikan burnout akademik mahasiswa pascasarjana\nPertanyaan penelitian: berapa dimensi laten yang mendasari item-item dalam skala burnout ini?\n\nVariabel demografis: - usia: 20–35 tahun - jenis_kelamin: 0 = Perempuan, 1 = Laki-laki - semester: semester aktif (1–4) - ipk: Indeks Prestasi Kumulatif (2.00–4.00)"
+  },
+  {
+    "objectID": "slides/bagian-7.html#konteks-burnout-pada-mahasiswa-1",
+    "href": "slides/bagian-7.html#konteks-burnout-pada-mahasiswa-1",
+    "title": "Principal Component Analysis & Exploratory Factor Analysis",
+    "section": "Konteks: Burnout pada mahasiswa",
+    "text": "Konteks: Burnout pada mahasiswa\nVariabel item (15 item, skala Likert 1–5): - ab_ee_1 s.d. ab_ee_5: Emotional Exhaustion — merasa lelah, terkuras, kehabisan energi karena tuntutan akademik - ab_cy_1 s.d. ab_cy_5: Cynicism — sikap jarak, tidak peduli, pesimis terhadap studi - ab_ef_1 s.d. ab_ef_5: Academic Efficacy — keyakinan pada kemampuan akademik diri sendiri (skor tinggi = efikasi tinggi)"
   },
   {
     "objectID": "slides/bagian-7.html#langkah-langkah-di-jamovi",
