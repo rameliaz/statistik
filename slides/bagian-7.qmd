@@ -328,7 +328,7 @@ Ambang batas RMSEA < .06 ([Hu & Bentler, 1999](https://www.tandfonline.com/doi/a
 **Cronbach's α**
 
 * Mengukur konsistensi internal
-* Mengasumsikan semua *item* berkontribusi *sama* (*tau-equivalence*)
+* Mengasumsikan semua *item* berkontribusi (*factor loadings*) *sama* (*tau-equivalence*)
 * Jika *loadings* berbeda-beda (yang hampir selalu terjadi), α bisa *underestimate* reliabilitas sesungguhnya
 * Sensitif terhadap jumlah *item*, lebih banyak *item* = α lebih tinggi, meskipun *loadings* cenderung moderat
 
@@ -338,8 +338,8 @@ Ambang batas RMSEA < .06 ([Hu & Bentler, 1999](https://www.tandfonline.com/doi/a
 **McDonald's ω (Omega)**
 
 * Dihitung langsung dari *factor loadings*
-* Tidak mengasumsikan *tau-equivalence*
-* Lebih akurat ketika *loadings* item tidak setara, yang hampir selalu terjadi pada skala psikologi nyata
+* Tidak mengasumsikan *tau-equivalence*, tetapi model *congeneric*
+* Lebih akurat ketika *loadings* item tidak setara, yang hampir selalu terjadi pada skala psikologi pada umumnya
 
 :::
 ::::
