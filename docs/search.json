@@ -1341,7 +1341,7 @@
     "href": "slides/bagian-7.html#keluarga-model-variabel-laten",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Keluarga model variabel laten",
-    "text": "Keluarga model variabel laten\n\n\n\n\n\n\n\n\nModel\nPertanyaan yang dijawab\nDalam mata kuliah ini\n\n\n\n\nCTT\n“Seberapa reliabel skor total ini?”\nBagian 5\n\n\nEFA\n“Berapa faktor laten yang mendasari item-item ini?”\nBagian 7\n\n\nCFA\n“Apakah struktur faktor yang saya hipotesiskan sesuai dengan data?”\nBagian 8\n\n\nSEM\n“Bagaimana faktor-faktor laten saling mempengaruhi?”\nTidak dibahas dalam mata kuliah ini. Klik disini apabila tertarik belajar mandiri."
+    "text": "Keluarga model variabel laten\n\n\n\n\n\n\n\n\nModel\nPertanyaan yang dijawab\nDalam mata kuliah ini\n\n\n\n\nCTT\n“Seberapa reliabel skor total dari skala psikologi ini?”\nBagian 5\n\n\nEFA\n“Berapa banyak faktor laten yang mendasari item-item ini?”\nBagian 7\n\n\nCFA\n“Apakah struktur faktor laten yang dihipotesiskan sesuai dengan data?”\nBagian 8\n\n\nSEM\n“Bagaimana keterkaitan antara faktor-faktor laten ini?”\nTidak dibahas dalam mata kuliah ini. Klik disini apabila tertarik belajar mandiri."
   },
   {
     "objectID": "slides/bagian-7.html#efa-vs.-cfa",
@@ -1355,7 +1355,7 @@
     "href": "slides/bagian-7.html#apa-itu-pca",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Apa itu PCA?",
-    "text": "Apa itu PCA?\n\nPCA mencari “arah” (component) dalam ruang data yang menangkap varians sebesar mungkin\nHasilnya adalah principal components yang merupakan kombinasi linear dari item-item asli\nTujuan utama: reduksi dimensi — meringkas banyak item menjadi sedikit variabel ringkasan (“payung”) yang lebih besar\nPenting: PCA bukan model pengukuran — ia tidak mengasumsikan adanya konstruk laten yang menyebabkan item bervariasi\n\n\n\nHierarki komponen:\n\nPC1 — arah dengan varians terbesar\nPC2 — orthogonal terhadap PC1, varians terbesar berikutnya\nPC3, PC4, … — dst., selalu orthogonal (tidak berkorelasi) terhadap semua komponen sebelumnya\n\n\nAnalogi sederhana:\n\nDataset berisi 20 kolom/variabel (item)\nComponent scores = 3–4 kolom skor komposit\nMempertahankan sebanyak mungkin informasi dengan sesedikit mungkin komponen"
+    "text": "Apa itu PCA?\n\nPCA mencari “arah” (component) dalam ruang data yang menangkap varians sebesar mungkin\nHasilnya adalah principal components yang merupakan kombinasi linear dari item-item asli\nTujuan utama: reduksi dimensi — meringkas banyak item menjadi sedikit variabel ringkasan (“payung”) yang lebih besar\nPenting: PCA bukan model pengukuran — ia tidak mengasumsikan adanya faktor laten yang menyebabkan item bervariasi\n\n\n\nHierarki komponen:\n\nPC1 — arah dengan varians terbesar\nPC2 — orthogonal terhadap PC1, varians terbesar berikutnya\nPC3, PC4, … — dst., selalu orthogonal (tidak berkorelasi) terhadap semua komponen sebelumnya\n\n\nContoh PCA:\n\nDataset berisi 20 kolom/variabel (item)\nComponent scores = 3–4 kolom skor komposit\nMempertahankan sebanyak mungkin informasi dengan sesedikit mungkin komponen"
   },
   {
     "objectID": "slides/bagian-7.html#aplikasi-pca-reduksi-dimensi-machine-learning",
@@ -1390,49 +1390,49 @@
     "href": "slides/bagian-7.html#component-loadings-rotasi",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Component loadings & rotasi",
-    "text": "Component loadings & rotasi\n\nComponent loading: korelasi antara item asli dengan komponen. Rentang −1 sampai +1.\n\n|loading| &gt; 0.40  item bermakna untuk komponen ini (salient loading)\n|loading| &lt; 0.30  item tidak relevan untuk komponen ini\n\nRotasi mengejar simple structure (Thurstone, 1954): setiap item loaded tinggi di satu komponen, mendekati nol di yang lain\n\n\n\n\n\n\n\n\n\n\nOrthogonal\nOblique\n\n\n\n\nKomponen\nTidak berkorelasi\nBoleh berkorelasi\n\n\nMetode umum\nVarimax\nPromax, Direct Oblimin\n\n\n\n\n\n\n\n\n\nNote\n\n\nRotasi tidak mengubah total varians yang dijelaskan, tetapi hanya mendistribusikannya agar lebih mudah diinterpretasikan."
+    "text": "Component loadings & rotasi\n\nComponent loading: korelasi antara item asli dengan komponen. Rentang −1 sampai +1.\n\n|loading| &gt; 0.40  item bermakna untuk komponen ini (salient loading)\n|loading| &lt; 0.30  item tidak relevan untuk komponen ini\n\nRotasi item tujuannya untuk menemukan simple structure (Thurstone, 1954): setiap item loaded tinggi di satu faktor laten, dan mendekati nol di faktor laten yang lain\n\n\n\n\n\n\n\n\n\n\nOrthogonal\nOblique\n\n\n\n\nKomponen\nTidak berkorelasi\nBoleh berkorelasi\n\n\nMetode umum\nVarimax\nPromax, Direct Oblimin\n\n\n\n\n\n\n\n\n\nJenis rotasi tidak mengubah varians total\n\n\nRotasi tidak mengubah total varians yang dijelaskan, tetapi hanya mendistribusikannya agar lebih mudah diinterpretasikan."
   },
   {
     "objectID": "slides/bagian-7.html#pca-vs.-efa",
     "href": "slides/bagian-7.html#pca-vs.-efa",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "PCA vs. EFA",
-    "text": "PCA vs. EFA\n\n\n\n\n\n\n\n\nAspek\nPCA\nEFA\n\n\n\n\nTujuan\nReduksi dimensi; feature extraction\nIdentifikasi & validasi konstruk laten\n\n\nPosisi dalam ML\nUnsupervised learning — preprocessing sebelum model prediktif\nPsikometri — pengembangan & validasi skala\n\n\nModel\nKomponen = fungsi linear item\nItem = fungsi linear faktor + error\n\n\nVarians\nTotal varians (termasuk unique & error)\nHanya common variance\n\n\nError pengukuran\nTidak dimodelkan\nEksplisit dimodelkan per item"
+    "text": "PCA vs. EFA\n\n\n\n\n\n\n\n\nAspek\nPCA\nEFA\n\n\n\n\nTujuan\nReduksi dimensi; feature extraction\nIdentifikasi & validasi konstruk laten\n\n\nPosisi dalam ML\nUnsupervised learning — preprocessing sebelum melakukan pengujian pada test data\nPsikometri — pengembangan & validasi skala\n\n\nModel\nKomponen = fungsi linear item\nItem = fungsi linear faktor + error pengukuran\n\n\nVarians yang ingin dijelaskan\nTotal varians (termasuk unique & error)\nHanya common variance\n\n\nError pengukuran\nTidak dimodelkan\nEksplisit dimodelkan per item"
   },
   {
     "objectID": "slides/bagian-7.html#pca-vs.-efa-1",
     "href": "slides/bagian-7.html#pca-vs.-efa-1",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "PCA vs. EFA",
-    "text": "PCA vs. EFA\n\n\n\n\n\n\n\n\nAspek\nPCA\nEFA\n\n\n\n\nFaktor/komponen\nSelalu orthogonal (tidak berkorelasi)\nBoleh berkorelasi (rotasi oblique)\n\n\nKapan digunakan\nTidak ada teori konstruk laten; tujuannya kompresi/menyederhanakan struktur dataset\nAda teori tentang faktor laten; tujuannya mengeksplorasi model pengukuran\n\n\n\n\n\n\n\n\n\nTip\n\n\nJika communalities tinggi (&gt; 0.60) dan struktur jelas, hasil PCA dan EFA sering hampir identik secara praktis. Perbedaan muncul ketika communalities rendah atau struktur kompleks."
+    "text": "PCA vs. EFA\n\n\n\n\n\n\n\n\nAspek\nPCA\nEFA\n\n\n\n\nFaktor/komponen\nSelalu orthogonal (tidak berkorelasi)\nBoleh berkorelasi (rotasi oblique)\n\n\nKapan digunakan\nTidak ada teori konstruk laten; tujuannya kompresi/menyederhanakan struktur dataset\nAda teori tentang faktor laten; tujuannya mengeksplorasi model pengukuran\n\n\n\n\n\n\n\n\n\nCatatan\n\n\nJika communalities tinggi (&gt; 0.60) dan struktur komponen/faktor jelas, hasil PCA dan EFA sering hampir identik. Perbedaan baru muncul ketika communalities rendah atau struktur faktor cenderung kompleks (e.g., ada cross-loading, dsb.)."
   },
   {
-    "objectID": "slides/bagian-7.html#komunalitas-h²-keunikan",
-    "href": "slides/bagian-7.html#komunalitas-h²-keunikan",
+    "objectID": "slides/bagian-7.html#communalities-h²-uniqueness",
+    "href": "slides/bagian-7.html#communalities-h²-uniqueness",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
-    "section": "Komunalitas (h²) & keunikan",
-    "text": "Komunalitas (h²) & keunikan\n\n\n\nKomunalitas (h²): proporsi varians item yang dijelaskan oleh semua faktor laten yang teridentifikasi\nKeunikan (u²): 1 − h² = varians yang tidak dijelaskan oleh faktor manapun (varians spesifik i.e., unique variance + error)\n\n\n\n\n\n\n\n\nh²\nInterpretasi\n\n\n\n\n&gt; 0.50\nBaik \n\n\n0.30–0.50\nCukup, tetapi perlu evaluasi\n\n\n&lt; 0.30\nBermasalah, cek wordingnya dan pertimbangkan menghapus item\n\n\n\n\n\n\n\n\n\n\nPeringatan\n\n\nItem dengan h² rendah mengukur sesuatu yang unik apabila dibandingkan dengan item lain.\nEvaluasi ulang redaksi (wording) item tersebut sebelum memutuskan untuk menghapus item."
+    "section": "Communalities (h²) & uniqueness",
+    "text": "Communalities (h²) & uniqueness\n\nCommunalities (h²): proporsi varians item yang dijelaskan oleh semua faktor laten yang teridentifikasi\nUniqueness (u²): 1 − h² = varians yang tidak dijelaskan oleh faktor manapun (varians spesifik i.e., unique variance + error)\n\n\n\n\n\n\n\n\nh²\nInterpretasi\n\n\n\n\n&gt; 0.50\nBaik \n\n\n0.30–0.50\nCukup, tetapi perlu evaluasi\n\n\n&lt; 0.30\nBermasalah, cek wordingnya dan pertimbangkan menghapus item\n\n\n\n\n\n\n\n\n\nPeringatan\n\n\nItem dengan h² rendah mengukur faktor laten yang unik (yang tidak dipertimbangkan dalam model EFA) apabila dibandingkan dengan item lain.\nEvaluasi ulang redaksi (wording) item tersebut sebelum memutuskan untuk menghapus item."
   },
   {
     "objectID": "slides/bagian-7.html#menentukan-jumlah-faktor",
     "href": "slides/bagian-7.html#menentukan-jumlah-faktor",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Menentukan jumlah faktor",
-    "text": "Menentukan jumlah faktor\n\nKaiser criterion (λ &gt; 1) — mudah, tapi konsisten over-extract. Gunakan sebagai acuan awal saja.\nScree plot — visual dan intuitif, tapi subjektif. Dua peneliti bisa membaca scree plot yang sama secara berbeda.\nParallel analysis  direkomendasikan\n\nBandingkan eigenvalue data dengan eigenvalue dari data acak/simulasi (dimensi yang sama)\nPertahankan faktor di mana eigenvalue dari data &gt; eigenvalue simulasi (persentil ke-95)\nPaling akurat secara empiris; mengurangi potensi subjektivitas (Hayton, Allen & Scarpello, 2004)\n\nTeori — berapa faktor laten yang disebutkan di literatur?\n\n\n\n\n\n\n\nPraktik terbaik\n\n\nGunakan kombinasi parallel analysis + scree plot + teori sebagai dasar keputusan. Di jamovi, parallel analysis tersedia langsung di menu EFA."
+    "text": "Menentukan jumlah faktor\n\nKaiser criterion (λ &gt; 1) — mudah, tapi selalu over-extract. Gunakan sebagai screening awal saja.\nScree plot — visual dan intuitif, tapi subjektif. Dua peneliti bisa membaca scree plot yang sama secara berbeda.\nParallel analysis  direkomendasikan\n\nBandingkan eigenvalue data dengan eigenvalue dari data acak/simulasi (dimensi yang sama)\nPertahankan faktor di mana eigenvalue dari data &gt; eigenvalue simulasi (persentil ke-95)\nPaling akurat secara empiris; mengurangi potensi subjektivitas (Hayton, Allen & Scarpello, 2004)\n\nTeori — berapa faktor laten yang disebutkan di literatur?\n\n\n\n\n\n\n\nPraktik terbaik\n\n\nGunakan kombinasi parallel analysis + scree plot + teori sebagai dasar keputusan. Di jamovi, parallel analysis tersedia langsung di menu EFA."
   },
   {
     "objectID": "slides/bagian-7.html#rotasi-dalam-efa",
     "href": "slides/bagian-7.html#rotasi-dalam-efa",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Rotasi dalam EFA",
-    "text": "Rotasi dalam EFA\n\nOrthogonal (faktor tidak berkorelasi) — Varimax\n\nMenghasilkan satu matriks: factor loadings\nAsumsi independensi sering tidak realistis dalam psikologi\n\nOblique (faktor boleh berkorelasi) — Promax, Direct Oblimin\n\nMenghasilkan pattern matrix (kontribusi unik faktor ke item) — ini yang dilaporkan\nJuga menghasilkan structure matrix dan factor correlation matrix\n\n\n\n\n\n\n\n\nTip\n\n\nKonstruk psikologi hampir selalu berkorelasi, misalnya: kelelahan emosional dan sinisme pada burnout. Gunakan rotasi oblique sebagai default. Jika korelasi antar faktor sangat rendah (&lt; 0.15), rotasi orthogonal bisa dipertimbangkan."
+    "text": "Rotasi dalam EFA\n\nOrthogonal (faktor tidak berkorelasi) — Varimax\n\nMenghasilkan satu matriks: factor loadings\nAsumsi independensi sering tidak realistis dalam psikologi\n\nOblique (faktor boleh berkorelasi) — Promax, Direct Oblimin\n\nMenghasilkan pattern matrix (kontribusi unik faktor ke item) — ini yang dilaporkan\nJuga menghasilkan structure matrix dan factor correlation matrix\n\n\n\n\n\n\n\n\nKonstruk laten hampir selalu saling berkorelasi\n\n\nKonstruk psikologi hampir selalu berkorelasi. Gunakan rotasi oblique sebagai opsi default. Jika korelasi antar faktor sangat rendah (&lt; 0.15), rotasi orthogonal bisa dipertimbangkan."
   },
   {
     "objectID": "slides/bagian-7.html#metode-ekstraksi-di-jamovi",
     "href": "slides/bagian-7.html#metode-ekstraksi-di-jamovi",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Metode ekstraksi di jamovi",
-    "text": "Metode ekstraksi di jamovi\n\n\n\n\n\n\n\n\nMetode\nAsumsi\nKapan digunakan\n\n\n\n\nMinimum Residual (MinRes)\nTidak diperlukan normalitas\nDefault yang aman untuk data skala psikologi; meminimalkan residual korelasi\n\n\nPrincipal Axis Factoring (PAF)\nTidak diperlukan normalitas\nData tidak normal; sampel moderat\n\n\nMaximum Likelihood (ML)\nNormalitas multivariat\nData mendekati normal; ingin fit indices formal (RMSEA, CFI)\n\n\n\n\n\n\n\n\n\nNote\n\n\nUntuk skala Likert yang tidak terlalu juling, MinRes sudah cukup baik. Gunakan ML jika ingin melaporkan fit indices secara formal dalam artikel."
+    "text": "Metode ekstraksi di jamovi\n\n\n\n\n\n\n\n\nMetode\nAsumsi\nKapan digunakan\n\n\n\n\nMinimum Residual (MinRes)\nTidak perlu memenuhi asumsi normalitas\nDefault yang aman untuk data skala psikologi; meminimalkan residual korelasi\n\n\nPrincipal Axis Factoring (PAF)\nTidak diperlukan normalitas\nData tidak normal; sampel moderat\n\n\nMaximum Likelihood (ML)\nNormalitas multivariat\nData mendekati normal; ingin fit indices formal (RMSEA, CFI)\n\n\n\n\n\n\n\n\n\nNote\n\n\nUntuk skala Likert yang tidak terlalu juling, MinRes sudah cukup baik. Gunakan ML jika ingin melaporkan fit indices secara formal dalam artikel."
   },
   {
     "objectID": "slides/bagian-7.html#kaiser-meyer-olkin-kmo",
@@ -1460,14 +1460,14 @@
     "href": "slides/bagian-7.html#fit-indices-khusus-ekstraksi-ml",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Fit indices (khusus ekstraksi ML)",
-    "text": "Fit indices (khusus ekstraksi ML)\n\nChi-square (χ²): H₀ = model fit sempurna; p &gt; .05 = fit baik\n\nMasalah: sangat sensitif terhadap N besar, sehingga hampir selalu signifikan jika N &gt; 300, meskipun model sebenarnya baik\nOleh karena itu, jangan jadikan satu-satunya kriteria\n\nRMSEA &lt; .05 = sangat baik; .05–.08 = cukup baik; &gt; .10 = tidak dapat diterima\n\nSelalu sertakan 90% CI\n\nCFI/TLI &gt; .95 = baik; &gt; .90 = model EFA dapat diterima\n\n\n\n\n\n\n\nCatatan\n\n\nAmbang batas RMSEA &lt; .06 (Hu & Bentler, 1999) sering dikutip, tapi berasal dari kondisi simulasi yang spesifik. Untuk model dengan banyak indikator atau sampel besar, RMSEA &lt; .08 sudah dapat diterima, jangan terlalu kaku mematok cutoff pada angka .06."
+    "text": "Fit indices (khusus ekstraksi ML)\n\nChi-square (χ²): H₀ = model fit sempurna; p &gt; .05 = justru diinginkan. Artinya, tidak ada perbedaan signifikan antara model yang dihipotesiskan dengan data\n\nMasalah: sangat sensitif terhadap N besar, sehingga hampir selalu signifikan jika N besar, meskipun model sebenarnya fit\nOleh karena itu, jangan jadikan satu-satunya kriteria\n\nRMSEA &lt; .05 = sangat baik; .05–.08 = cukup baik; &gt; .10 = tidak dapat diterima\n\nSelalu sertakan 90% CI\n\nCFI/TLI &gt; .95 = baik; &gt; .90 = model EFA dapat diterima\n\n\n\n\n\n\n\nCatatan\n\n\nAmbang batas RMSEA &lt; .06 (Hu & Bentler, 1999) sering dikutip, tapi berasal dari kondisi simulasi yang spesifik. Untuk model dengan banyak indikator atau sampel besar, RMSEA &lt; .08 sudah dapat diterima, jangan terlalu kaku mematok cutoff pada angka .06."
   },
   {
     "objectID": "slides/bagian-7.html#reliabilitas-alpha-vs.-omega",
     "href": "slides/bagian-7.html#reliabilitas-alpha-vs.-omega",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Reliabilitas: alpha vs. omega",
-    "text": "Reliabilitas: alpha vs. omega\n\n\nCronbach’s α\n\nMengukur konsistensi internal\nMengasumsikan semua item berkontribusi sama (tau-equivalence)\nJika loadings berbeda-beda (yang hampir selalu terjadi), α bisa underestimate reliabilitas sesungguhnya\nSensitif terhadap jumlah item, lebih banyak item = α lebih tinggi, meskipun loadings biasa saja\n\n\nMcDonald’s ω (Omega)\n\nDihitung langsung dari factor loadings\nTidak mengasumsikan tau-equivalence\nLebih akurat ketika loadings item tidak setara, yang hampir selalu terjadi pada skala psikologi nyata\n\n\n\n\n\n\n\n\nLaporkan α dan ω\n\n\nJika ω &gt; α secara substansial, berarti asumsi tau-equivalence tidak terpenuhi. Keduanya tersedia langsung di jamovi."
+    "text": "Reliabilitas: alpha vs. omega\n\n\nCronbach’s α\n\nMengukur konsistensi internal\nMengasumsikan semua item berkontribusi sama (tau-equivalence)\nJika loadings berbeda-beda (yang hampir selalu terjadi), α bisa underestimate reliabilitas sesungguhnya\nSensitif terhadap jumlah item, lebih banyak item = α lebih tinggi, meskipun loadings cenderung moderat\n\n\nMcDonald’s ω (Omega)\n\nDihitung langsung dari factor loadings\nTidak mengasumsikan tau-equivalence\nLebih akurat ketika loadings item tidak setara, yang hampir selalu terjadi pada skala psikologi nyata\n\n\n\n\n\n\n\n\nLaporkan α dan ω\n\n\nJika ω &gt; α secara substansial, berarti asumsi tau-equivalence tidak terpenuhi. Keduanya tersedia langsung di jamovi."
   },
   {
     "objectID": "slides/bagian-7.html#checklist-pelaporan-efa",
@@ -1488,14 +1488,14 @@
     "href": "slides/bagian-7.html#konteks-burnout-pada-mahasiswa",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Konteks: Burnout pada mahasiswa",
-    "text": "Konteks: Burnout pada mahasiswa\n\nDataset yang kita gunakan: Dataset Contoh EFA (dataset-burnout.omv)\nKonteks penelitian: Data simulasi yang merepresentasikan burnout akademik mahasiswa pascasarjana\nPertanyaan penelitian: berapa dimensi laten yang mendasari item-item dalam skala burnout ini?\n\nVariabel demografis: - usia: 20–35 tahun - jenis_kelamin: 0 = Perempuan, 1 = Laki-laki - semester: semester aktif (1–4) - ipk: Indeks Prestasi Kumulatif (2.00–4.00)"
+    "text": "Konteks: Burnout pada mahasiswa\n\nDataset yang kita gunakan: Dataset Contoh EFA (dataset-burnout.omv)\nKonteks penelitian: Data simulasi yang merepresentasikan burnout akademik mahasiswa pascasarjana\nPertanyaan penelitian: berapa dimensi laten yang mendasari item-item dalam skala burnout ini?\nVariabel demografis:\n\nusia: 20–35 tahun\njenis_kelamin: 0 = Perempuan, 1 = Laki-laki\nsemester: semester aktif (1–4)\nipk: Indeks Prestasi Kumulatif (2.00–4.00)"
   },
   {
     "objectID": "slides/bagian-7.html#konteks-burnout-pada-mahasiswa-1",
     "href": "slides/bagian-7.html#konteks-burnout-pada-mahasiswa-1",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Konteks: Burnout pada mahasiswa",
-    "text": "Konteks: Burnout pada mahasiswa\nVariabel item (15 item, skala Likert 1–5): - ab_ee_1 s.d. ab_ee_5: Emotional Exhaustion — merasa lelah, terkuras, kehabisan energi karena tuntutan akademik - ab_cy_1 s.d. ab_cy_5: Cynicism — sikap jarak, tidak peduli, pesimis terhadap studi - ab_ef_1 s.d. ab_ef_5: Academic Efficacy — keyakinan pada kemampuan akademik diri sendiri (skor tinggi = efikasi tinggi)"
+    "text": "Konteks: Burnout pada mahasiswa\n\nVariabel item (15 item, skala Likert 1–5):\n\nab_ee_1 s.d. ab_ee_5: Emotional Exhaustion — merasa lelah, terkuras, kehabisan energi karena tuntutan akademik\nab_cy_1 s.d. ab_cy_5: Cynicism — sikap jarak, tidak peduli, pesimis terhadap studi\nab_ef_1 s.d. ab_ef_5: Academic Efficacy — keyakinan pada kemampuan akademik diri sendiri (skor tinggi = efikasi tinggi)"
   },
   {
     "objectID": "slides/bagian-7.html#langkah-langkah-di-jamovi",

@@ -56,10 +56,10 @@ Koefisien korelasi yang terobservasi selalu lebih kecil dari korelasi sesungguhn
 
 | Model | Pertanyaan yang dijawab | Dalam mata kuliah ini |
 |-------|-------------------------|-------------------|
-| **CTT** | "Seberapa reliabel skor total ini?" | [Bagian 5](/docs/slides/bagian-5.html) |
-| **EFA** | "Berapa faktor laten yang mendasari *item*-*item* ini?" | **Bagian 7** |
-| **CFA** | "Apakah struktur faktor yang saya hipotesiskan sesuai dengan data?" | [Bagian 8](/docs/slides/bagian-8.html) |
-| **SEM** | "Bagaimana faktor-faktor laten saling mempengaruhi?" | Tidak dibahas dalam mata kuliah ini. [Klik disini apabila tertarik belajar mandiri.](https://rameliaz.github.io/mg-sem-workshop/) |
+| **CTT** | "Seberapa reliabel skor total dari skala psikologi ini?" | [Bagian 5](/docs/slides/bagian-5.html) |
+| **EFA** | "Berapa banyak faktor laten yang mendasari *item*-*item* ini?" | **Bagian 7** |
+| **CFA** | "Apakah struktur faktor laten yang dihipotesiskan sesuai dengan data?" | [Bagian 8](/docs/slides/bagian-8.html) |
+| **SEM** | "Bagaimana keterkaitan antara faktor-faktor laten ini?" | Tidak dibahas dalam mata kuliah ini. [Klik disini apabila tertarik belajar mandiri.](https://rameliaz.github.io/mg-sem-workshop/) |
 
 : {tbl-colwidths="[20,50,30]"}
 
@@ -75,7 +75,7 @@ Koefisien korelasi yang terobservasi selalu lebih kecil dari korelasi sesungguhn
 
 ::: {.callout-warning}
 #### Sangat tidak disarankan
-...melakukan EFA kemudian CFA pada **sampel yang sama** — kita akan bahas lebih dalam di Bagian 8.
+...melakukan EFA kemudian CFA pada **sampel yang sama** — kita akan bahas lebih dalam di [Bagian 8](https://rameliaz.github.io/statistik-lanjut/slides/bagian-8.html#/confirmatory-factor-analysis).
 :::
 
 # Principal Component Analysis (PCA) {background-color="#14497F" .center}
@@ -86,7 +86,7 @@ Koefisien korelasi yang terobservasi selalu lebih kecil dari korelasi sesungguhn
 * PCA mencari "arah" (*component*) dalam ruang data yang menangkap **varians sebesar mungkin**
 * Hasilnya adalah *principal components* yang merupakan **kombinasi linear** dari *item*-*item* asli
 * Tujuan utama: **reduksi dimensi** — meringkas banyak *item* menjadi sedikit variabel ringkasan ("*payung*") yang lebih besar
-* **Penting**: PCA bukan model pengukuran — ia **tidak mengasumsikan** adanya konstruk laten yang menyebabkan *item* bervariasi
+* **Penting**: PCA bukan model pengukuran — ia **tidak mengasumsikan** adanya faktor laten yang menyebabkan *item* bervariasi
 :::
 
 :::: {.columns}
@@ -98,7 +98,7 @@ Koefisien korelasi yang terobservasi selalu lebih kecil dari korelasi sesungguhn
 * **PC3, PC4, ...** — dst., selalu *orthogonal* (tidak berkorelasi) terhadap semua komponen sebelumnya
 :::
 ::: {.column width="50%"}
-**Analogi sederhana:**
+**Contoh PCA:**
 
 * Dataset berisi 20 kolom/variabel (*item*)
 * *Component scores* = 3–4 kolom skor komposit
@@ -153,7 +153,7 @@ Kaiser *criterion* bisa menghasilkan terlalu banyak komponen — bahkan dari dat
   - |loading| > 0.40 {{< fa circle-arrow-right >}} *item* bermakna untuk komponen ini (*salient loading*)
   - |loading| < 0.30 {{< fa circle-arrow-right >}} *item* tidak relevan untuk komponen ini
 
-* **Rotasi** mengejar *simple structure* ([Thurstone, 1954](https://www.cambridge.org/core/journals/psychometrika/article/abs/an-analytical-method-for-simple-structure/C9EE5AE670053FC512D66EC8B964D443)): setiap *item* *loaded* tinggi di **satu** komponen, mendekati nol di yang lain
+* **Rotasi** *item* tujuannya untuk menemukan *simple structure* ([Thurstone, 1954](https://www.cambridge.org/core/journals/psychometrika/article/abs/an-analytical-method-for-simple-structure/C9EE5AE670053FC512D66EC8B964D443)): setiap *item* *loaded* tinggi di **satu** faktor laten, dan mendekati nol di faktor laten yang lain
 
 | | Orthogonal | Oblique |
 |---|---|---|
@@ -163,6 +163,7 @@ Kaiser *criterion* bisa menghasilkan terlalu banyak komponen — bahkan dari dat
 : {tbl-colwidths="[25,37,38]"}
 
 ::: {.callout-note}
+#### Jenis rotasi tidak mengubah varians total
 Rotasi **tidak** mengubah total varians yang dijelaskan, tetapi hanya mendistribusikannya agar lebih mudah diinterpretasikan.
 :::
 
@@ -173,9 +174,9 @@ Rotasi **tidak** mengubah total varians yang dijelaskan, tetapi hanya mendistrib
 | Aspek | PCA | EFA |
 |-------|-----|-----|
 | **Tujuan** | Reduksi dimensi; *feature extraction* | Identifikasi & validasi konstruk laten |
-| **Posisi dalam ML** | *Unsupervised learning* — preprocessing sebelum model prediktif | Psikometri — pengembangan & validasi skala |
-| **Model** | Komponen = fungsi linear *item* | *Item* = fungsi linear faktor + *error* |
-| **Varians** | Total varians (termasuk *unique* & *error*) | Hanya *common variance* |
+| **Posisi dalam ML** | *Unsupervised learning* — *preprocessing* sebelum melakukan pengujian pada *test data* | Psikometri — pengembangan & validasi skala |
+| **Model** | Komponen = fungsi linear *item* | *Item* = fungsi linear faktor + *error* pengukuran |
+| **Varians yang ingin dijelaskan** | Total varians (termasuk *unique* & *error*) | Hanya *common variance* |
 | **Error pengukuran** | Tidak dimodelkan | Eksplisit dimodelkan per *item* |
 
 : {tbl-colwidths="[28,36,36]"}
@@ -190,17 +191,15 @@ Rotasi **tidak** mengubah total varians yang dijelaskan, tetapi hanya mendistrib
 : {tbl-colwidths="[28,36,36]"}
 
 ::: {.callout-tip}
-Jika *communalities* tinggi (> 0.60) dan struktur jelas, hasil PCA dan EFA sering hampir identik secara praktis. Perbedaan muncul ketika *communalities* rendah atau struktur kompleks.
+#### Catatan
+Jika *communalities* tinggi (> 0.60) dan struktur komponen/faktor jelas, hasil PCA dan EFA sering hampir identik. Perbedaan baru muncul ketika *communalities* rendah atau struktur faktor cenderung kompleks (e.g., ada *cross-loading*, dsb.).
 :::
 
-## Komunalitas (h²) & keunikan
+## *Communalities* (h²) & *uniqueness*
 
-:::: {.columns}
-::: {.column width="55%"}
+* ***Communalities* (h²)**: proporsi varians *item* yang dijelaskan oleh *semua* faktor laten yang teridentifikasi
 
-* **Komunalitas (h²)**: proporsi varians *item* yang dijelaskan oleh *semua* faktor laten yang teridentifikasi
-
-* **Keunikan (u²)**: 1 − h² = varians yang *tidak* dijelaskan oleh faktor manapun (varians spesifik i.e., *unique variance* + *error*)
+* ***Uniqueness* (u²)**: 1 − h² = varians yang *tidak* dijelaskan oleh faktor manapun (varians spesifik i.e., *unique variance* + *error*)
 
 | h² | Interpretasi |
 |:---:|--------------|
@@ -208,23 +207,18 @@ Jika *communalities* tinggi (> 0.60) dan struktur jelas, hasil PCA dan EFA serin
 | 0.30–0.50 | Cukup, tetapi perlu evaluasi |
 | < 0.30 | Bermasalah, cek *wording*nya dan pertimbangkan menghapus *item* |
 
-:::
-::: {.column width="45%"}
-
 ::: {.callout-warning}
 #### Peringatan
-Item dengan h² rendah mengukur sesuatu yang unik apabila dibandingkan dengan *item* lain.
+*Item* dengan h² rendah mengukur faktor laten yang unik (yang tidak dipertimbangkan dalam model EFA) apabila dibandingkan dengan *item* lain.
 
 Evaluasi ulang redaksi (*wording*) *item* tersebut sebelum memutuskan untuk menghapus _item_.
-:::
 
 :::
-::::
 
 ## Menentukan jumlah faktor
 
 ::: {.incremental}
-* **Kaiser criterion** (λ > 1) — mudah, tapi konsisten *over-extract*. Gunakan sebagai acuan awal saja.
+* **Kaiser criterion** (λ > 1) — mudah, tapi selalu *over-extract*. Gunakan sebagai *screening* awal saja.
 
 * ***Scree plot*** — visual dan intuitif, tapi subjektif. Dua peneliti bisa membaca *scree plot* yang sama secara berbeda.
 
@@ -254,14 +248,15 @@ Gunakan kombinasi ***parallel analysis*** + *scree plot* + teori sebagai dasar k
 :::
 
 ::: {.callout-tip}
-Konstruk psikologi hampir **selalu berkorelasi**, misalnya: kelelahan emosional dan sinisme pada *burnout*. Gunakan rotasi **oblique** sebagai *default*. Jika korelasi antar faktor sangat rendah (< 0.15), rotasi _orthogonal_ bisa dipertimbangkan.
+#### Konstruk laten hampir selalu saling berkorelasi
+Konstruk psikologi hampir **selalu berkorelasi**. Gunakan rotasi **oblique** sebagai opsi *default*. Jika korelasi antar faktor sangat rendah (< 0.15), rotasi _orthogonal_ bisa dipertimbangkan.
 :::
 
 ## Metode ekstraksi di `jamovi`
 
 | Metode | Asumsi | Kapan digunakan |
 |--------|--------|-----------------|
-| **Minimum Residual (MinRes)** | Tidak diperlukan normalitas | *Default* yang aman untuk data skala psikologi; meminimalkan residual korelasi |
+| **Minimum Residual (MinRes)** | Tidak perlu memenuhi asumsi normalitas | *Default* yang aman untuk data skala psikologi; meminimalkan residual korelasi |
 | **Principal Axis Factoring (PAF)** | Tidak diperlukan normalitas | Data tidak normal; sampel moderat |
 | **Maximum Likelihood (ML)** | Normalitas multivariat | Data mendekati normal; ingin *fit indices* formal (RMSEA, CFI) |
 
@@ -310,8 +305,8 @@ Untuk skala *Likert* yang tidak terlalu juling, **MinRes sudah cukup baik**. Gun
 ## *Fit indices* (khusus ekstraksi ML)
 
 ::: {.incremental}
-* **Chi-square (χ²)**: H₀ = model fit sempurna; p > .05 = fit baik
-  - **Masalah**: sangat sensitif terhadap N besar, sehingga hampir selalu signifikan jika N > 300, meskipun model sebenarnya baik
+* **Chi-square (χ²)**: H₀ = model fit sempurna; *p* > .05 = justru diinginkan. Artinya, tidak ada perbedaan signifikan antara model yang dihipotesiskan dengan data
+  - **Masalah**: sangat sensitif terhadap N besar, sehingga hampir selalu signifikan jika N besar, meskipun model sebenarnya *fit*
   - Oleh karena itu, jangan jadikan satu-satunya kriteria
 
 * **RMSEA** < .05 = sangat baik; .05–.08 = cukup baik; > .10 = tidak dapat diterima
@@ -335,7 +330,7 @@ Ambang batas RMSEA < .06 ([Hu & Bentler, 1999](https://www.tandfonline.com/doi/a
 * Mengukur konsistensi internal
 * Mengasumsikan semua *item* berkontribusi *sama* (*tau-equivalence*)
 * Jika *loadings* berbeda-beda (yang hampir selalu terjadi), α bisa *underestimate* reliabilitas sesungguhnya
-* Sensitif terhadap jumlah *item*, lebih banyak *item* = α lebih tinggi, meskipun *loadings* biasa saja
+* Sensitif terhadap jumlah *item*, lebih banyak *item* = α lebih tinggi, meskipun *loadings* cenderung moderat
 
 :::
 ::: {.column width="50%"}
@@ -398,7 +393,7 @@ Jika ω > α secara substansial, berarti asumsi *tau-equivalence* tidak terpenuh
 
 * **Pertanyaan penelitian**: berapa dimensi laten yang mendasari *item*-*item* dalam skala *burnout* ini?
 
-**Variabel demografis:**
+* **Variabel demografis:**
   - `usia`: 20–35 tahun
   - `jenis_kelamin`: 0 = Perempuan, 1 = Laki-laki
   - `semester`: semester aktif (1–4)
@@ -406,7 +401,7 @@ Jika ω > α secara substansial, berarti asumsi *tau-equivalence* tidak terpenuh
 
 ## Konteks: *Burnout* pada mahasiswa
 
-**Variabel item (15 item, skala Likert 1–5):**
+* **Variabel item (15 item, skala Likert 1–5):**
   - `ab_ee_1` s.d. `ab_ee_5`: *Emotional Exhaustion* — merasa lelah, terkuras, kehabisan energi karena tuntutan akademik
   - `ab_cy_1` s.d. `ab_cy_5`: *Cynicism* — sikap jarak, tidak peduli, pesimis terhadap studi
   - `ab_ef_1` s.d. `ab_ef_5`: *Academic Efficacy* — keyakinan pada kemampuan akademik diri sendiri (skor tinggi = efikasi tinggi)
@@ -449,7 +444,7 @@ Asumsi (KMO & Bartlett's) {{< fa circle-arrow-right >}} jumlah faktor (*parallel
 
 ## Ada pertanyaan❓
 
-![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDFtaDh5ZjZ2eXJ3dmJmZmFmYzBtNHEwdzlqZmZtdGtmbnE0bXZidiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/igB2Th9e4nW6s/giphy.gif){fig-align="center"}
+![](/slides/libs/closing.JPG){fig-align="center"}
 
 ::: {.callout-note}
 * Paparan disusun dengan menggunakan {{< fa brands r-project >}} dan [**Quarto**](https://quarto.org) dengan *template* dari [UNAIR Theme](https://github.com/rameliaz/quarto-unair-theme).
