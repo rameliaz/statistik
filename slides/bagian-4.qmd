@@ -36,7 +36,7 @@ execute:
 
 ::: {.incremental}
 * Seorang psikolog klinis ingin membuat *screening tool* sederhana untuk mendeteksi dini gejala depresi pada mahasiswa baru.
-* Setelah mengembangkan alat tersebut, ia perlu menjawab pertanyaan: **seberapa akurat alat ini dalam memisahkan antara mahasiswa yang mengalami depresi dengan yang tidak?**
+* Setelah mengembangkan alat tersebut, ia perlu menjawab pertanyaan: **seberapa akurat alat ini dalam membedakan mahasiswa yang mengalami depresi dari yang tidak?**
 * Untuk menjawabnya, ia membandingkan hasil ukur alat barunya dengan hasil asesmen mendalam oleh psikolog klinis berlisensi sebagai ***gold standard***.
 * Perbandingan inilah yang menjadi inti analisis ROC.
 :::
@@ -51,7 +51,7 @@ execute:
 ::: {.incremental}
 * **Skrining depresi**: PHQ-9 dibandingkan dengan wawancara SCID sebagai *gold standard*
 * **Deteksi gangguan kecemasan**: GAD-7 dibandingkan dengan diagnosis klinis DSM-5
-* **Skrining burnout**: alat *screening* singkat dibandingkan dengan MBI (*Maslach Burnout Inventory*) penuh
+* **Skrining burnout**: alat *screening* singkat dengan 5 *item* dibandingkan dengan *Maslach Burnout Inventory* (MBI) dengan 22 *item*
 * **Deteksi *mental health* umum**: *Self-Reporting Questionnaire* (SRQ-20 WHO) digunakan untuk memisahkan populasi dengan dan tanpa gangguan mental-emosional di layanan kesehatan primer
 :::
 
@@ -60,27 +60,27 @@ execute:
 Korelasi tinggi antara alat baru dan *gold standard* belum menjamin akurasi diagnostik yang baik — korelasi tidak memberikan informasi tentang *cut-off* optimal, *sensitivity*, atau *specificity* pada berbagai titik potong.
 :::
 
-# *Confusion matrix*: fondasi evaluasi diagnostik {background-color="#14497F" .center}
+# Confusion matrix: fondasi evaluasi diagnostik {background-color="#14497F" .center}
 
 ## Review dari Bagian 3
 
-Dari **Bagian 3** (Regresi Logistik), kita sudah mengenal *confusion matrix*. Di sini kita menggunakannya dalam konteks uji diagnostik: membandingkan hasil alat *screening* dengan *gold standard*.
+Dari [**Bagian 3** (Regresi Logistik)](https://rameliaz.github.io/statistik-lanjut/#bagian-3-regresi-logistik-binomial), kita sudah mengenal *confusion matrix*. Di sini kita menggunakannya dalam konteks uji diagnostik: membandingkan hasil alat *screening* dengan *gold standard*.
 
 |  | *Gold standard*: **Negatif** | *Gold standard*: **Positif** |
 |--|:---:|:---:|
 | **Alat: Negatif** | **TN** (*True Negative*) | **FN** (*False Negative*) |
 | **Alat: Positif** | **FP** (*False Positive*) | **TP** (*True Positive*) |
 
-* **TP**: Alat mengatakan positif — dan memang positif ✓
-* **TN**: Alat mengatakan negatif — dan memang negatif ✓
-* **FP**: Alat mengatakan positif — padahal negatif ✗ (*false alarm*)
-* **FN**: Alat mengatakan negatif — padahal positif ✗ (*miss*)
+* **TP**: Alat yang diuji mengatakan positif — dan memang *gold standard* menyatakan positif ✓
+* **TN**: Alat yang diuji mengatakan negatif — dan memang *gold standard* menyatakan negatif ✓
+* **FP**: Alat yang diuji mengatakan positif — padahal *gold standard* menyatakan negatif ✗ (*false alarm*)
+* **FN**: Alat yang diuji mengatakan negatif — padahal *gold standard* menyatakan positif ✗ (*miss*)
 
 ## *Sensitivity* — kemampuan mendeteksi yang sakit
 
 $$\text{Sensitivity} = \frac{TP}{TP + FN}$$
 
-**Pertanyaan yang dijawab:** "Dari semua orang yang benar-benar mengalami gangguan, berapa persen yang berhasil dideteksi oleh alat ini?"
+**Definisi:** "Dari semua orang yang benar-benar mengalami gangguan, berapa persen yang berhasil dideteksi oleh alat ini?"
 
 ::: {.incremental}
 * *Sensitivity* tinggi berarti **sedikit *false negative*** — kasus yang sakit jarang terlewat
@@ -92,11 +92,11 @@ $$\text{Sensitivity} = \frac{TP}{TP + FN}$$
 *Sensitivity* juga dikenal sebagai ***True Positive Rate*** (TPR) atau ***Recall***.
 :::
 
-## *Specificity* — kemampuan membebaskan yang sehat
+## *Specificity* — kemampuan mengecualikan yang sehat
 
 $$\text{Specificity} = \frac{TN}{TN + FP}$$
 
-**Pertanyaan yang dijawab:** "Dari semua orang yang tidak mengalami gangguan, berapa persen yang benar-benar dinyatakan negatif oleh alat ini?"
+**Definisi:** "Dari semua orang yang tidak mengalami gangguan, berapa persen yang tepat diklasifikasikan sebagai negatif oleh alat ini?"
 
 ::: {.incremental}
 * *Specificity* tinggi berarti **sedikit *false positive*** — orang sehat jarang salah diklasifikasikan
@@ -131,7 +131,7 @@ Dengan *cut-off* 50, alat MHI berhasil mendeteksi 80% kasus gangguan dan 80% kas
 
 $$\text{PPV} = \frac{TP}{TP + FP}$$
 
-**Pertanyaan yang dijawab:** "Jika alat menunjukkan hasil *positif*, seberapa besar kemungkinan orang ini benar-benar mengalami gangguan?"
+**Pertanyaan yang dijawab:** "Jika alat menunjukkan hasil *positif*, seberapa besar kemungkinan orang tersebut benar-benar mengalami gangguan?"
 
 Dari contoh tadi:
 
@@ -146,7 +146,7 @@ PPV **bukan** sifat tetap dari alat ukur — ia sangat bergantung pada **prevale
 
 $$\text{NPV} = \frac{TN}{TN + FN}$$
 
-**Pertanyaan yang dijawab:** "Jika alat menunjukkan hasil *negatif*, seberapa besar kemungkinan orang ini benar-benar sehat?"
+**Pertanyaan yang dijawab:** "Jika alat menunjukkan hasil *negatif*, seberapa besar kemungkinan orang tersebut benar-benar sehat?"
 
 Dari contoh tadi:
 
@@ -167,7 +167,7 @@ $$\text{NPV} = \frac{168}{168 + 18} = 0.90 \quad (90\%)$$
 ::: {.column width="55%"}
 
 ::: {.incremental}
-* Setiap alat diagnostik memiliki satu distribusi skor untuk kelompok "positif" (*cases*) dan satu untuk kelompok "negatif" (*controls*).
+* Setiap alat diagnostik menghasilkan dua distribusi skor: satu untuk kelompok "positif" (*cases*) dan satu untuk kelompok "negatif" (*controls*).
 * Ketika dua distribusi ini **saling tumpang tindih**, tidak ada *cut-off* yang bisa memisahkan keduanya dengan sempurna.
 * Menurunkan *cut-off* → **sensitivity naik** (lebih banyak kasus tertangkap) tapi **specificity turun** (lebih banyak *false alarm*).
 * Menaikkan *cut-off* → **specificity naik** (lebih sedikit *false alarm*) tapi **sensitivity turun** (lebih banyak kasus terlewat).
@@ -178,7 +178,7 @@ $$\text{NPV} = \frac{168}{168 + 18} = 0.90 \quad (90\%)$$
 
 ::: {.callout-tip}
 #### Pemilihan *cut-off* adalah keputusan etis dan klinis
-Tidak ada *cut-off* "terbaik" secara universal — pilihan tergantung pada:
+Tidak ada *cut-off* "terbaik" secara universal. Pilihan tergantung pada:
 
 * Konsekuensi *false negative* vs *false positive*
 * Biaya intervensi
@@ -194,8 +194,8 @@ Tidak ada *cut-off* "terbaik" secara universal — pilihan tergantung pada:
 ## Apa itu kurva ROC?
 
 ::: {.incremental}
-* Kurva ROC (*Receiver Operating Characteristic*) adalah visualisasi performa diagnostik sebuah alat **di semua nilai *cut-off* yang mungkin secara bersamaan**.
-* Untuk setiap *cut-off*, kita menghitung *sensitivity* (TPR) dan *false positive rate* (1 − *specificity*), lalu memplotnya:
+* Kurva ROC (*Receiver Operating Characteristic*) adalah visualisasi performa diagnostik sebuah alat **pada setiap kemungkinan nilai *cut-off* sekaligus**.
+* Untuk setiap *cut-off*, kita menghitung *sensitivity* (TPR) dan *false positive rate* (1 − *specificity*), lalu membuat plotnya:
   - Sumbu Y: *Sensitivity* (TPR) — 0 sampai 1
   - Sumbu X: *False Positive Rate* (1 − *Specificity*) — 0 sampai 1
 * **Garis diagonal** (dari [0,0] ke [1,1]) = kinerja alat yang setara dengan tebakan acak (*no discrimination*).
@@ -219,8 +219,8 @@ Tidak ada *cut-off* "terbaik" secara universal — pilihan tergantung pada:
 ::: {.column width="45%"}
 
 ::: {.callout-note}
-#### Mengapa "Receiver Operating Characteristic"?
-Nama ini berasal dari *radar engineering* di era Perang Dunia II — digunakan untuk mengevaluasi kemampuan sistem radar dalam memisahkan sinyal pesawat musuh dari *noise*. Konsep yang sama diterapkan dalam diagnostik medis dan psikologis sejak tahun 1970-an.
+#### Asal-usul terminologi "Receiver Operating Characteristic"
+Nama ini berasal dari *radar engineering* di era Perang Dunia II — digunakan untuk mengevaluasi kemampuan sistem radar dalam memisahkan sinyal pesawat musuh dari *noise*. Konsep yang sama diterapkan dalam riset psikofisik dan diagnostik medis sejak tahun 1960-an.
 :::
 
 :::
@@ -230,11 +230,12 @@ Nama ini berasal dari *radar engineering* di era Perang Dunia II — digunakan u
 
 ## AUC — satu angka untuk merangkum keseluruhan performa
 
-**Definisi probabilistik:** AUC adalah probabilitas bahwa apabila kita mengambil satu orang dengan gangguan dan satu orang sehat secara acak, alat akan memberikan **skor yang lebih tinggi** kepada orang dengan gangguan.
+**Definisi probabilistik:** AUC adalah probabilitas bahwa, jika kita mengambil satu orang dengan gangguan dan satu orang sehat secara acak, alat akan memberikan **skor lebih tinggi** kepada orang dengan gangguan.
 
 | AUC | Interpretasi |
 |:---:|:------------|
 | 0.50 | Tidak lebih baik dari tebakan acak — alat tidak bermanfaat |
+| 0.50–0.60 | Sangat lemah — tidak direkomendasikan untuk penggunaan klinis |
 | 0.60–0.70 | Lemah — performa terbatas, perlu perbaikan alat |
 | 0.70–0.80 | Cukup — bisa digunakan dengan hati-hati |
 | 0.80–0.90 | Baik — alat performa tinggi |
@@ -269,7 +270,7 @@ $$J = \text{Sensitivity} + \text{Specificity} - 1$$
 ::: {.incremental}
 * Youden's Index (J) adalah ukuran yang menyeimbangkan *sensitivity* dan *specificity* dalam satu angka.
 * Nilainya berkisar dari 0 (kinerja setara tebakan) hingga 1 (kinerja sempurna).
-* ***Cut-off* optimal** berdasarkan Youden's Index adalah nilai *cut-off* yang **memaksimalkan J** — yang memberikan kombinasi *sensitivity* + *specificity* tertinggi.
+* ***Cut-off* optimal** berdasarkan Youden's Index adalah nilai *cut-off* yang **memaksimalkan J**, yakni yang memberikan kombinasi *sensitivity* + *specificity* tertinggi.
 * Ini merupakan titik pada kurva ROC yang **paling jauh dari garis diagonal** ke arah sudut kiri atas.
 :::
 
@@ -301,9 +302,9 @@ Youden's Index memperlakukan *sensitivity* dan *specificity* sebagai **sama pent
 Analisis ROC juga bisa digunakan untuk menjawab: "**Dari dua alat *screening* ini, mana yang lebih akurat?**"
 
 ::: {.incremental}
-* Buat kurva ROC untuk masing-masing alat pada **sampel yang sama** dengan ***gold standard* yang sama**.
+* Buat kurva ROC untuk masing-masing alat menggunakan **sampel dan *gold standard* yang sama**.
 * Bandingkan AUC kedua alat — alat dengan AUC lebih tinggi secara umum lebih akurat.
-* Gunakan **uji signifikansi** untuk membandingkan AUC (metode DeLong et al., 1988) — tersedia di `jamovi` PPDA.
+* Gunakan **uji signifikansi** untuk membandingkan AUC (metode [DeLong et al., 1988](https://www.jstor.org/stable/2531595)) — tersedia di `jamovi` *module* `PPDA`.
 * Jika interval kepercayaan AUC kedua alat saling tumpang tindih, perbedaan mungkin tidak signifikan secara statistik.
 :::
 
@@ -316,7 +317,7 @@ Bahkan jika dua alat memiliki AUC serupa, salah satunya mungkin lebih dipilih ka
 
 ## Mengapa prevalensi sangat penting?
 
-*Sensitivity* dan *specificity* adalah sifat **intrinsik** alat ukur — tidak berubah ketika prevalensi berubah. Tetapi PPV dan NPV sangat bergantung pada prevalensi.
+*Sensitivity* dan *specificity* adalah sifat **intrinsik** alat ukur. Sifat ini tidak berubah ketika prevalensi berubah. Tetapi PPV dan NPV sangat bergantung pada prevalensi.
 
 **Simulasi: alat dengan sensitivity = 80%, specificity = 80%**
 
@@ -329,15 +330,15 @@ Bahkan jika dua alat memiliki AUC serupa, salah satunya mungkin lebih dipilih ka
 
 ::: {.callout-warning}
 #### Implikasi untuk penggunaan alat
-Jika alat skrining yang sama digunakan pada populasi dengan prevalensi sangat rendah (misalnya 2%), sebagian besar hasil "positif" adalah *false positive* — hanya 8% dari mereka yang dinyatakan positif benar-benar mengalami gangguan! Ini mempunyai konsekuensi etis yang serius.
+Jika alat skrining yang sama digunakan pada populasi dengan prevalensi sangat rendah (misalnya 2%), sebagian besar hasil "positif" adalah *false positive*. Artinya, hanya 8% dari mereka yang dinyatakan positif benar-benar mengalami gangguan! Ini mempunyai konsekuensi etis yang serius.
 :::
 
-# Demonstrasi di jamovi {background-color="#14497F" .center}
+# Demonstrasi di `jamovi` {background-color="#14497F" .center}
 
 ## Konteks: MHI vs SRQ-20
 
 ::: {.incremental}
-* Dataset: **Dataset Contoh Analisis ROC** (`roc.omv`)
+* Dataset: [**Dataset Contoh Analisis ROC** (`roc.omv`)](/materials/roc.omv)
   - Dapat diunduh dari *navbar* di laman mata kuliah
 
 * Variabel:
@@ -358,7 +359,7 @@ Jika alat skrining yang sama digunakan pada populasi dengan prevalensi sangat re
 
 1. Pasang *module* **PPDA** terlebih dahulu
    - Menu **☰ → Manage modules → Available → PPDA**
-2. Buka dataset `roc.omv`
+2. Buka dataset [(`roc.omv`)](/materials/roc.omv)
 3. Pastikan variabel diagnostik (*gold standard*) sudah dalam format **kategorikal** (0 = negatif, 1 = positif)
 
 **Menjalankan TestROC:**
@@ -370,7 +371,7 @@ Jika alat skrining yang sama digunakan pada populasi dengan prevalensi sangat re
 :::
 ::: {.column width="50%"}
 
-**Output yang harus diaktifkan:**
+**Opsi yang harus dipilih:**
 
 ☑ *ROC Curves* — visualisasi kurva ROC
 
@@ -387,7 +388,7 @@ AUC (+ 95% CI) → Kurva ROC → Tabel *cut-off* → Pilih *cut-off* berdasarkan
 :::
 ::::
 
-## Checklist pelaporan analisis ROC
+## *Checklist* pelaporan analisis ROC
 
 ☐ **Deskripsi alat dan *gold standard*** — apa yang diukur, bagaimana *gold standard* ditetapkan
 
@@ -407,17 +408,17 @@ AUC (+ 95% CI) → Kurva ROC → Tabel *cut-off* → Pilih *cut-off* berdasarkan
 
 > "Analisis ROC dilakukan untuk menentukan *cut-off* optimal *Mental Health Inventory* (MHI) menggunakan keputusan diagnostik SRQ-20 WHO sebagai *gold standard* (N = 300; prevalensi gangguan mental-emosional = 30%). AUC = 0.87 (95% CI [0.82, 0.92]), mengindikasikan performa diagnostik yang baik.
 >
-> Berdasarkan Youden's Index, *cut-off* optimal MHI adalah ≥ 50 (J = 0.60), dengan *sensitivity* = 80%, *specificity* = 80%, PPV = 63%, dan NPV = 90%. Temuan ini menunjukkan bahwa MHI memiliki performa diagnostik yang memadai untuk digunakan sebagai alat *screening* pada populasi layanan kesehatan primer dengan prevalensi setara."
+> Berdasarkan Youden's Index, *cut-off* optimal MHI adalah ≥ 50 (J = 0.60), dengan *sensitivity* = 80%, *specificity* = 80%, PPV = 63%, dan NPV = 90%. Temuan ini menunjukkan bahwa MHI memiliki performa diagnostik yang memadai untuk digunakan sebagai alat *screening* pada populasi layanan kesehatan primer dengan tingkat prevalensi yang sebanding."
 
 ::: {.callout-warning}
 #### Ingat batasan pelaporan PPV/NPV
-Selalu sebutkan prevalensi yang digunakan saat menghitung PPV dan NPV — karena nilai tersebut tidak berlaku untuk populasi dengan prevalensi yang berbeda.
+Selalu sebutkan prevalensi yang digunakan saat menghitung PPV dan NPV, karena nilai tersebut tidak berlaku untuk populasi dengan prevalensi yang berbeda.
 :::
 
 ## Tiga kesalahan umum dalam analisis ROC
 
 ::: {.incremental}
-1. **Menggunakan *cut-off* dari literatur tanpa validasi lokal** — *cut-off* yang optimal di satu populasi (misal: Barat, klinik spesialis) mungkin tidak optimal di populasi yang berbeda (misal: Indonesia, layanan primer). Selalu validasi secara lokal.
+1. **Menggunakan *cut-off* dari literatur tanpa validasi lokal** — *cut-off* yang optimal di satu populasi (misal: Barat, klinik spesialis) mungkin tidak optimal di populasi yang berbeda (misal: Indonesia, layanan primer). Selalu validasi secara di konteks penelitian Anda.
 
 2. **Mengabaikan konteks ketika memilih *cut-off*** — Youden's Index hanyalah titik awal. Keputusan klinis akhir harus mempertimbangkan konsekuensi *false negative* vs *false positive* yang spesifik untuk konteks penggunaan.
 

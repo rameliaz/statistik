@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.10.3">
 
   <meta name="author" content="Rizqy Amelia Zein">
-  <meta name="dcterms.date" content="2026-05-16">
+  <meta name="dcterms.date" content="2026-05-17">
   <title>Statistik Lanjut dalam Penelitian Psikologi – Analisis ROC (Receiver Operating Characteristic)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -147,7 +147,7 @@ Rizqy Amelia Zein
     </div>
 </div>
 
-  <p class="date">2026-05-16</p>
+  <p class="date">2026-05-17</p>
 </section>
 <section id="outline" class="slide level2">
 <h2><em>Outline</em></h2>
@@ -174,7 +174,7 @@ Rizqy Amelia Zein
 <h2>Apa yang ingin kita ketahui?</h2>
 <ul>
 <li class="fragment">Seorang psikolog klinis ingin membuat <em>screening tool</em> sederhana untuk mendeteksi dini gejala depresi pada mahasiswa baru.</li>
-<li class="fragment">Setelah mengembangkan alat tersebut, ia perlu menjawab pertanyaan: <strong>seberapa akurat alat ini dalam memisahkan antara mahasiswa yang mengalami depresi dengan yang tidak?</strong></li>
+<li class="fragment">Setelah mengembangkan alat tersebut, ia perlu menjawab pertanyaan: <strong>seberapa akurat alat ini dalam membedakan mahasiswa yang mengalami depresi dari yang tidak?</strong></li>
 <li class="fragment">Untuk menjawabnya, ia membandingkan hasil ukur alat barunya dengan hasil asesmen mendalam oleh psikolog klinis berlisensi sebagai <strong><em>gold standard</em></strong>.</li>
 <li class="fragment">Perbandingan inilah yang menjadi inti analisis ROC.</li>
 </ul>
@@ -197,7 +197,7 @@ Rizqy Amelia Zein
 <ul>
 <li class="fragment"><strong>Skrining depresi</strong>: PHQ-9 dibandingkan dengan wawancara SCID sebagai <em>gold standard</em></li>
 <li class="fragment"><strong>Deteksi gangguan kecemasan</strong>: GAD-7 dibandingkan dengan diagnosis klinis DSM-5</li>
-<li class="fragment"><strong>Skrining burnout</strong>: alat <em>screening</em> singkat dibandingkan dengan MBI (<em>Maslach Burnout Inventory</em>) penuh</li>
+<li class="fragment"><strong>Skrining burnout</strong>: alat <em>screening</em> singkat dengan 5 <em>item</em> dibandingkan dengan <em>Maslach Burnout Inventory</em> (MBI) dengan 22 <em>item</em></li>
 <li class="fragment"><strong>Deteksi <em>mental health</em> umum</strong>: <em>Self-Reporting Questionnaire</em> (SRQ-20 WHO) digunakan untuk memisahkan populasi dengan dan tanpa gangguan mental-emosional di layanan kesehatan primer</li>
 </ul>
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -216,12 +216,12 @@ Rizqy Amelia Zein
 </section></section>
 <section>
 <section id="confusion-matrix-fondasi-evaluasi-diagnostik" class="title-slide slide level1 center" data-background-color="#14497F">
-<h1><em>Confusion matrix</em>: fondasi evaluasi diagnostik</h1>
+<h1>Confusion matrix: fondasi evaluasi diagnostik</h1>
 
 </section>
 <section id="review-dari-bagian-3" class="slide level2">
 <h2>Review dari Bagian 3</h2>
-<p>Dari <strong>Bagian 3</strong> (Regresi Logistik), kita sudah mengenal <em>confusion matrix</em>. Di sini kita menggunakannya dalam konteks uji diagnostik: membandingkan hasil alat <em>screening</em> dengan <em>gold standard</em>.</p>
+<p>Dari <a href="https://rameliaz.github.io/statistik-lanjut/#bagian-3-regresi-logistik-binomial"><strong>Bagian 3</strong> (Regresi Logistik)</a>, kita sudah mengenal <em>confusion matrix</em>. Di sini kita menggunakannya dalam konteks uji diagnostik: membandingkan hasil alat <em>screening</em> dengan <em>gold standard</em>.</p>
 <table class="caption-top">
 <colgroup>
 <col style="width: 16%">
@@ -249,16 +249,16 @@ Rizqy Amelia Zein
 </tbody>
 </table>
 <ul>
-<li><strong>TP</strong>: Alat mengatakan positif — dan memang positif ✓</li>
-<li><strong>TN</strong>: Alat mengatakan negatif — dan memang negatif ✓</li>
-<li><strong>FP</strong>: Alat mengatakan positif — padahal negatif ✗ (<em>false alarm</em>)</li>
-<li><strong>FN</strong>: Alat mengatakan negatif — padahal positif ✗ (<em>miss</em>)</li>
+<li><strong>TP</strong>: Alat yang diuji mengatakan positif — dan memang <em>gold standard</em> menyatakan positif ✓</li>
+<li><strong>TN</strong>: Alat yang diuji mengatakan negatif — dan memang <em>gold standard</em> menyatakan negatif ✓</li>
+<li><strong>FP</strong>: Alat yang diuji mengatakan positif — padahal <em>gold standard</em> menyatakan negatif ✗ (<em>false alarm</em>)</li>
+<li><strong>FN</strong>: Alat yang diuji mengatakan negatif — padahal <em>gold standard</em> menyatakan positif ✗ (<em>miss</em>)</li>
 </ul>
 </section>
 <section id="sensitivity-kemampuan-mendeteksi-yang-sakit" class="slide level2">
 <h2><em>Sensitivity</em> — kemampuan mendeteksi yang sakit</h2>
 <p><span class="math display">\[\text{Sensitivity} = \frac{TP}{TP + FN}\]</span></p>
-<p><strong>Pertanyaan yang dijawab:</strong> “Dari semua orang yang benar-benar mengalami gangguan, berapa persen yang berhasil dideteksi oleh alat ini?”</p>
+<p><strong>Definisi:</strong> “Dari semua orang yang benar-benar mengalami gangguan, berapa persen yang berhasil dideteksi oleh alat ini?”</p>
 <ul>
 <li class="fragment"><em>Sensitivity</em> tinggi berarti <strong>sedikit <em>false negative</em></strong> — kasus yang sakit jarang terlewat</li>
 <li class="fragment">Sangat penting ketika <strong>konsekuensi miss sangat besar</strong>: skrining risiko bunuh diri, skrining gangguan psikosis dini, skrining kekerasan dalam rumah tangga</li>
@@ -278,10 +278,10 @@ Rizqy Amelia Zein
 </div>
 </div>
 </section>
-<section id="specificity-kemampuan-membebaskan-yang-sehat" class="slide level2">
-<h2><em>Specificity</em> — kemampuan membebaskan yang sehat</h2>
+<section id="specificity-kemampuan-mengecualikan-yang-sehat" class="slide level2">
+<h2><em>Specificity</em> — kemampuan mengecualikan yang sehat</h2>
 <p><span class="math display">\[\text{Specificity} = \frac{TN}{TN + FP}\]</span></p>
-<p><strong>Pertanyaan yang dijawab:</strong> “Dari semua orang yang tidak mengalami gangguan, berapa persen yang benar-benar dinyatakan negatif oleh alat ini?”</p>
+<p><strong>Definisi:</strong> “Dari semua orang yang tidak mengalami gangguan, berapa persen yang tepat diklasifikasikan sebagai negatif oleh alat ini?”</p>
 <ul>
 <li class="fragment"><em>Specificity</em> tinggi berarti <strong>sedikit <em>false positive</em></strong> — orang sehat jarang salah diklasifikasikan</li>
 <li class="fragment">Sangat penting ketika <strong>konsekuensi <em>false alarm</em> sangat besar</strong>: stigma, intervensi yang tidak perlu, biaya yang tinggi, keputusan seleksi/rekrutmen</li>
@@ -354,7 +354,7 @@ Rizqy Amelia Zein
 <section id="positive-predictive-value-ppv" class="slide level2">
 <h2><em>Positive Predictive Value</em> (PPV)</h2>
 <p><span class="math display">\[\text{PPV} = \frac{TP}{TP + FP}\]</span></p>
-<p><strong>Pertanyaan yang dijawab:</strong> “Jika alat menunjukkan hasil <em>positif</em>, seberapa besar kemungkinan orang ini benar-benar mengalami gangguan?”</p>
+<p><strong>Pertanyaan yang dijawab:</strong> “Jika alat menunjukkan hasil <em>positif</em>, seberapa besar kemungkinan orang tersebut benar-benar mengalami gangguan?”</p>
 <p>Dari contoh tadi:</p>
 <p><span class="math display">\[\text{PPV} = \frac{72}{72 + 42} = 0.63 \quad (63\%)\]</span></p>
 <div class="callout callout-warning callout-titled callout-style-default">
@@ -374,7 +374,7 @@ Rizqy Amelia Zein
 <section id="negative-predictive-value-npv" class="slide level2">
 <h2><em>Negative Predictive Value</em> (NPV)</h2>
 <p><span class="math display">\[\text{NPV} = \frac{TN}{TN + FN}\]</span></p>
-<p><strong>Pertanyaan yang dijawab:</strong> “Jika alat menunjukkan hasil <em>negatif</em>, seberapa besar kemungkinan orang ini benar-benar sehat?”</p>
+<p><strong>Pertanyaan yang dijawab:</strong> “Jika alat menunjukkan hasil <em>negatif</em>, seberapa besar kemungkinan orang tersebut benar-benar sehat?”</p>
 <p>Dari contoh tadi:</p>
 <p><span class="math display">\[\text{NPV} = \frac{168}{168 + 18} = 0.90 \quad (90\%)\]</span></p>
 <p><strong>Empat metrik dalam satu tabel:</strong></p>
@@ -415,7 +415,7 @@ Rizqy Amelia Zein
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li class="fragment">Setiap alat diagnostik memiliki satu distribusi skor untuk kelompok “positif” (<em>cases</em>) dan satu untuk kelompok “negatif” (<em>controls</em>).</li>
+<li class="fragment">Setiap alat diagnostik menghasilkan dua distribusi skor: satu untuk kelompok “positif” (<em>cases</em>) dan satu untuk kelompok “negatif” (<em>controls</em>).</li>
 <li class="fragment">Ketika dua distribusi ini <strong>saling tumpang tindih</strong>, tidak ada <em>cut-off</em> yang bisa memisahkan keduanya dengan sempurna.</li>
 <li class="fragment">Menurunkan <em>cut-off</em> → <strong>sensitivity naik</strong> (lebih banyak kasus tertangkap) tapi <strong>specificity turun</strong> (lebih banyak <em>false alarm</em>).</li>
 <li class="fragment">Menaikkan <em>cut-off</em> → <strong>specificity naik</strong> (lebih sedikit <em>false alarm</em>) tapi <strong>sensitivity turun</strong> (lebih banyak kasus terlewat).</li>
@@ -430,7 +430,7 @@ Rizqy Amelia Zein
 <p><strong>Pemilihan <em>cut-off</em> adalah keputusan etis dan klinis</strong></p>
 </div>
 <div class="callout-content">
-<p>Tidak ada <em>cut-off</em> “terbaik” secara universal — pilihan tergantung pada:</p>
+<p>Tidak ada <em>cut-off</em> “terbaik” secara universal. Pilihan tergantung pada:</p>
 <ul>
 <li>Konsekuensi <em>false negative</em> vs <em>false positive</em></li>
 <li>Biaya intervensi</li>
@@ -450,8 +450,8 @@ Rizqy Amelia Zein
 <section id="apa-itu-kurva-roc" class="slide level2">
 <h2>Apa itu kurva ROC?</h2>
 <ul>
-<li class="fragment">Kurva ROC (<em>Receiver Operating Characteristic</em>) adalah visualisasi performa diagnostik sebuah alat <strong>di semua nilai <em>cut-off</em> yang mungkin secara bersamaan</strong>.</li>
-<li class="fragment">Untuk setiap <em>cut-off</em>, kita menghitung <em>sensitivity</em> (TPR) dan <em>false positive rate</em> (1 − <em>specificity</em>), lalu memplotnya:
+<li class="fragment">Kurva ROC (<em>Receiver Operating Characteristic</em>) adalah visualisasi performa diagnostik sebuah alat <strong>pada setiap kemungkinan nilai <em>cut-off</em> sekaligus</strong>.</li>
+<li class="fragment">Untuk setiap <em>cut-off</em>, kita menghitung <em>sensitivity</em> (TPR) dan <em>false positive rate</em> (1 − <em>specificity</em>), lalu membuat plotnya:
 <ul>
 <li class="fragment">Sumbu Y: <em>Sensitivity</em> (TPR) — 0 sampai 1</li>
 <li class="fragment">Sumbu X: <em>False Positive Rate</em> (1 − <em>Specificity</em>) — 0 sampai 1</li>
@@ -478,10 +478,10 @@ Rizqy Amelia Zein
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Mengapa “Receiver Operating Characteristic”?</strong></p>
+<p><strong>Asal-usul terminologi “Receiver Operating Characteristic”</strong></p>
 </div>
 <div class="callout-content">
-<p>Nama ini berasal dari <em>radar engineering</em> di era Perang Dunia II — digunakan untuk mengevaluasi kemampuan sistem radar dalam memisahkan sinyal pesawat musuh dari <em>noise</em>. Konsep yang sama diterapkan dalam diagnostik medis dan psikologis sejak tahun 1970-an.</p>
+<p>Nama ini berasal dari <em>radar engineering</em> di era Perang Dunia II — digunakan untuk mengevaluasi kemampuan sistem radar dalam memisahkan sinyal pesawat musuh dari <em>noise</em>. Konsep yang sama diterapkan dalam riset psikofisik dan diagnostik medis sejak tahun 1960-an.</p>
 </div>
 </div>
 </div>
@@ -494,8 +494,12 @@ Rizqy Amelia Zein
 </section>
 <section id="auc-satu-angka-untuk-merangkum-keseluruhan-performa" class="slide level2">
 <h2>AUC — satu angka untuk merangkum keseluruhan performa</h2>
-<p><strong>Definisi probabilistik:</strong> AUC adalah probabilitas bahwa apabila kita mengambil satu orang dengan gangguan dan satu orang sehat secara acak, alat akan memberikan <strong>skor yang lebih tinggi</strong> kepada orang dengan gangguan.</p>
+<p><strong>Definisi probabilistik:</strong> AUC adalah probabilitas bahwa, jika kita mengambil satu orang dengan gangguan dan satu orang sehat secara acak, alat akan memberikan <strong>skor lebih tinggi</strong> kepada orang dengan gangguan.</p>
 <table class="caption-top">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 72%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">AUC</th>
@@ -508,18 +512,22 @@ Rizqy Amelia Zein
 <td style="text-align: left;">Tidak lebih baik dari tebakan acak — alat tidak bermanfaat</td>
 </tr>
 <tr class="even">
+<td style="text-align: center;">0.50–0.60</td>
+<td style="text-align: left;">Sangat lemah — tidak direkomendasikan untuk penggunaan klinis</td>
+</tr>
+<tr class="odd">
 <td style="text-align: center;">0.60–0.70</td>
 <td style="text-align: left;">Lemah — performa terbatas, perlu perbaikan alat</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;">0.70–0.80</td>
 <td style="text-align: left;">Cukup — bisa digunakan dengan hati-hati</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: center;">0.80–0.90</td>
 <td style="text-align: left;">Baik — alat performa tinggi</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;">0.90–1.00</td>
 <td style="text-align: left;">Sangat baik — atau <em>overfitting</em>? Cek dulu!</td>
 </tr>
@@ -572,7 +580,7 @@ Rizqy Amelia Zein
 <ul>
 <li class="fragment">Youden’s Index (J) adalah ukuran yang menyeimbangkan <em>sensitivity</em> dan <em>specificity</em> dalam satu angka.</li>
 <li class="fragment">Nilainya berkisar dari 0 (kinerja setara tebakan) hingga 1 (kinerja sempurna).</li>
-<li class="fragment"><strong><em>Cut-off</em> optimal</strong> berdasarkan Youden’s Index adalah nilai <em>cut-off</em> yang <strong>memaksimalkan J</strong> — yang memberikan kombinasi <em>sensitivity</em> + <em>specificity</em> tertinggi.</li>
+<li class="fragment"><strong><em>Cut-off</em> optimal</strong> berdasarkan Youden’s Index adalah nilai <em>cut-off</em> yang <strong>memaksimalkan J</strong>, yakni yang memberikan kombinasi <em>sensitivity</em> + <em>specificity</em> tertinggi.</li>
 <li class="fragment">Ini merupakan titik pada kurva ROC yang <strong>paling jauh dari garis diagonal</strong> ke arah sudut kiri atas.</li>
 </ul>
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -657,9 +665,9 @@ Rizqy Amelia Zein
 <h2>ROC untuk membandingkan dua tes sekaligus</h2>
 <p>Analisis ROC juga bisa digunakan untuk menjawab: “<strong>Dari dua alat <em>screening</em> ini, mana yang lebih akurat?</strong>”</p>
 <ul>
-<li class="fragment">Buat kurva ROC untuk masing-masing alat pada <strong>sampel yang sama</strong> dengan <strong><em>gold standard</em> yang sama</strong>.</li>
+<li class="fragment">Buat kurva ROC untuk masing-masing alat menggunakan <strong>sampel dan <em>gold standard</em> yang sama</strong>.</li>
 <li class="fragment">Bandingkan AUC kedua alat — alat dengan AUC lebih tinggi secara umum lebih akurat.</li>
-<li class="fragment">Gunakan <strong>uji signifikansi</strong> untuk membandingkan AUC (metode DeLong et al., 1988) — tersedia di <code>jamovi</code> PPDA.</li>
+<li class="fragment">Gunakan <strong>uji signifikansi</strong> untuk membandingkan AUC (metode <a href="https://www.jstor.org/stable/2531595">DeLong et al., 1988</a>) — tersedia di <code>jamovi</code> <em>module</em> <code>PPDA</code>.</li>
 <li class="fragment">Jika interval kepercayaan AUC kedua alat saling tumpang tindih, perbedaan mungkin tidak signifikan secara statistik.</li>
 </ul>
 <div class="callout callout-note callout-titled callout-style-default">
@@ -683,7 +691,7 @@ Rizqy Amelia Zein
 </section>
 <section id="mengapa-prevalensi-sangat-penting" class="slide level2">
 <h2>Mengapa prevalensi sangat penting?</h2>
-<p><em>Sensitivity</em> dan <em>specificity</em> adalah sifat <strong>intrinsik</strong> alat ukur — tidak berubah ketika prevalensi berubah. Tetapi PPV dan NPV sangat bergantung pada prevalensi.</p>
+<p><em>Sensitivity</em> dan <em>specificity</em> adalah sifat <strong>intrinsik</strong> alat ukur. Sifat ini tidak berubah ketika prevalensi berubah. Tetapi PPV dan NPV sangat bergantung pada prevalensi.</p>
 <p><strong>Simulasi: alat dengan sensitivity = 80%, specificity = 80%</strong></p>
 <table class="caption-top">
 <thead>
@@ -725,20 +733,20 @@ Rizqy Amelia Zein
 <p><strong>Implikasi untuk penggunaan alat</strong></p>
 </div>
 <div class="callout-content">
-<p>Jika alat skrining yang sama digunakan pada populasi dengan prevalensi sangat rendah (misalnya 2%), sebagian besar hasil “positif” adalah <em>false positive</em> — hanya 8% dari mereka yang dinyatakan positif benar-benar mengalami gangguan! Ini mempunyai konsekuensi etis yang serius.</p>
+<p>Jika alat skrining yang sama digunakan pada populasi dengan prevalensi sangat rendah (misalnya 2%), sebagian besar hasil “positif” adalah <em>false positive</em>. Artinya, hanya 8% dari mereka yang dinyatakan positif benar-benar mengalami gangguan! Ini mempunyai konsekuensi etis yang serius.</p>
 </div>
 </div>
 </div>
 </section></section>
 <section>
 <section id="demonstrasi-di-jamovi" class="title-slide slide level1 center" data-background-color="#14497F">
-<h1>Demonstrasi di jamovi</h1>
+<h1>Demonstrasi di <code>jamovi</code></h1>
 
 </section>
 <section id="konteks-mhi-vs-srq-20" class="slide level2">
 <h2>Konteks: MHI vs SRQ-20</h2>
 <ul>
-<li class="fragment"><p>Dataset: <strong>Dataset Contoh Analisis ROC</strong> (<code>roc.omv</code>)</p>
+<li class="fragment"><p>Dataset: <a href="..\materials/roc.omv"><strong>Dataset Contoh Analisis ROC</strong> (<code>roc.omv</code>)</a></p>
 <ul>
 <li class="fragment">Dapat diunduh dari <em>navbar</em> di laman mata kuliah</li>
 </ul></li>
@@ -761,7 +769,7 @@ Rizqy Amelia Zein
 <ul>
 <li>Menu <strong>☰ → Manage modules → Available → PPDA</strong></li>
 </ul></li>
-<li>Buka dataset <code>roc.omv</code></li>
+<li>Buka dataset <a href="..\materials/roc.omv">(<code>roc.omv</code>)</a></li>
 <li>Pastikan variabel diagnostik (<em>gold standard</em>) sudah dalam format <strong>kategorikal</strong> (0 = negatif, 1 = positif)</li>
 </ol>
 <p><strong>Menjalankan TestROC:</strong></p>
@@ -771,7 +779,7 @@ Rizqy Amelia Zein
 <li>Masukkan <strong>SRQ_Diagnostik</strong> ke kolom <em>Class Variable</em></li>
 </ol>
 </div><div class="column" style="width:50%;">
-<p><strong>Output yang harus diaktifkan:</strong></p>
+<p><strong>Opsi yang harus dipilih:</strong></p>
 <p>☑ <em>ROC Curves</em> — visualisasi kurva ROC</p>
 <p>☑ <em>Standard error bars</em> — <em>confidence interval</em> pada kurva</p>
 <p>☑ <em>Sensitivity-Specificity Tables</em> — tabel untuk memilih <em>cut-off</em></p>
@@ -781,7 +789,7 @@ Rizqy Amelia Zein
 </div></div>
 </section>
 <section id="checklist-pelaporan-analisis-roc" class="slide level2">
-<h2>Checklist pelaporan analisis ROC</h2>
+<h2><em>Checklist</em> pelaporan analisis ROC</h2>
 <p>☐ <strong>Deskripsi alat dan <em>gold standard</em></strong> — apa yang diukur, bagaimana <em>gold standard</em> ditetapkan</p>
 <p>☐ <strong>Prevalensi dalam sampel</strong> — proporsi kasus positif</p>
 <p>☐ <strong>AUC</strong> — nilai, 95% CI, dan interpretasi</p>
@@ -794,7 +802,7 @@ Rizqy Amelia Zein
 <h2>Contoh paragraf hasil</h2>
 <blockquote>
 <p>“Analisis ROC dilakukan untuk menentukan <em>cut-off</em> optimal <em>Mental Health Inventory</em> (MHI) menggunakan keputusan diagnostik SRQ-20 WHO sebagai <em>gold standard</em> (N = 300; prevalensi gangguan mental-emosional = 30%). AUC = 0.87 (95% CI [0.82, 0.92]), mengindikasikan performa diagnostik yang baik.</p>
-<p>Berdasarkan Youden’s Index, <em>cut-off</em> optimal MHI adalah ≥ 50 (J = 0.60), dengan <em>sensitivity</em> = 80%, <em>specificity</em> = 80%, PPV = 63%, dan NPV = 90%. Temuan ini menunjukkan bahwa MHI memiliki performa diagnostik yang memadai untuk digunakan sebagai alat <em>screening</em> pada populasi layanan kesehatan primer dengan prevalensi setara.”</p>
+<p>Berdasarkan Youden’s Index, <em>cut-off</em> optimal MHI adalah ≥ 50 (J = 0.60), dengan <em>sensitivity</em> = 80%, <em>specificity</em> = 80%, PPV = 63%, dan NPV = 90%. Temuan ini menunjukkan bahwa MHI memiliki performa diagnostik yang memadai untuk digunakan sebagai alat <em>screening</em> pada populasi layanan kesehatan primer dengan tingkat prevalensi yang sebanding.”</p>
 </blockquote>
 <div class="callout callout-warning callout-titled callout-style-default">
 <div class="callout-body">
@@ -805,7 +813,7 @@ Rizqy Amelia Zein
 <p><strong>Ingat batasan pelaporan PPV/NPV</strong></p>
 </div>
 <div class="callout-content">
-<p>Selalu sebutkan prevalensi yang digunakan saat menghitung PPV dan NPV — karena nilai tersebut tidak berlaku untuk populasi dengan prevalensi yang berbeda.</p>
+<p>Selalu sebutkan prevalensi yang digunakan saat menghitung PPV dan NPV, karena nilai tersebut tidak berlaku untuk populasi dengan prevalensi yang berbeda.</p>
 </div>
 </div>
 </div>
@@ -813,7 +821,7 @@ Rizqy Amelia Zein
 <section id="tiga-kesalahan-umum-dalam-analisis-roc" class="slide level2">
 <h2>Tiga kesalahan umum dalam analisis ROC</h2>
 <ol type="1">
-<li class="fragment"><p><strong>Menggunakan <em>cut-off</em> dari literatur tanpa validasi lokal</strong> — <em>cut-off</em> yang optimal di satu populasi (misal: Barat, klinik spesialis) mungkin tidak optimal di populasi yang berbeda (misal: Indonesia, layanan primer). Selalu validasi secara lokal.</p></li>
+<li class="fragment"><p><strong>Menggunakan <em>cut-off</em> dari literatur tanpa validasi lokal</strong> — <em>cut-off</em> yang optimal di satu populasi (misal: Barat, klinik spesialis) mungkin tidak optimal di populasi yang berbeda (misal: Indonesia, layanan primer). Selalu validasi secara di konteks penelitian Anda.</p></li>
 <li class="fragment"><p><strong>Mengabaikan konteks ketika memilih <em>cut-off</em></strong> — Youden’s Index hanyalah titik awal. Keputusan klinis akhir harus mempertimbangkan konsekuensi <em>false negative</em> vs <em>false positive</em> yang spesifik untuk konteks penggunaan.</p></li>
 <li class="fragment"><p><strong>Melaporkan PPV/NPV tanpa menyebutkan prevalensi</strong> — PPV = 63% tidak bermakna tanpa informasi bahwa angka itu dihitung pada prevalensi 30%. Pembaca yang menggunakan alat di populasi dengan prevalensi 10% akan mendapat gambaran yang sangat menyesatkan.</p></li>
 </ol>

@@ -1,6 +1,6 @@
 ---
 title: "Regresi Linear (_Ordinary Least Square_)"
-subtitle: "Menggunakan `jamovi`"
+subtitle: "Statistik dalam Penelitian Psikologi"
 author: "Rizqy Amelia Zein"
 institute:
   - "[_Departemen Psikologi, Universitas Airlangga_](https://psikologi.unair.ac.id/dosen-rizqy-amelia-zein/)"

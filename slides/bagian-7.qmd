@@ -41,15 +41,17 @@ execute:
 
 ## *Measurement error* mendistorsi estimasi
 
-* Dari **Bagian 2** kita sudah tahu bahwa korelasi antar dua variabel selalu *terlalu kecil* karena *measurement error* (*attenuation bias*)
+* Kita sudah mempelajari di [**Bagian 1**](https://rameliaz.github.io/statistik-lanjut/slides/bagian-1.html#/title-slide) dan [**Bagian 5**](https://rameliaz.github.io/statistik-lanjut/slides/bagian-5.html#/title-slide) bahwa korelasi antar dua variabel selalu *terlalu kecil* karena terkontaminasi *measurement error* (*attenuation bias*)
+
+* Secara matematis, hubungan antara korelasi yang terobservasi (e.g., nilai *r* dari korelasi Pearson) dengan korelasi *true score* dapat dinyatakan sebagai:
 
 $$r_{XY_{observed}} = r_{T_X T_Y} \times \sqrt{\rho_{XX'} \times \rho_{YY'}}$$
 
-* Analisis faktor secara eksplisit **memodelkan** *error* per *item* {{< fa circle-arrow-right >}} memisahkan **sinyal** (*common variance*) dari ***noise*** (*residual*/*unique variance*)
+* Analisis faktor **mempartisi** varians per *item* menjadi **sinyal** (*common variance*) dan ***noise*** (*unique variance* = varians spesifik per item + *measurement error*) — tidak seperti PCA yang tidak memisahkan keduanya
 
 ::: {.callout-tip}
-#### Ingat dari Materi Korelasi!
-Koefisien korelasi yang terobservasi selalu lebih kecil dari korelasi sesungguhnya antar *true score*, persis karena *measurement error* ini. Analisis faktor membantu kita mendapatkan estimasi korelasi yang lebih akurat.
+#### Ingat prinsip dasar korelasi!
+Koefisien korelasi yang terobservasi (e.g., *r* pada korelasi Pearson, dsb.) selalu lebih kecil dari korelasi sesungguhnya antar *true score*, karena adanya *measurement error* ini. Analisis faktor membantu kita mendapatkan estimasi korelasi yang lebih akurat.
 :::
 
 ## Keluarga model variabel laten
@@ -84,8 +86,8 @@ Koefisien korelasi yang terobservasi selalu lebih kecil dari korelasi sesungguhn
 
 ::: {.incremental}
 * PCA mencari "arah" (*component*) dalam ruang data yang menangkap **varians sebesar mungkin**
-* Hasilnya adalah *principal components* yang merupakan **kombinasi linear** dari *item*-*item* asli
-* Tujuan utama: **reduksi dimensi** — meringkas banyak *item* menjadi sedikit variabel ringkasan ("*payung*") yang lebih besar
+* Hasilnya adalah *principal components* yang merupakan **kombinasi linear** dari suatu set *item*
+* Tujuan utama: **reduksi dimensi** — meringkas banyak *item* menjadi sedikit komponen ("*payung*") yang lebih besar
 * **Penting**: PCA bukan model pengukuran — ia **tidak mengasumsikan** adanya faktor laten yang menyebabkan *item* bervariasi
 :::
 
@@ -93,8 +95,8 @@ Koefisien korelasi yang terobservasi selalu lebih kecil dari korelasi sesungguhn
 ::: {.column width="50%"}
 **Hierarki komponen:**
 
-* **PC1** — arah dengan varians terbesar
-* **PC2** — *orthogonal* terhadap PC1, varians terbesar berikutnya
+* **PC1** — komponen dengan varians terbesar
+* **PC2** — *orthogonal* terhadap PC1, komponen dengan varians terbesar berikutnya
 * **PC3, PC4, ...** — dst., selalu *orthogonal* (tidak berkorelasi) terhadap semua komponen sebelumnya
 :::
 ::: {.column width="50%"}
@@ -177,7 +179,7 @@ Rotasi **tidak** mengubah total varians yang dijelaskan, tetapi hanya mendistrib
 | **Posisi dalam ML** | *Unsupervised learning* — *preprocessing* sebelum melakukan pengujian pada *test data* | Psikometri — pengembangan & validasi skala |
 | **Model** | Komponen = fungsi linear *item* | *Item* = fungsi linear faktor + *error* pengukuran |
 | **Varians yang ingin dijelaskan** | Total varians (termasuk *unique* & *error*) | Hanya *common variance* |
-| **Error pengukuran** | Tidak dimodelkan | Eksplisit dimodelkan per *item* |
+| **Error pengukuran** | Tidak dimodelkan | Dipartisi sebagai *unique variance* per *item* |
 
 : {tbl-colwidths="[28,36,36]"}
 
@@ -218,7 +220,7 @@ Evaluasi ulang redaksi (*wording*) *item* tersebut sebelum memutuskan untuk meng
 ## Menentukan jumlah faktor
 
 ::: {.incremental}
-* **Kaiser criterion** (λ > 1) — mudah, tapi selalu *over-extract*. Gunakan sebagai *screening* awal saja.
+* **Kaiser criterion** (λ > 1) — mudah, tapi cenderung *over-extract*. Gunakan sebagai *screening* awal saja.
 
 * ***Scree plot*** — visual dan intuitif, tapi subjektif. Dua peneliti bisa membaca *scree plot* yang sama secara berbeda.
 
@@ -278,6 +280,7 @@ Untuk skala *Likert* yang tidak terlalu juling, **MinRes sudah cukup baik**. Gun
 | 0.80–0.90 | *Meritorious* |
 | 0.70–0.80 | *Middling* |
 | 0.60–0.70 | *Mediocre* |
+| 0.50–0.60 | *Miserable* |
 | < 0.50 | Tidak layak — jangan lanjutkan EFA |
 
 ## Bartlett's *test of sphericity*
@@ -329,7 +332,8 @@ Ambang batas RMSEA < .06 ([Hu & Bentler, 1999](https://www.tandfonline.com/doi/a
 
 * Mengukur konsistensi internal
 * Mengasumsikan semua *item* berkontribusi (*factor loadings*) *sama* (*tau-equivalence*)
-* Jika *loadings* berbeda-beda (yang hampir selalu terjadi), α bisa *underestimate* reliabilitas sesungguhnya
+* Jika *loadings* berbeda-beda, α adalah *lower bound* reliabilitas — hanya berlaku untuk skala **unidimensional**
+* Pada skala **multidimensional**, α justru bisa ***overestimate*** reliabilitas satu faktor karena menyerap varians dari faktor lain yang tidak relevan
 * Sensitif terhadap jumlah *item*, lebih banyak *item* = α lebih tinggi, meskipun *loadings* cenderung moderat
 
 :::

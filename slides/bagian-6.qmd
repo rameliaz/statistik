@@ -155,7 +155,7 @@ Untuk faktor situasi, ia mengamati sepertinya persepsi atas kondisi kerja yang i
 Rumuskan **hipotesis** penelitiannya kemudian buatlah **diagram jalur** beserta **koefisien jalurnya**. Bisa dengan MS Power Point atau *software* yang lain (misalnya, [draw.io](https://app.diagrams.net/)).
 :::
 
-#### [Klik disini untuk mengumpulkan tugas](https://padlet.com/ameliazein/tugas-mandiri-workshop-multigroup-sem-8p34daek2641aic8)
+#### [Klik disini untuk mengumpulkan tugas]()
 
 ## `lavaan` *Syntax*
 
@@ -269,7 +269,7 @@ mandiri ~ trust
 
 Tulislah *syntax* `lavaan` dari diagram jalur yang sudah dibuat di Latihan mandiri 2️⃣
 
-#### [Klik disini untuk mengumpulkan tugas](https://padlet.com/ameliazein/tugas-mandiri-workshop-multigroup-sem-8p34daek2641aic8)
+#### [Klik disini untuk mengumpulkan tugas]()
 
 ## Ada pertanyaan❓
 

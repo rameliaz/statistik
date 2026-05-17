@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.10.3">
 
   <meta name="author" content="Rizqy Amelia Zein">
-  <meta name="dcterms.date" content="2026-05-16">
+  <meta name="dcterms.date" content="2026-05-17">
   <title>Statistik Lanjut dalam Penelitian Psikologi – Principal Component Analysis &amp; Exploratory Factor Analysis</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -147,7 +147,7 @@ Rizqy Amelia Zein
     </div>
 </div>
 
-  <p class="date">2026-05-16</p>
+  <p class="date">2026-05-17</p>
 </section>
 <section id="outline" class="slide level2">
 <h2><em>Outline</em></h2>
@@ -182,11 +182,12 @@ Rizqy Amelia Zein
 <section id="measurement-error-mendistorsi-estimasi" class="slide level2">
 <h2><em>Measurement error</em> mendistorsi estimasi</h2>
 <ul>
-<li>Dari <strong>Bagian 2</strong> kita sudah tahu bahwa korelasi antar dua variabel selalu <em>terlalu kecil</em> karena <em>measurement error</em> (<em>attenuation bias</em>)</li>
+<li><p>Kita sudah mempelajari di <a href="https://rameliaz.github.io/statistik-lanjut/slides/bagian-1.html#/title-slide"><strong>Bagian 1</strong></a> dan <a href="https://rameliaz.github.io/statistik-lanjut/slides/bagian-5.html#/title-slide"><strong>Bagian 5</strong></a> bahwa korelasi antar dua variabel selalu <em>terlalu kecil</em> karena terkontaminasi <em>measurement error</em> (<em>attenuation bias</em>)</p></li>
+<li><p>Secara matematis, hubungan antara korelasi yang terobservasi (e.g., nilai <em>r</em> dari korelasi Pearson) dengan korelasi <em>true score</em> dapat dinyatakan sebagai:</p></li>
 </ul>
 <p><span class="math display">\[r_{XY_{observed}} = r_{T_X T_Y} \times \sqrt{\rho_{XX'} \times \rho_{YY'}}\]</span></p>
 <ul>
-<li>Analisis faktor secara eksplisit <strong>memodelkan</strong> <em>error</em> per <em>item</em> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> memisahkan <strong>sinyal</strong> (<em>common variance</em>) dari <strong><em>noise</em></strong> (<em>residual</em>/<em>unique variance</em>)</li>
+<li>Analisis faktor <strong>mempartisi</strong> varians per <em>item</em> menjadi <strong>sinyal</strong> (<em>common variance</em>) dan <strong><em>noise</em></strong> (<em>unique variance</em> = varians spesifik per item + <em>measurement error</em>) — tidak seperti PCA yang tidak memisahkan keduanya</li>
 </ul>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -194,10 +195,10 @@ Rizqy Amelia Zein
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Ingat dari Materi Korelasi!</strong></p>
+<p><strong>Ingat prinsip dasar korelasi!</strong></p>
 </div>
 <div class="callout-content">
-<p>Koefisien korelasi yang terobservasi selalu lebih kecil dari korelasi sesungguhnya antar <em>true score</em>, persis karena <em>measurement error</em> ini. Analisis faktor membantu kita mendapatkan estimasi korelasi yang lebih akurat.</p>
+<p>Koefisien korelasi yang terobservasi (e.g., <em>r</em> pada korelasi Pearson, dsb.) selalu lebih kecil dari korelasi sesungguhnya antar <em>true score</em>, karena adanya <em>measurement error</em> ini. Analisis faktor membantu kita mendapatkan estimasi korelasi yang lebih akurat.</p>
 </div>
 </div>
 </div>
@@ -292,16 +293,16 @@ Rizqy Amelia Zein
 <h2>Apa itu PCA?</h2>
 <ul>
 <li class="fragment">PCA mencari “arah” (<em>component</em>) dalam ruang data yang menangkap <strong>varians sebesar mungkin</strong></li>
-<li class="fragment">Hasilnya adalah <em>principal components</em> yang merupakan <strong>kombinasi linear</strong> dari <em>item</em>-<em>item</em> asli</li>
-<li class="fragment">Tujuan utama: <strong>reduksi dimensi</strong> — meringkas banyak <em>item</em> menjadi sedikit variabel ringkasan (“<em>payung</em>”) yang lebih besar</li>
+<li class="fragment">Hasilnya adalah <em>principal components</em> yang merupakan <strong>kombinasi linear</strong> dari suatu set <em>item</em></li>
+<li class="fragment">Tujuan utama: <strong>reduksi dimensi</strong> — meringkas banyak <em>item</em> menjadi sedikit komponen (“<em>payung</em>”) yang lebih besar</li>
 <li class="fragment"><strong>Penting</strong>: PCA bukan model pengukuran — ia <strong>tidak mengasumsikan</strong> adanya faktor laten yang menyebabkan <em>item</em> bervariasi</li>
 </ul>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Hierarki komponen:</strong></p>
 <ul>
-<li><strong>PC1</strong> — arah dengan varians terbesar</li>
-<li><strong>PC2</strong> — <em>orthogonal</em> terhadap PC1, varians terbesar berikutnya</li>
+<li><strong>PC1</strong> — komponen dengan varians terbesar</li>
+<li><strong>PC2</strong> — <em>orthogonal</em> terhadap PC1, komponen dengan varians terbesar berikutnya</li>
 <li><strong>PC3, PC4, …</strong> — dst., selalu <em>orthogonal</em> (tidak berkorelasi) terhadap semua komponen sebelumnya</li>
 </ul>
 </div><div class="column" style="width:50%;">
@@ -475,7 +476,7 @@ Rizqy Amelia Zein
 <tr class="odd">
 <td><strong>Error pengukuran</strong></td>
 <td>Tidak dimodelkan</td>
-<td>Eksplisit dimodelkan per <em>item</em></td>
+<td>Dipartisi sebagai <em>unique variance</em> per <em>item</em></td>
 </tr>
 </tbody>
 </table>
@@ -572,7 +573,7 @@ Rizqy Amelia Zein
 <section id="menentukan-jumlah-faktor" class="slide level2">
 <h2>Menentukan jumlah faktor</h2>
 <ul>
-<li class="fragment"><p><strong>Kaiser criterion</strong> (λ &gt; 1) — mudah, tapi selalu <em>over-extract</em>. Gunakan sebagai <em>screening</em> awal saja.</p></li>
+<li class="fragment"><p><strong>Kaiser criterion</strong> (λ &gt; 1) — mudah, tapi cenderung <em>over-extract</em>. Gunakan sebagai <em>screening</em> awal saja.</p></li>
 <li class="fragment"><p><strong><em>Scree plot</em></strong> — visual dan intuitif, tapi subjektif. Dua peneliti bisa membaca <em>scree plot</em> yang sama secara berbeda.</p></li>
 <li class="fragment"><p><strong><em>Parallel analysis</em></strong> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> <strong>direkomendasikan</strong></p>
 <ul>
@@ -706,6 +707,10 @@ Rizqy Amelia Zein
 <td style="text-align: center;"><em>Mediocre</em></td>
 </tr>
 <tr class="odd">
+<td>0.50–0.60</td>
+<td style="text-align: center;"><em>Miserable</em></td>
+</tr>
+<tr class="even">
 <td>&lt; 0.50</td>
 <td style="text-align: center;">Tidak layak — jangan lanjutkan EFA</td>
 </tr>
@@ -803,7 +808,8 @@ Rizqy Amelia Zein
 <ul>
 <li>Mengukur konsistensi internal</li>
 <li>Mengasumsikan semua <em>item</em> berkontribusi (<em>factor loadings</em>) <em>sama</em> (<em>tau-equivalence</em>)</li>
-<li>Jika <em>loadings</em> berbeda-beda (yang hampir selalu terjadi), α bisa <em>underestimate</em> reliabilitas sesungguhnya</li>
+<li>Jika <em>loadings</em> berbeda-beda, α adalah <em>lower bound</em> reliabilitas — hanya berlaku untuk skala <strong>unidimensional</strong></li>
+<li>Pada skala <strong>multidimensional</strong>, α justru bisa <strong><em>overestimate</em></strong> reliabilitas satu faktor karena menyerap varians dari faktor lain yang tidak relevan</li>
 <li>Sensitif terhadap jumlah <em>item</em>, lebih banyak <em>item</em> = α lebih tinggi, meskipun <em>loadings</em> cenderung moderat</li>
 </ul>
 </div><div class="column" style="width:50%;">
