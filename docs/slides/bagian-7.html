@@ -456,7 +456,7 @@ Rizqy Amelia Zein
 <tr class="odd">
 <td><strong>Tujuan</strong></td>
 <td>Reduksi dimensi; <em>feature extraction</em></td>
-<td>Identifikasi &amp; validasi konstruk laten</td>
+<td>Identifikasi &amp; eksplorasi konstruk laten</td>
 </tr>
 <tr class="even">
 <td><strong>Posisi dalam ML</strong></td>
@@ -499,7 +499,7 @@ Rizqy Amelia Zein
 <tbody>
 <tr class="odd">
 <td><strong>Faktor/komponen</strong></td>
-<td>Selalu <em>orthogonal</em> (tidak berkorelasi)</td>
+<td><em>Default orthogonal</em>; rotasi <em>oblique</em> jarang digunakan</td>
 <td>Boleh berkorelasi (rotasi <em>oblique</em>)</td>
 </tr>
 <tr class="even">
@@ -850,10 +850,10 @@ Rizqy Amelia Zein
 <ul>
 <li class="fragment"><p><strong>Hanya mengandalkan Kaiser criterion</strong> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> menghasilkan terlalu banyak faktor. Selalu gunakan <em>parallel analysis</em>.</p></li>
 <li class="fragment"><p><strong>Menggunakan PCA untuk pengembangan skala</strong> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> PCA bukan model pengukuran. Gunakan EFA.</p></li>
-<li class="fragment"><p><strong>Rotasi orthogonal tanpa alasan</strong> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> konstruk psikologi hampir selalu berkorelasi. Gunakan oblique sebagai <em>default</em>.</p></li>
+<li class="fragment"><p><strong>Rotasi orthogonal tanpa justifikasi yang jelas</strong> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> konstruk psikologi hampir selalu berkorelasi. Gunakan oblique sebagai <em>default</em>.</p></li>
 <li class="fragment"><p><strong>Mengabaikan <em>cross-loadings</em></strong> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> <em>item</em> dengan <em>cross-loading</em> &gt; 0.30 menandakan batas konstruk yang tidak jelas — jangan diabaikan.</p></li>
-<li class="fragment"><p><strong>Melaporkan hanya <em>item</em> yang “berhasil”</strong> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> laporkan semua <em>item</em>, termasuk yang dihapus beserta alasannya.</p></li>
-<li class="fragment"><p><strong>Tidak melakukan CFA di sampel independen</strong> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> EFA hanya eksplorasi. Validasi strukturnya dengan CFA di sampel yang <strong>berbeda</strong>.</p></li>
+<li class="fragment"><p><strong>Melaporkan hanya <em>item</em> yang “berhasil dipertahankan”</strong> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> laporkan semua <em>item</em>, termasuk yang dihapus beserta alasannya.</p></li>
+<li class="fragment"><p><strong>Tidak melakukan validasi dengan CFA di sampel independen</strong> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> EFA hanya eksplorasi. Validasi strukturnya dengan CFA di sampel yang <strong>berbeda</strong>.</p></li>
 </ul>
 </section></section>
 <section>
@@ -882,7 +882,7 @@ Rizqy Amelia Zein
 <li><strong>Variabel item (15 item, skala Likert 1–5):</strong>
 <ul>
 <li><code>ab_ee_1</code> s.d. <code>ab_ee_5</code>: <em>Emotional Exhaustion</em> — merasa lelah, terkuras, kehabisan energi karena tuntutan akademik</li>
-<li><code>ab_cy_1</code> s.d. <code>ab_cy_5</code>: <em>Cynicism</em> — sikap jarak, tidak peduli, pesimis terhadap studi</li>
+<li><code>ab_cy_1</code> s.d. <code>ab_cy_5</code>: <em>Cynicism</em> — sikap mengambil jarak, tidak peduli, pesimis terhadap studi</li>
 <li><code>ab_ef_1</code> s.d. <code>ab_ef_5</code>: <em>Academic Efficacy</em> — keyakinan pada kemampuan akademik diri sendiri (skor tinggi = efikasi tinggi)</li>
 </ul></li>
 </ul>

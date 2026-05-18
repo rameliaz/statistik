@@ -175,7 +175,7 @@ Rotasi **tidak** mengubah total varians yang dijelaskan, tetapi hanya mendistrib
 
 | Aspek | PCA | EFA |
 |-------|-----|-----|
-| **Tujuan** | Reduksi dimensi; *feature extraction* | Identifikasi & validasi konstruk laten |
+| **Tujuan** | Reduksi dimensi; *feature extraction* | Identifikasi & eksplorasi konstruk laten |
 | **Posisi dalam ML** | *Unsupervised learning* — *preprocessing* sebelum melakukan pengujian pada *test data* | Psikometri — pengembangan & validasi skala |
 | **Model** | Komponen = fungsi linear *item* | *Item* = fungsi linear faktor + *error* pengukuran |
 | **Varians yang ingin dijelaskan** | Total varians (termasuk *unique* & *error*) | Hanya *common variance* |
@@ -187,7 +187,7 @@ Rotasi **tidak** mengubah total varians yang dijelaskan, tetapi hanya mendistrib
 
 | Aspek | PCA | EFA |
 |-------|-----|-----|
-| **Faktor/komponen** | Selalu *orthogonal* (tidak berkorelasi) | Boleh berkorelasi (rotasi *oblique*) |
+| **Faktor/komponen** | *Default orthogonal*; rotasi *oblique* jarang digunakan | Boleh berkorelasi (rotasi *oblique*) |
 | **Kapan digunakan** | Tidak ada teori konstruk laten; tujuannya kompresi/menyederhanakan struktur dataset | Ada teori tentang faktor laten; tujuannya mengeksplorasi model pengukuran |
 
 : {tbl-colwidths="[28,36,36]"}
@@ -378,13 +378,13 @@ Jika ω > α secara substansial, berarti asumsi *tau-equivalence* tidak terpenuh
 
 * **Menggunakan PCA untuk pengembangan skala** {{< fa circle-arrow-right >}} PCA bukan model pengukuran. Gunakan EFA.
 
-* **Rotasi orthogonal tanpa alasan** {{< fa circle-arrow-right >}} konstruk psikologi hampir selalu berkorelasi. Gunakan oblique sebagai *default*.
+* **Rotasi orthogonal tanpa justifikasi yang jelas** {{< fa circle-arrow-right >}} konstruk psikologi hampir selalu berkorelasi. Gunakan oblique sebagai *default*.
 
 * **Mengabaikan *cross-loadings*** {{< fa circle-arrow-right >}} *item* dengan *cross-loading* > 0.30 menandakan batas konstruk yang tidak jelas — jangan diabaikan.
 
-* **Melaporkan hanya *item* yang "berhasil"** {{< fa circle-arrow-right >}} laporkan semua *item*, termasuk yang dihapus beserta alasannya.
+* **Melaporkan hanya *item* yang "berhasil dipertahankan"** {{< fa circle-arrow-right >}} laporkan semua *item*, termasuk yang dihapus beserta alasannya.
 
-* **Tidak melakukan CFA di sampel independen** {{< fa circle-arrow-right >}} EFA hanya eksplorasi. Validasi strukturnya dengan CFA di sampel yang **berbeda**.
+* **Tidak melakukan validasi dengan CFA di sampel independen** {{< fa circle-arrow-right >}} EFA hanya eksplorasi. Validasi strukturnya dengan CFA di sampel yang **berbeda**.
 :::
 
 # Demonstrasi di `jamovi` {background-color="#14497F" .center}
@@ -407,7 +407,7 @@ Jika ω > α secara substansial, berarti asumsi *tau-equivalence* tidak terpenuh
 
 * **Variabel item (15 item, skala Likert 1–5):**
   - `ab_ee_1` s.d. `ab_ee_5`: *Emotional Exhaustion* — merasa lelah, terkuras, kehabisan energi karena tuntutan akademik
-  - `ab_cy_1` s.d. `ab_cy_5`: *Cynicism* — sikap jarak, tidak peduli, pesimis terhadap studi
+  - `ab_cy_1` s.d. `ab_cy_5`: *Cynicism* — sikap mengambil jarak, tidak peduli, pesimis terhadap studi
   - `ab_ef_1` s.d. `ab_ef_5`: *Academic Efficacy* — keyakinan pada kemampuan akademik diri sendiri (skor tinggi = efikasi tinggi)
 
 ## Langkah-langkah di `jamovi`

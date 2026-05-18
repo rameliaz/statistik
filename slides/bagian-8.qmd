@@ -21,9 +21,9 @@ execute:
 * Definisi *factor analysis*
 * *Exploratory* vs *confirmatory factor analysis*
 * Kapan menggunakan CFA?
+* Model pengukuran reflektif vs formatif
+* Model pengukuran *congeneric*, *tau equivalence*, dan paralel
 * [*Constraining parameter* dalam model CFA](https://psycnet.apa.org/record/2008-06808-005)
-* Model pengukuran (paralel, *tau equivalence*, dan *congeneric*)
-* Variabel indikator (reflektif vs formatif)
 * *Correlated error variances*
 * Metode estimasi
 * *Average Variance Extracted* (AVE) dan validitas diskriminan
@@ -32,7 +32,7 @@ execute:
 ## Analisis faktor
 
 ::: {.columns}
-::: {.column width="50%"}
+::: {.column width="60%"}
 ::: {.incremental}
 
 * Awalnya dikembangkan oleh Charles Spearman (1904) untuk menyelidiki [*g factor theory of intelligence*](https://en.wikipedia.org/wiki/G_factor_(psychometrics))
@@ -47,9 +47,9 @@ execute:
 
 :::
 :::
-::: {.column width="50%"}
+::: {.column width="40%"}
 
-![](https://media.giphy.com/media/l0IyjeA5mmMZjhyPm/giphy.gif)
+![](https://media.giphy.com/media/l0IyjeA5mmMZjhyPm/giphy.gif){fig-align="center"}
 
 :::
 :::
@@ -85,19 +85,42 @@ execute:
 
 ![](https://i0.wp.com/www.bayesianspectacles.org/wp-content/uploads/2018/01/TexasSharpShooter.png?fit=357%2C300&ssl=1){fig-align="center"}
 
-## [*Constraining parameter* model](https://psycnet.apa.org/record/2008-06808-005)
+## Model Reflektif vs. Formatif
 
+::: {.columns}
+::: {.column}
 ::: {.incremental}
+**Reflektif**
 
-* **Membatasi/menentukan varians** untuk setiap **variabel/faktor laten**
-  - Dilakukan untuk mengeluarkan ***standardized estimates***
-  - *Factor loading* di *z-score*kan
-  - Sehingga *default*nya, *mean* variabel laten = 0, *variance* = 1
-
-* Membatasi/menentukan ***error covariance*** untuk setiap variabel/faktor laten = 0
-  - Dilakukan agar *error variance* bebas diestimasi
+* **Variabel laten menjelaskan** mengapa **variabel indikator bervariasi**
+* Misalnya {{< fa circle-arrow-right >}} individu dengan intelegensi yang tinggi akan mendapatkan nilai yang berbeda dalam tes matematika
+* Biasanya mengasumsikan bahwa **kovariansi antar-*error* (*residual*) variabel indikator = 0** (*local independence*) {{< fa circle-arrow-right >}} artinya, korelasi antar-indikator sepenuhnya dijelaskan oleh variabel laten, tidak ada sumber varians bersama lain di luar model
+* Mayoritas konstruk psikologis mengasumsikan model pengukuran reflektif
 
 :::
+:::
+
+::: {.column}
+::: {.incremental}
+**Formatif**
+
+* **Variabel *observed* menjelaskan** mengapa **variabel laten bervariasi**
+* Misalnya {{< fa circle-arrow-right >}} gengsi sebuah mobil ditentukan oleh usia mobil, kondisi, harga, dan intensitas pemakaian
+* Korelasi antara variabel *observed* tidak diketahui
+* Biasanya digunakan untuk menentukan indeks pada konstruk yang *orthogonal* (contoh {{< fa circle-arrow-right >}} contohnya, [*adverse childhood experience*](https://www.sciencedirect.com/science/article/abs/pii/S0145213421003434))
+* Tetapi, **sangat jarang** konstruk psikologi yang mengasumsikan model formatif
+
+:::
+:::
+:::
+
+## Model Reflektif
+
+![](libs/reflektif.png){fig-align="center"}
+
+## Model Formatif
+
+![](libs/formatif.png){fig-align="center" width="60%"}
 
 ## Jenis-jenis model pengukuran
 
@@ -113,7 +136,7 @@ Ada tiga macam model pengukuran:
 ::: {.column}
 ::: {.incremental}
 
-* Model yang paling moderat dan *default* di berbagai perangkat lunak SEM
+* Model yang paling longgar asumsunya dan secara *default* untuk mengestimasi reliabilitas untuk analisis SEM di berbagai perangkat lunak
 * Asumsinya, **skala, *error variance*, dan *factor loading* boleh berbeda (dibebaskan)**
 * **Koefisien reliabilitas skala** yang mengasumsikan model pengukuran *congeneric* {{< fa circle-arrow-right >}} ω, McDonald's ω, ω total (ω~*t*~), Revelle's ω, *composite reliability*.
 
@@ -136,7 +159,7 @@ Ada tiga macam model pengukuran:
 * Asumsinya, **skala dan *error variance* boleh berbeda (dibebaskan)**, namun ***factor loading* harus sama (dibatasi)**
 * Ketika asumsi *tau equivalence* dipenuhi, maka [Cronbach's α dapat digunakan](https://www.ncbi.nlm.nih.gov/pubmed/28557467)
 * **Koefisien reliabilitas**: Formula Rulon, KR-20, Flanagan-Rulon, Guttman's λ~3~, λ~4~, Hoyt *method*
-  - Pada kebanyakan kasus, jarang sekali ada kosntruk psikologi yang memenuhi asumsi _tau equivalence_, sehingga **sangat disarankan** untuk tidak menggunakan koefisien reliabilitas yang mengasumsikan _tau equivalence_
+  - Pada kebanyakan kasus, jarang sekali ada konstruk psikologi yang memenuhi asumsi _tau equivalence_, sehingga **sangat disarankan** untuk tidak menggunakan koefisien reliabilitas yang mengasumsikan _tau equivalence_
 
 :::
 :::
@@ -163,32 +186,19 @@ Ada tiga macam model pengukuran:
 :::
 ::::
 
-## Model Reflektif vs. Formatif
+## [*Constraining parameter* model](https://psycnet.apa.org/record/2008-06808-005)
 
 ::: {.incremental}
 
-* Reflektif
-  - **Variabel laten menjelaskan** mengapa **variabel indikator bervariasi**
-  - Misalnya {{< fa circle-arrow-right >}} individu dengan intelegensi yang tinggi akan mendapatkan nilai yang berbeda dalam tes matematika
-  - Biasanya mengasumsikan bahwa **kovariansi antar-*error* (*residual*) variabel indikator = 0** (*local independence*) {{< fa circle-arrow-right >}} artinya, korelasi antar-indikator sepenuhnya dijelaskan oleh variabel laten, tidak ada sumber varians bersama lain di luar model
-  - Mayoritas konstruk psikologis mengasumsikan model pengukuran reflektif
+* **Membatasi/menentukan varians** untuk setiap **variabel/faktor laten**
+  - Dilakukan untuk mengeluarkan ***standardized estimates***
+  - *Factor loading* di *z-score*kan
+  - Sehingga *default*nya, *mean* variabel laten = 0, *variance* = 1
 
-* Formatif
-  - **Variabel *observed* menjelaskan** mengapa **variabel laten bervariasi**
-  - Misalnya {{< fa circle-arrow-right >}} gengsi sebuah mobil ditentukan oleh usia mobil, kondisi, harga, dan intensitas pemakaian
-  - Korelasi antara variabel *observed* tidak diketahui
-  - Biasanya digunakan untuk menentukan indeks pada konstruk yang *orthogonal* (contoh {{< fa circle-arrow-right >}} contohnya, [*adverse childhood experience*](https://www.sciencedirect.com/science/article/abs/pii/S0145213421003434))
-  - Tetapi, **sangat jarang** konstruk psikologi yang mengasumsikan model formatif
+* Membatasi/menentukan ***error covariance*** untuk setiap variabel/faktor laten = 0
+  - Dilakukan agar *error variance* bebas diestimasi
 
 :::
-
-## Model Reflektif
-
-![](libs/reflektif.png){fig-align="center"}
-
-## Model Formatif
-
-![](libs/formatif.png){fig-align="center" width="60%"}
 
 ## Apa yang terjadi ketika *error variance* berkorelasi?
 
@@ -257,7 +267,7 @@ $$AVE = \frac{\sum \lambda_i^2}{\sum \lambda_i^2 + \sum (1 - \lambda_i^2)}$$
 
 | | AVE | CR |
 | :--- | :--- | :--- |
-| **Yang diukur** | Rasio sinyal-terhadap-total per indikator | Konsistensi internal skala |
+| **Yang diukur** | Rasio sinyal (*common variance*) dibandingkan total varians per indikator | Konsistensi internal skala |
 | **Sensitif terhadap** | *Loading* rendah sangat menekan nilai AVE | Kurang sensitif — *loading* tinggi dapat mengompensasi |
 | **Kriteria** | ≥ 0.50 | ≥ 0.70 |
 | **Kegunaan utama** | Validitas konvergen & diskriminan | Reliabilitas (alternatif Cronbach's α) |
@@ -323,11 +333,11 @@ Karena `SEMLj` juga menggunakan `semTools`, maka AVE tersedia bersama *composite
 
 # Demonstrasi CFA {background-color="#14497F" .center}
 
-[**Unduh Dataset Contoh CFA**](https://rameliaz.github.io/mg-sem-workshop/contoh-cfa.omv)
+[Unduh Dataset Contoh CFA](https://rameliaz.github.io/mg-sem-workshop/contoh-cfa.omv)
 
 ## Latihan mandiri: Mencoba *confirmatory factor analysis*
 
-* Unduh [Dataset Latihan SEM](https://rameliaz.github.io/mg-sem-workshop/materials/dataset-pilpres2024.csv)
+* Unduh [Dataset Latihan](https://rameliaz.github.io/mg-sem-workshop/materials/dataset-pilpres2024.csv)
 
 * Unduh [Kamus Data disini](https://rameliaz.github.io/mg-sem-workshop/materials/codebook-pilpres2024.csv)
 

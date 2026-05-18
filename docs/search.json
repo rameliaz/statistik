@@ -4,7 +4,7 @@
     "href": "slides/bagian-8.html#outline",
     "title": "Confirmatory Factor Analysis (CFA)",
     "section": "Outline",
-    "text": "Outline\n\nDefinisi factor analysis\nExploratory vs confirmatory factor analysis\nKapan menggunakan CFA?\nConstraining parameter dalam model CFA\nModel pengukuran (paralel, tau equivalence, dan congeneric)\nVariabel indikator (reflektif vs formatif)\nCorrelated error variances\nMetode estimasi\nAverage Variance Extracted (AVE) dan validitas diskriminan\nMenuliskan hasil analisis CFA dalam laporan penelitian"
+    "text": "Outline\n\nDefinisi factor analysis\nExploratory vs confirmatory factor analysis\nKapan menggunakan CFA?\nModel pengukuran (reflektif vs formatif)\nModel pengukuran (paralel, tau equivalence, dan congeneric)\nConstraining parameter dalam model CFA\nCorrelated error variances\nMetode estimasi\nAverage Variance Extracted (AVE) dan validitas diskriminan\nMenuliskan hasil analisis CFA dalam laporan penelitian"
   },
   {
     "objectID": "slides/bagian-8.html#analisis-faktor",
@@ -35,46 +35,11 @@
     "text": "Texas sharpshooter fallacy"
   },
   {
-    "objectID": "slides/bagian-8.html#constraining-parameter-model",
-    "href": "slides/bagian-8.html#constraining-parameter-model",
-    "title": "Confirmatory Factor Analysis (CFA)",
-    "section": "Constraining parameter model",
-    "text": "Constraining parameter model\n\nMembatasi/menentukan varians untuk setiap variabel/faktor laten\n\nDilakukan untuk mengeluarkan standardized estimates\nFactor loading di z-scorekan\nSehingga defaultnya, mean variabel laten = 0, variance = 1\n\nMembatasi/menentukan error covariance untuk setiap variabel/faktor laten = 0\n\nDilakukan agar error variance bebas diestimasi"
-  },
-  {
-    "objectID": "slides/bagian-8.html#jenis-jenis-model-pengukuran",
-    "href": "slides/bagian-8.html#jenis-jenis-model-pengukuran",
-    "title": "Confirmatory Factor Analysis (CFA)",
-    "section": "Jenis-jenis model pengukuran",
-    "text": "Jenis-jenis model pengukuran\nAda tiga macam model pengukuran:\n\nModel congeneric\nModel tau equivalence\nModel parallel"
-  },
-  {
-    "objectID": "slides/bagian-8.html#model-congeneric",
-    "href": "slides/bagian-8.html#model-congeneric",
-    "title": "Confirmatory Factor Analysis (CFA)",
-    "section": "Model congeneric",
-    "text": "Model congeneric\n\n\n\nModel yang paling moderat dan default di berbagai perangkat lunak SEM\nAsumsinya, skala, error variance, dan factor loading boleh berbeda (dibebaskan)\nKoefisien reliabilitas skala yang mengasumsikan model pengukuran congeneric  ω, McDonald’s ω, ω total (ωt), Revelle’s ω, composite reliability."
-  },
-  {
-    "objectID": "slides/bagian-8.html#model-tau-equivalence",
-    "href": "slides/bagian-8.html#model-tau-equivalence",
-    "title": "Confirmatory Factor Analysis (CFA)",
-    "section": "Model tau equivalence",
-    "text": "Model tau equivalence\n\n\n\nModel yang sedikit lebih rigid daripada congeneric\nAsumsinya, skala dan error variance boleh berbeda (dibebaskan), namun factor loading harus sama (dibatasi)\nKetika asumsi tau equivalence dipenuhi, maka Cronbach’s α dapat digunakan\nKoefisien reliabilitas: Formula Rulon, KR-20, Flanagan-Rulon, Guttman’s λ3, λ4, Hoyt method\n\nPada kebanyakan kasus, jarang sekali ada kosntruk psikologi yang memenuhi asumsi tau equivalence, sehingga sangat disarankan untuk tidak menggunakan koefisien reliabilitas yang mengasumsikan tau equivalence"
-  },
-  {
-    "objectID": "slides/bagian-8.html#model-parallel",
-    "href": "slides/bagian-8.html#model-parallel",
-    "title": "Confirmatory Factor Analysis (CFA)",
-    "section": "Model parallel",
-    "text": "Model parallel\n\n\n\nModel yang paling rigid\nAsumsinya, skala, error variance, dan factor loading harus sama (dibatasi)\n\nKoefisien reliabilitas: Spearman-Brown’s Formula, Standardized α."
-  },
-  {
     "objectID": "slides/bagian-8.html#model-reflektif-vs.-formatif",
     "href": "slides/bagian-8.html#model-reflektif-vs.-formatif",
     "title": "Confirmatory Factor Analysis (CFA)",
     "section": "Model Reflektif vs. Formatif",
-    "text": "Model Reflektif vs. Formatif\n\nReflektif\n\nVariabel laten menjelaskan mengapa variabel indikator bervariasi\nMisalnya  individu dengan intelegensi yang tinggi akan mendapatkan nilai yang berbeda dalam tes matematika\nBiasanya mengasumsikan bahwa kovariansi antar-error (residual) variabel indikator = 0 (local independence)  artinya, korelasi antar-indikator sepenuhnya dijelaskan oleh variabel laten, tidak ada sumber varians bersama lain di luar model\nMayoritas konstruk psikologis mengasumsikan model pengukuran reflektif\n\nFormatif\n\nVariabel observed menjelaskan mengapa variabel laten bervariasi\nMisalnya  gengsi sebuah mobil ditentukan oleh usia mobil, kondisi, harga, dan intensitas pemakaian\nKorelasi antara variabel observed tidak diketahui\nBiasanya digunakan untuk menentukan indeks pada konstruk yang orthogonal (contoh  contohnya, adverse childhood experience)\nTetapi, sangat jarang konstruk psikologi yang mengasumsikan model formatif"
+    "text": "Model Reflektif vs. Formatif\n\n\nReflektif\n\nVariabel laten menjelaskan mengapa variabel indikator bervariasi\nMisalnya  individu dengan intelegensi yang tinggi akan mendapatkan nilai yang berbeda dalam tes matematika\nBiasanya mengasumsikan bahwa kovariansi antar-error (residual) variabel indikator = 0 (local independence)  artinya, korelasi antar-indikator sepenuhnya dijelaskan oleh variabel laten, tidak ada sumber varians bersama lain di luar model\nMayoritas konstruk psikologis mengasumsikan model pengukuran reflektif\n\n\nFormatif\n\nVariabel observed menjelaskan mengapa variabel laten bervariasi\nMisalnya  gengsi sebuah mobil ditentukan oleh usia mobil, kondisi, harga, dan intensitas pemakaian\nKorelasi antara variabel observed tidak diketahui\nBiasanya digunakan untuk menentukan indeks pada konstruk yang orthogonal (contoh  contohnya, adverse childhood experience)\nTetapi, sangat jarang konstruk psikologi yang mengasumsikan model formatif"
   },
   {
     "objectID": "slides/bagian-8.html#model-reflektif",
@@ -89,6 +54,41 @@
     "title": "Confirmatory Factor Analysis (CFA)",
     "section": "Model Formatif",
     "text": "Model Formatif"
+  },
+  {
+    "objectID": "slides/bagian-8.html#jenis-jenis-model-pengukuran",
+    "href": "slides/bagian-8.html#jenis-jenis-model-pengukuran",
+    "title": "Confirmatory Factor Analysis (CFA)",
+    "section": "Jenis-jenis model pengukuran",
+    "text": "Jenis-jenis model pengukuran\nAda tiga macam model pengukuran:\n\nModel congeneric\nModel tau equivalence\nModel parallel"
+  },
+  {
+    "objectID": "slides/bagian-8.html#model-congeneric",
+    "href": "slides/bagian-8.html#model-congeneric",
+    "title": "Confirmatory Factor Analysis (CFA)",
+    "section": "Model congeneric",
+    "text": "Model congeneric\n\n\n\nModel yang paling longgar asumsunya dan secara default untuk mengestimasi reliabilitas untuk analisis SEM di berbagai perangkat lunak\nAsumsinya, skala, error variance, dan factor loading boleh berbeda (dibebaskan)\nKoefisien reliabilitas skala yang mengasumsikan model pengukuran congeneric  ω, McDonald’s ω, ω total (ωt), Revelle’s ω, composite reliability."
+  },
+  {
+    "objectID": "slides/bagian-8.html#model-tau-equivalence",
+    "href": "slides/bagian-8.html#model-tau-equivalence",
+    "title": "Confirmatory Factor Analysis (CFA)",
+    "section": "Model tau equivalence",
+    "text": "Model tau equivalence\n\n\n\nModel yang sedikit lebih rigid daripada congeneric\nAsumsinya, skala dan error variance boleh berbeda (dibebaskan), namun factor loading harus sama (dibatasi)\nKetika asumsi tau equivalence dipenuhi, maka Cronbach’s α dapat digunakan\nKoefisien reliabilitas: Formula Rulon, KR-20, Flanagan-Rulon, Guttman’s λ3, λ4, Hoyt method\n\nPada kebanyakan kasus, jarang sekali ada konstruk psikologi yang memenuhi asumsi tau equivalence, sehingga sangat disarankan untuk tidak menggunakan koefisien reliabilitas yang mengasumsikan tau equivalence"
+  },
+  {
+    "objectID": "slides/bagian-8.html#model-parallel",
+    "href": "slides/bagian-8.html#model-parallel",
+    "title": "Confirmatory Factor Analysis (CFA)",
+    "section": "Model parallel",
+    "text": "Model parallel\n\n\n\nModel yang paling rigid\nAsumsinya, skala, error variance, dan factor loading harus sama (dibatasi)\n\nKoefisien reliabilitas: Spearman-Brown’s Formula, Standardized α."
+  },
+  {
+    "objectID": "slides/bagian-8.html#constraining-parameter-model",
+    "href": "slides/bagian-8.html#constraining-parameter-model",
+    "title": "Confirmatory Factor Analysis (CFA)",
+    "section": "Constraining parameter model",
+    "text": "Constraining parameter model\n\nMembatasi/menentukan varians untuk setiap variabel/faktor laten\n\nDilakukan untuk mengeluarkan standardized estimates\nFactor loading di z-scorekan\nSehingga defaultnya, mean variabel laten = 0, variance = 1\n\nMembatasi/menentukan error covariance untuk setiap variabel/faktor laten = 0\n\nDilakukan agar error variance bebas diestimasi"
   },
   {
     "objectID": "slides/bagian-8.html#apa-yang-terjadi-ketika-error-variance-berkorelasi",
@@ -123,7 +123,7 @@
     "href": "slides/bagian-8.html#ave-vs.-composite-reliability-cr",
     "title": "Confirmatory Factor Analysis (CFA)",
     "section": "AVE vs. Composite Reliability (CR)",
-    "text": "AVE vs. Composite Reliability (CR)\n\n\n\n\n\n\n\n\n\nAVE\nCR\n\n\n\n\nYang diukur\nRasio sinyal-terhadap-total per indikator\nKonsistensi internal skala\n\n\nSensitif terhadap\nLoading rendah sangat menekan nilai AVE\nKurang sensitif — loading tinggi dapat mengompensasi\n\n\nKriteria\n≥ 0.50\n≥ 0.70\n\n\nKegunaan utama\nValiditas konvergen & diskriminan\nReliabilitas (alternatif Cronbach’s α)\n\n\n\n\n\n\n\n\n\nCR tinggi belum tentu AVE tinggi\n\n\nSkala dengan loading sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilkan CR ≈ 0.78 namun AVE ≈ 0.36. CR fokus pada “apakah item-item saling berkaitan?”; AVE fokus pada “apakah item-item benar-benar mewakili konstruknya?”"
+    "text": "AVE vs. Composite Reliability (CR)\n\n\n\n\n\n\n\n\n\nAVE\nCR\n\n\n\n\nYang diukur\nRasio sinyal (common variance) dibandingkan total varians per indikator\nKonsistensi internal skala\n\n\nSensitif terhadap\nLoading rendah sangat menekan nilai AVE\nKurang sensitif — loading tinggi dapat mengompensasi\n\n\nKriteria\n≥ 0.50\n≥ 0.70\n\n\nKegunaan utama\nValiditas konvergen & diskriminan\nReliabilitas (alternatif Cronbach’s α)\n\n\n\n\n\n\n\n\n\nCR tinggi belum tentu AVE tinggi\n\n\nSkala dengan loading sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilkan CR ≈ 0.78 namun AVE ≈ 0.36. CR fokus pada “apakah item-item saling berkaitan?”; AVE fokus pada “apakah item-item benar-benar mewakili konstruknya?”"
   },
   {
     "objectID": "slides/bagian-8.html#validitas-diskriminan",
@@ -151,7 +151,7 @@
     "href": "slides/bagian-8.html#latihan-mandiri-mencoba-confirmatory-factor-analysis",
     "title": "Confirmatory Factor Analysis (CFA)",
     "section": "Latihan mandiri: Mencoba confirmatory factor analysis",
-    "text": "Latihan mandiri: Mencoba confirmatory factor analysis\n\nUnduh Dataset Latihan SEM\nUnduh Kamus Data disini\nLakukan CFA pada skala social dominance orientation\n\nDiukur dengan skala Likert, 6 item dengan 7 pilihan jawaban\n\nLaporkan model fit, factor loading, dan multivariate normality\nLakukan penyesuaian apabila perlu"
+    "text": "Latihan mandiri: Mencoba confirmatory factor analysis\n\nUnduh Dataset Latihan\nUnduh Kamus Data disini\nLakukan CFA pada skala social dominance orientation\n\nDiukur dengan skala Likert, 6 item dengan 7 pilihan jawaban\n\nLaporkan model fit, factor loading, dan multivariate normality\nLakukan penyesuaian apabila perlu"
   },
   {
     "objectID": "slides/bagian-8.html#ada-pertanyaan",
@@ -795,7 +795,7 @@
     "href": "index.html#outline-materi",
     "title": "Statistik Lanjut dalam Penelitian Psikologi",
     "section": "Outline materi",
-    "text": "Outline materi\n\nBagian 1️⃣: Korelasi\n\nJenis-jenis koefisien korelasi\nFaktor-faktor yang membuat koefisien korelasi bervariasi\nKoreksi atenuasi dan measurement error\nVariance-covariance dan correlation matrix\nWARNING! Covariance/correlation matrix is not positive definite\nHeywood dan Ultra-Heywood case\nBivariat, part, dan partial correlation\nMetrik variabel (standardized vs unstandardized)\n\n Buka Materi Korelasi\n\n\nBagian 2️⃣: Ordinary Least Square Regression\n\nBerlatih menginspeksi data secara visual dengan scatterplot\nModel regresi linear (ordinary least square)\nMenarik garis regresi (fitted regression line)\nVarians yang dapat dan yang tidak dapat dijelaskan oleh model (R2)\nMenguji hipotesis\nMengecek kecocokan model dengan data (model fit)\nMengecek asumsi\n\nDistribusi (normalitas) residual\nHomoskedastisitas\nMultikolinearitas\n\nMendeteksi outliers\nMenguji interaction effects dan model change\nMenulis hasil analisis regresi linear dengan interaction terms dalam manuskrip\n\n Buka Materi Regresi OLS\n\n\nBagian 3️⃣: Regresi Logistik Binomial\n\nMengapa regresi linear tidak cocok untuk outcome biner?\nFungsi logistik dan kurva S (sigmoid)\nRantai konsep: probabilitas → odds → log odds (logit) → odds ratio (OR)\nPersamaan model & interpretasi koefisien (β dan OR = e^β)\nEstimasi dengan Maximum Likelihood (MLE)\nMembandingkan model: AIC, BIC, dan Pseudo R² (Nagelkerke)\nModel dengan banyak prediktor\nAsumsi regresi logistik\nEvaluasi akurasi prediksi\nKesalahan umum dalam melakukan analisis regresi logistik\n\n Buka Materi Regresi Logistik\n\n\nBagian 4️⃣: Analisis ROC (Receiver Operating Characteristic)\n\nUji diagnostik dalam psikologi: konteks dan permasalahan\nReview: confusion matrix, sensitivity, dan specificity\nPositive Predictive Value (PPV) dan Negative Predictive Value (NPV)\nTrade-off antara sensitivity dan specificity\nKurva ROC: cara membangun dan membacanya\nArea Under the Curve (AUC)\nYouden’s Index: menentukan cut-off optimal\nMembandingkan beberapa alat ukur sekaligus\nPengaruh prevalensi pada PPV dan NPV\nDemonstrasi di jamovi (modul PPDA → TestROC)\n\n Buka Materi ROC\n\n\nBagian 5️⃣: Pengantar Latent Variable Modeling\n\nApa yang dimaksud dengan variabel laten?\nClassical Test Theory sebagai model variabel laten paling sederhana\nReliabilitas dan measurement error\nAttenuation bias\nKeluarga model variabel laten: CTT → EFA → CFA → SEM\nVariabel laten dalam model reflektif vs formatif\nPilihan perangkat lunak\nCakupan materi dan keterbatasannya\n\n Buka Materi LVM\n\n\nBagian 6️⃣: Model Jalur (Path Model) dan Model Regresi\n\nDefinisi path model\nNama variabel dan koefisien jalur (path coefficients)\n\nδ (delta), ε (epsilon), ξ (ksi), η (eta), λ (lambda), γ (gamma), β (beta), φ (phi), ζ (zeta)\n\nRepresentasi visual model jalur menggunakan diagram jalur (path diagram)\nMenggambarkan hubungan antar-variabel dengan menggunakan diagram jalur\nSpesifikasi model dengan syntax lavaan untuk spesifikasi model jalur di module SEMLj\nAsumsi kausalitas (?) dan limitasi\n\n\n\n\n\n\n\nTipMenggambar diagram jalur\n\n\n\nUntuk menggambar diagram jalur, mahasiswa dapat menggunakan MS Power Point, Canva, atau software lainnya yang serupa. Rekomendasi saya: gunakan draw.io yang merupakan software open source dan sangat unggul untuk menggambar berbagai macam diagram, termasuk flowchart.\n\n\n Buka Materi Path Model\n\n\nBagian 7️⃣: Principal Component Analysis (PCA) dan Exploratory Factor Analysis (EFA)\n\nMengapa kita perlu analisis faktor? Measurement error dan attenuation bias\nKeluarga model variabel laten: CTT → EFA → CFA → SEM\nPrincipal Component Analysis (PCA): reduksi dimensi & unsupervised learning dalam ML\nEigenvalue, scree plot, dan component loadings\nPCA vs EFA: tujuan, model, dan kapan menggunakan yang mana\nKomunalitas (h²) dan keunikan\nMenentukan jumlah faktor: parallel analysis, scree plot, Kaiser criterion\nRotasi orthogonal vs. oblique\nMetode ekstraksi faktor: MinRes, PAF, dan Maximum Likelihood\nAsumsi & kesiapan data: KMO, Bartlett’s test, dan ukuran sampel\nEvaluasi model: fit indices (RMSEA, CFI, TLI) dan reliabilitas (α vs. ω)\nChecklist pelaporan EFA & kesalahan umum\n\n Buka Materi PCA EFA\n\n\nBagian 8️⃣: Confirmatory Factor Analysis (CFA)\n\nDefinisi factor analysis\nExploratory vs confirmatory factor analysis\nKapan menggunakan CFA?\nConstraining parameter model\nModel pengukuran (paralel, tau equivalence, dan congeneric)\nVariabel indikator (reflektif vs formatif)\nCorrelated error variances\nMetode estimasi\nAverage variance extracted (AVE)\nMenuliskan hasil analisis CFA dalam laporan penelitian\n\n Buka Materi CFA"
+    "text": "Outline materi\n\nBagian 1️⃣: Korelasi\n\nJenis-jenis koefisien korelasi\nFaktor-faktor yang membuat koefisien korelasi bervariasi\nKoreksi atenuasi dan measurement error\nVariance-covariance dan correlation matrix\nWARNING! Covariance/correlation matrix is not positive definite\nHeywood dan Ultra-Heywood case\nBivariat, part, dan partial correlation\nMetrik variabel (standardized vs unstandardized)\n\n Buka Materi Korelasi\n\n\nBagian 2️⃣: Ordinary Least Square Regression\n\nBerlatih menginspeksi data secara visual dengan scatterplot\nModel regresi linear (ordinary least square)\nMenarik garis regresi (fitted regression line)\nVarians yang dapat dan yang tidak dapat dijelaskan oleh model (R2)\nMenguji hipotesis\nMengecek kecocokan model dengan data (model fit)\nMengecek asumsi\n\nDistribusi (normalitas) residual\nHomoskedastisitas\nMultikolinearitas\n\nMendeteksi outliers\nMenguji interaction effects dan model change\nMenulis hasil analisis regresi linear dengan interaction terms dalam manuskrip\n\n Buka Materi Regresi OLS\n\n\nBagian 3️⃣: Regresi Logistik Binomial\n\nMengapa regresi linear tidak cocok untuk outcome biner?\nFungsi logistik dan kurva S (sigmoid)\nRantai konsep: probabilitas → odds → log odds (logit) → odds ratio (OR)\nPersamaan model & interpretasi koefisien (β dan OR = e^β)\nEstimasi dengan Maximum Likelihood (MLE)\nMembandingkan model: AIC, BIC, dan Pseudo R² (Nagelkerke)\nModel dengan banyak prediktor\nAsumsi regresi logistik\nEvaluasi akurasi prediksi\nKesalahan umum dalam melakukan analisis regresi logistik\n\n Buka Materi Regresi Logistik\n\n\nBagian 4️⃣: Analisis ROC (Receiver Operating Characteristic)\n\nUji diagnostik dalam psikologi: konteks dan permasalahan\nReview: confusion matrix, sensitivity, dan specificity\nPositive Predictive Value (PPV) dan Negative Predictive Value (NPV)\nTrade-off antara sensitivity dan specificity\nKurva ROC: cara membangun dan membacanya\nArea Under the Curve (AUC)\nYouden’s Index: menentukan cut-off optimal\nMembandingkan beberapa alat ukur sekaligus\nPengaruh prevalensi pada PPV dan NPV\nDemonstrasi di jamovi (modul PPDA → TestROC)\n\n Buka Materi ROC\n\n\nBagian 5️⃣: Pengantar Latent Variable Modeling\n\nApa yang dimaksud dengan variabel laten?\nClassical Test Theory sebagai model variabel laten paling sederhana\nReliabilitas dan measurement error\nAttenuation bias\nKeluarga model variabel laten: CTT → EFA → CFA → SEM\nVariabel laten dalam model reflektif vs formatif\nPilihan perangkat lunak\nCakupan materi dan keterbatasannya\n\n Buka Materi LVM\n\n\nBagian 6️⃣: Model Jalur (Path Model) dan Model Regresi\n\nDefinisi path model\nNama variabel dan koefisien jalur (path coefficients)\n\nδ (delta), ε (epsilon), ξ (ksi), η (eta), λ (lambda), γ (gamma), β (beta), φ (phi), ζ (zeta)\n\nRepresentasi visual model jalur menggunakan diagram jalur (path diagram)\nMenggambarkan hubungan antar-variabel dengan menggunakan diagram jalur\nSpesifikasi model dengan syntax lavaan untuk spesifikasi model jalur di module SEMLj\nAsumsi kausalitas (?) dan limitasi\n\n\n\n\n\n\n\nTipMenggambar diagram jalur\n\n\n\nUntuk menggambar diagram jalur, mahasiswa dapat menggunakan MS Power Point, Canva, atau software lainnya yang serupa. Rekomendasi saya: gunakan draw.io yang merupakan software open source dan sangat unggul untuk menggambar berbagai macam diagram, termasuk flowchart.\n\n\n Buka Materi Path Model\n\n\nBagian 7️⃣: Principal Component Analysis (PCA) dan Exploratory Factor Analysis (EFA)\n\nMengapa kita perlu analisis faktor? Measurement error dan attenuation bias\nKeluarga model variabel laten: CTT → EFA → CFA → SEM\nPrincipal Component Analysis (PCA): reduksi dimensi & unsupervised learning dalam ML\nEigenvalue, scree plot, dan component loadings\nPCA vs EFA: tujuan, model, dan kapan menggunakan yang mana\nKomunalitas (h²) dan keunikan\nMenentukan jumlah faktor: parallel analysis, scree plot, Kaiser criterion\nRotasi orthogonal vs. oblique\nMetode ekstraksi faktor: MinRes, PAF, dan Maximum Likelihood\nAsumsi & kesiapan data: KMO, Bartlett’s test, dan ukuran sampel\nEvaluasi model: fit indices (RMSEA, CFI, TLI) dan reliabilitas (α vs. ω)\nChecklist pelaporan EFA & kesalahan umum\n\n Buka Materi PCA EFA\n\n\nBagian 8️⃣: Confirmatory Factor Analysis (CFA)\n\nDefinisi factor analysis\nExploratory vs confirmatory factor analysis\nKapan menggunakan CFA?\nModel pengukuran (reflektif vs formatif)\nModel pengukuran (paralel, tau equivalence, dan congeneric)\nConstraining parameter dalam model CFA\nCorrelated error variances\nMetode estimasi\nAverage Variance Extracted (AVE) dan validitas diskriminan\nMenuliskan hasil analisis CFA dalam laporan penelitian\n\n Buka Materi CFA"
   },
   {
     "objectID": "index.html#sumber-belajar-lainnya",
@@ -1397,14 +1397,14 @@
     "href": "slides/bagian-7.html#pca-vs.-efa",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "PCA vs. EFA",
-    "text": "PCA vs. EFA\n\n\n\n\n\n\n\n\nAspek\nPCA\nEFA\n\n\n\n\nTujuan\nReduksi dimensi; feature extraction\nIdentifikasi & validasi konstruk laten\n\n\nPosisi dalam ML\nUnsupervised learning — preprocessing sebelum melakukan pengujian pada test data\nPsikometri — pengembangan & validasi skala\n\n\nModel\nKomponen = fungsi linear item\nItem = fungsi linear faktor + error pengukuran\n\n\nVarians yang ingin dijelaskan\nTotal varians (termasuk unique & error)\nHanya common variance\n\n\nError pengukuran\nTidak dimodelkan\nDipartisi sebagai unique variance per item"
+    "text": "PCA vs. EFA\n\n\n\n\n\n\n\n\nAspek\nPCA\nEFA\n\n\n\n\nTujuan\nReduksi dimensi; feature extraction\nIdentifikasi & eksplorasi konstruk laten\n\n\nPosisi dalam ML\nUnsupervised learning — preprocessing sebelum melakukan pengujian pada test data\nPsikometri — pengembangan & validasi skala\n\n\nModel\nKomponen = fungsi linear item\nItem = fungsi linear faktor + error pengukuran\n\n\nVarians yang ingin dijelaskan\nTotal varians (termasuk unique & error)\nHanya common variance\n\n\nError pengukuran\nTidak dimodelkan\nDipartisi sebagai unique variance per item"
   },
   {
     "objectID": "slides/bagian-7.html#pca-vs.-efa-1",
     "href": "slides/bagian-7.html#pca-vs.-efa-1",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "PCA vs. EFA",
-    "text": "PCA vs. EFA\n\n\n\n\n\n\n\n\nAspek\nPCA\nEFA\n\n\n\n\nFaktor/komponen\nSelalu orthogonal (tidak berkorelasi)\nBoleh berkorelasi (rotasi oblique)\n\n\nKapan digunakan\nTidak ada teori konstruk laten; tujuannya kompresi/menyederhanakan struktur dataset\nAda teori tentang faktor laten; tujuannya mengeksplorasi model pengukuran\n\n\n\n\n\n\n\n\n\nCatatan\n\n\nJika communalities tinggi (&gt; 0.60) dan struktur komponen/faktor jelas, hasil PCA dan EFA sering hampir identik. Perbedaan baru muncul ketika communalities rendah atau struktur faktor cenderung kompleks (e.g., ada cross-loading, dsb.)."
+    "text": "PCA vs. EFA\n\n\n\n\n\n\n\n\nAspek\nPCA\nEFA\n\n\n\n\nFaktor/komponen\nDefault orthogonal; rotasi oblique jarang digunakan\nBoleh berkorelasi (rotasi oblique)\n\n\nKapan digunakan\nTidak ada teori konstruk laten; tujuannya kompresi/menyederhanakan struktur dataset\nAda teori tentang faktor laten; tujuannya mengeksplorasi model pengukuran\n\n\n\n\n\n\n\n\n\nCatatan\n\n\nJika communalities tinggi (&gt; 0.60) dan struktur komponen/faktor jelas, hasil PCA dan EFA sering hampir identik. Perbedaan baru muncul ketika communalities rendah atau struktur faktor cenderung kompleks (e.g., ada cross-loading, dsb.)."
   },
   {
     "objectID": "slides/bagian-7.html#communalities-h²-uniqueness",
@@ -1481,7 +1481,7 @@
     "href": "slides/bagian-7.html#kesalahan-umum-dalam-efa",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Kesalahan umum dalam EFA",
-    "text": "Kesalahan umum dalam EFA\n\nHanya mengandalkan Kaiser criterion  menghasilkan terlalu banyak faktor. Selalu gunakan parallel analysis.\nMenggunakan PCA untuk pengembangan skala  PCA bukan model pengukuran. Gunakan EFA.\nRotasi orthogonal tanpa alasan  konstruk psikologi hampir selalu berkorelasi. Gunakan oblique sebagai default.\nMengabaikan cross-loadings  item dengan cross-loading &gt; 0.30 menandakan batas konstruk yang tidak jelas — jangan diabaikan.\nMelaporkan hanya item yang “berhasil”  laporkan semua item, termasuk yang dihapus beserta alasannya.\nTidak melakukan CFA di sampel independen  EFA hanya eksplorasi. Validasi strukturnya dengan CFA di sampel yang berbeda."
+    "text": "Kesalahan umum dalam EFA\n\nHanya mengandalkan Kaiser criterion  menghasilkan terlalu banyak faktor. Selalu gunakan parallel analysis.\nMenggunakan PCA untuk pengembangan skala  PCA bukan model pengukuran. Gunakan EFA.\nRotasi orthogonal tanpa justifikasi yang jelas  konstruk psikologi hampir selalu berkorelasi. Gunakan oblique sebagai default.\nMengabaikan cross-loadings  item dengan cross-loading &gt; 0.30 menandakan batas konstruk yang tidak jelas — jangan diabaikan.\nMelaporkan hanya item yang “berhasil dipertahankan”  laporkan semua item, termasuk yang dihapus beserta alasannya.\nTidak melakukan validasi dengan CFA di sampel independen  EFA hanya eksplorasi. Validasi strukturnya dengan CFA di sampel yang berbeda."
   },
   {
     "objectID": "slides/bagian-7.html#konteks-burnout-pada-mahasiswa",
@@ -1495,7 +1495,7 @@
     "href": "slides/bagian-7.html#konteks-burnout-pada-mahasiswa-1",
     "title": "Principal Component Analysis & Exploratory Factor Analysis",
     "section": "Konteks: Burnout pada mahasiswa",
-    "text": "Konteks: Burnout pada mahasiswa\n\nVariabel item (15 item, skala Likert 1–5):\n\nab_ee_1 s.d. ab_ee_5: Emotional Exhaustion — merasa lelah, terkuras, kehabisan energi karena tuntutan akademik\nab_cy_1 s.d. ab_cy_5: Cynicism — sikap jarak, tidak peduli, pesimis terhadap studi\nab_ef_1 s.d. ab_ef_5: Academic Efficacy — keyakinan pada kemampuan akademik diri sendiri (skor tinggi = efikasi tinggi)"
+    "text": "Konteks: Burnout pada mahasiswa\n\nVariabel item (15 item, skala Likert 1–5):\n\nab_ee_1 s.d. ab_ee_5: Emotional Exhaustion — merasa lelah, terkuras, kehabisan energi karena tuntutan akademik\nab_cy_1 s.d. ab_cy_5: Cynicism — sikap mengambil jarak, tidak peduli, pesimis terhadap studi\nab_ef_1 s.d. ab_ef_5: Academic Efficacy — keyakinan pada kemampuan akademik diri sendiri (skor tinggi = efikasi tinggi)"
   },
   {
     "objectID": "slides/bagian-7.html#langkah-langkah-di-jamovi",
