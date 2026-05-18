@@ -326,7 +326,7 @@ Ambang batas RMSEA < .06 ([Hu & Bentler, 1999](https://www.tandfonline.com/doi/a
 ## Reliabilitas: alpha vs. omega
 
 :::: {.columns}
-::: {.column width="50%"}
+::: {.column width="65%"}
 
 **Cronbach's α**
 
@@ -337,7 +337,7 @@ Ambang batas RMSEA < .06 ([Hu & Bentler, 1999](https://www.tandfonline.com/doi/a
 * Sensitif terhadap jumlah *item*, lebih banyak *item* = α lebih tinggi, meskipun *loadings* cenderung moderat
 
 :::
-::: {.column width="50%"}
+::: {.column width="35%"}
 
 **McDonald's ω (Omega)**
 
@@ -350,7 +350,7 @@ Ambang batas RMSEA < .06 ([Hu & Bentler, 1999](https://www.tandfonline.com/doi/a
 
 ::: {.callout-tip}
 #### Laporkan α dan ω 
-Jika ω > α secara substansial, berarti asumsi *tau-equivalence* tidak terpenuhi. Keduanya tersedia langsung di `jamovi`.
+Jika ω > α secara substansial, berarti asumsi *tau-equivalence* tidak terpenuhi. Keduanya tersedia di `jamovi`.
 :::
 
 ## Checklist pelaporan EFA
