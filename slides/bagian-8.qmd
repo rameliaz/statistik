@@ -193,7 +193,7 @@ Ada tiga macam model pengukuran:
 
 ::: {.incremental}
 
-* **Membatasi (*constraining*) varians faktor laten** = 1 (atau meng*constrain* salah satu *factor loading* = 1)
+* **Membatasi (*constraining*) varians faktor laten** = 1 (atau meng*constrain* salah satu *factor loading* = 1, biasanya *item* yang pertama)
   - Ini adalah strategi **identifikasi model** — tanpa melakukan prosedur ini, skala faktor laten tidak terdefinisi dan model tidak dapat diestimasi
   - Efek sampingnya: ketika varians faktor = 1, *factor loading* yang dihasilkan adalah ***standardized estimates*** (dalam satuan SD, bukan satuan item asli)
   - *Default* `lavaan`: varians faktor laten = 1, *mean* = 0
@@ -213,15 +213,21 @@ Ada tiga macam model pengukuran:
 * Kemungkinan konstruk laten **bukan konstruk tunggal** (multidimensi)
 * Perhatikan justifikasi teori ketika menambah *error covariance*
 
-## Memilih metode estimasi
+## Memilih metode estimasi 1️⃣
 
 ::: {.incremental}
 
-* *Maximum Likelihood* {{< fa circle-arrow-right >}} distribusi data (*multivariate*) normal, level pengukuran harus interval/*continuous*
+* *Maximum Likelihood* {{< fa circle-arrow-right >}} distribusi data (*multivariate*) normal, level pengukuran harus interval/*continuous*, tidak ada data *missing*
   - Gunakan _Robust Maximum Likelihood_ (MLR) ketika asumsi _multivariate normality_ tidak terpenuhi
-  - Untuk data *missing*: ML dengan *listwise deletion* mengharuskan data lengkap; gunakan **FIML** (*Full Information ML*, `missing = "fiml"` di `lavaan`) yang valid selama data *missing at random* (MAR)
+  - Untuk data *missing*: ML dengan *listwise deletion* mengharuskan data lengkap; gunakan **FIML** (*Full Information ML*, di `jamovi`: "Options" → "*full information maximum likelihood*" atau `missing = "fiml"` di `lavaan`) yang valid selama data *missing at random* (MAR)
 
 * *Generalized-least squares* {{< fa circle-arrow-right >}} menggunakan asumsi yang sama dengan `ML` namun performanya kurang baik apabila dibandingkan dengan `ML`
+
+:::
+
+## Memilih metode estimasi 2️⃣
+
+::: {.incremental}
 
 * *Weighted-least squares* {{< fa circle-arrow-right >}} dapat digunakan pada data kategorikal (nominal dan ordinal), estimasi menggunakan *polychoric correlation matrix*. Varian WLS, misalnya: WLSM, WLSMV, WLSMVS.
 
@@ -255,7 +261,7 @@ $$AVE = \frac{\sum \lambda_i^2}{\sum \lambda_i^2 + \sum (1 - \lambda_i^2)}$$
 
 | | AVE | CR |
 | :--- | :--- | :--- |
-| **Yang diukur** | Rasio sinyal (*common variance*) dibandingkan total varians per indikator | Konsistensi internal skala |
+| **Yang diukur** | Rasio *common variance* dibandingkan total varians per indikator | Reliabilitas (konsistensi internal) skala |
 | **Sensitif terhadap** | *Loading* rendah sangat menekan nilai AVE | Kurang sensitif — *loading* tinggi dapat mengompensasi |
 | **Kriteria** | ≥ 0.50 | ≥ 0.70 |
 | **Kegunaan utama** | Validitas konvergen | Reliabilitas (alternatif Cronbach's α) |
@@ -264,7 +270,7 @@ $$AVE = \frac{\sum \lambda_i^2}{\sum \lambda_i^2 + \sum (1 - \lambda_i^2)}$$
 
 ::: {.callout-warning}
 #### CR tinggi belum tentu AVE tinggi
-Skala dengan *loading* sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilkan CR ≈ 0.78 namun AVE ≈ 0.36. CR fokus pada *"apakah item-item saling berkaitan?"*; AVE fokus pada *"apakah item-item benar-benar mewakili konstruknya?"*
+Skala dengan *loading* sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilkan CR ≈ 0.78 namun AVE ≈ 0.36. CR fokus pada *"apakah item-item saling berkaitan/berkorelasi?"*; AVE fokus pada *"apakah item-item benar-benar mewakili konstruknya?"*
 :::
 
 # Identifikasi Model {background-color="#14497F" .center}
@@ -273,7 +279,7 @@ Skala dengan *loading* sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilk
 
 ::: {.incremental}
 
-* *Degrees of freedom* (df) dalam CFA = jumlah **informasi yang diketahui** (elemen unik *variance-covariance matrix*) dikurangi **parameter yang diestimasi** ([Baca lengkapnya di sini](https://rameliaz.github.io/statistik-lanjut/slides/bagian-1.html#/variance-covariance-correlation-matrix-1)).
+* *Degrees of freedom* (df) dalam CFA = jumlah **informasi yang diketahui** (elemen unik *variance-covariance matrix*) dikurangi **parameter yang diestimasi** (e.g., jumlah "jalur" di dalam model CFA).
 
 * Ada tiga kondisi:
 
@@ -285,11 +291,11 @@ Skala dengan *loading* sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilk
 
 : {tbl-colwidths="[35,10,55]"}
 
-* **Target**: model *over-identified* dengan df ≥ 1
+* **Target**: model harus *over-identified* dengan df ≥ 1 agar bisa diestimasi
 
 :::
 
-## Berapa banyak indikator yang dibutuhkan?
+## Berapa banyak *item* yang dibutuhkan?
 
 ::: {.incremental}
 
@@ -298,7 +304,7 @@ Skala dengan *loading* sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilk
   - **3 indikator** {{< fa circle-arrow-right >}} *just-identified* (df = 0), tidak dapat difalsifikasi
   - **< 3 indikator** {{< fa circle-arrow-right >}} *under-identified*, tidak dapat diestimasi
 
-* **Catatan penting**: aturan di atas khusus untuk model **satu faktor**. Pada model **≥ 2 faktor laten** yang saling berkorelasi, 3 indikator per faktor sudah *over-identified* — tetapi 4+ tetap lebih disarankan demi stabilitas estimasi
+* **Catatan penting**: aturan di atas khusus untuk model **satu faktor**. Pada model **≥ 2 faktor laten** yang saling berkorelasi, 3 indikator per faktor sudah *over-identified* — tetapi 4+ tetap lebih disarankan agar estimasi model stabil
 
 * Satu indikator per faktor laten (*single-indicator latent variable*) hanya bisa diidentifikasi jika *error variance*-nya **ditentukan secara manual** (misal: dihitung dari reliabilitas × varians skor kasar)
 
@@ -309,7 +315,7 @@ Skala dengan *loading* sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilk
 Jumlah elemen unik matriks *p* variabel = p(p+1)/2. Parameter yang diestimasi meliputi: *factor loading*, *error variance*, dan korelasi/kovariansi antar-faktor. Selisihnya adalah df model.
 :::
 
-# Evaluasi *Model Fit* {background-color="#14497F" .center}
+# Evaluasi Model Fit {background-color="#14497F" .center}
 
 ## Menguji ketepatan model
 
@@ -354,6 +360,8 @@ Gunakan χ² sebagai salah satu dari beberapa indeks, bukan sebagai satu-satunya
 | **SRMR** | Absolut | < 0.08 | Rata-rata korelasi residual yang terstandarisasi |
 
 : {tbl-colwidths="[18,22,22,38]"}
+
+## Indeks *model fit* yang direkomendasikan
 
 ::: {.callout-tip}
 #### Rekomendasi [Hu & Bentler (1999)](https://www.tandfonline.com/doi/abs/10.1080/10705519909540118)
@@ -506,7 +514,7 @@ Untuk model CFA satu faktor, cukup tuliskan `Faktor =~ item1 + item2 + item3 + .
 Baujean, A.A. (2014). Latent Variable Modeling Using R: A step-by-step guide. New York: Routledge.
 :::
 
-## Contoh CFA 1️⃣
+## Contoh *script* `lavaan` untuk CFA 
 
 ![](libs/path-1.png){fig-align="center" width="80%"}
 

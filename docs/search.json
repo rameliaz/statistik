@@ -88,7 +88,7 @@
     "href": "slides/bagian-8.html#constraining-parameter-model",
     "title": "Confirmatory Factor Analysis (CFA)",
     "section": "Constraining parameter model",
-    "text": "Constraining parameter model\n\nMembatasi (constraining) varians faktor laten = 1 (atau mengconstrain salah satu factor loading = 1)\n\nIni adalah strategi identifikasi model — tanpa melakukan prosedur ini, skala faktor laten tidak terdefinisi dan model tidak dapat diestimasi\nEfek sampingnya: ketika varians faktor = 1, factor loading yang dihasilkan adalah standardized estimates (dalam satuan SD, bukan satuan item asli)\nDefault lavaan: varians faktor laten = 1, mean = 0\n\nMembatasi (constraining) kovarians antar-error = 0 (untuk semua pasangan indikator yang berbeda)\n\nIni mengimplikasikan asumsi local independence: korelasi antar-indikator sepenuhnya dijelaskan oleh faktor laten, bukan oleh sumber varians lain\nError variance masing-masing indikator (diagonal) tetap bebas diestimasi"
+    "text": "Constraining parameter model\n\nMembatasi (constraining) varians faktor laten = 1 (atau mengconstrain salah satu factor loading = 1, biasanya item yang pertama)\n\nIni adalah strategi identifikasi model — tanpa melakukan prosedur ini, skala faktor laten tidak terdefinisi dan model tidak dapat diestimasi\nEfek sampingnya: ketika varians faktor = 1, factor loading yang dihasilkan adalah standardized estimates (dalam satuan SD, bukan satuan item asli)\nDefault lavaan: varians faktor laten = 1, mean = 0\n\nMembatasi (constraining) kovarians antar-error = 0 (untuk semua pasangan indikator yang berbeda)\n\nIni mengimplikasikan asumsi local independence: korelasi antar-indikator sepenuhnya dijelaskan oleh faktor laten, bukan oleh sumber varians lain\nError variance masing-masing indikator (diagonal) tetap bebas diestimasi"
   },
   {
     "objectID": "slides/bagian-8.html#apa-yang-terjadi-ketika-error-variance-berkorelasi",
@@ -98,11 +98,18 @@
     "text": "Apa yang terjadi ketika error variance berkorelasi?\n\n\nKedua variabel indikator tersebut mengukur variabel laten lain di luar model (unique factor)\nBisa jadi karena ada item unfavourable dalam skala\nKemungkinan konstruk laten bukan konstruk tunggal (multidimensi)\nPerhatikan justifikasi teori ketika menambah error covariance"
   },
   {
-    "objectID": "slides/bagian-8.html#memilih-metode-estimasi",
-    "href": "slides/bagian-8.html#memilih-metode-estimasi",
+    "objectID": "slides/bagian-8.html#memilih-metode-estimasi-1",
+    "href": "slides/bagian-8.html#memilih-metode-estimasi-1",
     "title": "Confirmatory Factor Analysis (CFA)",
-    "section": "Memilih metode estimasi",
-    "text": "Memilih metode estimasi\n\nMaximum Likelihood  distribusi data (multivariate) normal, level pengukuran harus interval/continuous\n\nGunakan Robust Maximum Likelihood (MLR) ketika asumsi multivariate normality tidak terpenuhi\nUntuk data missing: ML dengan listwise deletion mengharuskan data lengkap; gunakan FIML (Full Information ML, missing = \"fiml\" di lavaan) yang valid selama data missing at random (MAR)\n\nGeneralized-least squares  menggunakan asumsi yang sama dengan ML namun performanya kurang baik apabila dibandingkan dengan ML\nWeighted-least squares  dapat digunakan pada data kategorikal (nominal dan ordinal), estimasi menggunakan polychoric correlation matrix. Varian WLS, misalnya: WLSM, WLSMV, WLSMVS.\nDiagonally weighted-least squares  dapat digunakan pada data kategorikal, bekerja dengan baik pada sampel yang relatif kecil dan data yang tidak berdistribusi normal\n\n\n\n\n\n\n\nTips memilih estimator\n\n\nUntuk skala Likert dengan 6–7 pilihan, dengan respons yang relatif simetris, MLR sudah baik performanya. Untuk skala Likert 4 pilihan dengan distribusi yang sangat juling (skew), WLSMV merupakan pilihan yang lebih aman (Rhemtulla, Brosseau-Liard & Savalei, 2012)."
+    "section": "Memilih metode estimasi 1️⃣",
+    "text": "Memilih metode estimasi 1️⃣\n\nMaximum Likelihood  distribusi data (multivariate) normal, level pengukuran harus interval/continuous, tidak ada data missing\n\nGunakan Robust Maximum Likelihood (MLR) ketika asumsi multivariate normality tidak terpenuhi\nUntuk data missing: ML dengan listwise deletion mengharuskan data lengkap; gunakan FIML (Full Information ML, di jamovi: “Options” → “full information maximum likelihood” atau missing = \"fiml\" di lavaan) yang valid selama data missing at random (MAR)\n\nGeneralized-least squares  menggunakan asumsi yang sama dengan ML namun performanya kurang baik apabila dibandingkan dengan ML"
+  },
+  {
+    "objectID": "slides/bagian-8.html#memilih-metode-estimasi-2",
+    "href": "slides/bagian-8.html#memilih-metode-estimasi-2",
+    "title": "Confirmatory Factor Analysis (CFA)",
+    "section": "Memilih metode estimasi 2️⃣",
+    "text": "Memilih metode estimasi 2️⃣\n\nWeighted-least squares  dapat digunakan pada data kategorikal (nominal dan ordinal), estimasi menggunakan polychoric correlation matrix. Varian WLS, misalnya: WLSM, WLSMV, WLSMVS.\nDiagonally weighted-least squares  dapat digunakan pada data kategorikal, bekerja dengan baik pada sampel yang relatif kecil dan data yang tidak berdistribusi normal\n\n\n\n\n\n\n\nTips memilih estimator\n\n\nUntuk skala Likert dengan 6–7 pilihan, dengan respons yang relatif simetris, MLR sudah baik performanya. Untuk skala Likert 4 pilihan dengan distribusi yang sangat juling (skew), WLSMV merupakan pilihan yang lebih aman (Rhemtulla, Brosseau-Liard & Savalei, 2012)."
   },
   {
     "objectID": "slides/bagian-8.html#average-variance-extracted-ave",
@@ -116,21 +123,21 @@
     "href": "slides/bagian-8.html#ave-vs.-composite-reliability-cr",
     "title": "Confirmatory Factor Analysis (CFA)",
     "section": "AVE vs. Composite Reliability (CR)",
-    "text": "AVE vs. Composite Reliability (CR)\n\n\n\n\n\n\n\n\n\nAVE\nCR\n\n\n\n\nYang diukur\nRasio sinyal (common variance) dibandingkan total varians per indikator\nKonsistensi internal skala\n\n\nSensitif terhadap\nLoading rendah sangat menekan nilai AVE\nKurang sensitif — loading tinggi dapat mengompensasi\n\n\nKriteria\n≥ 0.50\n≥ 0.70\n\n\nKegunaan utama\nValiditas konvergen\nReliabilitas (alternatif Cronbach’s α)\n\n\n\n\n\n\n\n\n\nCR tinggi belum tentu AVE tinggi\n\n\nSkala dengan loading sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilkan CR ≈ 0.78 namun AVE ≈ 0.36. CR fokus pada “apakah item-item saling berkaitan?”; AVE fokus pada “apakah item-item benar-benar mewakili konstruknya?”"
+    "text": "AVE vs. Composite Reliability (CR)\n\n\n\n\n\n\n\n\n\nAVE\nCR\n\n\n\n\nYang diukur\nRasio common variance dibandingkan total varians per indikator\nReliabilitas (konsistensi internal) skala\n\n\nSensitif terhadap\nLoading rendah sangat menekan nilai AVE\nKurang sensitif — loading tinggi dapat mengompensasi\n\n\nKriteria\n≥ 0.50\n≥ 0.70\n\n\nKegunaan utama\nValiditas konvergen\nReliabilitas (alternatif Cronbach’s α)\n\n\n\n\n\n\n\n\n\nCR tinggi belum tentu AVE tinggi\n\n\nSkala dengan loading sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilkan CR ≈ 0.78 namun AVE ≈ 0.36. CR fokus pada “apakah item-item saling berkaitan/berkorelasi?”; AVE fokus pada “apakah item-item benar-benar mewakili konstruknya?”"
   },
   {
     "objectID": "slides/bagian-8.html#degrees-of-freedom-dan-identifikasi-model",
     "href": "slides/bagian-8.html#degrees-of-freedom-dan-identifikasi-model",
     "title": "Confirmatory Factor Analysis (CFA)",
     "section": "Degrees of freedom dan identifikasi model",
-    "text": "Degrees of freedom dan identifikasi model\n\nDegrees of freedom (df) dalam CFA = jumlah informasi yang diketahui (elemen unik variance-covariance matrix) dikurangi parameter yang diestimasi (Baca lengkapnya di sini).\nAda tiga kondisi:\n\n\n\n\n\n\n\n\n\nKondisi\ndf\nImplikasi\n\n\n\n\nOver-identified\n&gt; 0\nLebih banyak informasi dari parameter — model dapat diuji dan difalsifikasi \n\n\nJust-identified\n= 0\nInformasi = parameter — model selalu fit sempurna, tidak dapat difalsifikasi\n\n\nUnder-identified\n&lt; 0\nLebih banyak parameter dari informasi — model tidak dapat diestimasi \n\n\n\n\nTarget: model over-identified dengan df ≥ 1"
+    "text": "Degrees of freedom dan identifikasi model\n\nDegrees of freedom (df) dalam CFA = jumlah informasi yang diketahui (elemen unik variance-covariance matrix) dikurangi parameter yang diestimasi (e.g., jumlah “jalur” di dalam model CFA).\nAda tiga kondisi:\n\n\n\n\n\n\n\n\n\nKondisi\ndf\nImplikasi\n\n\n\n\nOver-identified\n&gt; 0\nLebih banyak informasi dari parameter — model dapat diuji dan difalsifikasi \n\n\nJust-identified\n= 0\nInformasi = parameter — model selalu fit sempurna, tidak dapat difalsifikasi\n\n\nUnder-identified\n&lt; 0\nLebih banyak parameter dari informasi — model tidak dapat diestimasi \n\n\n\n\nTarget: model harus over-identified dengan df ≥ 1 agar bisa diestimasi"
   },
   {
-    "objectID": "slides/bagian-8.html#berapa-banyak-indikator-yang-dibutuhkan",
-    "href": "slides/bagian-8.html#berapa-banyak-indikator-yang-dibutuhkan",
+    "objectID": "slides/bagian-8.html#berapa-banyak-item-yang-dibutuhkan",
+    "href": "slides/bagian-8.html#berapa-banyak-item-yang-dibutuhkan",
     "title": "Confirmatory Factor Analysis (CFA)",
-    "section": "Berapa banyak indikator yang dibutuhkan?",
-    "text": "Berapa banyak indikator yang dibutuhkan?\n\nAturan umum untuk satu faktor laten (varians faktor = 1):\n\n≥ 4 indikator  over-identified (df ≥ 2), dapat diuji\n3 indikator  just-identified (df = 0), tidak dapat difalsifikasi\n&lt; 3 indikator  under-identified, tidak dapat diestimasi\n\nCatatan penting: aturan di atas khusus untuk model satu faktor. Pada model ≥ 2 faktor laten yang saling berkorelasi, 3 indikator per faktor sudah over-identified — tetapi 4+ tetap lebih disarankan demi stabilitas estimasi\nSatu indikator per faktor laten (single-indicator latent variable) hanya bisa diidentifikasi jika error variance-nya ditentukan secara manual (misal: dihitung dari reliabilitas × varians skor kasar)\n\n\n\n\n\n\n\nCara menghitung df model CFA\n\n\nJumlah elemen unik matriks p variabel = p(p+1)/2. Parameter yang diestimasi meliputi: factor loading, error variance, dan korelasi/kovariansi antar-faktor. Selisihnya adalah df model."
+    "section": "Berapa banyak item yang dibutuhkan?",
+    "text": "Berapa banyak item yang dibutuhkan?\n\nAturan umum untuk satu faktor laten (varians faktor = 1):\n\n≥ 4 indikator  over-identified (df ≥ 2), dapat diuji\n3 indikator  just-identified (df = 0), tidak dapat difalsifikasi\n&lt; 3 indikator  under-identified, tidak dapat diestimasi\n\nCatatan penting: aturan di atas khusus untuk model satu faktor. Pada model ≥ 2 faktor laten yang saling berkorelasi, 3 indikator per faktor sudah over-identified — tetapi 4+ tetap lebih disarankan agar estimasi model stabil\nSatu indikator per faktor laten (single-indicator latent variable) hanya bisa diidentifikasi jika error variance-nya ditentukan secara manual (misal: dihitung dari reliabilitas × varians skor kasar)\n\n\n\n\n\n\n\nCara menghitung df model CFA\n\n\nJumlah elemen unik matriks p variabel = p(p+1)/2. Parameter yang diestimasi meliputi: factor loading, error variance, dan korelasi/kovariansi antar-faktor. Selisihnya adalah df model."
   },
   {
     "objectID": "slides/bagian-8.html#menguji-ketepatan-model",
@@ -151,7 +158,14 @@
     "href": "slides/bagian-8.html#indeks-model-fit-yang-direkomendasikan",
     "title": "Confirmatory Factor Analysis (CFA)",
     "section": "Indeks model fit yang direkomendasikan",
-    "text": "Indeks model fit yang direkomendasikan\n\n\n\n\n\n\n\n\n\nIndeks\nKategori\nKriteria\nInterpretasi\n\n\n\n\nCFI\nInkremental\n≥ 0.95\nMembandingkan model vs. null model\n\n\nTLI\nInkremental\n≥ 0.95\nSeperti CFI, tapi mengoreksi kompleksitas model\n\n\nRMSEA\nAbsolut\n&lt; 0.05\nClose fit\n\n\n\n\n0.05 – 0.08\nAcceptable fit\n\n\n\n\n&gt; 0.10\nPoor fit\n\n\nSRMR\nAbsolut\n&lt; 0.08\nRata-rata korelasi residual yang terstandarisasi\n\n\n\n\n\n\n\n\n\nRekomendasi Hu & Bentler (1999)\n\n\nGunakan dual cutoff: CFI ≥ 0.95 DAN SRMR ≤ 0.08. Melaporkan hanya satu indeks tidak cukup untuk menilai model fit secara komprehensif."
+    "text": "Indeks model fit yang direkomendasikan\n\n\n\n\n\n\n\n\n\nIndeks\nKategori\nKriteria\nInterpretasi\n\n\n\n\nCFI\nInkremental\n≥ 0.95\nMembandingkan model vs. null model\n\n\nTLI\nInkremental\n≥ 0.95\nSeperti CFI, tapi mengoreksi kompleksitas model\n\n\nRMSEA\nAbsolut\n&lt; 0.05\nClose fit\n\n\n\n\n0.05 – 0.08\nAcceptable fit\n\n\n\n\n&gt; 0.10\nPoor fit\n\n\nSRMR\nAbsolut\n&lt; 0.08\nRata-rata korelasi residual yang terstandarisasi"
+  },
+  {
+    "objectID": "slides/bagian-8.html#indeks-model-fit-yang-direkomendasikan-1",
+    "href": "slides/bagian-8.html#indeks-model-fit-yang-direkomendasikan-1",
+    "title": "Confirmatory Factor Analysis (CFA)",
+    "section": "Indeks model fit yang direkomendasikan",
+    "text": "Indeks model fit yang direkomendasikan\n\n\n\n\n\n\nRekomendasi Hu & Bentler (1999)\n\n\nGunakan dual cutoff: CFI ≥ 0.95 DAN SRMR ≤ 0.08. Melaporkan hanya satu indeks tidak cukup untuk menilai model fit secara komprehensif."
   },
   {
     "objectID": "slides/bagian-8.html#global-fit-vs.-local-fit",
@@ -210,11 +224,11 @@
     "text": "Dasar script lavaan\n\n\n\n\n\n\n\nBaujean, A.A. (2014). Latent Variable Modeling Using R: A step-by-step guide. New York: Routledge."
   },
   {
-    "objectID": "slides/bagian-8.html#contoh-cfa-1",
-    "href": "slides/bagian-8.html#contoh-cfa-1",
+    "objectID": "slides/bagian-8.html#contoh-script-lavaan-untuk-cfa",
+    "href": "slides/bagian-8.html#contoh-script-lavaan-untuk-cfa",
     "title": "Confirmatory Factor Analysis (CFA)",
-    "section": "Contoh CFA 1️⃣",
-    "text": "Contoh CFA 1️⃣\n\n\n# CFA — spesifikasi minimal yang diperlukan\n# lavaan secara default membebaskan semua factor loading dan error variance\n# serta mengfiksasi varians faktor laten = 1 (tidak perlu ditulis eksplisit)\nmodel_trust &lt;- '\n  trust =~ trust1 + trust2 + trust3 + trust4 + trust5\n'"
+    "section": "Contoh script lavaan untuk CFA",
+    "text": "Contoh script lavaan untuk CFA\n\n\n# CFA — spesifikasi minimal yang diperlukan\n# lavaan secara default membebaskan semua factor loading dan error variance\n# serta mengfiksasi varians faktor laten = 1 (tidak perlu ditulis eksplisit)\nmodel_trust &lt;- '\n  trust =~ trust1 + trust2 + trust3 + trust4 + trust5\n'"
   },
   {
     "objectID": "slides/bagian-8.html#menambahkan-correlated-error-dalam-lavaan",

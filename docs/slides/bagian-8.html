@@ -401,7 +401,7 @@ Rizqy Amelia Zein
 <section id="constraining-parameter-model" class="slide level2">
 <h2><a href="https://psycnet.apa.org/record/2008-06808-005"><em>Constraining parameter</em> model</a></h2>
 <ul>
-<li class="fragment"><strong>Membatasi (<em>constraining</em>) varians faktor laten</strong> = 1 (atau meng<em>constrain</em> salah satu <em>factor loading</em> = 1)
+<li class="fragment"><strong>Membatasi (<em>constraining</em>) varians faktor laten</strong> = 1 (atau meng<em>constrain</em> salah satu <em>factor loading</em> = 1, biasanya <em>item</em> yang pertama)
 <ul>
 <li class="fragment">Ini adalah strategi <strong>identifikasi model</strong> — tanpa melakukan prosedur ini, skala faktor laten tidak terdefinisi dan model tidak dapat diestimasi</li>
 <li class="fragment">Efek sampingnya: ketika varians faktor = 1, <em>factor loading</em> yang dihasilkan adalah <strong><em>standardized estimates</em></strong> (dalam satuan SD, bukan satuan item asli)</li>
@@ -424,15 +424,20 @@ Rizqy Amelia Zein
 <li>Perhatikan justifikasi teori ketika menambah <em>error covariance</em></li>
 </ul>
 </section>
-<section id="memilih-metode-estimasi" class="slide level2">
-<h2>Memilih metode estimasi</h2>
+<section id="memilih-metode-estimasi-1" class="slide level2">
+<h2>Memilih metode estimasi 1️⃣</h2>
 <ul>
-<li class="fragment"><p><em>Maximum Likelihood</em> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> distribusi data (<em>multivariate</em>) normal, level pengukuran harus interval/<em>continuous</em></p>
+<li class="fragment"><em>Maximum Likelihood</em> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> distribusi data (<em>multivariate</em>) normal, level pengukuran harus interval/<em>continuous</em>, tidak ada data <em>missing</em>
 <ul>
 <li class="fragment">Gunakan <em>Robust Maximum Likelihood</em> (MLR) ketika asumsi <em>multivariate normality</em> tidak terpenuhi</li>
-<li class="fragment">Untuk data <em>missing</em>: ML dengan <em>listwise deletion</em> mengharuskan data lengkap; gunakan <strong>FIML</strong> (<em>Full Information ML</em>, <code>missing = "fiml"</code> di <code>lavaan</code>) yang valid selama data <em>missing at random</em> (MAR)</li>
+<li class="fragment">Untuk data <em>missing</em>: ML dengan <em>listwise deletion</em> mengharuskan data lengkap; gunakan <strong>FIML</strong> (<em>Full Information ML</em>, di <code>jamovi</code>: “Options” → “<em>full information maximum likelihood</em>” atau <code>missing = "fiml"</code> di <code>lavaan</code>) yang valid selama data <em>missing at random</em> (MAR)</li>
 </ul></li>
-<li class="fragment"><p><em>Generalized-least squares</em> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> menggunakan asumsi yang sama dengan <code>ML</code> namun performanya kurang baik apabila dibandingkan dengan <code>ML</code></p></li>
+<li class="fragment"><em>Generalized-least squares</em> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> menggunakan asumsi yang sama dengan <code>ML</code> namun performanya kurang baik apabila dibandingkan dengan <code>ML</code></li>
+</ul>
+</section>
+<section id="memilih-metode-estimasi-2" class="slide level2">
+<h2>Memilih metode estimasi 2️⃣</h2>
+<ul>
 <li class="fragment"><p><em>Weighted-least squares</em> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> dapat digunakan pada data kategorikal (nominal dan ordinal), estimasi menggunakan <em>polychoric correlation matrix</em>. Varian WLS, misalnya: WLSM, WLSMV, WLSMVS.</p></li>
 <li class="fragment"><p><em>Diagonally weighted-least squares</em> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> dapat digunakan pada data kategorikal, bekerja dengan baik pada sampel yang relatif kecil dan data yang tidak berdistribusi normal</p></li>
 </ul>
@@ -483,8 +488,8 @@ Rizqy Amelia Zein
 <tbody>
 <tr class="odd">
 <td style="text-align: left;"><strong>Yang diukur</strong></td>
-<td style="text-align: left;">Rasio sinyal (<em>common variance</em>) dibandingkan total varians per indikator</td>
-<td style="text-align: left;">Konsistensi internal skala</td>
+<td style="text-align: left;">Rasio <em>common variance</em> dibandingkan total varians per indikator</td>
+<td style="text-align: left;">Reliabilitas (konsistensi internal) skala</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>Sensitif terhadap</strong></td>
@@ -512,7 +517,7 @@ Rizqy Amelia Zein
 <p><strong>CR tinggi belum tentu AVE tinggi</strong></p>
 </div>
 <div class="callout-content">
-<p>Skala dengan <em>loading</em> sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilkan CR ≈ 0.78 namun AVE ≈ 0.36. CR fokus pada <em>“apakah item-item saling berkaitan?”</em>; AVE fokus pada <em>“apakah item-item benar-benar mewakili konstruknya?”</em></p>
+<p>Skala dengan <em>loading</em> sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilkan CR ≈ 0.78 namun AVE ≈ 0.36. CR fokus pada <em>“apakah item-item saling berkaitan/berkorelasi?”</em>; AVE fokus pada <em>“apakah item-item benar-benar mewakili konstruknya?”</em></p>
 </div>
 </div>
 </div>
@@ -525,7 +530,7 @@ Rizqy Amelia Zein
 <section id="degrees-of-freedom-dan-identifikasi-model" class="slide level2">
 <h2><em>Degrees of freedom</em> dan identifikasi model</h2>
 <ul>
-<li class="fragment"><p><em>Degrees of freedom</em> (df) dalam CFA = jumlah <strong>informasi yang diketahui</strong> (elemen unik <em>variance-covariance matrix</em>) dikurangi <strong>parameter yang diestimasi</strong> (<a href="https://rameliaz.github.io/statistik-lanjut/slides/bagian-1.html#/variance-covariance-correlation-matrix-1">Baca lengkapnya di sini</a>).</p></li>
+<li class="fragment"><p><em>Degrees of freedom</em> (df) dalam CFA = jumlah <strong>informasi yang diketahui</strong> (elemen unik <em>variance-covariance matrix</em>) dikurangi <strong>parameter yang diestimasi</strong> (e.g., jumlah “jalur” di dalam model CFA).</p></li>
 <li class="fragment"><p>Ada tiga kondisi:</p></li>
 </ul>
 <table class="caption-top">
@@ -560,11 +565,11 @@ Rizqy Amelia Zein
 </tbody>
 </table>
 <ul>
-<li class="fragment"><strong>Target</strong>: model <em>over-identified</em> dengan df ≥ 1</li>
+<li class="fragment"><strong>Target</strong>: model harus <em>over-identified</em> dengan df ≥ 1 agar bisa diestimasi</li>
 </ul>
 </section>
-<section id="berapa-banyak-indikator-yang-dibutuhkan" class="slide level2">
-<h2>Berapa banyak indikator yang dibutuhkan?</h2>
+<section id="berapa-banyak-item-yang-dibutuhkan" class="slide level2">
+<h2>Berapa banyak <em>item</em> yang dibutuhkan?</h2>
 <ul>
 <li class="fragment"><p>Aturan umum untuk <strong>satu faktor laten</strong> (varians faktor = 1):</p>
 <ul>
@@ -572,7 +577,7 @@ Rizqy Amelia Zein
 <li class="fragment"><strong>3 indikator</strong> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> <em>just-identified</em> (df = 0), tidak dapat difalsifikasi</li>
 <li class="fragment"><strong>&lt; 3 indikator</strong> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> <em>under-identified</em>, tidak dapat diestimasi</li>
 </ul></li>
-<li class="fragment"><p><strong>Catatan penting</strong>: aturan di atas khusus untuk model <strong>satu faktor</strong>. Pada model <strong>≥ 2 faktor laten</strong> yang saling berkorelasi, 3 indikator per faktor sudah <em>over-identified</em> — tetapi 4+ tetap lebih disarankan demi stabilitas estimasi</p></li>
+<li class="fragment"><p><strong>Catatan penting</strong>: aturan di atas khusus untuk model <strong>satu faktor</strong>. Pada model <strong>≥ 2 faktor laten</strong> yang saling berkorelasi, 3 indikator per faktor sudah <em>over-identified</em> — tetapi 4+ tetap lebih disarankan agar estimasi model stabil</p></li>
 <li class="fragment"><p>Satu indikator per faktor laten (<em>single-indicator latent variable</em>) hanya bisa diidentifikasi jika <em>error variance</em>-nya <strong>ditentukan secara manual</strong> (misal: dihitung dari reliabilitas × varians skor kasar)</p></li>
 </ul>
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -591,7 +596,7 @@ Rizqy Amelia Zein
 </section></section>
 <section>
 <section id="evaluasi-model-fit" class="title-slide slide level1 center" data-background-color="#14497F">
-<h1>Evaluasi <em>Model Fit</em></h1>
+<h1>Evaluasi Model Fit</h1>
 
 </section>
 <section id="menguji-ketepatan-model" class="slide level2">
@@ -683,6 +688,9 @@ Rizqy Amelia Zein
 </tr>
 </tbody>
 </table>
+</section>
+<section id="indeks-model-fit-yang-direkomendasikan-1" class="slide level2">
+<h2>Indeks <em>model fit</em> yang direkomendasikan</h2>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -889,8 +897,8 @@ Rizqy Amelia Zein
 <aside><div>
 <p>Baujean, A.A. (2014). Latent Variable Modeling Using R: A step-by-step guide. New York: Routledge.</p>
 </div></aside></section>
-<section id="contoh-cfa-1" class="slide level2">
-<h2>Contoh CFA 1️⃣</h2>
+<section id="contoh-script-lavaan-untuk-cfa" class="slide level2">
+<h2>Contoh <em>script</em> <code>lavaan</code> untuk CFA</h2>
 
 <img data-src="libs/path-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># CFA — spesifikasi minimal yang diperlukan</span></span>
