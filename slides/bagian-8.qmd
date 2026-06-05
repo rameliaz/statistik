@@ -26,8 +26,11 @@ execute:
 * [*Constraining parameter* dalam model CFA](https://psycnet.apa.org/record/2008-06808-005)
 * *Correlated error variances*
 * Metode estimasi
-* *Average Variance Extracted* (AVE) dan validitas diskriminan
-* Menuliskan hasil analisis CFA dalam laporan penelitian
+* Identifikasi model
+* Evaluasi *model fit*
+* Modifikasi model
+* *Average Variance Extracted* (AVE) dan *composite reliability*
+* CFA dengan `lavaan` {{< fa brands r-project >}}
 
 ## Analisis faktor
 
@@ -71,7 +74,7 @@ execute:
 
 * Menyediakan solusi untuk mengkoreksi bias karena *measurement error* ketika mengestimasi korelasi antar-variabel
 
-* Cara kerjanya adalah dengan membandingkan *variance-covariance matrix* yang dihipotesiskan dengan *variance-covariance matrix* pada data (sampel)
+* Cara kerjanya adalah dengan membandingkan [*variance-covariance matrix*](https://rameliaz.github.io/statistik-lanjut/slides/bagian-1.html#/variance-covariance-correlation-matrix-1) yang dihipotesiskan dengan [*variance-covariance matrix*](https://rameliaz.github.io/statistik-lanjut/slides/bagian-1.html#/variance-covariance-correlation-matrix-1) pada data (sampel)
 
 * **Perhatian** 📢
   - **Sangat tidak disarankan** untuk melakukan EFA kemudian CFA pada **sampel yang sama**
@@ -190,13 +193,14 @@ Ada tiga macam model pengukuran:
 
 ::: {.incremental}
 
-* **Membatasi/menentukan varians** untuk setiap **variabel/faktor laten**
-  - Dilakukan untuk mengeluarkan ***standardized estimates***
-  - *Factor loading* di *z-score*kan
-  - Sehingga *default*nya, *mean* variabel laten = 0, *variance* = 1
+* **Membatasi (*constraining*) varians faktor laten** = 1 (atau meng*constrain* salah satu *factor loading* = 1)
+  - Ini adalah strategi **identifikasi model** — tanpa melakukan prosedur ini, skala faktor laten tidak terdefinisi dan model tidak dapat diestimasi
+  - Efek sampingnya: ketika varians faktor = 1, *factor loading* yang dihasilkan adalah ***standardized estimates*** (dalam satuan SD, bukan satuan item asli)
+  - *Default* `lavaan`: varians faktor laten = 1, *mean* = 0
 
-* Membatasi/menentukan ***error covariance*** untuk setiap variabel/faktor laten = 0
-  - Dilakukan agar *error variance* bebas diestimasi
+* Membatasi (*constraining*) ***kovarians antar-error*** = 0 (untuk semua pasangan indikator yang berbeda)
+  - Ini mengimplikasikan asumsi ***local independence***: korelasi antar-indikator sepenuhnya dijelaskan oleh faktor laten, bukan oleh sumber varians lain
+  - *Error variance* masing-masing indikator (diagonal) tetap **bebas** diestimasi
 
 :::
 
@@ -209,29 +213,13 @@ Ada tiga macam model pengukuran:
 * Kemungkinan konstruk laten **bukan konstruk tunggal** (multidimensi)
 * Perhatikan justifikasi teori ketika menambah *error covariance*
 
-## Skor faktor (*factor scores*)
-
-::: {.incremental}
-
-* Apabila kita memiliki informasi tentang *factor loading*, maka kita bisa menghitung *factor scores* {{< fa circle-arrow-right >}} **estimasi** (*fitted*) skor variabel laten
-
-* Caranya dengan mengali *factor loading* dengan skor kasar {{< fa circle-arrow-right >}} metode regresi
-
-* Namun ingat, mengalikan *factor loading* dengan skor kasar **masih berisiko mendapatkan estimasi yang bias**. Itulah yang menyebabkan *factor scores* akan berubah ketika model diujikan pada kelompok sampel yang berbeda.
-
-* Ada tiga cara yang bisa digunakan untuk menghitung *factor scores*:
-  - **Metode Regresi** {{< fa circle-arrow-right >}} dengan mengoptimalisasi validitas konstruk (*variance explained*)
-  - **Metode Bartlett** {{< fa circle-arrow-right >}} mengasumsikan variabel indikator **tidak saling berkorelasi**
-  - **Metode Anderson-Rubin** {{< fa circle-arrow-right >}} mengasumsikan variabel indikator **saling berkorelasi**
-
-:::
-
 ## Memilih metode estimasi
 
 ::: {.incremental}
 
-* *Maximum Likelihood* {{< fa circle-arrow-right >}} distribusi data (*multivariate*) normal, level pengukuran harus interval/*continuous*, tidak ada data *missing*
+* *Maximum Likelihood* {{< fa circle-arrow-right >}} distribusi data (*multivariate*) normal, level pengukuran harus interval/*continuous*
   - Gunakan _Robust Maximum Likelihood_ (MLR) ketika asumsi _multivariate normality_ tidak terpenuhi
+  - Untuk data *missing*: ML dengan *listwise deletion* mengharuskan data lengkap; gunakan **FIML** (*Full Information ML*, `missing = "fiml"` di `lavaan`) yang valid selama data *missing at random* (MAR)
 
 * *Generalized-least squares* {{< fa circle-arrow-right >}} menggunakan asumsi yang sama dengan `ML` namun performanya kurang baik apabila dibandingkan dengan `ML`
 
@@ -270,7 +258,7 @@ $$AVE = \frac{\sum \lambda_i^2}{\sum \lambda_i^2 + \sum (1 - \lambda_i^2)}$$
 | **Yang diukur** | Rasio sinyal (*common variance*) dibandingkan total varians per indikator | Konsistensi internal skala |
 | **Sensitif terhadap** | *Loading* rendah sangat menekan nilai AVE | Kurang sensitif — *loading* tinggi dapat mengompensasi |
 | **Kriteria** | ≥ 0.50 | ≥ 0.70 |
-| **Kegunaan utama** | Validitas konvergen & diskriminan | Reliabilitas (alternatif Cronbach's α) |
+| **Kegunaan utama** | Validitas konvergen | Reliabilitas (alternatif Cronbach's α) |
 
 : {tbl-colwidths="[30,35,35]"}
 
@@ -279,59 +267,276 @@ $$AVE = \frac{\sum \lambda_i^2}{\sum \lambda_i^2 + \sum (1 - \lambda_i^2)}$$
 Skala dengan *loading* sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilkan CR ≈ 0.78 namun AVE ≈ 0.36. CR fokus pada *"apakah item-item saling berkaitan?"*; AVE fokus pada *"apakah item-item benar-benar mewakili konstruknya?"*
 :::
 
-## Validitas Diskriminan
+# Identifikasi Model {background-color="#14497F" .center}
+
+## *Degrees of freedom* dan identifikasi model
 
 ::: {.incremental}
 
-* Selain validitas konvergen, AVE juga digunakan untuk menguji **validitas diskriminan** — apakah setiap konstruk benar-benar berbeda dari konstruk lainnya
+* *Degrees of freedom* (df) dalam CFA = jumlah **informasi yang diketahui** (elemen unik *variance-covariance matrix*) dikurangi **parameter yang diestimasi** ([Baca lengkapnya di sini](https://rameliaz.github.io/statistik-lanjut/slides/bagian-1.html#/variance-covariance-correlation-matrix-1)).
 
-* **Kriteria Fornell-Larcker**: AVE setiap konstruk harus **lebih besar** dari kuadrat korelasi antara konstruk tersebut dengan konstruk lain mana pun
+* Ada tiga kondisi:
 
-$$AVE_A > r^2_{AB} \quad \text{dan} \quad AVE_B > r^2_{AB}$$
+| Kondisi | df | Implikasi |
+| :--- | :---: | :--- |
+| [***Over-identified***]((https://rameliaz.github.io/mg-sem-workshop/slides/bagian-5.html#/over-identified-model)) | > 0 | Lebih banyak informasi dari parameter — model **dapat diuji** dan difalsifikasi {{< fa circle-check >}} |
+| [***Just-identified***](https://rameliaz.github.io/mg-sem-workshop/slides/bagian-5.html#/just-identified-model) | = 0 | Informasi = parameter — model selalu *fit* sempurna, **tidak dapat difalsifikasi** |
+| [***Under-identified***](https://rameliaz.github.io/mg-sem-workshop/slides/bagian-5.html#/under-identified-model) | < 0 | Lebih banyak parameter dari informasi — model **tidak dapat diestimasi** {{< fa circle-xmark >}} |
 
-* Artinya: konstruk A **berbagi lebih banyak varians dengan indikatornya sendiri** daripada dengan konstruk B
+: {tbl-colwidths="[35,10,55]"}
 
-* Apabila kriteria ini tidak terpenuhi {{< fa circle-arrow-right >}} kemungkinan dua konstruk terlalu mirip dan **tidak dapat dibedakan** secara empiris
+* **Target**: model *over-identified* dengan df ≥ 1
+
+:::
+
+## Berapa banyak indikator yang dibutuhkan?
+
+::: {.incremental}
+
+* Aturan umum untuk **satu faktor laten** (varians faktor = 1):
+  - **≥ 4 indikator** {{< fa circle-arrow-right >}} *over-identified* (df ≥ 2), dapat diuji
+  - **3 indikator** {{< fa circle-arrow-right >}} *just-identified* (df = 0), tidak dapat difalsifikasi
+  - **< 3 indikator** {{< fa circle-arrow-right >}} *under-identified*, tidak dapat diestimasi
+
+* **Catatan penting**: aturan di atas khusus untuk model **satu faktor**. Pada model **≥ 2 faktor laten** yang saling berkorelasi, 3 indikator per faktor sudah *over-identified* — tetapi 4+ tetap lebih disarankan demi stabilitas estimasi
+
+* Satu indikator per faktor laten (*single-indicator latent variable*) hanya bisa diidentifikasi jika *error variance*-nya **ditentukan secara manual** (misal: dihitung dari reliabilitas × varians skor kasar)
 
 :::
 
 ::: {.callout-tip}
-#### Cara membaca tabel Fornell-Larcker
-Letakkan √AVE tiap konstruk di diagonal tabel korelasi antar-konstruk. Validitas diskriminan terpenuhi apabila **nilai diagonal (√AVE) lebih besar dari semua nilai di baris dan kolom yang sama**.
+#### Cara menghitung df model CFA
+Jumlah elemen unik matriks *p* variabel = p(p+1)/2. Parameter yang diestimasi meliputi: *factor loading*, *error variance*, dan korelasi/kovariansi antar-faktor. Selisihnya adalah df model.
 :::
 
-## Menggunakan `semTools`{{< fa brands r-project >}} untuk menghitung AVE
+# Evaluasi *Model Fit* {background-color="#14497F" .center}
 
-Setelah menjalankan model CFA, gunakan `semTools::reliability()` untuk menghitung AVE dan CR sekaligus:
+## Menguji ketepatan model
+
+::: {.incremental}
+
+* Evaluasi *model fit* dilakukan dengan membandingkan **matriks kovarians yang diimplikasikan model** (Σ̂) dengan **matriks kovarians sampel** (S)
+
+* Semakin kecil perbedaan antara Σ̂ dan S {{< fa circle-arrow-right >}} semakin baik *model fit*
+
+* Ada dua level evaluasi:
+  - ***Global fit*** {{< fa circle-arrow-right >}} apakah model secara keseluruhan cocok dengan data?
+  - ***Local fit*** {{< fa circle-arrow-right >}} apakah setiap parameter individual (misalnya *factor loading*) signifikan dan masuk akal?
+
+:::
+
+## Chi-square (χ²)
+
+::: {.incremental}
+
+* Uji statistik formal untuk H₀: "Σ̂ = S" (*model-implied* = *sample covariance matrix*)
+
+* **Signifikan** (*p* < .05) berarti model **tidak cocok dengan data** — ada perbedaan sistematis antara model dan data
+
+* **Kelemahan**: sangat sensitif terhadap ukuran sampel — pada *N* besar, hampir selalu signifikan meski perbedaannya kecil
+
+:::
+
+::: {.callout-warning}
+#### χ² hampir selalu signifikan pada sampel besar
+Gunakan χ² sebagai salah satu dari beberapa indeks, bukan sebagai satu-satunya penentu *model fit*.
+:::
+
+## Indeks *model fit* yang direkomendasikan
+
+| Indeks | Kategori | Kriteria | Interpretasi |
+| :--- | :--- | :--- | :--- |
+| **CFI** | Inkremental | ≥ 0.95 | Membandingkan model vs. *null model* |
+| **TLI** | Inkremental | ≥ 0.95 | Seperti CFI, tapi mengoreksi kompleksitas model |
+| **RMSEA** | Absolut | < 0.05 | *Close fit* |
+| | | 0.05 – 0.08 | *Acceptable fit* |
+| | | > 0.10 | *Poor fit* |
+| **SRMR** | Absolut | < 0.08 | Rata-rata korelasi residual yang terstandarisasi |
+
+: {tbl-colwidths="[18,22,22,38]"}
+
+::: {.callout-tip}
+#### Rekomendasi [Hu & Bentler (1999)](https://www.tandfonline.com/doi/abs/10.1080/10705519909540118)
+Gunakan **dual cutoff**: CFI ≥ 0.95 **DAN** SRMR ≤ 0.08. Melaporkan hanya satu indeks tidak cukup untuk menilai *model fit* secara komprehensif.
+:::
+
+## *Global fit* vs. *Local fit*
+
+:::: {.columns}
+::: {.column}
+::: {.incremental}
+***Global fit***
+
+* Evaluasi model **secara keseluruhan**
+* Menggunakan χ², CFI, TLI, RMSEA, SRMR
+* Menjawab: *"Apakah model secara umum cocok dengan data?"*
+* Model dengan *global fit* yang baik belum tentu semua parameternya masuk akal
+
+:::
+:::
+::: {.column}
+::: {.incremental}
+***Local fit***
+
+* Evaluasi **setiap parameter** secara individual
+* Meliputi: *factor loading*, *standard error*, nilai-*p*, dan *residual correlation*
+* Menjawab: *"Apakah setiap indikator benar-benar mengukur faktor yang dimaksud?"*
+* *Factor loading* yang tidak signifikan atau negatif menunjukkan masalah lokal meski *global fit* baik
+
+:::
+:::
+::::
+
+::: {.callout-note}
+#### *Modification indices*
+Saat *fit* kurang baik, perangkat lunak menyediakan *modification indices* (MI) — estimasi penurunan χ² jika suatu parameter dibebaskan. **Setiap modifikasi wajib dijustifikasi secara teori**, bukan semata-mata didorong oleh data. Modifikasi tanpa dasar teori merupakan *post-hoc rationalization* yang melemahkan validitas temuan.
+:::
+
+# Modifikasi Model {background-color="#14497F" .center}
+
+## Kapan model perlu dimodifikasi?
+
+::: {.incremental}
+
+* Model CFA awal sering kali **tidak langsung menunjukkan indeks *fit* yang memuaskan** 
+* Tanda-tanda model perlu dievaluasi ulang:
+  - *Global fit* buruk: CFI < 0.90, RMSEA > 0.10
+  - *Factor loading* tidak signifikan (p > .05) atau bernilai negatif
+  - *Standardized loading* < 0.30 — indikator tidak cukup merepresentasikan faktor
+  - *Residual correlation* antar-indikator besar (> 0.10 dalam skala terstandarisasi)
+
+* Ada **dua arah** modifikasi:
+  - **Membebaskan parameter** yang semula dikonstrain (misal: menambah *correlated error*)
+  - **Mengkonstrain parameter** yang semula bebas (misal: menghapus indikator yang lemah)
+
+:::
+
+## *Modification indices* (MI)
+
+::: {.incremental}
+
+* MI melaporkan **estimasi penurunan χ²** jika satu parameter tertentu dibebaskan
+  - MI besar (> 10) menandakan bahwa membebaskan parameter tersebut akan memperbaiki *fit* secara substansial
+
+* Output menunjukkan kolom `mi` (besar penurunan χ²) dan `epc` (*expected parameter change* — seberapa besar estimasi parameternya jika dibebaskan)
+
+* **Perhatian**: MI hanya menunjukkan *apa yang akan memperbaiki fit secara statistik* — bukan *apa yang harus dilakukan*. Setiap modifikasi tetap membutuhkan **alasan substantif**
+
+:::
+
+## Alur modifikasi model yang disarankan
+
+::: {.incremental}
+
+1. **Periksa *local fit* terlebih dahulu** — apakah ada *loading* yang tidak signifikan? 
+
+2. **Baca MI dengan kritis** — fokus pada parameter dengan MI terbesar, tapi pastikan: *"Apakah ini masuk akal secara teori?"*
+   - *Correlated error* antara dua item yang memiliki kata-kata serupa (*item overlap*) → **bisa dijustifikasi**
+   - *Correlated error* antara item yang tidak berkaitan secara substantif → **sulit dijustifikasi**
+
+3. **Modifikasi satu per satu** — setiap kali membebaskan satu parameter, *re-run* model dan cek ulang MI. Jangan membebaskan banyak parameter sekaligus
+
+4. **Bandingkan model** menggunakan Δχ² (untuk model *nested*) atau ΔCFI (ΔCFI > 0.01 = perbaikan bermakna)
+
+5. **Laporkan semua modifikasi secara transparan** dalam laporan — termasuk yang tidak berhasil
+
+:::
+
+::: {.callout-warning}
+#### Modifikasi berbasis data adalah *double-dipping*
+Model yang dimodifikasi berdasarkan MI pada sampel yang sama tidak boleh dianggap sebagai model yang "dikonfirmasi". Validasi pada sampel independen adalah syarat utama agar model bisa diinterpretasi.
+:::
+
+## *Statistical power* dan ukuran sampel
+
+::: {.incremental}
+
+* Ada **dua level** *power* dalam CFA:
+
+  1. **Level model (***global***)**: apakah sampel cukup untuk mendeteksi model dengan *fit* yang buruk (RMSEA ≥ 0.08) ketika model sebenarnya mendekati baik (RMSEA ≤ 0.05)?
+     - H₀: RMSEA ≤ 0.05 ("*close fit*"); H₁: RMSEA ≥ 0.08 ("*poor fit*")
+     - **Pada level ini, kita berharap *gagal* menolak H₀** — berbeda dari logika uji hipotesis biasa, di sini H₀ adalah kondisi yang *kita inginkan* (model fit menggambarkan data), bukan kondisi null yang ingin digugurkan
+
+  2. **Level parameter (***local***)**: apakah sampel cukup untuk mendeteksi parameter individual yang tidak nol?
+     - **Contoh 1 — *factor loading***: H₀: λ = 0; H₁: λ ≠ 0 → kita berharap **berhasil** menolak H₀ (indikator benar-benar memuat pada faktor)
+     - **Contoh 2 — korelasi antar-faktor laten**: jika model dihipotesiskan terdiri dari ≥ 2 faktor, kita juga bisa menguji apakah korelasi antar-faktor (φ) berbeda dari nol → H₀: φ = 0; H₁: φ ≠ 0. *Power* yang cukup penting agar korelasi antar-konstruk dapat dideteksi secara andal
+
+* Analisis *power* dapat menggunakan [modul `PAMLJ`](https://blog.jamovi.org/2024/10/28/pamlj.html)
+
+:::
+
+# CFA dengan `lavaan` {{< fa brands r-project >}} {background-color="#14497F" .center}
+
+## `lavaan` *Script*
+
+::: {.incremental}
+
+* [`SEMLj`](https://semlj.github.io/) menyediakan dua opsi: fitur _script_ atau _interactive_
+  - Kalau memilih fitur _interactive_, maka tampilan antarmukanya berupa _drag & drop_ (seperti `SPSS`).
+  - Untuk fitur _script_, maka tampilan antarmukanya meminta pengguna untuk menspesifikasi model dengan _script_.
+
+* `jamovi` dan `JASP` mengadopsi *script* dari <i class="fa-brands fa-r-project"></i> *package* [`lavaan`](http://lavaan.ugent.be/tutorial/index.html), sehingga untuk menspesifikasi model, kita harus memasukkan **serangkaian perintah**.
+
+* Meskipun begitu, *script* `lavaan` **sangat sederhana** dan familiar dengan *script* `lavaan` memberikan **banyak keuntungan**.
+
+:::
+
+## Dasar *script* `lavaan`
+
+* Operator utama yang perlu diketahui:
+
+| Operator | Arti | Contoh |
+| :---: | :--- | :--- |
+| `=~` | *"is measured by"* — mendefinisikan faktor laten | `F =~ x1 + x2 + x3` |
+| `~~` | Kovarians/korelasi — antar-faktor atau antar-*error* | `x1 ~~ x2` |
+| `~1` | *Intercept* variabel | `F ~1` |
+
+: {tbl-colwidths="[15,50,35]"}
+
+::: {.callout-tip}
+#### Satu faktor, tiga indikator atau lebih
+Untuk model CFA satu faktor, cukup tuliskan `Faktor =~ item1 + item2 + item3 + ...`. `lavaan` secara *default* membebaskan semua *factor loading* dan *error variance*, serta mengidentifikasi model dengan mengfiksasi varians faktor laten = 1.
+:::
+
+## Dasar *script* `lavaan`
+
+![](libs/lavaan.png){fig-align="center" width="55%"}
+
+::: {.aside}
+Baujean, A.A. (2014). Latent Variable Modeling Using R: A step-by-step guide. New York: Routledge.
+:::
+
+## Contoh CFA 1️⃣
+
+![](libs/path-1.png){fig-align="center" width="80%"}
 
 ```{r}
 #| eval: false
-library(lavaan); library(semTools)
 
-fit <- cfa(model, data = data_anda, estimator = "MLR")
-
-reliability(fit)
+# CFA — spesifikasi minimal yang diperlukan
+# lavaan secara default membebaskan semua factor loading dan error variance
+# serta mengfiksasi varians faktor laten = 1 (tidak perlu ditulis eksplisit)
+model_trust <- '
+  trust =~ trust1 + trust2 + trust3 + trust4 + trust5
+'
 ```
 
-## Menggunakan `semTools`{{< fa brands r-project >}} untuk menghitung AVE
+## Menambahkan *correlated error* dalam `lavaan`
 
-Output yang dihasilkan mencakup informasi berikut ini:
+Jika MI menunjukkan bahwa residal (*error*) dari dua item perlu dibebaskan korelasinya, maka:
 
-| Baris output | Keterangan |
-| :--- | :--- |
-| `alpha` | Cronbach's α (mengasumsikan *tau equivalence*) |
-| `omega` | McDonald's ω (*congeneric*) |
-| `omega2` / `omega3` | Varian ω untuk model yang lebih kompleks |
-| **`ave`** | **AVE per faktor laten** |
+```{r}
+#| eval: false
+model_cfa_v2 <- '
+  faktor_laten =~ item1 + item2 + item3 + item4 + item5
 
-: {tbl-colwidths="[30,70]"}
+  # Bebaskan korelasi error item3 dan item4
+  # (justifikasi: kedua item memiliki wording yang serupa)
+  item3 ~~ item4
+'
+```
 
-::: {.callout-tip}
-#### `jamovi` menyediakan perhitungan AVE + *composite reliability*
-Karena `SEMLj` juga menggunakan `semTools`, maka AVE tersedia bersama *composite reliability*.
-:::
-
-# Demonstrasi CFA {background-color="#14497F" .center}
+# Demonstrasi CFA dan power analysis {background-color="#14497F" .center}
 
 [Unduh Dataset Contoh CFA](https://rameliaz.github.io/mg-sem-workshop/contoh-cfa.omv)
 
@@ -345,8 +550,6 @@ Karena `SEMLj` juga menggunakan `semTools`, maka AVE tersedia bersama *composite
   - Diukur dengan skala *Likert*, 6 _item_ dengan 7 pilihan jawaban
 
 * Laporkan *model fit*, *factor loading*, dan *multivariate normality*
-
-* Lakukan penyesuaian apabila perlu
 
 ## Ada pertanyaan❓
 
