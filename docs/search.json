@@ -126,6 +126,13 @@
     "text": "AVE vs. Composite Reliability (CR)\n\n\n\n\n\n\n\n\n\nAVE\nCR\n\n\n\n\nYang diukur\nRasio common variance dibandingkan total varians per indikator\nReliabilitas (konsistensi internal) skala\n\n\nSensitif terhadap\nLoading rendah sangat menekan nilai AVE\nKurang sensitif — loading tinggi dapat mengompensasi\n\n\nKriteria\n≥ 0.50\n≥ 0.70\n\n\nKegunaan utama\nValiditas konvergen\nReliabilitas (alternatif Cronbach’s α)\n\n\n\n\n\n\n\n\n\nCR tinggi belum tentu AVE tinggi\n\n\nSkala dengan loading sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilkan CR ≈ 0.78 namun AVE ≈ 0.36. CR fokus pada “apakah item-item saling berkaitan/berkorelasi?”; AVE fokus pada “apakah item-item benar-benar mewakili konstruknya?”"
   },
   {
+    "objectID": "slides/bagian-8.html#ave-vs.-composite-reliability-cr-1",
+    "href": "slides/bagian-8.html#ave-vs.-composite-reliability-cr-1",
+    "title": "Confirmatory Factor Analysis (CFA)",
+    "section": "AVE vs. Composite Reliability (CR)",
+    "text": "AVE vs. Composite Reliability (CR)"
+  },
+  {
     "objectID": "slides/bagian-8.html#degrees-of-freedom-dan-identifikasi-model",
     "href": "slides/bagian-8.html#degrees-of-freedom-dan-identifikasi-model",
     "title": "Confirmatory Factor Analysis (CFA)",
@@ -207,7 +214,7 @@
     "href": "slides/bagian-8.html#lavaan-script",
     "title": "Confirmatory Factor Analysis (CFA)",
     "section": "lavaan Script",
-    "text": "lavaan Script\n\njamovi menyediakan dua cara untuk mengeksekusi CFA\n\nSebagai fitur standar: “Factor” → “Confirmatory Factor Analysis”\nMenggunakan module SEMLj yang bisa sekaligus mengeksekusi structural equation modeling (SEM)\n\nSEMLj menyediakan dua opsi: fitur script atau interactive\n\nKalau memilih fitur interactive, maka tampilan antarmukanya berupa drag & drop (seperti SPSS). Ini mirip dengan fitur standar jamovi di menu Factor.\nUntuk fitur script, maka tampilan antarmukanya meminta pengguna untuk menspesifikasi model dengan script.\n\njamovi dan JASP mengadopsi script dari  package lavaan, sehingga untuk menspesifikasi model, kita harus memasukkan serangkaian perintah.\nMeskipun begitu, script lavaan sangat sederhana dan familiar dengan script lavaan memberikan banyak keuntungan.\n\nMendorong memampuan berpikir komputasi yang dapat berkontribusi pada kemampuan problem solving."
+    "text": "lavaan Script\n\njamovi menyediakan dua cara untuk mengeksekusi CFA\n\nSebagai fitur standar: “Factor” → “Confirmatory Factor Analysis”\nMenggunakan module SEMLj yang bisa sekaligus mengeksekusi structural equation modeling (SEM)\n\nSEMLj menyediakan dua opsi: fitur script atau interactive\n\nKalau memilih fitur interactive, maka tampilan antarmukanya berupa drag & drop (seperti SPSS). Ini mirip dengan fitur standar jamovi di menu Factor.\nUntuk fitur script, maka tampilan antarmukanya meminta pengguna untuk menspesifikasi model dengan script.\n\njamovi dan JASP mengadopsi script dari  package lavaan, sehingga untuk menspesifikasi model, kita harus memasukkan serangkaian perintah.\nMeskipun begitu, script lavaan sangat sederhana dan familiar dengan script lavaan memberikan banyak keuntungan.\n\nMendorong kemampuan berpikir komputasi yang dapat berkontribusi pada kemampuan problem solving."
   },
   {
     "objectID": "slides/bagian-8.html#dasar-script-lavaan",
@@ -235,7 +242,7 @@
     "href": "slides/bagian-8.html#menambahkan-correlated-error-dalam-lavaan",
     "title": "Confirmatory Factor Analysis (CFA)",
     "section": "Menambahkan correlated error dalam lavaan",
-    "text": "Menambahkan correlated error dalam lavaan\nJika MI menunjukkan bahwa residal (error) dari dua item perlu dibebaskan korelasinya, maka:\n\nmodel_cfa_v2 &lt;- '\n  faktor_laten =~ item1 + item2 + item3 + item4 + item5\n\n  # Bebaskan korelasi error item3 dan item4\n  # (justifikasi: kedua item memiliki wording yang serupa)\n  item3 ~~ item4\n'"
+    "text": "Menambahkan correlated error dalam lavaan\nJika MI menunjukkan bahwa residual (error) dari dua item perlu dibebaskan korelasinya, maka:\n\nmodel_cfa_v2 &lt;- '\n  faktor_laten =~ item1 + item2 + item3 + item4 + item5\n\n  # Bebaskan korelasi error item3 dan item4\n  # (justifikasi: kedua item memiliki wording yang serupa)\n  item3 ~~ item4\n'"
   },
   {
     "objectID": "slides/bagian-8.html#latihan-mandiri-mencoba-confirmatory-factor-analysis",

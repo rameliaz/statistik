@@ -275,6 +275,10 @@ $$AVE = \frac{\sum \lambda_i^2}{\sum \lambda_i^2 + \sum (1 - \lambda_i^2)}$$
 Skala dengan *loading* sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilkan CR ≈ 0.78 namun AVE ≈ 0.36. CR fokus pada *"apakah item-item saling berkaitan/berkorelasi?"*; AVE fokus pada *"apakah item-item benar-benar mewakili konstruknya?"*
 :::
 
+## AVE vs. *Composite Reliability* (CR)
+
+![](libs/rel_val.JPG){fig-align="center"}
+
 # Identifikasi Model {background-color="#14497F" .center}
 
 ## *Degrees of freedom* dan identifikasi model
@@ -287,7 +291,7 @@ Skala dengan *loading* sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilk
 
 | Kondisi | df | Implikasi |
 | :--- | :---: | :--- |
-| [***Over-identified***]((https://rameliaz.github.io/mg-sem-workshop/slides/bagian-5.html#/over-identified-model)) | > 0 | Lebih banyak informasi dari jumlah parameter — model **dapat diuji** dan difalsifikasi {{< fa circle-check >}} |
+| [***Over-identified***](https://rameliaz.github.io/mg-sem-workshop/slides/bagian-5.html#/over-identified-model) | > 0 | Lebih banyak informasi dari jumlah parameter — model **dapat diuji** dan difalsifikasi {{< fa circle-check >}} |
 | [***Just-identified***](https://rameliaz.github.io/mg-sem-workshop/slides/bagian-5.html#/just-identified-model) | = 0 | Jumlah informasi yang diketahui = jumlah parameter yang diestimasi — model selalu *fit* sempurna, **tidak dapat difalsifikasi** |
 | [***Under-identified***](https://rameliaz.github.io/mg-sem-workshop/slides/bagian-5.html#/under-identified-model) | < 0 | Jumlah parameter lebih banyak dari informasi yang diketahui — model **tidak dapat diestimasi** {{< fa circle-xmark >}} |
 
@@ -491,7 +495,7 @@ Model yang dimodifikasi berdasarkan MI pada sampel yang sama tidak boleh diangga
 * `jamovi` dan `JASP` mengadopsi *script* dari <i class="fa-brands fa-r-project"></i> *package* [`lavaan`](http://lavaan.ugent.be/tutorial/index.html), sehingga untuk menspesifikasi model, kita harus memasukkan **serangkaian perintah**.
 
 * Meskipun begitu, *script* `lavaan` **sangat sederhana** dan familiar dengan *script* `lavaan` memberikan **banyak keuntungan**.
-  - Mendorong memampuan berpikir komputasi yang dapat berkontribusi pada [kemampuan *problem solving*](https://cacm.acm.org/blogcacm/computational-thinking-the-idea-that-lived/).
+  - Mendorong kemampuan berpikir komputasi yang dapat berkontribusi pada [kemampuan *problem solving*](https://cacm.acm.org/blogcacm/computational-thinking-the-idea-that-lived/).
 
 :::
 
@@ -537,7 +541,7 @@ model_trust <- '
 
 ## Menambahkan *correlated error* dalam `lavaan`
 
-Jika MI menunjukkan bahwa residal (*error*) dari dua item perlu dibebaskan korelasinya, maka:
+Jika MI menunjukkan bahwa residual (*error*) dari dua item perlu dibebaskan korelasinya, maka:
 
 ```{r}
 #| eval: false
@@ -552,7 +556,7 @@ model_cfa_v2 <- '
 
 # Demonstrasi CFA dan power analysis {background-color="#14497F" .center}
 
-[Unduh Dataset Contoh CFA](https://rameliaz.github.io/mg-sem-workshop/contoh-cfa.omv)
+[Unduh Dataset Contoh CFA](https://rameliaz.github.io/statistik-lanjut/materials/contoh-cfa.omv)
 
 ## Latihan mandiri: Mencoba *confirmatory factor analysis*
 
