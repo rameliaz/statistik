@@ -138,10 +138,18 @@ Untuk menggambar diagram jalur, mahasiswa dapat menggunakan MS Power Point, Canv
 * [*Constraining parameter* dalam model CFA](https://psycnet.apa.org/record/2008-06808-005)
 * *Correlated error variances*
 * Metode estimasi
-* *Average Variance Extracted* (AVE) dan validitas diskriminan
-* Menuliskan hasil analisis CFA dalam laporan penelitian
+* Identifikasi model
+* Evaluasi *model fit*
+* Modifikasi model
+* *Average Variance Extracted* (AVE) dan *composite reliability*
+* CFA dengan `lavaan` {{< fa brands r-project >}}
 
 [{{< fa file-powerpoint >}} Buka Materi CFA](slides/bagian-8.html){.btn .btn-primary}
+
+::: {.callout-note}
+#### Demonstrasi CFA menggunakan `SEMLj` dan `PAMLj`
+Demonstrasi analisis CFA beserta *power analysis*nya menggunakan *module* `SEMLj` dan `PAMLj`. Oleh karena itu, mahasiswa diharapkan meng*install* kedua *module* tersebut sebelum perkuliahan dimulai.
+:::
 
 ## Sumber belajar lainnya
 

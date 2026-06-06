@@ -209,7 +209,9 @@ Ada tiga macam model pengukuran:
 ![](libs/correlated-error.png){fig-align="center"}
 
 * Kedua variabel indikator tersebut mengukur variabel laten lain di luar model (*unique factor*)
-* Bisa jadi karena ada _item_ *unfavourable* dalam skala
+* Bisa jadi karena ada _item_ *unfavorable* dalam skala
+  - Oleh karena itu, dua *item* berkorelasi bisa berkorelasi apabila penulisan *item*-nya mirip, hanya saja yang satu positif, sedangkan yang lain penulisannya negatif
+  - Untuk mencegah hal ini terjadi, sebaiknya **hindari menulis *item unfavorable* dengan [kalimat negatif](https://pmc.ncbi.nlm.nih.gov/articles/PMC11486723/)**
 * Kemungkinan konstruk laten **bukan konstruk tunggal** (multidimensi)
 * Perhatikan justifikasi teori ketika menambah *error covariance*
 
@@ -285,9 +287,9 @@ Skala dengan *loading* sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilk
 
 | Kondisi | df | Implikasi |
 | :--- | :---: | :--- |
-| [***Over-identified***]((https://rameliaz.github.io/mg-sem-workshop/slides/bagian-5.html#/over-identified-model)) | > 0 | Lebih banyak informasi dari parameter — model **dapat diuji** dan difalsifikasi {{< fa circle-check >}} |
-| [***Just-identified***](https://rameliaz.github.io/mg-sem-workshop/slides/bagian-5.html#/just-identified-model) | = 0 | Informasi = parameter — model selalu *fit* sempurna, **tidak dapat difalsifikasi** |
-| [***Under-identified***](https://rameliaz.github.io/mg-sem-workshop/slides/bagian-5.html#/under-identified-model) | < 0 | Lebih banyak parameter dari informasi — model **tidak dapat diestimasi** {{< fa circle-xmark >}} |
+| [***Over-identified***]((https://rameliaz.github.io/mg-sem-workshop/slides/bagian-5.html#/over-identified-model)) | > 0 | Lebih banyak informasi dari jumlah parameter — model **dapat diuji** dan difalsifikasi {{< fa circle-check >}} |
+| [***Just-identified***](https://rameliaz.github.io/mg-sem-workshop/slides/bagian-5.html#/just-identified-model) | = 0 | Jumlah informasi yang diketahui = jumlah parameter yang diestimasi — model selalu *fit* sempurna, **tidak dapat difalsifikasi** |
+| [***Under-identified***](https://rameliaz.github.io/mg-sem-workshop/slides/bagian-5.html#/under-identified-model) | < 0 | Jumlah parameter lebih banyak dari informasi yang diketahui — model **tidak dapat diestimasi** {{< fa circle-xmark >}} |
 
 : {tbl-colwidths="[35,10,55]"}
 
@@ -397,7 +399,7 @@ Gunakan **dual cutoff**: CFI ≥ 0.95 **DAN** SRMR ≤ 0.08. Melaporkan hanya sa
 
 ::: {.callout-note}
 #### *Modification indices*
-Saat *fit* kurang baik, perangkat lunak menyediakan *modification indices* (MI) — estimasi penurunan χ² jika suatu parameter dibebaskan. **Setiap modifikasi wajib dijustifikasi secara teori**, bukan semata-mata didorong oleh data. Modifikasi tanpa dasar teori merupakan *post-hoc rationalization* yang melemahkan validitas temuan.
+Saat model *fit* kurang baik,`jamovi` menyediakan *modification indices* (MI), yaitu estimasi penurunan χ² jika suatu parameter dibebaskan. **Setiap modifikasi wajib dijustifikasi secara teori**, bukan semata-mata didorong oleh data. Modifikasi tanpa dasar teori merupakan *post-hoc rationalization* yang melemahkan validitas temuan.
 :::
 
 # Modifikasi Model {background-color="#14497F" .center}
@@ -467,9 +469,9 @@ Model yang dimodifikasi berdasarkan MI pada sampel yang sama tidak boleh diangga
 
   2. **Level parameter (***local***)**: apakah sampel cukup untuk mendeteksi parameter individual yang tidak nol?
      - **Contoh 1 — *factor loading***: H₀: λ = 0; H₁: λ ≠ 0 → kita berharap **berhasil** menolak H₀ (indikator benar-benar memuat pada faktor)
-     - **Contoh 2 — korelasi antar-faktor laten**: jika model dihipotesiskan terdiri dari ≥ 2 faktor, kita juga bisa menguji apakah korelasi antar-faktor (φ) berbeda dari nol → H₀: φ = 0; H₁: φ ≠ 0. *Power* yang cukup penting agar korelasi antar-konstruk dapat dideteksi secara andal
+     - **Contoh 2 — korelasi antar-faktor laten**: jika model dihipotesiskan terdiri dari ≥ 2 faktor, kita juga bisa menguji apakah korelasi antar-faktor laten (φ) berbeda dari nol → H₀: φ = 0; H₁: φ ≠ 0. *Power* yang memadai penting agar korelasi antar-faktor laten dapat dideteksi secara andal
 
-* Analisis *power* dapat menggunakan [modul `PAMLJ`](https://blog.jamovi.org/2024/10/28/pamlj.html)
+* Analisis *power* dapat menggunakan [modul `PAMLj`](https://blog.jamovi.org/2024/10/28/pamlj.html)
 
 :::
 
@@ -479,13 +481,17 @@ Model yang dimodifikasi berdasarkan MI pada sampel yang sama tidak boleh diangga
 
 ::: {.incremental}
 
+* `jamovi` menyediakan dua cara untuk mengeksekusi CFA
+  - Sebagai fitur standar: "*Factor*" → "*Confirmatory Factor Analysis*"
+  - Menggunakan *module* `SEMLj` yang bisa sekaligus mengeksekusi *structural equation modeling* (SEM)
 * [`SEMLj`](https://semlj.github.io/) menyediakan dua opsi: fitur _script_ atau _interactive_
-  - Kalau memilih fitur _interactive_, maka tampilan antarmukanya berupa _drag & drop_ (seperti `SPSS`).
+  - Kalau memilih fitur _interactive_, maka tampilan antarmukanya berupa _drag & drop_ (seperti `SPSS`). Ini mirip dengan fitur standar `jamovi` di menu *Factor*.
   - Untuk fitur _script_, maka tampilan antarmukanya meminta pengguna untuk menspesifikasi model dengan _script_.
 
 * `jamovi` dan `JASP` mengadopsi *script* dari <i class="fa-brands fa-r-project"></i> *package* [`lavaan`](http://lavaan.ugent.be/tutorial/index.html), sehingga untuk menspesifikasi model, kita harus memasukkan **serangkaian perintah**.
 
 * Meskipun begitu, *script* `lavaan` **sangat sederhana** dan familiar dengan *script* `lavaan` memberikan **banyak keuntungan**.
+  - Mendorong memampuan berpikir komputasi yang dapat berkontribusi pada [kemampuan *problem solving*](https://cacm.acm.org/blogcacm/computational-thinking-the-idea-that-lived/).
 
 :::
 

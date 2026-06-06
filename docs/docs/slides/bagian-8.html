@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.10.3">
 
   <meta name="author" content="Rizqy Amelia Zein">
-  <meta name="dcterms.date" content="2026-06-05">
+  <meta name="dcterms.date" content="2026-06-06">
   <title>Statistik Lanjut dalam Penelitian Psikologi – Confirmatory Factor Analysis (CFA)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -213,7 +213,7 @@ Rizqy Amelia Zein
     </div>
 </div>
 
-  <p class="date">2026-06-05</p>
+  <p class="date">2026-06-06</p>
 </section>
 <section id="outline" class="slide level2">
 <h2><em>Outline</em></h2>
@@ -419,7 +419,11 @@ Rizqy Amelia Zein
 
 <img data-src="libs/correlated-error.png" class="quarto-figure quarto-figure-center r-stretch"><ul>
 <li>Kedua variabel indikator tersebut mengukur variabel laten lain di luar model (<em>unique factor</em>)</li>
-<li>Bisa jadi karena ada <em>item</em> <em>unfavourable</em> dalam skala</li>
+<li>Bisa jadi karena ada <em>item</em> <em>unfavorable</em> dalam skala
+<ul>
+<li>Oleh karena itu, dua <em>item</em> berkorelasi bisa berkorelasi apabila penulisan <em>item</em>-nya mirip, hanya saja yang satu positif, sedangkan yang lain penulisannya negatif</li>
+<li>Untuk mencegah hal ini terjadi, sebaiknya <strong>hindari menulis <em>item unfavorable</em> dengan <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11486723/">kalimat negatif</a></strong></li>
+</ul></li>
 <li>Kemungkinan konstruk laten <strong>bukan konstruk tunggal</strong> (multidimensi)</li>
 <li>Perhatikan justifikasi teori ketika menambah <em>error covariance</em></li>
 </ul>
@@ -550,17 +554,17 @@ Rizqy Amelia Zein
 <tr class="odd">
 <td style="text-align: left;"><a href="(https://rameliaz.github.io/mg-sem-workshop/slides/bagian-5.html#/over-identified-model)"><strong><em>Over-identified</em></strong></a></td>
 <td style="text-align: center;">&gt; 0</td>
-<td style="text-align: left;">Lebih banyak informasi dari parameter — model <strong>dapat diuji</strong> dan difalsifikasi <i class="fa-solid fa-circle-check" aria-label="circle-check"></i></td>
+<td style="text-align: left;">Lebih banyak informasi dari jumlah parameter — model <strong>dapat diuji</strong> dan difalsifikasi <i class="fa-solid fa-circle-check" aria-label="circle-check"></i></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><a href="https://rameliaz.github.io/mg-sem-workshop/slides/bagian-5.html#/just-identified-model"><strong><em>Just-identified</em></strong></a></td>
 <td style="text-align: center;">= 0</td>
-<td style="text-align: left;">Informasi = parameter — model selalu <em>fit</em> sempurna, <strong>tidak dapat difalsifikasi</strong></td>
+<td style="text-align: left;">Jumlah informasi yang diketahui = jumlah parameter yang diestimasi — model selalu <em>fit</em> sempurna, <strong>tidak dapat difalsifikasi</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><a href="https://rameliaz.github.io/mg-sem-workshop/slides/bagian-5.html#/under-identified-model"><strong><em>Under-identified</em></strong></a></td>
 <td style="text-align: center;">&lt; 0</td>
-<td style="text-align: left;">Lebih banyak parameter dari informasi — model <strong>tidak dapat diestimasi</strong> <i class="fa-solid fa-circle-xmark" aria-label="circle-xmark"></i></td>
+<td style="text-align: left;">Jumlah parameter lebih banyak dari informasi yang diketahui — model <strong>tidak dapat diestimasi</strong> <i class="fa-solid fa-circle-xmark" aria-label="circle-xmark"></i></td>
 </tr>
 </tbody>
 </table>
@@ -734,7 +738,7 @@ Rizqy Amelia Zein
 <p><strong><em>Modification indices</em></strong></p>
 </div>
 <div class="callout-content">
-<p>Saat <em>fit</em> kurang baik, perangkat lunak menyediakan <em>modification indices</em> (MI) — estimasi penurunan χ² jika suatu parameter dibebaskan. <strong>Setiap modifikasi wajib dijustifikasi secara teori</strong>, bukan semata-mata didorong oleh data. Modifikasi tanpa dasar teori merupakan <em>post-hoc rationalization</em> yang melemahkan validitas temuan.</p>
+<p>Saat model <em>fit</em> kurang baik,<code>jamovi</code> menyediakan <em>modification indices</em> (MI), yaitu estimasi penurunan χ² jika suatu parameter dibebaskan. <strong>Setiap modifikasi wajib dijustifikasi secara teori</strong>, bukan semata-mata didorong oleh data. Modifikasi tanpa dasar teori merupakan <em>post-hoc rationalization</em> yang melemahkan validitas temuan.</p>
 </div>
 </div>
 </div>
@@ -813,10 +817,10 @@ Rizqy Amelia Zein
 <li class="fragment"><strong>Level parameter (</strong><em>local</em><strong>)</strong>: apakah sampel cukup untuk mendeteksi parameter individual yang tidak nol?
 <ul>
 <li class="fragment"><strong>Contoh 1 — <em>factor loading</em></strong>: H₀: λ = 0; H₁: λ ≠ 0 → kita berharap <strong>berhasil</strong> menolak H₀ (indikator benar-benar memuat pada faktor)</li>
-<li class="fragment"><strong>Contoh 2 — korelasi antar-faktor laten</strong>: jika model dihipotesiskan terdiri dari ≥ 2 faktor, kita juga bisa menguji apakah korelasi antar-faktor (φ) berbeda dari nol → H₀: φ = 0; H₁: φ ≠ 0. <em>Power</em> yang cukup penting agar korelasi antar-konstruk dapat dideteksi secara andal</li>
+<li class="fragment"><strong>Contoh 2 — korelasi antar-faktor laten</strong>: jika model dihipotesiskan terdiri dari ≥ 2 faktor, kita juga bisa menguji apakah korelasi antar-faktor laten (φ) berbeda dari nol → H₀: φ = 0; H₁: φ ≠ 0. <em>Power</em> yang memadai penting agar korelasi antar-faktor laten dapat dideteksi secara andal</li>
 </ul></li>
 </ol></li>
-<li class="fragment"><p>Analisis <em>power</em> dapat menggunakan <a href="https://blog.jamovi.org/2024/10/28/pamlj.html">modul <code>PAMLJ</code></a></p></li>
+<li class="fragment"><p>Analisis <em>power</em> dapat menggunakan <a href="https://blog.jamovi.org/2024/10/28/pamlj.html">modul <code>PAMLj</code></a></p></li>
 </ul>
 </section></section>
 <section>
@@ -827,13 +831,21 @@ Rizqy Amelia Zein
 <section id="lavaan-script" class="slide level2">
 <h2><code>lavaan</code> <em>Script</em></h2>
 <ul>
+<li class="fragment"><p><code>jamovi</code> menyediakan dua cara untuk mengeksekusi CFA</p>
+<ul>
+<li class="fragment">Sebagai fitur standar: “<em>Factor</em>” → “<em>Confirmatory Factor Analysis</em>”</li>
+<li class="fragment">Menggunakan <em>module</em> <code>SEMLj</code> yang bisa sekaligus mengeksekusi <em>structural equation modeling</em> (SEM)</li>
+</ul></li>
 <li class="fragment"><p><a href="https://semlj.github.io/"><code>SEMLj</code></a> menyediakan dua opsi: fitur <em>script</em> atau <em>interactive</em></p>
 <ul>
-<li class="fragment">Kalau memilih fitur <em>interactive</em>, maka tampilan antarmukanya berupa <em>drag &amp; drop</em> (seperti <code>SPSS</code>).</li>
+<li class="fragment">Kalau memilih fitur <em>interactive</em>, maka tampilan antarmukanya berupa <em>drag &amp; drop</em> (seperti <code>SPSS</code>). Ini mirip dengan fitur standar <code>jamovi</code> di menu <em>Factor</em>.</li>
 <li class="fragment">Untuk fitur <em>script</em>, maka tampilan antarmukanya meminta pengguna untuk menspesifikasi model dengan <em>script</em>.</li>
 </ul></li>
 <li class="fragment"><p><code>jamovi</code> dan <code>JASP</code> mengadopsi <em>script</em> dari <i class="fa-brands fa-r-project"></i> <em>package</em> <a href="http://lavaan.ugent.be/tutorial/index.html"><code>lavaan</code></a>, sehingga untuk menspesifikasi model, kita harus memasukkan <strong>serangkaian perintah</strong>.</p></li>
-<li class="fragment"><p>Meskipun begitu, <em>script</em> <code>lavaan</code> <strong>sangat sederhana</strong> dan familiar dengan <em>script</em> <code>lavaan</code> memberikan <strong>banyak keuntungan</strong>.</p></li>
+<li class="fragment"><p>Meskipun begitu, <em>script</em> <code>lavaan</code> <strong>sangat sederhana</strong> dan familiar dengan <em>script</em> <code>lavaan</code> memberikan <strong>banyak keuntungan</strong>.</p>
+<ul>
+<li class="fragment">Mendorong memampuan berpikir komputasi yang dapat berkontribusi pada <a href="https://cacm.acm.org/blogcacm/computational-thinking-the-idea-that-lived/">kemampuan <em>problem solving</em></a>.</li>
+</ul></li>
 </ul>
 </section>
 <section id="dasar-script-lavaan" class="slide level2">
