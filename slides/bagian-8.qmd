@@ -112,7 +112,7 @@ execute:
 * **Variabel *observed* menjelaskan** mengapa **variabel laten bervariasi**
 * Misalnya {{< fa circle-arrow-right >}} gengsi sebuah mobil ditentukan oleh usia mobil, kondisi, harga, dan intensitas pemakaian
 * Korelasi antara variabel *observed* tidak diketahui
-* Biasanya digunakan untuk menentukan indeks pada konstruk yang *orthogonal* (contoh {{< fa circle-arrow-right >}} contohnya, [*adverse childhood experience*](https://www.sciencedirect.com/science/article/abs/pii/S0145213421003434))
+* Biasanya digunakan untuk menentukan indeks pada konstruk yang *orthogonal* {{< fa circle-arrow-right >}} contohnya, [*adverse childhood experience*](https://www.sciencedirect.com/science/article/abs/pii/S0145213421003434)
 * Tetapi, **sangat jarang** konstruk psikologi yang mengasumsikan model formatif
 
 :::
@@ -274,7 +274,7 @@ $$AVE = \frac{\sum \lambda_i^2}{\sum \lambda_i^2 + \sum (1 - \lambda_i^2)}$$
 
 ::: {.callout-warning}
 #### CR tinggi belum tentu AVE tinggi
-Skala dengan *loading* sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilkan CR ≈ 0.78 namun AVE ≈ 0.36. CR fokus pada *"apakah item-item saling berkaitan/berkorelasi?"*; AVE fokus pada *"apakah item-item benar-benar mewakili konstruknya?"*
+Skala dengan *loading* sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilkan CR ≈ 0.74 namun AVE ≈ 0.36. CR fokus pada *"apakah item-item saling berkaitan/berkorelasi?"*; AVE fokus pada *"apakah item-item benar-benar mewakili konstruknya?"*
 :::
 
 ## AVE vs. *Composite Reliability* (CR)
@@ -523,7 +523,7 @@ Untuk model CFA satu faktor, cukup tuliskan `Faktor =~ item1 + item2 + item3 + .
 ![](libs/lavaan.png){fig-align="center" width="55%"}
 
 ::: {.aside}
-Baujean, A.A. (2014). Latent Variable Modeling Using R: A step-by-step guide. New York: Routledge.
+Beaujean, A.A. (2014). Latent Variable Modeling Using R: A step-by-step guide. New York: Routledge.
 :::
 
 ## Contoh *script* `lavaan` untuk CFA 

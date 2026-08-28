@@ -85,7 +85,7 @@ Marimar heran sekaligus penasaran, mengapa tiap anak **memberikan respon yang be
 
 **H3 — _Household income_ (hi) → Kemandirian anak (mandiri): negatif**
 
-* Keluarga dengan pendapatan lebih tinggi umumnya memiliki lebih banyak sumber daya untuk memenuhi kebutuhan anak — mulai dari pengasuh, fasilitas, hingga keterlibatan langsung yang intensif. 
+* Keluarga dengan pendapatan lebih tinggi umumnya memiliki lebih banyak sumber daya untuk memenuhi kebutuhan anak — mulai dari pengasuh, fasilitas, hingga keterlibatan langsung yang intensif.
 * Ketika segala kebutuhan terpenuhi tanpa anak perlu berusaha sendiri, kesempatan untuk melatih kemandirian justru berkurang. 
 * Fenomena ini konsisten dengan literatur tentang _overparenting_ di keluarga berpenghasilan tinggi. 
 * Oleh karena itu, semakin tinggi pendapatan keluarga, semakin rendah kemandirian anak.
@@ -480,7 +480,7 @@ Ada 2️⃣ hal yang diestimasi:
 
 ![](libs/mfit-2.png){fig-align="center"}
 
-Model 2 (_F_(2,397) = 74.3, _p_ = .001, _Adj. R_^2^ = .424) dapat menjelaskan varians tingkat kemandirian anak lebih baik daripada Model 1 (_F_(1,398) = 171.8, _p_ = .001, _R_^2^ = .300), dengan _overlapping variances_ sebesar 42.4% dibanding 30%. 
+Model 2 (_F_(4,395) = 74.3, _p_ = .001, _Adj. R_^2^ = .424) dapat menjelaskan varians tingkat kemandirian anak lebih baik daripada Model 1 (_F_(1,398) = 171.8, _p_ = .001, _R_^2^ = .300), dengan _overlapping variances_ sebesar 42.4% dibanding 30%.
 
 **_Information criteria_ (AIC & BIC)**
 
@@ -494,7 +494,7 @@ Model 2 (_F_(2,397) = 74.3, _p_ = .001, _Adj. R_^2^ = .424) dapat menjelaskan va
 :::: {.columns}
 ::: {.column width="55%"}
 
-Ketika dibandingkan, Model 1 dan Model 2 berbeda signifikan (_F_(1,397) = 29.5, _p_ = .001). ΔR^2^ = .128, artinya selisih _R_^2^ Model 1 dan Model 2 = .128 atau _R_^2^ naik sebesar 12.8%
+Ketika dibandingkan, Model 1 dan Model 2 berbeda signifikan (_F_(3,395) = 29.5, _p_ = .001). ΔR^2^ = .128, artinya selisih _R_^2^ Model 1 dan Model 2 = .128 atau _R_^2^ naik sebesar 12.8%
 
 **Coba perhatikan Residuals Model 1 dengan Model 2**
 
@@ -514,7 +514,7 @@ Pendapatan keluarga dapat menjelaskan variasi kemandirian anak (_B_ = 0.153 95% 
 
 _Main effect neuroticism_ (_B_ = 0.387 95% CI [0.261, 0.514], _SE_ = 0.064, _t_ = 6.018, _p_ = .001) dan _trust in organismic development_ (_B_ = 0.391 95% CI [0.275, 0.508], _SE_ = 0.059, _t_ = 6.609, _p_ = .001) secara independen menjelaskan tingkat kemandirian anak.
 
-Tidak ada bukti bahwa ada interaksi antara _neuroticism_ dengan _trust in organismic development_ dalam menjelaskan varians kemandirian anak (_B_ = -0.005 95% CI [-0.019, 0.018], _SE_ = 0.009, _t_ = -0.05, _p_ = .955).
+Tidak ada bukti bahwa ada interaksi antara _neuroticism_ dengan _trust in organismic development_ dalam menjelaskan varians kemandirian anak (_B_ = -0.0005 95% CI [-0.019, 0.018], _SE_ = 0.009, _t_ = -0.05, _p_ = .955).
 
 ## _Estimated Marginal Means_
 
@@ -564,11 +564,11 @@ Tidak ada bukti bahwa ada interaksi antara _neuroticism_ dengan _trust in organi
 
 > Untuk menginvestigasi keterkaitan antara pendapatan keluarga, kecenderungan _neuroticism_ ibu, dan kepercayaan ibu bahwa perkembangan anak dapat terjadi secara natural dengan tingkat kemandirian anak, peneliti melakukan analisis regresi linear hirarkial dengan _interaction terms_. Peneliti menyusun dua model, dimana; model 1 mengestimasi varians tingkat kemandirian anak dengan pendapatan keluarga inti sebagai prediktor, sedangkan pada model 2 peneliti menambahkan prediktor berupa _interaction terms_ antara _neuroticism_ dengan _trust_.
 
-> Ketika dibandingkan, Model 1 dan Model 2 berbeda signifikan (_F_(1,397) = 29.5, _p_ = .001). _R_^2^ bertambah sedikit (ΔR^2^ = .128). Model 2 (_F_(2,397) = 74.3, _p_ = .001, _Adj. R_^2^ = .424, AIC = 2472, BIC = 2496) dapat menjelaskan varians tingkat kemandirian anak sedikit lebih baik daripada Model 1 (_F_(1,398) = 171.8, _p_ = .001, _Adj. R_^2^ = .300, AIC = 2547, BIC = 2559).
+> Ketika dibandingkan, Model 1 dan Model 2 berbeda signifikan (_F_(3,395) = 29.5, _p_ = .001). _R_^2^ bertambah sedikit (ΔR^2^ = .128). Model 2 (_F_(4,395) = 74.3, _p_ = .001, _Adj. R_^2^ = .424, AIC = 2472, BIC = 2496) dapat menjelaskan varians tingkat kemandirian anak sedikit lebih baik daripada Model 1 (_F_(1,398) = 171.8, _p_ = .001, _Adj. R_^2^ = .300, AIC = 2547, BIC = 2559).
 
 ## Bagaimana melaporkannya?
 
-> Pendapatan keluarga dapat menjelaskan variasi kemandirian anak (_B_ = 0.153 95% CI [0.025, 0.281], _SE_ = 0.065, _t_ = 2.354, _p_ = .019). _Main effect neuroticism_ (_B_ = 0.387 95% CI [0.261, 0.514], _SE_ = 0.064, _t_ = 6.018, _p_ = .001) dan _trust in organismic development_ (_B_ = 0.391 95% CI [0.275, 0.508], _SE_ = 0.059, _t_ = 6.609, _p_ = .001) secara independen menjelaskan tingkat kemandirian anak. Tidak ada bukti bahwa interaksi antara _neuroticism_ dengan _trust in organismic development_ dapat menjelaskan varians kemandirian anak (_B_ = -0.005 95% CI [-0.019, 0.018], _SE_ = 0.009, _t_ = -0.05, _p_ = .955).
+> Pendapatan keluarga dapat menjelaskan variasi kemandirian anak (_B_ = 0.153 95% CI [0.025, 0.281], _SE_ = 0.065, _t_ = 2.354, _p_ = .019). _Main effect neuroticism_ (_B_ = 0.387 95% CI [0.261, 0.514], _SE_ = 0.064, _t_ = 6.018, _p_ = .001) dan _trust in organismic development_ (_B_ = 0.391 95% CI [0.275, 0.508], _SE_ = 0.059, _t_ = 6.609, _p_ = .001) secara independen menjelaskan tingkat kemandirian anak. Tidak ada bukti bahwa interaksi antara _neuroticism_ dengan _trust in organismic development_ dapat menjelaskan varians kemandirian anak (_B_ = -0.0005 95% CI [-0.019, 0.018], _SE_ = 0.009, _t_ = -0.05, _p_ = .955).
 
 > Potensi multikolinearitas dideteksi dengan VIF dan hasil analisis menunjukkan multikolinearitas kemungkinan tidak terjadi (VIF = 1.03 - 3.47).
 

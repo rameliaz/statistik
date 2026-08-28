@@ -6,12 +6,12 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e44360b8a8db1e130c7792fece1c8032.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.10.3">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Rizqy Amelia Zein">
-  <meta name="dcterms.date" content="2026-06-09">
+  <meta name="dcterms.date" content="2026-08-28">
   <title>Statistik Lanjut dalam Penelitian Psikologi – Analisis ROC (Receiver Operating Characteristic)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -22,10 +22,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -142,7 +145,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Rizqy Amelia Zein 
+Rizqy Amelia Zein
 </div>
         <p class="quarto-title-affiliation">
             <a href="https://psikologi.unair.ac.id/dosen-rizqy-amelia-zein/"><em>Departemen Psikologi, Universitas Airlangga</em></a>
@@ -150,7 +153,7 @@ Rizqy Amelia Zein
     </div>
 </div>
 
-  <p class="date">2026-06-09</p>
+  <p class="date">2026-08-28</p>
 </section>
 <section id="outline" class="slide level2">
 <h2><em>Outline</em></h2>
@@ -749,7 +752,7 @@ Rizqy Amelia Zein
 <section id="konteks-mhi-vs-srq-20" class="slide level2">
 <h2>Konteks: MHI vs SRQ-20</h2>
 <ul>
-<li class="fragment"><p>Dataset: <a href="..\materials/roc.omv"><strong>Dataset Contoh Analisis ROC</strong> (<code>roc.omv</code>)</a></p>
+<li class="fragment"><p>Dataset: <a href="../materials/roc.omv"><strong>Dataset Contoh Analisis ROC</strong> (<code>roc.omv</code>)</a></p>
 <ul>
 <li class="fragment">Dapat diunduh dari <em>navbar</em> di laman mata kuliah</li>
 </ul></li>
@@ -772,7 +775,7 @@ Rizqy Amelia Zein
 <ul>
 <li>Menu <strong>☰ → Manage modules → Available → PPDA</strong></li>
 </ul></li>
-<li>Buka dataset <a href="..\materials/roc.omv">(<code>roc.omv</code>)</a></li>
+<li>Buka dataset <a href="../materials/roc.omv">(<code>roc.omv</code>)</a></li>
 <li>Pastikan variabel diagnostik (<em>gold standard</em>) sudah dalam format <strong>kategorikal</strong> (0 = negatif, 1 = positif)</li>
 </ol>
 <p><strong>Menjalankan TestROC:</strong></p>
@@ -824,7 +827,7 @@ Rizqy Amelia Zein
 <section id="tiga-kesalahan-umum-dalam-analisis-roc" class="slide level2">
 <h2>Tiga kesalahan umum dalam analisis ROC</h2>
 <ol type="1">
-<li class="fragment"><p><strong>Menggunakan <em>cut-off</em> dari literatur tanpa validasi lokal</strong> — <em>cut-off</em> yang optimal di satu populasi (misal: Barat, klinik spesialis) mungkin tidak optimal di populasi yang berbeda (misal: Indonesia, layanan primer). Selalu validasi secara di konteks penelitian Anda.</p></li>
+<li class="fragment"><p><strong>Menggunakan <em>cut-off</em> dari literatur tanpa validasi lokal</strong> — <em>cut-off</em> yang optimal di satu populasi (misal: Barat, klinik spesialis) mungkin tidak optimal di populasi yang berbeda (misal: Indonesia, layanan primer). Selalu validasi ulang di konteks penelitian Anda sendiri.</p></li>
 <li class="fragment"><p><strong>Mengabaikan konteks ketika memilih <em>cut-off</em></strong> — Youden’s Index hanyalah titik awal. Keputusan klinis akhir harus mempertimbangkan konsekuensi <em>false negative</em> vs <em>false positive</em> yang spesifik untuk konteks penggunaan.</p></li>
 <li class="fragment"><p><strong>Melaporkan PPV/NPV tanpa menyebutkan prevalensi</strong> — PPV = 63% tidak bermakna tanpa informasi bahwa angka itu dihitung pada prevalensi 30%. Pembaca yang menggunakan alat di populasi dengan prevalensi 10% akan mendapat gambaran yang sangat menyesatkan.</p></li>
 </ol>
@@ -832,7 +835,7 @@ Rizqy Amelia Zein
 <section id="ada-pertanyaan" class="slide level2">
 <h2>Ada pertanyaan❓</h2>
 
-<img data-src="..\slides/libs/closing.JPG" class="quarto-figure quarto-figure-center r-stretch"><div class="callout callout-note callout-titled callout-style-default">
+<img data-src="../slides/libs/closing.JPG" class="quarto-figure quarto-figure-center r-stretch"><div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">

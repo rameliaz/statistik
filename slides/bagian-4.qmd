@@ -420,7 +420,7 @@ Selalu sebutkan prevalensi yang digunakan saat menghitung PPV dan NPV, karena ni
 ## Tiga kesalahan umum dalam analisis ROC
 
 ::: {.incremental}
-1. **Menggunakan *cut-off* dari literatur tanpa validasi lokal** — *cut-off* yang optimal di satu populasi (misal: Barat, klinik spesialis) mungkin tidak optimal di populasi yang berbeda (misal: Indonesia, layanan primer). Selalu validasi secara di konteks penelitian Anda.
+1. **Menggunakan *cut-off* dari literatur tanpa validasi lokal** — *cut-off* yang optimal di satu populasi (misal: Barat, klinik spesialis) mungkin tidak optimal di populasi yang berbeda (misal: Indonesia, layanan primer). Selalu validasi ulang di konteks penelitian Anda sendiri.
 
 2. **Mengabaikan konteks ketika memilih *cut-off*** — Youden's Index hanyalah titik awal. Keputusan klinis akhir harus mempertimbangkan konsekuensi *false negative* vs *false positive* yang spesifik untuk konteks penggunaan.
 

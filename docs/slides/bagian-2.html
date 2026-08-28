@@ -6,11 +6,11 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e44360b8a8db1e130c7792fece1c8032.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.10.3">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Rizqy Amelia Zein">
-  <meta name="dcterms.date" content="2026-06-09">
+  <meta name="dcterms.date" content="2026-08-28">
   <title>Statistik Lanjut dalam Penelitian Psikologi – Regresi Linear (Ordinary Least Square)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -21,10 +21,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -140,7 +143,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Rizqy Amelia Zein 
+Rizqy Amelia Zein
 </div>
         <p class="quarto-title-affiliation">
             <a href="https://psikologi.unair.ac.id/dosen-rizqy-amelia-zein/"><em>Departemen Psikologi, Universitas Airlangga</em></a>
@@ -148,7 +151,7 @@ Rizqy Amelia Zein
     </div>
 </div>
 
-  <p class="date">2026-06-09</p>
+  <p class="date">2026-08-28</p>
 </section>
 <section id="outline" class="slide level2">
 <h2><em>Outline</em></h2>
@@ -663,7 +666,7 @@ Rizqy Amelia Zein
 <section id="model-fit-2" class="slide level2">
 <h2>Model fit</h2>
 
-<img data-src="libs/mfit-2.png" class="quarto-figure quarto-figure-center r-stretch"><p>Model 2 (<em>F</em>(2,397) = 74.3, <em>p</em> = .001, <em>Adj. R</em><sup>2</sup> = .424) dapat menjelaskan varians tingkat kemandirian anak lebih baik daripada Model 1 (<em>F</em>(1,398) = 171.8, <em>p</em> = .001, <em>R</em><sup>2</sup> = .300), dengan <em>overlapping variances</em> sebesar 42.4% dibanding 30%.</p>
+<img data-src="libs/mfit-2.png" class="quarto-figure quarto-figure-center r-stretch"><p>Model 2 (<em>F</em>(4,395) = 74.3, <em>p</em> = .001, <em>Adj. R</em><sup>2</sup> = .424) dapat menjelaskan varians tingkat kemandirian anak lebih baik daripada Model 1 (<em>F</em>(1,398) = 171.8, <em>p</em> = .001, <em>R</em><sup>2</sup> = .300), dengan <em>overlapping variances</em> sebesar 42.4% dibanding 30%.</p>
 <p><strong><em>Information criteria</em> (AIC &amp; BIC)</strong></p>
 <ul>
 <li>Digunakan untuk mengakomodasi kelemahan dari <em>R</em><sup>2</sup> (apabila prediktor dalam model ditambah terus, maka nilai <em>R</em><sup>2</sup> akan terus naik)</li>
@@ -676,7 +679,7 @@ Rizqy Amelia Zein
 <h2><em>Model comparison</em></h2>
 <div class="columns">
 <div class="column" style="width:55%;">
-<p>Ketika dibandingkan, Model 1 dan Model 2 berbeda signifikan (<em>F</em>(1,397) = 29.5, <em>p</em> = .001). ΔR<sup>2</sup> = .128, artinya selisih <em>R</em><sup>2</sup> Model 1 dan Model 2 = .128 atau <em>R</em><sup>2</sup> naik sebesar 12.8%</p>
+<p>Ketika dibandingkan, Model 1 dan Model 2 berbeda signifikan (<em>F</em>(3,395) = 29.5, <em>p</em> = .001). ΔR<sup>2</sup> = .128, artinya selisih <em>R</em><sup>2</sup> Model 1 dan Model 2 = .128 atau <em>R</em><sup>2</sup> naik sebesar 12.8%</p>
 <p><strong>Coba perhatikan Residuals Model 1 dengan Model 2</strong></p>
 </div><div class="column" style="width:45%;">
 <div class="quarto-figure quarto-figure-center">
@@ -691,7 +694,7 @@ Rizqy Amelia Zein
 
 <img data-src="libs/mod-coef2.png" class="quarto-figure quarto-figure-center r-stretch"><p>Pendapatan keluarga dapat menjelaskan variasi kemandirian anak (<em>B</em> = 0.153 95% CI [0.025, 0.281], <em>SE</em> = 0.065, <em>t</em> = 2.354, <em>p</em> = .019). Artinya, anak yang dibesarkan di keluarga dengan tingkat pendapatan yang tinggi, maka cenderung lebih mandiri.</p>
 <p><em>Main effect neuroticism</em> (<em>B</em> = 0.387 95% CI [0.261, 0.514], <em>SE</em> = 0.064, <em>t</em> = 6.018, <em>p</em> = .001) dan <em>trust in organismic development</em> (<em>B</em> = 0.391 95% CI [0.275, 0.508], <em>SE</em> = 0.059, <em>t</em> = 6.609, <em>p</em> = .001) secara independen menjelaskan tingkat kemandirian anak.</p>
-<p>Tidak ada bukti bahwa ada interaksi antara <em>neuroticism</em> dengan <em>trust in organismic development</em> dalam menjelaskan varians kemandirian anak (<em>B</em> = -0.005 95% CI [-0.019, 0.018], <em>SE</em> = 0.009, <em>t</em> = -0.05, <em>p</em> = .955).</p>
+<p>Tidak ada bukti bahwa ada interaksi antara <em>neuroticism</em> dengan <em>trust in organismic development</em> dalam menjelaskan varians kemandirian anak (<em>B</em> = -0.0005 95% CI [-0.019, 0.018], <em>SE</em> = 0.009, <em>t</em> = -0.05, <em>p</em> = .955).</p>
 </section>
 <section id="estimated-marginal-means" class="slide level2">
 <h2><em>Estimated Marginal Means</em></h2>
@@ -750,13 +753,13 @@ Rizqy Amelia Zein
 <p>Untuk menginvestigasi keterkaitan antara pendapatan keluarga, kecenderungan <em>neuroticism</em> ibu, dan kepercayaan ibu bahwa perkembangan anak dapat terjadi secara natural dengan tingkat kemandirian anak, peneliti melakukan analisis regresi linear hirarkial dengan <em>interaction terms</em>. Peneliti menyusun dua model, dimana; model 1 mengestimasi varians tingkat kemandirian anak dengan pendapatan keluarga inti sebagai prediktor, sedangkan pada model 2 peneliti menambahkan prediktor berupa <em>interaction terms</em> antara <em>neuroticism</em> dengan <em>trust</em>.</p>
 </blockquote>
 <blockquote>
-<p>Ketika dibandingkan, Model 1 dan Model 2 berbeda signifikan (<em>F</em>(1,397) = 29.5, <em>p</em> = .001). <em>R</em><sup>2</sup> bertambah sedikit (ΔR<sup>2</sup> = .128). Model 2 (<em>F</em>(2,397) = 74.3, <em>p</em> = .001, <em>Adj. R</em><sup>2</sup> = .424, AIC = 2472, BIC = 2496) dapat menjelaskan varians tingkat kemandirian anak sedikit lebih baik daripada Model 1 (<em>F</em>(1,398) = 171.8, <em>p</em> = .001, <em>Adj. R</em><sup>2</sup> = .300, AIC = 2547, BIC = 2559).</p>
+<p>Ketika dibandingkan, Model 1 dan Model 2 berbeda signifikan (<em>F</em>(3,395) = 29.5, <em>p</em> = .001). <em>R</em><sup>2</sup> bertambah sedikit (ΔR<sup>2</sup> = .128). Model 2 (<em>F</em>(4,395) = 74.3, <em>p</em> = .001, <em>Adj. R</em><sup>2</sup> = .424, AIC = 2472, BIC = 2496) dapat menjelaskan varians tingkat kemandirian anak sedikit lebih baik daripada Model 1 (<em>F</em>(1,398) = 171.8, <em>p</em> = .001, <em>Adj. R</em><sup>2</sup> = .300, AIC = 2547, BIC = 2559).</p>
 </blockquote>
 </section>
 <section id="bagaimana-melaporkannya-1" class="slide level2">
 <h2>Bagaimana melaporkannya?</h2>
 <blockquote>
-<p>Pendapatan keluarga dapat menjelaskan variasi kemandirian anak (<em>B</em> = 0.153 95% CI [0.025, 0.281], <em>SE</em> = 0.065, <em>t</em> = 2.354, <em>p</em> = .019). <em>Main effect neuroticism</em> (<em>B</em> = 0.387 95% CI [0.261, 0.514], <em>SE</em> = 0.064, <em>t</em> = 6.018, <em>p</em> = .001) dan <em>trust in organismic development</em> (<em>B</em> = 0.391 95% CI [0.275, 0.508], <em>SE</em> = 0.059, <em>t</em> = 6.609, <em>p</em> = .001) secara independen menjelaskan tingkat kemandirian anak. Tidak ada bukti bahwa interaksi antara <em>neuroticism</em> dengan <em>trust in organismic development</em> dapat menjelaskan varians kemandirian anak (<em>B</em> = -0.005 95% CI [-0.019, 0.018], <em>SE</em> = 0.009, <em>t</em> = -0.05, <em>p</em> = .955).</p>
+<p>Pendapatan keluarga dapat menjelaskan variasi kemandirian anak (<em>B</em> = 0.153 95% CI [0.025, 0.281], <em>SE</em> = 0.065, <em>t</em> = 2.354, <em>p</em> = .019). <em>Main effect neuroticism</em> (<em>B</em> = 0.387 95% CI [0.261, 0.514], <em>SE</em> = 0.064, <em>t</em> = 6.018, <em>p</em> = .001) dan <em>trust in organismic development</em> (<em>B</em> = 0.391 95% CI [0.275, 0.508], <em>SE</em> = 0.059, <em>t</em> = 6.609, <em>p</em> = .001) secara independen menjelaskan tingkat kemandirian anak. Tidak ada bukti bahwa interaksi antara <em>neuroticism</em> dengan <em>trust in organismic development</em> dapat menjelaskan varians kemandirian anak (<em>B</em> = -0.0005 95% CI [-0.019, 0.018], <em>SE</em> = 0.009, <em>t</em> = -0.05, <em>p</em> = .955).</p>
 </blockquote>
 <blockquote>
 <p>Potensi multikolinearitas dideteksi dengan VIF dan hasil analisis menunjukkan multikolinearitas kemungkinan tidak terjadi (VIF = 1.03 - 3.47).</p>
@@ -805,7 +808,7 @@ Rizqy Amelia Zein
 <section id="ada-pertanyaan" class="slide level2">
 <h2>Ada pertanyaan❓</h2>
 
-<img data-src="..\slides/libs/closing.JPG" class="quarto-figure quarto-figure-center r-stretch"><div class="callout callout-note callout-titled callout-style-default">
+<img data-src="../slides/libs/closing.JPG" class="quarto-figure quarto-figure-center r-stretch"><div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">

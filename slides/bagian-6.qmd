@@ -118,7 +118,7 @@ Marimar heran sekaligus penasaran, mengapa tiap anak **memberikan respon yang be
 | *Direct effect* antara variabel endogen dan eksogen | γ | Gamma |
 | *Direct effect* antara dua variabel laten | β | Beta |
 | Korelasi (*covariance*) antara dua variabel laten | φ | Phi |
-| Varians *error* pengukuran dari sebuah variabel laten | ζ | Zeta |
+| Varians residual/*disturbance* struktural dari variabel laten endogen (bagian varians η yang tidak dijelaskan variabel lain dalam model) | ζ | Zeta |
 
 : {tbl-colwidths="[70,15,15]"}
 
@@ -182,7 +182,7 @@ Rumuskan **hipotesis** penelitiannya kemudian buatlah **diagram jalur** beserta 
 ![](libs/lavaan.png){fig-align="center" width="55%"}
 
 ::: {.aside}
-Baujean, A.A. (2014). Latent Variable Modeling Using R: A step-by-step guide. New York: Routledge.
+Beaujean, A.A. (2014). Latent Variable Modeling Using R: A step-by-step guide. New York: Routledge.
 :::
 
 ## Contoh CFA (1)

@@ -39,7 +39,7 @@
     "href": "slides/bagian-8.html#model-reflektif-vs.-formatif",
     "title": "Confirmatory Factor Analysis (CFA)",
     "section": "Model Reflektif vs. Formatif",
-    "text": "Model Reflektif vs. Formatif\n\n\nReflektif\n\nVariabel laten menjelaskan mengapa variabel indikator bervariasi\nMisalnya  individu dengan intelegensi yang tinggi akan mendapatkan nilai yang berbeda dalam tes matematika\nBiasanya mengasumsikan bahwa kovariansi antar-error (residual) variabel indikator = 0 (local independence)  artinya, korelasi antar-indikator sepenuhnya dijelaskan oleh variabel laten, tidak ada sumber varians bersama lain di luar model\nMayoritas konstruk psikologis mengasumsikan model pengukuran reflektif\n\n\nFormatif\n\nVariabel observed menjelaskan mengapa variabel laten bervariasi\nMisalnya  gengsi sebuah mobil ditentukan oleh usia mobil, kondisi, harga, dan intensitas pemakaian\nKorelasi antara variabel observed tidak diketahui\nBiasanya digunakan untuk menentukan indeks pada konstruk yang orthogonal (contoh  contohnya, adverse childhood experience)\nTetapi, sangat jarang konstruk psikologi yang mengasumsikan model formatif"
+    "text": "Model Reflektif vs. Formatif\n\n\nReflektif\n\nVariabel laten menjelaskan mengapa variabel indikator bervariasi\nMisalnya  individu dengan intelegensi yang tinggi akan mendapatkan nilai yang berbeda dalam tes matematika\nBiasanya mengasumsikan bahwa kovariansi antar-error (residual) variabel indikator = 0 (local independence)  artinya, korelasi antar-indikator sepenuhnya dijelaskan oleh variabel laten, tidak ada sumber varians bersama lain di luar model\nMayoritas konstruk psikologis mengasumsikan model pengukuran reflektif\n\n\nFormatif\n\nVariabel observed menjelaskan mengapa variabel laten bervariasi\nMisalnya  gengsi sebuah mobil ditentukan oleh usia mobil, kondisi, harga, dan intensitas pemakaian\nKorelasi antara variabel observed tidak diketahui\nBiasanya digunakan untuk menentukan indeks pada konstruk yang orthogonal  contohnya, adverse childhood experience\nTetapi, sangat jarang konstruk psikologi yang mengasumsikan model formatif"
   },
   {
     "objectID": "slides/bagian-8.html#model-reflektif",
@@ -123,7 +123,7 @@
     "href": "slides/bagian-8.html#ave-vs.-composite-reliability-cr",
     "title": "Confirmatory Factor Analysis (CFA)",
     "section": "AVE vs. Composite Reliability (CR)",
-    "text": "AVE vs. Composite Reliability (CR)\n\n\n\n\n\n\n\n\n\nAVE\nCR\n\n\n\n\nYang diukur\nRasio common variance dibandingkan total varians per indikator\nReliabilitas (konsistensi internal) skala\n\n\nSensitif terhadap\nLoading rendah sangat menekan nilai AVE\nKurang sensitif — loading tinggi dapat mengompensasi\n\n\nKriteria\n≥ 0.50\n≥ 0.70\n\n\nKegunaan utama\nValiditas konvergen\nReliabilitas (alternatif Cronbach’s α)\n\n\n\n\n\n\n\n\n\nCR tinggi belum tentu AVE tinggi\n\n\nSkala dengan loading sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilkan CR ≈ 0.78 namun AVE ≈ 0.36. CR fokus pada “apakah item-item saling berkaitan/berkorelasi?”; AVE fokus pada “apakah item-item benar-benar mewakili konstruknya?”"
+    "text": "AVE vs. Composite Reliability (CR)\n\n\n\n\n\n\n\n\n\nAVE\nCR\n\n\n\n\nYang diukur\nRasio common variance dibandingkan total varians per indikator\nReliabilitas (konsistensi internal) skala\n\n\nSensitif terhadap\nLoading rendah sangat menekan nilai AVE\nKurang sensitif — loading tinggi dapat mengompensasi\n\n\nKriteria\n≥ 0.50\n≥ 0.70\n\n\nKegunaan utama\nValiditas konvergen\nReliabilitas (alternatif Cronbach’s α)\n\n\n\n\n\n\n\n\n\nCR tinggi belum tentu AVE tinggi\n\n\nSkala dengan loading sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilkan CR ≈ 0.74 namun AVE ≈ 0.36. CR fokus pada “apakah item-item saling berkaitan/berkorelasi?”; AVE fokus pada “apakah item-item benar-benar mewakili konstruknya?”"
   },
   {
     "objectID": "slides/bagian-8.html#ave-vs.-composite-reliability-cr-1",
@@ -228,7 +228,7 @@
     "href": "slides/bagian-8.html#dasar-script-lavaan-1",
     "title": "Confirmatory Factor Analysis (CFA)",
     "section": "Dasar script lavaan",
-    "text": "Dasar script lavaan\n\n\n\n\n\n\n\nBaujean, A.A. (2014). Latent Variable Modeling Using R: A step-by-step guide. New York: Routledge."
+    "text": "Dasar script lavaan\n\n\n\n\n\n\n\nBeaujean, A.A. (2014). Latent Variable Modeling Using R: A step-by-step guide. New York: Routledge."
   },
   {
     "objectID": "slides/bagian-8.html#contoh-script-lavaan-untuk-cfa",
@@ -319,7 +319,7 @@
     "href": "slides/bagian-6.html#nama-variabel-dan-koefisien-jalur-1",
     "title": "Model Jalur",
     "section": "Nama variabel dan koefisien jalur",
-    "text": "Nama variabel dan koefisien jalur\n\n\n\n\n\n\n\n\nNama Variabel/Koefisien\nHuruf Yunani\nHuruf Latin\n\n\n\n\nDirect effect antara variabel laten dan indikatornya (loading factor)\nλ\nLambda\n\n\nDirect effect antara variabel endogen dan eksogen\nγ\nGamma\n\n\nDirect effect antara dua variabel laten\nβ\nBeta\n\n\nKorelasi (covariance) antara dua variabel laten\nφ\nPhi\n\n\nVarians error pengukuran dari sebuah variabel laten\nζ\nZeta"
+    "text": "Nama variabel dan koefisien jalur\n\n\n\n\n\n\n\n\nNama Variabel/Koefisien\nHuruf Yunani\nHuruf Latin\n\n\n\n\nDirect effect antara variabel laten dan indikatornya (loading factor)\nλ\nLambda\n\n\nDirect effect antara variabel endogen dan eksogen\nγ\nGamma\n\n\nDirect effect antara dua variabel laten\nβ\nBeta\n\n\nKorelasi (covariance) antara dua variabel laten\nφ\nPhi\n\n\nVarians residual/disturbance struktural dari variabel laten endogen (bagian varians η yang tidak dijelaskan variabel lain dalam model)\nζ\nZeta"
   },
   {
     "objectID": "slides/bagian-6.html#contoh-model-dengan-koefisien-jalur",
@@ -354,7 +354,7 @@
     "href": "slides/bagian-6.html#dasar-syntax-lavaan",
     "title": "Model Jalur",
     "section": "Dasar syntax lavaan",
-    "text": "Dasar syntax lavaan\n\n\n\n\n\n\n\nBaujean, A.A. (2014). Latent Variable Modeling Using R: A step-by-step guide. New York: Routledge."
+    "text": "Dasar syntax lavaan\n\n\n\n\n\n\n\nBeaujean, A.A. (2014). Latent Variable Modeling Using R: A step-by-step guide. New York: Routledge."
   },
   {
     "objectID": "slides/bagian-6.html#contoh-cfa-1",
@@ -557,7 +557,7 @@
     "href": "slides/bagian-4.html#tiga-kesalahan-umum-dalam-analisis-roc",
     "title": "Analisis ROC (Receiver Operating Characteristic)",
     "section": "Tiga kesalahan umum dalam analisis ROC",
-    "text": "Tiga kesalahan umum dalam analisis ROC\n\nMenggunakan cut-off dari literatur tanpa validasi lokal — cut-off yang optimal di satu populasi (misal: Barat, klinik spesialis) mungkin tidak optimal di populasi yang berbeda (misal: Indonesia, layanan primer). Selalu validasi secara di konteks penelitian Anda.\nMengabaikan konteks ketika memilih cut-off — Youden’s Index hanyalah titik awal. Keputusan klinis akhir harus mempertimbangkan konsekuensi false negative vs false positive yang spesifik untuk konteks penggunaan.\nMelaporkan PPV/NPV tanpa menyebutkan prevalensi — PPV = 63% tidak bermakna tanpa informasi bahwa angka itu dihitung pada prevalensi 30%. Pembaca yang menggunakan alat di populasi dengan prevalensi 10% akan mendapat gambaran yang sangat menyesatkan."
+    "text": "Tiga kesalahan umum dalam analisis ROC\n\nMenggunakan cut-off dari literatur tanpa validasi lokal — cut-off yang optimal di satu populasi (misal: Barat, klinik spesialis) mungkin tidak optimal di populasi yang berbeda (misal: Indonesia, layanan primer). Selalu validasi ulang di konteks penelitian Anda sendiri.\nMengabaikan konteks ketika memilih cut-off — Youden’s Index hanyalah titik awal. Keputusan klinis akhir harus mempertimbangkan konsekuensi false negative vs false positive yang spesifik untuk konteks penggunaan.\nMelaporkan PPV/NPV tanpa menyebutkan prevalensi — PPV = 63% tidak bermakna tanpa informasi bahwa angka itu dihitung pada prevalensi 30%. Pembaca yang menggunakan alat di populasi dengan prevalensi 10% akan mendapat gambaran yang sangat menyesatkan."
   },
   {
     "objectID": "slides/bagian-4.html#ada-pertanyaan",
@@ -802,21 +802,21 @@
     "href": "slides/bagian-2.html#model-fit-2",
     "title": "Regresi Linear (Ordinary Least Square)",
     "section": "Model fit",
-    "text": "Model fit\n\nModel 2 (F(2,397) = 74.3, p = .001, Adj. R2 = .424) dapat menjelaskan varians tingkat kemandirian anak lebih baik daripada Model 1 (F(1,398) = 171.8, p = .001, R2 = .300), dengan overlapping variances sebesar 42.4% dibanding 30%.\nInformation criteria (AIC & BIC)\n\nDigunakan untuk mengakomodasi kelemahan dari R2 (apabila prediktor dalam model ditambah terus, maka nilai R2 akan terus naik)\nKelemahan R2 ini serupa dengan prinsip reliabilitas dan jumlah aitem\nRumus dari information criteria memberi “penalti” kepada model yang mengandung lebih banyak variabel prediktor\nPilih model dengan AIC dan BIC yang terkecil (Model 2)"
+    "text": "Model fit\n\nModel 2 (F(4,395) = 74.3, p = .001, Adj. R2 = .424) dapat menjelaskan varians tingkat kemandirian anak lebih baik daripada Model 1 (F(1,398) = 171.8, p = .001, R2 = .300), dengan overlapping variances sebesar 42.4% dibanding 30%.\nInformation criteria (AIC & BIC)\n\nDigunakan untuk mengakomodasi kelemahan dari R2 (apabila prediktor dalam model ditambah terus, maka nilai R2 akan terus naik)\nKelemahan R2 ini serupa dengan prinsip reliabilitas dan jumlah aitem\nRumus dari information criteria memberi “penalti” kepada model yang mengandung lebih banyak variabel prediktor\nPilih model dengan AIC dan BIC yang terkecil (Model 2)"
   },
   {
     "objectID": "slides/bagian-2.html#model-comparison",
     "href": "slides/bagian-2.html#model-comparison",
     "title": "Regresi Linear (Ordinary Least Square)",
     "section": "Model comparison",
-    "text": "Model comparison\n\n\nKetika dibandingkan, Model 1 dan Model 2 berbeda signifikan (F(1,397) = 29.5, p = .001). ΔR2 = .128, artinya selisih R2 Model 1 dan Model 2 = .128 atau R2 naik sebesar 12.8%\nCoba perhatikan Residuals Model 1 dengan Model 2"
+    "text": "Model comparison\n\n\nKetika dibandingkan, Model 1 dan Model 2 berbeda signifikan (F(3,395) = 29.5, p = .001). ΔR2 = .128, artinya selisih R2 Model 1 dan Model 2 = .128 atau R2 naik sebesar 12.8%\nCoba perhatikan Residuals Model 1 dengan Model 2"
   },
   {
     "objectID": "slides/bagian-2.html#koefisien-model-2",
     "href": "slides/bagian-2.html#koefisien-model-2",
     "title": "Regresi Linear (Ordinary Least Square)",
     "section": "Koefisien model 2",
-    "text": "Koefisien model 2\n\nPendapatan keluarga dapat menjelaskan variasi kemandirian anak (B = 0.153 95% CI [0.025, 0.281], SE = 0.065, t = 2.354, p = .019). Artinya, anak yang dibesarkan di keluarga dengan tingkat pendapatan yang tinggi, maka cenderung lebih mandiri.\nMain effect neuroticism (B = 0.387 95% CI [0.261, 0.514], SE = 0.064, t = 6.018, p = .001) dan trust in organismic development (B = 0.391 95% CI [0.275, 0.508], SE = 0.059, t = 6.609, p = .001) secara independen menjelaskan tingkat kemandirian anak.\nTidak ada bukti bahwa ada interaksi antara neuroticism dengan trust in organismic development dalam menjelaskan varians kemandirian anak (B = -0.005 95% CI [-0.019, 0.018], SE = 0.009, t = -0.05, p = .955)."
+    "text": "Koefisien model 2\n\nPendapatan keluarga dapat menjelaskan variasi kemandirian anak (B = 0.153 95% CI [0.025, 0.281], SE = 0.065, t = 2.354, p = .019). Artinya, anak yang dibesarkan di keluarga dengan tingkat pendapatan yang tinggi, maka cenderung lebih mandiri.\nMain effect neuroticism (B = 0.387 95% CI [0.261, 0.514], SE = 0.064, t = 6.018, p = .001) dan trust in organismic development (B = 0.391 95% CI [0.275, 0.508], SE = 0.059, t = 6.609, p = .001) secara independen menjelaskan tingkat kemandirian anak.\nTidak ada bukti bahwa ada interaksi antara neuroticism dengan trust in organismic development dalam menjelaskan varians kemandirian anak (B = -0.0005 95% CI [-0.019, 0.018], SE = 0.009, t = -0.05, p = .955)."
   },
   {
     "objectID": "slides/bagian-2.html#estimated-marginal-means",
@@ -844,14 +844,14 @@
     "href": "slides/bagian-2.html#bagaimana-melaporkannya",
     "title": "Regresi Linear (Ordinary Least Square)",
     "section": "Bagaimana melaporkannya?",
-    "text": "Bagaimana melaporkannya?\n\nUntuk menginvestigasi keterkaitan antara pendapatan keluarga, kecenderungan neuroticism ibu, dan kepercayaan ibu bahwa perkembangan anak dapat terjadi secara natural dengan tingkat kemandirian anak, peneliti melakukan analisis regresi linear hirarkial dengan interaction terms. Peneliti menyusun dua model, dimana; model 1 mengestimasi varians tingkat kemandirian anak dengan pendapatan keluarga inti sebagai prediktor, sedangkan pada model 2 peneliti menambahkan prediktor berupa interaction terms antara neuroticism dengan trust.\n\n\nKetika dibandingkan, Model 1 dan Model 2 berbeda signifikan (F(1,397) = 29.5, p = .001). R2 bertambah sedikit (ΔR2 = .128). Model 2 (F(2,397) = 74.3, p = .001, Adj. R2 = .424, AIC = 2472, BIC = 2496) dapat menjelaskan varians tingkat kemandirian anak sedikit lebih baik daripada Model 1 (F(1,398) = 171.8, p = .001, Adj. R2 = .300, AIC = 2547, BIC = 2559)."
+    "text": "Bagaimana melaporkannya?\n\nUntuk menginvestigasi keterkaitan antara pendapatan keluarga, kecenderungan neuroticism ibu, dan kepercayaan ibu bahwa perkembangan anak dapat terjadi secara natural dengan tingkat kemandirian anak, peneliti melakukan analisis regresi linear hirarkial dengan interaction terms. Peneliti menyusun dua model, dimana; model 1 mengestimasi varians tingkat kemandirian anak dengan pendapatan keluarga inti sebagai prediktor, sedangkan pada model 2 peneliti menambahkan prediktor berupa interaction terms antara neuroticism dengan trust.\n\n\nKetika dibandingkan, Model 1 dan Model 2 berbeda signifikan (F(3,395) = 29.5, p = .001). R2 bertambah sedikit (ΔR2 = .128). Model 2 (F(4,395) = 74.3, p = .001, Adj. R2 = .424, AIC = 2472, BIC = 2496) dapat menjelaskan varians tingkat kemandirian anak sedikit lebih baik daripada Model 1 (F(1,398) = 171.8, p = .001, Adj. R2 = .300, AIC = 2547, BIC = 2559)."
   },
   {
     "objectID": "slides/bagian-2.html#bagaimana-melaporkannya-1",
     "href": "slides/bagian-2.html#bagaimana-melaporkannya-1",
     "title": "Regresi Linear (Ordinary Least Square)",
     "section": "Bagaimana melaporkannya?",
-    "text": "Bagaimana melaporkannya?\n\nPendapatan keluarga dapat menjelaskan variasi kemandirian anak (B = 0.153 95% CI [0.025, 0.281], SE = 0.065, t = 2.354, p = .019). Main effect neuroticism (B = 0.387 95% CI [0.261, 0.514], SE = 0.064, t = 6.018, p = .001) dan trust in organismic development (B = 0.391 95% CI [0.275, 0.508], SE = 0.059, t = 6.609, p = .001) secara independen menjelaskan tingkat kemandirian anak. Tidak ada bukti bahwa interaksi antara neuroticism dengan trust in organismic development dapat menjelaskan varians kemandirian anak (B = -0.005 95% CI [-0.019, 0.018], SE = 0.009, t = -0.05, p = .955).\n\n\nPotensi multikolinearitas dideteksi dengan VIF dan hasil analisis menunjukkan multikolinearitas kemungkinan tidak terjadi (VIF = 1.03 - 3.47)."
+    "text": "Bagaimana melaporkannya?\n\nPendapatan keluarga dapat menjelaskan variasi kemandirian anak (B = 0.153 95% CI [0.025, 0.281], SE = 0.065, t = 2.354, p = .019). Main effect neuroticism (B = 0.387 95% CI [0.261, 0.514], SE = 0.064, t = 6.018, p = .001) dan trust in organismic development (B = 0.391 95% CI [0.275, 0.508], SE = 0.059, t = 6.609, p = .001) secara independen menjelaskan tingkat kemandirian anak. Tidak ada bukti bahwa interaksi antara neuroticism dengan trust in organismic development dapat menjelaskan varians kemandirian anak (B = -0.0005 95% CI [-0.019, 0.018], SE = 0.009, t = -0.05, p = .955).\n\n\nPotensi multikolinearitas dideteksi dengan VIF dan hasil analisis menunjukkan multikolinearitas kemungkinan tidak terjadi (VIF = 1.03 - 3.47)."
   },
   {
     "objectID": "slides/bagian-2.html#latihan-mandiri-1",
@@ -1040,7 +1040,7 @@
     "href": "slides/bagian-3.html#outcome-biner-ada-di-berbagai-konteks-penelitian-psikologi",
     "title": "Regresi Logistik Binomial",
     "section": "Outcome biner ada di berbagai konteks penelitian psikologi",
-    "text": "Outcome biner ada di berbagai konteks penelitian psikologi\n\nPutus studi PJJ: Sepertiga mahasiswa PJJ tidak menyelesaikan studinya sebelum semester kelima (Tinto, 1987; Park & Choi, 2009)\nRelapse gangguan kecemasan: 40–60% pasien mengalami kekambuhan dalam jangka panjang setelah remisi (Bruce et al., 2005)\nTurnover karyawan: perasaan kesepian di tempat kerja (workplace loneliness) yang diukur pada baseline dapat memprediksi job turnover enam bulan kemudian, setelah mengontrol variabel sosiodemografis (Sasaki, et al., 2025)\nPercobaan bunuh diri: Sekitar 2.4% prajurit militer AS melakukan percobaan bunuh diri dalam satu tahun (Kessler et al., 2014)\n\n\n\n\n\n\n\nOutcome Biner\n\n\nOutcome dari semua penelitian di atas bukan skor 1–100 (data continous). Variabel-variabel di atas adalah keputusan biner: terjadi (1) atau tidak terjadi (0). Kita membutuhkan metode statistik yang dirancang untuk memodelkan probabilitas kejadian seperti ini."
+    "text": "Outcome biner ada di berbagai konteks penelitian psikologi\n\nPutus studi PJJ: Sepertiga mahasiswa PJJ tidak menyelesaikan studinya sebelum semester kelima (Tinto, 1987; Park & Choi, 2009)\nRelapse gangguan kecemasan: 40–60% pasien mengalami kekambuhan dalam jangka panjang setelah remisi (Bruce et al., 2005)\nTurnover karyawan: perasaan kesepian di tempat kerja (workplace loneliness) yang diukur pada baseline dapat memprediksi job turnover enam bulan kemudian, setelah mengontrol variabel sosiodemografis (Sasaki, et al., 2025)\nPercobaan bunuh diri: Sekitar 2.4% prajurit militer AS pernah melakukan percobaan bunuh diri seumur hidup (Nock et al., 2014)\n\n\n\n\n\n\n\nOutcome Biner\n\n\nOutcome dari semua penelitian di atas bukan skor 1–100 (data continous). Variabel-variabel di atas adalah keputusan biner: terjadi (1) atau tidak terjadi (0). Kita membutuhkan metode statistik yang dirancang untuk memodelkan probabilitas kejadian seperti ini."
   },
   {
     "objectID": "slides/bagian-3.html#regresi-linear-dan-prediksi-yang-mustahil",

@@ -6,12 +6,12 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e44360b8a8db1e130c7792fece1c8032.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.10.3">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Rizqy Amelia Zein">
-  <meta name="dcterms.date" content="2026-06-09">
+  <meta name="dcterms.date" content="2026-08-28">
   <title>Statistik Lanjut dalam Penelitian Psikologi – Confirmatory Factor Analysis (CFA)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -22,10 +22,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -208,7 +211,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Rizqy Amelia Zein 
+Rizqy Amelia Zein
 </div>
         <p class="quarto-title-affiliation">
             <a href="https://psikologi.unair.ac.id/dosen-rizqy-amelia-zein/"><em>Departemen Psikologi, Universitas Airlangga</em></a>
@@ -216,7 +219,7 @@ Rizqy Amelia Zein
     </div>
 </div>
 
-  <p class="date">2026-06-09</p>
+  <p class="date">2026-08-28</p>
 </section>
 <section id="outline" class="slide level2">
 <h2><em>Outline</em></h2>
@@ -322,7 +325,7 @@ Rizqy Amelia Zein
 <li class="fragment"><strong>Variabel <em>observed</em> menjelaskan</strong> mengapa <strong>variabel laten bervariasi</strong></li>
 <li class="fragment">Misalnya <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> gengsi sebuah mobil ditentukan oleh usia mobil, kondisi, harga, dan intensitas pemakaian</li>
 <li class="fragment">Korelasi antara variabel <em>observed</em> tidak diketahui</li>
-<li class="fragment">Biasanya digunakan untuk menentukan indeks pada konstruk yang <em>orthogonal</em> (contoh <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> contohnya, <a href="https://www.sciencedirect.com/science/article/abs/pii/S0145213421003434"><em>adverse childhood experience</em></a>)</li>
+<li class="fragment">Biasanya digunakan untuk menentukan indeks pada konstruk yang <em>orthogonal</em> <i class="fa-solid fa-circle-arrow-right" aria-label="circle-arrow-right"></i> contohnya, <a href="https://www.sciencedirect.com/science/article/abs/pii/S0145213421003434"><em>adverse childhood experience</em></a></li>
 <li class="fragment">Tetapi, <strong>sangat jarang</strong> konstruk psikologi yang mengasumsikan model formatif</li>
 </ul>
 </div></div>
@@ -524,7 +527,7 @@ Rizqy Amelia Zein
 <p><strong>CR tinggi belum tentu AVE tinggi</strong></p>
 </div>
 <div class="callout-content">
-<p>Skala dengan <em>loading</em> sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilkan CR ≈ 0.78 namun AVE ≈ 0.36. CR fokus pada <em>“apakah item-item saling berkaitan/berkorelasi?”</em>; AVE fokus pada <em>“apakah item-item benar-benar mewakili konstruknya?”</em></p>
+<p>Skala dengan <em>loading</em> sedang (misalnya semua λ = 0.60, 5 item) bisa menghasilkan CR ≈ 0.74 namun AVE ≈ 0.36. CR fokus pada <em>“apakah item-item saling berkaitan/berkorelasi?”</em>; AVE fokus pada <em>“apakah item-item benar-benar mewakili konstruknya?”</em></p>
 </div>
 </div>
 </div>
@@ -914,31 +917,31 @@ Rizqy Amelia Zein
 </div>
 
 <aside><div>
-<p>Baujean, A.A. (2014). Latent Variable Modeling Using R: A step-by-step guide. New York: Routledge.</p>
+<p>Beaujean, A.A. (2014). Latent Variable Modeling Using R: A step-by-step guide. New York: Routledge.</p>
 </div></aside></section>
 <section id="contoh-script-lavaan-untuk-cfa" class="slide level2">
 <h2>Contoh <em>script</em> <code>lavaan</code> untuk CFA</h2>
 
 <img data-src="libs/path-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># CFA — spesifikasi minimal yang diperlukan</span></span>
-<span id="cb1-2"><a></a><span class="co"># lavaan secara default membebaskan semua factor loading dan error variance</span></span>
-<span id="cb1-3"><a></a><span class="co"># serta mengfiksasi varians faktor laten = 1 (tidak perlu ditulis eksplisit)</span></span>
-<span id="cb1-4"><a></a>model_trust <span class="ot">&lt;-</span> <span class="st">'</span></span>
-<span id="cb1-5"><a></a><span class="st">  trust =~ trust1 + trust2 + trust3 + trust4 + trust5</span></span>
-<span id="cb1-6"><a></a><span class="st">'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-label="1"></a><span class="co"># CFA — spesifikasi minimal yang diperlukan</span></span>
+<span id="cb1-2"><a aria-label="2"></a><span class="co"># lavaan secara default membebaskan semua factor loading dan error variance</span></span>
+<span id="cb1-3"><a aria-label="3"></a><span class="co"># serta mengfiksasi varians faktor laten = 1 (tidak perlu ditulis eksplisit)</span></span>
+<span id="cb1-4"><a aria-label="4"></a>model_trust <span class="ot">&lt;-</span> <span class="st">'</span></span>
+<span id="cb1-5"><a aria-label="5"></a><span class="st">  trust =~ trust1 + trust2 + trust3 + trust4 + trust5</span></span>
+<span id="cb1-6"><a aria-label="6"></a><span class="st">'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="menambahkan-correlated-error-dalam-lavaan" class="slide level2">
 <h2>Menambahkan <em>correlated error</em> dalam <code>lavaan</code></h2>
 <p>Jika MI menunjukkan bahwa residual (<em>error</em>) dari dua item perlu dibebaskan korelasinya, maka:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>model_cfa_v2 <span class="ot">&lt;-</span> <span class="st">'</span></span>
-<span id="cb2-2"><a></a><span class="st">  faktor_laten =~ item1 + item2 + item3 + item4 + item5</span></span>
-<span id="cb2-3"><a></a></span>
-<span id="cb2-4"><a></a><span class="st">  # Bebaskan korelasi error item3 dan item4</span></span>
-<span id="cb2-5"><a></a><span class="st">  # (justifikasi: kedua item memiliki wording yang serupa)</span></span>
-<span id="cb2-6"><a></a><span class="st">  item3 ~~ item4</span></span>
-<span id="cb2-7"><a></a><span class="st">'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-label="1"></a>model_cfa_v2 <span class="ot">&lt;-</span> <span class="st">'</span></span>
+<span id="cb2-2"><a aria-label="2"></a><span class="st">  faktor_laten =~ item1 + item2 + item3 + item4 + item5</span></span>
+<span id="cb2-3"><a aria-label="3"></a></span>
+<span id="cb2-4"><a aria-label="4"></a><span class="st">  # Bebaskan korelasi error item3 dan item4</span></span>
+<span id="cb2-5"><a aria-label="5"></a><span class="st">  # (justifikasi: kedua item memiliki wording yang serupa)</span></span>
+<span id="cb2-6"><a aria-label="6"></a><span class="st">  item3 ~~ item4</span></span>
+<span id="cb2-7"><a aria-label="7"></a><span class="st">'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section>
@@ -961,7 +964,7 @@ Rizqy Amelia Zein
 <section id="ada-pertanyaan" class="slide level2">
 <h2>Ada pertanyaan❓</h2>
 
-<img data-src="..\slides/libs/closing.JPG" class="quarto-figure quarto-figure-center r-stretch"><div class="callout callout-note callout-titled callout-style-default">
+<img data-src="../slides/libs/closing.JPG" class="quarto-figure quarto-figure-center r-stretch"><div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">

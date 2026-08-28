@@ -6,12 +6,12 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e44360b8a8db1e130c7792fece1c8032.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.10.3">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Rizqy Amelia Zein">
-  <meta name="dcterms.date" content="2026-06-09">
+  <meta name="dcterms.date" content="2026-08-28">
   <title>Statistik Lanjut dalam Penelitian Psikologi – Regresi Logistik Binomial</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -22,10 +22,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -142,7 +145,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Rizqy Amelia Zein 
+Rizqy Amelia Zein
 </div>
         <p class="quarto-title-affiliation">
             <a href="https://psikologi.unair.ac.id/dosen-rizqy-amelia-zein/"><em>Departemen Psikologi, Universitas Airlangga</em></a>
@@ -150,7 +153,7 @@ Rizqy Amelia Zein
     </div>
 </div>
 
-  <p class="date">2026-06-09</p>
+  <p class="date">2026-08-28</p>
 </section>
 <section id="outline" class="slide level2">
 <h2><em>Outline</em></h2>
@@ -176,7 +179,7 @@ Rizqy Amelia Zein
 <li class="fragment"><strong>Putus studi PJJ:</strong> Sepertiga mahasiswa PJJ tidak menyelesaikan studinya sebelum semester kelima (<a href="https://press.uchicago.edu/ucp/books/book/chicago/L/bo3630345.html">Tinto, 1987</a>; <a href="https://www.jstor.org/stable/jeductechsoci.12.4.207">Park &amp; Choi, 2009</a>)</li>
 <li class="fragment"><strong>Relapse gangguan kecemasan:</strong> 40–60% pasien mengalami kekambuhan dalam jangka panjang setelah remisi (<a href="https://psychiatryonline.org/doi/full/10.1176/appi.ajp.162.6.1179">Bruce et al., 2005</a>)</li>
 <li class="fragment"><strong>Turnover karyawan:</strong> perasaan kesepian di tempat kerja (<em>workplace loneliness</em>) yang diukur pada <em>baseline</em> dapat memprediksi <em>job turnover</em> enam bulan kemudian, setelah mengontrol variabel sosiodemografis (<a href="https://academic.oup.com/joh/article/67/1/uiaf009/7997388">Sasaki, et al., 2025</a>)</li>
-<li class="fragment"><strong>Percobaan bunuh diri:</strong> Sekitar 2.4% prajurit militer AS melakukan percobaan bunuh diri dalam satu tahun (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4860903/">Kessler et al., 2014</a>)</li>
+<li class="fragment"><strong>Percobaan bunuh diri:</strong> Sekitar 2.4% prajurit militer AS pernah melakukan percobaan bunuh diri seumur hidup (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4860903/">Nock et al., 2014</a>)</li>
 </ul>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
@@ -1140,7 +1143,7 @@ Rizqy Amelia Zein
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>ROC <em>curve</em> dan AUC tersedia di jamovi. Pembahasan mendalam tentang analisis ROC — termasuk PPV/NPV, Youden’s Index, dan penentuan <em>cut-off</em> optimal — ada di <a href="..\slides/bagian-4.html"><strong>Bagian 4</strong></a>.</p>
+<p>ROC <em>curve</em> dan AUC tersedia di jamovi. Pembahasan mendalam tentang analisis ROC — termasuk PPV/NPV, Youden’s Index, dan penentuan <em>cut-off</em> optimal — ada di <a href="../slides/bagian-4.html"><strong>Bagian 4</strong></a>.</p>
 </div>
 </div>
 </div>
@@ -1153,7 +1156,7 @@ Rizqy Amelia Zein
 <section id="konteks-apa-yang-memprediksi-putus-studi-dropout-dalam-pjj" class="slide level2">
 <h2>Konteks: apa yang memprediksi putus studi (<em>dropout</em>) dalam PJJ?</h2>
 <ul>
-<li>Dataset: <strong>Dataset Contoh Regresi Logistik</strong> (<a href="..\materials/dataset-dropout.omv"><code>dataset-dropout.omv</code></a>)</li>
+<li>Dataset: <strong>Dataset Contoh Regresi Logistik</strong> (<a href="../materials/dataset-dropout.omv"><code>dataset-dropout.omv</code></a>)</li>
 </ul>
 <p><strong>Variabel:</strong></p>
 <ul>
@@ -1279,7 +1282,7 @@ Rizqy Amelia Zein
 <section id="ada-pertanyaan" class="slide level2">
 <h2>Ada pertanyaan❓</h2>
 
-<img data-src="..\slides/libs/closing.JPG" class="quarto-figure quarto-figure-center r-stretch"><div class="callout callout-note callout-titled callout-style-default">
+<img data-src="../slides/libs/closing.JPG" class="quarto-figure quarto-figure-center r-stretch"><div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
