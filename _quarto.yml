@@ -19,16 +19,16 @@ project:
 
 website:
   title: "Statistik Lanjut dalam Penelitian Psikologi"
-  navbar:
-    left:
-      - href: https://rameliaz.github.io/
-        icon: house
-        text: "oleh Rizqy Amelia Zein"
-      - icon: github
-        href: https://github.com/rameliaz/statistik
-    right:
-      - text: "Materi (html)"
-        menu:
+  repo-url: https://github.com/rameliaz/statistik-lanjut
+  repo-actions: [edit, source, issue]  
+  repo-branch: master
+  sidebar:
+    style: docked
+    contents:
+      - text: "Beranda"
+        href: index.qmd
+      - section: "Materi"
+        contents:
           - text: "Bagian 1: Korelasi"
             href: slides/bagian-1.html
           - text: "Bagian 2: Regresi OLS"
@@ -44,27 +44,9 @@ website:
           - text: "Bagian 7: EFA-PCA"
             href: slides/bagian-7.html
           - text: "Bagian 8: CFA"
-            href: slides/bagian-8.html
-      - text: "Materi (pdf)"
-        menu:
-          - text: "Bagian 1: Korelasi"
-            href: "slides/bagian-1.html?print-pdf"
-          - text: "Bagian 2: Regresi OLS"
-            href: "slides/bagian-2.html?print-pdf"
-          - text: "Bagian 3: Regresi Logistik"
-            href: "slides/bagian-3.html?print-pdf"
-          - text: "Bagian 4: Analisis ROC"
-            href: "slides/bagian-4.html?print-pdf"
-          - text: "Bagian 5: Pengantar LVM"
-            href: "slides/bagian-5.html?print-pdf"
-          - text: "Bagian 6: Model Jalur"
-            href: "slides/bagian-6.html?print-pdf"
-          - text: "Bagian 7: EFA-PCA"
-            href: "slides/bagian-7.html?print-pdf"
-          - text: "Bagian 8: CFA"
-            href: "slides/bagian-8.html?print-pdf"
-      - text: "Dataset"
-        menu:
+            href: slides/bagian-8.html      
+      - section: "Dataset"
+        contents:
           - text: "Dataset Contoh Korelasi"
             href: materials/corr.omv
           - text: "Dataset Latihan Korelasi"
@@ -79,6 +61,12 @@ website:
             href: materials/dataset-burnout.omv
           - text: "Dataset Contoh CFA"
             href: materials/contoh-cfa.omv            
+  navbar:
+    left:
+      - href: https://rameliaz.github.io/
+        icon: house
+        text: "oleh Rizqy Amelia Zein"
+    right:
       - icon: envelope
         href: "mailto:amelia.zein@psikologi.unair.ac.id"
       - icon: github
